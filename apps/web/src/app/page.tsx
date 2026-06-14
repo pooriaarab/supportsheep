@@ -56,14 +56,12 @@ async function isMarketingRequest(): Promise<boolean> {
   }
 }
 
-const MARKETING_TITLE = "BlogBat — AI-assisted blogging on Cloudflare";
+const MARKETING_TITLE = "Supportsheep — The AI-native support platform with Real-time Voice";
 const MARKETING_DESCRIPTION =
-  "BlogBat is a fast, multitenant blog platform on Cloudflare's edge. " +
-  "Publish at yourname.blogbat.com or your own custom domain, write with AI " +
-  "assistance, and ship SEO-ready posts.";
+  "Give your customers instant answers via Chat and Voice. Supportsheep builds your knowledge base and serves it instantly.";
 
 function marketingMetadata(): Metadata {
-  const url = "https://blogbat.com";
+  const url = "https://supportsheep.com";
   return {
     title: MARKETING_TITLE,
     description: MARKETING_DESCRIPTION,
@@ -72,7 +70,7 @@ function marketingMetadata(): Metadata {
       description: MARKETING_DESCRIPTION,
       type: "website",
       url,
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     },
     twitter: {
       card: "summary_large_image",
