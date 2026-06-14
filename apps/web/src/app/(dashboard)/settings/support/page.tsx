@@ -24,7 +24,7 @@ export default function SupportSettingsPage() {
   const queryClient = useQueryClient();
 
   const { data: config, isLoading } = useQuery<BlogConfig>({
-    queryKey: queryKeys.blog.config(),
+    queryKey: queryKeys.blogConfig.settings(),
     queryFn: async () => {
       const res = await fetch("/api/blog/config");
       if (!res.ok) throw new Error("Failed to load config");
@@ -61,7 +61,7 @@ export default function SupportSettingsPage() {
   }, []);
 
   useQuery<BlogConfig>({
-    queryKey: queryKeys.blog.config(),
+    queryKey: queryKeys.blogConfig.settings(),
     queryFn: async () => {
       const res = await fetch("/api/blog/config");
       if (!res.ok) throw new Error("Failed to load config");
@@ -84,7 +84,7 @@ export default function SupportSettingsPage() {
       return res.json();
     },
     onSuccess: (updated) => {
-      queryClient.setQueryData(queryKeys.blog.config(), updated);
+      queryClient.setQueryData(queryKeys.blogConfig.settings(), updated);
       toast.success("Support settings saved");
       setSaving(false);
     },
@@ -104,8 +104,7 @@ export default function SupportSettingsPage() {
     return (
       <div className="max-w-4xl mx-auto py-8">
         <PageHeader
-          title="Support Features"
-          description="Manage AI Voice and Chatbot settings."
+          breadcrumbs={[{ label: "Settings", href: "/settings/general" }, { label: "Support Features" }]}
         />
         <div className="space-y-6 mt-8">
           <Skeleton className="h-64 w-full" />
@@ -118,8 +117,7 @@ export default function SupportSettingsPage() {
     <div className="max-w-4xl mx-auto py-8">
       <div className="flex justify-between items-start">
         <PageHeader
-          title="Support Features"
-          description="Manage AI Voice and Chatbot settings."
+          breadcrumbs={[{ label: "Settings", href: "/settings/general" }, { label: "Support Features" }]}
         />
         <Button onClick={handleSave} disabled={saving}>
           {saving ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Save className="w-4 h-4 mr-2" />}
