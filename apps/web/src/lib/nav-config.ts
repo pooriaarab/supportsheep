@@ -21,6 +21,7 @@ import {
   Wrench,
   Globe,
   Mic,
+  Headset,
   Radio,
   History,
   Plus,
@@ -117,6 +118,7 @@ export const settingsCategories: NavCategory[] = [
       { label: "AI Providers", href: "/settings/ai", icon: Bot },
       { label: "API Keys", href: "/settings/api-keys", icon: Key },
       { label: "Interview", href: "/settings/interview", icon: Mic },
+      { label: "Support AI", href: "/settings/support", icon: Headset },
     ],
   },
   {
