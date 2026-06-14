@@ -48,7 +48,7 @@ export interface NavCategory {
 /** Main sidebar nav -- bottom section */
 export const mainNavItems: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Posts", href: "/posts", icon: FileText, canCreate: true },
+  { label: "Articles", href: "/posts", icon: FileText, canCreate: true },
   { label: "Categories", href: "/categories", icon: FolderOpen },
   { label: "Authors", href: "/authors", icon: UserRound },
   { label: "Media", href: "/media", icon: Image },
