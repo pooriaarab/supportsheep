@@ -157,13 +157,13 @@ export function InCallLayoutDesktop({
     session.sendTimeRemainingCue(
       "[SYSTEM] One minute remaining. Wrap up the current topic naturally, then end the conversation cleanly.",
     );
-  }, [session.sendTimeRemainingCue]);
+  }, [session]);
 
   const handleFinalWarning = useCallback(() => {
     session.sendTimeRemainingCue(
       "[SYSTEM] 15 seconds left. Finish your current sentence, thank the user, and call end_interview now.",
     );
-  }, [session.sendTimeRemainingCue]);
+  }, [session]);
 
   // Single-line orb caption. Surfaces the most relevant state, with
   // strict priority:

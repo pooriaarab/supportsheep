@@ -60,7 +60,7 @@ export default function SupportSettingsPage() {
       })
   }, []);
 
-  const { isFetching } = useQuery<BlogConfig>({
+  useQuery<BlogConfig>({
     queryKey: queryKeys.blog.config(),
     queryFn: async () => {
       const res = await fetch("/api/blog/config");
@@ -134,7 +134,7 @@ export default function SupportSettingsPage() {
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label>Enable AI Voice</Label>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-muted-foreground">
                   Allow customers to call your AI agent directly from your site.
                 </p>
               </div>
@@ -147,7 +147,7 @@ export default function SupportSettingsPage() {
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label>Enable Chatbot</Label>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-muted-foreground">
                   Show the floating support chatbot widget on public pages.
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function SupportSettingsPage() {
                 value={localState.openAIApiKey}
                 onChange={(e) => setLocalState(s => ({ ...s, openAIApiKey: e.target.value }))}
               />
-              <p className="text-xs text-gray-500">Your OpenAI API key to power the real-time voice agent.</p>
+              <p className="text-xs text-muted-foreground">Your OpenAI API key to power the real-time voice agent.</p>
             </div>
           </div>
         </Card>
