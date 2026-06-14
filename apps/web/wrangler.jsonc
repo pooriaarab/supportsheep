@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   // Shared base. Deploy a named env explicitly: `wrangler deploy --env staging|production`.
-  "name": "blogbat",
+  "name": "supportsheep",
   "account_id": "4fd11561cd1f5c452d97912140c0af9e",
   "main": "./.open-next/worker.js",
   "compatibility_date": "2025-03-01",
