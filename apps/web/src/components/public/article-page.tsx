@@ -45,7 +45,7 @@ interface ArticlePageProps {
 
 function getDisplayAuthor(author?: string | null) {
   if (!author || author.toLowerCase() === "blogblogbatai") {
-    return "BlogBat";
+    return "Supportsheep";
   }
 
   return author;
@@ -62,7 +62,7 @@ function getStructuredAuthor(
 
   const name = getDisplayAuthor(fallbackName);
 
-  if (name === "BlogBat") {
+  if (name === "Supportsheep") {
     return {
       "@type": "Organization" as const,
       name,
@@ -569,7 +569,7 @@ function ArticleJsonLd({
     author: getStructuredAuthor(author, article.author, siteUrl),
     publisher: {
       "@type": "Organization",
-      name: "BlogBat",
+      name: "Supportsheep",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/favicon.png`,
@@ -946,16 +946,16 @@ export function ArticlePage({
                 )}
                 style={resolvedArticleTheme.readingLayout.bodyTextStyle}
               >
-                BlogBat is the open-source platform that publishes this blog.
+                Supportsheep is the open-source platform that publishes this blog.
                 Spin up your own in minutes.
               </p>
               <Link
-                href="https://blogbat.com"
+                href="https://supportsheep.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
               >
-                Powered by BlogBat
+                Powered by Supportsheep
               </Link>
             </div>
           </aside>

@@ -24,15 +24,15 @@ const COLLECTION = "programmatic_pages";
 
 const DEMO_CONTENT = `# Built for plumbers who actually want to grow online
 
-Running a plumbing business means juggling emergency calls, quoting jobs, and somehow still showing up first on Google when a homeowner searches "plumber near me" at 2am on a Sunday. Most plumbers don't have time to hand-write blog posts between draining water heaters and snaking sewer lines. BlogBat is built to close that gap without turning you into a part-time content marketer.
+Running a plumbing business means juggling emergency calls, quoting jobs, and somehow still showing up first on Google when a homeowner searches "plumber near me" at 2am on a Sunday. Most plumbers don't have time to hand-write blog posts between draining water heaters and snaking sewer lines. Supportsheep is built to close that gap without turning you into a part-time content marketer.
 
 ## The SEO problem every plumbing business runs into
 
 Local service searches are won with consistent, keyword-rich content that answers the exact questions your customers type. Things like "how much does it cost to replace a sump pump", "why is my water pressure low all of a sudden", or "when do I need to repipe a 1970s house". Google rewards sites that cover these topics in depth. Directory listings alone won't cut it, and neither will a single "About Us" page.
 
-The problem is that writing 80 or 100 service-area articles by hand is a full-time job. Outsourcing to generic content mills gives you thin, duplicated copy that gets penalized, not rewarded. BlogBat fills that middle ground: you describe your service area, pricing range, and specialties once, and the platform generates structured, locally relevant articles on demand.
+The problem is that writing 80 or 100 service-area articles by hand is a full-time job. Outsourcing to generic content mills gives you thin, duplicated copy that gets penalized, not rewarded. Supportsheep fills that middle ground: you describe your service area, pricing range, and specialties once, and the platform generates structured, locally relevant articles on demand.
 
-## How BlogBat fits a plumbing workflow
+## How Supportsheep fits a plumbing workflow
 
 - **Service-page scaffolding.** Generate dedicated landing pages for drain cleaning, water heater repair, trenchless sewer work, leak detection, or any niche you want to rank for.
 - **Local intent pages.** Spin up city-by-city variants ("emergency plumber in Austin", "licensed plumber in Round Rock") without copy-pasting. The generator handles the variables; the thin-content guard refuses to publish pages that don't meet a minimum depth.
@@ -47,11 +47,11 @@ Most of our plumbing customers start with three buckets:
 2. **Informational long-form.** Deeper guides like "how to tell if your water heater is about to fail" or "signs you need a sewer camera inspection". These feed middle-of-funnel traffic and support internal linking.
 3. **Location pages.** One per service area, with a consistent structure: intro, services covered, common local issues, pricing guidance, FAQs, map embed.
 
-BlogBat's generator is set up so you can run all three lanes in parallel. Schedule a batch on Monday and walk into the shop with fifteen new drafts on Tuesday morning, ready for a quick human pass.
+Supportsheep's generator is set up so you can run all three lanes in parallel. Schedule a batch on Monday and walk into the shop with fifteen new drafts on Tuesday morning, ready for a quick human pass.
 
 ## Keeping it honest
 
-A quick word on something most "AI SEO" tools refuse to address: thin content hurts you more than it helps. BlogBat's programmatic landing-page framework enforces a minimum unique word count per page and automatically marks anything below the threshold as noindex. You get the upside of programmatic SEO without carpet-bombing your domain with junk that Google will eventually downrank.
+A quick word on something most "AI SEO" tools refuse to address: thin content hurts you more than it helps. Supportsheep's programmatic landing-page framework enforces a minimum unique word count per page and automatically marks anything below the threshold as noindex. You get the upside of programmatic SEO without carpet-bombing your domain with junk that Google will eventually downrank.
 
 ## Ready to try it
 
@@ -115,28 +115,28 @@ async function main(): Promise<void> {
       subhead:
         "Generate local, service-specific landing pages that actually rank -- without carpet-bombing your site with thin content.",
       ctaText: "Start your plumbing blog",
-      ctaHref: "https://blogbat.com",
+      ctaHref: "https://supportsheep.com",
     },
-    title: "BlogBat for plumbers",
+    title: "Supportsheep for plumbers",
     metaDescription:
-      "BlogBat helps plumbing businesses rank for local service searches with structured, SEO-aware landing pages and guardrails against thin content.",
+      "Supportsheep helps plumbing businesses rank for local service searches with structured, SEO-aware landing pages and guardrails against thin content.",
     uniqueContent: DEMO_CONTENT,
     wordCount,
     faqs: [
       {
-        question: "Do I need technical SEO knowledge to use BlogBat?",
+        question: "Do I need technical SEO knowledge to use Supportsheep?",
         answer:
-          "No. BlogBat surfaces SEO feedback in plain English and ships structured data automatically. If you can write a paragraph about a service, you can publish a page that ranks.",
+          "No. Supportsheep surfaces SEO feedback in plain English and ships structured data automatically. If you can write a paragraph about a service, you can publish a page that ranks.",
       },
       {
-        question: "How does BlogBat avoid thin-content penalties?",
+        question: "How does Supportsheep avoid thin-content penalties?",
         answer:
           "Every programmatic landing page is checked against a minimum word count and unique-content threshold. Pages that don't clear the bar are published as noindex or kept as drafts.",
       },
       {
-        question: "Can I use BlogBat for multiple service areas?",
+        question: "Can I use Supportsheep for multiple service areas?",
         answer:
-          "Yes. Location-specific variants are the most common use case -- you describe your service area and pricing once, and BlogBat generates per-city pages on demand.",
+          "Yes. Location-specific variants are the most common use case -- you describe your service area and pricing once, and Supportsheep generates per-city pages on demand.",
       },
     ],
     publishStatus: "published",

@@ -80,8 +80,8 @@ function freeTool(overrides: Partial<FreeTool> = {}): FreeTool {
       enabled: true,
       heading: "Heading",
       body: "Body",
-      primaryLabel: "Try BlogBat",
-      primaryUrl: "https://blogbat.com",
+      primaryLabel: "Try Supportsheep",
+      primaryUrl: "https://supportsheep.com",
       secondaryLabel: "",
       secondaryUrl: "",
       utm: {

@@ -34,7 +34,7 @@ function cfErr(status: number, message: string) {
 describe("cloudflare-saas", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    envValue = { CF_API_TOKEN: "secret-token", CF_SAAS_ZONE_ID: "blogbat.com" };
+    envValue = { CF_API_TOKEN: "secret-token", CF_SAAS_ZONE_ID: "supportsheep.com" };
     vi.stubGlobal("fetch", fetchMock);
   });
   afterEach(() => {
@@ -66,12 +66,12 @@ describe("cloudflare-saas", () => {
       hostname: "blog.example.com",
       status: "pending",
       sslStatus: "pending_validation",
-      dcvTarget: "blogbat.com",
+      dcvTarget: "supportsheep.com",
     });
 
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe(
-      "https://api.cloudflare.com/client/v4/zones/blogbat.com/custom_hostnames",
+      "https://api.cloudflare.com/client/v4/zones/supportsheep.com/custom_hostnames",
     );
     expect(init.method).toBe("POST");
     expect(
@@ -118,7 +118,7 @@ describe("cloudflare-saas", () => {
     await deleteCustomHostname("ch_123");
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe(
-      "https://api.cloudflare.com/client/v4/zones/blogbat.com/custom_hostnames/ch_123",
+      "https://api.cloudflare.com/client/v4/zones/supportsheep.com/custom_hostnames/ch_123",
     );
     expect(init.method).toBe("DELETE");
   });

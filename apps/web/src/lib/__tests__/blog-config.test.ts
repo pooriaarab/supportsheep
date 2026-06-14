@@ -11,7 +11,7 @@ describe("resolveBlogConfig", () => {
 
   it("falls back to the light public theme when the setting is missing", () => {
     const resolved = resolveBlogConfig({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     });
 
     expect(resolved.publicAppearance?.themeMode).toBe("light");
@@ -19,7 +19,7 @@ describe("resolveBlogConfig", () => {
 
   it("defaults the public top banner config when the setting is missing", () => {
     const resolved = resolveBlogConfig({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     });
 
     expect(resolved.publicAppearance?.topBanner).toEqual({
@@ -34,7 +34,7 @@ describe("resolveBlogConfig", () => {
 
   it("defaults public shell branding config when the setting is missing", () => {
     const resolved = resolveBlogConfig({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     });
 
     expect(resolved.publicAppearance?.header).toEqual({
@@ -53,7 +53,7 @@ describe("resolveBlogConfig", () => {
 
   it("defaults public article appearance when the setting is missing", () => {
     const resolved = resolveBlogConfig({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     });
 
     expect(resolved.publicAppearance?.article).toEqual({
@@ -285,7 +285,7 @@ describe("resolveBlogConfig", () => {
   it("preserves explicit indexnow overrides", () => {
     const resolved = resolveBlogConfig({
       seo: {
-        defaultMetaTitle: "BlogBat",
+        defaultMetaTitle: "Supportsheep",
         defaultMetaDescription: "A modern blog",
         googleAnalyticsId: "",
         clarityId: "",
@@ -305,7 +305,7 @@ describe("resolveBlogConfig", () => {
   });
 
   it("defaults the analytics GA4 measurement id to empty when missing", () => {
-    const resolved = resolveBlogConfig({ siteName: "BlogBat" });
+    const resolved = resolveBlogConfig({ siteName: "Supportsheep" });
     expect(resolved.analytics?.gaMeasurementId).toBe("");
   });
 
@@ -318,7 +318,7 @@ describe("resolveBlogConfig", () => {
 
   it("defaults the interview workspace configuration when missing", () => {
     const resolved = resolveBlogConfig({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     });
 
     expect(resolved.interview).toEqual({

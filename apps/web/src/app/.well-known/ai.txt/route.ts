@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export async function GET() {
   const siteUrl = resolvePublicSiteUrl();
   const lines = [
-    "# BlogBat AI preferences",
+    "# Supportsheep AI preferences",
     `# See ${siteUrl}/robots.txt for the per-bot allow/disallow list.`,
     "",
     "User-Agent: *",

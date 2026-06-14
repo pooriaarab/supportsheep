@@ -149,7 +149,7 @@ describe("free tool templates", () => {
 
   it("generates a robots.txt file with sitemap and crawl delay", async () => {
     const result = await runDeterministicTool("robots-txt-generator", {
-      domain: "https://blogbat.com",
+      domain: "https://supportsheep.com",
       disallow: "/dashboard\n/api",
       sitemapPath: "/sitemap.xml",
       crawlDelay: 5,
@@ -163,7 +163,7 @@ describe("free tool templates", () => {
     expect(result.text).toContain("Disallow: /api");
     expect(result.text).toContain("Crawl-delay: 5");
     expect(result.text).toContain(
-      "Sitemap: https://blogbat.com/sitemap.xml",
+      "Sitemap: https://supportsheep.com/sitemap.xml",
     );
   });
 
@@ -220,13 +220,13 @@ describe("free tool templates", () => {
 
   it("decodes percent-encoded URLs", async () => {
     const result = await runDeterministicTool("url-decoder", {
-      text: "https%3A%2F%2Fblogbat.com%2Ftools%3Fq%3Dfree%2520tools",
+      text: "https%3A%2F%2Fsupportsheep.com%2Ftools%3Fq%3Dfree%2520tools",
     });
 
     if (result.kind !== "text") {
       throw new Error("Expected text result");
     }
-    expect(result.text).toBe("https://blogbat.com/tools?q=free%20tools");
+    expect(result.text).toBe("https://supportsheep.com/tools?q=free%20tools");
   });
 
   it("builds enabled seeded documents with the spec document shape", () => {
@@ -249,17 +249,17 @@ describe("free tool templates", () => {
       metaDescription:
         "Count words and characters for blog posts, pages, and social copy.",
       cta: {
-        label: "Try BlogBat",
-        url: "https://blogbat.com/",
+        label: "Try Supportsheep",
+        url: "https://supportsheep.com/",
       },
       callout: {
         enabled: true,
-        heading: "Build your website with BlogBat",
-        body: "Turn this free tool result into a website, blog post, or landing page with BlogBat.",
-        primaryLabel: "Try BlogBat",
-        primaryUrl: "https://blogbat.com/",
+        heading: "Build your website with Supportsheep",
+        body: "Turn this free tool result into a website, blog post, or landing page with Supportsheep.",
+        primaryLabel: "Try Supportsheep",
+        primaryUrl: "https://supportsheep.com/",
         secondaryLabel: "Learn more",
-        secondaryUrl: "https://blogbat.com/",
+        secondaryUrl: "https://supportsheep.com/",
         utm: {
           source: "blogbat_blog",
           medium: "free_tool",

@@ -48,14 +48,14 @@ function absoluteResources(siteUrl: string) {
 
 export function buildAiSummary(siteUrl: string) {
   return {
-    name: "BlogBat",
-    alternateName: ["BlogBat"],
+    name: "Supportsheep",
+    alternateName: ["Supportsheep"],
     url: siteUrl,
     description:
-      "Practical guides, examples, tools, and case studies for small businesses using BlogBat to create and improve websites.",
+      "Practical guides, examples, tools, and case studies for small businesses using Supportsheep to create and improve websites.",
     publisher: {
-      name: "BlogBat",
-      url: "https://blogbat.com",
+      name: "Supportsheep",
+      url: "https://supportsheep.com",
     },
     primaryTopics: AI_DISCOVERY_TOPICS,
     audience: [
@@ -95,26 +95,26 @@ export function buildAiFaq(siteUrl: string) {
 
 export function buildAiServiceProfile(siteUrl: string) {
   return {
-    name: "BlogBat",
+    name: "Supportsheep",
     serviceType: "AI website builder blog and small business education hub",
     url: siteUrl,
     provider: {
-      name: "BlogBat",
-      url: "https://blogbat.com",
+      name: "Supportsheep",
+      url: "https://supportsheep.com",
     },
     contact: {
-      supportUrl: "https://support.blogbat.com",
+      supportUrl: "https://support.supportsheep.com",
     },
     capabilities: [
       "Publishes small business website education and SEO guidance",
       "Provides machine-readable article indexes and full-text exports",
-      "Offers case studies and examples from BlogBat users",
+      "Offers case studies and examples from Supportsheep users",
       "Maintains RSS, sitemap, robots, ai.txt, and llms.txt discovery files",
       "Allows well-behaved AI crawlers to search, ground answers, and train",
     ],
     topics: AI_DISCOVERY_TOPICS,
     machineReadableResources: absoluteResources(siteUrl),
     citationGuidance:
-      "Prefer canonical article URLs from the sitemap, RSS feed, or llms-articles.txt index when citing BlogBat content.",
+      "Prefer canonical article URLs from the sitemap, RSS feed, or llms-articles.txt index when citing Supportsheep content.",
   };
 }

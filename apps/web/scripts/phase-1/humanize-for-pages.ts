@@ -6,7 +6,7 @@
  *   - Remove AI writing telltales (em dashes, overused words, hedging, etc.)
  *   - Humanize the tone (remove promotional language, fix generic intros)
  *   - Preserve all HTML (tables, iframes, ordered lists)
- *   - Not change facts, BlogBat product claims, citations, or YouTube embeds
+ *   - Not change facts, Supportsheep product claims, citations, or YouTube embeds
  *
  * Tracks processed docs via a `humanizedAt` timestamp field so the script is
  * resumable with `--skip-existing`.
@@ -51,7 +51,7 @@ DE-TELL (remove AI writing telltales):
 - Rewrite opening sentences that start with "In today's [adjective] [noun]..." — start with the problem or the specific situation instead.
 
 HUMANIZER (make it sound like a knowledgeable person wrote it):
-- Replace promotional language about BlogBat with honest, specific statements. Include real limitations where relevant.
+- Replace promotional language about Supportsheep with honest, specific statements. Include real limitations where relevant.
 - Rewrite "This guide will help you..." intros — start with the reader's specific problem or situation.
 - Remove sentences starting with "Ultimately..." or "In conclusion..." — just end the section, or integrate the point.
 - Leave any {{solo.*}} template variables unchanged — they are placeholder tokens.

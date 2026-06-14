@@ -51,7 +51,7 @@ describe("PATCH /api/v1/articles/[slug]", () => {
     delete process.env.NEXT_PUBLIC_BASE_URL;
 
     mockGetBlogConfig.mockResolvedValue({
-      domain: "blogbat.com",
+      domain: "supportsheep.com",
     });
 
     mockPreparePublishedArticleUpdate.mockResolvedValue({
@@ -108,7 +108,7 @@ describe("PATCH /api/v1/articles/[slug]", () => {
       to: "jane@example.com",
       guestName: "Jane Doe",
       articleTitle: "My Article Title",
-      articleUrl: "https://blogbat.com/my-article",
+      articleUrl: "https://supportsheep.com/my-article",
     });
   });
 
@@ -142,7 +142,7 @@ describe("PATCH /api/v1/articles/[slug]", () => {
       to: "jane@example.com",
       guestName: null,
       articleTitle: "My Article Title",
-      articleUrl: "https://blogbat.com/my-article",
+      articleUrl: "https://supportsheep.com/my-article",
     });
   });
 

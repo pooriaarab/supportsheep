@@ -30,11 +30,11 @@ import { FieldValue, getFirestore } from "firebase-admin/firestore";
 const DRY_RUN = process.env.DRY_RUN === "1";
 const BLOG_ID = "default";
 
-const SITE_NAME = "BlogBat";
+const SITE_NAME = "Supportsheep";
 const DEFAULT_META_TITLE =
-  "BlogBat — website & SEO guides for solopreneurs";
+  "Supportsheep — website & SEO guides for solopreneurs";
 const DEFAULT_META_DESCRIPTION =
-  "Practical guides on building and ranking a small business website with BlogBat's AI-powered tools.";
+  "Practical guides on building and ranking a small business website with Supportsheep's AI-powered tools.";
 const SITE_DESCRIPTION = DEFAULT_META_DESCRIPTION;
 
 const BLOG_CONFIG_FIELDS: Record<string, unknown> = {
@@ -60,7 +60,7 @@ const CATEGORY_UPDATES: CategoryUpdate[] = [
     slug: "uncategorized",
     displayName: "Uncategorized",
     description:
-      "General articles from the BlogBat team on building, launching, and growing a small business website with our AI-powered tools.",
+      "General articles from the Supportsheep team on building, launching, and growing a small business website with our AI-powered tools.",
   },
   {
     slug: "guides",
@@ -84,7 +84,7 @@ const CATEGORY_UPDATES: CategoryUpdate[] = [
     slug: "niches",
     displayName: "Niches",
     description:
-      "Niche-specific website and SEO guides for tradespeople, creators, coaches, restaurants, and local services using BlogBat's free AI website builder.",
+      "Niche-specific website and SEO guides for tradespeople, creators, coaches, restaurants, and local services using Supportsheep's free AI website builder.",
   },
   {
     slug: "marketing-tips",
@@ -96,7 +96,7 @@ const CATEGORY_UPDATES: CategoryUpdate[] = [
     slug: "business-tips",
     displayName: "Business Tips",
     description:
-      "Running a one-person business: pricing, operations, invoicing, and online presence advice for solopreneurs building their first brand with BlogBat.",
+      "Running a one-person business: pricing, operations, invoicing, and online presence advice for solopreneurs building their first brand with Supportsheep.",
   },
 ];
 

@@ -23,7 +23,7 @@ const VARIANT_KEY = "durable__dentists";
 
 const CONTENT = `## TL;DR
 
-Durable is an AI-first website builder designed to get solo and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a solo dentist who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to BlogBat, and explains when each is the right call.
+Durable is an AI-first website builder designed to get solo and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a solo dentist who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to Supportsheep, and explains when each is the right call.
 
 ## What Durable actually is for a dental practice
 
@@ -56,7 +56,7 @@ The architecture for a Durable-hosted dental practice marketing site is: Durable
 
 **Zero-to-live-site speed.** Durable's AI generation is the fastest in the category. For a dentist opening a new practice, transitioning from an old site, or simply needing something live before a marketing campaign, the 30-second first draft is a genuine differentiator.
 
-**All-in-one bundle reduces vendor sprawl.** Website + CRM + invoicing + AI marketing in one subscription at one price point is a real value proposition for a practice owner who wants to minimize the number of tools they manage. Squarespace and BlogBat require separate subscriptions for CRM and invoicing; Durable bundles them.
+**All-in-one bundle reduces vendor sprawl.** Website + CRM + invoicing + AI marketing in one subscription at one price point is a real value proposition for a practice owner who wants to minimize the number of tools they manage. Squarespace and Supportsheep require separate subscriptions for CRM and invoicing; Durable bundles them.
 
 **AI marketing tools for solo practitioners.** A dentist who writes their own Google Ads copy, social posts, and email newsletters benefits from Durable's AI drafting tools. The quality is adequate for basic practice marketing without a marketing agency.
 
@@ -68,24 +68,24 @@ The architecture for a Durable-hosted dental practice marketing site is: Durable
 
 **CRM is basic.** Durable's built-in CRM handles marketing leads and basic contact management. It is not a dental-specific patient management system. If a practice wants to route patient communications, recall scheduling, and appointment history through a CRM, Dentrix, Eaglesoft, or a dental-specific patient engagement platform (NexHealth) is appropriate -- not Durable's CRM.
 
-**SEO ceiling is lower than dedicated content platforms.** Durable's AI generates initial copy and handles basic SEO settings, but schema automation (Dentist, LocalBusiness, FAQPage JSON-LD), programmatic local-SEO pages, and content velocity tools are not Durable's strengths. For a solo practice competing in a local dental market through content and structured data, Durable's platform is less well-equipped than BlogBat.
+**SEO ceiling is lower than dedicated content platforms.** Durable's AI generates initial copy and handles basic SEO settings, but schema automation (Dentist, LocalBusiness, FAQPage JSON-LD), programmatic local-SEO pages, and content velocity tools are not Durable's strengths. For a solo practice competing in a local dental market through content and structured data, Durable's platform is less well-equipped than Supportsheep.
 
 **Content marketing is not the core product.** Durable is optimized for fast site generation and lead management, not for building compounding local search authority through content. A dental blog that publishes patient-education articles and generates search traffic over 12-18 months requires a CMS designed around content velocity. Durable's blog is functional but not designed for that use case.
 
 ## Solo vs Durable for a solo dental practice: the honest framing
 
-Both Durable and BlogBat are AI-first builders for the "solo service business that needs to get online fast" market. The positioning difference is clear from BlogBat's product context:
+Both Durable and Supportsheep are AI-first builders for the "solo service business that needs to get online fast" market. The positioning difference is clear from Supportsheep's product context:
 
-- **Durable bundles more tools natively.** CRM, invoicing, AI marketing suite -- Durable's proposition is "fewer subscriptions." BlogBat trades that breadth for depth: BlogBat's blog with SEO sidebar, AI drafting, and automated structured data is designed for content-driven local search authority, not for bundled marketing tooling.
-- **BlogBat's AI-onboarding generates a full multi-page first draft.** Like Durable, BlogBat uses AI to generate the initial site from a business description. BlogBat's onboarding seeds service descriptions, section content, and copy with business context across multiple pages.
-- **BlogBat's free tier has a custom domain.** Durable's paid plans start at ~$15-17/month; there is no published free tier with a connected custom domain comparable to BlogBat's free tier.
+- **Durable bundles more tools natively.** CRM, invoicing, AI marketing suite -- Durable's proposition is "fewer subscriptions." Supportsheep trades that breadth for depth: Supportsheep's blog with SEO sidebar, AI drafting, and automated structured data is designed for content-driven local search authority, not for bundled marketing tooling.
+- **Supportsheep's AI-onboarding generates a full multi-page first draft.** Like Durable, Supportsheep uses AI to generate the initial site from a business description. Supportsheep's onboarding seeds service descriptions, section content, and copy with business context across multiple pages.
+- **Supportsheep's free tier has a custom domain.** Durable's paid plans start at ~$15-17/month; there is no published free tier with a connected custom domain comparable to Supportsheep's free tier.
 - **Neither signs a HIPAA BAA.** Both platforms require the same clinical workflow split: marketing site in the CMS, PHI in a dedicated HIPAA-aware tool.
 
-## Side-by-side: Durable vs BlogBat for a dental practice
+## Side-by-side: Durable vs Supportsheep for a dental practice
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Durable</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Durable</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>AI site generation speed</td><td>Industry-leading -- complete site in ~30 seconds</td><td>Fast -- AI onboarding generates multi-page first draft from business description</td></tr>
@@ -95,16 +95,16 @@ Both Durable and BlogBat are AI-first builders for the "solo service business th
 <tr><td>Invoicing</td><td>Yes -- Stripe-powered invoicing</td><td>No -- use your practice management billing module</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Basic blog; AI copy generation; limited schema automation</td><td>Blog with SEO sidebar, AI drafting, Dentist + LocalBusiness + FAQPage schema by default</td></tr>
 <tr><td>AI marketing suite</td><td>Yes -- Google Ads copy, social post drafts, email subject lines</td><td>No -- blog and content tools; no ad-copy generator</td></tr>
-<tr><td>Best fit</td><td>BlogBat dentists who want the fastest path to a live site with bundled CRM and marketing tools</td><td>BlogBat dentists focused on content velocity, local SEO, and lower monthly cost with free tier</td></tr>
+<tr><td>Best fit</td><td>Supportsheep dentists who want the fastest path to a live site with bundled CRM and marketing tools</td><td>Supportsheep dentists focused on content velocity, local SEO, and lower monthly cost with free tier</td></tr>
 </tbody>
 </table>
 
-## Getting started: practical checklist for a dentist evaluating Durable vs BlogBat
+## Getting started: practical checklist for a dentist evaluating Durable vs Supportsheep
 
-1. **Prioritize your PHI tool first.** Before choosing a website builder, choose your practice management system and patient portal. NexHealth, Dentrix Hub, or your PMS portal is the HIPAA compliance layer. Both Durable and BlogBat link to these tools from the contact page.
-2. **Evaluate whether bundled tools reduce real friction.** Durable's CRM and invoicing add value if you genuinely use them. If you already have a PMS with patient management and your accounting uses QuickBooks, Durable's bundles may not add enough value to justify the plan cost vs BlogBat's free tier.
-3. **Test both free tiers.** Generate a site in both Durable and BlogBat from your practice description. Compare the AI outputs, the editing interface, and the content depth.
-4. **Plan your blog.** Four to six patient-education posts per year ("how often should you get a dental cleaning," "what is a crown vs a veneer," "pediatric dentist FAQ for first-time parents") compound into meaningful local search authority. BlogBat's blog is designed for this content velocity. Durable's blog is adequate for a few posts.
+1. **Prioritize your PHI tool first.** Before choosing a website builder, choose your practice management system and patient portal. NexHealth, Dentrix Hub, or your PMS portal is the HIPAA compliance layer. Both Durable and Supportsheep link to these tools from the contact page.
+2. **Evaluate whether bundled tools reduce real friction.** Durable's CRM and invoicing add value if you genuinely use them. If you already have a PMS with patient management and your accounting uses QuickBooks, Durable's bundles may not add enough value to justify the plan cost vs Supportsheep's free tier.
+3. **Test both free tiers.** Generate a site in both Durable and Supportsheep from your practice description. Compare the AI outputs, the editing interface, and the content depth.
+4. **Plan your blog.** Four to six patient-education posts per year ("how often should you get a dental cleaning," "what is a crown vs a veneer," "pediatric dentist FAQ for first-time parents") compound into meaningful local search authority. Supportsheep's blog is designed for this content velocity. Durable's blog is adequate for a few posts.
 5. **Buy your domain separately.** GoDaddy, Namecheap, or Cloudflare are reliable domain registrars. Keep your domain registration separate from your website builder subscription so switching platforms doesn't require a domain transfer.`;
 
 function countWords(text: string): number {
@@ -129,14 +129,14 @@ const FAQS: ProgrammaticFaq[] = [
       "No. Durable does not sign a BAA for its website builder, CRM, forms, or any bundled tools. Do not use Durable's contact forms or CRM to collect patient health information. The marketing site on Durable is fine for homepage, services, team bios, and content. All PHI-touching clinical workflows must go to a HIPAA-aware practice management system or patient portal.",
   },
   {
-    question: "Should I use Durable or BlogBat for my dental practice website?",
+    question: "Should I use Durable or Supportsheep for my dental practice website?",
     answer:
-      "Choose Durable if you want the fastest possible launch and the bundled CRM, invoicing, and AI marketing tools genuinely reduce friction in your practice's marketing workflow. Choose BlogBat if you want a free tier with a connected custom domain, a blog with SEO sidebar and AI drafting, automated Dentist and LocalBusiness schema, and a CMS designed for content-driven local search authority. Both platforms require the same HIPAA architecture: marketing site in the builder, clinical workflow in a dedicated HIPAA-aware tool.",
+      "Choose Durable if you want the fastest possible launch and the bundled CRM, invoicing, and AI marketing tools genuinely reduce friction in your practice's marketing workflow. Choose Supportsheep if you want a free tier with a connected custom domain, a blog with SEO sidebar and AI drafting, automated Dentist and LocalBusiness schema, and a CMS designed for content-driven local search authority. Both platforms require the same HIPAA architecture: marketing site in the builder, clinical workflow in a dedicated HIPAA-aware tool.",
   },
   {
-    question: "How does Durable's AI compare to BlogBat's AI for a dental practice?",
+    question: "How does Durable's AI compare to Supportsheep's AI for a dental practice?",
     answer:
-      "Both use AI to generate the initial website from a business description. Durable's AI generation is the fastest in the category -- under 30 seconds to a complete draft. BlogBat's AI onboarding takes slightly longer but generates a multi-page first draft seeded with business context across services, homepage, and FAQ sections. Durable's AI also generates ongoing marketing content (ad copy, social posts); BlogBat's AI is focused on blog drafting and section creation within the editor. Durable is optimized for speed and marketing breadth; BlogBat is optimized for content depth and local SEO.",
+      "Both use AI to generate the initial website from a business description. Durable's AI generation is the fastest in the category -- under 30 seconds to a complete draft. Supportsheep's AI onboarding takes slightly longer but generates a multi-page first draft seeded with business context across services, homepage, and FAQ sections. Durable's AI also generates ongoing marketing content (ad copy, social posts); Supportsheep's AI is focused on blog drafting and section creation within the editor. Durable is optimized for speed and marketing breadth; Supportsheep is optimized for content depth and local SEO.",
   },
   {
     question: "What is Durable's built-in CRM, and is it useful for dentists?",
@@ -174,14 +174,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Durable for solo dental practices -- (note: these are individual practices, not the brand) covering AI-first site generation, bundled CRM, HIPAA position, and when BlogBat is the better default for content and local search.",
-        ctaText: "Start your dental practice website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Durable for solo dental practices -- (note: these are individual practices, not the brand) covering AI-first site generation, bundled CRM, HIPAA position, and when Supportsheep is the better default for content and local search.",
+        ctaText: "Start your dental practice website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",
       },
       title: "Durable for dentists: an honest alternative",
       metaDescription:
-        "Is Durable right for a dental practice website? An honest comparison covering AI site generation speed, bundled CRM, HIPAA limits, and when BlogBat is the better default.",
+        "Is Durable right for a dental practice website? An honest comparison covering AI site generation speed, bundled CRM, HIPAA limits, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

@@ -42,9 +42,9 @@ describe("blog-settings repository", () => {
   });
 
   it("stores and retrieves a patch (round-trip)", async () => {
-    await updateBlogSettings("default", { appName: "BlogBat" }, db);
+    await updateBlogSettings("default", { appName: "Supportsheep" }, db);
     const settings = await getBlogSettings("default", db);
-    expect(settings.appName).toBe("BlogBat");
+    expect(settings.appName).toBe("Supportsheep");
     // defaults still applied for unset fields
     expect(settings.theme).toBe("system");
   });

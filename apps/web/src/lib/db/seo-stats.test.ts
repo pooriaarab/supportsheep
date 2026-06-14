@@ -5,7 +5,7 @@ describe("parseGscRow", () => {
   it("returns a parsed row for well-formed input", () => {
     const result = parseGscRow(
       {
-        keys: ["https://blogbat.com/foo", "how to foo"],
+        keys: ["https://supportsheep.com/foo", "how to foo"],
         clicks: 5,
         impressions: 100,
         ctr: 0.05,
@@ -16,7 +16,7 @@ describe("parseGscRow", () => {
 
     expect(result).toEqual({
       date: "2026-04-21",
-      url: "https://blogbat.com/foo",
+      url: "https://supportsheep.com/foo",
       query: "how to foo",
       clicks: 5,
       impressions: 100,
@@ -43,7 +43,7 @@ describe("parseGscRow", () => {
   it("returns null when keys has fewer than two entries", () => {
     const result = parseGscRow(
       {
-        keys: ["https://blogbat.com/foo"],
+        keys: ["https://supportsheep.com/foo"],
         clicks: 1,
         impressions: 2,
         ctr: 0.5,
@@ -58,7 +58,7 @@ describe("parseGscRow", () => {
   it("returns null when a key entry is not a string", () => {
     const result = parseGscRow(
       {
-        keys: ["https://blogbat.com/foo", undefined as unknown as string],
+        keys: ["https://supportsheep.com/foo", undefined as unknown as string],
         clicks: 1,
         impressions: 2,
         ctr: 0.5,
@@ -74,12 +74,12 @@ describe("parseGscRow", () => {
 describe("buildSeoStatDocId", () => {
   it("encodes a simple URL path with date prefix", () => {
     expect(
-      buildSeoStatDocId("2026-04-21", "https://blogbat.com/foo/bar"),
+      buildSeoStatDocId("2026-04-21", "https://supportsheep.com/foo/bar"),
     ).toBe("2026-04-21__foo__bar");
   });
 
   it("uses 'root' for the site root path", () => {
-    expect(buildSeoStatDocId("2026-04-21", "https://blogbat.com/")).toBe(
+    expect(buildSeoStatDocId("2026-04-21", "https://supportsheep.com/")).toBe(
       "2026-04-21__root",
     );
   });

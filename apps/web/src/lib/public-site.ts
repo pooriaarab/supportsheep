@@ -37,7 +37,7 @@ export function resolvePublicSiteUrl(): string {
   }
 
   if (process.env.NODE_ENV === "production") {
-    return "https://blogbat.com";
+    return "https://supportsheep.com";
   }
 
   return "http://localhost:3000";
@@ -53,33 +53,33 @@ export function stringifyJsonLdForScript(jsonLd: unknown): string {
 }
 
 const BLOGBAT_ORGANIZATION_SAME_AS = [
-  "https://blogbat.com",
+  "https://supportsheep.com",
   "https://github.com/pooriaarab/blogbat",
 ];
 
 const BLOGBAT_SITE_FAQS = [
   {
-    question: "What is BlogBat?",
+    question: "What is Supportsheep?",
     answer:
-      "BlogBat is a free AI website builder for small businesses and independent founders. The BlogBat blog publishes practical guidance on launching, improving, and ranking small business websites.",
+      "Supportsheep is a free AI website builder for small businesses and independent founders. The Supportsheep blog publishes practical guidance on launching, improving, and ranking small business websites.",
   },
   {
-    question: "Who publishes the BlogBat?",
+    question: "Who publishes the Supportsheep?",
     answer:
-      "The BlogBat is published by BlogBat, focused on helping small businesses create and improve websites with AI-assisted tools.",
+      "The Supportsheep is published by Supportsheep, focused on helping small businesses create and improve websites with AI-assisted tools.",
   },
   {
-    question: "What topics does the BlogBat cover?",
+    question: "What topics does the Supportsheep cover?",
     answer:
-      "The blog covers small business websites, search visibility, local SEO, portfolio sites, service pages, online tools, and examples from BlogBat users.",
+      "The blog covers small business websites, search visibility, local SEO, portfolio sites, service pages, online tools, and examples from Supportsheep users.",
   },
   {
-    question: "Can AI crawlers use BlogBat content?",
+    question: "Can AI crawlers use Supportsheep content?",
     answer:
-      "Yes. BlogBat allows search indexing, answer grounding, and model training by well-behaved AI crawlers that respect robots and machine-readable policy files.",
+      "Yes. Supportsheep allows search indexing, answer grounding, and model training by well-behaved AI crawlers that respect robots and machine-readable policy files.",
   },
   {
-    question: "Where can machines find BlogBat content feeds?",
+    question: "Where can machines find Supportsheep content feeds?",
     answer:
       "Machines can use the RSS feed, sitemap, llms.txt overview, llms-full.txt body dump, and llms-articles.txt complete article URL index.",
   },
@@ -104,7 +104,7 @@ export function buildSiteFaqSchema(siteUrl: string) {
 
 /**
  * Build the site-wide JSON-LD `@graph` emitted on every public page. Combines
- * Organization, WebSite (with SearchAction), and the BlogBat SoftwareApplication
+ * Organization, WebSite (with SearchAction), and the Supportsheep SoftwareApplication
  * node so search engines can resolve publisher, sitelinks search, and product
  * info from a single document.
  */
@@ -118,8 +118,8 @@ export function buildPublicSiteSchema(config: BlogConfig, siteUrl: string) {
       {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
-        name: "BlogBat",
-        alternateName: "BlogBat",
+        name: "Supportsheep",
+        alternateName: "Supportsheep",
         description: config.siteDescription,
         url: siteUrl,
         logo: {
@@ -132,7 +132,7 @@ export function buildPublicSiteSchema(config: BlogConfig, siteUrl: string) {
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "customer support",
-          url: "https://support.blogbat.com",
+          url: "https://support.supportsheep.com",
         },
         knowsAbout: [
           "AI website builders",
@@ -164,11 +164,11 @@ export function buildPublicSiteSchema(config: BlogConfig, siteUrl: string) {
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://blogbat.com/#software",
-        name: "BlogBat",
+        "@id": "https://supportsheep.com/#software",
+        name: "Supportsheep",
         applicationCategory: "WebApplication",
         operatingSystem: "Web",
-        url: "https://blogbat.com",
+        url: "https://supportsheep.com",
         offers: {
           "@type": "Offer",
           price: "0",
@@ -177,12 +177,12 @@ export function buildPublicSiteSchema(config: BlogConfig, siteUrl: string) {
       },
       {
         "@type": "WebApplication",
-        "@id": "https://blogbat.com/#webapplication",
-        name: "BlogBat",
+        "@id": "https://supportsheep.com/#webapplication",
+        name: "Supportsheep",
         applicationCategory: "WebsiteBuilderApplication",
         browserRequirements: "Requires a modern web browser",
         operatingSystem: "Web",
-        url: "https://blogbat.com",
+        url: "https://supportsheep.com",
         publisher: {
           "@id": `${siteUrl}/#organization`,
         },

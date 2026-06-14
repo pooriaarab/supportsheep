@@ -12,7 +12,7 @@
  *
  * Usage:
  *   DEV_LOGIN_SECRET=<secret> bun apps/web/scripts/stream-parity-smoke.ts \
- *     --base-url https://blogbat.com \
+ *     --base-url https://supportsheep.com \
  *     --interview-id <id> \
  *     --duration 30
  *
@@ -56,7 +56,7 @@ export const USAGE = `Usage:
   bun apps/web/scripts/stream-parity-smoke.ts --base-url <url> --interview-id <id> [options]
 
 Required:
-  --base-url <url>           Target host (e.g. https://blogbat.com)
+  --base-url <url>           Target host (e.g. https://supportsheep.com)
   --interview-id <id>        Interview id to subscribe to
 
 Options:

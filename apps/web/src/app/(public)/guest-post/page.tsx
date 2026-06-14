@@ -9,16 +9,16 @@ const TALLY_FORM_URL = `https://tally.so/r/${TALLY_FORM_ID}`;
 const TALLY_EMBED_URL = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
 
 export const metadata: Metadata = {
-  title: "Submit a guest blog backlink request | BlogBat",
+  title: "Submit a guest blog backlink request | Supportsheep",
   description:
-    "Share a live article that links to BlogBat and request review for a relevant backlink from an existing BlogBat post.",
+    "Share a live article that links to Supportsheep and request review for a relevant backlink from an existing Supportsheep post.",
   alternates: {
     canonical: "/guest-post",
   },
   openGraph: {
     title: "Submit a guest blog backlink request",
     description:
-      "Submit a live article URL, the BlogBat URL you mentioned, and the URL you want BlogBat to review.",
+      "Submit a live article URL, the Supportsheep URL you mentioned, and the URL you want Supportsheep to review.",
     type: "website",
     url: "/guest-post",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Submit a guest blog backlink request",
     description:
-      "Share a verified BlogBat mention and request review for a relevant backlink.",
+      "Share a verified Supportsheep mention and request review for a relevant backlink.",
   },
 };
 
@@ -40,7 +40,7 @@ export default function GuestPostSubmissionPage() {
     url: pageUrl,
     name: "Submit a guest blog backlink request",
     description:
-      "A public submission page for guest blog and backlink requests that already mention BlogBat.",
+      "A public submission page for guest blog and backlink requests that already mention Supportsheep.",
     inLanguage: "en-US",
     isPartOf: {
       "@id": `${siteUrl}/#website`,
@@ -64,10 +64,10 @@ export default function GuestPostSubmissionPage() {
             Submit a guest blog backlink request
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            If you have published a live article that links to BlogBat, send
+            If you have published a live article that links to Supportsheep, send
             us the article URL and the link you want us to review. We
             periodically verify submissions and may contact you about adding a
-            relevant link from an existing BlogBat post.
+            relevant link from an existing Supportsheep post.
           </p>
           <a
             href="#guest-post-form"
@@ -83,8 +83,8 @@ export default function GuestPostSubmissionPage() {
               What to include
             </h2>
             <p className="mt-2 max-w-3xl">
-              Share the live article where BlogBat is mentioned, the exact
-              BlogBat post URL you linked to, and the destination URL you want
+              Share the live article where Supportsheep is mentioned, the exact
+              Supportsheep post URL you linked to, and the destination URL you want
               us to consider.
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function GuestPostSubmissionPage() {
             </h2>
             <p className="mt-2 max-w-3xl">
               We check that the backlink is live and that your requested URL is
-              useful for BlogBat readers. Submission does not guarantee a link
+              useful for Supportsheep readers. Submission does not guarantee a link
               placement.
             </p>
           </div>
@@ -114,12 +114,12 @@ export default function GuestPostSubmissionPage() {
             </h2>
             <p className="mt-2 text-sm leading-6 text-muted-foreground">
               Use this form after your article is live and includes a link to
-              BlogBat. We review submissions periodically and only add links
+              Supportsheep. We review submissions periodically and only add links
               when the requested URL is relevant for readers.
             </p>
           </div>
           <iframe
-            title="BlogBat backlink request"
+            title="Supportsheep backlink request"
             src={TALLY_EMBED_URL}
             loading="eager"
             className="min-h-[1480px] w-full rounded-md border-0 bg-card"
@@ -132,7 +132,7 @@ export default function GuestPostSubmissionPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              BlogBat backlink request form
+              Supportsheep backlink request form
             </a>
             .
           </p>

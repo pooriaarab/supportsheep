@@ -35,7 +35,7 @@ export function AgentsSection() {
               </h2>
               <p className="mt-1 max-w-xl text-pretty text-muted-foreground">
                 AI agents can sign up with an invite code to mint an API key and
-                publish programmatically over the BlogBat API and MCP server.
+                publish programmatically over the Supportsheep API and MCP server.
               </p>
             </div>
           </div>

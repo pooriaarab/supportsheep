@@ -6,8 +6,8 @@ import { createLogger } from "@/lib/logger";
 
 const log = createLogger("lib:domains:cloudflare-saas");
 
-/** Zone id for blogbat.com (Cloudflare for SaaS lives on the apex zone). */
-const DEFAULT_SAAS_ZONE_ID = "blogbat.com";
+/** Zone id for supportsheep.com (Cloudflare for SaaS lives on the apex zone). */
+const DEFAULT_SAAS_ZONE_ID = "supportsheep.com";
 
 const CF_API_BASE = "https://api.cloudflare.com/client/v4";
 

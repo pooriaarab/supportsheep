@@ -51,11 +51,11 @@ Webflow also has a CMS -- redesigned in 2025 into a significantly more powerful 
 
 **No native booking.** Webflow does not have a scheduling tool. You embed a third-party scheduler (Calendly, Acuity) or add a Webflow CMS-powered inquiry form. Both are doable, but they require configuration.
 
-**Pricing is higher than general-purpose builders.** Webflow's plans for publishing a site start at $14/month (basic) for simple sites, but a photographer who needs the CMS to manage portfolio collections and a blog typically needs the CMS plan ($23/month) or higher. Webflow Ecommerce for print sales starts at $29/month. This is not prohibitive, but it is higher than Wix or BlogBat for comparable functionality.
+**Pricing is higher than general-purpose builders.** Webflow's plans for publishing a site start at $14/month (basic) for simple sites, but a photographer who needs the CMS to manage portfolio collections and a blog typically needs the CMS plan ($23/month) or higher. Webflow Ecommerce for print sales starts at $29/month. This is not prohibitive, but it is higher than Wix or Supportsheep for comparable functionality.
 
 **Hosting is Webflow-specific.** Webflow exports clean code, but the full feature set (CMS, interactions, forms) only functions on Webflow hosting. This is not a lock-in problem for most photographers, but it is worth knowing.
 
-**Not the right tool for non-designers.** This is the most important limitation. Webflow's value proposition is design precision for people who have design skills. A solo photographer who wants to manage their own website without involving a designer or developer on an ongoing basis is not Webflow's target user. Squarespace, Wix, or BlogBat are better defaults for this use case.
+**Not the right tool for non-designers.** This is the most important limitation. Webflow's value proposition is design precision for people who have design skills. A solo photographer who wants to manage their own website without involving a designer or developer on an ongoing basis is not Webflow's target user. Squarespace, Wix, or Supportsheep are better defaults for this use case.
 
 ## Who Webflow is actually right for among photographers
 
@@ -66,20 +66,20 @@ Webflow is the right choice for a photographer who:
 - **Wants to own the code.** Webflow generates exportable, portable code. Photographers who want the ability to leave Webflow and take their site code with them have that option.
 - **Prioritizes design perfectionism over workflow integration.** Webflow is for photographers who care deeply about the visual experience of the portfolio and are comfortable routing proofing, delivery, and booking to specialist tools.
 
-## BlogBat's position for photographers who don't need Webflow's complexity
+## Supportsheep's position for photographers who don't need Webflow's complexity
 
-BlogBat is designed for the "solo service business that needs a credible marketing site and wants to use content as a primary growth channel." For a photographer who is not a designer:
+Supportsheep is designed for the "solo service business that needs a credible marketing site and wants to use content as a primary growth channel." For a photographer who is not a designer:
 
-- **Free tier with custom domain.** A photographer can test BlogBat's free tier with their own domain before paying anything. Webflow's free plan limits publishing; paid is required for a real site.
-- **AI-guided onboarding.** BlogBat's onboarding generates a multi-page first draft from a business description, seeding section content with business context. No design decisions required.
+- **Free tier with custom domain.** A photographer can test Supportsheep's free tier with their own domain before paying anything. Webflow's free plan limits publishing; paid is required for a real site.
+- **AI-guided onboarding.** Supportsheep's onboarding generates a multi-page first draft from a business description, seeding section content with business context. No design decisions required.
 - **Blog with SEO sidebar and structured data.** For a photographer whose acquisition channel is local search ("Austin wedding photographer," "Napa engagement session," "[venue] portrait session photos"), a blog with an SEO sidebar, AI drafting, and automated ImageObject + Article + LocalBusiness schema reduces the per-post friction.
-- **No learning curve.** BlogBat is designed for non-technical users. There is no div block, no flexbox configuration, no interaction trigger to learn. The trade-off is design precision -- BlogBat is more constrained than Webflow but more approachable.
+- **No learning curve.** Supportsheep is designed for non-technical users. There is no div block, no flexbox configuration, no interaction trigger to learn. The trade-off is design precision -- Supportsheep is more constrained than Webflow but more approachable.
 
-## Side-by-side: Webflow vs BlogBat for photographers
+## Side-by-side: Webflow vs Supportsheep for photographers
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Webflow</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Webflow</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Design ceiling</td><td>Highest in class -- pixel-perfect custom layouts with interactions</td><td>Constrained -- AI-guided layouts, consistent but not custom</td></tr>
@@ -106,7 +106,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Webflow good for photographers?",
     answer:
-      "Webflow is good for photographers who have design skills or work with a Webflow designer. Its ceiling for custom portfolio design is higher than any template-based builder -- pixel-perfect layouts, custom interactions, and a powerful CMS for managing large editorial catalogs. For photographers who are not designers and want to manage their own site without ongoing agency involvement, Webflow's learning curve and complexity make Squarespace, Wix, or BlogBat better defaults.",
+      "Webflow is good for photographers who have design skills or work with a Webflow designer. Its ceiling for custom portfolio design is higher than any template-based builder -- pixel-perfect layouts, custom interactions, and a powerful CMS for managing large editorial catalogs. For photographers who are not designers and want to manage their own site without ongoing agency involvement, Webflow's learning curve and complexity make Squarespace, Wix, or Supportsheep better defaults.",
   },
   {
     question: "Does Webflow have client proofing for photographers?",
@@ -114,24 +114,24 @@ const FAQS: ProgrammaticFaq[] = [
       "No. Webflow does not have native client gallery proofing or delivery tools. A photographer using Webflow still needs Pixieset, Pic-Time, CloudSpot, or ShootProof for client delivery, selection, and ordering. Webflow handles the public portfolio and marketing site; the delivery tools handle the client workflow. This is the same pattern as Squarespace -- Webflow is not a photography-specific platform.",
   },
   {
-    question: "Should I use Webflow or BlogBat for my photography website?",
+    question: "Should I use Webflow or Supportsheep for my photography website?",
     answer:
-      "Choose Webflow if you have design skills (or a Webflow designer), want a fully custom visual identity with complex interactions, and need a powerful CMS for managing a large editorial portfolio. Choose BlogBat if you want a free tier with a custom domain, no learning curve, AI-guided onboarding, a blog with SEO tooling and automated structured data (ImageObject, LocalBusiness, Article), and a lower monthly cost. BlogBat is better for photographers whose acquisition channel is local search and who want to manage their own site without design expertise.",
+      "Choose Webflow if you have design skills (or a Webflow designer), want a fully custom visual identity with complex interactions, and need a powerful CMS for managing a large editorial portfolio. Choose Supportsheep if you want a free tier with a custom domain, no learning curve, AI-guided onboarding, a blog with SEO tooling and automated structured data (ImageObject, LocalBusiness, Article), and a lower monthly cost. Supportsheep is better for photographers whose acquisition channel is local search and who want to manage their own site without design expertise.",
   },
   {
     question: "How steep is Webflow's learning curve for photographers?",
     answer:
-      "Significant. Webflow's own community data and independent reviews consistently put the time to proficiency at 1-3 weeks for someone with design background. Concepts like div blocks, flexbox containers, CMS bindings, and interaction triggers are native Webflow vocabulary that must be learned before you can build and maintain the site. Photographers who are not visual designers typically either hire a Webflow specialist for the build and ongoing updates, or choose a simpler platform (Squarespace, Wix, or BlogBat) that doesn't require design vocabulary.",
+      "Significant. Webflow's own community data and independent reviews consistently put the time to proficiency at 1-3 weeks for someone with design background. Concepts like div blocks, flexbox containers, CMS bindings, and interaction triggers are native Webflow vocabulary that must be learned before you can build and maintain the site. Photographers who are not visual designers typically either hire a Webflow specialist for the build and ongoing updates, or choose a simpler platform (Squarespace, Wix, or Supportsheep) that doesn't require design vocabulary.",
   },
   {
     question: "How do photographers rank in local search with Webflow?",
     answer:
-      "Webflow produces clean semantic code with full SEO control -- heading structure, title tags, meta descriptions, canonical URLs, and schema markup (which requires code or a third-party app to add on Webflow). For local search, photographers need: location + specialty pages targeting '[city] [session type] photographer'; a blog with location-specific content (venue guides, shoot recaps); LocalBusiness and ImageObject schema; and Google Business Profile optimization. BlogBat automates the structured data; Webflow requires it to be added via code embeds. Both can rank well; the difference is the per-page setup cost.",
+      "Webflow produces clean semantic code with full SEO control -- heading structure, title tags, meta descriptions, canonical URLs, and schema markup (which requires code or a third-party app to add on Webflow). For local search, photographers need: location + specialty pages targeting '[city] [session type] photographer'; a blog with location-specific content (venue guides, shoot recaps); LocalBusiness and ImageObject schema; and Google Business Profile optimization. Supportsheep automates the structured data; Webflow requires it to be added via code embeds. Both can rank well; the difference is the per-page setup cost.",
   },
   {
     question: "What is Webflow's CMS, and does it help photographers?",
     answer:
-      "Webflow's CMS is a structured content system rebuilt in 2025 into a significantly more powerful tool -- with reference fields, collection relationships, and granular editorial control. For photographers managing large, structured portfolio catalogs (commercial photographer with hundreds of campaigns, editorial photographer with publication references, studio with multiple photographers), Webflow's CMS is genuinely strong. For a solo photographer with a portfolio of 20-50 featured projects and a blog, the CMS adds capability that Squarespace or BlogBat's simpler content systems don't provide -- at the cost of complexity.",
+      "Webflow's CMS is a structured content system rebuilt in 2025 into a significantly more powerful tool -- with reference fields, collection relationships, and granular editorial control. For photographers managing large, structured portfolio catalogs (commercial photographer with hundreds of campaigns, editorial photographer with publication references, studio with multiple photographers), Webflow's CMS is genuinely strong. For a solo photographer with a portfolio of 20-50 featured projects and a blog, the CMS adds capability that Squarespace or Supportsheep's simpler content systems don't provide -- at the cost of complexity.",
   },
 ];
 
@@ -159,14 +159,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Webflow for photographers -- where it genuinely excels (custom design, CMS depth), where it demands too much (learning curve, complexity), and when BlogBat is the better default.",
-        ctaText: "Start your photography website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Webflow for photographers -- where it genuinely excels (custom design, CMS depth), where it demands too much (learning curve, complexity), and when Supportsheep is the better default.",
+        ctaText: "Start your photography website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Photographers",
       },
       title: "Webflow for photographers: an honest alternative",
       metaDescription:
-        "Is Webflow right for a photography website? An honest comparison covering design ceiling, learning curve, client proofing gaps, CMS complexity, and when BlogBat is the better default.",
+        "Is Webflow right for a photography website? An honest comparison covering design ceiling, learning curve, client proofing gaps, CMS complexity, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

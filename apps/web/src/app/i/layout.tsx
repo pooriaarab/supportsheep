@@ -10,7 +10,7 @@
  * `(public)/i/` only added a nested div underneath PublicShell.
  *
  * The in-call surface (`InCallLayoutDesktop`) renders its own sticky
- * header with the BlogBat wordmark + "Interview" label, so we deliberately
+ * header with the Supportsheep wordmark + "Interview" label, so we deliberately
  * leave the layout chrome-less here — no extra top bar, no announcement
  * banner. The page body takes the full viewport.
  */

@@ -38,7 +38,7 @@ const webhookRow = {
   config: {
     mode: "article_receiver",
     endpointPath: "/api/v1/integrations/webhooks/integration-1",
-    endpointUrl: "https://blogbat.com/api/v1/integrations/webhooks/integration-1",
+    endpointUrl: "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
     authType: "bearer",
     token: "secret-token",
     tokenPreview: "••••oken",
@@ -64,7 +64,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
 
     const response = await POST(
       new Request(
-        "https://blogbat.com/api/v1/integrations/webhooks/integration-1",
+        "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -83,7 +83,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
 
     const response = await POST(
       new Request(
-        "https://blogbat.com/api/v1/integrations/webhooks/integration-1",
+        "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
           method: "POST",
           headers: {
@@ -141,7 +141,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
 
     const response = await POST(
       new Request(
-        "https://blogbat.com/api/v1/integrations/webhooks/integration-1",
+        "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
           method: "POST",
           headers: {

@@ -23,7 +23,7 @@ const VARIANT_KEY = "squarespace__lawyers";
 
 const CONTENT = `## TL;DR
 
-Squarespace is a reasonable starting point for a solo attorney or small law firm that needs a professional web presence fast. Its templates are genuinely polished, it handles hosting, SSL, and domains in one bill, and it requires no developer involvement. The ceilings arrive when the practice grows: Squarespace's SEO customization surface is shallow compared to WordPress, its form blocks cannot collect confidential client information compliantly, and its integration ecosystem lacks the depth legal-specific intake, CRM, and scheduling tools require. This page covers the honest trade-offs and explains when BlogBat is a better default for a solo or boutique firm.
+Squarespace is a reasonable starting point for a solo attorney or small law firm that needs a professional web presence fast. Its templates are genuinely polished, it handles hosting, SSL, and domains in one bill, and it requires no developer involvement. The ceilings arrive when the practice grows: Squarespace's SEO customization surface is shallow compared to WordPress, its form blocks cannot collect confidential client information compliantly, and its integration ecosystem lacks the depth legal-specific intake, CRM, and scheduling tools require. This page covers the honest trade-offs and explains when Supportsheep is a better default for a solo or boutique firm.
 
 ## Does a law firm actually need a custom website?
 
@@ -69,20 +69,20 @@ Legal-specific workflows -- calendared conflict checks, court date tracking, tru
 
 Squarespace has limited accessibility controls compared to a fully developer-controlled platform. Law firms are actually at higher risk of ADA Title III website-accessibility lawsuits than most service businesses, and Squarespace templates are not certified WCAG 2.1 AA compliant out of the box. This is not unique to Squarespace -- WordPress without an accessibility plugin has the same problem -- but it is worth noting for a practice type whose own clients are sometimes disabled individuals.
 
-## BlogBat's position for a solo or boutique attorney
+## Supportsheep's position for a solo or boutique attorney
 
-BlogBat is designed for the "1-5 person professional service business that needs a credible marketing site without becoming a part-time webmaster." For a solo attorney:
+Supportsheep is designed for the "1-5 person professional service business that needs a credible marketing site without becoming a part-time webmaster." For a solo attorney:
 
-- **Free tier with custom domain.** A solo attorney launching a new practice can launch a branded site on BlogBat's free tier while the matter pipeline is still being built. Squarespace requires a paid plan once the 14-day trial ends.
-- **Blog with SEO sidebar and AI drafting.** BlogBat's blog is built around content velocity: title/meta audits, internal link suggestions, FAQPage JSON-LD for FAQ content. An attorney who wants to write monthly explainer posts benefits from a CMS that surfaces SEO signals inline rather than leaving them for later.
+- **Free tier with custom domain.** A solo attorney launching a new practice can launch a branded site on Supportsheep's free tier while the matter pipeline is still being built. Squarespace requires a paid plan once the 14-day trial ends.
+- **Blog with SEO sidebar and AI drafting.** Supportsheep's blog is built around content velocity: title/meta audits, internal link suggestions, FAQPage JSON-LD for FAQ content. An attorney who wants to write monthly explainer posts benefits from a CMS that surfaces SEO signals inline rather than leaving them for later.
 - **LegalService and LocalBusiness schema by default.** Structured data for a local law firm (practice area, address, phone, attorney Person schema) ships without a plugin or a code block injection.
-- **No client intake in the CMS, by design.** BlogBat is a marketing site builder, not a legal CRM. The correct split -- marketing site on BlogBat, case intake on Clio Grow, Lawmatics, or MyCase -- is the same architecture most legal-marketing agencies recommend. That keeps privileged information out of a general-purpose CMS entirely.
+- **No client intake in the CMS, by design.** Supportsheep is a marketing site builder, not a legal CRM. The correct split -- marketing site on Supportsheep, case intake on Clio Grow, Lawmatics, or MyCase -- is the same architecture most legal-marketing agencies recommend. That keeps privileged information out of a general-purpose CMS entirely.
 
-## Side-by-side: Squarespace vs BlogBat for a law firm
+## Side-by-side: Squarespace vs Supportsheep for a law firm
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Squarespace (Basic / Core / Plus)</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Squarespace (Basic / Core / Plus)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Starting price (annual billing)</td><td>$16/mo (Basic) -- $39/mo (Plus)</td><td>Free tier with custom domain</td></tr>
@@ -94,13 +94,13 @@ BlogBat is designed for the "1-5 person professional service business that needs
 </tbody>
 </table>
 
-## Legal intake tools that pair well with Squarespace or BlogBat
+## Legal intake tools that pair well with Squarespace or Supportsheep
 
 - **Clio Grow** -- intake CRM from Clio; collects lead and matter details, runs conflict checks, handles e-signature for retainers. Works as the intake layer behind either CMS.
 - **Lawmatics** -- legal CRM and intake automation; strong on automated follow-up sequences for leads who don't convert immediately.
 - **MyCase** -- full practice-management platform with a client portal and intake forms.
 - **PracticePanther** -- competitive to MyCase; pairs well with smaller firms.
-- **Calendly** -- for scheduling initial consultations; link from your Squarespace or BlogBat contact page to a Calendly booking page.
+- **Calendly** -- for scheduling initial consultations; link from your Squarespace or Supportsheep contact page to a Calendly booking page.
 
 ## A practical launch checklist for a solo attorney's website
 
@@ -108,7 +108,7 @@ BlogBat is designed for the "1-5 person professional service business that needs
 2. **Write an attorney bio that converts.** Bar number, law school, years in practice, notable outcomes (where rules permit), and a clear statement of who you serve. This is the most-visited page on most attorney sites.
 3. **Claim and optimize your Google Business Profile.** A local map-pack result drives more calls than organic results for many solo attorneys. This is separate from but complementary to your website.
 4. **Set up LegalService and LocalBusiness structured data.** Google's rich results for legal services are modest but real. Get the schema right at launch rather than retrofitting.
-5. **Route intake to a legal CRM, not a CMS form.** The Squarespace or BlogBat contact page should say "tell us a bit about your matter" with a disclaimer, then hand off to Clio Grow, Lawmatics, or your preferred intake tool.
+5. **Route intake to a legal CRM, not a CMS form.** The Squarespace or Supportsheep contact page should say "tell us a bit about your matter" with a disclaimer, then hand off to Clio Grow, Lawmatics, or your preferred intake tool.
 6. **Start a blog with a publication cadence you can sustain.** One post per month that answers a real question your clients ask ("how long does probate take in [state]?") compounds into real search traffic within 12-18 months.`;
 
 function countWords(text: string): number {
@@ -135,22 +135,22 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What SEO limitations does Squarespace have for attorneys?",
     answer:
-      "Squarespace supports the basics: title tags, meta descriptions, image alt text, sitemap, and clean URLs. It lacks depth for competitive legal SEO: heading support stops at H3 in most templates, LegalService and Attorney schema markup requires a custom code block injection rather than automated CMS output, programmatic local-SEO pages (one page per neighborhood + practice area) must be hand-built, and redirect management for larger sites is cumbersome. BlogBat automates LegalService and LocalBusiness schema by default and is designed around content velocity, which is the realistic lever for a solo attorney's SEO strategy.",
+      "Squarespace supports the basics: title tags, meta descriptions, image alt text, sitemap, and clean URLs. It lacks depth for competitive legal SEO: heading support stops at H3 in most templates, LegalService and Attorney schema markup requires a custom code block injection rather than automated CMS output, programmatic local-SEO pages (one page per neighborhood + practice area) must be hand-built, and redirect management for larger sites is cumbersome. Supportsheep automates LegalService and LocalBusiness schema by default and is designed around content velocity, which is the realistic lever for a solo attorney's SEO strategy.",
   },
   {
-    question: "Should I use Squarespace or BlogBat for my law firm website?",
+    question: "Should I use Squarespace or Supportsheep for my law firm website?",
     answer:
-      "Choose Squarespace if visual design quality and template variety are the most important factors for your practice brand, and if you're comfortable building a separate legal intake stack (Clio Grow, Lawmatics). Choose BlogBat if you want a free tier with a custom domain at launch, a blog with an SEO sidebar and AI-assisted drafting, and structured data (LegalService, LocalBusiness, FAQPage) built in rather than bolted on. Both platforms require the same architectural discipline: marketing site in the CMS, privileged intake in a legal CRM.",
+      "Choose Squarespace if visual design quality and template variety are the most important factors for your practice brand, and if you're comfortable building a separate legal intake stack (Clio Grow, Lawmatics). Choose Supportsheep if you want a free tier with a custom domain at launch, a blog with an SEO sidebar and AI-assisted drafting, and structured data (LegalService, LocalBusiness, FAQPage) built in rather than bolted on. Both platforms require the same architectural discipline: marketing site in the CMS, privileged intake in a legal CRM.",
   },
   {
-    question: "What legal CRM tools work with Squarespace and BlogBat?",
+    question: "What legal CRM tools work with Squarespace and Supportsheep?",
     answer:
-      "Clio Grow (intake CRM from Clio, the market-leading legal PM platform), Lawmatics (intake automation with strong follow-up sequences), MyCase (full practice management with client portal), PracticePanther, and SmokeBall. All of these handle intake forms, conflict checks, e-signature for retainers, and matter management in a purpose-built tool. They link from your website's contact page -- you don't embed confidential intake inside Squarespace or BlogBat.",
+      "Clio Grow (intake CRM from Clio, the market-leading legal PM platform), Lawmatics (intake automation with strong follow-up sequences), MyCase (full practice management with client portal), PracticePanther, and SmokeBall. All of these handle intake forms, conflict checks, e-signature for retainers, and matter management in a purpose-built tool. They link from your website's contact page -- you don't embed confidential intake inside Squarespace or Supportsheep.",
   },
   {
     question: "How does local SEO work for solo attorneys?",
     answer:
-      "Local SEO for a solo attorney has three layers: (1) Google Business Profile -- claim it, fill every field, collect reviews, post updates; map-pack results drive more calls than organic blue-links for many local legal queries. (2) On-site practice-area pages -- one page per distinct area, each targeting a '[practice area] attorney [city]' cluster with clear structured data. (3) Content -- blog posts answering specific questions your clients ask, building topical authority and capturing informational queries that precede a hire decision. BlogBat's blog with SEO sidebar and automated FAQPage schema is designed for exactly this content-compounding approach.",
+      "Local SEO for a solo attorney has three layers: (1) Google Business Profile -- claim it, fill every field, collect reviews, post updates; map-pack results drive more calls than organic blue-links for many local legal queries. (2) On-site practice-area pages -- one page per distinct area, each targeting a '[practice area] attorney [city]' cluster with clear structured data. (3) Content -- blog posts answering specific questions your clients ask, building topical authority and capturing informational queries that precede a hire decision. Supportsheep's blog with SEO sidebar and automated FAQPage schema is designed for exactly this content-compounding approach.",
   },
 ];
 
@@ -178,14 +178,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Squarespace for solo attorneys and small law firms -- covering SEO ceiling, intake form limits, and when BlogBat is the better default for content and local search.",
-        ctaText: "Start your law firm website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Squarespace for solo attorneys and small law firms -- covering SEO ceiling, intake form limits, and when Supportsheep is the better default for content and local search.",
+        ctaText: "Start your law firm website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Lawyers",
       },
       title: "Squarespace for lawyers: an honest alternative",
       metaDescription:
-        "Is Squarespace right for a law firm? An honest comparison covering SEO limits, intake form risks, legal CRM integration, and when BlogBat is the better default.",
+        "Is Squarespace right for a law firm? An honest comparison covering SEO limits, intake form risks, legal CRM integration, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

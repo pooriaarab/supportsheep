@@ -23,7 +23,7 @@ const VARIANT_KEY = "wix__photographers";
 
 const CONTENT = `## TL;DR
 
-Wix is a strong contender for photographers who want a flexible, all-in-one platform: its Pro Gallery handles full-resolution image display, its client gallery tool (Wix Photo Albums) covers basic proofing without a third-party subscription, and its ecommerce engine handles digital and print sales. The tradeoffs are editor complexity (Wix's freedom can produce inconsistent layouts without design discipline), a SEO ceiling below WordPress for photographers building content-heavy brands, and a template library that is competitive but not as design-forward as Squarespace's for photographers specifically. This page covers both sides and explains where BlogBat fits for a photographer building a search-driven brand.
+Wix is a strong contender for photographers who want a flexible, all-in-one platform: its Pro Gallery handles full-resolution image display, its client gallery tool (Wix Photo Albums) covers basic proofing without a third-party subscription, and its ecommerce engine handles digital and print sales. The tradeoffs are editor complexity (Wix's freedom can produce inconsistent layouts without design discipline), a SEO ceiling below WordPress for photographers building content-heavy brands, and a template library that is competitive but not as design-forward as Squarespace's for photographers specifically. This page covers both sides and explains where Supportsheep fits for a photographer building a search-driven brand.
 
 ## Wix's genuine strengths for photographers
 
@@ -37,11 +37,11 @@ Wix is a strong contender for photographers who want a flexible, all-in-one plat
 
 **200+ photography templates.** Wix has a large template library with photography-specific categories. While the design floor is lower than Squarespace's photography templates, the variety is wide -- from minimalist portfolio grids to full-bleed editorial designs.
 
-**Editor flexibility.** Wix's drag-and-drop editor allows more arbitrary layout control than Squarespace or BlogBat. A photographer with a distinctive compositional sense who wants their website to reflect their artistic approach can implement non-standard layouts without CSS.
+**Editor flexibility.** Wix's drag-and-drop editor allows more arbitrary layout control than Squarespace or Supportsheep. A photographer with a distinctive compositional sense who wants their website to reflect their artistic approach can implement non-standard layouts without CSS.
 
 ## Where Wix breaks down for photographers
 
-**Editor complexity is real.** Wix's flexibility is also a liability for photographers who are not visual designers. The drag-and-drop freedom can produce inconsistent spacing, misaligned elements, and competing design choices that undermine the portfolio's credibility. Squarespace constrains you more; that constraint is protective for non-designers. BlogBat constrains you even more and bets on content over visual spectacle.
+**Editor complexity is real.** Wix's flexibility is also a liability for photographers who are not visual designers. The drag-and-drop freedom can produce inconsistent spacing, misaligned elements, and competing design choices that undermine the portfolio's credibility. Squarespace constrains you more; that constraint is protective for non-designers. Supportsheep constrains you even more and bets on content over visual spectacle.
 
 **Wix Photo Albums is not a full proofing tool.** Wix Photo Albums handles basic private gallery sharing and favoriting. It does not support: batch image selection with approval workflows, automated fulfillment ordering through a print lab, watermarking controls, download limits per image, or the polished client experience of Pixieset or Pic-Time. Photographers whose clients expect a professional gallery delivery experience will still pair Wix with a dedicated delivery tool.
 
@@ -70,20 +70,20 @@ Both are strong defaults for photographers. The choice depends on priorities:
 - **Wix wins on workflow integration.** Wix's native booking, basic proofing (Photo Albums), and ecommerce engine handle more of the photographer's workflow in one platform. A photographer who wants minimal vendor sprawl benefits from Wix's more integrated stack.
 - **Both have similar SEO ceilings.** Neither Wix nor Squarespace automates the schema and programmatic SEO that a content-heavy photography brand eventually needs.
 
-## BlogBat's position for a photographer building a search-driven brand
+## Supportsheep's position for a photographer building a search-driven brand
 
-BlogBat is designed for "the solo service business that wants a credible content-led marketing site." For a photographer, that maps to:
+Supportsheep is designed for "the solo service business that wants a credible content-led marketing site." For a photographer, that maps to:
 
-- **A photographer whose primary acquisition channel is search, not social.** Wedding and portrait photographers who rank for "[city] wedding photographer" or "[venue] engagement session photos" are building a compounding SEO asset. BlogBat's blog with an SEO sidebar and AI drafting reduces the per-post friction of that content strategy.
-- **Free tier with custom domain.** A photographer building a new brand can attach their domain to BlogBat before paying. Wix's free tier shows platform branding.
-- **Structured data for photographers.** ImageObject schema on portfolio pages, LocalBusiness schema with service area, Article and FAQPage schema on relevant pages ship by default in BlogBat. Wix requires these to be added via a code block.
-- **Honest about what it doesn't replace.** BlogBat is a marketing site builder, not a client gallery platform. A photographer using BlogBat still needs Pixieset or Pic-Time for client delivery, Honeybook or Dubsado for CRM, and a scheduling tool for bookings. The marketing site layer is where BlogBat competes.
+- **A photographer whose primary acquisition channel is search, not social.** Wedding and portrait photographers who rank for "[city] wedding photographer" or "[venue] engagement session photos" are building a compounding SEO asset. Supportsheep's blog with an SEO sidebar and AI drafting reduces the per-post friction of that content strategy.
+- **Free tier with custom domain.** A photographer building a new brand can attach their domain to Supportsheep before paying. Wix's free tier shows platform branding.
+- **Structured data for photographers.** ImageObject schema on portfolio pages, LocalBusiness schema with service area, Article and FAQPage schema on relevant pages ship by default in Supportsheep. Wix requires these to be added via a code block.
+- **Honest about what it doesn't replace.** Supportsheep is a marketing site builder, not a client gallery platform. A photographer using Supportsheep still needs Pixieset or Pic-Time for client delivery, Honeybook or Dubsado for CRM, and a scheduling tool for bookings. The marketing site layer is where Supportsheep competes.
 
-## Side-by-side: Wix vs BlogBat for photographers
+## Side-by-side: Wix vs Supportsheep for photographers
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Wix (Core / Business)</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Wix (Core / Business)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Starting price (annual billing)</td><td>$29/mo (Core) -- $36/mo (Business)</td><td>Free tier with custom domain</td></tr>
@@ -96,13 +96,13 @@ BlogBat is designed for "the solo service business that wants a credible content
 </tbody>
 </table>
 
-## Five questions for a photographer deciding between Wix and BlogBat
+## Five questions for a photographer deciding between Wix and Supportsheep
 
 1. **Do you need native booking on your website?** Wix Bookings is more integrated than a Calendly link. If a "Book a Session" button that opens availability on the site is important, Wix wins.
-2. **Do you sell prints or digital products?** Wix Commerce handles this natively; BlogBat does not. If product sales are a meaningful revenue channel, Wix is the stronger platform.
-3. **Is visual template design your top priority?** Squarespace wins here; Wix is second; BlogBat is last. If the visual portfolio experience is the deciding factor, Wix or Squarespace is the right call.
-4. **Is search-driven content your primary client acquisition channel?** Photographers who rank for local keywords through consistent blogging benefit most from BlogBat's content-velocity tooling: SEO sidebar, AI drafting, automated structured data.
-5. **What's your budget?** BlogBat's free tier with a custom domain is a different starting point than Wix Core at $29/month.`;
+2. **Do you sell prints or digital products?** Wix Commerce handles this natively; Supportsheep does not. If product sales are a meaningful revenue channel, Wix is the stronger platform.
+3. **Is visual template design your top priority?** Squarespace wins here; Wix is second; Supportsheep is last. If the visual portfolio experience is the deciding factor, Wix or Squarespace is the right call.
+4. **Is search-driven content your primary client acquisition channel?** Photographers who rank for local keywords through consistent blogging benefit most from Supportsheep's content-velocity tooling: SEO sidebar, AI drafting, automated structured data.
+5. **What's your budget?** Supportsheep's free tier with a custom domain is a different starting point than Wix Core at $29/month.`;
 
 function countWords(text: string): number {
   const stripped = text
@@ -118,7 +118,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Wix good for photographers?",
     answer:
-      "Yes, particularly for photographers who want an integrated platform with native booking (Wix Bookings), basic client proofing (Wix Photo Albums), and ecommerce for print or digital sales (Wix Commerce) -- all in one subscription. The tradeoffs are editor complexity (Wix's layout freedom can produce inconsistent results without design discipline), a template library that is not as design-forward as Squarespace's for photography specifically, and a SEO ceiling below WordPress for content-heavy brands. For a photographer whose primary acquisition channel is search, BlogBat's content machinery is a stronger default.",
+      "Yes, particularly for photographers who want an integrated platform with native booking (Wix Bookings), basic client proofing (Wix Photo Albums), and ecommerce for print or digital sales (Wix Commerce) -- all in one subscription. The tradeoffs are editor complexity (Wix's layout freedom can produce inconsistent results without design discipline), a template library that is not as design-forward as Squarespace's for photography specifically, and a SEO ceiling below WordPress for content-heavy brands. For a photographer whose primary acquisition channel is search, Supportsheep's content machinery is a stronger default.",
   },
   {
     question: "Does Wix have client proofing for photographers?",
@@ -126,9 +126,9 @@ const FAQS: ProgrammaticFaq[] = [
       "Yes, through Wix Photo Albums -- but with limitations. Wix Photo Albums lets you create private client galleries where clients can view images, mark favorites, and leave comments. It does not support: professional selection workflows, batch download permissions, print ordering through a professional lab, or the polished client experience of Pixieset or Pic-Time. Photographers whose clients expect a dedicated gallery delivery experience typically still use a specialist tool (Pixieset, Pic-Time, ShootProof, CloudSpot) alongside Wix.",
   },
   {
-    question: "Should I use Wix or BlogBat for my photography website?",
+    question: "Should I use Wix or Supportsheep for my photography website?",
     answer:
-      "Choose Wix if you want native booking (Wix Bookings), basic client proofing (Wix Photo Albums), and ecommerce for print or digital product sales in one platform -- and if layout flexibility matters for your brand expression. Choose BlogBat if your primary acquisition channel is search-driven content (blog posts, venue guides, session recaps, local SEO pages) and you want structured data (ImageObject, LocalBusiness, Article), an SEO sidebar, and AI-assisted blog drafting built in rather than added as an afterthought. BlogBat's free tier with a custom domain is also a different cost proposition than Wix Core at $29/month.",
+      "Choose Wix if you want native booking (Wix Bookings), basic client proofing (Wix Photo Albums), and ecommerce for print or digital product sales in one platform -- and if layout flexibility matters for your brand expression. Choose Supportsheep if your primary acquisition channel is search-driven content (blog posts, venue guides, session recaps, local SEO pages) and you want structured data (ImageObject, LocalBusiness, Article), an SEO sidebar, and AI-assisted blog drafting built in rather than added as an afterthought. Supportsheep's free tier with a custom domain is also a different cost proposition than Wix Core at $29/month.",
   },
   {
     question: "Can I sell prints directly from a Wix photography website?",
@@ -138,7 +138,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do photographers do local SEO for their website?",
     answer:
-      "Local SEO for photographers centers on: (1) location + specialty pages targeting '[location] [session type] photographer' queries; (2) blog content -- venue guides, session recaps at specific locations, seasonal content that targets informational queries and builds topical authority; (3) Google Business Profile -- service area, specialty, client reviews; (4) ImageObject and LocalBusiness schema markup to signal the page's subject to search engines. BlogBat ships ImageObject, LocalBusiness, and Article schema by default; Wix requires code injection to add these.",
+      "Local SEO for photographers centers on: (1) location + specialty pages targeting '[location] [session type] photographer' queries; (2) blog content -- venue guides, session recaps at specific locations, seasonal content that targets informational queries and builds topical authority; (3) Google Business Profile -- service area, specialty, client reviews; (4) ImageObject and LocalBusiness schema markup to signal the page's subject to search engines. Supportsheep ships ImageObject, LocalBusiness, and Article schema by default; Wix requires code injection to add these.",
   },
   {
     question: "What is the difference between Wix and Squarespace for photographers?",
@@ -171,14 +171,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Wix for photographers -- Pro Gallery display, native client proofing, ecommerce, and the editor complexity tradeoffs -- plus where BlogBat fits for search-driven photographers.",
-        ctaText: "Start your photography website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Wix for photographers -- Pro Gallery display, native client proofing, ecommerce, and the editor complexity tradeoffs -- plus where Supportsheep fits for search-driven photographers.",
+        ctaText: "Start your photography website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Photographers",
       },
       title: "Wix for photographers: an honest alternative",
       metaDescription:
-        "Is Wix right for a photography website? An honest comparison covering Pro Gallery, client proofing via Wix Photo Albums, ecommerce, SEO ceiling, and when BlogBat is the better default.",
+        "Is Wix right for a photography website? An honest comparison covering Pro Gallery, client proofing via Wix Photo Albums, ecommerce, SEO ceiling, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

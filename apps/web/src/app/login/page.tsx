@@ -3,7 +3,7 @@ import { LoginForm } from "@/components/auth/login-form";
 
 export const metadata: Metadata = {
   title: "Sign In",
-  description: "Sign in to manage BlogBat content and settings.",
+  description: "Sign in to manage Supportsheep content and settings.",
   robots: { index: false, follow: false },
 };
 

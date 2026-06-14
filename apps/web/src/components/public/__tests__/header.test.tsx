@@ -5,8 +5,8 @@ import type { BlogConfig } from "@repo/types";
 
 const config: BlogConfig = {
   blogId: "default",
-  siteName: "BlogBat",
-  siteDescription: "The BlogBat demo blog.",
+  siteName: "Supportsheep",
+  siteDescription: "The Supportsheep demo blog.",
   logo: "",
   homepage: {
     layout: "grid",
@@ -14,8 +14,8 @@ const config: BlogConfig = {
     featuredCategory: null,
   },
   seo: {
-    defaultMetaTitle: "BlogBat",
-    defaultMetaDescription: "The BlogBat demo blog.",
+    defaultMetaTitle: "Supportsheep",
+    defaultMetaDescription: "The Supportsheep demo blog.",
     googleAnalyticsId: "",
     clarityId: "",
   },
@@ -36,12 +36,12 @@ const config: BlogConfig = {
 };
 
 describe("PublicHeader", () => {
-  it("falls back to the BlogBat logo when no custom header brand is configured", () => {
+  it("falls back to the Supportsheep logo when no custom header brand is configured", () => {
     const html = renderToStaticMarkup(<PublicHeader config={config} />);
 
     expect(html).toContain('href="/"');
     expect(html).toContain('src="/blogbat-header-logo.svg"');
-    expect(html).toContain('alt="BlogBat logo"');
+    expect(html).toContain('alt="Supportsheep logo"');
     expect(html).toContain('href="/tools"');
   });
 
@@ -77,7 +77,7 @@ describe("PublicHeader", () => {
     expect(html).toContain("background-color:#1d1133");
   });
 
-  it("renders the default BlogBat logo when no uploaded header logo is configured", () => {
+  it("renders the default Supportsheep logo when no uploaded header logo is configured", () => {
     const html = renderToStaticMarkup(
       <PublicHeader
         config={{

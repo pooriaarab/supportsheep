@@ -80,8 +80,8 @@ describe("InCallLayoutDesktop", () => {
       />
     );
 
-    // Header Logo and Titles — BlogBat wordmark SVG + "Interview" label.
-    expect(html).toContain('alt="BlogBat"');
+    // Header Logo and Titles — Supportsheep wordmark SVG + "Interview" label.
+    expect(html).toContain('alt="Supportsheep"');
     expect(html).toContain("Interview");
     expect(html).toContain("SaaS Scaling Strategies");
     expect(html).toContain("Jane Founder");

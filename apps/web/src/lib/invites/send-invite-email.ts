@@ -5,7 +5,7 @@ import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { createLogger } from "@/lib/logger";
 
 const log = createLogger("invites:email");
-const FROM = process.env.AUTH_EMAIL_FROM ?? "auth@blogbat.com";
+const FROM = process.env.AUTH_EMAIL_FROM ?? "auth@supportsheep.com";
 
 function escapeHtml(str: string): string {
   return str
@@ -27,10 +27,10 @@ interface EmailBinding {
 
 /**
  * Build the public accept-invite URL from BETTER_AUTH_URL (the canonical app
- * origin). Falls back to https://app.blogbat.com when the env var is unset.
+ * origin). Falls back to https://app.supportsheep.com when the env var is unset.
  */
 export function buildAcceptInviteUrl(token: string): string {
-  const base = (process.env.BETTER_AUTH_URL ?? "https://app.blogbat.com").replace(
+  const base = (process.env.BETTER_AUTH_URL ?? "https://app.supportsheep.com").replace(
     /\/+$/,
     "",
   );
@@ -59,7 +59,7 @@ export async function sendInviteEmail({
   acceptUrl: string;
 }): Promise<void> {
   const env = getCloudflareContext().env as { EMAIL?: EmailBinding };
-  const subject = `You're invited to join ${blogName} on BlogBat`;
+  const subject = `You're invited to join ${blogName} on Supportsheep`;
   const text = `You've been invited to join ${blogName} as a ${role}. Accept your invite: ${acceptUrl}`;
   const html = `<p>You've been invited to join <strong>${escapeHtml(blogName)}</strong> as a ${escapeHtml(role)}.</p><p><a href="${escapeHtml(acceptUrl)}">Accept your invite</a></p>`;
 
@@ -68,7 +68,7 @@ export async function sendInviteEmail({
       await env.EMAIL.send({ to: email, from: FROM, subject, text, html });
       return;
     } catch (err) {
-      // Delivery not configured yet (e.g. blogbat.com not onboarded in CF Email
+      // Delivery not configured yet (e.g. supportsheep.com not onboarded in CF Email
       // Sending) — never break the invite flow over a delivery failure. Fall
       // through to logging so the link is recoverable.
       // Never log `acceptUrl` — it carries the invite token. Log identifiers

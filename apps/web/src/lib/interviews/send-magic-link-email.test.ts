@@ -94,10 +94,10 @@ describe("send-magic-link-email", () => {
     expect(payload.subject).toBe("Your interview sign-in link");
     // The URL goes into the email body, NOT into the logs.
     expect(payload.html).toContain(
-      "https://blogbat.com/api/v1/interviews/magic-link?share=share_token_abc123&code=magic_token_xyz789",
+      "https://supportsheep.com/api/v1/interviews/magic-link?share=share_token_abc123&code=magic_token_xyz789",
     );
     expect(payload.text).toContain(
-      "https://blogbat.com/api/v1/interviews/magic-link?share=share_token_abc123&code=magic_token_xyz789",
+      "https://supportsheep.com/api/v1/interviews/magic-link?share=share_token_abc123&code=magic_token_xyz789",
     );
   });
 

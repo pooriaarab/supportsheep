@@ -1,14 +1,14 @@
 import { resolvePublicSiteUrl } from "@/lib/public-site";
 
 export const siteConfig = {
-  name: "BlogBat",
+  name: "Supportsheep",
   shortName: "SB",
   description:
-    "Practical guides on building and ranking a small business website with BlogBat's AI-powered tools.",
+    "Practical guides on building and ranking a small business website with Supportsheep's AI-powered tools.",
   url: resolvePublicSiteUrl(),
   ogImage: "/og.png",
-  creator: "BlogBat",
-  publisher: "BlogBat",
+  creator: "Supportsheep",
+  publisher: "Supportsheep",
   keywords: [
     "small business website",
     "seo for solopreneurs",

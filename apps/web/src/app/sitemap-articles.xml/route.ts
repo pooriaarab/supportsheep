@@ -18,7 +18,7 @@ import {
 } from "@/lib/sitemap-xml";
 
 // TODO(M5-cache): path-keyed ISR (`revalidate`). Make the cache key host-aware
-// before serving distinct tenants on `{slug}.blogbat.com`.
+// before serving distinct tenants on `{slug}.supportsheep.com`.
 export const revalidate = 3600;
 
 function toLastmod(...values: Array<string | undefined>): string {

@@ -5,7 +5,7 @@ describe("free tool callouts", () => {
   it("adds safe UTM parameters to https URLs", () => {
     expect(
       buildCalloutUrl({
-        baseUrl: "https://blogbat.com/",
+        baseUrl: "https://supportsheep.com/",
         toolSlug: "blog-outline-generator",
         utm: {
           source: "solo_blog",
@@ -16,7 +16,7 @@ describe("free tool callouts", () => {
         },
       }),
     ).toBe(
-      "https://blogbat.com/?utm_source=solo_blog&utm_medium=free_tool&utm_campaign=blog-outline-generator&utm_content=bottom_callout",
+      "https://supportsheep.com/?utm_source=solo_blog&utm_medium=free_tool&utm_campaign=blog-outline-generator&utm_content=bottom_callout",
     );
   });
 
@@ -24,7 +24,7 @@ describe("free tool callouts", () => {
     expect(
       buildCalloutUrl({
         baseUrl:
-          "https://blogbat.com/start?ref=blog&utm_source=old&utm_campaign=old",
+          "https://supportsheep.com/start?ref=blog&utm_source=old&utm_campaign=old",
         toolSlug: "word-counter",
         utm: {
           source: "solo_blog",
@@ -35,14 +35,14 @@ describe("free tool callouts", () => {
         },
       }),
     ).toBe(
-      "https://blogbat.com/start?ref=blog&utm_source=solo_blog&utm_campaign=word-counter&utm_medium=free_tool&utm_term=word+counter",
+      "https://supportsheep.com/start?ref=blog&utm_source=solo_blog&utm_campaign=word-counter&utm_medium=free_tool&utm_term=word+counter",
     );
   });
 
   it("rejects non-https callout destinations", () => {
     expect(() =>
       buildCalloutUrl({
-        baseUrl: "http://blogbat.com/",
+        baseUrl: "http://supportsheep.com/",
         toolSlug: "word-counter",
         utm: {
           source: "solo_blog",

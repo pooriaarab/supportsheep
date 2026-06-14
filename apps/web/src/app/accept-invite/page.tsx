@@ -4,7 +4,7 @@ import { AcceptInvite } from "@/components/auth/accept-invite";
 
 export const metadata: Metadata = {
   title: "Accept invite",
-  description: "Accept your invitation to join a blog on BlogBat.",
+  description: "Accept your invitation to join a blog on Supportsheep.",
   robots: { index: false, follow: false },
 };
 

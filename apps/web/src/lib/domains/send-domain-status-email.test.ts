@@ -37,7 +37,7 @@ const cf: CustomHostnameResult = {
   sslStatus: "pending_validation",
   sslValidationErrors: ["caa_error"],
   verificationErrors: [],
-  dcvTarget: "blogbat.com",
+  dcvTarget: "supportsheep.com",
   ownershipVerification: {
     type: "txt",
     name: "_cf.blog.example.com",
@@ -87,7 +87,7 @@ describe("domain status emails", () => {
     expect(sendEmailMock).toHaveBeenCalledTimes(1);
     const sent = sendEmailMock.mock.calls[0][0];
     expect(sent.subject.toLowerCase()).toContain("could not be verified");
-    expect(sent.html).toContain("blogbat.com"); // the CNAME target
+    expect(sent.html).toContain("supportsheep.com"); // the CNAME target
     expect(sent.html).toContain("verify-123"); // ownership record
     expect(sent.html).toContain("Remove the CAA records");
     expect(sent.text).toContain("blog.example.com");

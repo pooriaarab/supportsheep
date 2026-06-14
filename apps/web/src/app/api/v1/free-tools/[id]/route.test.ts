@@ -83,15 +83,15 @@ function fakeTool(overrides: Partial<FreeTool> = {}): FreeTool {
     metaDescription: "Count words.",
     intro: "Count words.",
     faq: [],
-    cta: { label: "Try BlogBat", url: "https://blogbat.com/" },
+    cta: { label: "Try Supportsheep", url: "https://supportsheep.com/" },
     callout: {
       enabled: true,
       heading: "Build your site",
       body: "Turn this into a website.",
-      primaryLabel: "Try BlogBat",
-      primaryUrl: "https://blogbat.com/",
+      primaryLabel: "Try Supportsheep",
+      primaryUrl: "https://supportsheep.com/",
       secondaryLabel: "Learn more",
-      secondaryUrl: "https://blogbat.com/",
+      secondaryUrl: "https://supportsheep.com/",
       utm: {
         source: "solo_blog",
         medium: "free_tool",
@@ -258,11 +258,11 @@ describe("single free tool admin route", () => {
     mockGenerateText.mockResolvedValue({
       text: JSON.stringify({
         heading: "Turn word counts into better pages",
-        body: "Use BlogBat to publish the page after checking length.",
-        primaryLabel: "Try BlogBat",
-        primaryUrl: "https://blogbat.com/",
+        body: "Use Supportsheep to publish the page after checking length.",
+        primaryLabel: "Try Supportsheep",
+        primaryUrl: "https://supportsheep.com/",
         secondaryLabel: "Learn more",
-        secondaryUrl: "https://blogbat.com/",
+        secondaryUrl: "https://supportsheep.com/",
       }),
     });
 
@@ -280,7 +280,7 @@ describe("single free tool admin route", () => {
     await expect(response.json()).resolves.toMatchObject({
       data: {
         heading: "Turn word counts into better pages",
-        primaryUrl: "https://blogbat.com/",
+        primaryUrl: "https://supportsheep.com/",
       },
     });
   });
@@ -302,8 +302,8 @@ describe("single free tool admin route", () => {
     mockGenerateText.mockResolvedValue({
       text: JSON.stringify({
         heading: "Turn word counts into better pages",
-        body: "Use BlogBat.",
-        primaryLabel: "Try BlogBat",
+        body: "Use Supportsheep.",
+        primaryLabel: "Try Supportsheep",
         primaryUrl: "javascript:alert(1)",
         secondaryLabel: "Learn more",
         secondaryUrl: "ftp://example.com",
@@ -322,8 +322,8 @@ describe("single free tool admin route", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
       data: {
-        primaryUrl: "https://blogbat.com/",
-        secondaryUrl: "https://blogbat.com/",
+        primaryUrl: "https://supportsheep.com/",
+        secondaryUrl: "https://supportsheep.com/",
       },
     });
   });

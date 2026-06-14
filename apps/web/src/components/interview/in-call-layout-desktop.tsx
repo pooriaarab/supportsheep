@@ -302,7 +302,7 @@ export function InCallLayoutDesktop({
           <div className="flex min-w-0 flex-1 items-center gap-2">
             <Image
               src="/blogbat-header-logo.svg"
-              alt="BlogBat"
+              alt="Supportsheep"
               width={72}
               height={20}
               priority

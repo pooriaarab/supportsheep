@@ -4,7 +4,7 @@ import { SOLO_PRICING } from "@/lib/solo-product/pricing";
 
 describe("interpolateProductVars", () => {
   it("returns input unchanged when there are no placeholders", () => {
-    const input = "BlogBat works great for small businesses.";
+    const input = "Supportsheep works great for small businesses.";
     expect(interpolateProductVars(input, SOLO_PRICING)).toBe(input);
   });
 

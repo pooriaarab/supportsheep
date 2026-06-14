@@ -8,7 +8,7 @@ import {
 describe("buildFaqBlockHtml", () => {
   it("produces HTML that round-trips through extractFaqEntries", () => {
     const faqs = [
-      { question: "What is BlogBat?", answer: "BlogBat is an AI website builder." },
+      { question: "What is Supportsheep?", answer: "Supportsheep is an AI website builder." },
       { question: "Is it free?", answer: "Yes, the starter plan is free." },
     ];
     const html = buildFaqBlockHtml(faqs);
@@ -37,9 +37,9 @@ describe("buildFaqBlockHtmlRich", () => {
   it("produces HTML that round-trips through extractFaqEntries for rich answers", () => {
     const faqs = [
       {
-        question: "What is BlogBat?",
+        question: "What is Supportsheep?",
         answerHtml:
-          "<p>BlogBat is an AI website builder.</p><ul><li>Fast</li><li>Cheap</li></ul><blockquote>Trusted by thousands.</blockquote>",
+          "<p>Supportsheep is an AI website builder.</p><ul><li>Fast</li><li>Cheap</li></ul><blockquote>Trusted by thousands.</blockquote>",
       },
     ];
     const html = buildFaqBlockHtmlRich(faqs);
@@ -48,8 +48,8 @@ describe("buildFaqBlockHtmlRich", () => {
     // single run of the inner text.
     expect(extractFaqEntries(html)).toEqual([
       {
-        question: "What is BlogBat?",
-        answer: "BlogBat is an AI website builder. Fast Cheap Trusted by thousands.",
+        question: "What is Supportsheep?",
+        answer: "Supportsheep is an AI website builder. Fast Cheap Trusted by thousands.",
       },
     ]);
   });

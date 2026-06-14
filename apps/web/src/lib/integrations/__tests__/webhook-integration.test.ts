@@ -9,7 +9,7 @@ describe("webhook integration helpers", () => {
   it("builds a one-time token and redacts it for later reads", () => {
     const built = buildWebhookIntegrationConfig({
       integrationId: "integration-1",
-      siteUrl: "https://blogbat.com",
+      siteUrl: "https://supportsheep.com",
       providerHint: "outrank",
     });
 
@@ -18,7 +18,7 @@ describe("webhook integration helpers", () => {
       "/api/v1/integrations/webhooks/integration-1",
     );
     expect(built.endpointUrl).toBe(
-      "https://blogbat.com/api/v1/integrations/webhooks/integration-1",
+      "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
     );
 
     expect(redactWebhookIntegrationConfig(built)).toEqual({
@@ -34,7 +34,7 @@ describe("webhook integration helpers", () => {
   it("merges safe config patches without dropping the stored token", () => {
     const built = buildWebhookIntegrationConfig({
       integrationId: "integration-1",
-      siteUrl: "https://blogbat.com",
+      siteUrl: "https://supportsheep.com",
       providerHint: "generic",
     });
 

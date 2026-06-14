@@ -1,7 +1,7 @@
 /**
- * Single source of truth for BlogBat product pricing referenced by blog content.
+ * Single source of truth for Supportsheep product pricing referenced by blog content.
  *
- * Any page, script, or template that mentions a BlogBat plan price must read
+ * Any page, script, or template that mentions a Supportsheep plan price must read
  * from here rather than hardcoding numbers, so the whole blog stays in sync
  * when pricing changes. Surface-level copy in Firestore (`uniqueContent`,
  * FAQ answers) references these values via `{{solo.*}}` placeholders that

@@ -32,14 +32,14 @@ describe("preparePublishedArticleUpdate", () => {
     vi.mocked(resolveIndexNowSubmissionStatus).mockResolvedValue({
       status: "submitted",
       lastSubmittedAt: "2026-04-22T00:00:00.000Z",
-      lastUrl: "https://blogbat.com/my-post/",
+      lastUrl: "https://supportsheep.com/my-post/",
       lastError: null,
     });
 
     const result = await preparePublishedArticleUpdate({
       article,
       config,
-      siteUrl: "https://blogbat.com",
+      siteUrl: "https://supportsheep.com",
     });
 
     expect(result.body).toContain("Draft body");
@@ -57,14 +57,14 @@ describe("preparePublishedArticleUpdate", () => {
     vi.mocked(resolveIndexNowSubmissionStatus).mockResolvedValue({
       status: "failed",
       lastSubmittedAt: null,
-      lastUrl: "https://blogbat.com/my-post/",
+      lastUrl: "https://supportsheep.com/my-post/",
       lastError: "IndexNow 400: bad request",
     });
 
     const result = await preparePublishedArticleUpdate({
       article,
       config,
-      siteUrl: "https://blogbat.com",
+      siteUrl: "https://supportsheep.com",
     });
 
     expect(result.submissionStatus.indexNow).toMatchObject({

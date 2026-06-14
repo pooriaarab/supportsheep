@@ -1,8 +1,8 @@
 import type { BlogConfig } from "@repo/types";
 
-export const DEFAULT_PUBLIC_SITE_NAME = "BlogBat";
+export const DEFAULT_PUBLIC_SITE_NAME = "Supportsheep";
 export const DEFAULT_PUBLIC_SITE_DESCRIPTION =
-  "Practical guides on building and ranking a small business website with BlogBat's AI-powered tools.";
+  "Practical guides on building and ranking a small business website with Supportsheep's AI-powered tools.";
 
 function isPlaceholderSiteName(value: string | null | undefined): boolean {
   return !value || value.trim() === "" || value.trim() === "Blog";
@@ -19,7 +19,7 @@ function isPlaceholderSiteDescription(
 export function normalizePublicAuthor(author?: string | null): string {
   const value = typeof author === "string" ? author.trim() : "";
   return !value || value.toLowerCase() === "blogblogbatai"
-    ? "BlogBat"
+    ? "Supportsheep"
     : value;
 }
 

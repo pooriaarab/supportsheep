@@ -7,7 +7,7 @@ import { getPublicCategories } from "@/lib/public-route-resolution";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search published BlogBat articles.",
+  description: "Search published Supportsheep articles.",
   robots: {
     index: false,
     follow: false,

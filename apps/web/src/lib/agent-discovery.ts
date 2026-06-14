@@ -85,10 +85,10 @@ export function buildAgentCard(siteUrl: string) {
       id: "list-public-articles",
       name: "List public articles",
       description:
-        "Read paginated summaries of published BlogBat articles, optionally filtered by category or tag.",
+        "Read paginated summaries of published Supportsheep articles, optionally filtered by category or tag.",
       tags: ["blog", "articles", "discovery", "seo"],
       examples: [
-        "List the newest BlogBat articles.",
+        "List the newest Supportsheep articles.",
         "Find published articles in the website tips category.",
       ],
       inputModes: ["text/plain", "application/json"],
@@ -108,9 +108,9 @@ export function buildAgentCard(siteUrl: string) {
       id: "search-public-articles",
       name: "Search public articles",
       description:
-        "Search recent published BlogBat articles by title, body, excerpt, tags, and keywords.",
+        "Search recent published Supportsheep articles by title, body, excerpt, tags, and keywords.",
       tags: ["blog", "search", "articles"],
-      examples: ["Search BlogBat for articles about local SEO."],
+      examples: ["Search Supportsheep for articles about local SEO."],
       inputModes: ["text/plain", "application/json"],
       outputModes: ["application/json"],
     },
@@ -118,9 +118,9 @@ export function buildAgentCard(siteUrl: string) {
 
   return {
     protocolVersion: "0.3.0",
-    name: "BlogBat Public Content Agent",
+    name: "Supportsheep Public Content Agent",
     description:
-      "Read-only machine interface for discovering, searching, and consuming published BlogBat content.",
+      "Read-only machine interface for discovering, searching, and consuming published Supportsheep content.",
     url: `${siteUrl}/api/v1/public/articles`,
     preferredTransport: "HTTP+JSON",
     additionalInterfaces: [
@@ -134,8 +134,8 @@ export function buildAgentCard(siteUrl: string) {
       },
     ],
     provider: {
-      organization: "BlogBat",
-      url: "https://blogbat.com",
+      organization: "Supportsheep",
+      url: "https://supportsheep.com",
     },
     version: "1.0.0",
     documentationUrl: `${siteUrl}/docs/api`,
@@ -156,15 +156,15 @@ export function buildAgentCard(siteUrl: string) {
 const BLOGBAT_DISCOVERY_SKILL_PATH =
   "/.well-known/agent-skills/blogbat-discovery/SKILL.md";
 
-export function getBlogBatDiscoverySkillMarkdown(siteUrl: string) {
+export function getSupportsheepDiscoverySkillMarkdown(siteUrl: string) {
   return `---
 name: blogbat-discovery
-description: Find and consume BlogBat public content, docs, and discovery metadata.
+description: Find and consume Supportsheep public content, docs, and discovery metadata.
 ---
 
-# BlogBat Discovery
+# Supportsheep Discovery
 
-Use this skill when you need published BlogBat content, documentation, or discovery endpoints.
+Use this skill when you need published Supportsheep content, documentation, or discovery endpoints.
 
 ## Public Resources
 
@@ -195,7 +195,7 @@ Use this skill when you need published BlogBat content, documentation, or discov
 }
 
 export function buildAgentSkillsIndex(siteUrl: string) {
-  const skillMarkdown = getBlogBatDiscoverySkillMarkdown(siteUrl);
+  const skillMarkdown = getSupportsheepDiscoverySkillMarkdown(siteUrl);
   const digest = createHash("sha256")
     .update(skillMarkdown, "utf8")
     .digest("hex");
@@ -204,7 +204,7 @@ export function buildAgentSkillsIndex(siteUrl: string) {
       name: "blogbat-discovery",
       type: "skill-md",
       description:
-        "Find and consume BlogBat public content, docs, and discovery metadata.",
+        "Find and consume Supportsheep public content, docs, and discovery metadata.",
       url: BLOGBAT_DISCOVERY_SKILL_PATH,
       digest: `sha256:${digest}`,
     },

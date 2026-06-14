@@ -163,8 +163,8 @@ describe("authors repository", () => {
     const list = await listAuthors(BLOG, db);
     expect(list.length).toBe(1);
     expect(list[0].id).toBe("blogbat-editorial-team");
-    expect(list[0].name).toBe("BlogBat Editorial Team");
-    expect(list[0].sameAs).toEqual(["https://blogbat.com"]);
+    expect(list[0].name).toBe("Supportsheep Editorial Team");
+    expect(list[0].sameAs).toEqual(["https://supportsheep.com"]);
   });
 
   it("ensurePlaceholderAuthor is idempotent (no-op when authors exist)", async () => {

@@ -23,7 +23,7 @@ const VARIANT_KEY = "wix__therapists";
 
 const CONTENT = `## TL;DR
 
-Wix is a capable general-purpose website builder with a flexible editor, a wide template library, and -- as of 2026 -- a HIPAA compliance mode with a Business Associate Agreement available on supported plans. For a solo or small group therapy practice, this changes the calculus compared to prior years: Wix can now be configured to support PHI collection if you are on a supported paid plan and correctly activate PHI protection. In practice, most therapy practices still follow the cleaner architecture -- public marketing site on Wix + HIPAA-aware EHR (SimplePractice, TherapyNotes) for intake and scheduling -- because the separate-stack approach is simpler and the EHR already handles all clinical workflow. This page covers both paths and compares Wix to BlogBat for a solo therapist's marketing site.
+Wix is a capable general-purpose website builder with a flexible editor, a wide template library, and -- as of 2026 -- a HIPAA compliance mode with a Business Associate Agreement available on supported plans. For a solo or small group therapy practice, this changes the calculus compared to prior years: Wix can now be configured to support PHI collection if you are on a supported paid plan and correctly activate PHI protection. In practice, most therapy practices still follow the cleaner architecture -- public marketing site on Wix + HIPAA-aware EHR (SimplePractice, TherapyNotes) for intake and scheduling -- because the separate-stack approach is simpler and the EHR already handles all clinical workflow. This page covers both paths and compares Wix to Supportsheep for a solo therapist's marketing site.
 
 ## Wix and HIPAA for therapists: what the 2026 update means
 
@@ -40,7 +40,7 @@ That said, if you want a single-vendor Wix site that includes HIPAA-compliant bo
 
 ## Wix's strengths for a therapy practice
 
-**Visual design control.** Wix's drag-and-drop editor offers more layout freedom than Squarespace or BlogBat. A therapist who has a specific brand vision -- specific color palette, custom section arrangements, particular font pairings -- can implement it on Wix without CSS. This matters for solo practitioners whose brand is a direct extension of their therapeutic identity.
+**Visual design control.** Wix's drag-and-drop editor offers more layout freedom than Squarespace or Supportsheep. A therapist who has a specific brand vision -- specific color palette, custom section arrangements, particular font pairings -- can implement it on Wix without CSS. This matters for solo practitioners whose brand is a direct extension of their therapeutic identity.
 
 **Template variety.** Wix has hundreds of templates, including health and wellness categories with layouts appropriate for a therapy or counseling practice. You are not choosing from a handful of options.
 
@@ -50,7 +50,7 @@ That said, if you want a single-vendor Wix site that includes HIPAA-compliant bo
 
 ## Where Wix breaks down for therapists
 
-**Editor complexity can backfire.** Wix's flexibility is also a friction point. Without design discipline, a Wix site can end up inconsistent -- varied spacing, competing font sizes, misaligned sections. This happens more often on Wix than on Squarespace or BlogBat because the editor allows more arbitrary choices. BlogBat practices with no web background benefit from more constrained tools.
+**Editor complexity can backfire.** Wix's flexibility is also a friction point. Without design discipline, a Wix site can end up inconsistent -- varied spacing, competing font sizes, misaligned sections. This happens more often on Wix than on Squarespace or Supportsheep because the editor allows more arbitrary choices. Supportsheep practices with no web background benefit from more constrained tools.
 
 **HIPAA path has real costs.** Wix's Business plan (the entry BAA-eligible tier) costs $36/month billed annually -- more than three times the Core plan ($29/month). That cost jump is only justified if you need PHI-mode features; if you're using an EHR for all clinical workflow, you don't need PHI mode at all and can stay on Core.
 
@@ -64,28 +64,28 @@ That said, if you want a single-vendor Wix site that includes HIPAA-compliant bo
 
 For most solo therapists, this architecture is simpler and more defensible than configuring Wix PHI mode:
 
-1. **Public marketing site** (Wix or BlogBat): homepage, bio, specialties, approach, FAQ, blog, contact page that links to your EHR intake portal. No PHI collected here.
+1. **Public marketing site** (Wix or Supportsheep): homepage, bio, specialties, approach, FAQ, blog, contact page that links to your EHR intake portal. No PHI collected here.
 2. **EHR with client portal** (SimplePractice, TherapyNotes, TheraNest, Headway): intake forms, telehealth links, session notes, billing, and secure client messaging. This vendor signs your BAA. All PHI stays here.
 3. **Scheduling link or embed**: link from your contact page to your EHR's scheduling page (SimplePractice's "Request Appointment" link, TherapyNotes' client portal URL, or an HIPAA-aware external scheduler like Acuity Premium).
 4. **Audit your tracking pixels**: Meta Pixel and Google Analytics tags on your marketing site must not fire after a clinical form submission. Configure exclusions at the trigger level.
 
 This four-part split keeps PHI entirely outside the marketing CMS and concentrates clinical-data responsibility in a purpose-built tool.
 
-## BlogBat's position for a solo therapist's marketing site
+## Supportsheep's position for a solo therapist's marketing site
 
-BlogBat is designed for the "solo or small professional service business that wants a credible content-driven marketing site with minimal operational overhead." For a solo therapist:
+Supportsheep is designed for the "solo or small professional service business that wants a credible content-driven marketing site with minimal operational overhead." For a solo therapist:
 
-- **Free tier with custom domain.** A therapist building a new private practice can launch on BlogBat's free tier with their own domain before paying. Wix's free tier shows platform ads and branding; paid is required for a real practice site.
-- **Blog with SEO sidebar and AI drafting.** Content marketing compounds for therapists: blog posts on specific modalities, client concerns, and local context build topical authority over 12-18 months. BlogBat's blog provides inline SEO audits (title, meta, heading structure), internal link suggestions, and FAQPage JSON-LD on Q&A content.
+- **Free tier with custom domain.** A therapist building a new private practice can launch on Supportsheep's free tier with their own domain before paying. Wix's free tier shows platform ads and branding; paid is required for a real practice site.
+- **Blog with SEO sidebar and AI drafting.** Content marketing compounds for therapists: blog posts on specific modalities, client concerns, and local context build topical authority over 12-18 months. Supportsheep's blog provides inline SEO audits (title, meta, heading structure), internal link suggestions, and FAQPage JSON-LD on Q&A content.
 - **LocalBusiness and MedicalBusiness schema by default.** Structured data for a therapy practice -- practice name, address, specialty, phone, hours -- ships without a plugin. Google Knowledge Panel and local map-pack results benefit from clean schema.
 - **Privacy-first posture.** For therapists whose clients are privacy-conscious (a disproportionate share of therapy clients are), a privacy-first platform signals deliberate privacy engineering rather than growth-hack tooling.
-- **No PHI complexity.** BlogBat does not collect PHI and does not offer a BAA. The correct split is marketing site on BlogBat + EHR intake portal for clinical workflow -- the same architecture most therapy-focused web designers recommend.
+- **No PHI complexity.** Supportsheep does not collect PHI and does not offer a BAA. The correct split is marketing site on Supportsheep + EHR intake portal for clinical workflow -- the same architecture most therapy-focused web designers recommend.
 
-## Side-by-side: Wix vs BlogBat for a therapy practice
+## Side-by-side: Wix vs Supportsheep for a therapy practice
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Wix (Core / Business / Elite)</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Wix (Core / Business / Elite)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Starting price (annual billing)</td><td>$29/mo (Core) -- $159/mo (Business Elite)</td><td>Free tier with custom domain</td></tr>
@@ -93,7 +93,7 @@ BlogBat is designed for the "solo or small professional service business that wa
 <tr><td>Editor flexibility</td><td>High -- drag-and-drop with pixel-level control</td><td>Lower -- AI-guided layouts; less design freedom</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Built-in blog; adequate basic SEO; schema requires manual addition</td><td>Blog with SEO sidebar, AI drafting, LocalBusiness + FAQPage schema by default</td></tr>
 <tr><td>Typical monthly cost for a real practice site</td><td>$29-$36+/mo (Core to Business); more with PHI mode and app stack</td><td>Free to {{solo.pro.yearly}}/mo (Pro, annual billing)</td></tr>
-<tr><td>Best fit</td><td>Design-led therapists who want editor freedom; may configure PHI mode if using Wix for intake</td><td>BlogBat practitioners focused on content, local SEO, and low monthly cost</td></tr>
+<tr><td>Best fit</td><td>Design-led therapists who want editor freedom; may configure PHI mode if using Wix for intake</td><td>Supportsheep practitioners focused on content, local SEO, and low monthly cost</td></tr>
 </tbody>
 </table>`;
 
@@ -119,9 +119,9 @@ const FAQS: ProgrammaticFaq[] = [
       "Yes, with appropriate boundaries. Wix is a strong general-purpose website builder for the public marketing layer of a therapy practice -- homepage, bio, specialties, blog, FAQ, contact. For PHI-touching workflows (client intake, scheduling with clinical context, secure messaging), use your EHR's client portal rather than Wix's native tools unless you've configured Wix PHI mode on a supported plan.",
   },
   {
-    question: "Should I use Wix or BlogBat for my therapy practice website?",
+    question: "Should I use Wix or Supportsheep for my therapy practice website?",
     answer:
-      "Choose Wix if design flexibility is the highest priority and you want drag-and-drop control over every layout element -- or if you want to configure Wix's HIPAA mode for booking through Wix Bookings. Choose BlogBat if you want a free tier with a custom domain at launch, a blog with an SEO sidebar and AI drafting, LocalBusiness and FAQPage schema built in, and lower monthly cost at the Pro tier ({{solo.pro.yearly}} billed annually). Both platforms have the same answer for PHI: keep it in the EHR, not in the marketing CMS.",
+      "Choose Wix if design flexibility is the highest priority and you want drag-and-drop control over every layout element -- or if you want to configure Wix's HIPAA mode for booking through Wix Bookings. Choose Supportsheep if you want a free tier with a custom domain at launch, a blog with an SEO sidebar and AI drafting, LocalBusiness and FAQPage schema built in, and lower monthly cost at the Pro tier ({{solo.pro.yearly}} billed annually). Both platforms have the same answer for PHI: keep it in the EHR, not in the marketing CMS.",
   },
   {
     question: "What EHR or scheduling tools work with Wix for therapists?",
@@ -136,7 +136,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do therapists rank in local search?",
     answer:
-      "Local SEO for therapists depends on: (1) Google Business Profile -- claim it, add specialty, service area, and collect client reviews (with appropriate consent); (2) on-site specialty pages -- one page per modality per city, optimized for '[specialty] therapist [city]' queries; (3) LocalBusiness and Person schema markup; (4) a blog with FAQ content targeting informational queries your potential clients search before seeking help. BlogBat's blog ships with FAQPage and LocalBusiness schema by default; Wix requires schema to be added manually via a code block or third-party SEO app.",
+      "Local SEO for therapists depends on: (1) Google Business Profile -- claim it, add specialty, service area, and collect client reviews (with appropriate consent); (2) on-site specialty pages -- one page per modality per city, optimized for '[specialty] therapist [city]' queries; (3) LocalBusiness and Person schema markup; (4) a blog with FAQ content targeting informational queries your potential clients search before seeking help. Supportsheep's blog ships with FAQPage and LocalBusiness schema by default; Wix requires schema to be added manually via a code block or third-party SEO app.",
   },
 ];
 
@@ -164,14 +164,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Wix for solo and small group therapy practices -- covering Wix's new HIPAA mode, EHR integration patterns, and when BlogBat is the better default for content and local SEO.",
-        ctaText: "Start your therapy practice website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Wix for solo and small group therapy practices -- covering Wix's new HIPAA mode, EHR integration patterns, and when Supportsheep is the better default for content and local SEO.",
+        ctaText: "Start your therapy practice website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Therapists",
       },
       title: "Wix for therapists: an honest alternative",
       metaDescription:
-        "Is Wix right for a therapy practice website? An honest comparison covering Wix's 2026 HIPAA BAA mode, EHR pairing, pricing, and when BlogBat is the better default.",
+        "Is Wix right for a therapy practice website? An honest comparison covering Wix's 2026 HIPAA BAA mode, EHR pairing, pricing, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

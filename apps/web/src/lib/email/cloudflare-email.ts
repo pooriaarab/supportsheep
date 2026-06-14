@@ -7,11 +7,11 @@ import { createLogger } from "@/lib/logger";
 const log = createLogger("email:cloudflare");
 
 /** Default sender for transactional email (shared with the auth emailer). */
-const DEFAULT_FROM = "auth@blogbat.com";
+const DEFAULT_FROM = "auth@supportsheep.com";
 
 /**
  * The Cloudflare Email Service binding (`send_email` in wrangler.jsonc). Optional
- * until blogbat.com is onboarded in the dashboard's Email Sending section.
+ * until supportsheep.com is onboarded in the dashboard's Email Sending section.
  */
 export interface EmailBinding {
   send: (message: {
@@ -26,7 +26,7 @@ export interface EmailBinding {
 export interface SendEmailInput {
   /** Recipient address. */
   to: string;
-  /** Sender address. Defaults to `AUTH_EMAIL_FROM`, then `auth@blogbat.com`. */
+  /** Sender address. Defaults to `AUTH_EMAIL_FROM`, then `auth@supportsheep.com`. */
   from?: string;
   /** Subject line. */
   subject: string;

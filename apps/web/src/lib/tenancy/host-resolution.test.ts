@@ -143,41 +143,41 @@ describe("resolveBlogIdByHost", () => {
     });
   });
 
-  it("resolves a {slug}.blogbat.com subdomain to its blog id", async () => {
-    expect(await resolveBlogIdByHost("acme.blogbat.com", db)).toBe("b-acme");
+  it("resolves a {slug}.supportsheep.com subdomain to its blog id", async () => {
+    expect(await resolveBlogIdByHost("acme.supportsheep.com", db)).toBe("b-acme");
   });
 
   it("strips the port and lowercases the host", async () => {
-    expect(await resolveBlogIdByHost("ACME.blogbat.com:443", db)).toBe(
+    expect(await resolveBlogIdByHost("ACME.supportsheep.com:443", db)).toBe(
       "b-acme",
     );
   });
 
   it("returns null for an unknown subdomain slug", async () => {
-    expect(await resolveBlogIdByHost("ghost.blogbat.com", db)).toBeNull();
+    expect(await resolveBlogIdByHost("ghost.supportsheep.com", db)).toBeNull();
   });
 
   it("returns null for the apex domain (reserved for marketing)", async () => {
-    expect(await resolveBlogIdByHost("blogbat.com", db)).toBeNull();
+    expect(await resolveBlogIdByHost("supportsheep.com", db)).toBeNull();
   });
 
   it("returns null for every reserved subdomain", async () => {
     for (const sub of RESERVED_SUBDOMAINS) {
-      expect(await resolveBlogIdByHost(`${sub}.blogbat.com`, db)).toBeNull();
+      expect(await resolveBlogIdByHost(`${sub}.supportsheep.com`, db)).toBeNull();
     }
   });
 
   it("returns null for the staging host itself", async () => {
-    expect(await resolveBlogIdByHost("staging.blogbat.com", db)).toBeNull();
+    expect(await resolveBlogIdByHost("staging.supportsheep.com", db)).toBeNull();
   });
 
-  it("resolves a {slug}.staging.blogbat.com subdomain by its left-most label", async () => {
-    expect(await resolveBlogIdByHost("acme.staging.blogbat.com", db)).toBe(
+  it("resolves a {slug}.staging.supportsheep.com subdomain by its left-most label", async () => {
+    expect(await resolveBlogIdByHost("acme.staging.supportsheep.com", db)).toBe(
       "b-acme",
     );
   });
 
-  it("resolves a custom domain (non-blogbat.com host) to its blog id", async () => {
+  it("resolves a custom domain (non-supportsheep.com host) to its blog id", async () => {
     expect(await resolveBlogIdByHost("blog.acme.com", db)).toBe("b-acme");
   });
 
@@ -192,15 +192,15 @@ describe("resolveBlogIdByHost", () => {
 
 describe("isMarketingHost", () => {
   it("marks the apex domain as marketing", () => {
-    expect(isMarketingHost("blogbat.com")).toBe(true);
+    expect(isMarketingHost("supportsheep.com")).toBe(true);
   });
 
   it("marks the www host as marketing", () => {
-    expect(isMarketingHost("www.blogbat.com")).toBe(true);
+    expect(isMarketingHost("www.supportsheep.com")).toBe(true);
   });
 
   it("strips the port and lowercases before matching", () => {
-    expect(isMarketingHost("BlogBat.com:443")).toBe(true);
+    expect(isMarketingHost("Supportsheep.com:443")).toBe(true);
     expect(isMarketingHost("WWW.BLOGBAT.COM:8080")).toBe(true);
   });
 
@@ -211,23 +211,23 @@ describe("isMarketingHost", () => {
   });
 
   it("does NOT mark tenant subdomains as marketing", () => {
-    expect(isMarketingHost("acme.blogbat.com")).toBe(false);
-    expect(isMarketingHost("ghost.blogbat.com")).toBe(false);
+    expect(isMarketingHost("acme.supportsheep.com")).toBe(false);
+    expect(isMarketingHost("ghost.supportsheep.com")).toBe(false);
   });
 
   it("does NOT mark platform surfaces as marketing", () => {
-    expect(isMarketingHost("app.blogbat.com")).toBe(false);
-    expect(isMarketingHost("api.blogbat.com")).toBe(false);
-    expect(isMarketingHost("admin.blogbat.com")).toBe(false);
+    expect(isMarketingHost("app.supportsheep.com")).toBe(false);
+    expect(isMarketingHost("api.supportsheep.com")).toBe(false);
+    expect(isMarketingHost("admin.supportsheep.com")).toBe(false);
   });
 
   it("marks the staging apex as marketing (staging mirror of the apex)", () => {
-    expect(isMarketingHost("staging.blogbat.com")).toBe(true);
+    expect(isMarketingHost("staging.supportsheep.com")).toBe(true);
     expect(isMarketingHost("STAGING.BLOGBAT.COM:443")).toBe(true);
   });
 
   it("does NOT mark staging tenant subdomains as marketing", () => {
-    expect(isMarketingHost("acme.staging.blogbat.com")).toBe(false);
+    expect(isMarketingHost("acme.staging.supportsheep.com")).toBe(false);
   });
 
   it("does NOT mark custom domains as marketing", () => {
@@ -241,13 +241,13 @@ describe("isMarketingHost", () => {
 });
 
 describe("isPlatformHost", () => {
-  it("marks the apex and any *.blogbat.com host as first-party", () => {
-    expect(isPlatformHost("blogbat.com")).toBe(true);
-    expect(isPlatformHost("www.blogbat.com")).toBe(true);
-    expect(isPlatformHost("app.blogbat.com")).toBe(true);
-    expect(isPlatformHost("acme.blogbat.com")).toBe(true);
-    expect(isPlatformHost("customers.blogbat.com")).toBe(true);
-    expect(isPlatformHost("acme.staging.blogbat.com")).toBe(true);
+  it("marks the apex and any *.supportsheep.com host as first-party", () => {
+    expect(isPlatformHost("supportsheep.com")).toBe(true);
+    expect(isPlatformHost("www.supportsheep.com")).toBe(true);
+    expect(isPlatformHost("app.supportsheep.com")).toBe(true);
+    expect(isPlatformHost("acme.supportsheep.com")).toBe(true);
+    expect(isPlatformHost("customers.supportsheep.com")).toBe(true);
+    expect(isPlatformHost("acme.staging.supportsheep.com")).toBe(true);
     expect(isPlatformHost("ACME.BLOGBAT.COM:443")).toBe(true);
   });
 
@@ -269,23 +269,23 @@ describe("isPlatformHost", () => {
 });
 
 describe("isTenantSubdomainHost", () => {
-  it("marks a non-reserved *.blogbat.com host as a tenant subdomain", () => {
-    expect(isTenantSubdomainHost("acme.blogbat.com")).toBe(true);
+  it("marks a non-reserved *.supportsheep.com host as a tenant subdomain", () => {
+    expect(isTenantSubdomainHost("acme.supportsheep.com")).toBe(true);
     expect(isTenantSubdomainHost("ACME.BLOGBAT.COM:443")).toBe(true);
-    expect(isTenantSubdomainHost("acme.staging.blogbat.com")).toBe(true);
+    expect(isTenantSubdomainHost("acme.staging.supportsheep.com")).toBe(true);
   });
 
   it("does NOT mark the apex or reserved subdomains as tenant subdomains", () => {
-    expect(isTenantSubdomainHost("blogbat.com")).toBe(false);
-    expect(isTenantSubdomainHost("www.blogbat.com")).toBe(false);
-    expect(isTenantSubdomainHost("app.blogbat.com")).toBe(false);
-    expect(isTenantSubdomainHost("staging.blogbat.com")).toBe(false);
+    expect(isTenantSubdomainHost("supportsheep.com")).toBe(false);
+    expect(isTenantSubdomainHost("www.supportsheep.com")).toBe(false);
+    expect(isTenantSubdomainHost("app.supportsheep.com")).toBe(false);
+    expect(isTenantSubdomainHost("staging.supportsheep.com")).toBe(false);
   });
 
-  it("exempts the SaaS fallback-origin host (customers.blogbat.com)", () => {
+  it("exempts the SaaS fallback-origin host (customers.supportsheep.com)", () => {
     // The Cloudflare-for-SaaS fallback origin must never hit the unknown-
     // subdomain 404 path — it is a reserved platform host.
-    expect(isTenantSubdomainHost("customers.blogbat.com")).toBe(false);
+    expect(isTenantSubdomainHost("customers.supportsheep.com")).toBe(false);
   });
 
   it("does NOT mark non-blogbat custom domains as tenant subdomains", () => {

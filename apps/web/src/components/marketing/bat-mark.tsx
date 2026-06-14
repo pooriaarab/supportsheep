@@ -1,5 +1,5 @@
 /**
- * The BlogBat bat silhouette as an inline SVG.
+ * The Supportsheep bat silhouette as an inline SVG.
  *
  * Mirrors the single shared path from `public/logo.svg` but inlined so it can be
  * sized freely and inherit `currentColor` (the public SVG is consumed via

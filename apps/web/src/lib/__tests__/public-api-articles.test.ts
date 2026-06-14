@@ -34,11 +34,11 @@ describe("public api article helpers", () => {
     };
 
     expect(
-      serializePublicArticleSummary(article, "https://blogbat.com"),
+      serializePublicArticleSummary(article, "https://supportsheep.com"),
     ).toEqual({
       title: "Post",
       slug: "post",
-      url: "https://blogbat.com/post",
+      url: "https://supportsheep.com/post",
       excerpt: "Summary",
       category: "Guides",
       tags: ["seo"],
@@ -57,7 +57,7 @@ describe("public api article helpers", () => {
       body: "<p>Published body</p>",
       category: "Guides",
       tags: ["seo"],
-      author: "BlogBat",
+      author: "Supportsheep",
       readingTime: 3,
       publishedAt: "2026-04-20T00:00:00.000Z",
       updatedAt: "2026-04-20T00:00:00.000Z",
@@ -67,12 +67,12 @@ describe("public api article helpers", () => {
 
     const detail = serializePublicArticleDetail(
       article,
-      "https://blogbat.com",
+      "https://supportsheep.com",
     );
     expect(detail).toMatchObject({
       title: "Post",
       slug: "post",
-      url: "https://blogbat.com/post",
+      url: "https://supportsheep.com/post",
       body: "<p>Published body</p>",
     });
     expect(detail).not.toHaveProperty("versions");
@@ -114,7 +114,7 @@ describe("public articles routes", () => {
       vi.spyOn(articleModule, "serializePublicArticleSummary").mockReturnValue({
         title: articleResponse.title,
         slug: articleResponse.slug,
-        url: "https://blogbat.com/post",
+        url: "https://supportsheep.com/post",
         excerpt: articleResponse.excerpt,
         category: articleResponse.category,
         tags: articleResponse.tags,
@@ -123,11 +123,11 @@ describe("public articles routes", () => {
         readingTime: articleResponse.readingTime,
       });
       vi.spyOn(siteModule, "resolvePublicSiteUrl").mockReturnValue(
-        "https://blogbat.com",
+        "https://supportsheep.com",
       );
 
       const request = new Request(
-        "https://blogbat.com/api/v1/public/articles?page=1&limit=20",
+        "https://supportsheep.com/api/v1/public/articles?page=1&limit=20",
       );
       const response = await listArticles(request as never);
       const json = await response.json();
@@ -140,7 +140,7 @@ describe("public articles routes", () => {
         hasMore: false,
       });
       expect(json.data[0]).not.toHaveProperty("draftBody");
-      expect(json.data[0].url).toContain("https://blogbat.com");
+      expect(json.data[0].url).toContain("https://supportsheep.com");
       expect(response.headers.get("cache-control")).toContain("max-age=300");
     });
   });
@@ -155,7 +155,7 @@ describe("public articles routes", () => {
         body: "<p>Published body</p>",
         category: "Guides",
         tags: ["seo"],
-        author: "BlogBat",
+        author: "Supportsheep",
         readingTime: 3,
         publishedAt: "2026-04-20T00:00:00.000Z",
         updatedAt: "2026-04-20T00:00:00.000Z",
@@ -169,14 +169,14 @@ describe("public articles routes", () => {
       ).mockResolvedValue(article);
       vi.spyOn(articleModule, "serializePublicArticleDetail").mockReturnValue({
         ...article,
-        url: "https://blogbat.com/post",
+        url: "https://supportsheep.com/post",
       });
       vi.spyOn(siteModule, "resolvePublicSiteUrl").mockReturnValue(
-        "https://blogbat.com",
+        "https://supportsheep.com",
       );
 
       const request = new Request(
-        "https://blogbat.com/api/v1/public/articles/post",
+        "https://supportsheep.com/api/v1/public/articles/post",
       );
       const response = await getArticleBySlug(
         request as never,

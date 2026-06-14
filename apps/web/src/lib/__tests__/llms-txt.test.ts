@@ -17,7 +17,7 @@ const MOCK_ARTICLE = {
 
 const mocks = vi.hoisted(() => ({
   getBlogConfig: vi.fn(),
-  resolvePublicSiteUrl: vi.fn(() => "https://blogbat.com"),
+  resolvePublicSiteUrl: vi.fn(() => "https://supportsheep.com"),
   listPublishedArticles: vi.fn(),
 }));
 
@@ -60,24 +60,24 @@ describe("buildLlmsTxtContent (full dump)", () => {
 
     const content = await buildLlmsTxtContent();
 
-    expect(content).toContain("# BlogBat");
+    expect(content).toContain("# Supportsheep");
     expect(content).toContain(
-      "> Practical guides on building and ranking a small business website with BlogBat's AI-powered tools.",
+      "> Practical guides on building and ranking a small business website with Supportsheep's AI-powered tools.",
     );
-    expect(content).toContain("Site: https://blogbat.com");
-    expect(content).not.toContain("Site: https://blogbat.com/blog");
-    expect(content).toContain("Author: BlogBat");
+    expect(content).toContain("Site: https://supportsheep.com");
+    expect(content).not.toContain("Site: https://supportsheep.com/blog");
+    expect(content).toContain("Author: Supportsheep");
   });
 
   it("shares behavior with buildLlmsFullTxtContent alias", async () => {
     mocks.getBlogConfig.mockResolvedValue({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
       siteDescription: "desc",
     });
 
     const direct = await buildLlmsFullTxtContent();
     mocks.getBlogConfig.mockResolvedValue({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
       siteDescription: "desc",
     });
     const aliased = await buildLlmsTxtContent();
@@ -86,7 +86,7 @@ describe("buildLlmsTxtContent (full dump)", () => {
 
   it("serializes Firestore Timestamp-like publishedAt values", async () => {
     mocks.getBlogConfig.mockResolvedValue({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
       siteDescription: "desc",
     });
     // D1 articles store ISO strings already, but normalizePublicDateValue handles
@@ -122,16 +122,16 @@ describe("buildLlmsTxtIndex (spec-compliant link list)", () => {
 
   it("emits a short overview with category-grouped markdown links", async () => {
     mocks.getBlogConfig.mockResolvedValue({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
       siteDescription: "Actionable guides",
     });
 
     const content = await buildLlmsTxtIndex();
 
-    expect(content).toContain("# BlogBat");
+    expect(content).toContain("# Supportsheep");
     expect(content).toContain("## Uncategorized");
     expect(content).toContain(
-      "[Ideas for Personal Websites](https://blogbat.com/ideas-for-personal-websites)",
+      "[Ideas for Personal Websites](https://supportsheep.com/ideas-for-personal-websites)",
     );
     expect(content).toContain("llms-full.txt");
     expect(content).toContain("llms-articles.txt");
@@ -150,16 +150,16 @@ describe("buildLlmsArticleIndexContent", () => {
 
   it("emits the complete machine-readable article URL index without bodies", async () => {
     mocks.getBlogConfig.mockResolvedValue({
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
       siteDescription: "Actionable guides",
     });
 
     const content = await buildLlmsArticleIndexContent();
 
-    expect(content).toContain("# BlogBat Article URL Index");
+    expect(content).toContain("# Supportsheep Article URL Index");
     expect(content).toContain("Total articles: 1");
     expect(content).toContain(
-      "- [Ideas for Personal Websites](https://blogbat.com/ideas-for-personal-websites)",
+      "- [Ideas for Personal Websites](https://supportsheep.com/ideas-for-personal-websites)",
     );
     expect(content).toContain("Category: Uncategorized");
     expect(content).toContain("Published: 2026-03-29T00:52:12.000Z");

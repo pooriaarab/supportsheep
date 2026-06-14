@@ -41,7 +41,7 @@ vi.mock("@/lib/tenancy/repository", () => ({
 import { GET, POST } from "./route";
 
 function postRequest(body: unknown): NextRequest {
-  return new NextRequest("https://blogbat.com/api/v1/signup-codes", {
+  return new NextRequest("https://supportsheep.com/api/v1/signup-codes", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
@@ -117,7 +117,7 @@ describe("signup-codes routes (admin)", () => {
     ]);
 
     const response = await GET(
-      new NextRequest("https://blogbat.com/api/v1/signup-codes") as never,
+      new NextRequest("https://supportsheep.com/api/v1/signup-codes") as never,
     );
 
     expect(response.status).toBe(200);

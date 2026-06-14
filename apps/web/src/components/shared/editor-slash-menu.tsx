@@ -7,7 +7,7 @@
  * ProseMirror plugin is active. Supports keyboard navigation (ArrowUp/Down/Enter)
  * and mouse selection.
  *
- * Adapted for BlogBat from an admin slash-command-menu pattern.
+ * Adapted for Supportsheep from an admin slash-command-menu pattern.
  */
 
 import { useMemo, useRef, useState, useCallback } from "react";

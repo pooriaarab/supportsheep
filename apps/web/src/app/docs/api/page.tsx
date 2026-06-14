@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Public API Documentation",
-  description: "Read-only JSON endpoints for published BlogBat articles.",
+  description: "Read-only JSON endpoints for published Supportsheep articles.",
 };
 
 const listExample = `{
@@ -10,7 +10,7 @@ const listExample = `{
     {
       "title": "Low Cost SEO Packages",
       "slug": "low-cost-seo-packages",
-      "url": "https://blogbat.com/low-cost-seo-packages",
+      "url": "https://supportsheep.com/low-cost-seo-packages",
       "excerpt": "A concise intro.",
       "category": "Website Tips",
       "tags": ["seo", "pricing"],
@@ -31,12 +31,12 @@ const detailExample = `{
   "data": {
     "title": "Low Cost SEO Packages",
     "slug": "low-cost-seo-packages",
-    "url": "https://blogbat.com/low-cost-seo-packages",
+    "url": "https://supportsheep.com/low-cost-seo-packages",
     "excerpt": "A concise intro.",
     "body": "<p>Published article HTML...</p>",
     "category": "Website Tips",
     "tags": ["seo", "pricing"],
-    "author": "BlogBat",
+    "author": "Supportsheep",
     "publishedAt": "2026-04-15T00:00:00.000Z",
     "updatedAt": "2026-04-16T00:00:00.000Z",
     "readingTime": 4,
@@ -57,7 +57,7 @@ export default function PublicApiDocsPage() {
         </h1>
         <p className="text-base text-muted-foreground">
           Agents and integrations can consume these JSON endpoints to discover
-          and read published BlogBat posts. All responses include the standard
+          and read published Supportsheep posts. All responses include the standard
           rate-limit headers and cache controls to keep automated workflows
           predictable.
         </p>

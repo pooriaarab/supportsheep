@@ -88,7 +88,7 @@ const CATEGORY_CHOICES = [
   },
   {
     slug: "web-builders",
-    description: "Reviews, comparisons, and guides for specific website builders (Wix, Squarespace, WordPress, BlogBat, etc.).",
+    description: "Reviews, comparisons, and guides for specific website builders (Wix, Squarespace, WordPress, Supportsheep, etc.).",
   },
   {
     slug: "troubleshooting",

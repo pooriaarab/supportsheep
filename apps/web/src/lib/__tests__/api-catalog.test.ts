@@ -3,7 +3,7 @@ import { buildApiCatalog } from "@/lib/api-catalog";
 
 describe("api catalog", () => {
   it("builds linksets for the public machine-readable APIs", () => {
-    const siteUrl = "https://blogbat.com";
+    const siteUrl = "https://supportsheep.com";
     const catalog = buildApiCatalog(siteUrl);
 
     expect(catalog.linkset.map((entry) => entry.anchor)).toEqual(

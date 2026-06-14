@@ -120,7 +120,7 @@ export async function startInterview(
     tokenHash: hash,
   });
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://blogbat.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://supportsheep.com";
   return {
     shareLinkId: link.id,
     token,

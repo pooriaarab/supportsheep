@@ -1,5 +1,5 @@
 /**
- * Phase 1 retrofit: replace hardcoded BlogBat prices in the two pilot
+ * Phase 1 retrofit: replace hardcoded Supportsheep prices in the two pilot
  * programmatic-page Firestore docs with `{{solo.*}}` placeholders so the
  * interpolation pipeline in the landing components resolves them from
  * `SOLO_PRICING` (the pricing constants) at render time.
@@ -14,10 +14,10 @@
  *   - every `faqs[i].question` (plain text) -- safe, but unlikely to hit
  *
  * Replacement policy:
- *   - We only rewrite numbers that are UNAMBIGUOUSLY a BlogBat plan price. The
- *     detection uses regex phrases like "BlogBat's Pro plan ... $20" or "BlogBat's
- *     Pro is $25/mo" -- i.e. a "BlogBat" / "Pro" / "Grow" context word plus an
- *     adjacent known price. Naked `$20` with no BlogBat context is skipped to
+ *   - We only rewrite numbers that are UNAMBIGUOUSLY a Supportsheep plan price. The
+ *     detection uses regex phrases like "Supportsheep's Pro plan ... $20" or "Supportsheep's
+ *     Pro is $25/mo" -- i.e. a "Supportsheep" / "Pro" / "Grow" context word plus an
+ *     adjacent known price. Naked `$20` with no Supportsheep context is skipped to
  *     avoid clobbering competitor prices or unrelated figures.
  *   - Dry-run mode (`--dry-run`) prints each proposed swap with a 60-char
  *     context snippet, then exits without writing. Inspect the output before
@@ -45,7 +45,7 @@ const DOC_IDS = ["dentists", "squarespace__dentists"] as const;
 
 /**
  * Context-sensitive replacement rules. Each rule's `pattern` must match a
- * phrase that is unambiguously about a BlogBat plan -- the numeric price is
+ * phrase that is unambiguously about a Supportsheep plan -- the numeric price is
  * wrapped in a capture group so the surrounding prose stays intact.
  *
  * Order matters: later rules are tried only if earlier ones didn't match the
@@ -60,45 +60,45 @@ interface Rule {
   replacement: string;
 }
 
-// Accepts "$20", "$20/mo", "$20 per month", "$20/month" around a BlogBat/Pro
+// Accepts "$20", "$20/mo", "$20 per month", "$20/month" around a Supportsheep/Pro
 // context word. The `(?:/mo|\s*(?:per|a)\s*month)?` group is discarded so the
 // placeholder resolves to the right format (bare or /mo-suffixed) already.
 const RULES: Rule[] = [
-  // BlogBat Pro annual-billed rate: $20/mo
+  // Supportsheep Pro annual-billed rate: $20/mo
   {
     name: "solo.pro.yearly (billed annually)",
     pattern:
       /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$20\b/gi,
     replacement: "$1{{solo.pro.yearly.monthly}}",
   },
-  // BlogBat Pro month-to-month rate: $25/mo
+  // Supportsheep Pro month-to-month rate: $25/mo
   {
     name: "solo.pro.monthly (month to month)",
     pattern:
       /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$25\b/gi,
     replacement: "$1{{solo.pro.monthly.monthly}}",
   },
-  // BlogBat Pro total annual spend: $240/yr
+  // Supportsheep Pro total annual spend: $240/yr
   {
     name: "solo.pro.yearlyAnnual",
     pattern: /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$240\b/gi,
     replacement: "$1{{solo.pro.yearlyAnnual}}",
   },
-  // BlogBat Grow annual-billed rate: $90/mo
+  // Supportsheep Grow annual-billed rate: $90/mo
   {
     name: "solo.grow.yearly (billed annually)",
     pattern:
       /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$90\b/gi,
     replacement: "$1{{solo.grow.yearly.monthly}}",
   },
-  // BlogBat Grow month-to-month rate: $120/mo
+  // Supportsheep Grow month-to-month rate: $120/mo
   {
     name: "solo.grow.monthly (month to month)",
     pattern:
       /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$120\b/gi,
     replacement: "$1{{solo.grow.monthly.monthly}}",
   },
-  // BlogBat Grow total annual spend: $1080/yr
+  // Supportsheep Grow total annual spend: $1080/yr
   {
     name: "solo.grow.yearlyAnnual",
     pattern: /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$1080\b/gi,
@@ -233,7 +233,7 @@ function printDiff(diff: DocDiff): number {
     }
   }
   if (count === 0) {
-    console.info(`  (no BlogBat-price phrases matched; nothing to rewrite)`);
+    console.info(`  (no Supportsheep-price phrases matched; nothing to rewrite)`);
   }
   return count;
 }

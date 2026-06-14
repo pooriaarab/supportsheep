@@ -7,7 +7,7 @@ import type { Article } from "@repo/types";
 const article: Article & { id: string } = {
   id: "article-1",
   blogId: "default",
-  title: "BlogBat vs 10Web",
+  title: "Supportsheep vs 10Web",
   slug: "blogbat-vs-10web",
   body: "<p>Body copy</p>",
   draftBody: "",
@@ -19,7 +19,7 @@ const article: Article & { id: string } = {
   postType: "comparison",
   category: "web-builders",
   tags: [],
-  author: "BlogBat",
+  author: "Supportsheep",
   featuredImage: { url: "https://example.com/cover.jpg", alt: "Cover" },
   ogImage: "",
   metaTitle: "",

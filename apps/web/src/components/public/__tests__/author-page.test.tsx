@@ -24,7 +24,7 @@ describe("AuthorPage", () => {
       <AuthorPage
         author={author}
         articles={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -32,7 +32,7 @@ describe("AuthorPage", () => {
     expect(html).toContain('"@context":"https://schema.org"');
     expect(html).toContain('"name":"Jane Doe"');
     expect(html).toContain('"jobTitle":"Senior Editor"');
-    expect(html).toContain('"url":"https://blogbat.com/authors/jane-doe"');
+    expect(html).toContain('"url":"https://supportsheep.com/authors/jane-doe"');
     expect(html).toContain('"image":"https://cdn.example.com/jane.png"');
     expect(html).toContain(
       '"sameAs":["https://www.linkedin.com/in/jane-doe","https://github.com/jane-doe"]',
@@ -44,7 +44,7 @@ describe("AuthorPage", () => {
       <AuthorPage
         author={author}
         articles={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -69,7 +69,7 @@ describe("AuthorPage", () => {
       <AuthorPage
         author={minimal}
         articles={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 

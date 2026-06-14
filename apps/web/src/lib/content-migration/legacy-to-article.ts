@@ -37,7 +37,7 @@ export interface LegacyArticleDraft {
 
 export interface CompetitorNarrativeInput {
   tldr: string;
-  chooseBlogBatIf: string;
+  chooseSupportsheepIf: string;
   chooseCompetitorIf: string;
   faqs: Array<{ question: string; answer: string }>;
 }
@@ -135,7 +135,7 @@ function buildCtaSection(
 ): string {
   return sanitizeArticleHtml(`
     <section>
-      <h2>Why use BlogBat for this page?</h2>
+      <h2>Why use Supportsheep for this page?</h2>
       <p>${escapeHtml(subhead)}</p>
       <p><a href="${escapeHtml(ctaHref)}">${escapeHtml(ctaText)}</a></p>
     </section>
@@ -160,8 +160,8 @@ function normalizeBody(
     html = sanitizeArticleHtml(
       `${html}\n${buildCtaSection(
         cta.subhead?.trim() || "",
-        cta.ctaText?.trim() || "Create your website with BlogBat",
-        cta.ctaHref?.trim() || "https://blogbat.com",
+        cta.ctaText?.trim() || "Create your website with Supportsheep",
+        cta.ctaHref?.trim() || "https://supportsheep.com",
       )}`,
     );
   }
@@ -340,7 +340,7 @@ function renderFeatureMatrix(competitor: Competitor): string {
       <h2>Feature comparison</h2>
       <table>
         <thead>
-          <tr><th>Feature</th><th>BlogBat</th><th>${escapeHtml(
+          <tr><th>Feature</th><th>Supportsheep</th><th>${escapeHtml(
             competitor.name,
           )}</th><th>Notes</th></tr>
         </thead>
@@ -359,8 +359,8 @@ export function buildAlternativeArticleInput(
   const body = sanitizeArticleHtml(`
     <p>${escapeHtml(narrative.tldr)}</p>
     <section>
-      <h2>When BlogBat is the better fit</h2>
-      <p>${escapeHtml(narrative.chooseBlogBatIf)}</p>
+      <h2>When Supportsheep is the better fit</h2>
+      <p>${escapeHtml(narrative.chooseSupportsheepIf)}</p>
     </section>
     <section>
       <h2>When ${escapeHtml(competitor.name)} is the better fit</h2>
@@ -368,13 +368,13 @@ export function buildAlternativeArticleInput(
     </section>
     ${renderFeatureMatrix(competitor)}
     ${renderPricingTable(competitor)}
-    ${renderProsCons("BlogBat strengths and tradeoffs", blogbatProsCons)}
+    ${renderProsCons("Supportsheep strengths and tradeoffs", blogbatProsCons)}
     ${renderProsCons(`${competitor.name} strengths and tradeoffs`, competitor.prosCons)}
     ${buildFaqBlockHtml(narrative.faqs)}
   `);
 
   return {
-    title: `BlogBat vs ${competitor.name}: Which Website Builder Should You Pick?`,
+    title: `Supportsheep vs ${competitor.name}: Which Website Builder Should You Pick?`,
     slug,
     body,
     draftBody: body,
@@ -390,7 +390,7 @@ export function buildAlternativeArticleInput(
       `alternative to ${competitor.name}`,
       `blogbat vs ${competitor.name}`,
     ],
-    metaTitle: `BlogBat vs ${competitor.name}: which website builder should you pick?`,
+    metaTitle: `Supportsheep vs ${competitor.name}: which website builder should you pick?`,
     metaDescription: truncate(
       `Honest ${competitor.name} alternative comparison with pricing, features, and the cases where ${competitor.name} is still the better choice.`,
       160,
@@ -411,8 +411,8 @@ export function buildVsArticleInput(
     ${renderFeatureMatrix(competitor)}
     ${renderPricingTable(competitor)}
     <section>
-      <h2>Who should choose BlogBat</h2>
-      <p>${escapeHtml(narrative.chooseBlogBatIf)}</p>
+      <h2>Who should choose Supportsheep</h2>
+      <p>${escapeHtml(narrative.chooseSupportsheepIf)}</p>
     </section>
     <section>
       <h2>Who should choose ${escapeHtml(competitor.name)}</h2>
@@ -421,7 +421,7 @@ export function buildVsArticleInput(
   `);
 
   return {
-    title: `BlogBat vs ${competitor.name} Head-to-Head`,
+    title: `Supportsheep vs ${competitor.name} Head-to-Head`,
     slug,
     body,
     draftBody: body,
@@ -433,9 +433,9 @@ export function buildVsArticleInput(
     categories: ["web-builders"],
     tags: ["comparison", competitor.slug, "vs"],
     keywords: [`blogbat vs ${competitor.name}`, `${competitor.name} vs blogbat`],
-    metaTitle: `BlogBat vs ${competitor.name} -- head-to-head`,
+    metaTitle: `Supportsheep vs ${competitor.name} -- head-to-head`,
     metaDescription: truncate(
-      `Quick head-to-head comparison of BlogBat and ${competitor.name}: pricing, features, and the short answer on which tool fits which kind of small business.`,
+      `Quick head-to-head comparison of Supportsheep and ${competitor.name}: pricing, features, and the short answer on which tool fits which kind of small business.`,
       160,
     ),
     canonicalPath: `/${slug}`,
@@ -455,7 +455,7 @@ export function buildAlternativesHubArticleInput(
           <strong>${escapeHtml(competitor.name)}</strong>: ${escapeHtml(competitor.bestFor)}
           <ul>
             <li><a href="/${alternativeSlug}">${escapeHtml(competitor.name)} alternative</a></li>
-            <li><a href="/${vsSlug}">BlogBat vs ${escapeHtml(competitor.name)}</a></li>
+            <li><a href="/${vsSlug}">Supportsheep vs ${escapeHtml(competitor.name)}</a></li>
           </ul>
         </li>
       `;
@@ -471,23 +471,23 @@ export function buildAlternativesHubArticleInput(
   `);
 
   return {
-    title: "BlogBat Alternatives and Comparisons",
+    title: "Supportsheep Alternatives and Comparisons",
     slug: "blogbat-alternatives",
     body,
     draftBody: body,
     excerpt:
-      "Browse BlogBat alternatives and head-to-head website builder comparisons for small business owners.",
+      "Browse Supportsheep alternatives and head-to-head website builder comparisons for small business owners.",
     summary:
-      "Browse BlogBat alternatives and head-to-head website builder comparisons for small business owners who want a faster way to evaluate pricing, fit, and tradeoffs.",
+      "Browse Supportsheep alternatives and head-to-head website builder comparisons for small business owners who want a faster way to evaluate pricing, fit, and tradeoffs.",
     postType: "comparison",
     category: "web-builders",
     primaryCategory: "web-builders",
     categories: ["web-builders"],
     tags: ["comparison", "alternatives", "website-builders"],
     keywords: ["blogbat alternatives", "website builder comparisons"],
-    metaTitle: "BlogBat alternatives and comparisons",
+    metaTitle: "Supportsheep alternatives and comparisons",
     metaDescription:
-      "Honest comparisons between BlogBat and other small business website builders, including pricing, features, and who each tool fits best.",
+      "Honest comparisons between Supportsheep and other small business website builders, including pricing, features, and who each tool fits best.",
     canonicalPath: "/blogbat-alternatives",
     sourcePath: "/alternatives",
     legacyPaths: ["/alternatives"],

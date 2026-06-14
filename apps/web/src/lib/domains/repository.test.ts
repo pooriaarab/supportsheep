@@ -64,9 +64,9 @@ describe("validateCustomDomain", () => {
     }
   });
 
-  it("rejects the apex and blogbat.com subdomains as reserved", () => {
-    expect(validateCustomDomain("blogbat.com").ok).toBe(false);
-    expect(validateCustomDomain("acme.blogbat.com")).toEqual({
+  it("rejects the apex and supportsheep.com subdomains as reserved", () => {
+    expect(validateCustomDomain("supportsheep.com").ok).toBe(false);
+    expect(validateCustomDomain("acme.supportsheep.com")).toEqual({
       ok: false,
       reason: "reserved",
     });

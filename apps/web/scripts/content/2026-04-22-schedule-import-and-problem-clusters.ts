@@ -236,14 +236,14 @@ async function generateArticle(item: ManifestItem) {
   return generateObject({
     model: openai("gpt-5.4-mini"),
     schema: articleSchema,
-    system: `Write a practical small-business article for BlogBat.
+    system: `Write a practical small-business article for Supportsheep.
 
 Hard rules:
 - Body must be valid HTML using h2, h3, p, ul, ol, li, strong, and a tags only.
 - No markdown fences.
 - Be direct, practical, and non-fluffy.
 - Explain the problem clearly and connect the solution back to owning a real website, showing up in search, and converting visitors.
-- Mention BlogBat naturally as one option for building the website, not as a hard sell.
+- Mention Supportsheep naturally as one option for building the website, not as a hard sell.
 - Do not invent unsupported product claims like integrations or compliance guarantees.
 - Keep the body around 900-1400 words.
 - FAQs must be distinct and practical.
@@ -332,7 +332,7 @@ async function main() {
           primaryCategory: item.category,
           categories: [item.category],
           tags: [item.cluster, item.category, ...object.keywords.slice(0, 3)],
-          author: "BlogBat",
+          author: "Supportsheep",
           featuredImage: { url: "", alt: "" },
           ogImage: "",
           metaTitle: object.metaTitle,

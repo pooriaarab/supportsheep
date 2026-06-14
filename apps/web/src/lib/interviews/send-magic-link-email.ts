@@ -32,7 +32,7 @@ interface SendInput {
  * stdout in production, never include it in error reports.
  */
 function buildRedemptionUrl(input: SendInput): string {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://blogbat.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://supportsheep.com";
   return `${baseUrl}/api/v1/interviews/magic-link?share=${encodeURIComponent(
     input.shareLinkToken,
   )}&code=${encodeURIComponent(input.magicLinkToken)}`;

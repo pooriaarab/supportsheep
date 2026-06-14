@@ -30,7 +30,7 @@ vi.mock("@/lib/rate-limit", () => ({
 import { POST } from "./route";
 
 function postRequest(body: unknown): NextRequest {
-  return new NextRequest("https://blogbat.com/api/v1/agent/signup", {
+  return new NextRequest("https://supportsheep.com/api/v1/agent/signup", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),

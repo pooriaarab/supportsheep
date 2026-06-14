@@ -23,7 +23,7 @@ const VARIANT_KEY = "durable__therapists";
 
 const CONTENT = `## TL;DR
 
-Durable is an AI-first website builder that generates a complete business website in under a minute and bundles a CRM, invoicing, and AI marketing tools in one subscription. For a solo therapist launching a new private practice or replacing an outdated site, Durable's speed-to-live-site is genuinely valuable. The firm boundary for therapy practices -- as with every general-purpose builder -- is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, so all clinical workflow (intake, scheduling, session-related communication) must live in a dedicated EHR. This page covers Durable honestly for therapists and compares it to BlogBat for the marketing site decision.
+Durable is an AI-first website builder that generates a complete business website in under a minute and bundles a CRM, invoicing, and AI marketing tools in one subscription. For a solo therapist launching a new private practice or replacing an outdated site, Durable's speed-to-live-site is genuinely valuable. The firm boundary for therapy practices -- as with every general-purpose builder -- is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, so all clinical workflow (intake, scheduling, session-related communication) must live in a dedicated EHR. This page covers Durable honestly for therapists and compares it to Supportsheep for the marketing site decision.
 
 ## What Durable offers a solo therapy practice
 
@@ -57,7 +57,7 @@ Wix added a HIPAA compliance mode in 2026 -- BAA available on Business and above
 
 **Speed.** Durable is the fastest general-purpose AI site builder. A therapist who has put off building a website because of the complexity barrier gets a live site in under a day.
 
-**Reduced vendor count.** Website + CRM + AI marketing + invoicing in one subscription is compelling for a solo practitioner managing overhead. The equivalent stack on Squarespace or BlogBat would require separate subscriptions for CRM and invoicing tools.
+**Reduced vendor count.** Website + CRM + AI marketing + invoicing in one subscription is compelling for a solo practitioner managing overhead. The equivalent stack on Squarespace or Supportsheep would require separate subscriptions for CRM and invoicing tools.
 
 **AI copy that knows your specialty.** Durable writes practice-specific copy -- not "add your service here" placeholders, but genuine descriptions of therapy modalities, typical clients, and approaches. The quality varies, but it removes the blank-page problem.
 
@@ -67,36 +67,36 @@ Wix added a HIPAA compliance mode in 2026 -- BAA available on Business and above
 
 **No HIPAA path.** As noted above, the most consequential limitation for any health practice.
 
-**SEO ceiling for private-practice therapists.** BlogBat therapists in competitive markets compete for "therapist [city]," "anxiety therapist [neighborhood]," "[modality] therapist [city]" keywords. These require: specialty pages with LocalBusiness and Person schema; FAQ content with FAQPage JSON-LD; a content velocity strategy. Durable's AI generates initial copy and basic SEO settings but lacks BlogBat's content-specific SEO machinery (SEO sidebar, automated structured data, thin-content guard, internal link suggestions).
+**SEO ceiling for private-practice therapists.** Supportsheep therapists in competitive markets compete for "therapist [city]," "anxiety therapist [neighborhood]," "[modality] therapist [city]" keywords. These require: specialty pages with LocalBusiness and Person schema; FAQ content with FAQPage JSON-LD; a content velocity strategy. Durable's AI generates initial copy and basic SEO settings but lacks Supportsheep's content-specific SEO machinery (SEO sidebar, automated structured data, thin-content guard, internal link suggestions).
 
 **CRM is marketing-grade, not clinical-grade.** Durable's CRM is adequate for tracking new-patient inquiries and follow-up calls. It is not adequate for practice management. Do not conflate the two.
 
 **Design ceiling is lower than Squarespace or Wix.** Durable's design output is clean and professional but less visually polished than Squarespace's template library or Wix's design editor. For a therapy practice where the website's tone and aesthetic signal the practitioner's approach, Squarespace's design polish is a real differentiator.
 
-## BlogBat's position for a solo therapist evaluating Durable
+## Supportsheep's position for a solo therapist evaluating Durable
 
-BlogBat and Durable are the two closest competitors in the "AI-first site builder for solo service professionals" category. The honest comparison:
+Supportsheep and Durable are the two closest competitors in the "AI-first site builder for solo service professionals" category. The honest comparison:
 
-- **Both use AI to generate a first draft.** Durable is faster (30 seconds); BlogBat's onboarding takes a bit longer but seeds multi-page content with more business context.
-- **Durable bundles more tools.** CRM, invoicing, and AI marketing are native in Durable; BlogBat does not include these. If a therapist genuinely needs these tools, Durable reduces subscription count.
-- **BlogBat is designed for content-driven local search.** BlogBat's blog with SEO sidebar, AI drafting, LocalBusiness and FAQPage schema by default, and a thin-content guard is optimized for the therapist who publishes specialty-specific content as a primary client-acquisition strategy. Durable's blog is functional but not designed for content velocity.
-- **BlogBat's free tier includes a custom domain.** A therapist can launch on BlogBat's free tier with their own domain. Durable requires a paid plan for a custom domain.
+- **Both use AI to generate a first draft.** Durable is faster (30 seconds); Supportsheep's onboarding takes a bit longer but seeds multi-page content with more business context.
+- **Durable bundles more tools.** CRM, invoicing, and AI marketing are native in Durable; Supportsheep does not include these. If a therapist genuinely needs these tools, Durable reduces subscription count.
+- **Supportsheep is designed for content-driven local search.** Supportsheep's blog with SEO sidebar, AI drafting, LocalBusiness and FAQPage schema by default, and a thin-content guard is optimized for the therapist who publishes specialty-specific content as a primary client-acquisition strategy. Durable's blog is functional but not designed for content velocity.
+- **Supportsheep's free tier includes a custom domain.** A therapist can launch on Supportsheep's free tier with their own domain. Durable requires a paid plan for a custom domain.
 - **Neither signs a HIPAA BAA.** Both platforms require the same EHR-based clinical workflow. The choice between them is about marketing site features, not HIPAA posture.
 
-## Side-by-side: Durable vs BlogBat for a therapy practice
+## Side-by-side: Durable vs Supportsheep for a therapy practice
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Durable</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Durable</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>AI site generation</td><td>Fastest -- complete site in ~30 seconds</td><td>Multi-page first draft from business description via onboarding</td></tr>
 <tr><td>Starting price</td><td>Paid plans required for custom domain; ~$15-17/mo</td><td>Free tier with custom domain</td></tr>
-<tr><td>HIPAA BAA</td><td>No -- link to SimplePractice, TherapyNotes, or Acuity Premium for PHI</td><td>Not applicable -- same architecture: EHR for all PHI, BlogBat for marketing</td></tr>
+<tr><td>HIPAA BAA</td><td>No -- link to SimplePractice, TherapyNotes, or Acuity Premium for PHI</td><td>Not applicable -- same architecture: EHR for all PHI, Supportsheep for marketing</td></tr>
 <tr><td>Bundled CRM</td><td>Yes -- marketing-grade lead and contact management</td><td>No -- use your EHR's client portal or a separate CRM</td></tr>
 <tr><td>AI marketing tools</td><td>Yes -- Google Ads copy, social posts, email drafts</td><td>No -- blog AI drafting; no ad-copy generator</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Basic blog; AI-generated initial copy; limited schema automation</td><td>Blog with SEO sidebar, AI drafting, LocalBusiness + FAQPage + Article schema by default</td></tr>
-<tr><td>Best fit</td><td>BlogBat therapists who want the fastest launch with bundled marketing tools</td><td>BlogBat therapists prioritizing content velocity, structured data, and local SEO with lower monthly cost</td></tr>
+<tr><td>Best fit</td><td>Supportsheep therapists who want the fastest launch with bundled marketing tools</td><td>Supportsheep therapists prioritizing content velocity, structured data, and local SEO with lower monthly cost</td></tr>
 </tbody>
 </table>`;
 
@@ -122,9 +122,9 @@ const FAQS: ProgrammaticFaq[] = [
       "No. Durable does not sign a Business Associate Agreement for any of its products. Do not collect mental health history, symptoms, diagnoses, or any PHI through Durable's contact forms or CRM. The correct architecture: Durable handles the public marketing site; SimplePractice, TherapyNotes, TheraNest, or Headway handles intake, scheduling, and client communication (and signs your BAA).",
   },
   {
-    question: "Should I use Durable or BlogBat for my therapy practice website?",
+    question: "Should I use Durable or Supportsheep for my therapy practice website?",
     answer:
-      "Choose Durable if you want the fastest path to a live site and the bundled CRM, invoicing, and AI marketing tools reduce real overhead in your solo practice. Choose BlogBat if you want a free tier with a custom domain, a blog with an SEO sidebar and AI drafting, LocalBusiness and FAQPage schema automated by default, and a CMS designed for the content-velocity approach to local search that compounds over 12-18 months. Both require the same HIPAA architecture: marketing site in the builder, clinical workflow in your EHR.",
+      "Choose Durable if you want the fastest path to a live site and the bundled CRM, invoicing, and AI marketing tools reduce real overhead in your solo practice. Choose Supportsheep if you want a free tier with a custom domain, a blog with an SEO sidebar and AI drafting, LocalBusiness and FAQPage schema automated by default, and a CMS designed for the content-velocity approach to local search that compounds over 12-18 months. Both require the same HIPAA architecture: marketing site in the builder, clinical workflow in your EHR.",
   },
   {
     question: "What does Durable's built-in CRM do for a therapist?",
@@ -134,7 +134,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do therapists use content marketing to find clients through their website?",
     answer:
-      "Content marketing for therapists compounds into local search authority through specialty-specific articles: 'what is EMDR therapy,' 'CBT exercises for social anxiety,' 'how to find a trauma-informed therapist in [city].' These posts answer informational queries that people search before reaching out to a therapist, building topical authority and supporting local search rankings. BlogBat's blog ships FAQPage JSON-LD on Q&A content and LocalBusiness schema, and an SEO sidebar audits title and meta inline. Durable's blog is functional for content publishing but lacks BlogBat's SEO-specific tooling.",
+      "Content marketing for therapists compounds into local search authority through specialty-specific articles: 'what is EMDR therapy,' 'CBT exercises for social anxiety,' 'how to find a trauma-informed therapist in [city].' These posts answer informational queries that people search before reaching out to a therapist, building topical authority and supporting local search rankings. Supportsheep's blog ships FAQPage JSON-LD on Q&A content and LocalBusiness schema, and an SEO sidebar audits title and meta inline. Durable's blog is functional for content publishing but lacks Supportsheep's SEO-specific tooling.",
   },
   {
     question: "What EHR tools pair with a Durable therapy practice website?",
@@ -167,14 +167,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Durable for solo therapy practices -- covering AI-first generation speed, bundled CRM, HIPAA boundaries, and when BlogBat is the better default for content and local search.",
-        ctaText: "Start your therapy practice website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Durable for solo therapy practices -- covering AI-first generation speed, bundled CRM, HIPAA boundaries, and when Supportsheep is the better default for content and local search.",
+        ctaText: "Start your therapy practice website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Therapists",
       },
       title: "Durable for therapists: an honest alternative",
       metaDescription:
-        "Is Durable right for a therapy practice website? An honest comparison covering AI site generation, bundled CRM, HIPAA limits, and when BlogBat is the better default.",
+        "Is Durable right for a therapy practice website? An honest comparison covering AI site generation, bundled CRM, HIPAA limits, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

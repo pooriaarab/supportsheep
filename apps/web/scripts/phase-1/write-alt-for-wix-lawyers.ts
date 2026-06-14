@@ -23,7 +23,7 @@ const VARIANT_KEY = "wix__lawyers";
 
 const CONTENT = `## TL;DR
 
-Wix is a common first website platform for solo attorneys and small law firms -- flexible, fast to launch, and no developer required. It is also widely described as a platform that lawyers "outgrow" once local search competition intensifies or the practice needs deeper intake and CRM integration. This page covers Wix's genuine strengths for a law firm, the real ceilings it hits as SEO stakes rise, and where BlogBat fits for a solo attorney prioritizing content and local search over visual design freedom.
+Wix is a common first website platform for solo attorneys and small law firms -- flexible, fast to launch, and no developer required. It is also widely described as a platform that lawyers "outgrow" once local search competition intensifies or the practice needs deeper intake and CRM integration. This page covers Wix's genuine strengths for a law firm, the real ceilings it hits as SEO stakes rise, and where Supportsheep fits for a solo attorney prioritizing content and local search over visual design freedom.
 
 ## Why attorneys actually choose Wix
 
@@ -42,7 +42,7 @@ Wix is genuinely useful for a solo attorney's first professional website, for go
 Multiple legal marketing agencies and SEO consultants characterize Wix as a "get online fast" platform rather than a long-game SEO foundation. The specific limitations for attorneys:
 
 - **Heading structure is constrained.** Most Wix templates limit heading choices in ways that make it harder to maintain clean H1/H2/H3 hierarchy across a complex site without workarounds.
-- **LegalService and Attorney schema requires manual injection.** Google's rich results for legal services benefit from LegalService, Attorney (a Person subtype), and LocalBusiness schema markup. Adding these on Wix requires a custom code block injection -- it is not automated. BlogBat ships this by default.
+- **LegalService and Attorney schema requires manual injection.** Google's rich results for legal services benefit from LegalService, Attorney (a Person subtype), and LocalBusiness schema markup. Adding these on Wix requires a custom code block injection -- it is not automated. Supportsheep ships this by default.
 - **Programmatic local SEO pages are hand-built.** A solo attorney serving multiple neighborhoods or practice areas benefits from a dedicated page per combination ("estate planning attorney [neighborhood]," "DUI lawyer [county]"). Building these at any scale on Wix is hand labor -- there is no templating engine.
 - **Redirect management for site migrations is painful.** Attorneys who outgrow Wix and migrate to WordPress or a dedicated legal platform find Wix's redirect tooling cumbersome at scale.
 
@@ -70,20 +70,20 @@ Legal marketing agencies routinely describe a pattern: a solo attorney launches 
 
 The pattern: Wix is the marketing layer; the legal CRM is the intake and matter layer. They connect via a link or an embed on the contact page.
 
-## BlogBat's position for a solo or small law firm
+## Supportsheep's position for a solo or small law firm
 
-BlogBat is designed for the "solo professional service business that wants a credible, content-led marketing site with minimal overhead." For a solo attorney:
+Supportsheep is designed for the "solo professional service business that wants a credible, content-led marketing site with minimal overhead." For a solo attorney:
 
 - **Free tier with custom domain.** A solo attorney launching a new practice can build and iterate on the marketing site before paying. Wix's free tier shows Wix branding -- not appropriate for a real practice.
-- **Blog with SEO sidebar and AI-assisted drafting.** Content marketing for attorneys ("what is a power of attorney in [state]," "what happens at a preliminary hearing in [city]," "how long does a chapter 7 bankruptcy take") is the highest-ROI acquisition channel for a solo practice that cannot afford PPC or a legal marketing agency. BlogBat's blog surfaces title/meta audits, internal link suggestions, and FAQPage JSON-LD inline.
+- **Blog with SEO sidebar and AI-assisted drafting.** Content marketing for attorneys ("what is a power of attorney in [state]," "what happens at a preliminary hearing in [city]," "how long does a chapter 7 bankruptcy take") is the highest-ROI acquisition channel for a solo practice that cannot afford PPC or a legal marketing agency. Supportsheep's blog surfaces title/meta audits, internal link suggestions, and FAQPage JSON-LD inline.
 - **LegalService and LocalBusiness schema by default.** Structured data for a law firm -- practice area, address, phone, attorney Person schema -- ships without a code block injection. This is a material difference for a practice investing in local search.
-- **Correct architectural expectation.** BlogBat is a marketing site builder, not a legal CRM. The expected architecture -- marketing site on BlogBat, intake and matter management in Clio Grow, Lawmatics, or MyCase -- is what legal-marketing agencies recommend as a baseline. It is baked into BlogBat's design rather than left to the user to discover after a form-data incident.
+- **Correct architectural expectation.** Supportsheep is a marketing site builder, not a legal CRM. The expected architecture -- marketing site on Supportsheep, intake and matter management in Clio Grow, Lawmatics, or MyCase -- is what legal-marketing agencies recommend as a baseline. It is baked into Supportsheep's design rather than left to the user to discover after a form-data incident.
 
-## Side-by-side: Wix vs BlogBat for law firms
+## Side-by-side: Wix vs Supportsheep for law firms
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Wix (Core / Business)</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Wix (Core / Business)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Starting price (annual billing)</td><td>$29/mo (Core) -- $36/mo (Business)</td><td>Free tier with custom domain</td></tr>
@@ -92,17 +92,17 @@ BlogBat is designed for the "solo professional service business that wants a cre
 <tr><td>Intake forms for client intake</td><td>Not suitable for privileged matter detail -- link to Clio Grow, Lawmatics, or MyCase</td><td>Same -- link to legal CRM; do not collect matter detail in the CMS</td></tr>
 <tr><td>Built-in scheduling</td><td>Wix Bookings for initial consultations; not suitable for clinical intake</td><td>Link to Calendly, Clio Grow, or Lawmatics intake scheduler</td></tr>
 <tr><td>Long-term SEO ceiling</td><td>Lower than WordPress; adequate for low-competition local markets at launch</td><td>Higher automated schema output; content-velocity tooling; better for search-first practices</td></tr>
-<tr><td>Best fit</td><td>Attorneys who prioritize design freedom and fast launch; plan to address SEO ceiling later</td><td>BlogBat attorneys prioritizing content velocity and local SEO from day one, with lower monthly cost</td></tr>
+<tr><td>Best fit</td><td>Attorneys who prioritize design freedom and fast launch; plan to address SEO ceiling later</td><td>Supportsheep attorneys prioritizing content velocity and local SEO from day one, with lower monthly cost</td></tr>
 </tbody>
 </table>
 
-## Practical checklist for a solo attorney evaluating Wix vs BlogBat
+## Practical checklist for a solo attorney evaluating Wix vs Supportsheep
 
-1. **What is your local search competition level?** If you are launching a solo practice in a major metro competing against law firms with dedicated SEO spend, starting on a platform with higher automated schema and content tooling (BlogBat, or WordPress with Yoast) avoids a migration 18 months from now.
-2. **How design-sensitive is your brand?** Wix wins if pixel-level layout control is the deciding factor. BlogBat wins if content consistency and SEO automation are.
+1. **What is your local search competition level?** If you are launching a solo practice in a major metro competing against law firms with dedicated SEO spend, starting on a platform with higher automated schema and content tooling (Supportsheep, or WordPress with Yoast) avoids a migration 18 months from now.
+2. **How design-sensitive is your brand?** Wix wins if pixel-level layout control is the deciding factor. Supportsheep wins if content consistency and SEO automation are.
 3. **What's your intake workflow?** Both platforms assume a legal CRM for matter intake. Choose your legal CRM first; it determines your intake architecture independent of the marketing site.
-4. **What's your budget for the first year?** BlogBat's free tier plus Pro at {{solo.pro.yearly}} billed annually is a different cost profile than Wix Core at $29/month plus the app stack that a full-featured legal site typically needs.
-5. **Do you blog?** If you plan to publish monthly legal explainer content, a CMS with an SEO sidebar and AI drafting (BlogBat) reduces the time-per-post compared to a CMS without it.`;
+4. **What's your budget for the first year?** Supportsheep's free tier plus Pro at {{solo.pro.yearly}} billed annually is a different cost profile than Wix Core at $29/month plus the app stack that a full-featured legal site typically needs.
+5. **Do you blog?** If you plan to publish monthly legal explainer content, a CMS with an SEO sidebar and AI drafting (Supportsheep) reduces the time-per-post compared to a CMS without it.`;
 
 function countWords(text: string): number {
   const stripped = text
@@ -126,9 +126,9 @@ const FAQS: ProgrammaticFaq[] = [
       "For basic lead capture (name, email, brief matter description with a disclaimer) yes. For substantive case intake -- facts of the matter, financial information, case history, documents -- no. Use a legal CRM tool (Clio Grow, Lawmatics, MyCase) for matter intake; these are purpose-built for attorney-client confidentiality. The Wix site handles the marketing layer; the legal CRM handles the intake and matter layer.",
   },
   {
-    question: "Should I use Wix or BlogBat for my law firm website?",
+    question: "Should I use Wix or Supportsheep for my law firm website?",
     answer:
-      "Choose Wix if design freedom and editor flexibility are the highest priority, or if you want built-in appointment booking through Wix Bookings without a separate scheduling link. Choose BlogBat if you want LegalService and LocalBusiness schema automated by default (no code injection required), a blog with an SEO sidebar and AI drafting for content marketing, a free tier with a custom domain at launch, and lower monthly cost at the Pro tier ({{solo.pro.yearly}} annually). Both platforms require the same intake architecture: legal CRM for matter intake, not CMS forms.",
+      "Choose Wix if design freedom and editor flexibility are the highest priority, or if you want built-in appointment booking through Wix Bookings without a separate scheduling link. Choose Supportsheep if you want LegalService and LocalBusiness schema automated by default (no code injection required), a blog with an SEO sidebar and AI drafting for content marketing, a free tier with a custom domain at launch, and lower monthly cost at the Pro tier ({{solo.pro.yearly}} annually). Both platforms require the same intake architecture: legal CRM for matter intake, not CMS forms.",
   },
   {
     question: "What are the SEO limitations of Wix for attorneys?",
@@ -143,7 +143,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do solo attorneys use content marketing for SEO?",
     answer:
-      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. BlogBat's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a solo practitioner doing content marketing without an agency.",
+      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. Supportsheep's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a solo practitioner doing content marketing without an agency.",
   },
 ];
 
@@ -171,14 +171,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Wix for solo attorneys and small law firms -- covering its real strengths at launch, the SEO ceiling it hits as competition grows, and when BlogBat is the better default.",
-        ctaText: "Start your law firm website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at Wix for solo attorneys and small law firms -- covering its real strengths at launch, the SEO ceiling it hits as competition grows, and when Supportsheep is the better default.",
+        ctaText: "Start your law firm website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Lawyers",
       },
       title: "Wix for lawyers: an honest alternative",
       metaDescription:
-        "Is Wix right for a law firm website? An honest comparison covering editor flexibility, SEO ceiling, intake form limits, and when BlogBat is the better default for content-first practices.",
+        "Is Wix right for a law firm website? An honest comparison covering editor flexibility, SEO ceiling, intake form limits, and when Supportsheep is the better default for content-first practices.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

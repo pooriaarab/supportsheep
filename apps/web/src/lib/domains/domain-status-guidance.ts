@@ -79,9 +79,9 @@ export function getDomainGuidance(cf: CustomHostnameResult): DomainGuidance {
       userMessage:
         cf.status === "blocked"
           ? "This domain was blocked and cannot be served."
-          : "This domain is no longer pointed at BlogBat.",
+          : "This domain is no longer pointed at Supportsheep.",
       fixHint:
-        "Confirm you control this domain and that its DNS still points at BlogBat, then remove and re-add it.",
+        "Confirm you control this domain and that its DNS still points at Supportsheep, then remove and re-add it.",
     };
   }
 

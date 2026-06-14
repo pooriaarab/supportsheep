@@ -5,14 +5,14 @@
  * Query rationale:
  *   - Question format (AEO/AI Overviews highly favourable)
  *   - Informational intent, not commercial — lower competition ceiling
- *   - Directly addresses BlogBat's ICP (solopreneurs and small service businesses)
+ *   - Directly addresses Supportsheep's ICP (solopreneurs and small service businesses)
  *   - No single dominant answer in SERP; several thin listicle-style results,
  *     none specifically addressing the 2026 context + solopreneur angle
- *   - Natural internal-linking target for other BlogBat blog posts
+ *   - Natural internal-linking target for other Supportsheep blog posts
  *
- * BlogBat claims grounded in:
+ * Supportsheep claims grounded in:
  *   /apps/web/../phase-1-pilots/.claude/context/solo-product.md (verified 2026-04-21)
- *   Pricing from blogbat.com/pricing (verified 2026-04-21):
+ *   Pricing from supportsheep.com/pricing (verified 2026-04-21):
  *     Free: $0, Pro: $20/mo billed annually ($25/mo month-to-month),
  *     Grow: $90/mo billed annually
  *
@@ -239,10 +239,10 @@ const BODY = `
 </thead>
 <tbody>
 <tr>
-<td><strong>BlogBat</strong></td>
+<td><strong>Supportsheep</strong></td>
 <td>Yes — generates full site from a brief</td>
 <td>Solopreneurs and small service businesses wanting a fast, SEO-aware first draft with AI-seeded sections</td>
-<td>Free – $20/mo Pro (verified April 2026, <a href="https://blogbat.com/pricing">blogbat.com/pricing</a>)</td>
+<td>Free – $20/mo Pro (verified April 2026, <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a>)</td>
 <td>Smaller surface area than Wix/Squarespace; no native booking or e-commerce</td>
 </tr>
 <tr>
@@ -276,7 +276,7 @@ const BODY = `
 </tbody>
 </table>
 
-<p><strong>Note on BlogBat's positioning:</strong> BlogBat was built specifically for the solopreneur and small-service-business use case. Its AI onboarding generates a usable first draft — pages, sections, service descriptions, initial copy — from a short business description, without requiring you to pick templates or start from an empty canvas. That differentiates it from tools that apply AI only as a polish layer. It is a site builder, not an all-in-one marketing platform: there is no native booking system (BlogBat uses a scheduling link to connect to third-party tools like Calendly), and the analytics dashboard is basic-visitor-data only. If you need e-commerce with inventory management or a built-in CRM, BlogBat is not the right tool. If you need a credible, fast-to-launch service site, it is a strong option at a competitive price point.</p>
+<p><strong>Note on Supportsheep's positioning:</strong> Supportsheep was built specifically for the solopreneur and small-service-business use case. Its AI onboarding generates a usable first draft — pages, sections, service descriptions, initial copy — from a short business description, without requiring you to pick templates or start from an empty canvas. That differentiates it from tools that apply AI only as a polish layer. It is a site builder, not an all-in-one marketing platform: there is no native booking system (Supportsheep uses a scheduling link to connect to third-party tools like Calendly), and the analytics dashboard is basic-visitor-data only. If you need e-commerce with inventory management or a built-in CRM, Supportsheep is not the right tool. If you need a credible, fast-to-launch service site, it is a strong option at a competitive price point.</p>
 
 <h2>The honest case for getting your site live fast, then improving it</h2>
 
@@ -303,7 +303,7 @@ const BODY = `
 </div>
 <div class="faq-item">
 <h3 class="faq-question">How much does a solopreneur website cost to build and maintain?</h3>
-<div class="faq-answer"><p>A self-built site on a modern AI-assisted builder costs $0–$25/mo for the platform, $10–$20/yr for a domain, and your time. BlogBat's Pro plan is $20/mo billed annually (verified April 2026, see <a href="https://blogbat.com/pricing">blogbat.com/pricing</a>). Squarespace starts at $16/mo; Wix at $17/mo. If you hire a freelancer to build the site, expect $500–$3,000+ depending on scope. Ongoing maintenance on a self-built site is typically a few hours per quarter if you plan it properly.</p></div>
+<div class="faq-answer"><p>A self-built site on a modern AI-assisted builder costs $0–$25/mo for the platform, $10–$20/yr for a domain, and your time. Supportsheep's Pro plan is $20/mo billed annually (verified April 2026, see <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a>). Squarespace starts at $16/mo; Wix at $17/mo. If you hire a freelancer to build the site, expect $500–$3,000+ depending on scope. Ongoing maintenance on a self-built site is typically a few hours per quarter if you plan it properly.</p></div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">Does a solopreneur website help with AI search in 2026?</h3>
@@ -311,11 +311,11 @@ const BODY = `
 </div>
 <div class="faq-item">
 <h3 class="faq-question">Can I use a free website builder as a solopreneur?</h3>
-<div class="faq-answer"><p>Yes, with caveats. Free plans on most builders include the builder's subdomain (e.g., yourname.wixsite.com) rather than your own domain, which looks unprofessional and is harder to rank. They also typically include branding from the platform (a "Made with Wix" footer bar). For a primary business site, a paid plan with your own domain is worth the $10–$25/mo it costs. BlogBat's free plan supports 3 published websites but requires a custom domain on paid plans; see the <a href="https://blogbat.com/pricing">pricing page</a> for current details.</p></div>
+<div class="faq-answer"><p>Yes, with caveats. Free plans on most builders include the builder's subdomain (e.g., yourname.wixsite.com) rather than your own domain, which looks unprofessional and is harder to rank. They also typically include branding from the platform (a "Made with Wix" footer bar). For a primary business site, a paid plan with your own domain is worth the $10–$25/mo it costs. Supportsheep's free plan supports 3 published websites but requires a custom domain on paid plans; see the <a href="https://supportsheep.com/pricing">pricing page</a> for current details.</p></div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">What is the best website builder for solopreneurs in 2026?</h3>
-<div class="faq-answer"><p>It depends on your needs. BlogBat is the strongest choice if you want an AI-assisted first draft and a fast launch with an SEO-aware structure — it was built specifically for solo practitioners and small service businesses. Wix is stronger if you want a large marketplace of apps and scheduling tools. Squarespace excels for visual portfolios. Hostinger is the budget option. There is no universally correct answer, but for most service-based solopreneurs who need a credible site live quickly, an AI-assisted builder that generates content from a brief — rather than starting from an empty canvas — saves the most time.</p></div>
+<div class="faq-answer"><p>It depends on your needs. Supportsheep is the strongest choice if you want an AI-assisted first draft and a fast launch with an SEO-aware structure — it was built specifically for solo practitioners and small service businesses. Wix is stronger if you want a large marketplace of apps and scheduling tools. Squarespace excels for visual portfolios. Hostinger is the budget option. There is no universally correct answer, but for most service-based solopreneurs who need a credible site live quickly, an AI-assisted builder that generates content from a brief — rather than starting from an empty canvas — saves the most time.</p></div>
 </div>
 <div class="faq-item">
 <h3 class="faq-question">How long does it take to build a solopreneur website?</h3>
@@ -329,7 +329,7 @@ const BODY = `
 
 <hr />
 <p>The short answer has not changed in a decade: yes, you need a website. What has changed is that getting one live, polished, and SEO-aware is dramatically cheaper and faster than it used to be — and that the cost of not having one (in lost credibility, missed organic traffic, and AI-search invisibility) has gone up. If you have been putting it off, the best time to launch was last year. The second-best time is this week.</p>
-<p>If you are starting from scratch, <a href="https://blogbat.com">BlogBat</a> generates a usable first-draft website from a short description of your business — pages, sections, and copy — without template picking or an empty canvas. Free to start, $20/mo on Pro billed annually (<a href="https://blogbat.com/pricing">verified April 2026</a>).</p>
+<p>If you are starting from scratch, <a href="https://supportsheep.com">Supportsheep</a> generates a usable first-draft website from a short description of your business — pages, sections, and copy — without template picking or an empty canvas. Free to start, $20/mo on Pro billed annually (<a href="https://supportsheep.com/pricing">verified April 2026</a>).</p>
 `;
 
 /* ────────────────────────────────────────────────────────────────────────────
@@ -383,7 +383,7 @@ async function main(): Promise<void> {
     excerpt:
       "Yes — but only if it works. This guide covers what solopreneurs actually need from a website in 2026, when social media and freelance platforms are not enough, and how to get a credible site live without wasting weeks on it.",
     summary:
-      "Covers the business case for solopreneur websites in 2026, what the site needs to contain, how AI search changes the calculus, and an honest comparison of website builders including BlogBat.",
+      "Covers the business case for solopreneur websites in 2026, what the site needs to contain, how AI search changes the calculus, and an honest comparison of website builders including Supportsheep.",
     status: "draft",
     postType: "how_to",
     category: "Website Tips",
@@ -396,7 +396,7 @@ async function main(): Promise<void> {
       "blogbat website",
       "2026",
     ],
-    author: "BlogBat",
+    author: "Supportsheep",
     authorId: null,
     featuredImage: {
       url: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=1200&auto=format&fit=crop&q=80",

@@ -32,7 +32,7 @@ function hostname(over: Partial<CustomHostnameResult>): CustomHostnameResult {
     sslStatus: "pending_validation",
     sslValidationErrors: [],
     verificationErrors: [],
-    dcvTarget: "blogbat.com",
+    dcvTarget: "supportsheep.com",
     ownershipVerification: null,
     ...over,
   };

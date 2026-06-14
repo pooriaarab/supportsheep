@@ -28,20 +28,20 @@ export function generateInterviewIcs({
 
   const cleanTopic = topic ? escapeText(topic) : "Your Interview";
   const url = `${baseUrl}/i/${token}`;
-  const description = escapeText(`Your BlogBat AI interview is scheduled.\n\nJoin here: ${url}`);
+  const description = escapeText(`Your Supportsheep AI interview is scheduled.\n\nJoin here: ${url}`);
 
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//BlogBat//Interview Calendar//EN",
+    "PRODID:-//Supportsheep//Interview Calendar//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:interview-token-${token}@blogbat.com`,
+    `UID:interview-token-${token}@supportsheep.com`,
     `DTSTAMP:${formatIcalDate(now)}`,
     `DTSTART:${formatIcalDate(start)}`,
     `DTEND:${formatIcalDate(end)}`,
-    `SUMMARY:BlogBat AI Interview: ${cleanTopic}`,
+    `SUMMARY:Supportsheep AI Interview: ${cleanTopic}`,
     `URL:${url}`,
     `DESCRIPTION:${description}`,
     "STATUS:CONFIRMED",

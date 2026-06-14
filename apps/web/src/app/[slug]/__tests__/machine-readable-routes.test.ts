@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   getPublicArticleBySlug: vi.fn(),
   getBlogConfig: vi.fn(),
-  resolvePublicSiteUrl: vi.fn(() => "https://blogbat.com"),
+  resolvePublicSiteUrl: vi.fn(() => "https://supportsheep.com"),
 }));
 
 vi.mock("@/lib/public-route-resolution", () => ({
@@ -37,7 +37,7 @@ const article = {
   postType: "how_to" as const,
   category: "Guides",
   tags: ["seo", "personal branding"],
-  author: "BlogBat",
+  author: "Supportsheep",
   featuredImage: { url: "", alt: "" },
   ogImage: "",
   metaTitle: "",
@@ -60,7 +60,7 @@ describe("machine-readable article routes", () => {
     mocks.getPublicArticleBySlug.mockReset();
     mocks.getBlogConfig.mockReset();
     mocks.resolvePublicSiteUrl.mockClear();
-    mocks.resolvePublicSiteUrl.mockReturnValue("https://blogbat.com");
+    mocks.resolvePublicSiteUrl.mockReturnValue("https://supportsheep.com");
   });
 
   it("serves markdown exports from the published article lookup", async () => {

@@ -19,11 +19,11 @@ export interface ResolvedBlog {
   displayName: string;
 }
 
-/** The platform's apex domain. `{slug}.blogbat.com` are tenant subdomains. */
-export const ROOT_DOMAIN = "blogbat.com";
+/** The platform's apex domain. `{slug}.supportsheep.com` are tenant subdomains. */
+export const ROOT_DOMAIN = "supportsheep.com";
 
 /**
- * Left-most labels under `blogbat.com` that are NOT tenant blogs — they map to
+ * Left-most labels under `supportsheep.com` that are NOT tenant blogs — they map to
  * platform surfaces (the dashboard at `app`, the API, the staging worker, etc.)
  * rather than to a `blogs.slug`. A host whose first label is one of these never
  * resolves to a tenant.
@@ -106,20 +106,20 @@ function normalizeHost(host: string): string {
 }
 
 /**
- * Whether an incoming request host should render the BlogBat **marketing site**
+ * Whether an incoming request host should render the Supportsheep **marketing site**
  * (the landing page) rather than a tenant blog or a platform surface.
  *
  * Marketing hosts are the platform's public front door:
- * - the apex domain itself (`blogbat.com`),
- * - the `www` host (`www.blogbat.com`),
- * - the staging apex (`staging.blogbat.com`) — the staging environment's mirror
+ * - the apex domain itself (`supportsheep.com`),
+ * - the `www` host (`www.supportsheep.com`),
+ * - the staging apex (`staging.supportsheep.com`) — the staging environment's mirror
  *   of the apex; its `/login`, `/onboarding`, … routes still resolve by path,
  * - the local-dev apex (`localhost`, `127.0.0.1`) so the landing page is
  *   reachable while developing.
  *
  * Everything else is NOT marketing:
- * - `{slug}.blogbat.com` tenant blogs (and `{slug}.staging.blogbat.com`),
- * - platform surfaces like `app.blogbat.com` (dashboard), `api.blogbat.com`,
+ * - `{slug}.supportsheep.com` tenant blogs (and `{slug}.staging.supportsheep.com`),
+ * - platform surfaces like `app.supportsheep.com` (dashboard), `api.supportsheep.com`,
  * - customer custom domains.
  *
  * Pure and dependency-free (no DB) so it is safe to call during static builds
@@ -136,11 +136,11 @@ export function isMarketingHost(host: string): boolean {
   if (normalized === ROOT_DOMAIN) return true;
   if (normalized === `www.${ROOT_DOMAIN}`) return true;
 
-  // The staging apex mirrors production's apex: `staging.blogbat.com` is the
+  // The staging apex mirrors production's apex: `staging.supportsheep.com` is the
   // staging environment's marketing front door (the staging version of
-  // `blogbat.com`), not a tenant blog. Dashboard/auth routes (`/login`,
+  // `supportsheep.com`), not a tenant blog. Dashboard/auth routes (`/login`,
   // `/onboarding`, …) still resolve by path on the same host. Note this matches
-  // ONLY the bare staging apex — `{slug}.staging.blogbat.com` stays a tenant.
+  // ONLY the bare staging apex — `{slug}.staging.supportsheep.com` stays a tenant.
   if (normalized === `staging.${ROOT_DOMAIN}`) return true;
 
   return false;
@@ -148,7 +148,7 @@ export function isMarketingHost(host: string): boolean {
 
 /**
  * Whether `host` belongs to the platform's own root domain — the apex
- * (`blogbat.com`) or any `*.blogbat.com` host (tenant subdomains, platform
+ * (`supportsheep.com`) or any `*.supportsheep.com` host (tenant subdomains, platform
  * surfaces like `app`/`staging`, and the `customers` fallback origin). Local-dev
  * apex hosts (`localhost`, `127.0.0.1`) count too, so dev requests are treated as
  * first-party. A foreign host (a customer custom domain like `blog.acme.com`,
@@ -158,7 +158,7 @@ export function isMarketingHost(host: string): boolean {
  * may still render marketing/default, but an unrecognized foreign host must 404
  * rather than serve the default blog (see {@link resolveRequestTenant} — this
  * matters now that the catch-all Worker route runs the worker for every host
- * entering the zone, not just blogbat.com subdomains).
+ * entering the zone, not just supportsheep.com subdomains).
  *
  * Pure and dependency-free (no DB).
  */
@@ -172,11 +172,11 @@ export function isPlatformHost(host: string): boolean {
 
 /**
  * Whether `host` is a candidate tenant subdomain under the root domain — a
- * `{label}.blogbat.com` (or `{label}.staging.blogbat.com`) whose left-most
+ * `{label}.supportsheep.com` (or `{label}.staging.supportsheep.com`) whose left-most
  * label is NOT reserved. True even when no blog owns the slug; callers use this
  * to decide that an unresolved tenant subdomain should 404 (rather than fall
  * back to the default blog). The apex, `www`/`app`/`staging`/… platform hosts,
- * and non-`blogbat.com` custom domains all return false.
+ * and non-`supportsheep.com` custom domains all return false.
  *
  * Pure and dependency-free (no DB).
  */
@@ -194,11 +194,11 @@ export function isTenantSubdomainHost(host: string): boolean {
  * host is not a tenant blog.
  *
  * Rules:
- * - A `*.blogbat.com` host (including `*.staging.blogbat.com`) resolves by its
+ * - A `*.supportsheep.com` host (including `*.staging.supportsheep.com`) resolves by its
  *   left-most label as the candidate slug. If that label is reserved (see
- *   {@link RESERVED_SUBDOMAINS}), or the host is the apex (`blogbat.com`) or a
- *   bare platform host (`www`/`app`/`staging`/`admin`/… .blogbat.com, and
- *   `staging.blogbat.com` itself), it is NOT a tenant → `null`.
+ *   {@link RESERVED_SUBDOMAINS}), or the host is the apex (`supportsheep.com`) or a
+ *   bare platform host (`www`/`app`/`staging`/`admin`/… .supportsheep.com, and
+ *   `staging.supportsheep.com` itself), it is NOT a tenant → `null`.
  * - Any other host is treated as a customer custom domain → resolved via
  *   {@link getBlogByCustomDomain}.
  * - An unknown slug / unmapped custom domain → `null`.
@@ -215,11 +215,11 @@ export async function resolveBlogIdByHost(
   if (!normalized) return null;
 
   if (normalized === ROOT_DOMAIN || normalized.endsWith(`.${ROOT_DOMAIN}`)) {
-    // Apex itself (blogbat.com) is reserved for marketing — not a tenant.
+    // Apex itself (supportsheep.com) is reserved for marketing — not a tenant.
     if (normalized === ROOT_DOMAIN) return null;
 
-    // Left-most label is the candidate slug. For `staging.blogbat.com` this is
-    // `staging` (reserved → null); for `foo.staging.blogbat.com` it is `foo`.
+    // Left-most label is the candidate slug. For `staging.supportsheep.com` this is
+    // `staging` (reserved → null); for `foo.staging.supportsheep.com` it is `foo`.
     const candidateSlug = normalized.split(".")[0];
     if (RESERVED_SUBDOMAINS.has(candidateSlug)) return null;
 

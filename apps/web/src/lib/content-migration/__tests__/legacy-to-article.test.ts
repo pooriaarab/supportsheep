@@ -12,14 +12,14 @@ describe("legacy-to-article", () => {
     const result = convertProgrammaticToArticleInput({
       id: "plumbers",
       collection: "for",
-      title: "BlogBat for Plumbers",
+      title: "Supportsheep for Plumbers",
       metaDescription: "Rank your plumbing business.",
       uniqueContent: "## Why plumbers need better websites\n\n- More leads",
       faqs: [{ question: "Q?", answer: "A." }],
       variables: {
         subhead: "Built for local leads.",
         ctaText: "Start",
-        ctaHref: "https://blogbat.com",
+        ctaHref: "https://supportsheep.com",
       },
     });
 
@@ -35,7 +35,7 @@ describe("legacy-to-article", () => {
       id: "wix__dentists",
       collection: "alternatives_for_vertical",
       title: "Wix for dentists",
-      metaDescription: "Compare Wix and BlogBat for dentists.",
+      metaDescription: "Compare Wix and Supportsheep for dentists.",
       uniqueContent: "## TL;DR\n\nWix is flexible.",
       faqs: [],
       variables: {},

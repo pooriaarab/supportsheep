@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
-  resolvePublicSiteUrl: vi.fn(() => "https://blogbat.com"),
+  resolvePublicSiteUrl: vi.fn(() => "https://supportsheep.com"),
 }));
 
 vi.mock("@/lib/public-site", () => ({
@@ -39,7 +39,7 @@ describe("robots.txt route", () => {
     expect(body).toContain(
       "Content-Signal: ai-train=yes, search=yes, ai-input=yes",
     );
-    expect(body).toContain("Sitemap: https://blogbat.com/sitemap.xml");
+    expect(body).toContain("Sitemap: https://supportsheep.com/sitemap.xml");
   });
 
   it("disallows /login (covering query-string variants) and legacy WordPress paths", async () => {

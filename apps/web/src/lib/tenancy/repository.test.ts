@@ -43,7 +43,7 @@ async function makeDb(): Promise<TestDb> {
   );
   await client.execute(
     `INSERT INTO blogs (id, slug, custom_domain, display_name, created_at, updated_at)
-     VALUES ('default','default',NULL,'BlogBat','t','t');`,
+     VALUES ('default','default',NULL,'Supportsheep','t','t');`,
   );
   return drizzle(client, { schema }) as unknown as TestDb;
 }

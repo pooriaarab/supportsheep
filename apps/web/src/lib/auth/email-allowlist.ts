@@ -1,6 +1,6 @@
 /**
  * Workers-safe email-domain allowlist for the auth flow. Reads ONLY the
- * comma-separated `ALLOWED_EMAIL_DOMAINS` env var (e.g. "@blogbat.com,@acme.io").
+ * comma-separated `ALLOWED_EMAIL_DOMAINS` env var (e.g. "@supportsheep.com,@acme.io").
  *
  * Deliberately env-var-only and Workers-safe: it replaced a legacy Firestore-
  * backed `validateEmailDomain` (which statically imported firebase-admin and
@@ -16,7 +16,7 @@ export function getAllowedEmailDomains(): readonly string[] {
 
 /** True if `email`'s domain is permitted to authenticate. Allows all when no
  * domains are configured. Suffix match (domains are stored with their leading
- * "@", e.g. "@blogbat.com"). */
+ * "@", e.g. "@supportsheep.com"). */
 export function isEmailAllowed(email: string): boolean {
   const domains = getAllowedEmailDomains();
   if (domains.length === 0) return true;

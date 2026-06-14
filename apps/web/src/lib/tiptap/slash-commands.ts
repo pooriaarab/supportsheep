@@ -5,7 +5,7 @@
  * of a line or after whitespace. Filters items as the user types,
  * supports keyboard navigation, and executes the selected command.
  *
- * Adapted for BlogBat from an admin slash-commands pattern.
+ * Adapted for Supportsheep from an admin slash-commands pattern.
  */
 
 import { Extension } from "@tiptap/core";

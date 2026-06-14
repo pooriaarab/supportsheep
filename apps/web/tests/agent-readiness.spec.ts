@@ -61,7 +61,7 @@ test.describe("Agent readiness discovery baseline", () => {
       "text/markdown",
     );
     expect(skillFile.headers()["access-control-allow-origin"]).toBe("*");
-    expect(await skillFile.text()).toContain("# BlogBat Discovery");
+    expect(await skillFile.text()).toContain("# Supportsheep Discovery");
 
     const robotsTxt = await robots.text();
     expect(robotsTxt).toContain(

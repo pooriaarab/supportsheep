@@ -11,7 +11,7 @@ function cf(overrides: Partial<CustomHostnameResult>): CustomHostnameResult {
     sslStatus: "pending_validation",
     sslValidationErrors: [],
     verificationErrors: [],
-    dcvTarget: "blogbat.com",
+    dcvTarget: "supportsheep.com",
     ownershipVerification: null,
     ...overrides,
   };

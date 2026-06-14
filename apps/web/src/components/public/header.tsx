@@ -22,7 +22,7 @@ export function PublicHeader({ config }: PublicHeaderProps) {
   const brandAlt = headerAppearance.logoUrl
     ? brandText || `${config.siteName} logo`
     : brandText === "Blog"
-      ? "BlogBat logo"
+      ? "Supportsheep logo"
       : brandText === config.siteName
         ? `${brandText} logo`
         : brandText;

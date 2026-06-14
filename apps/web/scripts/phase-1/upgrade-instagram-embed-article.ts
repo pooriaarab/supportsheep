@@ -13,7 +13,7 @@
  *   - Expanded coverage: iFrame method, oEmbed API, native Meta embed,
  *     Elfsight, SnapWidget, Taggbox, EmbedSocial
  *   - 8+ citations from authoritative sources
- *   - BlogBat mention honest: custom-code section via Code Embed block
+ *   - Supportsheep mention honest: custom-code section via Code Embed block
  *
  * Safety rules:
  *   - Writes to `draftBody` ONLY — `body` and `status:"published"` are untouched.
@@ -246,9 +246,9 @@ const DRAFT_BODY = `
 <li><strong>Webflow:</strong> add an Embed element and paste. (Webflow also has a step-by-step guide from Elfsight's team — see the <a href="https://www.youtube.com/watch?v=Wjys1Pp6nrY">video walkthrough</a>.)</li>
 </ul>
 
-<h3>Adding the feed to a BlogBat website</h3>
-<p>BlogBat is an AI-assisted website builder for solopreneurs and small businesses. BlogBat includes a <strong>Code Embed section</strong> (available on Pro and Grow plans — see <a href="https://blogbat.com/pricing">blogbat.com/pricing</a>) that lets you paste any third-party widget code directly into a page. The Code Embed block is the correct place for your Instagram widget script. BlogBat handles rendering and mobile layout; the widget provider handles the Instagram API connection.</p>
-<p>Honest note: BlogBat does not have a native Instagram feed module. You need a third-party widget — the Code Embed section is how you connect them. If you are on a Free plan, upgrading to Pro ($20/mo billed annually, verified April 2026) unlocks the Code Embed block. See <a href="https://blogbat.com/pricing">the current pricing page</a> for the latest plan details.</p>
+<h3>Adding the feed to a Supportsheep website</h3>
+<p>Supportsheep is an AI-assisted website builder for solopreneurs and small businesses. Supportsheep includes a <strong>Code Embed section</strong> (available on Pro and Grow plans — see <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a>) that lets you paste any third-party widget code directly into a page. The Code Embed block is the correct place for your Instagram widget script. Supportsheep handles rendering and mobile layout; the widget provider handles the Instagram API connection.</p>
+<p>Honest note: Supportsheep does not have a native Instagram feed module. You need a third-party widget — the Code Embed section is how you connect them. If you are on a Free plan, upgrading to Pro ($20/mo billed annually, verified April 2026) unlocks the Code Embed block. See <a href="https://supportsheep.com/pricing">the current pricing page</a> for the latest plan details.</p>
 
 <h2>Performance: keeping your feed from slowing the page</h2>
 
@@ -318,13 +318,13 @@ const DRAFT_BODY = `
 <div class="faq-answer"><p>Potentially yes. Instagram's own embed script sets cookies, and most third-party widget scripts include tracking components. If your website serves EU or UK visitors, list your widget provider in your cookie consent banner as a third-party service, update your privacy policy to mention the social media aggregation tool, and choose a widget provider that states GDPR compliance in their documentation.</p></div>
 </div>
 <div class="faq-item">
-<h3 class="faq-question">How do I add an Instagram feed to a BlogBat website?</h3>
-<div class="faq-answer"><p>BlogBat includes a Code Embed section (available on Pro and Grow plans) that accepts any third-party widget script. Sign up with a widget tool like Elfsight or SnapWidget, configure your feed there, copy the embed code they provide, then paste it into a Code Embed block on your BlogBat page. BlogBat handles the responsive layout; the widget handles the Instagram API connection. The Code Embed block requires a Pro or Grow plan — see <a href="https://blogbat.com/pricing">blogbat.com/pricing</a> for current plan details.</p></div>
+<h3 class="faq-question">How do I add an Instagram feed to a Supportsheep website?</h3>
+<div class="faq-answer"><p>Supportsheep includes a Code Embed section (available on Pro and Grow plans) that accepts any third-party widget script. Sign up with a widget tool like Elfsight or SnapWidget, configure your feed there, copy the embed code they provide, then paste it into a Code Embed block on your Supportsheep page. Supportsheep handles the responsive layout; the widget handles the Instagram API connection. The Code Embed block requires a Pro or Grow plan — see <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a> for current plan details.</p></div>
 </div>
 </section>
 
 <hr />
-<p>Ready to add a live Instagram feed to your website? Start with a free tier on Elfsight or SnapWidget — you can have a styled feed embedded in under ten minutes. If you are building your site from scratch, <a href="https://blogbat.com">BlogBat</a> gives solopreneurs a fast, AI-assisted path from business description to published website, with the Code Embed block ready for widgets like Instagram feeds once you are on Pro.</p>
+<p>Ready to add a live Instagram feed to your website? Start with a free tier on Elfsight or SnapWidget — you can have a styled feed embedded in under ten minutes. If you are building your site from scratch, <a href="https://supportsheep.com">Supportsheep</a> gives solopreneurs a fast, AI-assisted path from business description to published website, with the Code Embed block ready for widgets like Instagram feeds once you are on Pro.</p>
 `;
 
 /* ────────────────────────────────────────────────────────────────────────────

@@ -1,8 +1,8 @@
 /**
- * Migration: seed public shell branding for the current BlogBat deployment.
+ * Migration: seed public shell branding for the current Supportsheep deployment.
  *
  * Fills in missing header/footer logo and color values in `blog_config/settings`
- * using the existing BlogBat shell treatment so the new empty-by-default product
+ * using the existing Supportsheep shell treatment so the new empty-by-default product
  * config does not visually regress this site.
  *
  * Safety:
@@ -21,7 +21,7 @@ import { FieldValue, getFirestore } from "firebase-admin/firestore";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
 const BLOG_CONFIG_DOC = "settings";
-const SITE_URL = "https://blogbat.com";
+const SITE_URL = "https://supportsheep.com";
 
 const HEADER_BRANDING = {
   logoUrl: `${SITE_URL}/blogbat-header-logo.svg`,

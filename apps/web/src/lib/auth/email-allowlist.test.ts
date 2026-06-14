@@ -16,12 +16,12 @@ describe("isEmailAllowed", () => {
   });
 
   it("allows an email whose domain matches a configured suffix", () => {
-    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", "@blogbat.com");
-    expect(isEmailAllowed("pooria@blogbat.com")).toBe(true);
+    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", "@supportsheep.com");
+    expect(isEmailAllowed("pooria@supportsheep.com")).toBe(true);
   });
 
   it("blocks an email whose domain does not match", () => {
-    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", "@blogbat.com");
+    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", "@supportsheep.com");
     expect(isEmailAllowed("attacker@evil.test")).toBe(false);
   });
 

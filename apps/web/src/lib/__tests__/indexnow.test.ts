@@ -23,8 +23,8 @@ describe("indexnow submission helpers", () => {
             },
           },
         },
-        siteUrl: "https://blogbat.com",
-        url: "https://blogbat.com/my-post/",
+        siteUrl: "https://supportsheep.com",
+        url: "https://supportsheep.com/my-post/",
       }),
     ).resolves.toEqual(getDefaultIndexNowSubmissionStatus());
   });
@@ -42,13 +42,13 @@ describe("indexnow submission helpers", () => {
     await expect(
       submitIndexNowUrl({
         apiKey: "abc123",
-        siteUrl: "https://blogbat.com",
-        url: "https://blogbat.com/my-post/",
+        siteUrl: "https://supportsheep.com",
+        url: "https://supportsheep.com/my-post/",
       }),
     ).resolves.toMatchObject({
       status: "submitted",
       lastError: null,
-      lastUrl: "https://blogbat.com/my-post/",
+      lastUrl: "https://supportsheep.com/my-post/",
     });
   });
 
@@ -65,13 +65,13 @@ describe("indexnow submission helpers", () => {
     await expect(
       submitIndexNowUrl({
         apiKey: "abc123",
-        siteUrl: "https://blogbat.com",
-        url: "https://blogbat.com/my-post/",
+        siteUrl: "https://supportsheep.com",
+        url: "https://supportsheep.com/my-post/",
       }),
     ).resolves.toMatchObject({
       status: "failed",
       lastError: expect.stringContaining("400"),
-      lastUrl: "https://blogbat.com/my-post/",
+      lastUrl: "https://supportsheep.com/my-post/",
     });
   });
 });

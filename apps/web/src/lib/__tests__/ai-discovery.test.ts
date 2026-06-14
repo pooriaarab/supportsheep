@@ -6,17 +6,17 @@ import {
 } from "@/lib/ai-discovery";
 
 describe("AI discovery JSON builders", () => {
-  const siteUrl = "https://blogbat.com";
+  const siteUrl = "https://supportsheep.com";
 
   it("builds a summary with canonical machine-readable resources", () => {
     const summary = buildAiSummary(siteUrl);
 
     expect(summary).toMatchObject({
-      name: "BlogBat",
+      name: "Supportsheep",
       url: siteUrl,
       publisher: {
-        name: "BlogBat",
-        url: "https://blogbat.com",
+        name: "Supportsheep",
+        url: "https://supportsheep.com",
       },
       discovery: {
         rss: `${siteUrl}/api/feed`,
@@ -56,11 +56,11 @@ describe("AI discovery JSON builders", () => {
     expect(service).toMatchObject({
       serviceType: "AI website builder blog and small business education hub",
       provider: {
-        name: "BlogBat",
-        url: "https://blogbat.com",
+        name: "Supportsheep",
+        url: "https://supportsheep.com",
       },
       contact: {
-        supportUrl: "https://support.blogbat.com",
+        supportUrl: "https://support.supportsheep.com",
       },
       machineReadableResources: expect.arrayContaining([
         expect.objectContaining({

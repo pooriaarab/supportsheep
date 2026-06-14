@@ -8,7 +8,7 @@ declare global {
   interface CloudflareEnv {
     DB: AnyD1Database;
     NEXT_INC_CACHE_KV?: unknown;
-    /** Cloudflare Email Service binding (send_email). Optional until blogbat.com
+    /** Cloudflare Email Service binding (send_email). Optional until supportsheep.com
      * is onboarded in the dashboard's Email Sending section. */
     EMAIL?: {
       send: (message: {
@@ -29,7 +29,7 @@ declare global {
      * error rather than 500-ing the dashboard. Never logged. */
     CF_API_TOKEN?: string;
     /** Zone id (or apex hostname) hosting Cloudflare for SaaS custom hostnames.
-     * Defaults to the blogbat.com zone when unset. */
+     * Defaults to the supportsheep.com zone when unset. */
     CF_SAAS_ZONE_ID?: string;
     /** Shared secret gating the internal domain-status refresh endpoint
      * (`POST /api/v1/internal/domains/refresh`), called by the Cron Trigger.

@@ -19,10 +19,10 @@ export function MarketingHeader() {
         <Link
           href="/"
           className="group flex items-center gap-2 text-foreground no-underline"
-          aria-label="BlogBat home"
+          aria-label="Supportsheep home"
         >
           <BatMark className="size-7 text-primary transition-transform duration-200 group-hover:-translate-y-0.5" />
-          <span className="text-lg font-semibold tracking-tight">BlogBat</span>
+          <span className="text-lg font-semibold tracking-tight">Supportsheep</span>
         </Link>
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">

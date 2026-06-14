@@ -25,7 +25,7 @@ export interface BlogDomain {
   failureReason: string | null;
 }
 
-const ROOT_DOMAIN = "blogbat.com";
+const ROOT_DOMAIN = "supportsheep.com";
 
 // A DNS hostname: one or more dot-separated labels (letters, digits, hyphens;
 // no leading/trailing hyphen per label) ending in a 2+ char alpha TLD.
@@ -40,7 +40,7 @@ export type DomainValidation =
  * Validate and normalize a custom domain. The input is lowercased, trimmed, and
  * IDNA/punycode-encoded to ASCII (so `münchen.de` → `xn--mnchen-3ya.de`); it
  * must be a real hostname and must NOT be the platform apex or any
- * `*.blogbat.com` subdomain (those are served by slug routing, not custom
+ * `*.supportsheep.com` subdomain (those are served by slug routing, not custom
  * hostnames).
  */
 export function validateCustomDomain(raw: string): DomainValidation {

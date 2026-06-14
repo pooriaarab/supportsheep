@@ -14,7 +14,7 @@ import { getRequestBlogId } from "@/lib/tenancy/request-blog";
 
 // TODO(M5-cache): path-keyed ISR (`revalidate`) + `generateStaticParams` are
 // keyed by author slug under the default blog. Make both host-aware before
-// serving distinct tenants on `{slug}.blogbat.com`.
+// serving distinct tenants on `{slug}.supportsheep.com`.
 export const revalidate = 300;
 
 interface Props {
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const siteUrl = resolvePublicSiteUrl();
   const authorUrl = `${siteUrl}${getAuthorPath(author.id)}`;
   const description =
-    author.bio || `Articles written by ${author.name} on BlogBat`;
+    author.bio || `Articles written by ${author.name} on Supportsheep`;
 
   return {
     title: author.name,

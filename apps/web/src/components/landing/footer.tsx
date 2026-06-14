@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 /**
- * BlogBat Logo SVG — brand colors from blogbat.com
+ * Supportsheep Logo SVG — brand colors from supportsheep.com
  */
-function BlogBatLogo() {
+function SupportsheepLogo() {
   return (
     <svg
       width="107"
@@ -11,7 +11,7 @@ function BlogBatLogo() {
       viewBox="0 0 107 36"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="BlogBat"
+      aria-label="Supportsheep"
     >
       <path
         fillRule="evenodd"
@@ -67,8 +67,8 @@ export function Footer() {
         <div className="flex flex-col gap-8 py-12 px-4 md:px-6">
           {/* Logo */}
           <div className="flex justify-start">
-            <Link href="https://blogbat.com/" className="inline-block">
-              <BlogBatLogo />
+            <Link href="https://supportsheep.com/" className="inline-block">
+              <SupportsheepLogo />
             </Link>
           </div>
 
@@ -81,7 +81,7 @@ export function Footer() {
               </span>
               <div className="flex flex-col gap-2">
                 <Link
-                  href="https://blogbat.com/about?utm_source=blog"
+                  href="https://supportsheep.com/about?utm_source=blog"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -89,7 +89,7 @@ export function Footer() {
                   About us
                 </Link>
                 <Link
-                  href="https://blogbat.com/pricing?utm_source=blog"
+                  href="https://supportsheep.com/pricing?utm_source=blog"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -97,7 +97,7 @@ export function Footer() {
                   Pricing
                 </Link>
                 <Link
-                  href="https://blogbat.com/businesses?utm_source=blog"
+                  href="https://supportsheep.com/businesses?utm_source=blog"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -105,7 +105,7 @@ export function Footer() {
                   Featured Businesses
                 </Link>
                 <Link
-                  href="https://blogbat.com/integrations"
+                  href="https://supportsheep.com/integrations"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -113,7 +113,7 @@ export function Footer() {
                   Integrations
                 </Link>
                 <Link
-                  href="https://support.blogbat.com"
+                  href="https://support.supportsheep.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -121,7 +121,7 @@ export function Footer() {
                   Support
                 </Link>
                 <Link
-                  href="https://support.blogbat.com/doc/release-notes"
+                  href="https://support.supportsheep.com/doc/release-notes"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -129,7 +129,7 @@ export function Footer() {
                   Release notes
                 </Link>
                 <Link
-                  href="https://blogbat.com"
+                  href="https://supportsheep.com"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
                 >
                   Blog
@@ -152,7 +152,7 @@ export function Footer() {
               </span>
               <div className="flex flex-col gap-2">
                 <Link
-                  href="https://blogbat.com/business-name-creator"
+                  href="https://supportsheep.com/business-name-creator"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -160,7 +160,7 @@ export function Footer() {
                   Business Name Creator
                 </Link>
                 <Link
-                  href="https://blogbat.com/business-idea-creator"
+                  href="https://supportsheep.com/business-idea-creator"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -168,7 +168,7 @@ export function Footer() {
                   Business Idea Creator
                 </Link>
                 <Link
-                  href="https://blogbat.com/google-ad-creator"
+                  href="https://supportsheep.com/google-ad-creator"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -185,7 +185,7 @@ export function Footer() {
               </span>
               <div className="flex flex-col gap-2">
                 <Link
-                  href="https://blogbat.com/create-your-website-with-facebook"
+                  href="https://supportsheep.com/create-your-website-with-facebook"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -193,7 +193,7 @@ export function Footer() {
                   Create a site from Facebook
                 </Link>
                 <Link
-                  href="https://blogbat.com/create-your-website-with-thumbtack"
+                  href="https://supportsheep.com/create-your-website-with-thumbtack"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -201,7 +201,7 @@ export function Footer() {
                   Create a site from Thumbtack
                 </Link>
                 <Link
-                  href="https://blogbat.com/create-your-website-with-yelp"
+                  href="https://supportsheep.com/create-your-website-with-yelp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -209,7 +209,7 @@ export function Footer() {
                   Create a site from Yelp
                 </Link>
                 <Link
-                  href="https://blogbat.com/create-a-website-from-a-link"
+                  href="https://supportsheep.com/create-a-website-from-a-link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-sm text-background/80 hover:text-background transition-colors no-underline w-fit"
@@ -235,7 +235,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
               <Link
-                href="https://support.blogbat.com/doc/privacy-policy"
+                href="https://support.supportsheep.com/doc/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-background/80 hover:text-background transition-colors no-underline"
@@ -243,7 +243,7 @@ export function Footer() {
                 Privacy Policy
               </Link>
               <Link
-                href="https://support.blogbat.com/doc/terms-of-service"
+                href="https://support.supportsheep.com/doc/terms-of-service"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-background/80 hover:text-background transition-colors no-underline"

@@ -22,7 +22,7 @@ describe("GET /api/v1/seo/analytics/google", () => {
 
   it("returns a zeroed empty-state payload (analytics source removed in CF migration)", async () => {
     const response = await GET(
-      new NextRequest("https://blogbat.com/api/v1/seo/analytics/google"),
+      new NextRequest("https://supportsheep.com/api/v1/seo/analytics/google"),
     );
     const body = await response.json();
 

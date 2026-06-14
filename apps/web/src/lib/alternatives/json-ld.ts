@@ -5,14 +5,14 @@ export function buildSoftwareApplicationJsonLd(siteUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "BlogBat",
+    name: "Supportsheep",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: "https://blogbat.com",
+    url: "https://supportsheep.com",
     publisher: {
       "@type": "Organization",
-      name: "BlogBat",
-      url: "https://blogbat.com",
+      name: "Supportsheep",
+      url: "https://supportsheep.com",
     },
     offers: {
       "@type": "Offer",
@@ -64,7 +64,7 @@ export function buildAlternativesItemListJsonLd(
     itemListElement: competitors.map((competitor, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      name: `BlogBat vs ${competitor.name}`,
+      name: `Supportsheep vs ${competitor.name}`,
       url: `${siteUrl}/vs/${competitor.slug}`,
     })),
   };

@@ -25,7 +25,7 @@ const article: Article & { id: string } = {
   postType: "how_to",
   category: "guides",
   tags: [],
-  author: "BlogBat",
+  author: "Supportsheep",
   featuredImage: { url: "", alt: "" },
   ogImage: "",
   metaTitle: "",
@@ -50,12 +50,12 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
     expect(html).toContain("Start your own blog");
-    expect(html).toContain("Powered by BlogBat");
+    expect(html).toContain("Powered by Supportsheep");
     expect(html).not.toContain(">Categories<");
   });
 
@@ -70,7 +70,7 @@ describe("ArticlePage", () => {
         article={withHeadings}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -88,7 +88,7 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -106,7 +106,7 @@ describe("ArticlePage", () => {
         article={withHeadings}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
         articleTheme={resolvePublicArticleTheme({
           cards: {
             borderRadiusPreset: "soft",
@@ -149,7 +149,7 @@ describe("ArticlePage", () => {
         article={{ ...article, body: bodyWithVideos }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -173,7 +173,7 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -194,7 +194,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -216,13 +216,13 @@ describe("ArticlePage", () => {
         article={sparseArticle}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
-    expect(html).toContain("BlogBat");
-    expect(html).toContain('"name":"BlogBat"');
-    expect(html).toContain('"author":{"@type":"Organization","name":"BlogBat"}');
+    expect(html).toContain("Supportsheep");
+    expect(html).toContain('"name":"Supportsheep"');
+    expect(html).toContain('"author":{"@type":"Organization","name":"Supportsheep"}');
     expect(html).toContain('"@type":"BlogPosting"');
     expect(html).not.toContain("Unknown");
     expect(html).not.toContain('"keywords":"s,e,o');
@@ -233,7 +233,7 @@ describe("ArticlePage", () => {
       <p>Intro</p>
       <section class="faq" data-block="faq">
         <div class="faq-item">
-          <h3 class="faq-question">What is BlogBat?</h3>
+          <h3 class="faq-question">What is Supportsheep?</h3>
           <div class="faq-answer"><p>A small business website builder.</p></div>
         </div>
         <div class="faq-item">
@@ -248,13 +248,13 @@ describe("ArticlePage", () => {
         article={{ ...article, body: bodyWithFaq }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
     expect(html).toContain('"@type":"FAQPage"');
     expect(html).toContain('"@type":"Question"');
-    expect(html).toContain("What is BlogBat?");
+    expect(html).toContain("What is Supportsheep?");
     expect(html).toContain("A small business website builder.");
     expect(html).toContain("Is it free?");
   });
@@ -265,7 +265,7 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -284,7 +284,7 @@ describe("ArticlePage", () => {
           article={legacyArticle}
           relatedArticles={[]}
           categories={[]}
-          siteUrl="https://blogbat.com"
+          siteUrl="https://supportsheep.com"
         />,
       ),
     ).not.toThrow();
@@ -302,7 +302,7 @@ describe("ArticlePage", () => {
           article={sparseArticle}
           relatedArticles={[]}
           categories={[]}
-          siteUrl="https://blogbat.com"
+          siteUrl="https://supportsheep.com"
         />,
       ),
     ).not.toThrow();
@@ -331,7 +331,7 @@ describe("ArticlePage", () => {
         article={{ ...article, authorId: "jane-doe", author: "Legacy String" }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
         author={author}
       />,
     );
@@ -342,7 +342,7 @@ describe("ArticlePage", () => {
     expect(html).toContain('"@type":"Person"');
     expect(html).toContain('"name":"Jane Doe"');
     expect(html).toContain('"jobTitle":"Senior Editor"');
-    expect(html).toContain('"url":"https://blogbat.com/authors/jane-doe"');
+    expect(html).toContain('"url":"https://supportsheep.com/authors/jane-doe"');
     expect(html).toContain(
       '"sameAs":["https://www.linkedin.com/in/jane-doe"]',
     );
@@ -355,12 +355,12 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
     expect(html).not.toContain('href="/authors/');
-    expect(html).toContain('"author":{"@type":"Organization","name":"BlogBat"}');
+    expect(html).toContain('"author":{"@type":"Organization","name":"Supportsheep"}');
   });
 
   it("emits BlogPosting with url, inLanguage, articleSection, and publisher logo dimensions", () => {
@@ -369,18 +369,18 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
     expect(html).toContain('"@type":"BlogPosting"');
     expect(html).toContain(
-      '"url":"https://blogbat.com/how-to-launch-a-small-business-website"',
+      '"url":"https://supportsheep.com/how-to-launch-a-small-business-website"',
     );
     expect(html).toContain('"inLanguage":"en-US"');
     expect(html).toContain('"articleSection":"Guides"');
     expect(html).toContain(
-      '"logo":{"@type":"ImageObject","url":"https://blogbat.com/favicon.png","width":112,"height":112}',
+      '"logo":{"@type":"ImageObject","url":"https://supportsheep.com/favicon.png","width":112,"height":112}',
     );
   });
 
@@ -390,7 +390,7 @@ describe("ArticlePage", () => {
         article={{ ...article, category: "website-tips" }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -413,7 +413,7 @@ describe("ArticlePage", () => {
             postCount: 0,
           },
         ]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -429,7 +429,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -444,12 +444,12 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
     expect(html).toContain(
-      '"image":{"@type":"ImageObject","url":"https://blogbat.com/og.png","width":1200,"height":630}',
+      '"image":{"@type":"ImageObject","url":"https://supportsheep.com/og.png","width":1200,"height":630}',
     );
   });
 
@@ -468,7 +468,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -483,7 +483,7 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -496,13 +496,13 @@ describe("ArticlePage", () => {
 
   it("renders the TL;DR callout with the article-summary class when summary is set", () => {
     const summary =
-      "BlogBat is a minimal platform for small business sites. It gives you a blog, custom domain, SEO-ready pages, and a lightweight editor so you can focus on writing instead of configuring tools.";
+      "Supportsheep is a minimal platform for small business sites. It gives you a blog, custom domain, SEO-ready pages, and a lightweight editor so you can focus on writing instead of configuring tools.";
     const html = renderToStaticMarkup(
       <ArticlePage
         article={{ ...article, summary }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -525,7 +525,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
         articleTheme={resolvePublicArticleTheme(undefined)}
       />,
     );
@@ -545,7 +545,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
         articleTheme={resolvePublicArticleTheme({
           cards: {
             borderRadiusPreset: "soft",
@@ -584,7 +584,7 @@ describe("ArticlePage", () => {
         article={{ ...article, summary: "Short summary", body: bodyWithDisclosure }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -599,7 +599,7 @@ describe("ArticlePage", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -618,7 +618,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -636,7 +636,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -655,7 +655,7 @@ describe("ArticlePage", () => {
         }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -754,7 +754,7 @@ describe("ArticlePage HowTo JSON-LD", () => {
         article={{ ...article, body: bodyWithHowTo, excerpt: "How to launch" }}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 
@@ -773,7 +773,7 @@ describe("ArticlePage HowTo JSON-LD", () => {
         article={article}
         relatedArticles={[]}
         categories={[]}
-        siteUrl="https://blogbat.com"
+        siteUrl="https://supportsheep.com"
       />,
     );
 

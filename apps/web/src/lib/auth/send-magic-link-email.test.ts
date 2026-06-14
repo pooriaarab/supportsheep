@@ -17,10 +17,10 @@ describe("sendMagicLinkEmail", () => {
 
   it("sends via the EMAIL binding when present", async () => {
     sendMock.mockResolvedValue({ messageId: "abc" });
-    await sendMagicLinkEmail({ email: "u@blogbat.com", url: "https://x/y" });
+    await sendMagicLinkEmail({ email: "u@supportsheep.com", url: "https://x/y" });
     expect(sendMock).toHaveBeenCalledOnce();
     expect(sendMock.mock.calls[0][0]).toMatchObject({
-      to: "u@blogbat.com",
+      to: "u@supportsheep.com",
       subject: expect.any(String),
     });
   });
@@ -28,14 +28,14 @@ describe("sendMagicLinkEmail", () => {
   it("does not throw when the binding is absent (falls back to logging)", async () => {
     envValue = {};
     await expect(
-      sendMagicLinkEmail({ email: "u@blogbat.com", url: "https://x/y" }),
+      sendMagicLinkEmail({ email: "u@supportsheep.com", url: "https://x/y" }),
     ).resolves.toBeUndefined();
   });
 
   it("does not throw when send() rejects (delivery not configured yet)", async () => {
     sendMock.mockRejectedValue(new Error("domain not onboarded"));
     await expect(
-      sendMagicLinkEmail({ email: "u@blogbat.com", url: "https://x/y" }),
+      sendMagicLinkEmail({ email: "u@supportsheep.com", url: "https://x/y" }),
     ).resolves.toBeUndefined();
   });
 });

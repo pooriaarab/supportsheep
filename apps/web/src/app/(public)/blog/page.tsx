@@ -24,7 +24,7 @@ import {
 } from "@/lib/public-site";
 
 // TODO(M5-cache): path-keyed ISR (`revalidate`). Make the cache key host-aware
-// before serving distinct tenants on `{slug}.blogbat.com` (a `/blog` key alone
+// before serving distinct tenants on `{slug}.supportsheep.com` (a `/blog` key alone
 // would leak one tenant's listing to another).
 export const revalidate = 300;
 

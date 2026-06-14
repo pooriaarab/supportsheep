@@ -49,7 +49,7 @@ vi.mock("@/lib/invites/repository", () => ({
 }));
 
 vi.mock("@/lib/invites/send-invite-email", () => ({
-  buildAcceptInviteUrl: (t: string) => `https://app.blogbat.com/accept-invite?token=${t}`,
+  buildAcceptInviteUrl: (t: string) => `https://app.supportsheep.com/accept-invite?token=${t}`,
   sendInviteEmail: mockSendInviteEmail,
 }));
 
@@ -68,7 +68,7 @@ describe("POST /api/v1/blogs/{blogId}/invites", () => {
     vi.clearAllMocks();
     mockVerifyRequest.mockResolvedValue({
       uid: "admin-1",
-      email: "admin@blogbat.com",
+      email: "admin@supportsheep.com",
       authTime: 0,
     });
     mockLogAuditEvent.mockResolvedValue(undefined);
@@ -125,7 +125,7 @@ describe("POST /api/v1/blogs/{blogId}/invites", () => {
     expect(mockSendInviteEmail).toHaveBeenCalledWith(
       expect.objectContaining({
         email: "new@x.test",
-        acceptUrl: "https://app.blogbat.com/accept-invite?token=tok123",
+        acceptUrl: "https://app.supportsheep.com/accept-invite?token=tok123",
       }),
     );
   });

@@ -48,7 +48,7 @@ const baseArticle: Article & { id: string } = {
   postType: "how_to",
   category: "guides",
   tags: [],
-  author: "BlogBat",
+  author: "Supportsheep",
   featuredImage: {
     url: "https://cdn.example.com/hero.jpg",
     alt: "Hero image",
@@ -71,7 +71,7 @@ const baseArticle: Article & { id: string } = {
   updatedAt: "2026-04-20T00:00:00.000Z",
 };
 
-const SITE_URL = "https://blogbat.com";
+const SITE_URL = "https://supportsheep.com";
 
 describe("ArticlePage BlogPosting JSON-LD E-E-A-T fields", () => {
   it("emits a complete BlogPosting with all Google-required rich-result fields", () => {

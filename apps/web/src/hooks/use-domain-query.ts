@@ -59,7 +59,7 @@ async function readDomainError(res: Response): Promise<string> {
   }
   if (code === "domain_taken") return "That domain is already in use.";
   if (code === "domain_reserved")
-    return "blogbat.com domains can't be used as a custom domain.";
+    return "supportsheep.com domains can't be used as a custom domain.";
   if (code === "invalid_domain") return "Enter a valid domain (e.g. blog.example.com).";
   if (code === "cloudflare_error")
     return message || "Cloudflare could not provision the domain. Try again.";

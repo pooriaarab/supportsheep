@@ -214,12 +214,12 @@ async function ensureNamedAuthors() {
 
   await db.collection("authors").doc("blogbat-editorial-team").set(
     {
-      name: "BlogBat Editorial Team",
+      name: "Supportsheep Editorial Team",
       jobTitle: "Editorial Team",
-      bio: "The BlogBat Editorial Team covers launching and growing small-business websites.",
+      bio: "The Supportsheep Editorial Team covers launching and growing small-business websites.",
       avatarUrl: "",
       email: "",
-      sameAs: ["https://blogbat.com"],
+      sameAs: ["https://supportsheep.com"],
       createdAt: now,
       updatedAt: now,
     },
@@ -243,14 +243,14 @@ async function generateArticle(item: EditorialPostSpec) {
   return generateObject({
     model: openai("gpt-5.4-mini"),
     schema: articleSchema,
-    system: `Write practical SEO/editorial content for BlogBat.
+    system: `Write practical SEO/editorial content for Supportsheep.
 
 Hard rules:
 - Body must be valid HTML using h2, h3, p, ul, ol, li, strong, em, and a tags only.
 - No markdown fences and no wrapping <html>, <body>, or <article> tags.
 - Open with a direct answer, not scene-setting.
 - Keep sections extractable and specific. Avoid filler and generic motivational copy.
-- Mention BlogBat naturally when relevant as one option, not the center of the article.
+- Mention Supportsheep naturally when relevant as one option, not the center of the article.
 - Do not invent unsupported product claims or fabricated stats.
 - Include concrete examples, checklists, and operational details.
 - Body should land around 1,100-1,800 words.
@@ -264,7 +264,7 @@ Hard rules:
       audience: buildAudience(item),
       angle: buildAngle(item),
       productContext:
-        "BlogBat is an AI-powered blog and website platform for solopreneurs and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
+        "Supportsheep is an AI-powered blog and website platform for solopreneurs and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
     }),
   });
 }

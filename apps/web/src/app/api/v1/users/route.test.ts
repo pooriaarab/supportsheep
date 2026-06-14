@@ -49,7 +49,7 @@ describe("GET /api/v1/users", () => {
   it("returns members for the caller's blog with pagination and AppUser shape", async () => {
     listBlogMembers.mockResolvedValue([member]);
     const request = new NextRequest(
-      "https://blogbat.com/api/v1/users?limit=10&offset=0",
+      "https://supportsheep.com/api/v1/users?limit=10&offset=0",
     );
 
     const response = await GET(request);
@@ -70,7 +70,7 @@ describe("POST /api/v1/users", () => {
 
   it("maps role 'user' to 'viewer' and returns 201 with the member", async () => {
     addMemberByEmail.mockResolvedValue({ ok: true, member });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "POST",
       body: JSON.stringify({ email: "ada@example.com", role: "user" }),
     });
@@ -89,7 +89,7 @@ describe("POST /api/v1/users", () => {
 
   it("maps role 'admin' to 'admin'", async () => {
     addMemberByEmail.mockResolvedValue({ ok: true, member });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "POST",
       body: JSON.stringify({ email: "ada@example.com", role: "admin" }),
     });
@@ -104,7 +104,7 @@ describe("POST /api/v1/users", () => {
 
   it("returns 404 user_not_found when the email has no account", async () => {
     addMemberByEmail.mockResolvedValue({ ok: false, reason: "user_not_found" });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "POST",
       body: JSON.stringify({ email: "ghost@example.com" }),
     });
@@ -116,7 +116,7 @@ describe("POST /api/v1/users", () => {
 
   it("returns 409 when the user is already a member", async () => {
     addMemberByEmail.mockResolvedValue({ ok: false, reason: "already_member" });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "POST",
       body: JSON.stringify({ email: "ada@example.com" }),
     });
@@ -132,7 +132,7 @@ describe("DELETE /api/v1/users", () => {
 
   it("removes members and returns the deleted count", async () => {
     removeBlogMembers.mockResolvedValue({ ok: true, removed: 2 });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "DELETE",
       body: JSON.stringify({ ids: ["u1", "u2"] }),
     });
@@ -145,7 +145,7 @@ describe("DELETE /api/v1/users", () => {
 
   it("returns 409 cannot_remove_last_owner", async () => {
     removeBlogMembers.mockResolvedValue({ ok: false, reason: "last_owner" });
-    const request = new NextRequest("https://blogbat.com/api/v1/users", {
+    const request = new NextRequest("https://supportsheep.com/api/v1/users", {
       method: "DELETE",
       body: JSON.stringify({ ids: ["u1"] }),
     });

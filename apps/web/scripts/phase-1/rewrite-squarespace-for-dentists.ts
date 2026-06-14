@@ -1,20 +1,20 @@
 /**
  * Phase 1 pilot REWRITE: re-ground `/alternatives/squarespace/for/dentists`
- * against the authoritative BlogBat product reference in
+ * against the authoritative Supportsheep product reference in
  * `.claude/context/solo-product.md`.
  *
  * The previous seed (see `write-squarespace-for-dentists.ts`) conflated
- * blogbat (this repo) features with BlogBat product features. In
- * particular it claimed BlogBat shipped an "SEO sidebar", "AI drafting inside
+ * blogbat (this repo) features with Supportsheep product features. In
+ * particular it claimed Supportsheep shipped an "SEO sidebar", "AI drafting inside
  * the editor", a "thin-content guard", "internal linking suggestions", and
  * "LocalBusiness/FAQPage/Article/BreadcrumbList schema by default" -- none of
- * those are present in the BlogBat product repo per the context file. It also
- * mis-framed BlogBat's BAA posture ("not applicable -- BlogBat does not collect
+ * those are present in the Supportsheep product repo per the context file. It also
+ * mis-framed Supportsheep's BAA posture ("not applicable -- Supportsheep does not collect
  * PHI") when the honest framing is "no BAA, same PHI constraint as
  * Squarespace's general site".
  *
  * This script rewrites the doc with:
- *   - Honest BlogBat framing (AI at onboarding + section creation + feature-
+ *   - Honest Supportsheep framing (AI at onboarding + section creation + feature-
  *     flagged blog; NO editor rewriter; NO native booking; NO AI image gen;
  *     NO BAA).
  *   - `{{solo.pro.*}}` pricing placeholders, resolved at render time by
@@ -52,7 +52,7 @@ const VARIANT_KEY = "squarespace__dentists";
 // back to the escaped <p> branch.
 const CONTENT = `## TL;DR
 
-Squarespace has a clean editor and a large template library, and for a brochure-style dental site that points patients to an external booking tool it can get the job done. What it cannot do is sign a HIPAA Business Associate Agreement for its core website, contact form block, email, or analytics -- only the separate [Acuity Scheduling product, on Powerhouse or Premium](https://support.squarespace.com/hc/en-us/articles/360028867231-Acuity-Scheduling-and-HIPAA), is BAA-eligible. [BlogBat](https://blogbat.com) has the same constraint: BlogBat does not sign a BAA either, so the moment a form collects Protected Health Information (PHI) both platforms are out of scope. This page is a source-backed comparison for a solo or small dental practice choosing between Squarespace, BlogBat, and the dental-specific vendors that actually sign BAAs.
+Squarespace has a clean editor and a large template library, and for a brochure-style dental site that points patients to an external booking tool it can get the job done. What it cannot do is sign a HIPAA Business Associate Agreement for its core website, contact form block, email, or analytics -- only the separate [Acuity Scheduling product, on Powerhouse or Premium](https://support.squarespace.com/hc/en-us/articles/360028867231-Acuity-Scheduling-and-HIPAA), is BAA-eligible. [Supportsheep](https://supportsheep.com) has the same constraint: Supportsheep does not sign a BAA either, so the moment a form collects Protected Health Information (PHI) both platforms are out of scope. This page is a source-backed comparison for a solo or small dental practice choosing between Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs.
 
 ## Should a dental practice use Squarespace?
 
@@ -74,11 +74,11 @@ In plain language:
 
 - **The core Squarespace website** -- pages, the blog, the form block, email campaigns, Squarespace Analytics, member areas -- is **not** covered by a BAA.
 - **Acuity Scheduling** (Squarespace-owned) is the one component that can be made HIPAA-enabled, and only on the Powerhouse or Premium plan, after the account owner turns on HIPAA-related features.
-- **BlogBat** does **not** sign a BAA at all -- not for contact forms, not for its blog, not for any surface.
+- **Supportsheep** does **not** sign a BAA at all -- not for contact forms, not for its blog, not for any surface.
 
 The operational consequence is the same: either CMS can host a public marketing site, but the moment a form asks "what are you being seen for?" or "what medications are you on?" you are outside what either platform is designed to support. Route those workflows to a vendor that signs a BAA. The [ADA's HIPAA 20 Questions](https://www.ada.org/resources/practice/legal-and-regulatory/hipaa/hipaa-20-questions) is a reasonable primer on what triggers BAA obligations in a dental context.
 
-<figure><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80" alt="Modern dental clinic reception area" loading="lazy" /><figcaption>Photo via Unsplash. Either Squarespace or BlogBat can host a public marketing site like this; neither should run the intake clipboard.</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80" alt="Modern dental clinic reception area" loading="lazy" /><figcaption>Photo via Unsplash. Either Squarespace or Supportsheep can host a public marketing site like this; neither should run the intake clipboard.</figcaption></figure>
 
 ## Where Squarespace genuinely works for dentists
 
@@ -97,17 +97,17 @@ If the use case is "brochure site with external booking, no PHI on the site itse
 - **Bounded integrations.** Mailchimp, Zapier, a commerce ecosystem -- not the depth of the WordPress plugin market. Dental-specific tools (recall automation, reputation, PMS sync) usually integrate via Zapier or not at all.
 - **Pricing stacks up.** Per [Squarespace pricing](https://www.squarespace.com/pricing), Basic is $16/mo billed annually, Core $23/mo, Plus $39/mo, Advanced $99/mo. Add Acuity Powerhouse for HIPAA-enabled scheduling and you are materially above sticker.
 
-## BlogBat's honest pitch for a small dental practice
+## Supportsheep's honest pitch for a small dental practice
 
-[BlogBat](https://blogbat.com) is an AI-assisted website builder aimed at solopreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
+[Supportsheep](https://supportsheep.com) is an AI-assisted website builder aimed at solopreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
 
-- **Speed to first draft.** Describe the practice in plain English during onboarding and BlogBat generates an initial multi-page site -- homepage, services, FAQ, team -- pre-populated with copy you can edit. This AI also runs when you add a new section in the editor, not just at sign-up.
-- **Pricing.** Per [blogbat.com/pricing](https://blogbat.com/pricing), BlogBat Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} month-to-month. A free tier supports a connected custom domain for a single site.
+- **Speed to first draft.** Describe the practice in plain English during onboarding and Supportsheep generates an initial multi-page site -- homepage, services, FAQ, team -- pre-populated with copy you can edit. This AI also runs when you add a new section in the editor, not just at sign-up.
+- **Pricing.** Per [supportsheep.com/pricing](https://supportsheep.com/pricing), Supportsheep Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} month-to-month. A free tier supports a connected custom domain for a single site.
 - **Privacy-forward.** Privacy-forward posture and brand trust from an independent platform.
 - **Managed hosting, SSL, custom domain.** Table-stakes.
-- **A blog feature, where enabled.** BlogBat's blog is feature-flagged (\`NEXT_PUBLIC_ENABLE_BLOG\`); when enabled, creating a post drafts via AI inside a Blog Feed section. Treat availability as deployment-dependent, not universal.
+- **A blog feature, where enabled.** Supportsheep's blog is feature-flagged (\`NEXT_PUBLIC_ENABLE_BLOG\`); when enabled, creating a post drafts via AI inside a Blog Feed section. Treat availability as deployment-dependent, not universal.
 
-Where BlogBat is explicitly **not** a differentiator:
+Where Supportsheep is explicitly **not** a differentiator:
 
 - **No in-editor AI rewriter.** Once a section is seeded, edits are fully manual. No "rewrite", "shorten", "change tone" commands.
 - **No AI image generation.** Default imagery is Unsplash on all plans; Pexels unlocks on Pro and above.
@@ -115,34 +115,34 @@ Where BlogBat is explicitly **not** a differentiator:
 - **No BAA.** Same PHI constraint as Squarespace's general site.
 - **On-page SEO primitives only.** Titles, meta, clean URLs, responsive markup, sitemap, basic structured data. No keyword research tool, thin-content guard, or internal-link audit.
 
-## Side-by-side: Squarespace vs BlogBat for a dental practice
+## Side-by-side: Squarespace vs Supportsheep for a dental practice
 
 <table>
 <thead>
-<tr><th>Feature</th><th>Squarespace (Basic / Core / Plus / Advanced)</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>Squarespace (Basic / Core / Plus / Advanced)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>Starting price (annual billing)</td><td>$16 / $23 / $39 / $99 per month</td><td>Free, then Pro at {{solo.pro.yearly.monthly}} annual ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} monthly</td></tr>
 <tr><td>Free tier with custom domain</td><td>No (14-day trial only, paid thereafter)</td><td>Yes (free tier allows a connected custom domain on a single site)</td></tr>
-<tr><td>BAA on contact forms / core site</td><td>No (Squarespace documents this explicitly)</td><td>No -- BlogBat does not offer a BAA; same PHI constraint applies</td></tr>
-<tr><td>BAA on scheduling</td><td>Yes, via Acuity Scheduling on Powerhouse / Premium</td><td>No -- BlogBat scheduling is a link field to a third-party tool</td></tr>
+<tr><td>BAA on contact forms / core site</td><td>No (Squarespace documents this explicitly)</td><td>No -- Supportsheep does not offer a BAA; same PHI constraint applies</td></tr>
+<tr><td>BAA on scheduling</td><td>Yes, via Acuity Scheduling on Powerhouse / Premium</td><td>No -- Supportsheep scheduling is a link field to a third-party tool</td></tr>
 <tr><td>Native online booking</td><td>Via Acuity (separate subscription)</td><td>Link to a third-party booking URL (Calendly, NexHealth, etc.)</td></tr>
 <tr><td>AI content help</td><td>Squarespace AI (draft assist, not HIPAA-covered)</td><td>AI at onboarding + when adding a section; feature-flagged blog post drafting; NO in-editor AI rewriter</td></tr>
 <tr><td>AI image generation</td><td>No (stock + user upload)</td><td>No (Unsplash default on all plans; Pexels unlocks on Pro and Grow)</td></tr>
 <tr><td>Template depth</td><td>Large, award-winning template library; template lock-in after publish</td><td>Opinionated default layouts tuned for speed-to-first-draft, not pixel-perfect design</td></tr>
 <tr><td>SEO tooling</td><td>Titles, meta, sitemap, basic schema; limited programmatic options</td><td>Titles, meta, sitemap, basic schema; no keyword tool, no thin-content guard, no internal-link audit</td></tr>
 <tr><td>Languages</td><td>Multiple languages via workarounds</td><td>One language per site (8-value enum: en / es / fr / it / de / pt / ja / ko)</td></tr>
-<tr><td>Best fit</td><td>Design-led practices that will wire a separate BAA-eligible booking and intake stack</td><td>BlogBat / 2-5 dentist practices that want speed-to-site, low price, and will route PHI to a dental-specific vendor</td></tr>
+<tr><td>Best fit</td><td>Design-led practices that will wire a separate BAA-eligible booking and intake stack</td><td>Supportsheep / 2-5 dentist practices that want speed-to-site, low price, and will route PHI to a dental-specific vendor</td></tr>
 </tbody>
 </table>
 
-## What neither Squarespace nor BlogBat provides natively
+## What neither Squarespace nor Supportsheep provides natively
 
 This is the honest half of the conversation. A real dental practice needs things that neither platform ships. You will layer a dental-specific vendor on top of whichever CMS you pick:
 
 <table>
 <thead>
-<tr><th>Capability</th><th>Squarespace (general site)</th><th>BlogBat</th><th>Who actually provides it</th></tr>
+<tr><th>Capability</th><th>Squarespace (general site)</th><th>Supportsheep</th><th>Who actually provides it</th></tr>
 </thead>
 <tbody>
 <tr><td>HIPAA-compliant patient intake forms (medical history, medications, allergies)</td><td>No (form block not BAA-covered)</td><td>No (no BAA)</td><td>Jotform HIPAA, FormDr, Hushmail Forms, your PMS's patient portal</td></tr>
@@ -154,7 +154,7 @@ This is the honest half of the conversation. A real dental practice needs things
 </tbody>
 </table>
 
-The pattern: the CMS handles the public, non-PHI marketing presence. A dental-specific vendor (or your practice management system) handles everything with PHI. Both Squarespace and BlogBat are honest about this once you read their policies; neither should be asked to do what it was not built to do.
+The pattern: the CMS handles the public, non-PHI marketing presence. A dental-specific vendor (or your practice management system) handles everything with PHI. Both Squarespace and Supportsheep are honest about this once you read their policies; neither should be asked to do what it was not built to do.
 
 ## Alternatives: vendors that actually sign BAAs for dental workflows
 
@@ -177,21 +177,21 @@ If you'd rather watch than read, the video below is a 2026 independent review of
 
 Three scenarios, three answers:
 
-- **Public site strictly non-PHI (brochure only, external booking, no intake forms on-site).** Either CMS works. Pick Squarespace if template polish is the deciding factor; pick BlogBat if speed-to-first-draft and price matter more. BlogBat Pro at {{solo.pro.yearly.monthly}} annual ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} monthly is meaningfully cheaper than Squarespace Core plus Acuity Powerhouse.
-- **HIPAA-safe booking but everything else stays marketing.** Squarespace + Acuity Powerhouse is the cleanest in-family option; BlogBat + NexHealth / Acuity Powerhouse is cheaper. The CMS choice is secondary.
-- **HIPAA-safe intake, messaging, and patient portal.** Neither Squarespace nor BlogBat is the right tool for this surface. Layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) on top of whichever CMS you pick.
+- **Public site strictly non-PHI (brochure only, external booking, no intake forms on-site).** Either CMS works. Pick Squarespace if template polish is the deciding factor; pick Supportsheep if speed-to-first-draft and price matter more. Supportsheep Pro at {{solo.pro.yearly.monthly}} annual ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} monthly is meaningfully cheaper than Squarespace Core plus Acuity Powerhouse.
+- **HIPAA-safe booking but everything else stays marketing.** Squarespace + Acuity Powerhouse is the cleanest in-family option; Supportsheep + NexHealth / Acuity Powerhouse is cheaper. The CMS choice is secondary.
+- **HIPAA-safe intake, messaging, and patient portal.** Neither Squarespace nor Supportsheep is the right tool for this surface. Layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) on top of whichever CMS you pick.
 
 ## Getting started checklist
 
 1. **Inventory the current site.** List every page, form, embed, and outbound link. Flag anything that collects patient information.
 2. **Decide where PHI workflows will live.** NexHealth, Acuity on Powerhouse (HIPAA-enabled), Dentrix Hub, Tebra, or your PMS-native portal. Pick before you touch the website.
-3. **Pick the CMS.** Squarespace if template design is the deciding factor; BlogBat if price and speed-to-first-draft matter more.
-4. **Spin up a draft.** BlogBat onboarding generates the initial site from a business description. Squarespace: pick a template and edit. Either way, plan on a half day to a weekend for a small practice.
+3. **Pick the CMS.** Squarespace if template design is the deciding factor; Supportsheep if price and speed-to-first-draft matter more.
+4. **Spin up a draft.** Supportsheep onboarding generates the initial site from a business description. Squarespace: pick a template and edit. Either way, plan on a half day to a weekend for a small practice.
 5. **Wire the HIPAA-safe booking and intake links.** Every booking button, every intake CTA, points at the dental-specific vendor -- not at a form on your CMS.
 6. **Migrate content and map 301 redirects.** Crawl the old site, map every live URL to a new one, stage the 301s before flipping DNS.
 7. **Post-launch: verify.** Submit the new sitemap to Search Console, spot-check redirects, watch for 4xx errors for two weeks.
 
-Squarespace is a bounded choice for a dental practice. BlogBat is a cheaper, faster-to-first-draft bounded choice. Both have the same BAA constraint; the dental-specific vendors on top are what make the stack actually HIPAA-safe.`;
+Squarespace is a bounded choice for a dental practice. Supportsheep is a cheaper, faster-to-first-draft bounded choice. Both have the same BAA constraint; the dental-specific vendors on top are what make the stack actually HIPAA-safe.`;
 
 function countWords(text: string): number {
   // Strip HTML tags and markdown punctuation so the wordCount reflects the
@@ -217,19 +217,19 @@ const FAQS: ProgrammaticFaq[] = [
       "Only for Acuity Scheduling on the Powerhouse or Premium plan, and only after the account owner enables HIPAA-related features. Squarespace does NOT sign a BAA for the core website platform, contact form block, email campaigns, member areas, or Squarespace Analytics. That is stated directly in the Squarespace Help Center article 'Acuity Scheduling and HIPAA' (support.squarespace.com/hc/en-us/articles/360028867231).",
   },
   {
-    question: "Does BlogBat sign a BAA for dental practices?",
+    question: "Does Supportsheep sign a BAA for dental practices?",
     answer:
-      "No. BlogBat does not offer a Business Associate Agreement on any surface -- contact forms, blog, or otherwise. The same constraint that applies to Squarespace's core website applies to BlogBat: it is suitable for a public, non-PHI marketing site, but any form collecting Protected Health Information must be routed to a HIPAA-compliant dental vendor (Tebra, NexHealth, Dentrix Hub, Acuity Powerhouse with HIPAA enabled, or a HIPAA-certified form provider like Jotform HIPAA or FormDr).",
+      "No. Supportsheep does not offer a Business Associate Agreement on any surface -- contact forms, blog, or otherwise. The same constraint that applies to Squarespace's core website applies to Supportsheep: it is suitable for a public, non-PHI marketing site, but any form collecting Protected Health Information must be routed to a HIPAA-compliant dental vendor (Tebra, NexHealth, Dentrix Hub, Acuity Powerhouse with HIPAA enabled, or a HIPAA-certified form provider like Jotform HIPAA or FormDr).",
   },
   {
-    question: "What does BlogBat actually do with AI for a dental site?",
+    question: "What does Supportsheep actually do with AI for a dental site?",
     answer:
-      "BlogBat uses AI in three places and nowhere else: (1) the onboarding flow, which generates the initial multi-page site from a short business description; (2) the section-creation flow, which seeds copy for a new section (Introduction, Services, FAQ, etc.) using the existing business context; and (3) the feature-flagged blog, which drafts a post when you create one inside a Blog Feed section. BlogBat does NOT have an in-editor AI rewriter (no 'shorten', 'rewrite', 'change tone' commands), does NOT generate images (Unsplash default, Pexels on Pro+), and does NOT auto-translate existing pages. Once a section is seeded, edits are manual.",
+      "Supportsheep uses AI in three places and nowhere else: (1) the onboarding flow, which generates the initial multi-page site from a short business description; (2) the section-creation flow, which seeds copy for a new section (Introduction, Services, FAQ, etc.) using the existing business context; and (3) the feature-flagged blog, which drafts a post when you create one inside a Blog Feed section. Supportsheep does NOT have an in-editor AI rewriter (no 'shorten', 'rewrite', 'change tone' commands), does NOT generate images (Unsplash default, Pexels on Pro+), and does NOT auto-translate existing pages. Once a section is seeded, edits are manual.",
   },
   {
-    question: "How much does BlogBat cost for a dental practice in 2026?",
+    question: "How much does Supportsheep cost for a dental practice in 2026?",
     answer:
-      "BlogBat has a free tier with a connected custom domain. BlogBat Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total per year) or {{solo.pro.monthly.monthly}} month-to-month. BlogBat Grow is {{solo.grow.yearly.monthly}} billed annually ({{solo.grow.yearlyAnnual}} total per year) or {{solo.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from blogbat.com/pricing rather than memorising a number.",
+      "Supportsheep has a free tier with a connected custom domain. Supportsheep Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total per year) or {{solo.pro.monthly.monthly}} month-to-month. Supportsheep Grow is {{solo.grow.yearly.monthly}} billed annually ({{solo.grow.yearlyAnnual}} total per year) or {{solo.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from supportsheep.com/pricing rather than memorising a number.",
   },
   {
     question: "What does Squarespace cost for a dental practice in 2026?",
@@ -237,9 +237,9 @@ const FAQS: ProgrammaticFaq[] = [
       "Billed annually, Squarespace's 2026 plans are Basic at $16/mo, Core at $23/mo, Plus at $39/mo, and Advanced at $99/mo. Most small practices land on Core (0% transaction fee on commerce, advanced analytics) or Plus (API access, lower digital-product fees). If you need HIPAA-aware booking, Acuity Scheduling Powerhouse or Premium is a separate Acuity subscription on top.",
   },
   {
-    question: "Should I use Squarespace or BlogBat for my dental website?",
+    question: "Should I use Squarespace or Supportsheep for my dental website?",
     answer:
-      "If visual polish and a large template library are the deciding factor, pick Squarespace -- its template ecosystem is hard to beat. If speed-to-first-draft and price matter more, pick BlogBat: onboarding generates a usable first draft from a business description, the free tier supports a connected custom domain, and Pro is {{solo.pro.yearly.monthly}} billed annually. Both platforms have the same BAA constraint (neither covers PHI on the core site), so whichever CMS you pick, plan to layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) for bookings, intake, and patient messaging.",
+      "If visual polish and a large template library are the deciding factor, pick Squarespace -- its template ecosystem is hard to beat. If speed-to-first-draft and price matter more, pick Supportsheep: onboarding generates a usable first draft from a business description, the free tier supports a connected custom domain, and Pro is {{solo.pro.yearly.monthly}} billed annually. Both platforms have the same BAA constraint (neither covers PHI on the core site), so whichever CMS you pick, plan to layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) for bookings, intake, and patient messaging.",
   },
 ];
 
@@ -267,14 +267,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest, source-backed comparison of Squarespace, BlogBat, and the dental-specific vendors that actually sign BAAs -- for solo and small dental practices choosing a website platform.",
-        ctaText: "Start your dental practice website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest, source-backed comparison of Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs -- for solo and small dental practices choosing a website platform.",
+        ctaText: "Start your dental practice website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",
       },
       title: "Squarespace for dentists: an honest alternative",
       metaDescription:
-        "Is Squarespace right for a dental practice? Source-backed comparison of Squarespace, BlogBat, and HIPAA-compliant dental vendors (Tebra, NexHealth, Dentrix Hub).",
+        "Is Squarespace right for a dental practice? Source-backed comparison of Squarespace, Supportsheep, and HIPAA-compliant dental vendors (Tebra, NexHealth, Dentrix Hub).",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

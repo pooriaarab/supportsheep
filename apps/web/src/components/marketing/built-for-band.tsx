@@ -1,6 +1,6 @@
 /**
  * "Built for…" band — honest social proof. No fake logos or testimonials; just
- * the three kinds of people (and one kind of program) BlogBat is shaped for.
+ * the three kinds of people (and one kind of program) Supportsheep is shaped for.
  */
 
 import { AUDIENCES } from "./marketing-content";
@@ -18,7 +18,7 @@ export function BuiltForBand() {
         Built for People Who Ship
       </h2>
       <p className="mx-auto mt-3 max-w-2xl text-pretty text-center text-muted-foreground">
-        Whether you write for readers or for an API, BlogBat stays out of your
+        Whether you write for readers or for an API, Supportsheep stays out of your
         way.
       </p>
 

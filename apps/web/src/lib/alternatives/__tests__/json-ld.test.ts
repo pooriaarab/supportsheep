@@ -25,11 +25,11 @@ const competitor: Competitor = {
 };
 
 describe("alternatives JSON-LD builders", () => {
-  it("builds a SoftwareApplication entry for BlogBat", () => {
-    const json = buildSoftwareApplicationJsonLd("https://blogbat.com");
+  it("builds a SoftwareApplication entry for Supportsheep", () => {
+    const json = buildSoftwareApplicationJsonLd("https://supportsheep.com");
     expect(json).toMatchObject({
       "@type": "SoftwareApplication",
-      name: "BlogBat",
+      name: "Supportsheep",
       applicationCategory: "BusinessApplication",
     });
   });
@@ -44,7 +44,7 @@ describe("alternatives JSON-LD builders", () => {
   });
 
   it("builds an ItemList referencing every competitor", () => {
-    const json = buildAlternativesItemListJsonLd("https://blogbat.com", [
+    const json = buildAlternativesItemListJsonLd("https://supportsheep.com", [
       competitor,
     ]);
     expect(json).toMatchObject({
@@ -53,8 +53,8 @@ describe("alternatives JSON-LD builders", () => {
         {
           "@type": "ListItem",
           position: 1,
-          name: "BlogBat vs Wix",
-          url: "https://blogbat.com/vs/wix",
+          name: "Supportsheep vs Wix",
+          url: "https://supportsheep.com/vs/wix",
         },
       ],
     });
@@ -62,14 +62,14 @@ describe("alternatives JSON-LD builders", () => {
 
   it("builds a FAQPage entry with Question/Answer pairs", () => {
     const json = buildFaqPageJsonLd([
-      { question: "Is BlogBat free?", answer: "Yes." },
+      { question: "Is Supportsheep free?", answer: "Yes." },
     ]);
     expect(json).toMatchObject({
       "@type": "FAQPage",
       mainEntity: [
         {
           "@type": "Question",
-          name: "Is BlogBat free?",
+          name: "Is Supportsheep free?",
           acceptedAnswer: { "@type": "Answer", text: "Yes." },
         },
       ],

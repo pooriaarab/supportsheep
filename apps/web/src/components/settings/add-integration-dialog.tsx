@@ -463,7 +463,7 @@ export function AddIntegrationDialog({
                   <Label htmlFor="gsc-site-url">Search Console Site URL</Label>
                   <Input
                     id="gsc-site-url"
-                    placeholder="https://blogbat.com/"
+                    placeholder="https://supportsheep.com/"
                     value={siteUrl}
                     onChange={(e) => setSiteUrl(e.target.value)}
                     disabled={connectMutation.isPending}

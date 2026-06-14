@@ -76,7 +76,7 @@ function ArticleCardPreview({
           titleClassName,
         )}
       >
-        BlogBat vs 10Web
+        Supportsheep vs 10Web
       </h4>
       <p
         className={cn(
@@ -112,7 +112,7 @@ function ReadingPreview({
             articleTheme.typography.pageTitleClassName,
           )}
         >
-          BlogBat article preview
+          Supportsheep article preview
         </h4>
         <div
           className={cn(

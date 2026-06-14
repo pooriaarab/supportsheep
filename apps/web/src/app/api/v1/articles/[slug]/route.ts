@@ -98,7 +98,7 @@ export const PATCH = createApiHandler<
 
         if (article.generatedBy === "interview" && article.guestAttribution?.email) {
           try {
-            const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://blogbat.com";
+            const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://supportsheep.com";
             await sendGuestPublishedEmail({
               to: article.guestAttribution.email,
               guestName: article.guestAttribution.name ?? null,

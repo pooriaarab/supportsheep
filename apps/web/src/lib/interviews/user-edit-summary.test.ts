@@ -34,8 +34,8 @@ describe("summarizeUserEdit (plain-text fallback)", () => {
 
   it("describes a pure suffix addition as 'added new text' with the new tail verbatim", () => {
     const summary = summarizeUserEdit(
-      "BlogBat helps founders ship blogs.",
-      "BlogBat helps founders ship blogs. It runs on Firebase.",
+      "Supportsheep helps founders ship blogs.",
+      "Supportsheep helps founders ship blogs. It runs on Firebase.",
     );
     expect(summary).not.toBeNull();
     expect(summary?.kind).toBe("added");
@@ -46,8 +46,8 @@ describe("summarizeUserEdit (plain-text fallback)", () => {
 
   it("describes a pure suffix deletion as 'removed text from the end'", () => {
     const summary = summarizeUserEdit(
-      "BlogBat helps founders ship blogs. It runs on Firebase.",
-      "BlogBat helps founders ship blogs.",
+      "Supportsheep helps founders ship blogs. It runs on Firebase.",
+      "Supportsheep helps founders ship blogs.",
     );
     expect(summary?.kind).toBe("removed");
     expect(summary?.cueText).toMatch(/removed text/i);
@@ -256,8 +256,8 @@ describe("summarizeUserEditFromDoc (structural cues for every TipTap node)", () 
   });
 
   it("falls back to text diff for plain-text edits inside an unchanged structure", () => {
-    const before = doc(p("BlogBat helps founders ship blogs."));
-    const after = doc(p("BlogBat helps founders ship blogs. It runs on Firebase."));
+    const before = doc(p("Supportsheep helps founders ship blogs."));
+    const after = doc(p("Supportsheep helps founders ship blogs. It runs on Firebase."));
     const summary = summarizeUserEditFromDoc(before, after);
     expect(summary?.kind).toBe("added");
     expect(summary?.cueText).toMatch(/added new text to the canvas/i);

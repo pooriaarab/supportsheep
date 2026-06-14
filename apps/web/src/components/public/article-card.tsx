@@ -93,7 +93,7 @@ export function ArticleCard({
                 </p>
               ) : null}
               <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                <span>{article.author || "BlogBat"}</span>
+                <span>{article.author || "Supportsheep"}</span>
                 {date ? <span>{date}</span> : null}
                 {article.readingTime > 0 ? (
                   <span>{article.readingTime} min read</span>
@@ -164,7 +164,7 @@ export function ArticleCard({
               </p>
             ) : null}
             <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-              <span>{article.author || "BlogBat"}</span>
+              <span>{article.author || "Supportsheep"}</span>
               {date ? <span>{date}</span> : null}
               {article.readingTime > 0 ? (
                 <span>{article.readingTime} min read</span>
@@ -248,7 +248,7 @@ export function ArticleCard({
             </p>
           ) : null}
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-            <span>{article.author || "BlogBat"}</span>
+            <span>{article.author || "Supportsheep"}</span>
             {date ? <span>{date}</span> : null}
             {article.readingTime > 0 ? (
               <span>{article.readingTime} min read</span>

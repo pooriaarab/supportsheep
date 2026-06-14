@@ -30,7 +30,7 @@ test("guest post submission page is public and linked from the footer", async ({
     page.getByRole("heading", { name: "Submit a guest blog backlink request" }),
   ).toBeVisible();
   await expect(
-    page.getByText("published a live article that links to BlogBat"),
+    page.getByText("published a live article that links to Supportsheep"),
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Submit guest post" }),
@@ -45,10 +45,10 @@ test("guest post submission page is public and linked from the footer", async ({
   await expect(page.getByText("Required submission fields")).toHaveCount(0);
   await expect(page.getByText("Your name")).toHaveCount(0);
   await expect(
-    page.getByText("Published article URL that links to BlogBat"),
+    page.getByText("Published article URL that links to Supportsheep"),
   ).toHaveCount(0);
   await expect(
-    page.getByText("URL you want BlogBat to consider linking to"),
+    page.getByText("URL you want Supportsheep to consider linking to"),
   ).toHaveCount(0);
   const submitLink = page.getByRole("link", { name: "Submit guest post" });
   const whatToIncludeHeading = page.getByRole("heading", {
@@ -64,7 +64,7 @@ test("guest post submission page is public and linked from the footer", async ({
     submitLinkBox!.y + submitLinkBox!.height + 20,
   );
   await expect(
-    page.locator('iframe[title="BlogBat backlink request"]'),
+    page.locator('iframe[title="Supportsheep backlink request"]'),
   ).toHaveAttribute("src", /tally\.so\/embed\/rj0MPR/);
   await expect(
     page.getByRole("button", { name: "Load details into Tally" }),

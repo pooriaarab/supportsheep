@@ -53,7 +53,7 @@ describe("markdown for agents", () => {
       siteDescription: "A modern blog",
       homepage: { postsPerPage: 12 },
     });
-    mocks.mockResolvePublicSiteUrl.mockReturnValue("https://blogbat.com");
+    mocks.mockResolvePublicSiteUrl.mockReturnValue("https://supportsheep.com");
   });
 
   it("renders homepage content as markdown", () => {
@@ -63,7 +63,7 @@ describe("markdown for agents", () => {
       articles: [
         {
           title: "Low Cost SEO Packages",
-          url: "https://blogbat.com/low-cost-seo-packages",
+          url: "https://supportsheep.com/low-cost-seo-packages",
           excerpt: "A concise intro.",
         },
       ],
@@ -71,7 +71,7 @@ describe("markdown for agents", () => {
 
     expect(markdown).toContain("# Blog");
     expect(markdown).toContain("## Low Cost SEO Packages");
-    expect(markdown).toContain("https://blogbat.com/low-cost-seo-packages");
+    expect(markdown).toContain("https://supportsheep.com/low-cost-seo-packages");
   });
 
   it("resolves supported markdown routes by pathname", () => {

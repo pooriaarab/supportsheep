@@ -2,8 +2,8 @@
  * Marketing site footer.
  *
  * Mirrors the public blog footer's dark brand surface, but for the apex
- * marketing site: the BlogBat wordmark, a few product links, and a
- * "Powered by BlogBat" credit. Uses the fixed brand surface colors documented
+ * marketing site: the Supportsheep wordmark, a few product links, and a
+ * "Powered by Supportsheep" credit. Uses the fixed brand surface colors documented
  * in DESIGN.md (the same `#171325` footer surface as the tenant footer) so the
  * white wordmark logo reads correctly.
  */
@@ -24,10 +24,10 @@ export function MarketingFooter() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col gap-8 py-12">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <Link href="/" className="inline-block" aria-label="BlogBat home">
+            <Link href="/" className="inline-block" aria-label="Supportsheep home">
               <Image
                 src="/blogbat-footer-logo.svg"
-                alt="BlogBat logo"
+                alt="Supportsheep logo"
                 width={240}
                 height={40}
                 unoptimized
@@ -62,8 +62,8 @@ export function MarketingFooter() {
           <hr className="my-0 border-t border-current/20" />
 
           <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <p className="text-sm opacity-70">&copy; {currentYear} BlogBat</p>
-            <span className="text-sm opacity-70">Powered by BlogBat</span>
+            <p className="text-sm opacity-70">&copy; {currentYear} Supportsheep</p>
+            <span className="text-sm opacity-70">Powered by Supportsheep</span>
           </div>
         </div>
       </div>

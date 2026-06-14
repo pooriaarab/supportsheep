@@ -59,7 +59,7 @@ export function BlogSwitcher({ footer }: BlogSwitcherProps) {
     [setActive, refresh, current?.id],
   );
 
-  const label = isLoading ? "Loading" : (current?.displayName ?? "BlogBat");
+  const label = isLoading ? "Loading" : (current?.displayName ?? "Supportsheep");
   const multiBlog = blogs.length > 1;
 
   return (

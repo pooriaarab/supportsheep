@@ -2,7 +2,7 @@
 /**
  * Batch content generator for /for/[vertical] programmatic pages.
  * Uses Tabstack /v1/research for verified citations + Anthropic Claude for content.
- * All BlogBat claims grounded in .claude/context/solo-product.md.
+ * All Supportsheep claims grounded in .claude/context/solo-product.md.
  *
  * Run: bun --conditions react-server scripts/content-pipeline/generate-for-pages.ts
  * Options:
@@ -110,7 +110,7 @@ async function tabstackResearch(
 }
 
 // ---------------------------------------------------------------------------
-// Content generation — calls Claude with research context + BlogBat grounding.
+// Content generation — calls Claude with research context + Supportsheep grounding.
 // ---------------------------------------------------------------------------
 async function generatePageContent(
   vertical: { slug: string; label: string; industry: string },
@@ -128,21 +128,21 @@ async function generatePageContent(
     .map((p, i) => `[${i + 1}] ${p.title} — ${p.url}`)
     .join("\n");
 
-  const systemPrompt = `You write high-quality programmatic SEO content for blogbat.com, the blog of BlogBat (an AI-powered platform for solopreneurs and SMBs).
+  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the blog of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
 
-BLOGBAT PRODUCT CONTEXT — ground all BlogBat claims here:
+BLOGBAT PRODUCT CONTEXT — ground all Supportsheep claims here:
 ${soloContext}
 
 CORE RULES:
-- NEVER claim BlogBat has a free-form AI writing assistant across the editor
-- NEVER claim BlogBat has native booking (it links to external calendar tools)
-- NEVER claim BlogBat generates AI images (Unsplash default, Pexels for Pro+)
-- NEVER claim BlogBat has a BAA (unsuitable for PHI-collecting forms)
+- NEVER claim Supportsheep has a free-form AI writing assistant across the editor
+- NEVER claim Supportsheep has native booking (it links to external calendar tools)
+- NEVER claim Supportsheep generates AI images (Unsplash default, Pexels for Pro+)
+- NEVER claim Supportsheep has a BAA (unsuitable for PHI-collecting forms)
 - Use {{solo.pro.yearly}} for $20/mo, {{solo.pro.monthly}} for $25/mo, {{solo.free.monthly}} for $0, {{solo.grow.yearly}} for $90/mo
-- Always be honest about BlogBat's limitations for the specific vertical
+- Always be honest about Supportsheep's limitations for the specific vertical
 - Voice: practical, honest, SMB/solopreneur tone. Respect the reader's time.`;
 
-  const userPrompt = `Write a Tier-3 programmatic SEO page for BlogBat: "Website builder for ${vertical.label}".
+  const userPrompt = `Write a Tier-3 programmatic SEO page for Supportsheep: "Website builder for ${vertical.label}".
 
 TARGET READER: A ${vertical.label.toLowerCase()} (solo practitioner or 1-5 person practice) who is evaluating website builders. They're not technical. They care about: getting clients, looking professional, not wasting time, and industry-specific concerns.
 
@@ -155,7 +155,7 @@ ${citationList}
 REQUIRED STRUCTURE (1800-2500 words total):
 
 ## TL;DR
-3-5 sentences. Who this is for. What they'll learn. Bottom line on BlogBat for this vertical.
+3-5 sentences. Who this is for. What they'll learn. Bottom line on Supportsheep for this vertical.
 
 ## Why [${vertical.label}] websites have specific challenges
 1-2 paragraphs specific to this industry. What makes their website needs different from generic SMBs.
@@ -166,11 +166,11 @@ REQUIRED STRUCTURE (1800-2500 words total):
 ## [Industry-specific concern] (pick the most important: HIPAA for health, licensing for trades, portfolio for creative, etc.)
 1-2 focused paragraphs. Be honest about limitations.
 
-## Why BlogBat works for solo ${vertical.label.toLowerCase()} practices
-Honest pitch grounded in BlogBat's real features. Reference AI-seeded section creation, onboarding speed, pricing (use {{solo.pro.yearly}} etc.). Be clear about what BlogBat DOESN'T do for this vertical if relevant.
+## Why Supportsheep works for solo ${vertical.label.toLowerCase()} practices
+Honest pitch grounded in Supportsheep's real features. Reference AI-seeded section creation, onboarding speed, pricing (use {{solo.pro.yearly}} etc.). Be clear about what Supportsheep DOESN'T do for this vertical if relevant.
 
 ## Comparison with alternatives
-<table> comparing BlogBat vs 2-3 relevant alternatives (Wix, Squarespace, or vertical-specific tools if they exist). One honest row per feature.
+<table> comparing Supportsheep vs 2-3 relevant alternatives (Wix, Squarespace, or vertical-specific tools if they exist). One honest row per feature.
 
 ## Getting started: a 5-step checklist
 Use a proper markdown ordered list (each step on its own line):
@@ -218,8 +218,8 @@ YOUTUBE: Include one <iframe src="https://www.youtube-nocookie.com/embed/[REAL_V
   }
 
   const wordCount = countWords(uniqueContent);
-  const title = `BlogBat for ${vertical.label}`;
-  const metaDescription = `Build a professional ${vertical.label.toLowerCase()} website with BlogBat. A practical guide to features, compliance considerations, local SEO, and honest alternatives.`.slice(0, 160);
+  const title = `Supportsheep for ${vertical.label}`;
+  const metaDescription = `Build a professional ${vertical.label.toLowerCase()} website with Supportsheep. A practical guide to features, compliance considerations, local SEO, and honest alternatives.`.slice(0, 160);
 
   return { uniqueContent, metaDescription, title, faqs, wordCount };
 }
@@ -242,10 +242,10 @@ async function main() {
 
   const anthropicClient = new Anthropic({ apiKey: anthropicApiKey });
 
-  // Load BlogBat product context (grounding for all content)
+  // Load Supportsheep product context (grounding for all content)
   const soloContextPath = findSoloProductMd();
   const soloContext = readFileSync(soloContextPath, "utf-8");
-  console.info(`BlogBat context loaded from: ${soloContextPath}`);
+  console.info(`Supportsheep context loaded from: ${soloContextPath}`);
 
   // Load verticals manifest (--manifest=<file> relative to scripts/content-pipeline/)
   const manifestFile = process.argv.find((a) => a.startsWith("--manifest="))?.split("=")[1] ?? "verticals.json";

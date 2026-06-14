@@ -162,12 +162,12 @@ export async function deleteAuthor(
 const PLACEHOLDER_AUTHOR_ID = "blogbat-editorial-team";
 
 const PLACEHOLDER_AUTHOR = {
-  name: "BlogBat Editorial Team",
+  name: "Supportsheep Editorial Team",
   jobTitle: "Editorial Team",
-  bio: "The BlogBat Editorial Team covers launching and growing small-business websites. Replace this placeholder with a real named author before launch.",
+  bio: "The Supportsheep Editorial Team covers launching and growing small-business websites. Replace this placeholder with a real named author before launch.",
   avatarUrl: "",
   email: "",
-  sameAs: ["https://blogbat.com"],
+  sameAs: ["https://supportsheep.com"],
 };
 
 /**

@@ -4,15 +4,15 @@ import { buildInstructions } from "./instructions";
 
 describe("buildInstructions", () => {
   it("includes the CNAME step", () => {
-    const steps = buildInstructions("blog.example.com", "abc.cname.blogbat.com");
+    const steps = buildInstructions("blog.example.com", "abc.cname.supportsheep.com");
     expect(steps[0]).toContain("blog.example.com");
     expect(steps).toContainEqual(
-      "Add a CNAME record: blog.example.com → abc.cname.blogbat.com",
+      "Add a CNAME record: blog.example.com → abc.cname.supportsheep.com",
     );
   });
 
   it("adds the ownership-verification TXT step when provided", () => {
-    const steps = buildInstructions("blog.example.com", "abc.cname.blogbat.com", {
+    const steps = buildInstructions("blog.example.com", "abc.cname.supportsheep.com", {
       type: "txt",
       name: "_cf-custom-hostname.blog.example.com",
       value: "token-123",
@@ -23,15 +23,15 @@ describe("buildInstructions", () => {
   });
 
   it("omits the ownership-verification step when absent", () => {
-    const withoutOv = buildInstructions("blog.example.com", "x.blogbat.com");
-    const withNull = buildInstructions("blog.example.com", "x.blogbat.com", null);
+    const withoutOv = buildInstructions("blog.example.com", "x.supportsheep.com");
+    const withNull = buildInstructions("blog.example.com", "x.supportsheep.com", null);
     for (const steps of [withoutOv, withNull]) {
       expect(steps.some((s) => s.includes("ownership-verification"))).toBe(false);
     }
   });
 
   it("always includes the host-field doubled-record caveat", () => {
-    const steps = buildInstructions("blog.example.com", "x.blogbat.com", {
+    const steps = buildInstructions("blog.example.com", "x.supportsheep.com", {
       type: "txt",
       name: "_cf-custom-hostname.blog.example.com",
       value: "token",
@@ -43,7 +43,7 @@ describe("buildInstructions", () => {
   });
 
   it("ends with the save-and-recheck step", () => {
-    const steps = buildInstructions("blog.example.com", "x.blogbat.com");
+    const steps = buildInstructions("blog.example.com", "x.supportsheep.com");
     expect(steps[steps.length - 1]).toContain("check status");
   });
 });

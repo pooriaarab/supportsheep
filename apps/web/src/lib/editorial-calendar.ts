@@ -139,7 +139,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
     authorId: "pooria-arab",
   },
   {
-    title: "How to Switch From Wix to BlogBat Without Losing SEO",
+    title: "How to Switch From Wix to Supportsheep Without Losing SEO",
     slug: "switch-from-wix-to-blogbat-without-losing-seo",
     category: "guides",
     postType: "how_to",
@@ -147,7 +147,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
     authorId: "pooria-arab",
   },
   {
-    title: "How to Move From Squarespace to BlogBat Without Losing Rankings",
+    title: "How to Move From Squarespace to Supportsheep Without Losing Rankings",
     slug: "move-from-squarespace-to-blogbat-without-losing-rankings",
     category: "guides",
     postType: "how_to",
@@ -155,7 +155,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
     authorId: "pooria-arab",
   },
   {
-    title: "WordPress to BlogBat Migration Checklist",
+    title: "WordPress to Supportsheep Migration Checklist",
     slug: "wordpress-to-blogbat-migration-checklist",
     category: "guides",
     postType: "how_to",

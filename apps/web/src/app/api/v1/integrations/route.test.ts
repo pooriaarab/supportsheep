@@ -50,7 +50,7 @@ describe("POST /api/v1/integrations", () => {
 
   it("stores GA4 config without undefined fields", async () => {
     const request = new NextRequest(
-      "https://blogbat.com/api/v1/integrations",
+      "https://supportsheep.com/api/v1/integrations",
       {
         method: "POST",
         body: JSON.stringify({
@@ -96,7 +96,7 @@ describe("POST /api/v1/integrations", () => {
     });
 
     const request = new NextRequest(
-      "https://blogbat.com/api/v1/integrations",
+      "https://supportsheep.com/api/v1/integrations",
       {
         method: "POST",
         body: JSON.stringify({
@@ -106,7 +106,7 @@ describe("POST /api/v1/integrations", () => {
             provider: "google_search_console",
             oauthClientId: "client-id.apps.googleusercontent.com",
             oauthClientSecret: "client-secret",
-            siteUrl: "https://blogbat.com/",
+            siteUrl: "https://supportsheep.com/",
           },
         }),
       },
@@ -118,7 +118,7 @@ describe("POST /api/v1/integrations", () => {
     const storedConfig = createIntegrationWithIdMock.mock.calls[0][2].config;
     expect(storedConfig).toMatchObject({
       provider: "google_search_console",
-      siteUrl: "https://blogbat.com/",
+      siteUrl: "https://supportsheep.com/",
     });
     expect(Object.hasOwn(storedConfig, "measurementId")).toBe(false);
     expect(Object.hasOwn(storedConfig, "propertyId")).toBe(false);

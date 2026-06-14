@@ -39,7 +39,7 @@ export function LandingHeader() {
             </span>
           </div>
           <span className="text-base font-semibold tracking-tight">
-            BlogBat
+            Supportsheep
           </span>
         </Link>
 

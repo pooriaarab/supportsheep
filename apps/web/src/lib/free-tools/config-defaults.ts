@@ -5,8 +5,8 @@ import type {
 } from "@repo/types";
 
 export const DEFAULT_FREE_TOOL_CTA: FreeToolCtaConfig = {
-  label: "Try BlogBat",
-  url: "https://blogbat.com/",
+  label: "Try Supportsheep",
+  url: "https://supportsheep.com/",
 };
 
 export const DEFAULT_BLOG_FREE_TOOLS_CONFIG: BlogFreeToolsConfig = {
@@ -14,12 +14,12 @@ export const DEFAULT_BLOG_FREE_TOOLS_CONFIG: BlogFreeToolsConfig = {
   defaultCta: DEFAULT_FREE_TOOL_CTA,
   defaultCallout: {
     enabled: true,
-    heading: "Build your website with BlogBat",
-    body: "Turn this free tool result into a website, blog post, or landing page with BlogBat.",
-    primaryLabel: "Try BlogBat",
-    primaryBaseUrl: "https://blogbat.com/",
+    heading: "Build your website with Supportsheep",
+    body: "Turn this free tool result into a website, blog post, or landing page with Supportsheep.",
+    primaryLabel: "Try Supportsheep",
+    primaryBaseUrl: "https://supportsheep.com/",
     secondaryLabel: "Learn more",
-    secondaryBaseUrl: "https://blogbat.com/",
+    secondaryBaseUrl: "https://supportsheep.com/",
     utmSource: "blogbat_blog",
     utmMedium: "free_tool",
     utmCampaign: "{{toolSlug}}",

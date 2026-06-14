@@ -1,12 +1,12 @@
 /**
- * BlogBat marketing landing page (served at the apex / `www`).
+ * Supportsheep marketing landing page (served at the apex / `www`).
  *
  * A polished, characterful, server-rendered landing built entirely on the
  * design system: semantic color tokens (light + dark), the shared `Button`
  * primitive, and the bat brand mark. Animation is CSS-only (transform/opacity,
  * reduced-motion-gated); the only interactive surface is the native
  * `<details>` FAQ, so the whole page stays static chrome plus links into the
- * dashboard app at `app.blogbat.com`.
+ * dashboard app at `app.supportsheep.com`.
  *
  * Composed from focused section components under `components/marketing/`.
  */

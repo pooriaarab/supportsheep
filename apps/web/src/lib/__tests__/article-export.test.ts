@@ -13,7 +13,7 @@ const article: Article & { id: string } = {
   canonicalPath: "/ideas-for-personal-websites",
   body: `
     <h2>Why build one?</h2>
-    <p>Use your site to show <strong>credibility</strong> and link to <a href="https://blogbat.com">BlogBat</a>.</p>
+    <p>Use your site to show <strong>credibility</strong> and link to <a href="https://supportsheep.com">Supportsheep</a>.</p>
     <ul>
       <li>Publish work</li>
       <li>Answer common questions</li>
@@ -27,7 +27,7 @@ const article: Article & { id: string } = {
   postType: "how_to",
   category: "Guides",
   tags: ["seo", "personal branding"],
-  author: "BlogBat",
+  author: "Supportsheep",
   featuredImage: { url: "", alt: "" },
   ogImage: "",
   metaTitle: "",
@@ -47,15 +47,15 @@ const article: Article & { id: string } = {
 
 describe("buildArticleMarkdownExport", () => {
   it("renders markdown-friendly article output from published HTML content", () => {
-    const content = buildArticleMarkdownExport(article, "https://blogbat.com");
+    const content = buildArticleMarkdownExport(article, "https://supportsheep.com");
 
     expect(content).toContain("# Ideas for Personal Websites");
     expect(content).toContain(
-      "Source: https://blogbat.com/ideas-for-personal-websites",
+      "Source: https://supportsheep.com/ideas-for-personal-websites",
     );
     expect(content).toContain("## Why build one?");
     expect(content).toContain(
-      "Use your site to show credibility and link to [BlogBat](https://blogbat.com).",
+      "Use your site to show credibility and link to [Supportsheep](https://supportsheep.com).",
     );
     expect(content).toContain("- Publish work");
     expect(content).not.toContain("<h2>");
@@ -64,20 +64,20 @@ describe("buildArticleMarkdownExport", () => {
 
 describe("buildArticleLlmsTextExport", () => {
   it("renders a plain-text llms export from the same article content", () => {
-    const content = buildArticleLlmsTextExport(article, "https://blogbat.com");
+    const content = buildArticleLlmsTextExport(article, "https://supportsheep.com");
 
     expect(content).toContain("# Ideas for Personal Websites");
     expect(content).toContain("Title: Ideas for Personal Websites");
     expect(content).toContain(
-      "URL: https://blogbat.com/ideas-for-personal-websites",
+      "URL: https://supportsheep.com/ideas-for-personal-websites",
     );
     expect(content).toContain("Category: Guides");
     expect(content).toContain("Tags: seo, personal branding");
     expect(content).toContain(
-      "Use your site to show credibility and link to BlogBat.",
+      "Use your site to show credibility and link to Supportsheep.",
     );
     expect(content).not.toContain("<strong>");
-    expect(content).not.toContain("[BlogBat](");
+    expect(content).not.toContain("[Supportsheep](");
   });
 
   it("normalizes sparse author and malformed tags", () => {
@@ -89,10 +89,10 @@ describe("buildArticleLlmsTextExport", () => {
 
     const content = buildArticleLlmsTextExport(
       malformedArticle,
-      "https://blogbat.com",
+      "https://supportsheep.com",
     );
 
-    expect(content).toContain("Author: BlogBat");
+    expect(content).toContain("Author: Supportsheep");
     expect(content).not.toContain("Tags:");
   });
 
@@ -109,7 +109,7 @@ describe("buildArticleLlmsTextExport", () => {
 
     const content = buildArticleLlmsTextExport(
       firestoreDatedArticle,
-      "https://blogbat.com",
+      "https://supportsheep.com",
     );
 
     expect(content).toContain("Published: 2026-04-15T00:00:00.000Z");

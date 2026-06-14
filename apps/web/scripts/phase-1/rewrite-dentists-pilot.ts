@@ -1,11 +1,11 @@
 /**
  * Phase 1 pilot: REWRITE the `/for/dentists` programmatic landing page.
  *
- * Rewrites `programmatic_pages/dentists` so every BlogBat claim is grounded in
+ * Rewrites `programmatic_pages/dentists` so every Supportsheep claim is grounded in
  * `.claude/context/solo-product.md`. Corrects the following over-claims from
  * the original seed (`write-dentists-pilot.ts`):
  *
- *   1. No BAA -- BlogBat is explicitly unsuitable for any page/form that can
+ *   1. No BAA -- Supportsheep is explicitly unsuitable for any page/form that can
  *      touch PHI. Surfaced via a dedicated warning paragraph AND multiple
  *      inline mentions so the `grep -c "BAA"` verification hits >= 1.
  *   2. No native booking -- scheduling is a URL link field only (Calendly,
@@ -16,7 +16,7 @@
  *   4. No AI image generation -- images are Unsplash (default) / Pexels
  *      (Pro+) / user upload.
  *   5. No "thin-content guard" or "SEO sidebar flags thin content" -- that
- *      is a feature of THIS blog CMS, not of BlogBat the website builder.
+ *      is a feature of THIS blog CMS, not of Supportsheep the website builder.
  *
  * Pricing is quoted via `{{solo.pro.yearly}}` / `{{solo.pro.monthly}}` /
  * `{{solo.free.monthly}}` placeholders so the numbers stay in sync with
@@ -40,7 +40,7 @@ const VARIANT_KEY = "dentists";
 
 const CONTENT = `## TL;DR
 
-A solo or small dental practice site (1-5 dentists) has to do four things at once: bring in patients from local search, let them find a booking link on their phone, build enough trust that a stranger picks you, and meet the accessibility standards now being enforced against small healthcare sites. BlogBat is a reasonable fit for the brochure + local SEO + external-booking-link portion of a dental practice site. It is **not** a fit for patient intake or anything else that touches Protected Health Information (PHI), because BlogBat does not sign Business Associate Agreements (BAAs). Plan for two tools, not one: BlogBat for the public marketing pages, and a HIPAA-aware scheduling/intake product (NexHealth, Dentrix Hub, or the portal bundled with your PMS) for everything patient-facing.
+A solo or small dental practice site (1-5 dentists) has to do four things at once: bring in patients from local search, let them find a booking link on their phone, build enough trust that a stranger picks you, and meet the accessibility standards now being enforced against small healthcare sites. Supportsheep is a reasonable fit for the brochure + local SEO + external-booking-link portion of a dental practice site. It is **not** a fit for patient intake or anything else that touches Protected Health Information (PHI), because Supportsheep does not sign Business Associate Agreements (BAAs). Plan for two tools, not one: Supportsheep for the public marketing pages, and a HIPAA-aware scheduling/intake product (NexHealth, Dentrix Hub, or the portal bundled with your PMS) for everything patient-facing.
 
 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&auto=format&fit=crop" alt="A modern dental practice operatory with chair, overhead lamp, and instrument tray." loading="lazy" />
 
@@ -88,7 +88,7 @@ Rather than a generic "10 features" list, here is a practical breakdown of must-
 - **WCAG 2.1 Level AA accessibility.** HHS Section 504 rules require WCAG 2.1 AA for healthcare providers receiving federal financial assistance, with compliance dates rolling in through 2026 and 2027. See [the ADA's ADA-compliance resource for dental practices](https://www.ada.org/resources/practice/practice-management/americans-with-disabilities-act), [Dental Economics on the accessibility-lawsuit threat](https://www.dentaleconomics.com/practice/article/16389781/an-emerging-legal-threat-to-dentists), and [W3C's WCAG 2.1 quick reference](https://www.w3.org/WAI/WCAG21/quickref/).
 - **A cookie and tracker review.** Third-party trackers on pages that surface PHI have been the subject of HHS enforcement against healthcare providers. If you are running Meta Pixel on your booking confirmation page, talk to a privacy-literate lawyer before shipping.
 
-## HIPAA specifics for small practices -- and what that means for BlogBat
+## HIPAA specifics for small practices -- and what that means for Supportsheep
 
 A dentist who sends any electronic claim is [a HIPAA covered entity, per HHS](https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html). The question for your website is narrower: does the site actually *handle PHI*?
 
@@ -98,12 +98,12 @@ A dentist who sends any electronic claim is [a HIPAA covered entity, per HHS](ht
 
 The practical minimum: a HIPAA-aware intake product that signs a BAA, third-party tracking off any page that can surface PHI, and an access log for form submissions. The [HIPAA Journal's rules-for-dentists guide](https://www.hipaajournal.com/hipaa-rules-for-dentists/) summarises the dentist-specific rules including the 2026 Security Rule amendments.
 
-**Where BlogBat sits in that picture -- explicitly.** BlogBat is an AI website builder for solopreneurs. Per the [BlogBat product docs](https://support.blogbat.com/), BlogBat does not offer a BAA. Two practical consequences:
+**Where Supportsheep sits in that picture -- explicitly.** Supportsheep is an AI website builder for solopreneurs. Per the [Supportsheep product docs](https://support.supportsheep.com/), Supportsheep does not offer a BAA. Two practical consequences:
 
-1. **Do not collect PHI through a BlogBat-hosted form.** BlogBat's contact form is a general-purpose lead form -- fine for "what services are you interested in?" and a phone number, not fine for "list your current medications." If you would not be comfortable with the submission sitting in a generic email inbox, do not send it through BlogBat.
-2. **Send patient intake and booking to a separate tool.** BlogBat's scheduling is a link field: paste a Calendly, NexHealth, or Dentrix Hub URL and BlogBat renders a button. It is not a native booking system -- which for dental is actually the right separation, because the booking tool needs its own BAA regardless of which builder runs your marketing pages.
+1. **Do not collect PHI through a Supportsheep-hosted form.** Supportsheep's contact form is a general-purpose lead form -- fine for "what services are you interested in?" and a phone number, not fine for "list your current medications." If you would not be comfortable with the submission sitting in a generic email inbox, do not send it through Supportsheep.
+2. **Send patient intake and booking to a separate tool.** Supportsheep's scheduling is a link field: paste a Calendly, NexHealth, or Dentrix Hub URL and Supportsheep renders a button. It is not a native booking system -- which for dental is actually the right separation, because the booking tool needs its own BAA regardless of which builder runs your marketing pages.
 
-BlogBat is a reasonable fit for "brochure site + local SEO + external booking link on a HIPAA-aware product." If the website itself needs to handle intake, medical history, insurance verification, or a patient portal, BlogBat is the wrong tool -- look at dental-specific vendors (DearDoc, PatientPop, ProSites) or WordPress with a compliant form provider.
+Supportsheep is a reasonable fit for "brochure site + local SEO + external booking link on a HIPAA-aware product." If the website itself needs to handle intake, medical history, insurance verification, or a patient portal, Supportsheep is the wrong tool -- look at dental-specific vendors (DearDoc, PatientPop, ProSites) or WordPress with a compliant form provider.
 
 ## Local SEO playbook for dentists
 
@@ -122,7 +122,7 @@ The [schema.org Dentist type](https://schema.org/Dentist) extends LocalBusiness 
 - \`FAQPage\` markup on any page with a frequently-asked-questions section.
 - \`Review\` entries for testimonials on the page.
 
-BlogBat's built-in structured data is basic, section-appropriate JSON-LD (notably a Reviews schema when a page shows reviews). Richer Dentist-specific JSON-LD with every practitioner, plus a FAQPage graph, are hand-written JSON inside BlogBat's plan-gated Code section.
+Supportsheep's built-in structured data is basic, section-appropriate JSON-LD (notably a Reviews schema when a page shows reviews). Richer Dentist-specific JSON-LD with every practitioner, plus a FAQPage graph, are hand-written JSON inside Supportsheep's plan-gated Code section.
 
 ### 3. Review flywheel
 
@@ -134,60 +134,60 @@ A single "locations" page with three addresses on it will not rank for three cit
 
 ### 5. Informational content
 
-"Why does my tooth hurt when I drink cold water," "how much does a crown cost without insurance in [city]," "is it normal to bleed during flossing." A 600-800 word honest answer is enough to start ranking and to earn patient trust before a visit. If the BlogBat deployment you are on has the blog feature enabled, posts can be drafted by BlogBat's AI; otherwise author them in any editor and paste into a BlogBat page.
+"Why does my tooth hurt when I drink cold water," "how much does a crown cost without insurance in [city]," "is it normal to bleed during flossing." A 600-800 word honest answer is enough to start ranking and to earn patient trust before a visit. If the Supportsheep deployment you are on has the blog feature enabled, posts can be drafted by Supportsheep's AI; otherwise author them in any editor and paste into a Supportsheep page.
 
-## Where BlogBat is a good fit for a dental practice -- and where it is not
+## Where Supportsheep is a good fit for a dental practice -- and where it is not
 
-Honest mapping of BlogBat's actual capabilities against a dental site's needs, grounded in the [BlogBat product docs](https://support.blogbat.com/)):
+Honest mapping of Supportsheep's actual capabilities against a dental site's needs, grounded in the [Supportsheep product docs](https://support.supportsheep.com/)):
 
 <table>
 <thead>
-<tr><th>Need</th><th>BlogBat fit</th><th>Notes</th></tr>
+<tr><th>Need</th><th>Supportsheep fit</th><th>Notes</th></tr>
 </thead>
 <tbody>
 <tr><td>Public marketing homepage</td><td>Good</td><td>AI onboarding drafts a homepage from a business description; you edit copy and imagery manually.</td></tr>
-<tr><td>Per-service pages (cosmetic, Invisalign, implants, emergency)</td><td>Good</td><td>When you add a section in the editor, BlogBat seeds it with OpenAI using your business context; you then edit the draft.</td></tr>
-<tr><td>Team bios / About pages</td><td>Good</td><td>Same section-seeding flow. Add practitioner photos you upload; BlogBat does not generate images.</td></tr>
+<tr><td>Per-service pages (cosmetic, Invisalign, implants, emergency)</td><td>Good</td><td>When you add a section in the editor, Supportsheep seeds it with OpenAI using your business context; you then edit the draft.</td></tr>
+<tr><td>Team bios / About pages</td><td>Good</td><td>Same section-seeding flow. Add practitioner photos you upload; Supportsheep does not generate images.</td></tr>
 <tr><td>Location pages (one per office)</td><td>Good</td><td>Standard sections plus an embedded map via the Code section if needed.</td></tr>
-<tr><td>Blog / education content</td><td>Conditional</td><td>Blog is feature-flagged (\`NEXT_PUBLIC_ENABLE_BLOG\`). Where available, posts can be drafted by AI; otherwise author externally and publish via BlogBat.</td></tr>
-<tr><td>Booking / appointment scheduling</td><td>Not a fit</td><td>Scheduling in BlogBat is a link field to a third-party URL. Use NexHealth, Dentrix Hub, or a PMS-native scheduler that signs a BAA.</td></tr>
-<tr><td>Patient intake forms (PHI)</td><td>Not a fit</td><td>No BAA. Do not collect symptoms, medical history, or insurance details through BlogBat's contact form.</td></tr>
-<tr><td>Patient portal</td><td>Not a fit</td><td>Link out from BlogBat to whichever PMS portal you already use.</td></tr>
-<tr><td>Image/asset library</td><td>OK</td><td>Unsplash stock on all plans; Pexels unlocks on Pro and above. BlogBat does not generate images with AI; any "AI imagery" pitch elsewhere is wrong about BlogBat.</td></tr>
+<tr><td>Blog / education content</td><td>Conditional</td><td>Blog is feature-flagged (\`NEXT_PUBLIC_ENABLE_BLOG\`). Where available, posts can be drafted by AI; otherwise author externally and publish via Supportsheep.</td></tr>
+<tr><td>Booking / appointment scheduling</td><td>Not a fit</td><td>Scheduling in Supportsheep is a link field to a third-party URL. Use NexHealth, Dentrix Hub, or a PMS-native scheduler that signs a BAA.</td></tr>
+<tr><td>Patient intake forms (PHI)</td><td>Not a fit</td><td>No BAA. Do not collect symptoms, medical history, or insurance details through Supportsheep's contact form.</td></tr>
+<tr><td>Patient portal</td><td>Not a fit</td><td>Link out from Supportsheep to whichever PMS portal you already use.</td></tr>
+<tr><td>Image/asset library</td><td>OK</td><td>Unsplash stock on all plans; Pexels unlocks on Pro and above. Supportsheep does not generate images with AI; any "AI imagery" pitch elsewhere is wrong about Supportsheep.</td></tr>
 <tr><td>Custom HTML/JS widgets (e.g. a review carousel)</td><td>OK on paid plans</td><td>The Code section is plan-gated; confirm the tier you are on before promising a widget.</td></tr>
 </tbody>
 </table>
 
 <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200&auto=format&fit=crop" alt="Patient checking their phone in a dental waiting room." loading="lazy" />
 
-### What BlogBat's AI does (and does not do) for a dental site
+### What Supportsheep's AI does (and does not do) for a dental site
 
-BlogBat's AI fires in three specific places:
+Supportsheep's AI fires in three specific places:
 
 1. **At onboarding.** A short business description generates an initial site: homepage, sections, copy, service descriptions, default imagery from Unsplash.
 2. **When you add a section in the editor.** Each section type (Services, FAQ, Introduction, others) has a generator that seeds the new section with AI-drafted content based on your business context.
-3. **On blog-post creation**, if the BlogBat deployment you are on has the blog feature enabled.
+3. **On blog-post creation**, if the Supportsheep deployment you are on has the blog feature enabled.
 
-Outside those touchpoints, editing is manual. There is no inline "rewrite this paragraph," no "make this friendlier," no in-editor AI writing assistant. If a service description needs tightening, you tighten it by hand. Verify that in a BlogBat trial before committing.
+Outside those touchpoints, editing is manual. There is no inline "rewrite this paragraph," no "make this friendlier," no in-editor AI writing assistant. If a service description needs tightening, you tighten it by hand. Verify that in a Supportsheep trial before committing.
 
-## Honest comparison: BlogBat vs generic builders vs dental-specific vendors
+## Honest comparison: Supportsheep vs generic builders vs dental-specific vendors
 
-No builder is perfect. Here is how BlogBat lines up against the options small dental practices usually evaluate. "Typical cost" is the starting point for a solo or small practice; real quotes vary with features and contract length.
+No builder is perfect. Here is how Supportsheep lines up against the options small dental practices usually evaluate. "Typical cost" is the starting point for a solo or small practice; real quotes vary with features and contract length.
 
 <table>
 <thead>
 <tr><th>Option</th><th>Strongest at</th><th>Weakest at</th><th>HIPAA posture</th><th>Typical monthly cost</th></tr>
 </thead>
 <tbody>
-<tr><td>BlogBat</td><td>Speed to first draft; AI-seeded sections; managed hosting</td><td>No native booking; no BAA; no free-form AI rewriter in editor</td><td>Public-site only; pair with a HIPAA-aware booking / intake tool</td><td>{{solo.pro.yearly.monthly}} billed annually (Pro) / {{solo.pro.monthly.monthly}} billed monthly; free tier available</td></tr>
+<tr><td>Supportsheep</td><td>Speed to first draft; AI-seeded sections; managed hosting</td><td>No native booking; no BAA; no free-form AI rewriter in editor</td><td>Public-site only; pair with a HIPAA-aware booking / intake tool</td><td>{{solo.pro.yearly.monthly}} billed annually (Pro) / {{solo.pro.monthly.monthly}} billed monthly; free tier available</td></tr>
 <tr><td>Squarespace</td><td>Design polish, template variety</td><td>SEO depth; no AI onboarding</td><td>Generic platform; compliance is on you</td><td>Low-to-mid</td></tr>
 <tr><td>Wix</td><td>Broader feature set, looser design constraints</td><td>Widget-heavy pages hurt Core Web Vitals; SEO still takes hand-tuning</td><td>Generic platform; compliance is on you</td><td>Low-to-mid</td></tr>
-<tr><td>DearDoc / PatientPop / ProSites</td><td>Turnkey patient acquisition (chat, call tracking, booking overlays)</td><td>Template lock-in; bundles features a 1-dentist practice may not use</td><td>Dental-focused; BAA typically available</td><td>High (several multiples of a BlogBat + booking setup)</td></tr>
+<tr><td>DearDoc / PatientPop / ProSites</td><td>Turnkey patient acquisition (chat, call tracking, booking overlays)</td><td>Template lock-in; bundles features a 1-dentist practice may not use</td><td>Dental-focused; BAA typically available</td><td>High (several multiples of a Supportsheep + booking setup)</td></tr>
 <tr><td>WordPress + agency</td><td>Maximum flexibility and integrations</td><td>Ongoing maintenance; plugin drift; hosting decisions land on you</td><td>Varies entirely by agency, hosting, and form provider</td><td>High and variable</td></tr>
 </tbody>
 </table>
 
-BlogBat's pricing pairs a [free tier ({{solo.free.monthly.monthly}})](https://blogbat.com/pricing) with a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.monthly.monthly}} month-to-month). Verified against the BlogBat pricing page on 2026-04-21.
+Supportsheep's pricing pairs a [free tier ({{solo.free.monthly.monthly}})](https://supportsheep.com/pricing) with a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.monthly.monthly}} month-to-month). Verified against the Supportsheep pricing page on 2026-04-21.
 
 For a broader tour of dental marketing tactics that go beyond the website itself, this short overview covers the 10 strategies most small practices evaluate:
 
@@ -197,8 +197,8 @@ For a broader tour of dental marketing tactics that go beyond the website itself
 
 1. Claim or verify your [Google Business Profile](https://support.google.com/business/answer/2911778?hl=en) and complete every field. This is the highest-leverage hour you will spend on your web presence.
 2. Pick a HIPAA-aware scheduling and intake product before you pick a website builder. NexHealth, Dentrix Hub, or a patient portal that ships with your PMS are reasonable defaults; every one of them should sign a Business Associate Agreement (BAA) with your practice.
-3. Spin up a BlogBat workspace, paste in a short plain-English brief about your practice, and let the onboarding generate a homepage plus one page per major service plus one location page per office. Expect to edit the AI draft by hand afterwards -- BlogBat's editor does not include a free-form AI rewriter.
-4. Link your BlogBat pages to the scheduling tool you chose in step 2. Keep patient intake on that tool, not on BlogBat's contact form. This is the single most important thing to get right for a dental practice.
+3. Spin up a Supportsheep workspace, paste in a short plain-English brief about your practice, and let the onboarding generate a homepage plus one page per major service plus one location page per office. Expect to edit the AI draft by hand afterwards -- Supportsheep's editor does not include a free-form AI rewriter.
+4. Link your Supportsheep pages to the scheduling tool you chose in step 2. Keep patient intake on that tool, not on Supportsheep's contact form. This is the single most important thing to get right for a dental practice.
 5. Build a review-request reminder into your post-visit SMS workflow and commit to replying to every review. Then ship the site and iterate: location pages, informational blog posts, and per-service detail pages are the three highest-leverage follow-ups for local SEO.
 
 That is the honest short version. The rest is iteration.`;
@@ -215,29 +215,29 @@ function countWords(text: string): number {
 
 const FAQS: ProgrammaticFaq[] = [
   {
-    question: "Is BlogBat HIPAA-compliant for a dental practice?",
+    question: "Is Supportsheep HIPAA-compliant for a dental practice?",
     answer:
-      "No. BlogBat does not sign a Business Associate Agreement (BAA). That means BlogBat is not a suitable host for any form, page, or workflow that can collect Protected Health Information (PHI) -- patient intake, medical history, symptoms, insurance details. BlogBat is a reasonable fit for the public brochure portion of a dental site (homepage, services, team bios, location pages, blog). For booking and intake, use a separate product that signs a BAA (NexHealth, Dentrix Hub, or the patient portal bundled with your practice management system) and link to it from your BlogBat pages.",
+      "No. Supportsheep does not sign a Business Associate Agreement (BAA). That means Supportsheep is not a suitable host for any form, page, or workflow that can collect Protected Health Information (PHI) -- patient intake, medical history, symptoms, insurance details. Supportsheep is a reasonable fit for the public brochure portion of a dental site (homepage, services, team bios, location pages, blog). For booking and intake, use a separate product that signs a BAA (NexHealth, Dentrix Hub, or the patient portal bundled with your practice management system) and link to it from your Supportsheep pages.",
   },
   {
-    question: "Does BlogBat have built-in online booking for appointments?",
+    question: "Does Supportsheep have built-in online booking for appointments?",
     answer:
-      "No. BlogBat's scheduling section is a link field -- you paste the URL of a third-party booking tool (Calendly, NexHealth, Dentrix Hub, your PMS's online scheduler) and BlogBat renders a button. There is no native BlogBat calendar, no availability management, no native reminder workflow. For a dental practice this is actually the right separation, because whichever booking tool you use needs its own BAA regardless of which builder runs your marketing pages.",
+      "No. Supportsheep's scheduling section is a link field -- you paste the URL of a third-party booking tool (Calendly, NexHealth, Dentrix Hub, your PMS's online scheduler) and Supportsheep renders a button. There is no native Supportsheep calendar, no availability management, no native reminder workflow. For a dental practice this is actually the right separation, because whichever booking tool you use needs its own BAA regardless of which builder runs your marketing pages.",
   },
   {
-    question: "How much does BlogBat cost for a small dental practice?",
+    question: "How much does Supportsheep cost for a small dental practice?",
     answer:
-      "BlogBat has a free tier ({{solo.free.monthly.monthly}}) and a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} billed month-to-month. Verified against blogbat.com/pricing on 2026-04-21. Per-plan feature caps (site count, blog posts, image library size, custom-code access) are published on the pricing page and may change; cite the page rather than repeating specific caps in content.",
+      "Supportsheep has a free tier ({{solo.free.monthly.monthly}}) and a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} billed month-to-month. Verified against supportsheep.com/pricing on 2026-04-21. Per-plan feature caps (site count, blog posts, image library size, custom-code access) are published on the pricing page and may change; cite the page rather than repeating specific caps in content.",
   },
   {
-    question: "Where exactly does BlogBat's AI help, and where does it stop?",
+    question: "Where exactly does Supportsheep's AI help, and where does it stop?",
     answer:
-      "BlogBat's AI fires in three places: (1) onboarding, where a short business description generates an initial site with pages, sections, and copy; (2) section creation in the editor, where adding a new section (Services, FAQ, Introduction, and others) seeds the section with AI-drafted content based on your business context; and (3) blog post creation, where blog posts can be drafted by AI when the blog feature is enabled in your BlogBat deployment. Outside those three moments, editing is manual -- BlogBat does not include a free-form AI rewriter, a 'make this friendlier' button, or inline prompt-driven editing of selected text.",
+      "Supportsheep's AI fires in three places: (1) onboarding, where a short business description generates an initial site with pages, sections, and copy; (2) section creation in the editor, where adding a new section (Services, FAQ, Introduction, and others) seeds the section with AI-drafted content based on your business context; and (3) blog post creation, where blog posts can be drafted by AI when the blog feature is enabled in your Supportsheep deployment. Outside those three moments, editing is manual -- Supportsheep does not include a free-form AI rewriter, a 'make this friendlier' button, or inline prompt-driven editing of selected text.",
   },
   {
-    question: "Can BlogBat generate dental photography or custom images with AI?",
+    question: "Can Supportsheep generate dental photography or custom images with AI?",
     answer:
-      "No. BlogBat does not generate images with AI anywhere in the product. Imagery comes from Unsplash on all plans (default) and Pexels on Pro and above, or from assets you upload yourself. If marketing copy elsewhere mentions AI-generated imagery, that claim is not accurate for BlogBat. For dental practices this is usually fine -- stock photography of operatories and smiling patients covers most homepage needs, and you should use real team photos anyway.",
+      "No. Supportsheep does not generate images with AI anywhere in the product. Imagery comes from Unsplash on all plans (default) and Pexels on Pro and above, or from assets you upload yourself. If marketing copy elsewhere mentions AI-generated imagery, that claim is not accurate for Supportsheep. For dental practices this is usually fine -- stock photography of operatories and smiling patients covers most homepage needs, and you should use real team photos anyway.",
   },
   {
     question: "Is a dentist considered a HIPAA covered entity?",
@@ -247,7 +247,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What schema markup should a dental practice use?",
     answer:
-      "Use the schema.org Dentist type (a subtype of LocalBusiness and MedicalBusiness) for your practice and its locations, with fields for name, address, telephone, url, openingHours, image, and priceRange. Add a Person record for each practitioner with their jobTitle and credentials. Use FAQPage markup on any page that has a frequently-asked-questions section. BlogBat emits basic section-appropriate JSON-LD, notably a Reviews schema when a page displays reviews; richer Dentist-specific JSON-LD with every practitioner and a FAQPage graph are usually hand-written JSON inside BlogBat's Code section, which is a plan-gated feature.",
+      "Use the schema.org Dentist type (a subtype of LocalBusiness and MedicalBusiness) for your practice and its locations, with fields for name, address, telephone, url, openingHours, image, and priceRange. Add a Person record for each practitioner with their jobTitle and credentials. Use FAQPage markup on any page that has a frequently-asked-questions section. Supportsheep emits basic section-appropriate JSON-LD, notably a Reviews schema when a page displays reviews; richer Dentist-specific JSON-LD with every practitioner and a FAQPage graph are usually hand-written JSON inside Supportsheep's Code section, which is a plan-gated feature.",
   },
   {
     question: "What do dental website accessibility rules require in 2026?",
@@ -280,13 +280,13 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "A practical guide to building a dental practice website that wins local search, clears HIPAA and accessibility requirements, and does not eat your evenings -- with an honest read of where BlogBat fits and where it does not.",
+          "A practical guide to building a dental practice website that wins local search, clears HIPAA and accessibility requirements, and does not eat your evenings -- with an honest read of where Supportsheep fits and where it does not.",
         ctaText: "Start your dental practice website",
-        ctaHref: "https://blogbat.com",
+        ctaHref: "https://supportsheep.com",
       },
-      title: "BlogBat for dentists",
+      title: "Supportsheep for dentists",
       metaDescription:
-        "BlogBat helps solo and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware brochure site. It is not HIPAA-BAA-ready, so pair it with a HIPAA-aware booking and intake tool.",
+        "Supportsheep helps solo and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware brochure site. It is not HIPAA-BAA-ready, so pair it with a HIPAA-aware booking and intake tool.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

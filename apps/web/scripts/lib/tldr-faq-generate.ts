@@ -40,7 +40,7 @@ Hard requirements:
 - "faqs": 4-6 items. Each question ends with "?". Each answer is 1-3 sentences, 25-75 words.
 - Answers must speak directly in the article's voice. NEVER use phrases like "The article says", "According to the article", "The article recommends", "The article highlights", "The article describes", or "The article emphasizes". State the claim as fact.
 - Ground every claim in the article body. Use research context only to verify currency of facts — never to contradict the article.
-- Do not introduce brands, products, or tools (including BlogBat AI) in any FAQ unless the article body itself discusses that brand in a substantive section. A passing mention or sidebar is NOT grounds for a dedicated FAQ. If in doubt, omit.
+- Do not introduce brands, products, or tools (including Supportsheep AI) in any FAQ unless the article body itself discusses that brand in a substantive section. A passing mention or sidebar is NOT grounds for a dedicated FAQ. If in doubt, omit.
 - Neutral, informative voice. Do not use "we" about the publisher unless the article does. No promotional language. No restating the title as a question.
 - FAQs must be genuinely different questions, not paraphrases of each other.`;
 

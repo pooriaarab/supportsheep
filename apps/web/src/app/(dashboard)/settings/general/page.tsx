@@ -258,7 +258,7 @@ export default function BlogGeneralSettingsPage() {
                       placeholder="058b276c7c7a45da9ed0633b18decd92"
                     />
                     <p className="text-xs text-muted-foreground">
-                      BlogBat automatically serves{" "}
+                      Supportsheep automatically serves{" "}
                       <code className="rounded bg-muted px-1 py-0.5 font-mono text-[11px]">
                         /{currentIndexNowApiKey || "<key>"}.txt
                       </code>{" "}

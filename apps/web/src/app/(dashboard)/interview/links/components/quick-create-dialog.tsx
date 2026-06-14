@@ -108,7 +108,7 @@ export function QuickCreateDialog({
               <Label htmlFor="topic">Topic</Label>
               <Input
                 id="topic"
-                placeholder="Why you switched from Notion to BlogBat"
+                placeholder="Why you switched from Notion to Supportsheep"
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 maxLength={500}

@@ -335,7 +335,7 @@ function ArticlePreview({
 
   const defaultConfig: BlogConfig = {
     blogId: "",
-    siteName: "BlogBat",
+    siteName: "Supportsheep",
     siteDescription: "",
     logo: "",
     publicAppearance: { themeMode: "light" },

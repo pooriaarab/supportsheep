@@ -72,15 +72,15 @@ function freeTool(overrides: Partial<FreeTool> = {}): FreeTool {
     metaDescription: "Count words.",
     intro: "Count words.",
     faq: [],
-    cta: { label: "Try BlogBat", url: "https://blogbat.com/" },
+    cta: { label: "Try Supportsheep", url: "https://supportsheep.com/" },
     callout: {
       enabled: true,
-      heading: "Try BlogBat",
-      body: "Build with BlogBat.",
-      primaryLabel: "Try BlogBat",
-      primaryUrl: "https://blogbat.com/",
+      heading: "Try Supportsheep",
+      body: "Build with Supportsheep.",
+      primaryLabel: "Try Supportsheep",
+      primaryUrl: "https://supportsheep.com/",
       secondaryLabel: "Learn more",
-      secondaryUrl: "https://blogbat.com/",
+      secondaryUrl: "https://supportsheep.com/",
       utm: {
         source: "solo_blog",
         medium: "free_tool",
@@ -215,7 +215,7 @@ describe("free tool repository", () => {
       blogId: "default",
       templateId: "word-counter",
       enabled: true,
-      callout: expect.objectContaining({ heading: "Try BlogBat" }),
+      callout: expect.objectContaining({ heading: "Try Supportsheep" }),
       seo: expect.objectContaining({ indexable: true }),
     });
   });
@@ -408,7 +408,7 @@ describe("free tool repository", () => {
 
     const result = await getFreeToolById("word-counter", "default", db);
     expect(result!.callout.heading).toBe("New Heading");
-    expect(result!.callout.primaryUrl).toBe("https://blogbat.com/");
+    expect(result!.callout.primaryUrl).toBe("https://supportsheep.com/");
     expect(result!.callout.utm.source).toBe("solo_blog");
   });
 

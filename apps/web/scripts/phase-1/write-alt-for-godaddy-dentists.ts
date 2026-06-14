@@ -23,7 +23,7 @@ const VARIANT_KEY = "godaddy__dentists";
 
 const CONTENT = `## TL;DR
 
-GoDaddy is one of the world's largest domain registrars and offers an AI-assisted website builder marketed as a fast way for small businesses -- including dental practices -- to get online. For a dental practice, the critical limitation is clear and well-documented: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder, hosting, or standard web services. Only GoDaddy's Microsoft 365 email integration has any HIPAA posture, and even that is limited to email only. A dental practice can use GoDaddy to build a public marketing site, but every patient-data touchpoint must go to a dedicated HIPAA-aware tool. This page covers that honestly and compares GoDaddy to BlogBat for a solo or small practice.
+GoDaddy is one of the world's largest domain registrars and offers an AI-assisted website builder marketed as a fast way for small businesses -- including dental practices -- to get online. For a dental practice, the critical limitation is clear and well-documented: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder, hosting, or standard web services. Only GoDaddy's Microsoft 365 email integration has any HIPAA posture, and even that is limited to email only. A dental practice can use GoDaddy to build a public marketing site, but every patient-data touchpoint must go to a dedicated HIPAA-aware tool. This page covers that honestly and compares GoDaddy to Supportsheep for a solo or small practice.
 
 ## GoDaddy and HIPAA: the honest summary
 
@@ -61,47 +61,47 @@ For a solo dentist or small practice, this is genuinely useful: the AI-generated
 
 **Design quality floor is lower.** GoDaddy's templates are functional but not design-forward. In a competitive local market where a practice's website is a trust signal, GoDaddy's design ceiling is below Squarespace's and Wix's.
 
-## BlogBat's position for a solo or small dental practice
+## Supportsheep's position for a solo or small dental practice
 
-BlogBat is designed for the "solo or 2-5 practitioner service business that needs a credible marketing site and a content-driven approach to local SEO." For a solo dentist evaluating GoDaddy:
+Supportsheep is designed for the "solo or 2-5 practitioner service business that needs a credible marketing site and a content-driven approach to local SEO." For a solo dentist evaluating GoDaddy:
 
-- **Free tier with custom domain.** A dentist building a new practice site can attach their existing domain to BlogBat without paying until they're ready. GoDaddy's domain is paid; its website builder is additional.
-- **AI-generated first draft from a business description.** BlogBat's onboarding generates a usable first draft from a business prompt -- service descriptions, homepage sections, copy -- without a blank canvas. This is comparable to GoDaddy's AI builder, but the resulting site is built on a content-and-SEO-first architecture.
-- **Blog with SEO sidebar, AI drafting, and structured data.** BlogBat's blog emits FAQPage JSON-LD, Article schema, and LocalBusiness schema by default. A dentist who writes a post on "what to expect at a dental cleaning" gets structured data automatically, not after a plugin install.
-- **No PHI complexity.** BlogBat does not handle PHI and does not offer a BAA. The correct architecture -- marketing site on BlogBat + HIPAA-aware booking and intake tools (NexHealth, Dentrix Hub, Acuity Premium, or your PMS portal) -- is the same architecture a GoDaddy-based practice should use. The difference is that BlogBat's content machinery compounds into local search authority over 12-18 months in a way that GoDaddy's builder typically does not.
+- **Free tier with custom domain.** A dentist building a new practice site can attach their existing domain to Supportsheep without paying until they're ready. GoDaddy's domain is paid; its website builder is additional.
+- **AI-generated first draft from a business description.** Supportsheep's onboarding generates a usable first draft from a business prompt -- service descriptions, homepage sections, copy -- without a blank canvas. This is comparable to GoDaddy's AI builder, but the resulting site is built on a content-and-SEO-first architecture.
+- **Blog with SEO sidebar, AI drafting, and structured data.** Supportsheep's blog emits FAQPage JSON-LD, Article schema, and LocalBusiness schema by default. A dentist who writes a post on "what to expect at a dental cleaning" gets structured data automatically, not after a plugin install.
+- **No PHI complexity.** Supportsheep does not handle PHI and does not offer a BAA. The correct architecture -- marketing site on Supportsheep + HIPAA-aware booking and intake tools (NexHealth, Dentrix Hub, Acuity Premium, or your PMS portal) -- is the same architecture a GoDaddy-based practice should use. The difference is that Supportsheep's content machinery compounds into local search authority over 12-18 months in a way that GoDaddy's builder typically does not.
 
-## Side-by-side: GoDaddy vs BlogBat for a dental practice
+## Side-by-side: GoDaddy vs Supportsheep for a dental practice
 
 <table>
 <thead>
-<tr><th>Feature</th><th>GoDaddy Website Builder</th><th>BlogBat</th></tr>
+<tr><th>Feature</th><th>GoDaddy Website Builder</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
 <tr><td>AI site generation</td><td>Yes -- AI-assisted setup from business description</td><td>Yes -- AI-guided onboarding generates multi-page first draft</td></tr>
 <tr><td>Starting price</td><td>Paid plans required for a real practice site; typically $10-$25/mo</td><td>Free tier with custom domain</td></tr>
-<tr><td>HIPAA BAA</td><td>No -- GoDaddy does not sign a BAA for website builder or hosting</td><td>Not applicable -- BlogBat does not handle PHI; link to NexHealth, Acuity Premium, or PMS portal</td></tr>
+<tr><td>HIPAA BAA</td><td>No -- GoDaddy does not sign a BAA for website builder or hosting</td><td>Not applicable -- Supportsheep does not handle PHI; link to NexHealth, Acuity Premium, or PMS portal</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Basic blog; title and meta fields; no automated schema</td><td>Blog with SEO sidebar, AI drafting, Dentist + LocalBusiness + FAQPage schema by default</td></tr>
 <tr><td>Design quality</td><td>Functional; below Squarespace and Wix design floor</td><td>Opinionated layouts tuned for content; consistent but constrained</td></tr>
 <tr><td>Domain and hosting bundling</td><td>Strong -- GoDaddy's core product; domain + hosting + email in one</td><td>Managed hosting with custom domain; GoDaddy can still hold the domain registration</td></tr>
-<tr><td>Best fit</td><td>Practices that already buy from GoDaddy and want a fast no-code site without switching vendors</td><td>BlogBat / 2-5 dentist practices focused on content velocity, local SEO, and low overhead</td></tr>
+<tr><td>Best fit</td><td>Practices that already buy from GoDaddy and want a fast no-code site without switching vendors</td><td>Supportsheep / 2-5 dentist practices focused on content velocity, local SEO, and low overhead</td></tr>
 </tbody>
 </table>
 
-## HIPAA-aware tools that pair with GoDaddy or BlogBat for dental practices
+## HIPAA-aware tools that pair with GoDaddy or Supportsheep for dental practices
 
-Since GoDaddy cannot be configured for PHI handling (and BlogBat intentionally stays out of PHI territory), both platforms require the same supplemental stack for clinical workflow:
+Since GoDaddy cannot be configured for PHI handling (and Supportsheep intentionally stays out of PHI territory), both platforms require the same supplemental stack for clinical workflow:
 
 - **NexHealth** -- patient engagement platform: HIPAA-compliant online booking, intake forms, appointment reminders, two-way texting. Signs a BAA.
 - **Dentrix Hub / Dentrix Patient Engage** -- patient communication and scheduling from a leading dental practice management platform.
 - **Acuity Scheduling (Premium plan)** -- BAA-eligible scheduling for practices that want a standalone scheduler rather than a full PMS integration.
-- **Zocdoc** -- patient acquisition and scheduling marketplace; handles HIPAA-compliant booking and can supplement direct-traffic from the GoDaddy or BlogBat marketing site.
+- **Zocdoc** -- patient acquisition and scheduling marketplace; handles HIPAA-compliant booking and can supplement direct-traffic from the GoDaddy or Supportsheep marketing site.
 - **Your PMS's native patient portal** -- Eaglesoft, Curve Dental, Open Dental, and most practice management systems ship a patient portal that handles booking, intake, and recall natively and signs a BAA.
 
-## Getting started: practical steps for a dentist choosing GoDaddy or BlogBat
+## Getting started: practical steps for a dentist choosing GoDaddy or Supportsheep
 
-1. **Buy your domain first.** GoDaddy is a strong domain registrar. Buy the domain from GoDaddy regardless of which website builder you choose -- you can point it at BlogBat or any other host.
+1. **Buy your domain first.** GoDaddy is a strong domain registrar. Buy the domain from GoDaddy regardless of which website builder you choose -- you can point it at Supportsheep or any other host.
 2. **Choose your PHI workflow before choosing your website builder.** Pick your practice management system and patient portal first. Those tools are your HIPAA compliance layer; the website is just the marketing surface.
-3. **Generate a first draft.** Both GoDaddy's AI builder and BlogBat's AI onboarding get you to a usable first draft quickly. Test both -- BlogBat's free tier makes it zero-cost to compare.
+3. **Generate a first draft.** Both GoDaddy's AI builder and Supportsheep's AI onboarding get you to a usable first draft quickly. Test both -- Supportsheep's free tier makes it zero-cost to compare.
 4. **Prioritize content from day one.** Four to six blog posts per year on local patient-education topics compounded over 18 months is worth more in local search than any technical SEO setting in either builder. Commit to a content rhythm regardless of platform choice.
 5. **Plan your migration path.** If you start on GoDaddy and expect to outgrow it, keep your content in portable formats (clean HTML, exported images) and document your URL structure from day one. Migration is easier when the URL map is clean.`;
 
@@ -127,24 +127,24 @@ const FAQS: ProgrammaticFaq[] = [
       "Yes, for the public marketing layer -- homepage, services, team, location, FAQ, blog. GoDaddy's AI website builder generates a usable first draft quickly and keeps domain, hosting, and email on one account. The constraints are: no HIPAA BAA for any web-related GoDaddy product; a lower SEO ceiling than Squarespace or Wix for competitive local dental keywords; a basic blog not designed for content velocity; and design quality below Squarespace's template floor. For a new practice that wants to get online fast and already uses GoDaddy for its domain, the builder is a defensible starting point with a clear migration path.",
   },
   {
-    question: "Should I use GoDaddy or BlogBat for my dental practice website?",
+    question: "Should I use GoDaddy or Supportsheep for my dental practice website?",
     answer:
-      "Choose GoDaddy if you already buy your domain and hosting from GoDaddy, want everything on one account, and need to launch fast with minimal decisions. Choose BlogBat if you want a free tier with a custom domain, AI-guided onboarding that generates a multi-page first draft, a blog with an SEO sidebar and AI drafting, and Dentist and LocalBusiness schema shipped by default rather than added via code injection. Both platforms require the same HIPAA discipline: marketing site on the CMS, PHI-handling in a dedicated clinical tool (NexHealth, Acuity Premium, PMS portal).",
+      "Choose GoDaddy if you already buy your domain and hosting from GoDaddy, want everything on one account, and need to launch fast with minimal decisions. Choose Supportsheep if you want a free tier with a custom domain, AI-guided onboarding that generates a multi-page first draft, a blog with an SEO sidebar and AI drafting, and Dentist and LocalBusiness schema shipped by default rather than added via code injection. Both platforms require the same HIPAA discipline: marketing site on the CMS, PHI-handling in a dedicated clinical tool (NexHealth, Acuity Premium, PMS portal).",
   },
   {
     question: "What are the SEO limitations of GoDaddy's website builder for dentists?",
     answer:
-      "GoDaddy's website builder handles the basics (title tags, meta descriptions, XML sitemaps, mobile-responsive templates) but lacks the depth that competitive dental SEO requires: Dentist and LocalBusiness schema are not automated, programmatic local-SEO pages (one per location or service area) must be hand-built, and heading-structure control is limited. BlogBat automates Dentist, LocalBusiness, FAQPage, and Article schema by default and is designed around content velocity for local service businesses. For a new practice in a low-competition market, GoDaddy's SEO basics may be enough; for a growing practice targeting competitive metropolitan keywords, the ceiling becomes binding.",
+      "GoDaddy's website builder handles the basics (title tags, meta descriptions, XML sitemaps, mobile-responsive templates) but lacks the depth that competitive dental SEO requires: Dentist and LocalBusiness schema are not automated, programmatic local-SEO pages (one per location or service area) must be hand-built, and heading-structure control is limited. Supportsheep automates Dentist, LocalBusiness, FAQPage, and Article schema by default and is designed around content velocity for local service businesses. For a new practice in a low-competition market, GoDaddy's SEO basics may be enough; for a growing practice targeting competitive metropolitan keywords, the ceiling becomes binding.",
   },
   {
     question: "What does a dental practice website need to rank in local search?",
     answer:
-      "Local search ranking for dental practices depends on: (1) Google Business Profile -- claim and fully optimize with services, hours, photos, and patient reviews; (2) on-site service pages with Dentist schema and location-specific content; (3) a blog with patient-education content that targets informational queries ('what is a root canal,' 'how to prevent cavities'); (4) LocalBusiness and Dentist JSON-LD schema on the practice page; (5) consistent NAP (name, address, phone) across the web. BlogBat ships Dentist and LocalBusiness schema automatically. GoDaddy requires manual schema injection or a plugin for these signals.",
+      "Local search ranking for dental practices depends on: (1) Google Business Profile -- claim and fully optimize with services, hours, photos, and patient reviews; (2) on-site service pages with Dentist schema and location-specific content; (3) a blog with patient-education content that targets informational queries ('what is a root canal,' 'how to prevent cavities'); (4) LocalBusiness and Dentist JSON-LD schema on the practice page; (5) consistent NAP (name, address, phone) across the web. Supportsheep ships Dentist and LocalBusiness schema automatically. GoDaddy requires manual schema injection or a plugin for these signals.",
   },
   {
     question: "How does GoDaddy compare to Wix and Squarespace for a dental practice?",
     answer:
-      "All three are general-purpose website builders with no HIPAA BAA on their core platforms (Wix is the exception -- it added HIPAA mode on Business and higher plans in 2026). GoDaddy differentiates on domain-and-hosting bundling and fast AI setup, but trails Squarespace on design quality and Wix on editor flexibility and app ecosystem. For a dental practice where the marketing site is the main use case and PHI lives in a separate HIPAA-aware tool, GoDaddy is the fastest path to a live site if you're already a GoDaddy customer. Squarespace or BlogBat are the better defaults if design quality (Squarespace) or content velocity and local SEO (BlogBat) are the priority.",
+      "All three are general-purpose website builders with no HIPAA BAA on their core platforms (Wix is the exception -- it added HIPAA mode on Business and higher plans in 2026). GoDaddy differentiates on domain-and-hosting bundling and fast AI setup, but trails Squarespace on design quality and Wix on editor flexibility and app ecosystem. For a dental practice where the marketing site is the main use case and PHI lives in a separate HIPAA-aware tool, GoDaddy is the fastest path to a live site if you're already a GoDaddy customer. Squarespace or Supportsheep are the better defaults if design quality (Squarespace) or content velocity and local SEO (Supportsheep) are the priority.",
   },
 ];
 
@@ -172,14 +172,14 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at GoDaddy's website builder for solo and small dental practices -- including its firm no-BAA position, SEO ceiling, and when BlogBat is the better default for content and local search.",
-        ctaText: "Start your dental practice website with BlogBat",
-        ctaHref: "https://blogbat.com",
+          "An honest look at GoDaddy's website builder for solo and small dental practices -- including its firm no-BAA position, SEO ceiling, and when Supportsheep is the better default for content and local search.",
+        ctaText: "Start your dental practice website with Supportsheep",
+        ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",
       },
       title: "GoDaddy for dentists: an honest alternative",
       metaDescription:
-        "Is GoDaddy right for a dental practice website? An honest comparison covering HIPAA/BAA posture, AI site generation, SEO limits, and when BlogBat is the better default.",
+        "Is GoDaddy right for a dental practice website? An honest comparison covering HIPAA/BAA posture, AI site generation, SEO limits, and when Supportsheep is the better default.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

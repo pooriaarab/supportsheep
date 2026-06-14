@@ -1,8 +1,8 @@
 /**
- * Public site footer — a clean, minimal blog footer for BlogBat.
+ * Public site footer — a clean, minimal blog footer for Supportsheep.
  *
  * Renders the blog brand mark, lightweight blog navigation, an RSS link, and a
- * "Powered by BlogBat" credit. Uses semantic color tokens and the Next.js Link
+ * "Powered by Supportsheep" credit. Uses semantic color tokens and the Next.js Link
  * component. Brand colors are config-driven via inline style so each tenant blog
  * can theme its own header/footer surfaces.
  */
@@ -35,7 +35,7 @@ export function PublicFooter({
   const brandAlt = footerAppearance.logoUrl
     ? brandText || `${config.siteName} logo`
     : brandText === "Blog"
-      ? "BlogBat logo"
+      ? "Supportsheep logo"
       : brandText === config.siteName
         ? `${brandText} logo`
         : brandText;
@@ -107,12 +107,12 @@ export function PublicFooter({
               &copy; {currentYear} {config.siteName}
             </p>
             <Link
-              href="https://blogbat.com"
+              href="https://supportsheep.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm opacity-80 transition-opacity hover:opacity-100 no-underline"
             >
-              Powered by BlogBat
+              Powered by Supportsheep
             </Link>
           </div>
         </div>

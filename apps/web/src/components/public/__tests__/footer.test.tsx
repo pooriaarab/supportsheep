@@ -5,8 +5,8 @@ import type { BlogConfig } from "@repo/types";
 
 const config: BlogConfig = {
   blogId: "default",
-  siteName: "BlogBat",
-  siteDescription: "The BlogBat demo blog.",
+  siteName: "Supportsheep",
+  siteDescription: "The Supportsheep demo blog.",
   logo: "",
   homepage: {
     layout: "grid",
@@ -14,8 +14,8 @@ const config: BlogConfig = {
     featuredCategory: null,
   },
   seo: {
-    defaultMetaTitle: "BlogBat",
-    defaultMetaDescription: "The BlogBat demo blog.",
+    defaultMetaTitle: "Supportsheep",
+    defaultMetaDescription: "The Supportsheep demo blog.",
     googleAnalyticsId: "",
     clarityId: "",
   },
@@ -47,19 +47,19 @@ describe("PublicFooter", () => {
     expect(withTools).toContain(">Tools<");
   });
 
-  it("falls back to the BlogBat footer logo when no custom footer brand is configured", () => {
+  it("falls back to the Supportsheep footer logo when no custom footer brand is configured", () => {
     const html = renderToStaticMarkup(<PublicFooter config={config} />);
 
     expect(html).toContain('src="/blogbat-footer-logo.svg"');
-    expect(html).toContain('alt="BlogBat logo"');
+    expect(html).toContain('alt="Supportsheep logo"');
   });
 
-  it("renders a minimal blog footer with RSS and a Powered by BlogBat credit", () => {
+  it("renders a minimal blog footer with RSS and a Powered by Supportsheep credit", () => {
     const html = renderToStaticMarkup(<PublicFooter config={config} />);
 
     expect(html).toContain('href="/api/feed"');
-    expect(html).toContain("Powered by BlogBat");
-    expect(html).toContain('href="https://blogbat.com"');
+    expect(html).toContain("Powered by Supportsheep");
+    expect(html).toContain('href="https://supportsheep.com"');
   });
 
   it("does not render any stale Solo tool or create-a-website columns", () => {
@@ -95,7 +95,7 @@ describe("PublicFooter", () => {
     expect(html).toContain("background-color:#171325");
   });
 
-  it("renders the default BlogBat logo when no uploaded footer logo is configured", () => {
+  it("renders the default Supportsheep logo when no uploaded footer logo is configured", () => {
     const html = renderToStaticMarkup(
       <PublicFooter
         config={{

@@ -39,7 +39,7 @@ describe("send-guest-published-email", () => {
       to: "guest@example.com",
       guestName: "Jane Doe",
       articleTitle: "My Awesome Journey",
-      articleUrl: "https://blogbat.com/my-awesome-journey",
+      articleUrl: "https://supportsheep.com/my-awesome-journey",
     };
 
     await sendGuestPublishedEmail(input);
@@ -50,8 +50,8 @@ describe("send-guest-published-email", () => {
     expect(payload.subject).toBe('"My Awesome Journey" is now published');
     expect(payload.text).toContain("Hi Jane Doe,");
     expect(payload.text).toContain("My Awesome Journey");
-    expect(payload.text).toContain("https://blogbat.com/my-awesome-journey");
-    expect(payload.html).toContain("https://blogbat.com/my-awesome-journey");
+    expect(payload.text).toContain("https://supportsheep.com/my-awesome-journey");
+    expect(payload.html).toContain("https://supportsheep.com/my-awesome-journey");
     // The sender must not override the helper's default sender.
     expect(payload).not.toHaveProperty("from");
     expect(payload.text.length).toBeGreaterThan(0);
@@ -63,7 +63,7 @@ describe("send-guest-published-email", () => {
       to: "guest@example.com",
       guestName: null,
       articleTitle: "Title",
-      articleUrl: "https://blogbat.com/title",
+      articleUrl: "https://supportsheep.com/title",
     });
     const payload = mockSendEmail.mock.calls[0][0];
     expect(payload.text).toContain("Hi,");
@@ -76,7 +76,7 @@ describe("send-guest-published-email", () => {
       to: "guest@example.com",
       guestName: 'A & "B" <c>',
       articleTitle: 'Title & <script>',
-      articleUrl: 'https://blogbat.com/x?a=1&b="2"',
+      articleUrl: 'https://supportsheep.com/x?a=1&b="2"',
     });
     const payload = mockSendEmail.mock.calls[0][0];
     // No unescaped angle brackets from user-supplied content survive into HTML.
@@ -93,7 +93,7 @@ describe("send-guest-published-email", () => {
       to: "guest@example.com",
       guestName: "Jane",
       articleTitle: "Title",
-      articleUrl: "https://blogbat.com/title",
+      articleUrl: "https://supportsheep.com/title",
     });
     expect(mockInfo).toHaveBeenCalledWith(
       "Guest article published email sent",
@@ -111,7 +111,7 @@ describe("send-guest-published-email", () => {
         to: "guest@example.com",
         guestName: "Jane",
         articleTitle: "Title",
-        articleUrl: "https://blogbat.com/title",
+        articleUrl: "https://supportsheep.com/title",
       }),
     ).resolves.toBeUndefined();
     expect(mockInfo).toHaveBeenCalledTimes(1);

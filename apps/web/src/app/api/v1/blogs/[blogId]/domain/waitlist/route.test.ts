@@ -54,7 +54,7 @@ describe("domain waitlist route", () => {
     vi.clearAllMocks();
     mockVerifyRequest.mockResolvedValue({
       uid: "u-1",
-      email: "owner@blogbat.com",
+      email: "owner@supportsheep.com",
       authTime: 0,
     });
     mockResolveTenant.mockResolvedValue({ blogId: "blog-1", role: "admin" });
@@ -113,7 +113,7 @@ describe("domain waitlist route", () => {
       expect(mockJoinDomainWaitlist).toHaveBeenCalledWith({
         blogId: "blog-1",
         userId: "u-1",
-        email: "owner@blogbat.com",
+        email: "owner@supportsheep.com",
       });
     });
 

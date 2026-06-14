@@ -12,7 +12,7 @@ describe("wordpress import identity", () => {
         <channel>
           <item>
             <title><![CDATA[Test Post]]></title>
-            <link>https://blogbat.com/test-post/</link>
+            <link>https://supportsheep.com/test-post/</link>
             <dc:creator><![CDATA[parab]]></dc:creator>
             <content:encoded><![CDATA[<p>Hello world</p>]]></content:encoded>
             <excerpt:encoded><![CDATA[<p>Excerpt</p>]]></excerpt:encoded>
@@ -29,7 +29,7 @@ describe("wordpress import identity", () => {
 
     expect(posts).toHaveLength(1);
     expect(posts[0].wordpressPostId).toBe("123");
-    expect(posts[0].sourceUrl).toBe("https://blogbat.com/test-post/");
+    expect(posts[0].sourceUrl).toBe("https://supportsheep.com/test-post/");
     expect(posts[0].sourcePath).toBe("/test-post/");
   });
 

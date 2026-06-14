@@ -84,7 +84,7 @@ function buildArticleDoc(
     primaryCategory: draft.primaryCategory,
     categories: draft.categories,
     tags: draft.tags,
-    author: "BlogBat",
+    author: "Supportsheep",
     featuredImage: { url: "", alt: "" },
     ogImage: "",
     metaTitle: draft.metaTitle,

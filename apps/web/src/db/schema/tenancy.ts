@@ -11,7 +11,7 @@ import { user } from "./auth";
 
 /**
  * A tenant. Public requests will resolve to a blog by hostname
- * ({slug}.blogbat.com or a mapped custom_domain) in a later slice; the
+ * ({slug}.supportsheep.com or a mapped custom_domain) in a later slice; the
  * dashboard/API path resolves via blog_members (see lib/tenancy/repository).
  */
 export const blogs = sqliteTable("blogs", {

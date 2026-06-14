@@ -6,7 +6,7 @@
  * Shows undo/redo always. Shows formatting actions (bold, italic, headings,
  * lists, etc.) when text is selected. Word count is shown at the right edge.
  *
- * Adapted for BlogBat from an admin editor-toolbar pattern.
+ * Adapted for Supportsheep from an admin editor-toolbar pattern.
  */
 
 import { useState, useEffect } from "react";

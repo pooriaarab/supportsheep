@@ -13,7 +13,7 @@ test("public tools pages render enabled tools and bottom callouts", async ({
   await expect(
     page.getByRole("button", { name: "Analyze text" }),
   ).toBeVisible();
-  await expect(page.getByRole("link", { name: "Try BlogBat" })).toHaveAttribute(
+  await expect(page.getByRole("link", { name: "Try Supportsheep" })).toHaveAttribute(
     "href",
     /utm_source=solo_blog/,
   );

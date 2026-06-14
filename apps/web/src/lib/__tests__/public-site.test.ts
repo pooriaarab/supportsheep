@@ -23,18 +23,18 @@ describe("resolvePublicSiteUrl", () => {
     vi.stubEnv("VERCEL_URL", "");
     vi.stubEnv("DEV_AUTH_BYPASS", "");
 
-    expect(resolvePublicSiteUrl()).toBe("https://blogbat.com");
+    expect(resolvePublicSiteUrl()).toBe("https://supportsheep.com");
   });
 
   it("uses an explicit non-localhost app url in production", () => {
     vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("NEXT_PUBLIC_APP_URL", "https://blogbat.com/");
+    vi.stubEnv("NEXT_PUBLIC_APP_URL", "https://supportsheep.com/");
     vi.stubEnv("APP_URL", "");
     vi.stubEnv("VERCEL_PROJECT_PRODUCTION_URL", "");
     vi.stubEnv("VERCEL_URL", "");
     vi.stubEnv("DEV_AUTH_BYPASS", "");
 
-    expect(resolvePublicSiteUrl()).toBe("https://blogbat.com");
+    expect(resolvePublicSiteUrl()).toBe("https://supportsheep.com");
   });
 
   it("honors a localhost app url when DEV_AUTH_BYPASS is enabled (E2E)", () => {
@@ -51,8 +51,8 @@ describe("resolvePublicSiteUrl", () => {
 
 const baseConfig: BlogConfig = {
   blogId: "default",
-  siteName: "BlogBat",
-  siteDescription: "Small business website tips from the BlogBat team.",
+  siteName: "Supportsheep",
+  siteDescription: "Small business website tips from the Supportsheep team.",
   logo: "",
   homepage: {
     layout: "grid",
@@ -60,7 +60,7 @@ const baseConfig: BlogConfig = {
     featuredCategory: null,
   },
   seo: {
-    defaultMetaTitle: "BlogBat",
+    defaultMetaTitle: "Supportsheep",
     defaultMetaDescription: "",
     googleAnalyticsId: "",
     clarityId: "",
@@ -91,7 +91,7 @@ describe("stringifyJsonLdForScript", () => {
 });
 
 describe("buildPublicSiteSchema", () => {
-  const siteUrl = "https://blogbat.com";
+  const siteUrl = "https://supportsheep.com";
   const schema = buildPublicSiteSchema(baseConfig, siteUrl);
 
   it("emits an Organization with entity identifiers, contacts, and parent org", () => {
@@ -100,8 +100,8 @@ describe("buildPublicSiteSchema", () => {
     );
     expect(org).toBeDefined();
     expect(org).toMatchObject({
-      name: "BlogBat",
-      alternateName: "BlogBat",
+      name: "Supportsheep",
+      alternateName: "Supportsheep",
       url: siteUrl,
       description: baseConfig.siteDescription,
       logo: {
@@ -113,7 +113,7 @@ describe("buildPublicSiteSchema", () => {
     });
     expect(org?.sameAs).toEqual(
       expect.arrayContaining([
-        "https://blogbat.com",
+        "https://supportsheep.com",
         "https://github.com/pooriaarab/blogbat",
       ]),
     );
@@ -121,7 +121,7 @@ describe("buildPublicSiteSchema", () => {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer support",
-        url: "https://support.blogbat.com",
+        url: "https://support.supportsheep.com",
       },
     });
   });
@@ -148,15 +148,15 @@ describe("buildPublicSiteSchema", () => {
     });
   });
 
-  it("emits a SoftwareApplication node for BlogBat with a free Offer", () => {
+  it("emits a SoftwareApplication node for Supportsheep with a free Offer", () => {
     const software = schema["@graph"].find(
       (node) => node["@type"] === "SoftwareApplication",
     );
     expect(software).toMatchObject({
-      name: "BlogBat",
+      name: "Supportsheep",
       applicationCategory: "WebApplication",
       operatingSystem: "Web",
-      url: "https://blogbat.com",
+      url: "https://supportsheep.com",
       offers: {
         "@type": "Offer",
         price: "0",
@@ -165,16 +165,16 @@ describe("buildPublicSiteSchema", () => {
     });
   });
 
-  it("emits a WebApplication node for the BlogBat product", () => {
+  it("emits a WebApplication node for the Supportsheep product", () => {
     const webApplication = schema["@graph"].find(
       (node) => node["@type"] === "WebApplication",
     );
     expect(webApplication).toMatchObject({
-      "@id": "https://blogbat.com/#webapplication",
-      name: "BlogBat",
+      "@id": "https://supportsheep.com/#webapplication",
+      name: "Supportsheep",
       applicationCategory: "WebsiteBuilderApplication",
       operatingSystem: "Web",
-      url: "https://blogbat.com",
+      url: "https://supportsheep.com",
     });
   });
 
@@ -185,7 +185,7 @@ describe("buildPublicSiteSchema", () => {
       mainEntity: expect.arrayContaining([
         expect.objectContaining({
           "@type": "Question",
-          name: "What is BlogBat?",
+          name: "What is Supportsheep?",
         }),
       ]),
     });
@@ -194,7 +194,7 @@ describe("buildPublicSiteSchema", () => {
 
 describe("buildSiteFaqSchema", () => {
   it("returns stable FAQPage JSON-LD", () => {
-    const siteUrl = "https://blogbat.com";
+    const siteUrl = "https://supportsheep.com";
     const schema = buildSiteFaqSchema(siteUrl);
 
     expect(schema).toMatchObject({
@@ -214,7 +214,7 @@ describe("buildSiteFaqSchema", () => {
 });
 
 describe("buildArticleItemListSchema", () => {
-  const siteUrl = "https://blogbat.com";
+  const siteUrl = "https://supportsheep.com";
   const articles = [
     {
       id: "a",
@@ -265,7 +265,7 @@ describe("buildArticleItemListSchema", () => {
 
 describe("buildBlogListingSchema", () => {
   it("emits a Blog node pointing at the Organization publisher", () => {
-    const siteUrl = "https://blogbat.com";
+    const siteUrl = "https://supportsheep.com";
     const schema = buildBlogListingSchema(baseConfig, siteUrl, siteUrl);
     expect(schema).toMatchObject({
       "@type": "Blog",
@@ -282,7 +282,7 @@ describe("buildBlogListingSchema", () => {
 
 describe("buildCollectionPageSchema", () => {
   it("emits a CollectionPage anchored to the website @id", () => {
-    const siteUrl = "https://blogbat.com";
+    const siteUrl = "https://supportsheep.com";
     const categoryUrl = `${siteUrl}/category/guides`;
     const schema = buildCollectionPageSchema(siteUrl, categoryUrl, {
       name: "Guides",

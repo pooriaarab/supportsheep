@@ -5,7 +5,7 @@ import {
   buildAgentDiscoveryLinkHeader,
   buildAgentSkillsIndex,
   buildMcpServerCard,
-  getBlogBatDiscoverySkillMarkdown,
+  getSupportsheepDiscoverySkillMarkdown,
 } from "@/lib/agent-discovery";
 import { resolvePublicSiteUrl } from "@/lib/public-site";
 
@@ -26,7 +26,7 @@ describe("agent discovery builders", () => {
     const siteUrl = resolvePublicSiteUrl();
     const index = buildAgentSkillsIndex(siteUrl);
     const expectedDigest = createHash("sha256")
-      .update(getBlogBatDiscoverySkillMarkdown(siteUrl), "utf8")
+      .update(getSupportsheepDiscoverySkillMarkdown(siteUrl), "utf8")
       .digest("hex");
 
     expect(index.skills.length).toBeGreaterThan(0);

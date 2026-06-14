@@ -33,13 +33,13 @@ import {
 } from "@/lib/public-site";
 
 // TODO(M5-cache): this page is path-keyed ISR (`revalidate`). Once real
-// `{slug}.blogbat.com` subdomains serve distinct tenants, a path-only cache key
+// `{slug}.supportsheep.com` subdomains serve distinct tenants, a path-only cache key
 // (`/`) would serve one tenant's homepage to another. Make the ISR cache key
 // host-aware before enabling multi-tenant subdomain traffic.
 export const revalidate = 300;
 
 /**
- * Whether the current request targets the BlogBat marketing site (apex / `www`).
+ * Whether the current request targets the Supportsheep marketing site (apex / `www`).
  *
  * Reads the host from request headers the same way as {@link getRequestBlogId}
  * (`x-bb-host` set by middleware, falling back to `host`). Never throws: if the
@@ -130,7 +130,7 @@ interface Props {
 }
 
 export default async function Page({ searchParams }: Props) {
-  // An unknown `*.blogbat.com` tenant subdomain must 404 rather than silently
+  // An unknown `*.supportsheep.com` tenant subdomain must 404 rather than silently
   // serving the default blog. Marketing/default hosts render as before.
   const tenant = await resolveRequestTenant();
   if (tenant.kind === "not-found") {

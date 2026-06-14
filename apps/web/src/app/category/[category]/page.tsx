@@ -21,7 +21,7 @@ import {
 } from "@/lib/public-site";
 
 // TODO(M5-cache): path-keyed ISR (`revalidate`). Make the cache key host-aware
-// before serving distinct tenants on `{slug}.blogbat.com`.
+// before serving distinct tenants on `{slug}.supportsheep.com`.
 export const revalidate = 300;
 
 interface Props {
@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const siteUrl = resolvePublicSiteUrl();
   const categoryUrl = `${siteUrl}/category/${canonicalCategory}`;
-  const title = `${info.displayName} — BlogBat`;
+  const title = `${info.displayName} — Supportsheep`;
   const description =
-    info.description || `Browse ${info.displayName} articles on BlogBat`;
+    info.description || `Browse ${info.displayName} articles on Supportsheep`;
 
   return {
     title: info.displayName,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: "website",
       url: categoryUrl,
-      siteName: "BlogBat",
+      siteName: "Supportsheep",
     },
     twitter: {
       card: "summary",

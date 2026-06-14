@@ -266,7 +266,7 @@ export function DomainSettings() {
                 Custom domain
               </CardTitle>
               <CardDescription>
-                Serve your blog from your own domain instead of a blogbat.com
+                Serve your blog from your own domain instead of a supportsheep.com
                 subdomain.
               </CardDescription>
             </div>

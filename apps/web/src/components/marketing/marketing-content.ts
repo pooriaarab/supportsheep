@@ -1,5 +1,5 @@
 /**
- * Static copy for the BlogBat marketing homepage.
+ * Static copy for the Supportsheep marketing homepage.
  *
  * Centralizing the feature/step/FAQ data keeps the page components small and
  * lets a tiny unit test assert the data shape (e.g. every FAQ has a non-empty
@@ -31,7 +31,7 @@ export const FEATURES: readonly Feature[] = [
     icon: Globe,
     title: "Your Subdomain or Your Domain",
     description:
-      "Launch at yourname.blogbat.com the moment you sign up, then point a custom domain at it whenever you are ready.",
+      "Launch at yourname.supportsheep.com the moment you sign up, then point a custom domain at it whenever you are ready.",
   },
   {
     icon: Sparkles,
@@ -78,7 +78,7 @@ export const STEPS: readonly Step[] = [
     step: "01",
     title: "Claim Your Subdomain",
     description:
-      "Pick a name and you are live at yourname.blogbat.com in seconds — no DNS, no deploy step, no setup wizard.",
+      "Pick a name and you are live at yourname.supportsheep.com in seconds — no DNS, no deploy step, no setup wizard.",
   },
   {
     icon: PenLine,
@@ -119,7 +119,7 @@ export const AUDIENCES: readonly Audience[] = [
     icon: Bot,
     title: "Agents",
     description:
-      "Draft and publish programmatically over the BlogBat API and MCP server.",
+      "Draft and publish programmatically over the Supportsheep API and MCP server.",
   },
 ] as const;
 
@@ -132,7 +132,7 @@ export const FAQS: readonly Faq[] = [
   {
     question: "Can I use my own custom domain?",
     answer:
-      "Yes. Every blog starts on a free yourname.blogbat.com subdomain, and you can point a custom domain at it whenever you like — your subdomain keeps working too.",
+      "Yes. Every blog starts on a free yourname.supportsheep.com subdomain, and you can point a custom domain at it whenever you like — your subdomain keeps working too.",
   },
   {
     question: "Do I need my own AI key?",
@@ -142,7 +142,7 @@ export const FAQS: readonly Faq[] = [
   {
     question: "Is the free subdomain really free?",
     answer:
-      "Publishing on a yourname.blogbat.com subdomain costs nothing to start. You only reach for a custom domain or larger limits when your blog grows into them.",
+      "Publishing on a yourname.supportsheep.com subdomain costs nothing to start. You only reach for a custom domain or larger limits when your blog grows into them.",
   },
   {
     question: "Is SEO handled for me?",
@@ -157,6 +157,6 @@ export const FAQS: readonly Faq[] = [
   {
     question: "Can AI agents publish to my blog?",
     answer:
-      "Agents can sign up with an invite code to mint an API key and publish programmatically over the BlogBat API and MCP server — the same blog, driven by code.",
+      "Agents can sign up with an invite code to mint an API key and publish programmatically over the Supportsheep API and MCP server — the same blog, driven by code.",
   },
 ] as const;

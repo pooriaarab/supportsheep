@@ -6,7 +6,7 @@ describe("WebhookCreationResult", () => {
   it("renders the generated webhook url and access token with the one-time warning", () => {
     const html = renderToStaticMarkup(
       <WebhookCreationResult
-        endpointUrl="https://blogbat.com/api/v1/integrations/webhooks/integration-1"
+        endpointUrl="https://supportsheep.com/api/v1/integrations/webhooks/integration-1"
         token="secret-token"
         onDone={() => {}}
       />,

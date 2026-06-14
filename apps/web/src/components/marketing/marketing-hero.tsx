@@ -8,7 +8,7 @@
  * `prefers-reduced-motion` in globals.css — reduced-motion visitors see the
  * same composition, held still.
  *
- * Server-rendered. Keeps the {slug}.blogbat.com value prop and the existing
+ * Server-rendered. Keeps the {slug}.supportsheep.com value prop and the existing
  * sign-up / sign-in CTAs.
  */
 
@@ -68,11 +68,11 @@ export function MarketingHero() {
           </span>
           .
           <br className="hidden sm:block" /> Live at{" "}
-          <span className="text-primary">yourname.blogbat.com</span>
+          <span className="text-primary">yourname.supportsheep.com</span>
         </h1>
 
         <p className="mkt-reveal max-w-2xl text-pretty text-lg text-muted-foreground [animation-delay:180ms]">
-          BlogBat is a fast, multitenant blog platform on Cloudflare&rsquo;s
+          Supportsheep is a fast, multitenant blog platform on Cloudflare&rsquo;s
           edge. Claim a free subdomain or bring your own domain, write with AI
           at your side, and ship SEO-ready posts that load everywhere.
         </p>

@@ -49,7 +49,7 @@ describe("GET /api/v1/users/:id", () => {
   it("returns the member (AppUser shape)", async () => {
     getBlogMember.mockResolvedValue(member);
     const response = await route.GET(
-      new NextRequest("https://blogbat.com/api/v1/users/u1"),
+      new NextRequest("https://supportsheep.com/api/v1/users/u1"),
       idParam,
     );
 
@@ -61,7 +61,7 @@ describe("GET /api/v1/users/:id", () => {
   it("returns 404 when the user is not a member", async () => {
     getBlogMember.mockResolvedValue(null);
     const response = await route.GET(
-      new NextRequest("https://blogbat.com/api/v1/users/u1"),
+      new NextRequest("https://supportsheep.com/api/v1/users/u1"),
       idParam,
     );
     expect(response.status).toBe(404);
@@ -74,7 +74,7 @@ describe("PATCH /api/v1/users/:id", () => {
   it("maps role 'user' to 'viewer' and updates", async () => {
     updateMemberRole.mockResolvedValue({ ok: true, member });
     const response = await route.PATCH(
-      new NextRequest("https://blogbat.com/api/v1/users/u1", {
+      new NextRequest("https://supportsheep.com/api/v1/users/u1", {
         method: "PATCH",
         body: JSON.stringify({ role: "user" }),
       }),
@@ -89,7 +89,7 @@ describe("PATCH /api/v1/users/:id", () => {
   it("maps role 'admin' to 'admin'", async () => {
     updateMemberRole.mockResolvedValue({ ok: true, member });
     await route.PATCH(
-      new NextRequest("https://blogbat.com/api/v1/users/u1", {
+      new NextRequest("https://supportsheep.com/api/v1/users/u1", {
         method: "PATCH",
         body: JSON.stringify({ role: "admin" }),
       }),
@@ -101,7 +101,7 @@ describe("PATCH /api/v1/users/:id", () => {
   it("returns 404 when the member is not found", async () => {
     updateMemberRole.mockResolvedValue({ ok: false, reason: "not_found" });
     const response = await route.PATCH(
-      new NextRequest("https://blogbat.com/api/v1/users/u1", {
+      new NextRequest("https://supportsheep.com/api/v1/users/u1", {
         method: "PATCH",
         body: JSON.stringify({ role: "admin" }),
       }),
@@ -113,7 +113,7 @@ describe("PATCH /api/v1/users/:id", () => {
   it("returns 409 cannot_demote_last_owner", async () => {
     updateMemberRole.mockResolvedValue({ ok: false, reason: "last_owner" });
     const response = await route.PATCH(
-      new NextRequest("https://blogbat.com/api/v1/users/u1", {
+      new NextRequest("https://supportsheep.com/api/v1/users/u1", {
         method: "PATCH",
         body: JSON.stringify({ role: "viewer" }),
       }),
@@ -126,7 +126,7 @@ describe("PATCH /api/v1/users/:id", () => {
   it("returns the current member unchanged when only name/status is sent (no role)", async () => {
     getBlogMember.mockResolvedValue(member);
     const response = await route.PATCH(
-      new NextRequest("https://blogbat.com/api/v1/users/u1", {
+      new NextRequest("https://supportsheep.com/api/v1/users/u1", {
         method: "PATCH",
         body: JSON.stringify({ name: "New Name" }),
       }),
