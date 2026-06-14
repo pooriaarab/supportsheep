@@ -1,0 +1,23 @@
+[package]
+name = "template-desktop"
+version = "0.0.0"
+description = "Desktop App"
+authors = ["Template"]
+edition = "2021"
+
+[lib]
+name = "template_desktop_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-deep-link = "2"
+tauri-plugin-window-state = "2"
+tauri-plugin-updater = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

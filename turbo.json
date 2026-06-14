@@ -1,0 +1,39 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "dist/**"],
+      "passThroughEnv": [
+        "NEXT_PUBLIC_FIREBASE_API_KEY",
+        "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN",
+        "NEXT_PUBLIC_FIREBASE_PROJECT_ID",
+        "NEXT_PUBLIC_ENVIRONMENT",
+        "NODE_OPTIONS",
+        "SKIP_NEXT_BUILD_TYPECHECK"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "@repo/desktop#dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["@repo/web#dev"]
+    },
+    "@repo/desktop#build": {
+      "dependsOn": ["@repo/web#build"],
+      "outputs": ["src-tauri/target/**"]
+    }
+  }
+}

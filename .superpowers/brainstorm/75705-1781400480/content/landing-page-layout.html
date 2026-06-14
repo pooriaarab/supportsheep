@@ -1,0 +1,46 @@
+<!-- filename: landing-page-layout.html -->
+<h2>Choose the primary layout for the Supportsheep homepage</h2>
+<p class="subtitle">This is what users will see when they visit their specific support site (e.g., support.customer.com)</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Search-Centric (Traditional Support)</h3>
+      <p>A massive search bar front and center, followed by a grid of high-level categories.</p>
+      <div class="mockup" style="margin-top: 10px; border: 1px solid #ccc; padding: 10px; border-radius: 4px;">
+         <div style="text-align: center; margin-bottom: 20px;">
+           <h4 style="margin-bottom: 10px;">How can we help?</h4>
+           <input class="mock-input" placeholder="Search for articles..." style="width: 80%; display: inline-block;">
+         </div>
+         <div style="display: flex; gap: 10px; justify-content: space-around;">
+            <div style="border: 1px solid #eee; padding: 10px; width: 30%; text-align: center;">Getting Started</div>
+            <div style="border: 1px solid #eee; padding: 10px; width: 30%; text-align: center;">Billing</div>
+            <div style="border: 1px solid #eee; padding: 10px; width: 30%; text-align: center;">Troubleshooting</div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Chat/AI-First (Modern)</h3>
+      <p>Focuses on the real-time voice/chatbot widget immediately, with traditional categories below.</p>
+       <div class="mockup" style="margin-top: 10px; border: 1px solid #ccc; padding: 10px; border-radius: 4px;">
+         <div style="text-align: center; margin-bottom: 20px; background: #f0f8ff; padding: 20px; border-radius: 8px;">
+           <h4 style="margin-bottom: 10px;">Talk to our Support AI</h4>
+           <button class="mock-button">Start Voice Chat</button> <button class="mock-button" style="background: white; color: black; border: 1px solid #ccc;">Open Chatbot</button>
+         </div>
+         <div style="display: flex; gap: 10px; justify-content: space-around;">
+             <div style="text-align: left; width: 45%;">
+                 <h5>Popular Articles</h5>
+                 <ul style="padding-left: 20px; font-size: 0.9em;">
+                     <li>How to reset password</li>
+                     <li>Configuring custom domains</li>
+                 </ul>
+             </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

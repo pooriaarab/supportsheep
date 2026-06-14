@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B7 · Drag-drop · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; position: relative; }
+  .left-rail, .right-rail { background: hsl(var(--card)); }
+  .left-rail { border-right: 1px solid hsl(var(--border)); display: flex; flex-direction: column; padding: 16px; gap: 16px; }
+  .right-rail { padding: 24px 56px; }
+
+  /* drop overlay */
+  .drop-overlay { position: absolute; inset: 0; background: hsl(var(--primary) / 0.04); border: 3px dashed hsl(var(--primary)); border-radius: 14px; margin: 16px; display: grid; place-items: center; z-index: 10; }
+  .drop-overlay .inner { background: hsl(var(--card)); padding: 32px 40px; border-radius: 12px; text-align: center; box-shadow: 0 12px 32px hsl(0 0% 0% / 0.1); }
+  .drop-overlay .big-icon { font-size: 48px; }
+  .drop-overlay h2 { margin: 12px 0 4px; }
+
+  .input-area { margin-top: auto; }
+  .input-row { display: flex; gap: 8px; align-items: flex-end; background: hsl(var(--background)); border: 1px solid hsl(var(--primary)); border-radius: 12px; padding: 8px; box-shadow: 0 0 0 3px hsl(var(--primary) / 0.15); }
+  .input-row textarea { border: none; resize: none; flex: 1; outline: none; background: transparent; min-height: 28px; }
+  .chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .chip-row .chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px 4px 6px; background: hsl(var(--muted)); border-radius: 999px; font-size: 12px; }
+  .chip-row .chip .x { color: hsl(var(--muted-foreground)); cursor: pointer; }
+  .uploading { background: hsl(var(--info) / 0.1); border: 1px dashed hsl(var(--info)); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; }
+  .progress { height: 4px; background: hsl(var(--border)); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+  .progress .bar { height: 100%; width: 62%; background: hsl(var(--info)); }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12">
+    <span class="live-dot"></span><span class="font-medium">Interview · EEAT post</span>
+    <span class="muted text-sm">our migration off Postgres to PlanetScale</span>
+  </div>
+  <div class="row gap-12">
+    <span style="font-family: ui-monospace; font-size: 13px;">⏱ 02:47 / 10:00</span>
+    <button class="btn btn-destructive btn-sm">End</button>
+  </div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center">
+      <div class="orb orb-state-listening orb-listening" style="--orb-size: 110px;"></div>
+      <div class="muted text-xs" style="margin-top: 28px;">Listening for your next thought…</div>
+    </div>
+    <div class="col-tight" style="flex:1; overflow-y:auto;">
+      <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 02:14</div>So when you say "incremental migration" — what was the test that gave you confidence?</div></div>
+      <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 02:38</div>Let me drop the runbook — we wrote it up at the time.</div></div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-row">
+        <button class="btn btn-ghost btn-sm">📎</button>
+        <textarea placeholder="Drop files here, type or paste…">we wrote it up at the time — see this:</textarea>
+        <button class="btn btn-primary btn-sm">↑</button>
+      </div>
+      <div class="chip-row">
+        <div class="chip">📄 migration-runbook.md · 8 KB <span class="x">✕</span></div>
+        <div class="chip">🔗 internal-launch-doc <span class="x">✕</span></div>
+      </div>
+      <div class="uploading mt-8">
+        <div class="row-between"><span>📊 incident-2024-q3.pdf · 1.2 MB</span><span class="text-xs muted">Uploading…</span></div>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="right-rail">
+    <h2 class="h2 mb-8">Canvas (right rail)</h2>
+    <p class="muted">The canvas keeps drawing while you drop files. The AI reads attachments on its next turn — see Section 3 of the design doc.</p>
+  </main>
+
+  <div class="drop-overlay">
+    <div class="inner">
+      <div class="big-icon">📎</div>
+      <h2 class="dialog-title">Drop to attach</h2>
+      <div class="text-sm muted">Anything you drop here gets read by the AI on its next turn.</div>
+      <div class="text-xs muted mt-8">Supported · PDF, MD, TXT, PNG/JPG, URL ·  Max 10 MB</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

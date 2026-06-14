@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>S1 · Interview defaults · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  .settings-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; max-width: 1100px; }
+  @media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
+  .settings-nav { display: flex; flex-direction: column; gap: 4px; }
+  .settings-nav a { padding: 8px 12px; border-radius: 6px; color: hsl(var(--foreground)); text-decoration: none; font-size: 13.5px; }
+  .settings-nav a.active { background: hsl(var(--muted)); font-weight: 500; }
+  .settings-section { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .toggle { width: 36px; height: 20px; background: hsl(var(--muted)); border-radius: 999px; position: relative; cursor: pointer; }
+  .toggle.on { background: hsl(var(--success)); }
+  .toggle::after { content: ""; position: absolute; width: 16px; height: 16px; background: white; border-radius: 50%; top: 2px; left: 2px; transition: left 120ms ease; box-shadow: 0 1px 3px hsl(0 0% 0% / 0.2); }
+  .toggle.on::after { left: 18px; }
+  .row-setting { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid hsl(var(--border)); }
+  .row-setting:last-child { border-bottom: none; }
+</style>
+</head>
+<body data-shell="dashboard">
+<script src="../shared/shell.js" defer></script>
+
+<div class="topbar">
+  <div>
+    <h1 class="h1">Settings</h1>
+    <p class="subtle-text">Workspace defaults · interview mode</p>
+  </div>
+  <div class="row gap-12">
+    <span class="badge badge-warning">V1 — coming after MVP</span>
+  </div>
+</div>
+
+<div class="settings-grid">
+  <nav class="settings-nav">
+    <a href="#">General</a>
+    <a href="#">Authors</a>
+    <a href="#">SEO defaults</a>
+    <a href="#">AI providers</a>
+    <a href="#" class="active">Interview defaults</a>
+    <a href="#">Privacy &amp; retention</a>
+    <a href="#">Billing</a>
+    <a href="#">API keys</a>
+  </nav>
+
+  <main>
+    <div class="settings-section">
+      <h2 class="h2 mb-12">Defaults for new share links</h2>
+      <div class="grid-2">
+        <div>
+          <label class="label">Default visibility</label>
+          <select class="input"><option>Private (workspace members)</option><option selected>Link (with email gate)</option><option>Workspace</option></select>
+        </div>
+        <div>
+          <label class="label">Default style</label>
+          <select class="input"><option>🧠 Smart</option><option selected>🎓 EEAT</option><option>📣 Testimonial</option><option>🧪 Case study</option></select>
+        </div>
+        <div>
+          <label class="label">Default duration</label>
+          <select class="input"><option>5 min</option><option selected>10 min</option><option>15 min</option><option>30 min</option></select>
+        </div>
+        <div>
+          <label class="label">Default recording</label>
+          <select class="input"><option>📝 Transcript only</option><option selected>🎙️ + Audio</option><option disabled>🎥 + Video (V1)</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2 class="h2 mb-12">Roles &amp; permissions</h2>
+      <div class="row-setting">
+        <div>
+          <div class="font-medium">Authors can mint share links</div>
+          <div class="text-sm muted">When off, only admin + editor can create links.</div>
+        </div>
+        <div class="toggle on"></div>
+      </div>
+      <div class="row-setting">
+        <div>
+          <div class="font-medium">Authors can publish their own drafts</div>
+          <div class="text-sm muted">When off, author drafts go to pending_review.</div>
+        </div>
+        <div class="toggle"></div>
+      </div>
+      <div class="row-setting">
+        <div>
+          <div class="font-medium">Guests can download their audio</div>
+          <div class="text-sm muted">Allow guests to download their own audio recording from the thank-you page.</div>
+        </div>
+        <div class="toggle on"></div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2 class="h2 mb-12">Cost guardrails</h2>
+      <div class="row-setting">
+        <div><div class="font-medium">Monthly soft cap</div><div class="text-sm muted">Email admins when usage reaches this.</div></div>
+        <input class="input" style="width: 120px;" value="$300" />
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Monthly hard stop</div><div class="text-sm muted">Block new interviews above this for the rest of the month.</div></div>
+        <input class="input" style="width: 120px;" value="$500" />
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Image regenerations per interview</div><div class="text-sm muted">Cap to bound cost. Default 3.</div></div>
+        <input class="input" style="width: 80px;" value="3" />
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2 class="h2 mb-12">Integrations</h2>
+      <div class="row-setting">
+        <div><div class="font-medium">OpenAI Realtime API</div><div class="text-sm muted">Required. gpt-realtime-2.</div></div>
+        <span class="badge badge-success">Connected</span>
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Anthropic Claude</div><div class="text-sm muted">For the canvas writer. claude-sonnet-4-6.</div></div>
+        <span class="badge badge-success">Connected</span>
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Tavus video</div><div class="text-sm muted">For video interview mode. V1 feature.</div></div>
+        <span class="badge badge-outline">Not connected</span>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2 class="h2 mb-12">Retention</h2>
+      <div class="row-setting">
+        <div><div class="font-medium">Audio</div></div>
+        <input class="input" style="width: 100px;" value="90 days" />
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Transcripts</div></div>
+        <input class="input" style="width: 100px;" value="365 days" />
+      </div>
+      <div class="row-setting">
+        <div><div class="font-medium">Event log (for evals)</div></div>
+        <input class="input" style="width: 100px;" value="365 days" />
+      </div>
+    </div>
+
+    <div class="row gap-12" style="justify-content: flex-end;">
+      <button class="btn">Discard</button>
+      <button class="btn btn-primary">Save changes</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B9 · Hard cap · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .ended-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--muted-foreground)); }
+  .banner { padding: 14px 16px; background: hsl(var(--info) / 0.12); border-bottom: 1px solid hsl(var(--info) / 0.4); display: flex; align-items: center; gap: 12px; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; }
+  .left-rail { background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); padding: 16px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .right-rail { padding: 24px 56px; max-width: 760px; }
+  .save-status { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: hsl(var(--muted)); border-radius: 8px; }
+  .spinner { width: 14px; height: 14px; border: 2px solid hsl(var(--muted-foreground)); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12"><span class="ended-dot"></span><span class="font-medium">Interview ended</span><span class="muted text-sm">EEAT post · Postgres → PlanetScale</span></div>
+  <div class="row gap-12"><span style="font-family: ui-monospace; font-size: 13px; color: hsl(var(--muted-foreground));">10:00 / 10:00</span></div>
+</div>
+
+<div class="banner">
+  <span style="font-size: 18px; color: hsl(var(--info));">⏱</span>
+  <div>
+    <strong>Time's up.</strong>
+    <span class="muted">The AI wrapped naturally. Saving your draft now — you'll be redirected in a moment.</span>
+  </div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center">
+      <div class="orb orb-state-idle" style="--orb-size: 110px; opacity: 0.5;"></div>
+      <div class="muted text-xs mt-12" style="margin-top: 28px;">Call ended</div>
+    </div>
+    <div class="save-status">
+      <div class="spinner"></div>
+      <div>
+        <div class="font-medium text-sm">Finalizing draft</div>
+        <div class="text-xs muted">Writer is closing the article + saving meta</div>
+      </div>
+    </div>
+    <div class="muted text-xs text-center" style="margin-top: auto;">Auto-redirect in 3s · <a href="../end/saving.html">Continue now →</a></div>
+  </aside>
+
+  <main class="right-rail">
+    <h1 style="font-size: 24px;">Mirrored 5% of reads — what migrating off Postgres to PlanetScale taught us</h1>
+    <p class="canvas-refined">Final paragraph just landed. Featured image and SEO meta are ready. Submitting for save…</p>
+    <blockquote style="border-left: 3px solid hsl(var(--primary)); padding: 4px 16px; font-style: italic; background: hsl(var(--primary) / 0.04);">"Mirror reads for longer than you think you need to. The hour you'd save by rushing is bought back 100x by the bugs you don't ship."<br><span class="text-xs muted">— Pooria Arab</span></blockquote>
+  </main>
+</div>
+</body>
+</html>

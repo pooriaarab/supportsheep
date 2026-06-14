@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>G5 · Guest in-call · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; min-height: 0; }
+  .left-rail { display: flex; flex-direction: column; min-height: 0; background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); }
+  .right-rail { display: flex; flex-direction: column; min-height: 0; }
+  .orb-area { padding: 32px 16px 24px; text-align: center; }
+  .transcript-area { flex: 1; overflow-y: auto; padding: 8px 16px 12px; min-height: 0; mask-image: linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 60px), transparent 100%); }
+  .input-area { padding: 12px 16px 16px; border-top: 1px solid hsl(var(--border)); }
+  .input-row { display: flex; gap: 8px; align-items: flex-end; background: hsl(var(--background)); border: 1px solid hsl(var(--border-strong)); border-radius: 12px; padding: 8px; }
+  .input-row textarea { border: none; resize: none; padding: 4px 6px; flex: 1; background: transparent; outline: none; max-height: 120px; min-height: 24px; }
+
+  .canvas-banner { padding: 8px 24px; background: hsl(var(--muted) / 0.5); border-bottom: 1px solid hsl(var(--border)); font-size: 12px; color: hsl(var(--muted-foreground)); display: flex; align-items: center; gap: 8px; }
+  .canvas-body { flex: 1; overflow-y: auto; padding: 32px 56px; max-width: 800px; min-height: 0; }
+  .canvas-body h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+  .canvas-body .draft-meta { color: hsl(var(--muted-foreground)); font-size: 13px; margin-bottom: 16px; }
+  .canvas-body p { line-height: 1.65; margin: 0 0 14px; font-size: 15px; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12">
+    <span class="live-dot"></span>
+    <span class="font-medium">You're being interviewed</span>
+    <span class="muted text-sm">by AI host for Pooria · BlogBat</span>
+  </div>
+  <div class="row gap-12">
+    <span class="badge badge-outline">🎙️ Recording audio</span>
+    <span style="font-family: ui-monospace; font-size: 13px;">⏱ 04:18 / 10:00</span>
+    <button class="btn btn-destructive btn-sm">End interview</button>
+  </div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="orb-area">
+      <div class="orb orb-state-speaking orb-speaking" style="--orb-size: 140px;"></div>
+      <div class="muted text-xs mt-12" style="margin-top:32px;">AI is speaking…</div>
+    </div>
+
+    <div class="transcript-area col">
+      <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 02:14</div>So earlier you mentioned the old Monday standups — what would happen on a typical one?</div></div>
+      <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 02:24</div>Honestly, it was three hours of "what's the priority this week" and then we'd all dive in alone. We had a backlog spreadsheet that nobody trusted.</div></div>
+      <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 03:12</div>That sounds painful. What changed first when you brought BlogBat in?</div></div>
+      <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 03:22</div>It killed the spreadsheet. The first week I just typed our topic ideas into BlogBat and watched it cluster them into a content plan. The standup turned into a 15-minute review of what BlogBat had drafted overnight.</div></div>
+      <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 04:08</div>"Killed the spreadsheet" — that's a great line. Can I ask what's the metric you'd point to?</div></div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-row">
+        <button class="btn btn-ghost btn-sm">📎</button>
+        <textarea placeholder="Drop a link or type a note…"></textarea>
+        <button class="btn btn-primary btn-sm">↑</button>
+      </div>
+      <div class="row mt-8">
+        <button class="btn btn-sm">🎙️ Mute</button>
+        <span style="flex:1"></span>
+        <span class="text-xs muted">Say "stop and delete" anytime</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="right-rail">
+    <div class="canvas-banner">
+      <span>📄</span>
+      <span>Live preview of the article BlogBat is drafting from your conversation</span>
+      <span style="flex:1"></span>
+      <span class="badge badge-outline">read-only</span>
+    </div>
+    <div class="canvas-body">
+      <h1>"It killed the spreadsheet" — Aaliyah Khan on switching to BlogBat</h1>
+      <div class="draft-meta">a testimonial · 3 min read · drafted from interview</div>
+
+      <p class="canvas-refined">Aaliyah Khan ran content ops at Acme Co. for two years before her team picked up BlogBat. She remembers Monday standups as "three hours of figuring out what was already on the backlog spreadsheet, which nobody trusted." The first week with BlogBat, those three hours collapsed into a 15-minute review of what the system had drafted overnight.</p>
+
+      <p class="canvas-placeholder canvas-streaming">"It killed the spreadsheet" is how she put it</p>
+    </div>
+  </main>
+</div>
+</body>
+</html>

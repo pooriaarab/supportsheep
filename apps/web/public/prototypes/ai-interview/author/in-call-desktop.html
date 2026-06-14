@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B3 · In-call desktop · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .top-bar .center { display: flex; gap: 12px; align-items: center; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .timer { font-family: ui-monospace, Menlo, monospace; font-size: 14px; font-weight: 500; }
+  .cost { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: hsl(var(--muted-foreground)); background: hsl(var(--muted)); padding: 4px 10px; border-radius: 999px; }
+
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; min-height: 0; }
+  .left-rail { display: flex; flex-direction: column; min-height: 0; background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); }
+  .right-rail { display: flex; flex-direction: column; min-height: 0; }
+
+  .orb-area { padding: 32px 16px 24px; text-align: center; }
+  .transcript-area { flex: 1; overflow-y: auto; padding: 8px 16px 12px; min-height: 0; mask-image: linear-gradient(to bottom, transparent 0, black 24px, black calc(100% - 60px), transparent 100%); }
+  .transcript-area .chat-row:first-child { opacity: 0.3; }
+  .transcript-area .chat-row:nth-child(2) { opacity: 0.55; }
+
+  .input-area { padding: 12px 16px 16px; border-top: 1px solid hsl(var(--border)); position: relative; }
+  .input-row { display: flex; gap: 8px; align-items: flex-end; background: hsl(var(--background)); border: 1px solid hsl(var(--border-strong)); border-radius: 12px; padding: 8px; }
+  .input-row textarea { border: none; resize: none; padding: 4px 6px; flex: 1; background: transparent; color: hsl(var(--foreground)); outline: none; font-family: inherit; max-height: 120px; min-height: 24px; }
+  .input-row .icon-btn { background: transparent; border: none; padding: 4px; color: hsl(var(--muted-foreground)); cursor: pointer; }
+  .input-row .icon-btn:hover { color: hsl(var(--foreground)); }
+  .control-row { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+  .control-row .mic-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid hsl(var(--border-strong)); background: hsl(var(--card)); cursor: pointer; display: grid; place-items: center; }
+  .control-row .mic-btn.muted { background: hsl(var(--destructive) / 0.1); color: hsl(var(--destructive)); border-color: hsl(var(--destructive)); }
+
+  .canvas-tabs { display: flex; gap: 4px; padding: 12px 24px 0; border-bottom: 1px solid hsl(var(--border)); }
+  .canvas-tab { padding: 8px 14px; border: 1px solid transparent; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; font-weight: 500; }
+  .canvas-tab.active { background: hsl(var(--card)); border-color: hsl(var(--border)); color: hsl(var(--foreground)); position: relative; bottom: -1px; }
+  .canvas-tab .badge { font-size: 10px; padding: 1px 6px; margin-left: 4px; }
+
+  .canvas-body { flex: 1; overflow-y: auto; padding: 32px 56px; max-width: 800px; min-height: 0; }
+  .canvas-body h1.draft-title { font-size: 30px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .canvas-body .draft-meta { color: hsl(var(--muted-foreground)); font-size: 13px; margin-bottom: 24px; display: flex; gap: 12px; }
+  .canvas-body h2 { font-size: 18px; margin: 24px 0 8px; letter-spacing: -0.01em; }
+  .canvas-body p { line-height: 1.65; margin: 0 0 14px; font-size: 15px; }
+  .canvas-body blockquote { border-left: 3px solid hsl(var(--primary)); padding: 4px 16px; margin: 16px 0; font-style: italic; background: hsl(var(--primary) / 0.04); }
+
+  .completeness { position: fixed; bottom: 16px; right: 16px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 12px; padding: 10px 14px; box-shadow: 0 8px 24px hsl(0 0% 0% / 0.06); display: flex; align-items: center; gap: 10px; }
+  .completeness .ring { width: 24px; height: 24px; border-radius: 50%; background: conic-gradient(hsl(var(--success)) 0deg 252deg, hsl(var(--muted)) 252deg 360deg); display: grid; place-items: center; }
+  .completeness .ring::after { content: ""; width: 14px; height: 14px; background: hsl(var(--card)); border-radius: 50%; }
+</style>
+</head>
+<body data-wired="📌 wired to:<br>app/(dashboard)/interview/[id]/live/page.tsx<br>WebRTC ↔ gpt-realtime-2 (ephemeral token)<br>SSE /api/v1/interviews/[id]/stream<br>Claude Sonnet 4.6 writer worker">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12">
+    <span class="live-dot"></span>
+    <span class="font-medium">Interview · EEAT post</span>
+    <span class="muted text-sm">our migration off Postgres to PlanetScale</span>
+  </div>
+  <div class="center">
+    <span class="cost">$0.84 / 5min budget</span>
+    <span class="timer">⏱ 06:12 / 10:00</span>
+    <button class="btn btn-sm">⚙</button>
+    <button class="btn btn-destructive btn-sm">End interview</button>
+  </div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="orb-area">
+      <div class="orb orb-state-speaking orb-speaking" style="--orb-size: 140px;"></div>
+      <div class="muted text-xs mt-12" style="margin-top:32px;">AI is speaking…</div>
+    </div>
+
+    <div class="transcript-area col">
+      <div class="chat-row">
+        <div class="chat-avatar ai"></div>
+        <div class="chat-bubble"><div class="meta">AI · 02:14</div>So when you say "incremental migration" — what was the test that gave you confidence to start moving real reads?</div>
+      </div>
+      <div class="chat-row">
+        <div class="chat-avatar user"></div>
+        <div class="chat-bubble"><div class="meta">You · 02:24</div>We mirrored about 5% of read traffic for two weeks. The error rate on PlanetScale was actually lower than Postgres, which was a bit embarrassing.</div>
+      </div>
+      <div class="chat-row">
+        <div class="chat-avatar ai"></div>
+        <div class="chat-bubble"><div class="meta">AI · 03:08</div>Got it — and what about writes? When did you flip the canonical?</div>
+      </div>
+      <div class="chat-row">
+        <div class="chat-avatar user"></div>
+        <div class="chat-bubble"><div class="meta">You · 03:18</div>Writes were trickier. We did dual-write for about ten days and reconciled with a checksum job every hour. Two rows got out of sync — both due to a timezone bug in the checksum, not the DBs.</div>
+      </div>
+      <div class="chat-row">
+        <div class="chat-avatar ai"></div>
+        <div class="chat-bubble"><div class="meta">AI · 05:42</div>That's gold. Could you give me a quotable line for what advice you'd give someone planning this migration?</div>
+      </div>
+      <div class="chat-row">
+        <div class="chat-avatar user"></div>
+        <div class="chat-bubble"><div class="meta">You · 05:58</div>"Mirror reads for longer than you think you need to. The hour you'd save by rushing is bought back 100x by the bugs you don't ship."</div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="input-row">
+        <button class="icon-btn" title="Attach">📎</button>
+        <textarea placeholder="Drop context, type a note, paste a link…"></textarea>
+        <button class="icon-btn">↑</button>
+      </div>
+      <div class="row mt-8" style="flex-wrap:wrap; gap: 6px;">
+        <span class="badge badge-outline">📎 migration-runbook.md</span>
+        <span class="badge badge-outline">🔗 internal-launch-doc</span>
+      </div>
+      <div class="control-row">
+        <button class="mic-btn" title="Mute mic">🎙️</button>
+        <span class="text-xs muted">Mic on</span>
+        <span style="flex:1"></span>
+        <span class="text-xs muted">Hold space to interject</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="right-rail">
+    <div class="canvas-tabs">
+      <button class="canvas-tab active">📄 Body <span class="badge badge-info">2 sections</span></button>
+      <button class="canvas-tab">🖼️ Image</button>
+      <button class="canvas-tab">🎯 SEO</button>
+      <button class="canvas-tab">✓ Ready? <span class="badge">70%</span></button>
+    </div>
+    <div class="canvas-body">
+      <h1 class="draft-title">Mirrored 5% of reads — what migrating off Postgres to PlanetScale actually taught us</h1>
+      <div class="draft-meta"><span>by Pooria Arab</span><span>· 8 min read</span><span>· auto-drafted from interview</span></div>
+
+      <h2>Why we started</h2>
+      <p class="canvas-refined">Our Postgres setup was healthy — until it wasn't. A handful of long-running transactions during EU peak hours started knocking over read replicas, and the fix-vs-replace conversation had been quietly looping for two quarters. PlanetScale promised horizontal scale without the operational weight, but the team's gut said: don't trust the promise; trust the migration plan.</p>
+
+      <h2>The mirror-first approach</h2>
+      <p class="canvas-refined">We didn't cut over. We mirrored: roughly 5% of read traffic to PlanetScale in parallel with Postgres for two weeks. The point wasn't performance benchmarks — it was discovering the shape of failure. What surprised us was that error rate on PlanetScale was meaningfully lower than on Postgres. Embarrassing, useful.</p>
+
+      <p class="canvas-refined">Writes were the harder problem. We dual-wrote for ten days, then reconciled with an hourly checksum job. Two rows ever fell out of sync — and both turned out to be a timezone bug in the checksum itself, not the databases.</p>
+
+      <h2>What we wish someone had told us</h2>
+      <p class="canvas-placeholder canvas-streaming">Mirror reads for longer than you think you need to. The hour you'd save by rushing</p>
+
+      <blockquote>"Mirror reads for longer than you think you need to. The hour you'd save by rushing is bought back 100x by the bugs you don't ship."<br><span class="text-xs muted">— Pooria Arab</span></blockquote>
+
+      <h2>Sections still to cover</h2>
+      <p class="canvas-placeholder">The cost story · cutover day · what we'd do differently · open questions</p>
+    </div>
+  </main>
+</div>
+
+<div class="completeness">
+  <div class="ring"></div>
+  <div>
+    <div class="text-sm font-medium">70% ready</div>
+    <div class="text-xs muted">body · image · seo · 1 EEAT signal missing</div>
+  </div>
+</div>
+</body>
+</html>

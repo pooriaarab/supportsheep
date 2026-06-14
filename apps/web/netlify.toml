@@ -1,0 +1,46 @@
+# Netlify build config for blogbat.com
+#
+# Per-context env-var invariant (W7.6 Bug 6.3):
+#   - deploy-preview & branch-deploy contexts enable INTERVIEW_E2E_TEST_SEED
+#     and INTERVIEW_MAGIC_LINK_TEST_CAPTURE so the test-only seed routes
+#     (apps/web/src/app/api/v1/interviews/test-only/*) respond instead of
+#     404-ing. This is what unblocks PR #225 (per-category e2e) and PR #233
+#     (deploy-preview interview matrix smoke).
+#   - production context MUST NOT enable these flags. The test-only routes
+#     refuse to mint sessions or dispatch tools when the flag is unset, so
+#     leaving them unset in prod is the belt for the suspenders in
+#     route.ts (env check) and the allowlist gates.
+#
+# The dev-login route (`/api/v1/auth/dev-login`, PR #232) is *NOT* configured
+# here -- its activation env vars (ENABLE_DEV_LOGIN, DEV_LOGIN_SECRET) live
+# only in the Netlify UI for the production context, so the secret never
+# enters git. See docs/dev/PROD_DEBUG.md for the activation runbook.
+
+[build]
+  command = "bunx turbo run build --filter=@repo/web"
+  publish = "apps/web/.next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  SKIP_NEXT_BUILD_TYPECHECK = "true"
+
+# Deploy previews (PRs) -- enable test-only seed routes so e2e suites work.
+[context.deploy-preview.environment]
+  INTERVIEW_E2E_TEST_SEED = "true"
+  INTERVIEW_MAGIC_LINK_TEST_CAPTURE = "true"
+
+# Branch deploys (non-main branches) -- same as deploy previews.
+[context.branch-deploy.environment]
+  INTERVIEW_E2E_TEST_SEED = "true"
+  INTERVIEW_MAGIC_LINK_TEST_CAPTURE = "true"
+
+# Production -- explicit empty block. Test-only flags MUST stay unset here.
+# Do not add INTERVIEW_E2E_TEST_SEED or INTERVIEW_MAGIC_LINK_TEST_CAPTURE.
+[context.production.environment]
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Canvas · SEO tab · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; min-height: 0; }
+  .left-rail { background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .right-rail { display: flex; flex-direction: column; }
+  .canvas-tabs { display: flex; gap: 4px; padding: 12px 24px 0; border-bottom: 1px solid hsl(var(--border)); }
+  .canvas-tab { padding: 8px 14px; border: 1px solid transparent; border-bottom: none; border-radius: 8px 8px 0 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; cursor: pointer; }
+  .canvas-tab.active { background: hsl(var(--card)); border-color: hsl(var(--border)); color: hsl(var(--foreground)); position: relative; bottom: -1px; }
+  .canvas-body { flex: 1; padding: 32px 56px; max-width: 820px; overflow-y: auto; }
+  .serp-preview { padding: 14px 16px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; }
+  .serp-url { color: hsl(142 76% 30%); font-size: 12px; }
+  .serp-title { color: hsl(217 91% 45%); font-size: 18px; margin: 4px 0; }
+  .serp-snippet { color: hsl(var(--muted-foreground)); font-size: 13px; line-height: 1.5; }
+  .score-bar { height: 6px; background: hsl(var(--muted)); border-radius: 3px; overflow: hidden; }
+  .score-bar .fill { height: 100%; background: hsl(var(--success)); width: 84%; }
+  .score-card { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .score-cell { background: hsl(var(--muted)); padding: 12px; border-radius: 8px; text-align: center; }
+  .score-cell .v { font-size: 22px; font-weight: 600; }
+  .score-cell .l { font-size: 11px; color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: 0.04em; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12"><span class="live-dot"></span><span class="font-medium">Interview · EEAT post</span></div>
+  <div class="row gap-12"><span style="font-family: ui-monospace; font-size: 13px;">⏱ 06:12 / 10:00</span><button class="btn btn-destructive btn-sm">End</button></div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center"><div class="orb orb-state-listening orb-listening" style="--orb-size: 100px;"></div></div>
+  </aside>
+
+  <main class="right-rail">
+    <div class="canvas-tabs">
+      <button class="canvas-tab">📄 Body</button>
+      <button class="canvas-tab">🖼️ Image</button>
+      <button class="canvas-tab active">🎯 SEO <span class="badge badge-success">84</span></button>
+      <button class="canvas-tab">✓ Ready? <span class="badge">70%</span></button>
+    </div>
+    <div class="canvas-body col gap-16">
+      <div class="score-card">
+        <div class="score-cell"><div class="v">84</div><div class="l">SEO score</div></div>
+        <div class="score-cell"><div class="v">7.5</div><div class="l">EEAT signals</div></div>
+        <div class="score-cell"><div class="v">2.4k</div><div class="l">Word count est.</div></div>
+      </div>
+
+      <div>
+        <h2 class="h2 mb-8">Live preview — Google SERP</h2>
+        <div class="serp-preview">
+          <div class="serp-url">blogbat.com › 5-percent-mirror-postgres-planetscale</div>
+          <div class="serp-title">Mirrored 5% of reads — what migrating off Postgres to PlanetScale actually taught us</div>
+          <div class="serp-snippet">We mirrored 5% of read traffic for two weeks before flipping the canonical. Here's the runbook, the bugs we caught, and the one piece of advice we'd give anyone planning the migration.</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="h3 mb-8">Meta title <span class="muted text-xs">68 / 70 chars</span></h3>
+        <input class="input" value="Mirrored 5% of reads — what migrating off Postgres to PlanetScale taught us" />
+      </div>
+
+      <div>
+        <h3 class="h3 mb-8">Meta description <span class="muted text-xs">154 / 160 chars</span></h3>
+        <textarea class="input" rows="2">We mirrored 5% of read traffic for two weeks before flipping the canonical. Here's the runbook, the bugs we caught, and the one piece of advice we'd give.</textarea>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3 class="h3 mb-8">Suggested tags</h3>
+          <div class="row gap-12" style="flex-wrap:wrap;">
+            <span class="badge">postgres</span>
+            <span class="badge">planetscale</span>
+            <span class="badge">migration</span>
+            <span class="badge">infrastructure</span>
+            <span class="badge">case-study</span>
+            <button class="btn btn-sm btn-ghost">+ Add</button>
+          </div>
+        </div>
+        <div>
+          <h3 class="h3 mb-8">Category</h3>
+          <select class="input">
+            <option>Engineering</option>
+            <option selected>Engineering &gt; Infrastructure</option>
+            <option>Engineering &gt; Databases</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="h3 mb-8">Suggested internal links</h3>
+        <div class="col-tight">
+          <label class="row gap-12"><input type="checkbox" checked /> <span>Our Postgres optimization playbook</span><span class="muted text-xs">section 2</span></label>
+          <label class="row gap-12"><input type="checkbox" checked /> <span>Cost of downtime calculator</span><span class="muted text-xs">section 3</span></label>
+          <label class="row gap-12"><input type="checkbox" /> <span>Migration runbook template</span><span class="muted text-xs">closing</span></label>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>G4 · Consent · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; }
+  .public-shell { max-width: 620px; margin: 0 auto; padding: 48px 24px; }
+  .brand-row { display: flex; align-items: center; gap: 8px; font-weight: 600; color: hsl(var(--muted-foreground)); margin-bottom: 24px; }
+  .consent-card { padding: 28px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 14px; }
+  .recording-list { display: grid; gap: 10px; margin-top: 12px; }
+  .rec-item { display: flex; gap: 12px; padding: 12px 14px; background: hsl(var(--muted) / 0.4); border-radius: 8px; border: 1px solid hsl(var(--border)); align-items: flex-start; }
+  .rec-item input { margin-top: 3px; }
+  .rec-item.disabled { opacity: 0.5; }
+  .rights-list { display: grid; gap: 8px; margin-top: 8px; }
+  .rights-list li { display: flex; gap: 10px; }
+  .rights-list .icon { color: hsl(var(--success)); }
+</style>
+</head>
+<body data-wired="📌 wired to:<br>app/(public)/i/[token]/consent/page.tsx<br>POST /api/v1/interviews/[id]/consent<br>mints OpenAI Realtime ephemeral token (60s TTL)<br>transitions session: consent → live">
+<script src="../shared/shell.js" defer></script>
+<div class="public-shell">
+  <div class="brand-row">blogbat</div>
+
+  <div class="consent-card">
+    <div class="text-xs muted">Step 2 of 2 · before we start</div>
+    <h1 class="h1 mt-4">Quick consent check</h1>
+    <p class="muted">We want to be explicit about what's captured during this 10-minute voice interview.</p>
+
+    <h3 class="h3 mb-8 mt-16">What we'll record</h3>
+    <div class="recording-list">
+      <label class="rec-item">
+        <input type="checkbox" checked />
+        <div>
+          <strong>📝 Transcribe my voice to text</strong>
+          <div class="text-sm muted mt-4">Real-time text transcript of the call. Used by the AI writer to draft the blog post. Kept in our system 365 days.</div>
+        </div>
+      </label>
+      <label class="rec-item">
+        <input type="checkbox" checked />
+        <div>
+          <strong>🎙️ Save the audio recording</strong>
+          <div class="text-sm muted mt-4">Audio file (.opus) stored in Firebase Storage for 90 days, then auto-deleted. Used to verify any direct quotes before publishing.</div>
+        </div>
+      </label>
+      <label class="rec-item disabled">
+        <input type="checkbox" disabled />
+        <div>
+          <strong>🎥 Save video</strong> <span class="badge badge-outline">Not enabled for this link</span>
+          <div class="text-sm muted mt-4">The host didn't enable video for this interview.</div>
+        </div>
+      </label>
+    </div>
+
+    <h3 class="h3 mb-8 mt-24">Your rights during the call</h3>
+    <ul class="rights-list" style="list-style: none; padding: 0; margin: 0;">
+      <li><span class="icon">✓</span> Ask the AI to "stop and delete" at any time — it'll save nothing.</li>
+      <li><span class="icon">✓</span> Hang up whenever — partial drafts won't be saved unless you opt in.</li>
+      <li><span class="icon">✓</span> Email <a href="mailto:privacy@blogbat.com">privacy@blogbat.com</a> later to delete everything.</li>
+      <li><span class="icon">✓</span> Choose your attribution: by name, by first name only, or anonymously.</li>
+    </ul>
+
+    <label class="row gap-12 mt-16">
+      <input type="checkbox" />
+      <span class="text-sm">I'm at least 16 years old and I've read and agree to the <a href="#">privacy notice</a>.</span>
+    </label>
+
+    <div class="row gap-12 mt-24">
+      <button class="btn" style="flex:1">Decline &amp; exit</button>
+      <button class="btn btn-primary" style="flex:2" onclick="window.location='./in-call-desktop.html'">I consent — start the interview 🎙️</button>
+    </div>
+  </div>
+
+  <div class="text-xs muted text-center mt-16">
+    This call uses OpenAI's realtime API. <a href="#">Read how data flows ↗</a>
+  </div>
+</div>
+</body>
+</html>

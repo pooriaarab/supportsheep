@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>A1 · Share-link list · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+</head>
+<body data-shell="dashboard" data-wired="📌 wired to:<br>app/(dashboard)/interview/links/page.tsx<br>api/v1/interviews/share-links GET<br>collections.shareLinks()<br>uses @/components/ui/data-display/data-table">
+<script src="../shared/shell.js" defer></script>
+
+<div class="topbar">
+  <div>
+    <h1 class="h1">Interview share links</h1>
+    <p class="subtle-text">Mint, manage and revoke voice-interview links for guests.</p>
+  </div>
+  <div class="row gap-12">
+    <button class="btn">Filter</button>
+    <button class="btn btn-primary" onclick="window.location='./full-create.html'">+ New share link</button>
+  </div>
+</div>
+
+<div class="card p-0">
+  <div class="row-between p-12" style="border-bottom: 1px solid hsl(var(--border));">
+    <div class="row gap-12">
+      <input class="input" style="width:240px" placeholder="Search by topic, host…" />
+      <div class="seg">
+        <button class="active">All <span class="muted">· 24</span></button>
+        <button>Active <span class="muted">· 18</span></button>
+        <button>Expired <span class="muted">· 4</span></button>
+        <button>Revoked <span class="muted">· 2</span></button>
+      </div>
+    </div>
+    <div class="row gap-12">
+      <span class="text-sm muted">Display</span>
+      <button class="btn btn-sm">⋯</button>
+    </div>
+  </div>
+  <table class="data">
+    <thead>
+      <tr>
+        <th style="width:32px"><input type="checkbox" /></th>
+        <th>Topic</th>
+        <th>Type</th>
+        <th>Style</th>
+        <th>Recording</th>
+        <th>Duration</th>
+        <th>Uses</th>
+        <th>Expires</th>
+        <th>Status</th>
+        <th class="row-actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium">Why you switched from Notion to BlogBat</div><div class="text-xs muted">Created by Pooria · 12 May 2026</div></td>
+        <td><span class="badge badge-info"><span class="dot"></span> Link</span></td>
+        <td>Testimonial</td>
+        <td>🎙️ Audio</td>
+        <td>10 min</td>
+        <td>1 / 1</td>
+        <td>20 May</td>
+        <td><span class="badge badge-success">Active</span></td>
+        <td class="row-actions"><button class="btn btn-sm">Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium">EEAT post: agentic SEO playbook</div><div class="text-xs muted">Created by Sarah · 11 May 2026</div></td>
+        <td><span class="badge badge-info"><span class="dot"></span> Link</span></td>
+        <td>EEAT thought-leadership</td>
+        <td>📝 Transcript</td>
+        <td>15 min</td>
+        <td>0 / ∞</td>
+        <td>—</td>
+        <td><span class="badge badge-success">Active</span></td>
+        <td class="row-actions"><button class="btn btn-sm">Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium">Case study with Acme Co.</div><div class="text-xs muted">Created by Pooria · 9 May 2026</div></td>
+        <td><span class="badge badge-outline"><span class="dot"></span> Workspace</span></td>
+        <td>Case study</td>
+        <td>🎙️ Audio</td>
+        <td>20 min</td>
+        <td>1 / 3</td>
+        <td>15 Jun</td>
+        <td><span class="badge badge-success">Active</span></td>
+        <td class="row-actions"><button class="btn btn-sm">Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium">Q&A: AI-native marketing stack</div><div class="text-xs muted">Created by Tom · 5 May 2026</div></td>
+        <td><span class="badge"><span class="dot"></span> Private</span></td>
+        <td>Q&A post</td>
+        <td>📝 Transcript</td>
+        <td>5 min</td>
+        <td>2 / ∞</td>
+        <td>—</td>
+        <td><span class="badge badge-success">Active</span></td>
+        <td class="row-actions"><button class="btn btn-sm">Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium">Launch story: BlogBat Search</div><div class="text-xs muted">Created by Sarah · 1 May 2026</div></td>
+        <td><span class="badge badge-info"><span class="dot"></span> Link</span></td>
+        <td>Product launch</td>
+        <td>🎙️ Audio</td>
+        <td>10 min</td>
+        <td>3 / ∞</td>
+        <td>—</td>
+        <td><span class="badge badge-warning">Expires in 2d</span></td>
+        <td class="row-actions"><button class="btn btn-sm">Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium" style="text-decoration: line-through; opacity: 0.6;">Why we love portable LLMs</div><div class="text-xs muted">Created by Pooria · 22 Apr 2026</div></td>
+        <td><span class="badge badge-info"><span class="dot"></span> Link</span></td>
+        <td>EEAT</td>
+        <td>📝 Transcript</td>
+        <td>10 min</td>
+        <td>0 / 1</td>
+        <td>—</td>
+        <td><span class="badge badge-destructive">Revoked</span></td>
+        <td class="row-actions"><button class="btn btn-sm" disabled>Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><div class="font-medium" style="opacity:0.6;">Q1 customer interviews · batch 3</div><div class="text-xs muted">Created by Tom · 14 Apr 2026</div></td>
+        <td><span class="badge badge-info"><span class="dot"></span> Link</span></td>
+        <td>Testimonial</td>
+        <td>🎙️ Audio</td>
+        <td>10 min</td>
+        <td>12 / 12</td>
+        <td>30 Apr</td>
+        <td><span class="badge">Expired</span></td>
+        <td class="row-actions"><button class="btn btn-sm" disabled>Copy URL</button> <button class="btn btn-sm btn-ghost">⋯</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row-between p-12" style="border-top: 1px solid hsl(var(--border));">
+    <span class="muted text-sm">Showing 7 of 24</span>
+    <div class="row gap-12">
+      <button class="btn btn-sm">‹ Prev</button>
+      <button class="btn btn-sm">Next ›</button>
+    </div>
+  </div>
+</div>
+
+<div class="mt-24 row gap-12">
+  <a href="./quick-create.html" class="btn btn-sm">→ Quick-create modal</a>
+  <a href="./full-create.html" class="btn btn-sm">→ Full-create modal</a>
+  <a href="./link-detail.html" class="btn btn-sm">→ Link detail</a>
+  <a href="./session-detail.html" class="btn btn-sm">→ Session detail</a>
+</div>
+</body>
+</html>

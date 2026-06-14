@@ -1,0 +1,143 @@
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+import unicorn from "eslint-plugin-unicorn";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  {
+    plugins: { unicorn },
+    rules: {
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "kebabCase",
+          ignore: [
+            // Markdown files (README.md, CATALOG.md, etc.)
+            "\\.md$",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          prefer: "type-imports",
+          fixStyle: "separate-type-imports",
+          disallowTypeAnnotations: false,
+        },
+      ],
+      "@typescript-eslint/no-explicit-any": "error",
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-new-func": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+      "no-console": ["error", { allow: ["debug", "info", "warn", "error"] }],
+      // Ban hardcoded Tailwind color classes — use semantic tokens instead.
+      // Ban direct useEffect — use useMountEffect or other patterns.
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector:
+            "Literal[value=/(^|\\s)(text|bg|border|ring|from|to|via|fill|stroke|shadow|outline|decoration|accent|caret|divide|placeholder)-(red|blue|green|yellow|gray|orange|purple|pink|indigo|cyan|teal|emerald|lime|amber|violet|fuchsia|rose|slate|zinc|stone|neutral|sky|warmGray|trueGray|coolGray|blueGray)-\\d/]",
+          message:
+            "Avoid hardcoded Tailwind color classes. Use semantic tokens instead (e.g., text-error, bg-success-subtle, border-warning).",
+        },
+        {
+          selector:
+            "CallExpression[callee.name='useEffect']",
+          message:
+            "Direct useEffect is banned. Use useMountEffect() for mount-only effects, derived state (useMemo/inline), TanStack Query for data fetching, event handlers for user actions, or key props for resets. See: https://react.dev/learn/you-might-not-need-an-effect",
+        },
+      ],
+    },
+  },
+  // Ban firebase-admin direct imports in React components, pages, and hooks.
+  // firebase-admin only works in Node.js — importing it from client/edge-compatible
+  // files breaks deployments (edge functions can't resolve the module).
+  {
+    files: [
+      "src/components/**/*.ts",
+      "src/components/**/*.tsx",
+      "src/hooks/**/*.ts",
+      "src/hooks/**/*.tsx",
+      "src/app/**/*.tsx",
+    ],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["firebase-admin", "firebase-admin/*"],
+              message:
+                "firebase-admin cannot be imported in client/component files. Use @/lib/firebase wrappers instead.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  // Ban STATIC firebase-admin imports on the auth/handler hot path.
+  // These files are imported (directly or transitively) by every
+  // createApiHandler route. A static firebase-admin import drags
+  // gRPC/protobufjs into the Worker bundle, which JIT-compiles via
+  // `new Function` at module-evaluation time and 500s on workerd
+  // (EvalError: Code generation from strings disallowed). Use a lazy
+  // `await import(...)` inside the Firebase fallback branch instead —
+  // no-restricted-imports only flags static imports, so dynamic
+  // import() is intentionally still allowed.
+  {
+    files: [
+      // The full createApiHandler hot path — every module createApiHandler
+      // imports (directly or transitively). ANY static firebase-admin import
+      // in one of these poisons every API route built on createApiHandler.
+      "src/lib/auth/session.ts",
+      "src/lib/create-api-handler.ts",
+      "src/lib/api-utils.ts",
+      "src/lib/rate-limit.ts",
+      "src/lib/audit-log.ts",
+    ],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: [
+                "firebase-admin",
+                "firebase-admin/*",
+                "@/lib/db/firebase-admin",
+              ],
+              message:
+                "Static firebase-admin import on the auth/handler hot path drags protobufjs into the Worker bundle and 500s on Workers (EvalError: Code generation from strings disallowed). Use a lazy `await import(\"@/lib/db/firebase-admin\")` inside the fallback branch instead.",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    // OpenNext / Wrangler build output (generated by `cf:build`)
+    ".open-next/**",
+    ".wrangler/**",
+  ]),
+]);
+
+export default eslintConfig;

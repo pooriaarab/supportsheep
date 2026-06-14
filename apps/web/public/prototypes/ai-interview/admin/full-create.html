@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>A3 · Full share-link modal · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  .seg-full { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .seg-full button { border: 1px solid hsl(var(--border)); background: hsl(var(--card)); padding: 10px; border-radius: 8px; text-align: left; cursor: pointer; transition: border-color 120ms ease; }
+  .seg-full button.active { border-color: hsl(var(--primary)); background: hsl(var(--primary) / 0.06); }
+  .seg-full .title { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+  .seg-full .desc { font-size: 11.5px; color: hsl(var(--muted-foreground)); line-height: 1.35; }
+  .slider { width: 100%; }
+  .recording-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .recording-row label { border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 10px; cursor: pointer; }
+  .recording-row label.selected { border-color: hsl(var(--primary)); background: hsl(var(--primary) / 0.06); }
+  .recording-row label.disabled { opacity: 0.5; cursor: not-allowed; }
+</style>
+</head>
+<body data-shell="dashboard" data-wired="📌 wired to:<br>api/v1/interviews/share-links POST<br>create-api-handler · auth: admin|editor<br>Visibility type from the admin/chat/share/share-dialog-types.ts<br>uses ConfirmDialog · DataTable composites">
+<script src="../shared/shell.js" defer></script>
+
+<div class="topbar">
+  <div><h1 class="h1">Interview share links</h1></div>
+</div>
+
+<div class="card" style="filter: blur(2px); opacity: 0.6;"><p class="muted">(background table dimmed)</p></div>
+
+<div class="overlay">
+  <div class="dialog" style="max-width: 640px;">
+    <div class="dialog-header">
+      <div>
+        <h2 class="dialog-title">Create share link</h2>
+        <div class="subtle-text mt-4">Configure what the interview is, who can join, and what gets captured.</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="window.location='./links-list.html'">✕</button>
+    </div>
+    <div class="dialog-body col gap-24">
+
+      <!-- visibility -->
+      <section>
+        <h3 class="h3 mb-8">Who can join</h3>
+        <div class="seg-full">
+          <button>
+            <div class="title">🔒 Private</div>
+            <div class="desc">Workspace members only. No external access.</div>
+          </button>
+          <button class="active">
+            <div class="title">🔗 Link</div>
+            <div class="desc">Anyone with the link. Configure a gate below.</div>
+          </button>
+          <button>
+            <div class="title">🏢 Workspace</div>
+            <div class="desc">Anyone signed into this workspace.</div>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="h3 mb-8">Gate (Link only)</h3>
+        <div class="row gap-12" style="flex-wrap:wrap;">
+          <label class="badge badge-outline" style="cursor:pointer;"><input type="radio" name="auth" /> Anonymous</label>
+          <label class="badge badge-outline" style="cursor:pointer; border-color: hsl(var(--primary)); color: hsl(var(--primary));"><input type="radio" name="auth" checked /> Email-gated</label>
+          <label class="badge badge-outline" style="cursor:pointer;"><input type="radio" name="auth" /> Magic-link account</label>
+        </div>
+      </section>
+
+      <!-- topic + goal -->
+      <section>
+        <h3 class="h3 mb-8">What it's about</h3>
+        <label class="label">Topic</label>
+        <input class="input" value="Why you switched from Notion to BlogBat" />
+        <label class="label mt-12">Goal (optional)</label>
+        <textarea class="input" rows="2" placeholder="What do you want this interview to produce? E.g. a 600-word testimonial focusing on time saved.">A short customer testimonial focusing on time saved and workflow improvements. Should produce a quote we can pull-out.</textarea>
+        <div class="hint">If left blank with smart style, the AI asks the guest at the start.</div>
+      </section>
+
+      <!-- style -->
+      <section>
+        <h3 class="h3 mb-8">Interview style</h3>
+        <div class="seg-full">
+          <button class="active">
+            <div class="title">📣 Testimonial</div>
+            <div class="desc">Pulls out a strong quote + attribution.</div>
+          </button>
+          <button>
+            <div class="title">🎓 EEAT</div>
+            <div class="desc">Expertise &amp; authority signals for SEO.</div>
+          </button>
+          <button>
+            <div class="title">🧪 Case study</div>
+            <div class="desc">Problem · approach · result format.</div>
+          </button>
+          <button>
+            <div class="title">❓ Q&amp;A post</div>
+            <div class="desc">Lightly edited transcript-as-post.</div>
+          </button>
+          <button>
+            <div class="title">🚀 Launch story</div>
+            <div class="desc">Origin story · journey · outcome.</div>
+          </button>
+          <button>
+            <div class="title">🧠 Smart</div>
+            <div class="desc">AI picks the right shape from the goal.</div>
+          </button>
+        </div>
+      </section>
+
+      <!-- recording -->
+      <section>
+        <h3 class="h3 mb-8">What we capture</h3>
+        <div class="recording-row">
+          <label>
+            <input type="radio" name="rec" /> <strong>📝 Transcript only</strong>
+            <div class="hint mt-4">Text transcript only. Audio is processed and discarded.</div>
+          </label>
+          <label class="selected">
+            <input type="radio" name="rec" checked /> <strong>🎙️ + Audio</strong>
+            <div class="hint mt-4">Save the audio for review and quote-verification.</div>
+          </label>
+          <label class="disabled">
+            <input type="radio" name="rec" disabled /> <strong>🎥 + Video</strong>
+            <div class="hint mt-4">Tavus video — coming in V1.</div>
+          </label>
+        </div>
+        <div class="hint mt-8">The guest sees an explicit consent screen before joining.</div>
+      </section>
+
+      <!-- duration -->
+      <section>
+        <h3 class="h3 mb-8">Duration</h3>
+        <div class="row gap-12">
+          <input class="slider" type="range" min="2" max="30" value="10" style="flex:1" />
+          <span class="badge badge-outline" style="min-width:72px; justify-content:center;">10 min</span>
+        </div>
+        <div class="hint">Default 5 min. Max 30 min. At 90%, the AI will signal you have one more topic to cover.</div>
+      </section>
+
+      <!-- expiry + uses -->
+      <section>
+        <h3 class="h3 mb-8">Validity</h3>
+        <div class="grid-2">
+          <div>
+            <label class="label">Expires</label>
+            <input class="input" type="date" value="2026-06-15" />
+          </div>
+          <div>
+            <label class="label">Max uses</label>
+            <select class="input">
+              <option>1 (one-time link)</option>
+              <option selected>3</option>
+              <option>10</option>
+              <option>Unlimited</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn btn-ghost" onclick="window.location='./links-list.html'">Cancel</button>
+      <button class="btn">Save as draft</button>
+      <button class="btn btn-primary" onclick="window.location='./copy-success.html'">Create &amp; copy URL</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

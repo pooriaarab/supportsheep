@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B10 · Network drop · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .err-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 0.6s ease-in-out infinite; }
+  .banner { padding: 14px 16px; background: hsl(var(--destructive) / 0.1); border-bottom: 1px solid hsl(var(--destructive) / 0.4); display: flex; align-items: center; gap: 12px; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; }
+  .left-rail { background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); padding: 16px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .right-rail { padding: 24px 56px; max-width: 760px; opacity: 0.6; }
+  .recon-card { background: hsl(var(--muted)); border-radius: 12px; padding: 16px; width: 100%; }
+  .progress-bar { height: 4px; background: hsl(var(--border-strong)); border-radius: 2px; overflow: hidden; margin-top: 8px; }
+  .progress-bar .bar { height: 100%; width: 45%; background: hsl(var(--primary)); animation: recon 1.4s ease-in-out infinite alternate; }
+  @keyframes recon { to { width: 80%; } }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12"><span class="err-dot"></span><span class="font-medium">Connection lost — reconnecting…</span></div>
+  <div class="row gap-12">
+    <span style="font-family: ui-monospace; font-size: 13px; color: hsl(var(--muted-foreground));">⏱ paused at 04:22</span>
+    <button class="btn btn-sm">End interview</button>
+  </div>
+</div>
+
+<div class="banner">
+  <span style="font-size: 18px; color: hsl(var(--destructive));">⚠</span>
+  <div>
+    <strong>We lost the WebRTC connection.</strong>
+    <span class="muted">Trying to reconnect — your draft and transcript are safe.</span>
+  </div>
+  <div style="flex:1"></div>
+  <button class="btn btn-sm">Try now</button>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center">
+      <div class="orb orb-state-error orb-listening" style="--orb-size: 110px;"></div>
+      <div class="text-xs mt-12" style="margin-top: 28px; color: hsl(var(--destructive));">Disconnected</div>
+    </div>
+    <div class="recon-card">
+      <div class="font-medium">Reconnecting…</div>
+      <div class="text-xs muted">Attempt 2 of 3 · resuming session in ~3s</div>
+      <div class="progress-bar"><div class="bar"></div></div>
+    </div>
+    <div class="text-xs muted text-center" style="margin-top: auto;">Still not back? <a href="#">End the call &amp; save what we have</a></div>
+  </aside>
+
+  <main class="right-rail">
+    <h2 class="h2 mb-8">Canvas preserved</h2>
+    <p>Your draft so far is saved server-side. When we reconnect, we'll pick up exactly where you left off.</p>
+    <p class="muted">— up to 04:22 was: "Writes were the harder problem. We dual-wrote for ten days and reconciled with a checksum job every hour."</p>
+  </main>
+</div>
+</body>
+</html>

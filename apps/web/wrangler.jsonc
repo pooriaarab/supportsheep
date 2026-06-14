@@ -1,0 +1,148 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Shared base. Deploy a named env explicitly: `wrangler deploy --env staging|production`.
+  "name": "blogbat",
+  "account_id": "4fd11561cd1f5c452d97912140c0af9e",
+  "main": "./.open-next/worker.js",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "minify": true,
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./.open-next/assets"
+  },
+  "observability": { "enabled": true },
+  "placement": { "mode": "smart" },
+
+  "env": {
+    "staging": {
+      "name": "blogbat-staging",
+      // staging.blogbat.com is served by this worker (blogbat.com zone is on the account).
+      //
+      // M5 subdomain routing (manual infra step — NOT wired here): for tenant
+      // blogs at `{slug}.blogbat.com` (or `{slug}.staging.blogbat.com`) to reach
+      // this worker, add a wildcard worker route plus a wildcard DNS record, e.g.
+      //   { "pattern": "*.staging.blogbat.com", "custom_domain": false }
+      // (a wildcard route needs a zone route, not a `custom_domain: true` entry,
+      // and a matching `*.staging` CNAME/AAAA on the zone). Until that exists,
+      // `resolveBlogIdByHost`/`getRequestBlogId` simply falls back to
+      // DEFAULT_BLOG_ID, so current single-tenant behavior is preserved.
+      // NOTE: staging intentionally has NO `*/*` catch-all route. Staging shares
+      // the blogbat.com zone with production, and a zone can have only one `*/*`
+      // route — a second one here would conflict with production's. As a result,
+      // serving Cloudflare for SaaS external custom domains is unsupported on
+      // staging.
+      // The `custom_domain` binding alone is NOT enough: production's `*/*`
+      // SaaS catch-all (on this same blogbat.com zone, → blogbat-production)
+      // outranks a `custom_domain` binding and silently hijacks
+      // staging.blogbat.com to the PROD worker. This MORE-SPECIFIC zone route
+      // reclaims staging.blogbat.com for blogbat-staging.
+      "routes": [
+        { "pattern": "staging.blogbat.com", "custom_domain": true },
+        { "pattern": "staging.blogbat.com/*", "zone_name": "blogbat.com" }
+      ],
+      // Cron Trigger for the custom-domain status poller. NOTE: the OpenNext
+      // (@opennextjs/cloudflare) worker entry only exports a `fetch` handler —
+      // it has no `scheduled()` export — so this Cron Trigger has no in-worker
+      // handler to run yet. Until OpenNext supports a scheduled handler, the
+      // poller is driven by an EXTERNAL scheduler that POSTs to
+      // `/api/v1/internal/domains/refresh` with the `x-internal-cron-secret`
+      // header (set `INTERNAL_CRON_SECRET` via `wrangler secret put`). This
+      // declaration documents the intended cadence and is ready to wire once a
+      // scheduled handler is available.
+      "triggers": { "crons": ["*/5 * * * *"] },
+      // BETTER_AUTH_SECRET is a worker secret (wrangler secret put), not here.
+      "vars": {
+        "BETTER_AUTH_URL": "https://staging.blogbat.com",
+        "ALLOWED_EMAIL_DOMAINS": "@blogbat.com",
+        "CUSTOM_DOMAINS_ENABLED": "true"
+      },
+      "send_email": [{ "name": "EMAIL", "remote": true }],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "blogbat-staging",
+          "database_id": "0bcf87dc-b9d9-4a98-b237-9bb86a54f01c",
+          "migrations_dir": "./src/db/migrations"
+        }
+      ],
+      // NEXT_INC_CACHE_KV backs the OpenNext incremental cache. One namespace is
+      // shared across envs for now; split when production is deployed (TODO(M2-prod)).
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "f969329834b649ff88b6570e611d3598"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "MEDIA",
+          "bucket_name": "blogbat-media-staging"
+        }
+      ]
+    },
+    "production": {
+      "name": "blogbat-production",
+      // blogbat.com = marketing homepage (apex); app.blogbat.com = dashboard/app
+      // (auth happens here); *.blogbat.com = tenant blog subdomains; custom domains
+      // resolve via blogs.custom_domain. www is covered by the *.blogbat.com wildcard.
+      // Custom domains for EXTERNAL customers are served via Cloudflare for SaaS
+      // custom hostnames + the customers.blogbat.com fallback origin (covered by
+      // the *.blogbat.com route) and need no per-domain config here. The
+      // contentrabbitai.com route below is the one exception: it lives in our own
+      // account, so it's pinned here (wrangler reconciles worker routes on every
+      // deploy and would otherwise wipe a route added out-of-band).
+      "routes": [
+        { "pattern": "blogbat.com", "custom_domain": true },
+        { "pattern": "app.blogbat.com", "custom_domain": true },
+        { "pattern": "*.blogbat.com/*", "zone_name": "blogbat.com" },
+        { "pattern": "blog.contentrabbitai.com/*", "zone_name": "contentrabbitai.com" },
+        // REQUIRED for Cloudflare for SaaS custom hostnames — DO NOT REMOVE.
+        // Cloudflare for SaaS matches Worker routes against the CUSTOMER's custom
+        // hostname (e.g. blog.theirdomain.com), NOT against the fallback origin.
+        // So `*.blogbat.com/*` above can never match an external custom domain:
+        // without this catch-all the worker never runs for those hosts, Cloudflare
+        // falls through to the dummy fallback origin (customers.blogbat.com →
+        // AAAA 100::), and the custom domain returns HTTP 522. This `*/*` route
+        // matches ALL traffic entering the blogbat.com zone, including SaaS custom
+        // hostnames, so the worker runs and serves the isolated tenant. The
+        // `custom_domain: true` routes (blogbat.com apex, app.blogbat.com) take
+        // precedence, so marketing + dashboard are unaffected. An unrecognized
+        // host that reaches the worker via this route resolves to not-found (404),
+        // never the default blog — see resolveRequestTenant.
+        { "pattern": "*/*", "zone_name": "blogbat.com" }
+      ],
+      // Cron Trigger for the custom-domain status poller. See the staging env
+      // note above: OpenNext's worker exports only `fetch` (no `scheduled()`),
+      // so the poller is driven by an external scheduler POSTing to
+      // `/api/v1/internal/domains/refresh` with `x-internal-cron-secret` until
+      // a scheduled handler is available.
+      "triggers": { "crons": ["*/5 * * * *"] },
+      "vars": {
+        "BETTER_AUTH_URL": "https://app.blogbat.com",
+        "CUSTOM_DOMAINS_ENABLED": "true"
+      },
+      "send_email": [{ "name": "EMAIL", "remote": true }],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "blogbat-production",
+          "database_id": "0c9be9ee-69ce-4160-a5ae-2c04093d939f",
+          "migrations_dir": "./src/db/migrations"
+        }
+      ],
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "f969329834b649ff88b6570e611d3598"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "MEDIA",
+          "bucket_name": "blogbat-media-production"
+        }
+      ]
+    }
+  }
+}

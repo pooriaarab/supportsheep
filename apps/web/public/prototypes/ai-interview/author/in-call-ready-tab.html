@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Canvas · Ready? tab · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; min-height: 0; }
+  .left-rail { background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); padding: 16px; }
+  .right-rail { display: flex; flex-direction: column; }
+  .canvas-tabs { display: flex; gap: 4px; padding: 12px 24px 0; border-bottom: 1px solid hsl(var(--border)); }
+  .canvas-tab { padding: 8px 14px; border: 1px solid transparent; border-bottom: none; border-radius: 8px 8px 0 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; cursor: pointer; }
+  .canvas-tab.active { background: hsl(var(--card)); border-color: hsl(var(--border)); color: hsl(var(--foreground)); position: relative; bottom: -1px; }
+  .canvas-body { flex: 1; padding: 32px 56px; max-width: 820px; overflow-y: auto; }
+  .ring-wrap { width: 132px; height: 132px; border-radius: 50%; background: conic-gradient(hsl(var(--success)) 0deg 252deg, hsl(var(--muted)) 252deg 360deg); display: grid; place-items: center; }
+  .ring-wrap::after { content: ""; }
+  .ring-inner { width: 112px; height: 112px; border-radius: 50%; background: hsl(var(--card)); display: grid; place-items: center; }
+  .check-row { display: flex; gap: 12px; padding: 10px 14px; border-radius: 8px; background: hsl(var(--muted) / 0.5); }
+  .check-row .check { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; flex: none; margin-top: 2px; }
+  .check-row.pass .check { background: hsl(var(--success)); color: white; }
+  .check-row.warn .check { background: hsl(var(--warning)); color: white; }
+  .check-row.fail .check { background: hsl(var(--destructive)); color: white; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12"><span class="live-dot"></span><span class="font-medium">Interview · EEAT post</span></div>
+  <div class="row gap-12"><span style="font-family: ui-monospace; font-size: 13px;">⏱ 06:12 / 10:00</span><button class="btn btn-destructive btn-sm">End</button></div>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center"><div class="orb orb-state-listening orb-listening" style="--orb-size: 100px;"></div></div>
+  </aside>
+
+  <main class="right-rail">
+    <div class="canvas-tabs">
+      <button class="canvas-tab">📄 Body</button>
+      <button class="canvas-tab">🖼️ Image</button>
+      <button class="canvas-tab">🎯 SEO</button>
+      <button class="canvas-tab active">✓ Ready? <span class="badge badge-warning">70%</span></button>
+    </div>
+    <div class="canvas-body">
+      <div class="row gap-24 mb-16" style="align-items: center;">
+        <div class="ring-wrap">
+          <div class="ring-inner">
+            <div class="text-center">
+              <div style="font-size: 28px; font-weight: 600;">70<span class="text-sm muted">%</span></div>
+              <div class="text-xs muted">ready</div>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <h2 class="h2">Almost there</h2>
+          <p class="muted">3 of 8 EEAT signals still missing. Two more rounds of questions should close it out.</p>
+        </div>
+      </div>
+
+      <h3 class="h3 mb-12">EEAT signals</h3>
+      <div class="col gap-12">
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Author attribution</strong><div class="muted text-sm">Byline: Pooria Arab</div></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Specific anecdote</strong><div class="muted text-sm">"Two weeks ago we had a partner launch fall on a Monday morning…"</div></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Quantifiable claims</strong><div class="muted text-sm">"5% mirror," "10 days dual-write," "6h → 1h"</div></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Pull-quote captured</strong><div class="muted text-sm">"Mirror reads for longer than you think you need to…"</div></div></div>
+        <div class="check-row warn"><span class="check">!</span><div><strong>Source citations</strong><div class="muted text-sm">No external sources cited yet. AI will ask in next turn.</div></div></div>
+        <div class="check-row warn"><span class="check">!</span><div><strong>Conclusion / call-to-action</strong><div class="muted text-sm">Closing paragraph still streaming.</div></div></div>
+        <div class="check-row fail"><span class="check">✕</span><div><strong>"What we'd do differently"</strong><div class="muted text-sm">Not yet discussed. Suggested follow-up: ask about postmortem learnings.</div></div></div>
+      </div>
+
+      <h3 class="h3 mt-24 mb-12">Other checks</h3>
+      <div class="col gap-12">
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Featured image generated</strong></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Meta title (68 chars)</strong></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Meta description (154 chars)</strong></div></div>
+        <div class="check-row warn"><span class="check">!</span><div><strong>Internal links</strong><div class="muted text-sm">2 selected · target is 3+</div></div></div>
+        <div class="check-row pass"><span class="check">✓</span><div><strong>Word count (2.4k est)</strong></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

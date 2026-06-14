@@ -1,0 +1,129 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr comment:*)",
+      "Bash(gh pr review:*)",
+      "Bash(gh pr list:*)",
+      "Bash(git:*)",
+      "Bash(jq:*)",
+      "Bash(cat:*)",
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit",
+      "Write"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n Current branch:' && git branch --show-current && echo '\\n Git status:' && git status -s | head -10 && echo '\\n Recent commits:' && git log --oneline -3 2>/dev/null || echo 'Not a git repo'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n[Auto-check] Running typecheck...' && bun run typecheck 2>&1 | tail -5",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash(rm -rf *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] Dangerous rm -rf command blocked for safety' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git push --force*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] Force push blocked - use --force-with-lease instead' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git push -f*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] Force push blocked - use --force-with-lease instead' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git reset --hard*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] Hard reset blocked - this would lose uncommitted changes. Use git stash first.' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git clean -fd*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] git clean -fd blocked - this permanently deletes untracked files' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git checkout -- .)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[BLOCKED] This discards all local changes. Stash them first with: git stash push -m \"backup\"' && exit 1"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(gh pr create*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[HINT] Consider using the /make-pr skill for consistent PR quality (title, description, test plan).'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -n \"$CLAUDE_TOOL_OUTPUT\" ] && echo \"$CLAUDE_TOOL_OUTPUT\" | grep -q 'command not found'; then echo '[TOOL-MISS] A command was not found. Check if it needs to be installed (e.g., brew install <tool>) or if there is a platform-specific alternative (BSD vs GNU).'; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -n \"$CLAUDE_TOOL_OUTPUT\" ] && echo \"$CLAUDE_TOOL_OUTPUT\" | grep -q 'ERR_MODULE_NOT_FOUND\\|Cannot find module\\|Module not found'; then echo '[TOOL-MISS] A module was not found. Run bun install to ensure dependencies are up to date.'; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

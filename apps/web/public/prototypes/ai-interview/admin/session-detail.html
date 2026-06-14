@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>A6 · Session detail · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  .detail-grid { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+  @media (max-width: 980px) { .detail-grid { grid-template-columns: 1fr; } }
+  .transcript { max-height: 520px; overflow-y: auto; padding-right: 8px; }
+  .transcript .ts { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: hsl(var(--muted-foreground)); }
+  .pill-cost { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: hsl(var(--muted)); border-radius: 999px; font-size: 12px; font-family: ui-monospace, Menlo, monospace; }
+  .audio-bar { background: hsl(var(--muted)); border-radius: 6px; padding: 10px; display: flex; align-items: center; gap: 12px; }
+  .play { width: 32px; height: 32px; border-radius: 50%; background: hsl(var(--primary)); color: white; display: grid; place-items: center; border: none; cursor: pointer; }
+  .waveform { flex: 1; height: 32px; background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 32%, hsl(var(--border-strong)) 32%); border-radius: 4px; }
+</style>
+</head>
+<body data-shell="dashboard" data-wired="📌 wired to:<br>app/(dashboard)/interview/sessions/[id]/page.tsx<br>collections.interviews().doc(id)<br>collections.interviewEvents(id) subcollection<br>gs://your-firebase-project-id/interviews/{id}/audio.opus">
+<script src="../shared/shell.js" defer></script>
+
+<div class="topbar">
+  <div>
+    <div class="text-sm muted"><a href="./link-detail.html">← Why you switched from Notion to BlogBat</a></div>
+    <h1 class="h1 mt-4">Interview with Aaliyah Khan</h1>
+    <p class="subtle-text">aaliyah@acme.com · 12 May 2026 · 2:14pm — 2:24pm · Completed</p>
+  </div>
+  <div class="row gap-12">
+    <button class="btn">Download transcript</button>
+    <a href="../end/review-admin.html" class="btn btn-primary">Open draft article →</a>
+  </div>
+</div>
+
+<div class="detail-grid">
+  <div class="col gap-16">
+    <div class="card">
+      <h2 class="h2 mb-12">Recording</h2>
+      <div class="audio-bar">
+        <button class="play">▶</button>
+        <div class="waveform"></div>
+        <span class="muted text-sm">3:07 / 9:42</span>
+      </div>
+      <div class="hint mt-8">Audio kept per recording-config. Stored in Firebase Storage. Retention: 90 days from session end (2026-08-10).</div>
+    </div>
+
+    <div class="card">
+      <h2 class="h2 mb-12">Transcript</h2>
+      <div class="transcript col gap-12">
+        <div class="chat-row">
+          <div class="chat-avatar ai"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">00:00</span> · AI</div>
+            Hi Aaliyah! Pooria sent me — he's hoping you can talk about why you moved your content ops from Notion to BlogBat. Whenever you're ready, what's been the biggest change?
+          </div>
+        </div>
+        <div class="chat-row">
+          <div class="chat-avatar user"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">00:08</span> · Aaliyah</div>
+            Honestly the biggest thing is just speed. We used to spend a whole Monday doing the editorial standup. Now I drop a topic into BlogBat and by 9am we have a draft, image, and meta tags. It feels like having a junior editor on call.
+          </div>
+        </div>
+        <div class="chat-row">
+          <div class="chat-avatar ai"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">00:31</span> · AI</div>
+            That's great. Can you give me one specific example — like a Monday where this saved your day?
+          </div>
+        </div>
+        <div class="chat-row">
+          <div class="chat-avatar user"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">00:38</span> · Aaliyah</div>
+            Two weeks ago we had a partner launch fall on a Monday morning. Old workflow, it would have been a 6-hour scramble. With BlogBat, I had four interlinked posts published by lunch. The partner texted me to ask if I had a ghostwriter.
+            <div class="mt-8 text-xs muted">[tool_call: add_quote section="impact" speaker="Aaliyah"]</div>
+          </div>
+        </div>
+        <div class="chat-row">
+          <div class="chat-avatar ai"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">01:14</span> · AI</div>
+            Beautiful — that's our pull-quote. What's something you weren't expecting?
+          </div>
+        </div>
+        <div class="chat-row" style="opacity: 0.7;">
+          <div class="chat-avatar user"></div>
+          <div class="chat-bubble">
+            <div class="meta"><span class="ts">01:20</span> · Aaliyah</div>
+            Probably the internal linking? I didn't realize how much old content I had until BlogBat started auto-suggesting cross-links…
+          </div>
+        </div>
+        <div class="text-center muted text-sm mt-12">— scrolls for full 9:42 —</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="col gap-16">
+    <div class="card">
+      <h3 class="h3 mb-8">Cost &amp; usage</h3>
+      <div class="col gap-12">
+        <div class="row-between"><span class="muted text-sm">Realtime audio</span><span class="pill-cost">$2.91</span></div>
+        <div class="row-between"><span class="muted text-sm">Writer (Claude)</span><span class="pill-cost">$0.03</span></div>
+        <div class="row-between"><span class="muted text-sm">Image gen ×1</span><span class="pill-cost">$0.04</span></div>
+        <div class="row-between" style="border-top: 1px solid hsl(var(--border)); padding-top: 8px;"><strong>Total</strong><span class="pill-cost"><strong>$2.98</strong></span></div>
+      </div>
+      <div class="hint mt-12">Duration 9m 42s · 5,841 audio tokens · 2,103 writer tokens.</div>
+    </div>
+
+    <div class="card">
+      <h3 class="h3 mb-8">EEAT signals captured</h3>
+      <div class="col-tight">
+        <div class="text-sm">✓ Attributable to <strong>Aaliyah Khan, Acme Co.</strong></div>
+        <div class="text-sm">✓ Specific anecdote (partner launch)</div>
+        <div class="text-sm">✓ Quantifiable claim (6h → 1h)</div>
+        <div class="text-sm muted">○ Source link missing</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="h3 mb-8">Output</h3>
+      <div class="col-tight">
+        <a href="../end/review-admin.html">📝 Draft article</a>
+        <a href="#">🖼️ Featured image (.png)</a>
+        <a href="#">📄 Transcript (.md)</a>
+        <a href="#">🎙️ Audio (.opus)</a>
+        <a href="#">📊 Event log (.jsonl)</a>
+      </div>
+    </div>
+
+    <div class="card" style="background: hsl(var(--destructive) / 0.06); border-color: hsl(var(--destructive));">
+      <h3 class="h3 mb-8" style="color: hsl(var(--destructive));">Sensitive</h3>
+      <p class="subtle-text">Wipes audio + transcript + events + unpublished draft. Cannot be undone. Use for GDPR right-to-be-forgotten requests.</p>
+      <button class="btn btn-destructive btn-sm mt-12">Delete this interview &amp; all data</button>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

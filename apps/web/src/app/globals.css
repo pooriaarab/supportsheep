@@ -1,0 +1,1449 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "@tailwindcss/typography";
+
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-border: var(--success-border);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-border: var(--warning-border);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-error-subtle: var(--error-subtle);
+  --color-error-border: var(--error-border);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-border: var(--info-border);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --shadow-subtle: rgba(0, 0, 0, 0.04) 0px 1px 2px;
+  --shadow-keystone:
+    rgba(0, 0, 0, 0.04) 0px 3px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px;
+  --shadow-floating:
+    0 0 0 1px rgba(0, 0, 0, 0.05), 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+
+  --animate-shimmer: shimmer 2s infinite;
+  --animate-status-pulse: status-pulse 2.5s ease-in-out infinite;
+  --animate-status-shake: status-shake 4s ease-in-out infinite;
+  --animate-level-shimmer: level-shimmer 3s linear infinite;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-typing-dot: typing-dot 1.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  --animate-tool-shimmer: tool-shimmer 1.8s ease-in-out infinite;
+  --animate-shimmer-text: shimmer-text 2s ease-in-out infinite;
+  --animate-tool-indicator-fade: tool-indicator-fade 3s ease-out forwards;
+  --animate-orb-caption-fade: orb-caption-fade 200ms ease-out both;
+  @keyframes typing-dot {
+    0%,
+    80%,
+    100% {
+      opacity: 0.45;
+      transform: translateY(0);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes tool-shimmer {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes shimmer-text {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes status-pulse {
+    0%,
+    100% {
+      opacity: 0.4;
+      box-shadow: 0 0 0 0 var(--color-success);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 0 3px transparent;
+    }
+  }
+
+  @keyframes status-shake {
+    0%,
+    92%,
+    100% {
+      transform: translateX(0);
+    }
+    94% {
+      transform: translateX(-2px);
+    }
+    96% {
+      transform: translateX(2px);
+    }
+    98% {
+      transform: translateX(-1px);
+    }
+  }
+
+  @keyframes level-shimmer {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -1000;
+    }
+  }
+
+  /* Collaborative-editor style remote cursor for the AI writer. Slow ~1Hz
+   * blink — bar stays solid most of the cycle so it reads as a typewriter
+   * caret rather than a flashing dot. Disabled under prefers-reduced-motion
+   * via the consumer (`motion-safe:` utility). */
+  @keyframes canvas-cursor-blink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+    50%,
+    95% {
+      opacity: 0.15;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Reading-scanner sweep — yellow gradient slides left-to-right across
+   * the span of text the user just typed, the moment the user_edit cue
+   * leaves the local client. Makes the AI's reception of an inline edit
+   * visible the same way a teammate moving their cursor would: the user
+   * sees the AI "look at" their text, then the highlight clears. Disabled
+   * via the `motion-safe:` selector below so reduced-motion users get
+   * only the static yellow background (no sliding gradient). */
+  @keyframes ai-reading-scan-sweep {
+    0% {
+      background-position: -120% 0;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      background-position: 220% 0;
+      opacity: 0;
+    }
+  }
+
+  /* Inline tool-call indicator below the orb's session-status text. Stays
+   * fully visible for ~2.1s then fades over the final ~0.9s so a brief tool
+   * call doesn't leave stale text on screen. `forwards` keeps the chip
+   * invisible after the keyframe completes; remounting via React `key`
+   * resets the animation when a new tool call arrives. */
+  @keyframes tool-indicator-fade {
+    0%,
+    70% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Single-line orb caption fade-swap. Each caption change remounts via a
+   * React `key` so the animation replays from 0 -> 1, giving a subtle
+   * cross-fade between states without any text shift. `both` keeps the
+   * end state held in case the keyframe completes during reduced motion. */
+  @keyframes orb-caption-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Voice orb keyframes (W24.N #347 v3 + W25.D #347 audio-reactive layers).    */
+/*                                                                            */
+/* Declared at the top level, NOT inside `@theme inline {}`. Tailwind 4's    */
+/* JIT only ships a keyframe to the runtime CSS when it is either referenced */
+/* by a registered `--animate-*` theme token OR by a Tailwind utility class. */
+/* The voice orb references these keyframes by name from the inline          */
+/* `<style>` block inside voice-orb.tsx — Tailwind cannot see those, so      */
+/* while the keyframes lived inside `@theme inline {}` they were silently    */
+/* pruned during JIT compilation and the production CSS shipped without     */
+/* them (orb-morph, voice-orb-float, voice-orb-particle-orbit, etc. all     */
+/* missing on blogbat.com — the orb rendered as a static blob).         */
+/* Top-level `@keyframes` rules at the stylesheet root are always preserved */
+/* verbatim by Tailwind, so the orb animations survive the tree-shake pass. */
+/* Same root cause as the `@property --orb-angle` move in PR #356.          */
+/* -------------------------------------------------------------------------- */
+
+/* Voice orb — smooth organic blob morph driven purely by border-radius
+ * percentage interpolation. Percentages interpolate continuously (unlike
+ * clip-path polygon vertices), so the silhouette glides between shapes
+ * instead of snapping. */
+@keyframes orb-morph {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+  25% {
+    border-radius: 40% 60% 70% 30% / 45% 55% 45% 55%;
+  }
+  50% {
+    border-radius: 56% 44% 32% 68% / 60% 40% 60% 40%;
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 35% 65% 50% 50%;
+  }
+}
+
+/* Slow rotation for the thinking-state core. */
+@keyframes voice-orb-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Outer pulse halo — keyframes a soft outward ring on top of the
+ * persistent multi-layer aura box-shadow. Composes cleanly with the
+ * silhouette morph since both target the same element. */
+@keyframes voice-orb-pulse-halo {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 60px
+        color-mix(in oklab, var(--orb-color) 55%, transparent),
+      inset 0 0 20px color-mix(in oklab, var(--orb-color) 75%, white),
+      0 0 calc(var(--orb-aura-blur) * 0.6)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 100%),
+          transparent
+        ),
+      0 0 var(--orb-aura-blur)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 40%),
+          transparent
+        ),
+      0 0 calc(var(--orb-aura-blur) * 2)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 20%),
+          transparent
+        ),
+      0 0 0 0 color-mix(in oklab, var(--orb-color) 35%, transparent);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 60px
+        color-mix(in oklab, var(--orb-color) 55%, transparent),
+      inset 0 0 20px color-mix(in oklab, var(--orb-color) 75%, white),
+      0 0 calc(var(--orb-aura-blur) * 0.6)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 100%),
+          transparent
+        ),
+      0 0 var(--orb-aura-blur)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 40%),
+          transparent
+        ),
+      0 0 calc(var(--orb-aura-blur) * 2)
+        color-mix(
+          in oklab,
+          var(--orb-color) calc(var(--orb-aura-opacity) * 20%),
+          transparent
+        ),
+      0 0 0 16px color-mix(in oklab, var(--orb-color) 0%, transparent);
+  }
+}
+
+/* Speaking-state expanding ripple ring drawn on the orb's ::after layer
+ * via a scaling box-shadow. */
+@keyframes voice-orb-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--orb-color) 55%, transparent);
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+    box-shadow: 0 0 0 30px
+      color-mix(in oklab, var(--orb-color) 0%, transparent);
+  }
+}
+
+/* Inner-core "heart" pulse — scales the core radial gradient and dips
+ * opacity so the centre breathes at its own rhythm, deliberately offset
+ * from the outer silhouette morph so the two never lock phase. */
+@keyframes voice-orb-heart {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.95;
+  }
+}
+
+/* Subtle Y-axis bobbing — the orb appears to breathe. Composes with the
+ * audio-reactive scale by routing scale through `--orb-audio-scale` so a
+ * single `transform` channel carries both translateY() and scale(). */
+@keyframes voice-orb-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(var(--orb-audio-scale, 1));
+  }
+  50% {
+    transform: translateY(calc(var(--orb-float-travel, 3px) * -1))
+      scale(var(--orb-audio-scale, 1));
+  }
+}
+
+/* Soft outer-halo opacity cycle. The halo element itself is positioned
+ * larger than the orb and blurred, so animating only its opacity gives
+ * an inexpensive "breathing aura" effect. */
+@keyframes voice-orb-halo {
+  0%,
+  100% {
+    opacity: calc(var(--orb-halo-opacity, 0.4) * 0.55);
+  }
+  50% {
+    opacity: var(--orb-halo-opacity, 0.7);
+  }
+}
+
+/* Slow hue rotation — drifts the accent colour through a small range
+ * (~30°) over 12s so the orb subtly cycles e.g. blue → blue-violet →
+ * cyan → back without ever feeling like it changed state. */
+@keyframes voice-orb-hue {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    filter: hue-rotate(12deg);
+  }
+  66% {
+    filter: hue-rotate(-15deg);
+  }
+}
+
+/* Thinking-state spark drift. Animates the pseudo-element gradient
+ * positions outward + fades them so the points read as drifting
+ * particles. The actual gradient stops live on the .voice-orb--sparks
+ * selector; this keyframe only animates background-position + opacity. */
+@keyframes voice-orb-spark {
+  0%,
+  100% {
+    background-position:
+      20% 30%,
+      75% 25%,
+      65% 80%,
+      30% 75%,
+      0 0;
+    opacity: 0.45;
+  }
+  50% {
+    background-position:
+      15% 20%,
+      82% 18%,
+      72% 88%,
+      22% 82%,
+      0 0;
+    opacity: 0.85;
+  }
+}
+
+/* Speaking-state rhythmic 200ms beat — a tight, percussive scale pulse
+ * layered on top of the broader pulse halo so audio output reads as
+ * rhythmic instead of a smooth wash. */
+@keyframes voice-orb-beat {
+  0%,
+  100% {
+    transform: translateY(0) scale(var(--orb-audio-scale, 1));
+  }
+  50% {
+    transform: translateY(0) scale(calc(var(--orb-audio-scale, 1) * 1.025));
+  }
+}
+
+/* Slow rotation for the conic-gradient color-shift backplate. Drives
+ * the fluid colour swirl behind the silhouette (Siri/Pi-style),
+ * registered via @property so the angle interpolates smoothly through
+ * the conic-gradient `from` argument. */
+@keyframes voice-orb-conic-spin {
+  to {
+    --orb-angle: 360deg;
+  }
+}
+
+/* Counter-rotating thinking-state ring. A thin SVG-arc-style ring
+ * drawn with conic-gradient + radial mask, rotating opposite to the
+ * conic backplate for a JARVIS-inspired "data processing" feel. */
+@keyframes voice-orb-ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Particle orbit — each particle sets its own `--orb-particle-radius`
+ * (orbital distance) and `--orb-particle-delay` (phase offset) and
+ * runs this same keyframe so the cluster orbits as a coherent field.
+ * Uses CSS variables inside the transform so per-particle distance
+ * is honoured without separate keyframes per dot. */
+@keyframes voice-orb-particle-orbit {
+  from {
+    transform: rotate(0deg)
+      translateX(var(--orb-particle-radius, 50%))
+      rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+      translateX(var(--orb-particle-radius, 50%))
+      rotate(-360deg);
+  }
+}
+
+/* Particle twinkle — independent opacity flicker so the orbit field
+ * doesn't read as a perfectly regular ring of points. Stacked with
+ * the orbit animation via the shorthand animation list. */
+@keyframes voice-orb-particle-twinkle {
+  0%,
+  100% {
+    opacity: var(--orb-particle-min-opacity, 0.25);
+  }
+  50% {
+    opacity: var(--orb-particle-max-opacity, 0.85);
+  }
+}
+
+/* Registered angle custom property — required so `--orb-angle` can be
+ * animated as an interpolatable `<angle>` value inside conic-gradients.
+ * Without `@property`, custom-prop interpolation falls back to step-wise
+ * changes and the conic layer would jump rather than spin. Declared at
+ * the top level because Tailwind 4's `@theme` block only accepts custom
+ * properties and `@keyframes` — `@property` rules must live outside it. */
+@property --orb-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Decoration class emitted by the AiReadingScanner ProseMirror plugin.
+ * Wraps the swept range in a yellow gradient that animates via the
+ * `ai-reading-scan-sweep` keyframe (declared inside the @theme block).
+ * `background-size: 50% 100%` makes the highlight band roughly the width
+ * of half the range so the sweep reads as a moving wedge rather than a
+ * solid fill. Static yellow fallback under prefers-reduced-motion below.
+ * Declared at the top level because Tailwind 4's `@theme` block only
+ * accepts custom properties and `@keyframes` — regular class selectors
+ * must live outside it. */
+.ai-reading-scan-target {
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    color-mix(in srgb, var(--color-warning, #facc15) 35%, transparent) 50%,
+    transparent 100%
+  );
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-position: -120% 0;
+  border-radius: 2px;
+  animation: ai-reading-scan-sweep 600ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-reading-scan-target {
+    animation: none;
+    background-image: none;
+    background-color: color-mix(
+      in srgb,
+      var(--color-warning, #facc15) 18%,
+      transparent
+    );
+    background-position: 0 0;
+    background-size: auto;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animate-shimmer: none;
+    --animate-status-pulse: none;
+    --animate-status-shake: none;
+    --animate-level-shimmer: none;
+    --animate-marquee: none;
+    --animate-typing-dot: none;
+    --animate-tool-shimmer: none;
+    --animate-shimmer-text: none;
+    --animate-tool-indicator-fade: none;
+    --animate-orb-caption-fade: none;
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  /* BlogBat brand — bat/night theme. Neutrals carry a faint violet (hue 285)
+   * cast so surfaces feel tied to the deep-indigo primary instead of cold grey. */
+  --background: oklch(0.99 0.004 285);
+  --foreground: oklch(0.17 0.02 285);
+  --card: oklch(1 0.003 285);
+  --card-foreground: oklch(0.17 0.02 285);
+  --popover: oklch(1 0.003 285);
+  --popover-foreground: oklch(0.17 0.02 285);
+  /* Primary — deep indigo/violet "BlogBat dusk" (#6d4aff family). */
+  --primary: oklch(0.55 0.23 285);
+  --primary-foreground: oklch(0.99 0.005 285);
+  --secondary: oklch(0.96 0.02 285);
+  --secondary-foreground: oklch(0.34 0.12 285);
+  --muted: oklch(0.965 0.008 285);
+  --muted-foreground: oklch(0.52 0.02 285);
+  /* Accent — warm dusk amber, the bat-at-sunset highlight. */
+  --accent: oklch(0.96 0.04 75);
+  --accent-foreground: oklch(0.42 0.11 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.01 285);
+  --input: oklch(0.92 0.01 285);
+  --ring: oklch(0.55 0.23 285);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  /* Semantic status colors */
+  --success: oklch(0.6 0.17 145);
+  --success-foreground: oklch(0.44 0.14 145);
+  --success-subtle: oklch(0.96 0.03 150);
+  --success-border: oklch(0.9 0.07 150);
+  --warning: oklch(0.7 0.17 70);
+  --warning-foreground: oklch(0.55 0.14 60);
+  --warning-subtle: oklch(0.98 0.03 85);
+  --warning-border: oklch(0.92 0.08 85);
+  --error: oklch(0.58 0.22 27);
+  --error-foreground: oklch(0.45 0.18 25);
+  --error-subtle: oklch(0.97 0.01 25);
+  --error-border: oklch(0.9 0.06 25);
+  --info: oklch(0.55 0.2 260);
+  --info-foreground: oklch(0.44 0.17 260);
+  --info-subtle: oklch(0.97 0.01 260);
+  --info-border: oklch(0.9 0.06 260);
+  /* Interactive link colors — tied to the violet primary */
+  --link: oklch(0.55 0.23 285);
+  --link-hover: oklch(0.45 0.21 285);
+  /* Syntax highlighting tokens (light) — GitHub-inspired palette tuned to design hues */
+  --syntax-keyword: oklch(0.55 0.2 25);
+  --syntax-entity: oklch(0.5 0.22 305);
+  --syntax-constant: oklch(0.5 0.2 255);
+  --syntax-string: oklch(0.42 0.15 250);
+  --syntax-variable: oklch(0.58 0.18 55);
+  --syntax-comment: oklch(0.56 0.01 250);
+  --syntax-tag: oklch(0.5 0.17 150);
+  --sidebar: oklch(0.985 0.005 285);
+  --sidebar-foreground: oklch(0.17 0.02 285);
+  --sidebar-primary: oklch(0.55 0.23 285);
+  --sidebar-primary-foreground: oklch(0.99 0.005 285);
+  --sidebar-accent: oklch(0.96 0.02 285);
+  --sidebar-accent-foreground: oklch(0.34 0.12 285);
+  --sidebar-border: oklch(0.92 0.01 285);
+  --sidebar-ring: oklch(0.55 0.23 285);
+}
+
+.dark {
+  /* BlogBat night mode — the home turf of the bat. Deep violet-tinted surfaces
+   * layer up for depth; the primary brightens so it stays vivid on dark cards. */
+  --background: oklch(0.16 0.025 285);
+  --foreground: oklch(0.96 0.006 285);
+  --card: oklch(0.21 0.03 285);
+  --card-foreground: oklch(0.96 0.006 285);
+  --popover: oklch(0.21 0.03 285);
+  --popover-foreground: oklch(0.96 0.006 285);
+  /* Primary — brighter dusk violet so it reads as an action on dark surfaces. */
+  --primary: oklch(0.68 0.2 285);
+  --primary-foreground: oklch(0.16 0.025 285);
+  --secondary: oklch(0.28 0.04 285);
+  --secondary-foreground: oklch(0.96 0.006 285);
+  --muted: oklch(0.27 0.025 285);
+  --muted-foreground: oklch(0.73 0.025 285);
+  /* Accent — warm dusk amber, dimmed for night. */
+  --accent: oklch(0.32 0.05 75);
+  --accent-foreground: oklch(0.9 0.08 80);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.98 0.02 285 / 14%);
+  --input: oklch(0.98 0.02 285 / 20%);
+  --ring: oklch(0.68 0.2 285);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  /* Semantic status colors — dark mode */
+  --success: oklch(0.72 0.17 155);
+  --success-foreground: oklch(0.8 0.14 155);
+  --success-subtle: oklch(0.22 0.04 145);
+  --success-border: oklch(0.3 0.06 145);
+  --warning: oklch(0.82 0.16 75);
+  --warning-foreground: oklch(0.88 0.12 75);
+  --warning-subtle: oklch(0.22 0.04 65);
+  --warning-border: oklch(0.3 0.06 65);
+  --error: oklch(0.7 0.19 25);
+  --error-foreground: oklch(0.78 0.15 25);
+  --error-subtle: oklch(0.22 0.04 25);
+  --error-border: oklch(0.3 0.06 25);
+  --info: oklch(0.62 0.17 255);
+  --info-foreground: oklch(0.79 0.14 255);
+  --info-subtle: oklch(0.22 0.04 260);
+  --info-border: oklch(0.3 0.06 260);
+  /* Interactive link colors — dark mode, tied to the violet primary */
+  --link: oklch(0.74 0.18 285);
+  --link-hover: oklch(0.84 0.14 285);
+  /* Syntax highlighting tokens (dark) */
+  --syntax-keyword: oklch(0.78 0.17 25);
+  --syntax-entity: oklch(0.75 0.17 305);
+  --syntax-constant: oklch(0.75 0.17 255);
+  --syntax-string: oklch(0.78 0.12 250);
+  --syntax-variable: oklch(0.78 0.15 55);
+  --syntax-comment: oklch(0.62 0.01 250);
+  --syntax-tag: oklch(0.75 0.15 150);
+  --sidebar: oklch(0.21 0.03 285);
+  --sidebar-foreground: oklch(0.96 0.006 285);
+  --sidebar-primary: oklch(0.68 0.2 285);
+  --sidebar-primary-foreground: oklch(0.16 0.025 285);
+  --sidebar-accent: oklch(0.28 0.04 285);
+  --sidebar-accent-foreground: oklch(0.96 0.006 285);
+  --sidebar-border: oklch(0.98 0.02 285 / 12%);
+  --sidebar-ring: oklch(0.68 0.2 285);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Optimized font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Enable kerning for better typography */
+    font-kerning: normal;
+  }
+
+  /* OpenType features for refined typography */
+  .tabular-nums,
+  [data-tabular] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Data tables and numeric displays should use tabular numbers */
+  table td,
+  .data-value,
+  [role="gridcell"] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Disable ligatures in code and technical content; slashed zero for ID/code clarity */
+  code,
+  pre,
+  .font-mono {
+    font-variant-ligatures: none;
+    font-variant-numeric: slashed-zero;
+  }
+
+  /* Balanced line breaks for headings; pretty wrap for body text to reduce orphans */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Small caps for abbreviations */
+  abbr {
+    font-variant-caps: all-small-caps;
+  }
+}
+
+@layer utilities {
+  /* Infinite marquee scroll */
+  .animate-marquee {
+    animation: var(--animate-marquee);
+  }
+
+  /* Typing indicator dot motion */
+  .animate-typing-dot {
+    animation: var(--animate-typing-dot);
+  }
+
+  /* Subtle shimmer for running tool status */
+  .animate-tool-shimmer {
+    animation: var(--animate-tool-shimmer);
+  }
+
+  /* Shimmer gradient sweep for thinking text */
+  .animate-shimmer-text {
+    background: linear-gradient(
+      90deg,
+      var(--color-muted-foreground) 25%,
+      var(--color-foreground) 50%,
+      var(--color-muted-foreground) 75%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: var(--animate-shimmer-text);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  /* Fluid Typography - scales between viewport sizes */
+  .text-fluid-xs {
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  }
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+  }
+  .text-fluid-base {
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  }
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  }
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  }
+  .text-fluid-2xl {
+    font-size: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  }
+
+  /* Exponential easing for natural deceleration */
+  .ease-out-quart {
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .ease-out-quint {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ease-out-expo {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Emil Kowalski-style strong easings for punchy UI interactions */
+  .ease-out-strong {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .ease-in-out-strong {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  /* Respect reduced motion for active press feedback */
+  @media (prefers-reduced-motion: reduce) {
+    [data-slot="button"] {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+
+  /* Refined motion patterns */
+  .motion-safe {
+    @media (prefers-reduced-motion: no-preference) {
+      transition-property: transform, opacity;
+      transition-duration: 200ms;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  /* Staggered animations for lists */
+  .stagger-fade-in > * {
+    animation: fade-in 300ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  .stagger-fade-in > *:nth-child(1) {
+    animation-delay: 0ms;
+  }
+  .stagger-fade-in > *:nth-child(2) {
+    animation-delay: 50ms;
+  }
+  .stagger-fade-in > *:nth-child(3) {
+    animation-delay: 100ms;
+  }
+  .stagger-fade-in > *:nth-child(4) {
+    animation-delay: 150ms;
+  }
+  .stagger-fade-in > *:nth-child(5) {
+    animation-delay: 200ms;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stagger-fade-in > * {
+      animation: none;
+    }
+  }
+
+  /* ---------------------------------------------------------------------- */
+  /* Marketing homepage motion                                              */
+  /*                                                                        */
+  /* All animations are compositor-safe (transform/opacity only) and gated  */
+  /* behind `prefers-reduced-motion: no-preference`, so reduced-motion users */
+  /* see the final, static composition. The hero's animated bat mark and    */
+  /* dusk aurora drift gently; section content reveals on first paint.       */
+  /* ---------------------------------------------------------------------- */
+
+  /* Dusk aurora: two soft blobs drift behind the hero. transform-origin is  */
+  /* centered so the scale breathes about the middle.                        */
+  .mkt-aurora {
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .mkt-aurora-a {
+      animation: mkt-aurora-a 18s ease-in-out infinite alternate;
+    }
+    .mkt-aurora-b {
+      animation: mkt-aurora-b 22s ease-in-out infinite alternate;
+    }
+  }
+  @keyframes mkt-aurora-a {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 0.55;
+    }
+    to {
+      transform: translate3d(4%, -6%, 0) scale(1.12);
+      opacity: 0.8;
+    }
+  }
+  @keyframes mkt-aurora-b {
+    from {
+      transform: translate3d(0, 0, 0) scale(1.05);
+      opacity: 0.45;
+    }
+    to {
+      transform: translate3d(-5%, 5%, 0) scale(0.95);
+      opacity: 0.7;
+    }
+  }
+
+  /* Hero bat: a slow organic float (translate + slight rotate). The SVG     */
+  /* path is wrapped in a <g> with fill-box origin so it pivots about its     */
+  /* own center, not the 0,0 of the viewBox.                                  */
+  .mkt-bat-float {
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .mkt-bat-float {
+      animation: mkt-bat-float 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+  }
+  @keyframes mkt-bat-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-5%) rotate(-1.5deg);
+    }
+  }
+
+  /* Scroll/paint reveal: sections rise + fade in once. `backwards` holds the */
+  /* start frame before the delay elapses so nothing flashes at full opacity. */
+  @media (prefers-reduced-motion: no-preference) {
+    .mkt-reveal {
+      animation: mkt-reveal 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+  }
+  @keyframes mkt-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* FAQ accordion (native <details>/<summary>). The chevron rotates on open;   */
+  /* only `transform` transitions, with a centered fill-box origin. Disabled    */
+  /* under reduced motion via the global rule that strips transitions there.    */
+  .mkt-faq-chevron {
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  details[open] .mkt-faq-chevron {
+    transform: rotate(180deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mkt-faq-chevron {
+      transition: none;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* TipTap / ProseMirror editor styles                                          */
+/* -------------------------------------------------------------------------- */
+
+@layer base {
+  /* ProseMirror editor focus */
+  .ProseMirror:focus {
+    outline: none;
+  }
+
+  /* Hide the native browser caret while the `HumanCursor` extension is
+     rendering its labelled green cursor decoration. Without this, the
+     editor would show two cursors at the same offset — the native white
+     caret and our green collaborator widget — which reads as a bug. The
+     class is toggled on/off by the human-cursor plugin's `attributes`
+     prop based on visibility, so the native caret reappears immediately
+     when the cursor decoration fades out (editor blurred). */
+  .ProseMirror.has-human-cursor {
+    caret-color: transparent;
+  }
+
+  /* Placeholder styling */
+  .ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: var(--muted-foreground);
+    opacity: 0.5;
+    pointer-events: none;
+    height: 0;
+  }
+
+  /* Table styles inside the editor */
+  .ProseMirror table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    overflow: hidden;
+  }
+
+  .ProseMirror table td,
+  .ProseMirror table th {
+    min-width: 1em;
+    border: 1px solid var(--border);
+    padding: 0.5em 0.75em;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .ProseMirror table th {
+    font-weight: 600;
+    background: var(--muted);
+  }
+
+  .ProseMirror table .selectedCell {
+    background: var(--accent);
+  }
+
+  /* Code block styles */
+  .ProseMirror pre {
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.75em 1em;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    line-height: 1.6;
+  }
+
+  .ProseMirror pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  /* Inline code */
+  .ProseMirror :not(pre) > code {
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.15em 0.35em;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+  }
+
+  /* Blockquote */
+  .ProseMirror blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 1em;
+    margin-left: 0;
+    color: var(--muted-foreground);
+    font-style: italic;
+  }
+
+  /* Horizontal rule */
+  .ProseMirror hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5em 0;
+  }
+
+  /* Task list */
+  .ProseMirror ul[data-type="taskList"] {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .ProseMirror ul[data-type="taskList"] li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+
+  .ProseMirror ul[data-type="taskList"] li > label {
+    flex-shrink: 0;
+    margin-top: 0.25em;
+  }
+
+  .ProseMirror ul[data-type="taskList"] li > div {
+    flex: 1;
+  }
+
+  /* Image */
+  .ProseMirror img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  /* Published article prose table styles (outside editor) */
+  .prose table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  .prose table td,
+  .prose table th {
+    min-width: 1em;
+    border: 1px solid var(--border);
+    padding: 0.5em 0.75em;
+    vertical-align: top;
+  }
+
+  .prose table th {
+    font-weight: 600;
+    background: var(--muted);
+  }
+
+  .prose table tr:nth-child(even) {
+    background: color-mix(in oklch, var(--muted) 30%, transparent);
+  }
+
+  /* Responsive YouTube embeds (16:9) — applies inside the editor and
+     on rendered public article pages. */
+  .ProseMirror div[data-youtube-video],
+  .prose div[data-youtube-video] {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 1.5em 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--muted);
+  }
+
+  .ProseMirror div[data-youtube-video] iframe,
+  .prose div[data-youtube-video] iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* Callout block node (TipTap custom node)                                    */
+  /*                                                                            */
+  /* Rendered as `<aside class="callout callout--{variant}" data-variant="…">`  */
+  /* so styles apply inside the editor (.ProseMirror) and in published articles */
+  /* (.prose), without relying on JS in the public renderer.                    */
+  /* -------------------------------------------------------------------------- */
+
+  .ProseMirror .callout,
+  .prose .callout {
+    position: relative;
+    margin: 1.25em 0;
+    padding: 1em 1.1em 1em 3em;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--muted);
+    color: var(--foreground);
+  }
+
+  .ProseMirror .callout > :first-child,
+  .prose .callout > :first-child {
+    margin-top: 0;
+  }
+
+  .ProseMirror .callout > :last-child,
+  .prose .callout > :last-child {
+    margin-bottom: 0;
+  }
+
+  .ProseMirror .callout::before,
+  .prose .callout::before {
+    position: absolute;
+    top: 0.95em;
+    left: 1em;
+    width: 1.25em;
+    height: 1.25em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .ProseMirror .callout--tip,
+  .prose .callout--tip {
+    background: var(--success-subtle);
+    border-color: var(--success-border);
+    color: var(--foreground);
+  }
+
+  .ProseMirror .callout--tip::before,
+  .prose .callout--tip::before {
+    content: "\1F4A1\FE0E"; /* light bulb, text presentation so `color` applies */
+    color: var(--success);
+  }
+
+  .ProseMirror .callout--warning,
+  .prose .callout--warning {
+    background: var(--warning-subtle);
+    border-color: var(--warning-border);
+    color: var(--foreground);
+  }
+
+  .ProseMirror .callout--warning::before,
+  .prose .callout--warning::before {
+    content: "\26A0"; /* warning sign */
+    color: var(--warning);
+  }
+
+  .ProseMirror .callout--note,
+  .prose .callout--note {
+    background: var(--muted);
+    border-color: var(--border);
+    color: var(--foreground);
+  }
+
+  .ProseMirror .callout--note::before,
+  .prose .callout--note::before {
+    content: "\1F4DD\FE0E"; /* memo, text presentation so `color` applies */
+    color: var(--muted-foreground);
+  }
+
+  .ProseMirror .callout--info,
+  .prose .callout--info {
+    background: var(--info-subtle);
+    border-color: var(--info-border);
+    color: var(--foreground);
+  }
+
+  .ProseMirror .callout--info::before,
+  .prose .callout--info::before {
+    content: "\2139"; /* information source */
+    color: var(--info);
+  }
+
+  /* FAQ block — shared between the editor and the public article. */
+  .ProseMirror section.faq,
+  .prose section.faq {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .ProseMirror section.faq .faq-item,
+  .prose section.faq .faq-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    background: var(--card);
+  }
+
+  .ProseMirror section.faq .faq-question,
+  .prose section.faq .faq-question {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+
+  .ProseMirror section.faq .faq-answer > :first-child,
+  .prose section.faq .faq-answer > :first-child {
+    margin-top: 0;
+  }
+
+  .ProseMirror section.faq .faq-answer > :last-child,
+  .prose section.faq .faq-answer > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* HowTo block — shared between the editor and the public article. */
+  .ProseMirror section.howto,
+  .prose section.howto {
+    margin: 2em 0;
+  }
+
+  .ProseMirror section.howto .howto-steps,
+  .prose section.howto .howto-steps {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .ProseMirror section.howto .howto-step,
+  .prose section.howto .howto-step {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    background: var(--card);
+  }
+
+  .ProseMirror section.howto .howto-step-name,
+  .prose section.howto .howto-step-name {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+  }
+
+  .ProseMirror section.howto .howto-step-content > :first-child,
+  .prose section.howto .howto-step-content > :first-child {
+    margin-top: 0;
+  }
+
+  .ProseMirror section.howto .howto-step-content > :last-child,
+  .prose section.howto .howto-step-content > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------------------------------------------------------------------- */
+  /* Syntax highlighting (lowlight / highlight.js token classes)             */
+  /* Applies to both the TipTap editor and rendered article HTML.            */
+  /* Colors use semantic tokens so they adapt to light/dark automatically.   */
+  /* ---------------------------------------------------------------------- */
+
+  .ProseMirror pre,
+  .ProseMirror pre code,
+  .prose pre,
+  .prose pre code {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+
+  .ProseMirror pre,
+  .prose pre {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.75em 1em;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    line-height: 1.6;
+  }
+
+  .hljs {
+    color: var(--foreground);
+    background: transparent;
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-meta .hljs-keyword,
+  .hljs-template-tag,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-variable.language_ {
+    color: var(--syntax-keyword);
+  }
+
+  .hljs-title,
+  .hljs-title.class_,
+  .hljs-title.class_.inherited__,
+  .hljs-title.function_ {
+    color: var(--syntax-entity);
+  }
+
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-operator,
+  .hljs-variable,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-id {
+    color: var(--syntax-constant);
+  }
+
+  .hljs-regexp,
+  .hljs-string,
+  .hljs-meta .hljs-string {
+    color: var(--syntax-string);
+  }
+
+  .hljs-built_in,
+  .hljs-symbol {
+    color: var(--syntax-variable);
+  }
+
+  .hljs-comment,
+  .hljs-code,
+  .hljs-formula {
+    color: var(--syntax-comment);
+    font-style: italic;
+  }
+
+  .hljs-name,
+  .hljs-quote,
+  .hljs-selector-tag,
+  .hljs-selector-pseudo {
+    color: var(--syntax-tag);
+  }
+
+  .hljs-subst {
+    color: var(--foreground);
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: 600;
+  }
+}

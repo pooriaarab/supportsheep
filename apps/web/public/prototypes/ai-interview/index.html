@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Interview prototypes — blogbat</title>
+<link rel="stylesheet" href="./shared/tokens.css" />
+<style>
+  .index-wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+  .group-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 12px; }
+  .group-card a { display: block; padding: 12px 14px; border: 1px solid hsl(var(--border)); border-radius: 8px; background: hsl(var(--card)); color: hsl(var(--foreground)); text-decoration: none; transition: border-color 120ms ease, transform 120ms ease; }
+  .group-card a:hover { border-color: hsl(var(--primary)); transform: translateY(-1px); text-decoration: none; }
+  .group-card .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; color: hsl(var(--muted-foreground)); margin-top: 4px; }
+  .group { margin-top: 32px; }
+  .group-h { display: flex; align-items: baseline; gap: 8px; }
+  .pill { background: hsl(var(--muted)); padding: 2px 8px; border-radius: 999px; font-size: 11px; color: hsl(var(--muted-foreground)); }
+</style>
+</head>
+<body>
+<div class="index-wrap">
+  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+    <h1 class="h1">AI Interview Mode — prototypes</h1>
+    <span class="muted text-sm">2026-05-19</span>
+  </div>
+  <p class="muted" style="max-width: 720px;">
+    Static HTML prototypes for the AI Interview feature. Each state maps to a row in
+    Section 3 (UX states) of the
+    <a href="/docs/plans/2026-05-19-ai-interview-mode-design.md">design doc</a>.
+    Built with Tailwind via CDN and a shared <code>tokens.css</code>.
+  </p>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">A · Admin / Editor — Sharing surfaces</h2><span class="pill">6 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./admin/links-list.html"><strong>A1 · Share-link list</strong><div class="code">/dashboard/interview/links</div></a></div>
+      <div class="group-card"><a href="./admin/quick-create.html"><strong>A2 · Quick-create modal</strong><div class="code">/dashboard/interview/links → Quick</div></a></div>
+      <div class="group-card"><a href="./admin/full-create.html"><strong>A3 · Full share-link modal</strong><div class="code">/dashboard/interview/links → New</div></a></div>
+      <div class="group-card"><a href="./admin/copy-success.html"><strong>A4 · Copy-link success</strong><div class="code">toast + URL chip</div></a></div>
+      <div class="group-card"><a href="./admin/link-detail.html"><strong>A5 · Link detail</strong><div class="code">/dashboard/interview/links/[id]</div></a></div>
+      <div class="group-card"><a href="./admin/session-detail.html"><strong>A6 · Session detail</strong><div class="code">/dashboard/interview/sessions/[id]</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">B · Logged-in author — Start your own</h2><span class="pill">10 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./author/dashboard-cta.html"><strong>B1 · Start-interview modal</strong><div class="code">dashboard CTA</div></a></div>
+      <div class="group-card"><a href="./author/mic-test.html"><strong>B2 · Mic test + consent</strong><div class="code">pre-call</div></a></div>
+      <div class="group-card"><a href="./author/in-call-desktop.html"><strong>B3 · In-call desktop</strong><div class="code">/interview/[id]/live</div></a></div>
+      <div class="group-card"><a href="./author/in-call-tablet.html"><strong>B4 · In-call tablet</strong><div class="code">tablet layout</div></a></div>
+      <div class="group-card"><a href="./author/in-call-mobile.html"><strong>B5 · In-call mobile</strong><div class="code">mobile portrait</div></a></div>
+      <div class="group-card"><a href="./author/orb-states.html"><strong>B6 · Orb states gallery</strong><div class="code">idle/listening/speaking/thinking/error/muted</div></a></div>
+      <div class="group-card"><a href="./author/chat-dragdrop.html"><strong>B7 · Chat + drag-drop</strong><div class="code">attachment upload</div></a></div>
+      <div class="group-card"><a href="./author/timer-warning.html"><strong>B8 · 90% timer warning</strong><div class="code">"30s left"</div></a></div>
+      <div class="group-card"><a href="./author/hard-cap.html"><strong>B9 · Hard cap reached</strong><div class="code">graceful wrap</div></a></div>
+      <div class="group-card"><a href="./author/network-drop.html"><strong>B10 · Network drop + reconnect</strong><div class="code">resilience</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">G · Guest — From share link</h2><span class="pill">13 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./guest/landing-anonymous.html"><strong>G1 · Anonymous landing</strong><div class="code">/i/[token]</div></a></div>
+      <div class="group-card"><a href="./guest/landing-email-gate.html"><strong>G2 · Email-gated landing</strong><div class="code">/i/[token] (email mode)</div></a></div>
+      <div class="group-card"><a href="./guest/landing-magic-link.html"><strong>G3 · Magic-link landing</strong><div class="code">/i/[token] (magic-link mode)</div></a></div>
+      <div class="group-card"><a href="./guest/consent.html"><strong>G4 · Consent screen</strong><div class="code">/i/[token]/consent</div></a></div>
+      <div class="group-card"><a href="./guest/in-call-desktop.html"><strong>G5 · In-call (guest)</strong><div class="code">no cost · canvas read-only</div></a></div>
+      <div class="group-card"><a href="./guest/end-thanks.html"><strong>G6 · End thanks</strong><div class="code">post-call</div></a></div>
+      <div class="group-card"><a href="./guest/already-used.html"><strong>G7 · Already used</strong><div class="code">one-time link</div></a></div>
+      <div class="group-card"><a href="./guest/expired.html"><strong>G8 · Expired</strong><div class="code">time-based</div></a></div>
+      <div class="group-card"><a href="./guest/revoked.html"><strong>G9 · Revoked</strong><div class="code">admin-killed</div></a></div>
+      <div class="group-card"><a href="./guest/workspace-only-logged-out.html"><strong>G10 · Workspace · logged-out</strong><div class="code">login redirect</div></a></div>
+      <div class="group-card"><a href="./guest/workspace-only-wrong.html"><strong>G11 · Workspace · wrong WS</strong><div class="code">access denied</div></a></div>
+      <div class="group-card"><a href="./guest/mic-denied.html"><strong>G12 · Mic permission denied</strong><div class="code">browser-blocked permission</div></a></div>
+      <div class="group-card"><a href="./guest/stop-and-delete.html"><strong>G13 · "Stop &amp; delete" confirm</strong><div class="code">mid-call deletion</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">E · End-of-call routing</h2><span class="pill">5 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./end/saving.html"><strong>E1 · Saving draft…</strong><div class="code">post-call spinner</div></a></div>
+      <div class="group-card"><a href="./end/review-admin.html"><strong>E2 · Admin review</strong><div class="code">publish · share · edit</div></a></div>
+      <div class="group-card"><a href="./end/review-author.html"><strong>E3 · Author review</strong><div class="code">submit-for-review</div></a></div>
+      <div class="group-card"><a href="./end/review-guest.html"><strong>E4 · Guest review</strong><div class="code">read-only confirm</div></a></div>
+      <div class="group-card"><a href="./end/error.html"><strong>E5 · Save error</strong><div class="code">retry + recovery</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">L · Logged-out discovery</h2><span class="pill">1 state</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./loggedout/interview-no-link.html"><strong>L1 · /interview no link</strong><div class="code">invite-only message</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">S · Settings (V1)</h2><span class="pill">1 state</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./settings/interview-defaults.html"><strong>S1 · Interview defaults</strong><div class="code">workspace defaults · cost cap</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">Canvas — tab views</h2><span class="pill">4 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./author/in-call-desktop.html"><strong>📄 Body (default)</strong><div class="code">prose streaming live</div></a></div>
+      <div class="group-card"><a href="./author/in-call-image-tab.html"><strong>🖼️ Image tab</strong><div class="code">featured image · prompt · OG · alternatives</div></a></div>
+      <div class="group-card"><a href="./author/in-call-seo-tab.html"><strong>🎯 SEO tab</strong><div class="code">SERP preview · tags · internal links</div></a></div>
+      <div class="group-card"><a href="./author/in-call-ready-tab.html"><strong>✓ Ready? tab</strong><div class="code">EEAT signals · publish-readiness</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">V1 previews</h2><span class="pill">2 states</span></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./author/in-call-video-tavus.html"><strong>V1 · Tavus video in-call</strong><div class="code">avatar · captions · canvas</div></a></div>
+      <div class="group-card"><a href="./admin/live-watch.html"><strong>V1 · Admin live-watch</strong><div class="code">event stream · nudge AI · coverage</div></a></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-h"><h2 class="h2">Extras</h2></div>
+    <div class="group-grid">
+      <div class="group-card"><a href="./shared/orb-playground.html"><strong>Orb playground</strong><div class="code">interactive · scenarios · live mic</div></a></div>
+    </div>
+  </section>
+
+  <section class="group" style="margin-top: 48px;">
+    <div class="group-h"><h2 class="h2">📌 Wired to blogbat</h2><span class="pill">how prototypes map to the codebase</span></div>
+    <div class="card" style="padding: 16px 18px; font-size: 13px; line-height: 1.65;">
+      <p class="muted" style="margin-top:0;">These prototypes are scaffolds for real blogbat routes. Every state maps to a concrete file in the implementation plan.</p>
+      <table class="data" style="margin-top: 12px;">
+        <thead><tr><th>Prototype group</th><th>BlogBat route</th><th>Key API / data</th></tr></thead>
+        <tbody>
+          <tr><td>Admin · A1-A6</td><td><code>app/(dashboard)/interview/links/*</code></td><td><code>/api/v1/interviews/share-links</code> · <code>collections.shareLinks()</code></td></tr>
+          <tr><td>Author · B1-B10</td><td><code>app/(dashboard)/interview/[id]/live</code></td><td>WebRTC ↔ <code>gpt-realtime-2</code> · SSE <code>/api/v1/interviews/[id]/stream</code></td></tr>
+          <tr><td>Guest · G1-G13</td><td><code>app/(public)/i/[token]/*</code></td><td><code>auth: none</code> · hashed token lookup · <code>POST /consent</code></td></tr>
+          <tr><td>End · E1-E5</td><td><code>app/interview/[id]/review/page.tsx</code></td><td>Role gate · TipTap handoff · <code>articles.add({ status })</code></td></tr>
+          <tr><td>Orb</td><td><code>components/ui/composites/voice-orb.tsx</code></td><td>SVG + CSS · audio-level prop · framer-motion (already in deps)</td></tr>
+          <tr><td>Share dialog</td><td><code>components/interview/share-link-dialog.tsx</code></td><td>Adapted from the admin's <code>chat/share/share-dialog.tsx</code></td></tr>
+          <tr><td>Canvas writer</td><td><code>lib/interviews/writer-worker.ts</code></td><td>Claude Sonnet 4.6 · prompt caching · streaming via SSE</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-12" style="margin-bottom:0;">
+        Full mapping: <a href="/docs/plans/2026-05-19-ai-interview-mode-design.md" target="_blank">design doc</a>
+        &nbsp;·&nbsp;
+        <a href="/docs/plans/2026-05-19-ai-interview-mode-plan.md" target="_blank">implementation plan</a>
+        &nbsp;·&nbsp;
+        Admin reference: <code>/path/to/admin</code>
+      </p>
+    </div>
+  </section>
+
+  <div style="margin: 48px 0 32px; text-align: center; font-size: 12px; color: hsl(var(--muted-foreground));">
+    50 prototype files · Tailwind-free · semantic tokens via shared/tokens.css · branch <code>ai-interview-blog-posts</code>
+  </div>
+</div>
+</body>
+</html>

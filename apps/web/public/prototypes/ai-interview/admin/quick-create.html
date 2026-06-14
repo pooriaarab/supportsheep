@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>A2 · Quick-create · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+</head>
+<body data-shell="dashboard">
+<script src="../shared/shell.js" defer></script>
+
+<div class="topbar">
+  <div>
+    <h1 class="h1">Interview share links</h1>
+    <p class="subtle-text">Quick-create — defaults to a 5-minute, email-gated link with smart-style AI.</p>
+  </div>
+</div>
+
+<div class="card" style="filter: blur(2px); opacity: 0.6; pointer-events: none;">
+  <p class="muted">(background table dimmed)</p>
+</div>
+
+<div class="overlay">
+  <div class="dialog">
+    <div class="dialog-header">
+      <h2 class="dialog-title">Quick share link</h2>
+      <button class="btn btn-ghost btn-sm" onclick="window.location='./links-list.html'">✕</button>
+    </div>
+    <div class="dialog-body col gap-16">
+      <div>
+        <label class="label">What's this interview about?</label>
+        <input class="input" placeholder="e.g. how Acme uses BlogBat for content ops" autofocus />
+        <div class="hint">We'll use this to greet your guest and shape the AI's opening questions.</div>
+      </div>
+
+      <div class="row gap-12" style="flex-wrap: wrap;">
+        <span class="badge badge-outline"><span class="dot" style="color: hsl(var(--info))"></span> Link · email-gated</span>
+        <span class="badge badge-outline">🧠 Smart style</span>
+        <span class="badge badge-outline">📝 Transcript only</span>
+        <span class="badge badge-outline">⏱️ 5 min</span>
+        <a href="./full-create.html" class="text-sm" style="margin-left:auto">Switch to advanced →</a>
+      </div>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn">Cancel</button>
+      <button class="btn btn-primary" onclick="window.location='./copy-success.html'">Create &amp; copy URL</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

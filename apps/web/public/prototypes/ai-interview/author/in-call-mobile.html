@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B5 · In-call mobile · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--muted)); min-height: 100vh; }
+  .frame-wrap { padding: 32px; display: flex; flex-direction: column; gap: 24px; align-items: center; }
+  .row-frames { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .phone { width: 390px; height: 780px; border: 1px solid hsl(var(--border-strong)); border-radius: 24px; overflow: hidden; background: hsl(var(--background)); box-shadow: 0 24px 60px hsl(0 0% 0% / 0.12); display: flex; flex-direction: column; }
+  .device-label { text-align: center; font-size: 13px; color: hsl(var(--muted-foreground)); margin-top: 8px; }
+  .top { padding: 10px 12px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); display: flex; align-items: center; justify-content: space-between; flex: none; }
+  .live-dot { width: 7px; height: 7px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .body-area { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+
+  /* TALK tab */
+  .talk { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 16px 16px; gap: 24px; }
+  .partial-transcript { padding: 14px 18px; background: hsl(var(--muted)); border-radius: 14px; font-size: 14px; line-height: 1.55; text-align: center; }
+  .speaking-label { text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; color: hsl(var(--primary)); margin-bottom: 4px; }
+
+  /* CANVAS tab */
+  .sub-tabs { display: flex; gap: 4px; padding: 8px 12px; background: hsl(var(--card)); border-bottom: 1px solid hsl(var(--border)); overflow-x: auto; flex: none; }
+  .sub-tab { flex: none; padding: 5px 10px; font-size: 12px; border-radius: 999px; border: 1px solid hsl(var(--border)); background: hsl(var(--background)); color: hsl(var(--muted-foreground)); cursor: pointer; }
+  .sub-tab.active { background: hsl(var(--foreground)); color: hsl(var(--background)); border-color: hsl(var(--foreground)); }
+  .canvas-inner { flex: 1; overflow-y: auto; padding: 16px; }
+  .canvas-inner h1 { font-size: 20px; line-height: 1.25; margin: 0 0 4px; }
+  .canvas-inner h2 { font-size: 14px; margin: 16px 0 4px; }
+  .canvas-inner p { font-size: 13.5px; line-height: 1.55; margin: 0 0 10px; }
+  .mini-orb-floating { position: absolute; right: 12px; bottom: 64px; background: hsl(var(--card)); border-radius: 50%; box-shadow: 0 4px 12px hsl(0 0% 0% / 0.15); padding: 6px; }
+
+  /* CHAT tab */
+  .chat-list { flex: 1; overflow-y: auto; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .chat-input-row { display: flex; gap: 6px; padding: 8px 10px; border-top: 1px solid hsl(var(--border)); align-items: flex-end; background: hsl(var(--card)); flex: none; }
+  .chat-input-row textarea { flex: 1; resize: none; border: 1px solid hsl(var(--border-strong)); border-radius: 16px; padding: 8px 12px; min-height: 36px; font-family: inherit; outline: none; }
+
+  /* shared bottom tabs */
+  .mobile-tabs { flex: none; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+<div class="frame-wrap">
+  <div class="text-center">
+    <h1 class="h1">B5 · Mobile portrait — 3-tab in-call</h1>
+    <p class="muted">Tabs: 🎙️ Talk · 📄 Canvas · 💬 Chat. Three frames showing each tab as the active state.</p>
+  </div>
+  <div class="row-frames">
+
+    <!-- TALK -->
+    <div>
+      <div class="phone">
+        <div class="top">
+          <div class="row gap-12"><span class="live-dot"></span><span class="text-sm font-medium">EEAT post</span></div>
+          <div class="row gap-12"><span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px;">06:12 / 10:00</span><button class="btn btn-destructive btn-sm">End</button></div>
+        </div>
+        <div class="body-area talk">
+          <div class="orb orb-state-speaking orb-speaking" style="--orb-size: 180px;"></div>
+          <div class="text-center" style="margin-top: 24px;">
+            <div class="speaking-label">AI is speaking</div>
+            <div class="partial-transcript">"Could you give me a quotable line for what advice you'd give someone planning this migration?"</div>
+          </div>
+          <div style="flex:1"></div>
+          <div class="row gap-12" style="width: 100%; justify-content: space-around;">
+            <button class="btn">🎙️ Mute</button>
+            <button class="btn">⏸️ Pause</button>
+            <button class="btn">💡 Hint</button>
+          </div>
+        </div>
+        <div class="mobile-tabs">
+          <button class="mobile-tab active"><span class="icon">🎙️</span>Talk</button>
+          <button class="mobile-tab"><span class="icon">📄</span>Canvas</button>
+          <button class="mobile-tab"><span class="icon">💬</span>Chat</button>
+        </div>
+      </div>
+      <div class="device-label">Talk tab (active)</div>
+    </div>
+
+    <!-- CANVAS -->
+    <div>
+      <div class="phone" style="position: relative;">
+        <div class="top">
+          <div class="row gap-12"><span class="live-dot"></span><span class="text-sm font-medium">EEAT post</span></div>
+          <div class="row gap-12"><span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px;">06:12 / 10:00</span><button class="btn btn-destructive btn-sm">End</button></div>
+        </div>
+        <div class="body-area">
+          <div class="sub-tabs">
+            <button class="sub-tab active">📄 Body</button>
+            <button class="sub-tab">🖼️ Image</button>
+            <button class="sub-tab">🎯 SEO</button>
+            <button class="sub-tab">✓ Ready? 70%</button>
+          </div>
+          <div class="canvas-inner">
+            <h1>Mirrored 5% of reads — what migrating off Postgres to PlanetScale taught us</h1>
+            <div class="muted text-xs mb-12">by Pooria · 8 min read · auto-drafted</div>
+            <h2>Why we started</h2>
+            <p class="canvas-refined">Our Postgres setup was healthy — until it wasn't. A handful of long-running transactions started knocking over read replicas during EU peak hours.</p>
+            <h2>The mirror-first approach</h2>
+            <p class="canvas-refined">We mirrored 5% of read traffic to PlanetScale for two weeks. Error rate was meaningfully lower than Postgres.</p>
+            <p class="canvas-placeholder canvas-streaming">Writes were the harder problem. We dual-wrote</p>
+          </div>
+        </div>
+        <div class="mini-orb-floating">
+          <div class="orb orb-state-speaking orb-speaking" style="--orb-size: 48px;"></div>
+        </div>
+        <div class="mobile-tabs">
+          <button class="mobile-tab"><span class="icon">🎙️</span>Talk</button>
+          <button class="mobile-tab active"><span class="icon">📄</span>Canvas</button>
+          <button class="mobile-tab"><span class="icon">💬</span>Chat</button>
+        </div>
+      </div>
+      <div class="device-label">Canvas tab (active)</div>
+    </div>
+
+    <!-- CHAT -->
+    <div>
+      <div class="phone">
+        <div class="top">
+          <div class="row gap-12"><span class="live-dot"></span><span class="text-sm font-medium">EEAT post</span></div>
+          <div class="row gap-12"><span style="font-family: ui-monospace, Menlo, monospace; font-size: 12px;">06:12 / 10:00</span><button class="btn btn-destructive btn-sm">End</button></div>
+        </div>
+        <div class="body-area">
+          <div class="chat-list">
+            <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 03:08</div>So when you flipped the canonical, what was the canary?</div></div>
+            <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 03:18</div>We did dual-write for ten days.</div></div>
+            <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 04:01</div>Got it. Any rows fall out of sync?</div></div>
+            <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 04:12</div>Two — both timezone bugs in the checksum job, not the DBs themselves.</div></div>
+            <div class="chat-row"><div class="chat-avatar user"></div><div class="chat-bubble"><div class="meta">You · 05:30 · attachment</div><span class="badge badge-outline">📎 migration-runbook.md</span></div></div>
+            <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 05:31</div>Thanks — reading that now.</div></div>
+            <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 05:42</div>Could you give me a quotable line?</div></div>
+          </div>
+          <div class="chat-input-row">
+            <button class="btn btn-ghost btn-sm">📎</button>
+            <textarea placeholder="Type, drop, or paste…"></textarea>
+            <button class="btn btn-primary btn-sm">↑</button>
+          </div>
+        </div>
+        <div class="mobile-tabs">
+          <button class="mobile-tab"><span class="icon">🎙️</span>Talk</button>
+          <button class="mobile-tab"><span class="icon">📄</span>Canvas</button>
+          <button class="mobile-tab active"><span class="icon">💬</span>Chat</button>
+        </div>
+      </div>
+      <div class="device-label">Chat tab (active)</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

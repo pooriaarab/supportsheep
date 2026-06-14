@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>L1 · /interview no link · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: grid; place-items: center; }
+  .wrap { max-width: 600px; padding: 48px 24px; text-align: center; }
+  .icon-big { font-size: 56px; margin-bottom: 16px; opacity: 0.8; }
+  .options { display: grid; gap: 12px; margin-top: 24px; text-align: left; }
+  .option { padding: 18px 20px; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 12px; display: flex; gap: 14px; align-items: center; }
+  .option .icon { font-size: 22px; }
+  .option .body { flex: 1; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+<div class="wrap">
+  <div class="icon-big">🎙️</div>
+  <h1 class="h1">Interviews are invite-only</h1>
+  <p class="muted">blogbat's AI interview mode is private. If someone's hosting one for you, they'll send you a link. If you're on the BlogBat team, sign in to start your own.</p>
+
+  <div class="options">
+    <div class="option">
+      <span class="icon">🔑</span>
+      <div class="body">
+        <div class="font-medium">You're a BlogBat team member</div>
+        <div class="text-sm muted">Sign in to record your own interview and draft a post in minutes.</div>
+      </div>
+      <button class="btn btn-primary">Sign in</button>
+    </div>
+    <div class="option">
+      <span class="icon">✉️</span>
+      <div class="body">
+        <div class="font-medium">You're expecting an invitation</div>
+        <div class="text-sm muted">Check your inbox for a link from a BlogBat host, or ask them to resend.</div>
+      </div>
+      <button class="btn">How it works ↗</button>
+    </div>
+    <div class="option">
+      <span class="icon">📰</span>
+      <div class="body">
+        <div class="font-medium">You're just curious</div>
+        <div class="text-sm muted">Read recent articles drafted via AI interviews.</div>
+      </div>
+      <a class="btn" href="/">Visit blog</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

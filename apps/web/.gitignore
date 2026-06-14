@@ -1,0 +1,5 @@
+/scripts/migrations/reports/
+
+# wrangler types output — a ~12k-line/500KB file that breaks tsc (we augment
+# CloudflareEnv by hand in src/types/cloudflare-env.d.ts instead). Never commit it.
+worker-configuration.d.ts

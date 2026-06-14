@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>B8 · Timer 90% warning · AI Interview</title>
+<link rel="stylesheet" href="../shared/tokens.css" />
+<style>
+  body { background: hsl(var(--background)); min-height: 100vh; display: flex; flex-direction: column; }
+  .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid hsl(var(--border)); background: hsl(var(--card)); }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--destructive)); animation: blink 1.2s ease-in-out infinite; }
+  .timer.warn { color: hsl(var(--warning)); font-weight: 600; }
+  .call-layout { flex: 1; display: grid; grid-template-columns: 380px 1fr; }
+  .left-rail { background: hsl(var(--card)); border-right: 1px solid hsl(var(--border)); padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+  .banner { padding: 12px 16px; background: hsl(var(--warning) / 0.12); border-bottom: 1px solid hsl(var(--warning) / 0.4); display: flex; align-items: center; gap: 12px; }
+  .right-rail { padding: 24px 56px; max-width: 760px; }
+</style>
+</head>
+<body data-shell="banner-only">
+<script src="../shared/shell.js" defer></script>
+
+<div class="top-bar">
+  <div class="row gap-12">
+    <span class="live-dot"></span><span class="font-medium">Interview · EEAT post</span>
+  </div>
+  <div class="row gap-12">
+    <span class="timer warn" style="font-family: ui-monospace; font-size: 14px;">⚠ 00:28 left</span>
+    <button class="btn btn-destructive btn-sm">End now</button>
+  </div>
+</div>
+
+<div class="banner">
+  <span style="font-size: 18px; color: hsl(var(--warning));">⚠</span>
+  <div>
+    <strong>About 30 seconds left.</strong>
+    <span class="muted">Anything important still to cover? The AI will start wrapping up.</span>
+  </div>
+  <div style="flex:1"></div>
+  <button class="btn btn-sm">+ 5 min</button>
+</div>
+
+<div class="call-layout">
+  <aside class="left-rail">
+    <div class="text-center">
+      <div class="orb orb-state-speaking orb-speaking" style="--orb-size: 110px;"></div>
+      <div class="muted text-xs" style="margin-top: 28px;">AI is wrapping up…</div>
+    </div>
+    <div class="col-tight" style="flex:1;">
+      <div class="chat-row"><div class="chat-avatar ai"></div><div class="chat-bubble"><div class="meta">AI · 09:34</div>We're getting close to the end — anything you wanted to make sure we covered before I wrap?</div></div>
+    </div>
+  </aside>
+
+  <main class="right-rail">
+    <h1 style="font-size:24px;">Mirrored 5% of reads — what migrating off Postgres to PlanetScale taught us</h1>
+    <p class="canvas-refined">Three sections drafted. The writer is currently finalizing the closing paragraph and pull-quote.</p>
+    <p class="canvas-placeholder canvas-streaming">Closing thought: the engineering lessons here generalize</p>
+  </main>
+</div>
+</body>
+</html>
