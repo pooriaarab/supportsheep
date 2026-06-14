@@ -64,11 +64,11 @@ describe("ArticleBodyRenderer", () => {
     );
     const body = sanitizeArticleHtml(
       [
-        "<h1>What Is Solo Grow?</h1>",
+        "<h1>What Is Supportsheep Grow?</h1>",
         '<p class="article-subtitle">A short guide.</p>',
         '<figure><img src="https://images.example.com/hero.jpg" alt="Hero" /></figure>',
         "<h2>Definition and core idea</h2>",
-        "<p>Solo Grow is the practice of compounding small wins.</p>",
+        "<p>Supportsheep Grow is the practice of compounding small wins.</p>",
         "<ol><li>Pick one tiny goal</li><li>Ship it before noon</li></ol>",
         '<aside class="callout" data-variant="info"><p>Velocity compounds.</p></aside>',
       ].join("\n"),
@@ -76,11 +76,11 @@ describe("ArticleBodyRenderer", () => {
     const html = renderToStaticMarkup(
       <ArticleBodyRenderer articleId="test-article" htmlBody={body} />,
     );
-    expect(html).toContain("What Is Solo Grow?");
+    expect(html).toContain("What Is Supportsheep Grow?");
     expect(html).toContain("A short guide.");
     expect(html).toContain("https://images.example.com/hero.jpg");
     expect(html).toContain("Definition and core idea");
-    expect(html).toContain("Solo Grow is the practice of compounding small wins.");
+    expect(html).toContain("Supportsheep Grow is the practice of compounding small wins.");
     expect(html).toContain("Pick one tiny goal");
     expect(html).toContain("Velocity compounds.");
     expect(html).toMatch(/data-variant="info"/);

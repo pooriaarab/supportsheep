@@ -96,7 +96,7 @@ async function mapWithConcurrency<T, R>(
 function buildAudience(item: EditorialPostSpec) {
   switch (item.cluster) {
     case "vertical-seo":
-      return "local service businesses and solo operators who need more qualified leads from organic search";
+      return "local service businesses and supportsheep operators who need more qualified leads from organic search";
     case "migration":
       return "small business owners changing website builders and trying to protect their rankings, redirects, and content";
     case "local-seo":
@@ -264,7 +264,7 @@ Hard rules:
       audience: buildAudience(item),
       angle: buildAngle(item),
       productContext:
-        "Supportsheep is an AI-powered blog and website platform for solopreneurs and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
+        "Supportsheep is an AI-powered blog and website platform for supportsheeppreneurs and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
     }),
   });
 }

@@ -24,7 +24,7 @@ const VARIANT_KEY = "dentists";
 
 const CONTENT = `## TL;DR
 
-If you run a solo or small dental practice (1-5 dentists), your website has to do four things at once: bring in patients from local search, let them book an appointment on their phone, stay on the right side of HIPAA, and meet accessibility standards that regulators and plaintiffs' firms are now actively enforcing. This page walks through what a dental site actually needs in 2026, the HIPAA-specific rules that apply the moment a form collects patient info, a local SEO playbook tuned for dental searches, and an honest comparison of Solo against generic builders and dental-specific vendors so you can pick the right tool for your stage.
+If you run a supportsheep or small dental practice (1-5 dentists), your website has to do four things at once: bring in patients from local search, let them book an appointment on their phone, stay on the right side of HIPAA, and meet accessibility standards that regulators and plaintiffs' firms are now actively enforcing. This page walks through what a dental site actually needs in 2026, the HIPAA-specific rules that apply the moment a form collects patient info, a local SEO playbook tuned for dental searches, and an honest comparison of Supportsheep against generic builders and dental-specific vendors so you can pick the right tool for your stage.
 
 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&auto=format&fit=crop" alt="A modern dental practice operatory with chair, overhead lamp, and instrument tray." loading="lazy" />
 
@@ -132,9 +132,9 @@ A single "locations" page with three addresses on it will not rank for three cit
 
 The most underused SEO lane in dental is long-tail informational content. "Why does my tooth hurt when I drink cold water", "how much does a crown cost without insurance in [city]", "is it normal to bleed during flossing" — these are queries patients are actively typing, and a thoughtful 600-800 word answer is enough to start ranking and, more importantly, to earn patient trust before they ever walk in.
 
-## Why Supportsheep works for solo and small dental practices
+## Why Supportsheep works for supportsheep and small dental practices
 
-Supportsheep is an AI website builder aimed at solopreneurs and small businesses. A few properties make it a reasonable fit for small dental practices specifically:
+Supportsheep is an AI website builder aimed at supportsheeppreneurs and small businesses. A few properties make it a reasonable fit for small dental practices specifically:
 
 - **Speed to launch.** Most practice owners do not need a bespoke design. They need a credible site up this week, with content that is tuned for local search. Supportsheep collapses the "write it, structure it, publish it" loop.
 - **AI-assisted content, with guardrails.** Supportsheep generates service pages and informational blog posts from short prompts, then flags thin content, missing alt text, weak internal links, and title-length issues before you publish. Thin programmatic pages are blocked from indexing automatically.
@@ -214,7 +214,7 @@ const FAQS: ProgrammaticFaq[] = [
       "Healthcare providers that receive federal financial assistance must meet WCAG 2.1 Level AA under HHS Section 504 rules, with phased compliance dates running through 2026 and 2027 based on organisation size. Independent of the federal rule, ADA Title III lawsuits against small-business websites have been rising year over year and dental practices have been specific targets. Building to WCAG 2.1 AA and keeping a dated audit record is the practical standard.",
   },
   {
-    question: "How much should a solo dentist spend on a website?",
+    question: "How much should a supportsheep dentist spend on a website?",
     answer:
       "A small practice can get a credible, SEO-aware, mobile-first site for roughly the cost of one cleaning per month by using a modern builder plus a separate booking tool. Dental-specific turnkey vendors typically cost several multiples of that and bundle features (chat widgets, phone tracking, patient-acquisition campaigns) you may or may not use. Custom agency builds start in the mid-four-figures and scale up from there.",
   },
@@ -260,7 +260,7 @@ async function main(): Promise<void> {
       },
       title: "Supportsheep for dentists",
       metaDescription:
-        "Supportsheep helps solo and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware website that plays nicely with HIPAA and WCAG 2.1 AA.",
+        "Supportsheep helps supportsheep and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware website that plays nicely with HIPAA and WCAG 2.1 AA.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

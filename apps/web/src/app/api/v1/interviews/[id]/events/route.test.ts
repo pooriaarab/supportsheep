@@ -397,11 +397,11 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     // invariants in a single end-to-end POST.
     mockVerifyInterviewToken.mockReturnValue({ interviewId: "test-w20b" });
     const persistedSnapshot = {
-      title: "Solo Grow: What It Means to Build on Your Own",
+      title: "Supportsheep Grow: What It Means to Build on Your Own",
       sections: [
         {
           id: "section-1",
-          heading: "On Building Solo",
+          heading: "On Building Supportsheep",
           bullets: [],
           paragraphs: ["First paragraph from a prior batch."],
           quotes: [],
@@ -414,7 +414,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
       id: "test-w20b",
       blogId: "default",
       status: "live",
-      topic: "what is solo grow",
+      topic: "what is supportsheep grow",
       goal: null,
       language: "en",
       canvasSnapshot: persistedSnapshot,

@@ -259,7 +259,7 @@ describe("isPlatformHost", () => {
 
   it("does NOT mark foreign custom domains as first-party", () => {
     expect(isPlatformHost("blog.acme.com")).toBe(false);
-    expect(isPlatformHost("blog.solozilla.com")).toBe(false);
+    expect(isPlatformHost("blog.supportsheepzilla.com")).toBe(false);
     expect(isPlatformHost("example.com")).toBe(false);
   });
 

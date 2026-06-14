@@ -168,19 +168,19 @@ describe("free tools public components", () => {
           kind: "text",
           summary: "Generated **TikTok** captions",
           text: [
-            "Here are short TikTok caption options for **Solo Grow**:",
+            "Here are short TikTok caption options for **Supportsheep Grow**:",
             "",
-            "1. **Grow smarter with Solo Grow**",
-            "2. **Your growth, solo made simple.**",
+            "1. **Grow smarter with Supportsheep Grow**",
+            "2. **Your growth, supportsheep made simple.**",
           ].join("\n"),
         }}
       />,
     );
 
     expect(html).toContain("<strong>TikTok</strong>");
-    expect(html).toContain("<strong>Solo Grow</strong>");
-    expect(html).toContain("<strong>Grow smarter with Solo Grow</strong>");
-    expect(html).not.toContain("**Solo Grow**");
+    expect(html).toContain("<strong>Supportsheep Grow</strong>");
+    expect(html).toContain("<strong>Grow smarter with Supportsheep Grow</strong>");
+    expect(html).not.toContain("**Supportsheep Grow**");
   });
 
   it("formats calculator metrics with business units", () => {

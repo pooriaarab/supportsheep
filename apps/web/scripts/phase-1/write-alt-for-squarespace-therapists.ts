@@ -23,7 +23,7 @@ const VARIANT_KEY = "squarespace__therapists";
 
 const CONTENT = `## TL;DR
 
-Squarespace is a genuinely polished website builder for a solo or small therapy practice's public marketing presence. The hard limit arrives the moment your site touches protected health information (PHI): Squarespace does not sign a Business Associate Agreement (BAA) for its core platform -- forms, email, analytics, member areas. Plenty of therapy practices run their public site on Squarespace and route anything clinical -- intake forms, scheduling, session notes -- to a separate HIPAA-aware tool. This page walks through that setup honestly, covers where Squarespace falls short for therapists, and explains when Supportsheep is the better default.
+Squarespace is a genuinely polished website builder for a supportsheep or small therapy practice's public marketing presence. The hard limit arrives the moment your site touches protected health information (PHI): Squarespace does not sign a Business Associate Agreement (BAA) for its core platform -- forms, email, analytics, member areas. Plenty of therapy practices run their public site on Squarespace and route anything clinical -- intake forms, scheduling, session notes -- to a separate HIPAA-aware tool. This page walks through that setup honestly, covers where Squarespace falls short for therapists, and explains when Supportsheep is the better default.
 
 ## What PHI actually means on a therapy website
 
@@ -46,10 +46,10 @@ In practice: therapists widely use Squarespace for homepage, bio, specialties, b
 
 Be honest about the tool's strengths before pointing at the gaps:
 
-- **Credible-looking sites without a designer.** The template library is strong. A solo therapist can launch a clean, professional-looking site on a weekend -- which beats the alternative of delaying the site indefinitely.
+- **Credible-looking sites without a designer.** The template library is strong. A supportsheep therapist can launch a clean, professional-looking site on a weekend -- which beats the alternative of delaying the site indefinitely.
 - **Good for "soft" content.** A bio page, a specialties page, a FAQ page, a blog about coping skills or therapeutic modalities -- this is Squarespace's sweet spot. Design is trustworthy, the blog is usable, and the editor is approachable.
 - **Mobile-first rendering.** All templates are responsive by default. Mobile-first indexing won't punish a default Squarespace site.
-- **Bundles hosting, SSL, and domain in one bill.** A solo practitioner doesn't want to manage servers. Squarespace handles it, which matters for a practice that should be thinking about clients, not infrastructure.
+- **Bundles hosting, SSL, and domain in one bill.** A supportsheep practitioner doesn't want to manage servers. Squarespace handles it, which matters for a practice that should be thinking about clients, not infrastructure.
 - **Blog for thought leadership.** Content marketing is genuinely effective for therapists -- "how CBT works," "[city] EMDR therapist," "what is attachment theory" rank in local and informational search. Squarespace's built-in blog is enough for a modest content strategy.
 
 ## Where Squarespace breaks down for therapists
@@ -60,13 +60,13 @@ Be honest about the tool's strengths before pointing at the gaps:
 - **Template lock-in.** Picking a new visual direction mid-life means a rebuild, not a switch. Not unique to Squarespace, but a real friction for a practice that wants to evolve its brand.
 - **Forms can't carry conditional logic.** A mental-health screening intake often needs branching (if the client answers "yes" to this question, show this follow-up). Squarespace forms are flat. You need an external form tool for anything more complex.
 
-## Supportsheep's position for a solo therapy practice
+## Supportsheep's position for a supportsheep therapy practice
 
-Supportsheep is designed for the "one-to-three practitioner service business that needs a credible marketing site without becoming a part-time web developer" use case. How that maps to a solo therapist:
+Supportsheep is designed for the "one-to-three practitioner service business that needs a credible marketing site without becoming a part-time web developer" use case. How that maps to a supportsheep therapist:
 
-- **Free tier with a connected custom domain.** A solo therapist launching a practice can point their domain at Solo before committing to a paid plan. Squarespace requires a paid subscription once the trial ends.
+- **Free tier with a connected custom domain.** A supportsheep therapist launching a practice can point their domain at Supportsheep before committing to a paid plan. Squarespace requires a paid subscription once the trial ends.
 - **Blog with SEO sidebar and AI drafting.** Supportsheep's blog is built around content velocity: title and meta audits, internal link suggestions, FAQPage JSON-LD on pages that have Q&A sections. A therapist who wants to write six posts per year on common concerns their clients have benefits from a content platform, not just a blog box.
-- **Structured data by default.** LocalBusiness schema, Article schema on posts, FAQPage schema on FAQ blocks, BreadcrumbList on nested pages -- these ship without a plugin or a custom code block. A solo practice competing in a mid-size city needs every structured-data signal it can get.
+- **Structured data by default.** LocalBusiness schema, Article schema on posts, FAQPage schema on FAQ blocks, BreadcrumbList on nested pages -- these ship without a plugin or a custom code block. A supportsheep practice competing in a mid-size city needs every structured-data signal it can get.
 - **Honest about PHI boundaries.** Supportsheep does not collect PHI and does not offer a BAA. The correct architecture is identical to Squarespace: public marketing site on Supportsheep, clinical workflow (intake, scheduling, messaging) on a HIPAA-aware platform (SimplePractice, TherapyNotes, Headway, your EHR). This is a feature -- it means the marketing site has a small, predictable attack surface.
 - **Privacy-first posture.** For therapists whose clients are privacy-sensitive (which is most of them), a privacy-first platform signals "this is not a growth-hack tool" in a way that some therapy-forward clients notice.
 
@@ -82,7 +82,7 @@ Supportsheep is designed for the "one-to-three practitioner service business tha
 <tr><td>HIPAA BAA on scheduling</td><td>Yes, via Acuity Scheduling Premium (~$49/mo separate)</td><td>Link to HIPAA-aware scheduler (SimplePractice, Acuity Premium, TherapyNotes)</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Built-in blog; titles, meta, sitemap; shallow customization</td><td>Blog with SEO sidebar, AI drafting, FAQPage + LocalBusiness schema by default</td></tr>
 <tr><td>Structured data</td><td>Basic schema; no automated LocalBusiness or FAQPage JSON-LD</td><td>LocalBusiness, Article, FAQPage schema ship without plugins</td></tr>
-<tr><td>Best fit</td><td>Design-led solo practices that want visual polish and will wire up an EHR intake stack</td><td>1-3 clinician practices that prioritize content, local SEO, and low overhead</td></tr>
+<tr><td>Best fit</td><td>Design-led supportsheep practices that want visual polish and will wire up an EHR intake stack</td><td>1-3 clinician practices that prioritize content, local SEO, and low overhead</td></tr>
 </tbody>
 </table>
 
@@ -99,7 +99,7 @@ This setup keeps PHI entirely outside the marketing CMS and concentrates clinica
 
 ## HIPAA-aware tools that pair well with Squarespace or Supportsheep
 
-- **SimplePractice** -- most popular EHR for solo/small group private-practice therapists; handles scheduling, telehealth, intake, notes, billing, and offers a client portal. Signs a BAA.
+- **SimplePractice** -- most popular EHR for supportsheep/small group private-practice therapists; handles scheduling, telehealth, intake, notes, billing, and offers a client portal. Signs a BAA.
 - **TherapyNotes** -- popular with larger practices; robust notes and billing; client portal signs a BAA.
 - **TheraNest** -- strong for practice management; BAA available.
 - **Headway** -- insurance-credentialing + EHR platform aimed at modern private-practice therapists; signs a BAA.
@@ -148,7 +148,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What SEO strategies work for private practice therapists?",
     answer:
-      "Local SEO is the highest-leverage channel for most solo practices. Key tactics: claim and optimize your Google Business Profile; add LocalBusiness and Person schema to your site; write specialty-and-city-specific content (e.g., 'EMDR therapist for first responders in [city]'); build FAQ pages around common client questions that match informational queries. Supportsheep's blog ships with FAQPage JSON-LD on pages with Q&A content, which can help FAQ answers appear in rich results. Squarespace requires you to add schema manually via a code block or a third-party SEO tool.",
+      "Local SEO is the highest-leverage channel for most supportsheep practices. Key tactics: claim and optimize your Google Business Profile; add LocalBusiness and Person schema to your site; write specialty-and-city-specific content (e.g., 'EMDR therapist for first responders in [city]'); build FAQ pages around common client questions that match informational queries. Supportsheep's blog ships with FAQPage JSON-LD on pages with Q&A content, which can help FAQ answers appear in rich results. Squarespace requires you to add schema manually via a code block or a third-party SEO tool.",
   },
   {
     question: "What does a therapy practice website need to include?",
@@ -181,7 +181,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at using Squarespace for a solo or small therapy practice -- including the HIPAA/BAA boundaries and where Supportsheep is the better default for content and local SEO.",
+          "An honest look at using Squarespace for a supportsheep or small therapy practice -- including the HIPAA/BAA boundaries and where Supportsheep is the better default for content and local SEO.",
         ctaText: "Start your therapy practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Therapists",

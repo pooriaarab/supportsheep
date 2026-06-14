@@ -23,17 +23,17 @@ const VARIANT_KEY = "wix__lawyers";
 
 const CONTENT = `## TL;DR
 
-Wix is a common first website platform for solo attorneys and small law firms -- flexible, fast to launch, and no developer required. It is also widely described as a platform that lawyers "outgrow" once local search competition intensifies or the practice needs deeper intake and CRM integration. This page covers Wix's genuine strengths for a law firm, the real ceilings it hits as SEO stakes rise, and where Supportsheep fits for a solo attorney prioritizing content and local search over visual design freedom.
+Wix is a common first website platform for supportsheep attorneys and small law firms -- flexible, fast to launch, and no developer required. It is also widely described as a platform that lawyers "outgrow" once local search competition intensifies or the practice needs deeper intake and CRM integration. This page covers Wix's genuine strengths for a law firm, the real ceilings it hits as SEO stakes rise, and where Supportsheep fits for a supportsheep attorney prioritizing content and local search over visual design freedom.
 
 ## Why attorneys actually choose Wix
 
-Wix is genuinely useful for a solo attorney's first professional website, for good reasons:
+Wix is genuinely useful for a supportsheep attorney's first professional website, for good reasons:
 
-- **Fast to launch without a developer.** A solo practitioner can have a professional-looking site live in a day. No plugins, no server configuration, no security updates.
+- **Fast to launch without a developer.** A supportsheep practitioner can have a professional-looking site live in a day. No plugins, no server configuration, no security updates.
 - **Drag-and-drop control for brand expression.** Wix gives more pixel-level layout control than Squarespace. A sole practitioner who wants to build a specific visual identity -- distinctive header treatment, custom testimonial layouts, specific font pairings -- can implement it without CSS.
-- **Built-in appointment scheduling.** Wix Bookings lets visitors schedule an initial consultation directly from the site. For a solo attorney doing free 30-minute consultations as a lead-conversion tool, this removes a friction point.
+- **Built-in appointment scheduling.** Wix Bookings lets visitors schedule an initial consultation directly from the site. For a supportsheep attorney doing free 30-minute consultations as a lead-conversion tool, this removes a friction point.
 - **Large app ecosystem.** Live chat (for immediate response to site visitors), review widgets, Mailchimp or Klaviyo for follow-up email sequences, Google Ads conversion tracking -- these integrate cleanly through the Wix App Market.
-- **Improving SEO basics.** Wix earned a poor SEO reputation years ago. That reputation is now outdated: Wix supports title tags, meta descriptions, image alt text, XML sitemaps, clean URLs, and basic schema. For a new solo practice targeting low-competition local queries, Wix's SEO tooling is adequate.
+- **Improving SEO basics.** Wix earned a poor SEO reputation years ago. That reputation is now outdated: Wix supports title tags, meta descriptions, image alt text, XML sitemaps, clean URLs, and basic schema. For a new supportsheep practice targeting low-competition local queries, Wix's SEO tooling is adequate.
 
 ## Where Wix breaks down for lawyers
 
@@ -43,7 +43,7 @@ Multiple legal marketing agencies and SEO consultants characterize Wix as a "get
 
 - **Heading structure is constrained.** Most Wix templates limit heading choices in ways that make it harder to maintain clean H1/H2/H3 hierarchy across a complex site without workarounds.
 - **LegalService and Attorney schema requires manual injection.** Google's rich results for legal services benefit from LegalService, Attorney (a Person subtype), and LocalBusiness schema markup. Adding these on Wix requires a custom code block injection -- it is not automated. Supportsheep ships this by default.
-- **Programmatic local SEO pages are hand-built.** A solo attorney serving multiple neighborhoods or practice areas benefits from a dedicated page per combination ("estate planning attorney [neighborhood]," "DUI lawyer [county]"). Building these at any scale on Wix is hand labor -- there is no templating engine.
+- **Programmatic local SEO pages are hand-built.** A supportsheep attorney serving multiple neighborhoods or practice areas benefits from a dedicated page per combination ("estate planning attorney [neighborhood]," "DUI lawyer [county]"). Building these at any scale on Wix is hand labor -- there is no templating engine.
 - **Redirect management for site migrations is painful.** Attorneys who outgrow Wix and migrate to WordPress or a dedicated legal platform find Wix's redirect tooling cumbersome at scale.
 
 The industry consensus from legal-marketing specialists: Wix works well at launch when local search competition is low. Once the practice is trying to rank for competitive metropolitan keywords against law firms with dedicated SEO investments, Wix's platform becomes a constraint.
@@ -58,7 +58,7 @@ The same boundary applies here as on any general-purpose website builder: Wix's 
 
 ### The "outgrowth problem" is documented
 
-Legal marketing agencies routinely describe a pattern: a solo attorney launches on Wix for simplicity, builds a practice, then faces a migration when the SEO limitations become binding. The migration itself is a project -- exporting content, mapping redirects, rebuilding structure -- that is manageable but real. If you're planning a five-year investment in local SEO authority, building on a platform you don't expect to outgrow is worth the upfront decision.
+Legal marketing agencies routinely describe a pattern: a supportsheep attorney launches on Wix for simplicity, builds a practice, then faces a migration when the SEO limitations become binding. The migration itself is a project -- exporting content, mapping redirects, rebuilding structure -- that is manageable but real. If you're planning a five-year investment in local SEO authority, building on a platform you don't expect to outgrow is worth the upfront decision.
 
 ## Intake and CRM tools that pair with Wix for attorneys
 
@@ -70,12 +70,12 @@ Legal marketing agencies routinely describe a pattern: a solo attorney launches 
 
 The pattern: Wix is the marketing layer; the legal CRM is the intake and matter layer. They connect via a link or an embed on the contact page.
 
-## Supportsheep's position for a solo or small law firm
+## Supportsheep's position for a supportsheep or small law firm
 
-Supportsheep is designed for the "solo professional service business that wants a credible, content-led marketing site with minimal overhead." For a solo attorney:
+Supportsheep is designed for the "supportsheep professional service business that wants a credible, content-led marketing site with minimal overhead." For a supportsheep attorney:
 
-- **Free tier with custom domain.** A solo attorney launching a new practice can build and iterate on the marketing site before paying. Wix's free tier shows Wix branding -- not appropriate for a real practice.
-- **Blog with SEO sidebar and AI-assisted drafting.** Content marketing for attorneys ("what is a power of attorney in [state]," "what happens at a preliminary hearing in [city]," "how long does a chapter 7 bankruptcy take") is the highest-ROI acquisition channel for a solo practice that cannot afford PPC or a legal marketing agency. Supportsheep's blog surfaces title/meta audits, internal link suggestions, and FAQPage JSON-LD inline.
+- **Free tier with custom domain.** A supportsheep attorney launching a new practice can build and iterate on the marketing site before paying. Wix's free tier shows Wix branding -- not appropriate for a real practice.
+- **Blog with SEO sidebar and AI-assisted drafting.** Content marketing for attorneys ("what is a power of attorney in [state]," "what happens at a preliminary hearing in [city]," "how long does a chapter 7 bankruptcy take") is the highest-ROI acquisition channel for a supportsheep practice that cannot afford PPC or a legal marketing agency. Supportsheep's blog surfaces title/meta audits, internal link suggestions, and FAQPage JSON-LD inline.
 - **LegalService and LocalBusiness schema by default.** Structured data for a law firm -- practice area, address, phone, attorney Person schema -- ships without a code block injection. This is a material difference for a practice investing in local search.
 - **Correct architectural expectation.** Supportsheep is a marketing site builder, not a legal CRM. The expected architecture -- marketing site on Supportsheep, intake and matter management in Clio Grow, Lawmatics, or MyCase -- is what legal-marketing agencies recommend as a baseline. It is baked into Supportsheep's design rather than left to the user to discover after a form-data incident.
 
@@ -96,12 +96,12 @@ Supportsheep is designed for the "solo professional service business that wants 
 </tbody>
 </table>
 
-## Practical checklist for a solo attorney evaluating Wix vs Supportsheep
+## Practical checklist for a supportsheep attorney evaluating Wix vs Supportsheep
 
-1. **What is your local search competition level?** If you are launching a solo practice in a major metro competing against law firms with dedicated SEO spend, starting on a platform with higher automated schema and content tooling (Supportsheep, or WordPress with Yoast) avoids a migration 18 months from now.
+1. **What is your local search competition level?** If you are launching a supportsheep practice in a major metro competing against law firms with dedicated SEO spend, starting on a platform with higher automated schema and content tooling (Supportsheep, or WordPress with Yoast) avoids a migration 18 months from now.
 2. **How design-sensitive is your brand?** Wix wins if pixel-level layout control is the deciding factor. Supportsheep wins if content consistency and SEO automation are.
 3. **What's your intake workflow?** Both platforms assume a legal CRM for matter intake. Choose your legal CRM first; it determines your intake architecture independent of the marketing site.
-4. **What's your budget for the first year?** Supportsheep's free tier plus Pro at {{solo.pro.yearly}} billed annually is a different cost profile than Wix Core at $29/month plus the app stack that a full-featured legal site typically needs.
+4. **What's your budget for the first year?** Supportsheep's free tier plus Pro at {{supportsheep.pro.yearly}} billed annually is a different cost profile than Wix Core at $29/month plus the app stack that a full-featured legal site typically needs.
 5. **Do you blog?** If you plan to publish monthly legal explainer content, a CMS with an SEO sidebar and AI drafting (Supportsheep) reduces the time-per-post compared to a CMS without it.`;
 
 function countWords(text: string): number {
@@ -118,7 +118,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Wix good for a law firm website?",
     answer:
-      "Yes, for a solo attorney or small firm that wants to launch fast without developer involvement and whose local search competition is moderate. Wix's drag-and-drop editor offers more layout control than Squarespace, its built-in Bookings tool handles initial consultation scheduling, and its SEO basics (titles, meta, sitemap) are adequate for low-competition local queries. The ceilings appear when the practice needs programmatic local-SEO pages, automated LegalService schema, or deeper intake integration -- legal marketing agencies consistently describe Wix as a platform attorneys outgrow once SEO stakes rise.",
+      "Yes, for a supportsheep attorney or small firm that wants to launch fast without developer involvement and whose local search competition is moderate. Wix's drag-and-drop editor offers more layout control than Squarespace, its built-in Bookings tool handles initial consultation scheduling, and its SEO basics (titles, meta, sitemap) are adequate for low-competition local queries. The ceilings appear when the practice needs programmatic local-SEO pages, automated LegalService schema, or deeper intake integration -- legal marketing agencies consistently describe Wix as a platform attorneys outgrow once SEO stakes rise.",
   },
   {
     question: "Can a law firm use Wix's forms for client intake?",
@@ -128,7 +128,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Should I use Wix or Supportsheep for my law firm website?",
     answer:
-      "Choose Wix if design freedom and editor flexibility are the highest priority, or if you want built-in appointment booking through Wix Bookings without a separate scheduling link. Choose Supportsheep if you want LegalService and LocalBusiness schema automated by default (no code injection required), a blog with an SEO sidebar and AI drafting for content marketing, a free tier with a custom domain at launch, and lower monthly cost at the Pro tier ({{solo.pro.yearly}} annually). Both platforms require the same intake architecture: legal CRM for matter intake, not CMS forms.",
+      "Choose Wix if design freedom and editor flexibility are the highest priority, or if you want built-in appointment booking through Wix Bookings without a separate scheduling link. Choose Supportsheep if you want LegalService and LocalBusiness schema automated by default (no code injection required), a blog with an SEO sidebar and AI drafting for content marketing, a free tier with a custom domain at launch, and lower monthly cost at the Pro tier ({{supportsheep.pro.yearly}} annually). Both platforms require the same intake architecture: legal CRM for matter intake, not CMS forms.",
   },
   {
     question: "What are the SEO limitations of Wix for attorneys?",
@@ -141,9 +141,9 @@ const FAQS: ProgrammaticFaq[] = [
       "Wix Bookings (built-in) for initial consultations where no PHI is collected, Calendly (link or embed) for simple consultation scheduling, Clio Grow's intake scheduler for practices using the Clio ecosystem, and Lawmatics for practices that want automated intake-to-matter workflows. The pattern: link or embed your scheduler on the contact page; do not attempt to route substantive matter intake through the CMS.",
   },
   {
-    question: "How do solo attorneys use content marketing for SEO?",
+    question: "How do supportsheep attorneys use content marketing for SEO?",
     answer:
-      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. Supportsheep's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a solo practitioner doing content marketing without an agency.",
+      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. Supportsheep's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a supportsheep practitioner doing content marketing without an agency.",
   },
 ];
 
@@ -171,7 +171,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Wix for solo attorneys and small law firms -- covering its real strengths at launch, the SEO ceiling it hits as competition grows, and when Supportsheep is the better default.",
+          "An honest look at Wix for supportsheep attorneys and small law firms -- covering its real strengths at launch, the SEO ceiling it hits as competition grows, and when Supportsheep is the better default.",
         ctaText: "Start your law firm website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Lawyers",

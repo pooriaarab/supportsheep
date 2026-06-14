@@ -30,9 +30,9 @@ import type { CanvasState } from "@/hooks/use-interview-session";
 
 function buildCanvasWithEveryNodeType(): CanvasState {
   return {
-    title: "Solo Grow: a **bold** start",
+    title: "Supportsheep Grow: a **bold** start",
     subtitle: "An *italic* opener with a [link](https://example.com).",
-    slug: "solo-grow",
+    slug: "supportsheep-grow",
     metaTitle: null,
     metaDescription: null,
     featuredImage: {
@@ -51,7 +51,7 @@ function buildCanvasWithEveryNodeType(): CanvasState {
           "Bullet with [link](https://example.com)",
         ],
         paragraphs: [
-          "Solo Grow compounds **small** wins.",
+          "Supportsheep Grow compounds **small** wins.",
           "Try ~~quitting~~ shipping with a `tiny` goal.",
           "Read the [manifesto](https://example.com/m).",
           "An <u>underlined</u> phrase and a <mark data-color=\"yellow\">highlight</mark>.",
@@ -59,7 +59,7 @@ function buildCanvasWithEveryNodeType(): CanvasState {
         quotes: [
           {
             text: "Ship **today**, refine tomorrow.",
-            attributedTo: "Solo Founder",
+            attributedTo: "Supportsheep Founder",
           },
         ],
         blocks: [
@@ -93,7 +93,7 @@ function buildCanvasWithEveryNodeType(): CanvasState {
           {
             id: "block-quote-1",
             type: "blockquote",
-            text: "Solo means **independent**, not isolated.",
+            text: "Supportsheep means **independent**, not isolated.",
             attribution: "Editor",
           },
         ],
@@ -158,7 +158,7 @@ describe("ArticleBodyRenderer — full canvas pipeline (W25j)", () => {
 
     // Heading + subtitle + featured image
     expect(rendered).toContain("<h1>");
-    expect(rendered).toContain("Solo Grow");
+    expect(rendered).toContain("Supportsheep Grow");
     expect(rendered).toContain('class="article-subtitle"');
     expect(rendered).toContain("https://images.example.com/hero.jpg");
 
@@ -166,7 +166,7 @@ describe("ArticleBodyRenderer — full canvas pipeline (W25j)", () => {
     expect(rendered).toMatch(/<h2[^>]*id="[^"]+"[^>]*>/);
 
     // Paragraphs
-    expect(rendered).toContain("Solo Grow compounds");
+    expect(rendered).toContain("Supportsheep Grow compounds");
     expect(rendered).toContain("Try");
 
     // Bullets
@@ -176,7 +176,7 @@ describe("ArticleBodyRenderer — full canvas pipeline (W25j)", () => {
     // Section quote -> blockquote
     expect(rendered).toContain("<blockquote>");
     expect(rendered).toContain("Ship");
-    expect(rendered).toContain("Solo Founder");
+    expect(rendered).toContain("Supportsheep Founder");
 
     // Numbered list
     expect(rendered).toContain("<ol>");
@@ -215,7 +215,7 @@ describe("ArticleBodyRenderer — full canvas pipeline (W25j)", () => {
     expect(rendered).toContain("youtube.com/embed/abc");
 
     // Block-level blockquote with attribution
-    expect(rendered).toContain("Solo means");
+    expect(rendered).toContain("Supportsheep means");
     expect(rendered).toContain("Editor");
 
     // Inline image (figure + img)

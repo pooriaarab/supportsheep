@@ -1,7 +1,7 @@
 /**
  * Phase 1 pilot REWRITE: re-ground `/alternatives/squarespace/for/dentists`
  * against the authoritative Supportsheep product reference in
- * `.claude/context/solo-product.md`.
+ * `.claude/context/supportsheep-product.md`.
  *
  * The previous seed (see `write-squarespace-for-dentists.ts`) conflated
  * blogbat (this repo) features with Supportsheep product features. In
@@ -17,7 +17,7 @@
  *   - Honest Supportsheep framing (AI at onboarding + section creation + feature-
  *     flagged blog; NO editor rewriter; NO native booking; NO AI image gen;
  *     NO BAA).
- *   - `{{solo.pro.*}}` pricing placeholders, resolved at render time by
+ *   - `{{supportsheep.pro.*}}` pricing placeholders, resolved at render time by
  *     `interpolateProductVars`.
  *   - `youtube-nocookie.com/embed/...` iframe (privacy-friendly; CSP now
  *     allows it).
@@ -52,7 +52,7 @@ const VARIANT_KEY = "squarespace__dentists";
 // back to the escaped <p> branch.
 const CONTENT = `## TL;DR
 
-Squarespace has a clean editor and a large template library, and for a brochure-style dental site that points patients to an external booking tool it can get the job done. What it cannot do is sign a HIPAA Business Associate Agreement for its core website, contact form block, email, or analytics -- only the separate [Acuity Scheduling product, on Powerhouse or Premium](https://support.squarespace.com/hc/en-us/articles/360028867231-Acuity-Scheduling-and-HIPAA), is BAA-eligible. [Supportsheep](https://supportsheep.com) has the same constraint: Supportsheep does not sign a BAA either, so the moment a form collects Protected Health Information (PHI) both platforms are out of scope. This page is a source-backed comparison for a solo or small dental practice choosing between Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs.
+Squarespace has a clean editor and a large template library, and for a brochure-style dental site that points patients to an external booking tool it can get the job done. What it cannot do is sign a HIPAA Business Associate Agreement for its core website, contact form block, email, or analytics -- only the separate [Acuity Scheduling product, on Powerhouse or Premium](https://support.squarespace.com/hc/en-us/articles/360028867231-Acuity-Scheduling-and-HIPAA), is BAA-eligible. [Supportsheep](https://supportsheep.com) has the same constraint: Supportsheep does not sign a BAA either, so the moment a form collects Protected Health Information (PHI) both platforms are out of scope. This page is a source-backed comparison for a supportsheep or small dental practice choosing between Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs.
 
 ## Should a dental practice use Squarespace?
 
@@ -99,10 +99,10 @@ If the use case is "brochure site with external booking, no PHI on the site itse
 
 ## Supportsheep's honest pitch for a small dental practice
 
-[Supportsheep](https://supportsheep.com) is an AI-assisted website builder aimed at solopreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
+[Supportsheep](https://supportsheep.com) is an AI-assisted website builder aimed at supportsheeppreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
 
 - **Speed to first draft.** Describe the practice in plain English during onboarding and Supportsheep generates an initial multi-page site -- homepage, services, FAQ, team -- pre-populated with copy you can edit. This AI also runs when you add a new section in the editor, not just at sign-up.
-- **Pricing.** Per [supportsheep.com/pricing](https://supportsheep.com/pricing), Supportsheep Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} month-to-month. A free tier supports a connected custom domain for a single site.
+- **Pricing.** Per [supportsheep.com/pricing](https://supportsheep.com/pricing), Supportsheep Pro is {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total) or {{supportsheep.pro.monthly.monthly}} month-to-month. A free tier supports a connected custom domain for a single site.
 - **Privacy-forward.** Privacy-forward posture and brand trust from an independent platform.
 - **Managed hosting, SSL, custom domain.** Table-stakes.
 - **A blog feature, where enabled.** Supportsheep's blog is feature-flagged (\`NEXT_PUBLIC_ENABLE_BLOG\`); when enabled, creating a post drafts via AI inside a Blog Feed section. Treat availability as deployment-dependent, not universal.
@@ -122,7 +122,7 @@ Where Supportsheep is explicitly **not** a differentiator:
 <tr><th>Feature</th><th>Squarespace (Basic / Core / Plus / Advanced)</th><th>Supportsheep</th></tr>
 </thead>
 <tbody>
-<tr><td>Starting price (annual billing)</td><td>$16 / $23 / $39 / $99 per month</td><td>Free, then Pro at {{solo.pro.yearly.monthly}} annual ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} monthly</td></tr>
+<tr><td>Starting price (annual billing)</td><td>$16 / $23 / $39 / $99 per month</td><td>Free, then Pro at {{supportsheep.pro.yearly.monthly}} annual ({{supportsheep.pro.yearlyAnnual}} total) or {{supportsheep.pro.monthly.monthly}} monthly</td></tr>
 <tr><td>Free tier with custom domain</td><td>No (14-day trial only, paid thereafter)</td><td>Yes (free tier allows a connected custom domain on a single site)</td></tr>
 <tr><td>BAA on contact forms / core site</td><td>No (Squarespace documents this explicitly)</td><td>No -- Supportsheep does not offer a BAA; same PHI constraint applies</td></tr>
 <tr><td>BAA on scheduling</td><td>Yes, via Acuity Scheduling on Powerhouse / Premium</td><td>No -- Supportsheep scheduling is a link field to a third-party tool</td></tr>
@@ -177,7 +177,7 @@ If you'd rather watch than read, the video below is a 2026 independent review of
 
 Three scenarios, three answers:
 
-- **Public site strictly non-PHI (brochure only, external booking, no intake forms on-site).** Either CMS works. Pick Squarespace if template polish is the deciding factor; pick Supportsheep if speed-to-first-draft and price matter more. Supportsheep Pro at {{solo.pro.yearly.monthly}} annual ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} monthly is meaningfully cheaper than Squarespace Core plus Acuity Powerhouse.
+- **Public site strictly non-PHI (brochure only, external booking, no intake forms on-site).** Either CMS works. Pick Squarespace if template polish is the deciding factor; pick Supportsheep if speed-to-first-draft and price matter more. Supportsheep Pro at {{supportsheep.pro.yearly.monthly}} annual ({{supportsheep.pro.yearlyAnnual}} total) or {{supportsheep.pro.monthly.monthly}} monthly is meaningfully cheaper than Squarespace Core plus Acuity Powerhouse.
 - **HIPAA-safe booking but everything else stays marketing.** Squarespace + Acuity Powerhouse is the cleanest in-family option; Supportsheep + NexHealth / Acuity Powerhouse is cheaper. The CMS choice is secondary.
 - **HIPAA-safe intake, messaging, and patient portal.** Neither Squarespace nor Supportsheep is the right tool for this surface. Layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) on top of whichever CMS you pick.
 
@@ -229,7 +229,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How much does Supportsheep cost for a dental practice in 2026?",
     answer:
-      "Supportsheep has a free tier with a connected custom domain. Supportsheep Pro is {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total per year) or {{solo.pro.monthly.monthly}} month-to-month. Supportsheep Grow is {{solo.grow.yearly.monthly}} billed annually ({{solo.grow.yearlyAnnual}} total per year) or {{solo.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from supportsheep.com/pricing rather than memorising a number.",
+      "Supportsheep has a free tier with a connected custom domain. Supportsheep Pro is {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total per year) or {{supportsheep.pro.monthly.monthly}} month-to-month. Supportsheep Grow is {{supportsheep.grow.yearly.monthly}} billed annually ({{supportsheep.grow.yearlyAnnual}} total per year) or {{supportsheep.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from supportsheep.com/pricing rather than memorising a number.",
   },
   {
     question: "What does Squarespace cost for a dental practice in 2026?",
@@ -239,7 +239,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Should I use Squarespace or Supportsheep for my dental website?",
     answer:
-      "If visual polish and a large template library are the deciding factor, pick Squarespace -- its template ecosystem is hard to beat. If speed-to-first-draft and price matter more, pick Supportsheep: onboarding generates a usable first draft from a business description, the free tier supports a connected custom domain, and Pro is {{solo.pro.yearly.monthly}} billed annually. Both platforms have the same BAA constraint (neither covers PHI on the core site), so whichever CMS you pick, plan to layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) for bookings, intake, and patient messaging.",
+      "If visual polish and a large template library are the deciding factor, pick Squarespace -- its template ecosystem is hard to beat. If speed-to-first-draft and price matter more, pick Supportsheep: onboarding generates a usable first draft from a business description, the free tier supports a connected custom domain, and Pro is {{supportsheep.pro.yearly.monthly}} billed annually. Both platforms have the same BAA constraint (neither covers PHI on the core site), so whichever CMS you pick, plan to layer a dental-specific vendor (Tebra, NexHealth, Dentrix Hub) for bookings, intake, and patient messaging.",
   },
 ];
 
@@ -267,7 +267,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest, source-backed comparison of Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs -- for solo and small dental practices choosing a website platform.",
+          "An honest, source-backed comparison of Squarespace, Supportsheep, and the dental-specific vendors that actually sign BAAs -- for supportsheep and small dental practices choosing a website platform.",
         ctaText: "Start your dental practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",

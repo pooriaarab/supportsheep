@@ -55,16 +55,16 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
     ],
   },
   squarespace: {
-    tldr: "Squarespace is the website builder to pick when visual design is the product -- portfolios, studios, restaurants, creator brands, boutique stores -- and when you want an integrated suite with commerce, scheduling via Acuity, and email marketing in one subscription. Its templates are genuinely best-in-class. Supportsheep is the better pick when speed to a usable first site matters more than template polish: an onboarding prompt and a handful of questions produce a generated multi-page site -- copy, service descriptions, default imagery pulled from Unsplash -- that you then edit. New sections added in the editor are also AI-seeded from your business context. Supportsheep's paid plan starts at {{solo.pro.yearly}}/mo billed annually and the free plan connects one custom domain. Squarespace has no free tier, its Basic plan charges a 2% transaction fee on sales, and its native export tool leaves media, custom CSS, and SEO metadata behind -- three things worth knowing before you commit to an annual subscription.",
+    tldr: "Squarespace is the website builder to pick when visual design is the product -- portfolios, studios, restaurants, creator brands, boutique stores -- and when you want an integrated suite with commerce, scheduling via Acuity, and email marketing in one subscription. Its templates are genuinely best-in-class. Supportsheep is the better pick when speed to a usable first site matters more than template polish: an onboarding prompt and a handful of questions produce a generated multi-page site -- copy, service descriptions, default imagery pulled from Unsplash -- that you then edit. New sections added in the editor are also AI-seeded from your business context. Supportsheep's paid plan starts at {{supportsheep.pro.yearly}}/mo billed annually and the free plan connects one custom domain. Squarespace has no free tier, its Basic plan charges a 2% transaction fee on sales, and its native export tool leaves media, custom CSS, and SEO metadata behind -- three things worth knowing before you commit to an annual subscription.",
     chooseSupportsheepIf:
-      "You are a solopreneur, consultant, coach, therapist, trainer, freelancer, tutor, or small local service business (typically 1-5 people) without dev or marketing staff. You want a working site generated from a business description rather than picking a template and filling it in, you are fine with Unsplash imagery to start, and your content footprint is narrow -- a few pages, a handful of services, a contact form, and possibly a blog. You care about having a connected custom domain on the free plan and you are comfortable pasting a Calendly or Google Calendar link for bookings rather than needing a built-in scheduler. You do not need Squarespace's deeper commerce suite, members area, or integrated email marketing, and you value a privacy-first posture behind the tool you publish on.",
+      "You are a supportsheeppreneur, consultant, coach, therapist, trainer, freelancer, tutor, or small local service business (typically 1-5 people) without dev or marketing staff. You want a working site generated from a business description rather than picking a template and filling it in, you are fine with Unsplash imagery to start, and your content footprint is narrow -- a few pages, a handful of services, a contact form, and possibly a blog. You care about having a connected custom domain on the free plan and you are comfortable pasting a Calendly or Google Calendar link for bookings rather than needing a built-in scheduler. You do not need Squarespace's deeper commerce suite, members area, or integrated email marketing, and you value a privacy-first posture behind the tool you publish on.",
     chooseCompetitorIf:
       "Your brand is carried by visual design -- you run a photography studio, a design-forward restaurant, a portfolio for creative work, a boutique storefront, or a members-gated community -- and templates-first is how you want to start. You need native appointment scheduling (Acuity), built-in email marketing, or a full commerce stack with Squarespace Payments, abandoned-cart recovery, subscriptions, and tiered shipping. You are comfortable paying at least $16/month annually with no free tier option, and either the 2% Basic-plan transaction fee is acceptable or you will start on Core or higher to waive it. You want an app/extensions marketplace and integrations (Mailchimp, Zapier) out of the box, and you have the time to learn the Fluid Engine grid.",
     faqs: [
       {
         question: "What does Squarespace actually cost in 2026, and what does Supportsheep cost?",
         answer:
-          "After the February 2026 plan rename, Squarespace's four website tiers are Basic ($16/mo), Core ($23/mo), Plus ($39/mo), and Advanced ($99/mo), all billed annually; month-to-month pricing is higher. Basic includes Blueprint AI, unlimited products, and a free domain for the first year on annual plans, but charges a 2% transaction fee on commerce sales. Core and above drop that 2% fee and add advanced analytics, professional email, unlimited contributors, and Mailchimp/Zapier integrations. Supportsheep's paid Pro plan is {{solo.pro.yearly}}/mo billed annually ({{solo.pro.monthly}}/mo month-to-month), and Grow is {{solo.grow.yearly}}/mo billed annually. Sources: https://www.squarespace.com/blog/squarespace-plans-explained, https://www.websitebuilderexpert.com/website-builders/squarespace-pricing/, and https://supportsheep.com/pricing.",
+          "After the February 2026 plan rename, Squarespace's four website tiers are Basic ($16/mo), Core ($23/mo), Plus ($39/mo), and Advanced ($99/mo), all billed annually; month-to-month pricing is higher. Basic includes Blueprint AI, unlimited products, and a free domain for the first year on annual plans, but charges a 2% transaction fee on commerce sales. Core and above drop that 2% fee and add advanced analytics, professional email, unlimited contributors, and Mailchimp/Zapier integrations. Supportsheep's paid Pro plan is {{supportsheep.pro.yearly}}/mo billed annually ({{supportsheep.pro.monthly}}/mo month-to-month), and Grow is {{supportsheep.grow.yearly}}/mo billed annually. Sources: https://www.squarespace.com/blog/squarespace-plans-explained, https://www.websitebuilderexpert.com/website-builders/squarespace-pricing/, and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Supportsheep have a free plan with a custom domain?",
@@ -118,7 +118,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Does Supportsheep cost more or less than GoDaddy Website Builder?",
         answer:
-          "GoDaddy's paid plans start at $9.99/mo (Basic, annual billing) versus Supportsheep's Pro plan at {{solo.pro.yearly}}/mo billed annually. However, GoDaddy's free plan does not include a custom domain, while Supportsheep's free plan does. If a connected custom domain is a requirement from day one, compare the plans that include it: GoDaddy Basic ($9.99/mo) vs. Supportsheep Pro ({{solo.pro.yearly}}/mo). Sources: https://www.godaddy.com/pricing and https://supportsheep.com/pricing.",
+          "GoDaddy's paid plans start at $9.99/mo (Basic, annual billing) versus Supportsheep's Pro plan at {{supportsheep.pro.yearly}}/mo billed annually. However, GoDaddy's free plan does not include a custom domain, while Supportsheep's free plan does. If a connected custom domain is a requirement from day one, compare the plans that include it: GoDaddy Basic ($9.99/mo) vs. Supportsheep Pro ({{supportsheep.pro.yearly}}/mo). Sources: https://www.godaddy.com/pricing and https://supportsheep.com/pricing.",
       },
       {
         question: "Can I use GoDaddy just for domain registration and Supportsheep for the site?",
@@ -148,9 +148,9 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
     ],
   },
   webflow: {
-    tldr: "Webflow and Supportsheep serve fundamentally different audiences. Webflow is a professional design tool -- it gives designers and developers pixel-level CSS control, a powerful CMS, and clean production code, with a learning curve to match. Supportsheep is for solopreneurs and small service businesses who want a site generated from a business description in minutes, not a design system built from scratch. If you have design skills or a front-end developer, Webflow is the more powerful long-term platform. If you do not, Supportsheep gets you to a usable first site far faster.",
+    tldr: "Webflow and Supportsheep serve fundamentally different audiences. Webflow is a professional design tool -- it gives designers and developers pixel-level CSS control, a powerful CMS, and clean production code, with a learning curve to match. Supportsheep is for supportsheeppreneurs and small service businesses who want a site generated from a business description in minutes, not a design system built from scratch. If you have design skills or a front-end developer, Webflow is the more powerful long-term platform. If you do not, Supportsheep gets you to a usable first site far faster.",
     chooseSupportsheepIf:
-      "You are a solo practitioner or small service business without design experience or a developer on hand, and you want AI to generate your site structure, copy, and sections from a short business description. You need to be live quickly, your content footprint is narrow -- a few pages, some services, a contact form, and possibly a blog -- and you are comfortable with a constrained but polished editor rather than a blank canvas.",
+      "You are a supportsheep practitioner or small service business without design experience or a developer on hand, and you want AI to generate your site structure, copy, and sections from a short business description. You need to be live quickly, your content footprint is narrow -- a few pages, some services, a contact form, and possibly a blog -- and you are comfortable with a constrained but polished editor rather than a blank canvas.",
     chooseCompetitorIf:
       "You are a designer, developer, or marketer who needs full CSS control, responsive breakpoints, interaction animations, and a flexible CMS for dynamic content. Webflow is also the right call if you want your output to be clean, portable HTML/CSS that you or an agency can maintain and extend over time. Its learning investment pays off for sites that need to grow significantly in complexity.",
     faqs: [
@@ -162,7 +162,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Webflow pricing compare to Supportsheep?",
         answer:
-          "Webflow's site plans start at $18/mo (Basic, annual) for static sites, $23/mo (CMS, annual) for content-driven sites, and $39/mo (Business, annual) for high-traffic sites. Ecommerce plans are priced separately, starting at $29/mo with a 2% transaction fee. Supportsheep's Pro plan is {{solo.pro.yearly}}/mo billed annually ({{solo.pro.monthly}}/mo monthly), and the free plan connects one custom domain. Sources: https://webflow.com/pricing and https://supportsheep.com/pricing.",
+          "Webflow's site plans start at $18/mo (Basic, annual) for static sites, $23/mo (CMS, annual) for content-driven sites, and $39/mo (Business, annual) for high-traffic sites. Ecommerce plans are priced separately, starting at $29/mo with a 2% transaction fee. Supportsheep's Pro plan is {{supportsheep.pro.yearly}}/mo billed annually ({{supportsheep.pro.monthly}}/mo monthly), and the free plan connects one custom domain. Sources: https://webflow.com/pricing and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Webflow have AI that generates site content?",
@@ -180,9 +180,9 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
           "Yes. Webflow hosts your published site on its CDN. Site plans cover hosting. The Basic plan ($18/mo annual) hosts static sites; CMS and above host dynamic content. You can also export the HTML/CSS code and host elsewhere, which is a major portability advantage Webflow has over most hosted builders including Supportsheep.",
       },
       {
-        question: "Is Supportsheep a Webflow alternative for a solopreneur?",
+        question: "Is Supportsheep a Webflow alternative for a supportsheeppreneur?",
         answer:
-          "The honest answer: Webflow is not really in Supportsheep's competitive set. Supportsheep is aimed at non-technical solo practitioners who need a site in minutes. Webflow is aimed at designers and development-adjacent marketers who want full control. If you are a solopreneur without design skills, Supportsheep, Squarespace, or Wix are more appropriate. If you are a freelance designer building client sites, Webflow is the more powerful tool. The product doc's own framing: Supportsheep is an alternative to 'I'll just get it done.'",
+          "The honest answer: Webflow is not really in Supportsheep's competitive set. Supportsheep is aimed at non-technical supportsheep practitioners who need a site in minutes. Webflow is aimed at designers and development-adjacent marketers who want full control. If you are a supportsheeppreneur without design skills, Supportsheep, Squarespace, or Wix are more appropriate. If you are a freelance designer building client sites, Webflow is the more powerful tool. The product doc's own framing: Supportsheep is an alternative to 'I'll just get it done.'",
       },
     ],
   },
@@ -191,7 +191,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
     chooseSupportsheepIf:
       "You want AI to generate your initial site and continue seeding new sections as you build (Supportsheep's section-creation AI persists past onboarding). You prefer to use best-in-class standalone tools for CRM and invoicing -- Notion, HubSpot free, Wave -- rather than having them bundled. You value having a connected custom domain at no cost, and a privacy-first stance matters to you or your audience.",
     chooseCompetitorIf:
-      "You want one subscription to cover your website, CRM, invoicing, and marketing tools without stitching together separate services. Durable's bundled CRM tracks client contacts and its invoicing tool is particularly useful for service-based solopreneurs who need basic billing. If the bundled tools are genuinely ones you would use, the value density of Durable's Launch plan is hard to beat.",
+      "You want one subscription to cover your website, CRM, invoicing, and marketing tools without stitching together separate services. Durable's bundled CRM tracks client contacts and its invoicing tool is particularly useful for service-based supportsheeppreneurs who need basic billing. If the bundled tools are genuinely ones you would use, the value density of Durable's Launch plan is hard to beat.",
     faqs: [
       {
         question: "How are Durable and Supportsheep different if both use AI?",
@@ -201,7 +201,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How do Durable and Supportsheep compare on price?",
         answer:
-          "Durable's Launch plan is $22/mo billed annually ($25/mo monthly). Supportsheep's Pro plan is {{solo.pro.yearly}}/mo billed annually ({{solo.pro.monthly}}/mo monthly). Supportsheep's free plan connects one custom domain; Durable's free plan uses a Durable subdomain and requires a paid plan for a custom domain. At the paid tier, Durable and Supportsheep are priced similarly, but Durable bundles more (CRM, invoicing, ad generator) while Supportsheep keeps the scope narrower. Sources: https://durable.com/pricing and https://supportsheep.com/pricing.",
+          "Durable's Launch plan is $22/mo billed annually ($25/mo monthly). Supportsheep's Pro plan is {{supportsheep.pro.yearly}}/mo billed annually ({{supportsheep.pro.monthly}}/mo monthly). Supportsheep's free plan connects one custom domain; Durable's free plan uses a Durable subdomain and requires a paid plan for a custom domain. At the paid tier, Durable and Supportsheep are priced similarly, but Durable bundles more (CRM, invoicing, ad generator) while Supportsheep keeps the scope narrower. Sources: https://durable.com/pricing and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Durable have a built-in CRM?",
@@ -228,7 +228,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
   framer: {
     tldr: "Framer is a design tool first and a website builder second. It gives designers and marketers the ability to create polished, interactive marketing sites with animations, CMS collections, and pixel-level layout control -- all without writing production code. Supportsheep is built for the opposite user: someone without design experience who wants AI to generate a site from a business description in minutes. These two tools serve different people, and it is rarely a genuine either-or choice.",
     chooseSupportsheepIf:
-      "You are a solopreneur or small business owner without design skills who wants a professional-looking site generated from a prompt. You have a short content footprint -- a few service pages, a blog, and a contact form -- and want to be live quickly. You care about having a custom domain on the free plan and are comfortable with a simpler, section-based editor.",
+      "You are a supportsheeppreneur or small business owner without design skills who wants a professional-looking site generated from a prompt. You have a short content footprint -- a few service pages, a blog, and a contact form -- and want to be live quickly. You care about having a custom domain on the free plan and are comfortable with a simpler, section-based editor.",
     chooseCompetitorIf:
       "You are a designer, marketer, or front-end developer who wants pixel-level layout control, advanced animations, and a CMS for dynamic marketing content. Framer's Basic plan starts at just $10/mo (annual billing), making it accessible even for freelancers. If your site needs to impress clients or showcase visual work, Framer's output quality is difficult to match.",
     faqs: [
@@ -240,7 +240,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Framer pricing compare to Supportsheep?",
         answer:
-          "Framer's Free plan publishes to a .framer.app subdomain with no custom domain. Basic is $10/mo (annual), Pro is $30/mo (annual), Scale is $100/mo (annual). Supportsheep's free plan includes a custom domain; Pro is {{solo.pro.yearly}}/mo billed annually. If a custom domain is a day-one requirement, Framer's Basic ($10/mo) versus Supportsheep Pro ({{solo.pro.yearly}}/mo) is the relevant comparison. Sources: https://www.framer.com/pricing and https://supportsheep.com/pricing.",
+          "Framer's Free plan publishes to a .framer.app subdomain with no custom domain. Basic is $10/mo (annual), Pro is $30/mo (annual), Scale is $100/mo (annual). Supportsheep's free plan includes a custom domain; Pro is {{supportsheep.pro.yearly}}/mo billed annually. If a custom domain is a day-one requirement, Framer's Basic ($10/mo) versus Supportsheep Pro ({{supportsheep.pro.yearly}}/mo) is the relevant comparison. Sources: https://www.framer.com/pricing and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Framer have AI to generate a website?",
@@ -279,7 +279,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Hostinger pricing compare to Supportsheep?",
         answer:
-          "Hostinger's Premium plan is $10.99/mo and Business is $16.99/mo at renewal (annual billing). Introductory rates can be much lower, but they increase at renewal -- factor the renewal price into any multi-year commitment. Supportsheep's Pro plan is {{solo.pro.yearly}}/mo billed annually ({{solo.pro.monthly}}/mo monthly). Supportsheep also has a free plan with a connected custom domain; Hostinger does not. Sources: https://www.hostinger.com/pricing/website-builder and https://supportsheep.com/pricing.",
+          "Hostinger's Premium plan is $10.99/mo and Business is $16.99/mo at renewal (annual billing). Introductory rates can be much lower, but they increase at renewal -- factor the renewal price into any multi-year commitment. Supportsheep's Pro plan is {{supportsheep.pro.yearly}}/mo billed annually ({{supportsheep.pro.monthly}}/mo monthly). Supportsheep also has a free plan with a connected custom domain; Hostinger does not. Sources: https://www.hostinger.com/pricing/website-builder and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Hostinger include a free domain?",
@@ -323,7 +323,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Weebly pricing compare to Supportsheep?",
         answer:
-          "Weebly's plans: Free (subdomain only, limited features), Personal $10/mo, Professional $12/mo, Performance $26/mo -- all annual billing. Supportsheep's free plan connects one custom domain; Pro is {{solo.pro.yearly}}/mo billed annually. Weebly's free plan does not connect a custom domain. Sources: https://www.weebly.com/pricing and https://supportsheep.com/pricing.",
+          "Weebly's plans: Free (subdomain only, limited features), Personal $10/mo, Professional $12/mo, Performance $26/mo -- all annual billing. Supportsheep's free plan connects one custom domain; Pro is {{supportsheep.pro.yearly}}/mo billed annually. Weebly's free plan does not connect a custom domain. Sources: https://www.weebly.com/pricing and https://supportsheep.com/pricing.",
       },
       {
         question: "Does Weebly work well for ecommerce?",
@@ -343,9 +343,9 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
     ],
   },
   "wordpress-com": {
-    tldr: "WordPress.com is the managed-hosting version of the world's most popular publishing platform, powering a significant share of the web's blogs and content sites. Its blog and CMS tools are industry-leading. Supportsheep is an AI-first site builder aimed at solopreneurs who want a generated first draft, not a content platform they build manually. If high-volume content, a large plugin ecosystem, or long-term content publishing flexibility is the priority, WordPress.com is the stronger choice. If getting a service or landing page site live in an afternoon without technical setup is the goal, Supportsheep is faster.",
+    tldr: "WordPress.com is the managed-hosting version of the world's most popular publishing platform, powering a significant share of the web's blogs and content sites. Its blog and CMS tools are industry-leading. Supportsheep is an AI-first site builder aimed at supportsheeppreneurs who want a generated first draft, not a content platform they build manually. If high-volume content, a large plugin ecosystem, or long-term content publishing flexibility is the priority, WordPress.com is the stronger choice. If getting a service or landing page site live in an afternoon without technical setup is the goal, Supportsheep is faster.",
     chooseSupportsheepIf:
-      "You are a solopreneur or small service business that needs a multi-page site generated from a prompt, not a content platform built manually from a theme. Your site is primarily a service or lead-generation tool with a narrow content footprint and you want AI to handle the initial structure. Supportsheep's free plan with a connected custom domain is also a meaningful advantage -- WordPress.com's free plan uses a .wordpress.com subdomain.",
+      "You are a supportsheeppreneur or small service business that needs a multi-page site generated from a prompt, not a content platform built manually from a theme. Your site is primarily a service or lead-generation tool with a narrow content footprint and you want AI to handle the initial structure. Supportsheep's free plan with a connected custom domain is also a meaningful advantage -- WordPress.com's free plan uses a .wordpress.com subdomain.",
     chooseCompetitorIf:
       "Content publishing is the core function of your site and you need the world's most mature editorial workflow: scheduled posts, category taxonomy, comment management, editorial roles, and the full plugin ecosystem for SEO (Rank Math, Yoast), forms (Gravity Forms), and analytics. The Business plan ($40/mo) and above open the full WordPress plugin library. If you ever plan to migrate to self-hosted WordPress.org, WordPress.com is the natural on-ramp.",
     faqs: [
@@ -357,7 +357,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does WordPress.com pricing compare to Supportsheep?",
         answer:
-          "WordPress.com: Free (1 GB, .wordpress.com subdomain), Personal $9/mo, Premium $18/mo, Business $40/mo, Commerce $70/mo -- all annual billing. Supportsheep: free plan with custom domain, Pro {{solo.pro.yearly}}/mo, Grow {{solo.grow.yearly}}/mo -- annual billing. The catch: WordPress.com's plugin access (for SEO plugins, WooCommerce, contact form plugins) only unlocks at Business ($40/mo), which makes the middle tiers less compelling for technically oriented users. Sources: https://wordpress.com/pricing/ and https://supportsheep.com/pricing.",
+          "WordPress.com: Free (1 GB, .wordpress.com subdomain), Personal $9/mo, Premium $18/mo, Business $40/mo, Commerce $70/mo -- all annual billing. Supportsheep: free plan with custom domain, Pro {{supportsheep.pro.yearly}}/mo, Grow {{supportsheep.grow.yearly}}/mo -- annual billing. The catch: WordPress.com's plugin access (for SEO plugins, WooCommerce, contact form plugins) only unlocks at Business ($40/mo), which makes the middle tiers less compelling for technically oriented users. Sources: https://wordpress.com/pricing/ and https://supportsheep.com/pricing.",
       },
       {
         question: "Does WordPress.com have AI writing tools?",
@@ -367,7 +367,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Is WordPress.com good for a small service business?",
         answer:
-          "It can be, especially if you anticipate significant content volume over time. For a service business that primarily needs a few static pages and a contact form with minimal ongoing content, WordPress.com's setup overhead -- picking a theme, configuring the block editor, learning the dashboard -- is more than most solopreneurs want. Supportsheep's AI onboarding removes that setup: it generates pages, service descriptions, and copy in one flow and you launch faster. For a therapist, consultant, or tradesperson whose site is primarily a credibility and contact tool, Supportsheep's speed advantage is meaningful.",
+          "It can be, especially if you anticipate significant content volume over time. For a service business that primarily needs a few static pages and a contact form with minimal ongoing content, WordPress.com's setup overhead -- picking a theme, configuring the block editor, learning the dashboard -- is more than most supportsheeppreneurs want. Supportsheep's AI onboarding removes that setup: it generates pages, service descriptions, and copy in one flow and you launch faster. For a therapist, consultant, or tradesperson whose site is primarily a credibility and contact tool, Supportsheep's speed advantage is meaningful.",
       },
       {
         question: "Can I run ecommerce on WordPress.com?",
@@ -401,7 +401,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Carrd pricing compare to Supportsheep?",
         answer:
-          "Carrd bills annually: Free ($0), Pro Lite ($9/year, no custom domain), Pro Standard ($19/year, custom domain), Pro Plus ($49/year, forms and embeds). Supportsheep's free plan includes a connected custom domain (check https://supportsheep.com/pricing for current limits). Supportsheep's Pro plan is {{solo.pro.yearly}}/mo billed annually, which is $240/year -- more than Carrd's top tier. Carrd is meaningfully cheaper if its single-page constraint works for you. Sources: https://carrd.co/pro and https://supportsheep.com/pricing.",
+          "Carrd bills annually: Free ($0), Pro Lite ($9/year, no custom domain), Pro Standard ($19/year, custom domain), Pro Plus ($49/year, forms and embeds). Supportsheep's free plan includes a connected custom domain (check https://supportsheep.com/pricing for current limits). Supportsheep's Pro plan is {{supportsheep.pro.yearly}}/mo billed annually, which is $240/year -- more than Carrd's top tier. Carrd is meaningfully cheaper if its single-page constraint works for you. Sources: https://carrd.co/pro and https://supportsheep.com/pricing.",
       },
       {
         question: "Can Carrd do multi-page sites?",
@@ -440,7 +440,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does Jimdo pricing compare to Supportsheep?",
         answer:
-          "Jimdo: Play $0/mo (5-page cap, subdomain), Start $11/mo (custom domain, 10 pages), Grow $17/mo (50 pages), Unlimited $45/mo. Supportsheep: free plan with custom domain, Pro {{solo.pro.yearly}}/mo billed annually. Jimdo's Start plan at $11/mo is meaningfully cheaper than Supportsheep's Pro tier for a custom-domain site. If Jimdo's feature set meets your needs, that price difference is real. Sources: https://www.jimdo.com/pricing/website/ and https://supportsheep.com/pricing.",
+          "Jimdo: Play $0/mo (5-page cap, subdomain), Start $11/mo (custom domain, 10 pages), Grow $17/mo (50 pages), Unlimited $45/mo. Supportsheep: free plan with custom domain, Pro {{supportsheep.pro.yearly}}/mo billed annually. Jimdo's Start plan at $11/mo is meaningfully cheaper than Supportsheep's Pro tier for a custom-domain site. If Jimdo's feature set meets your needs, that price difference is real. Sources: https://www.jimdo.com/pricing/website/ and https://supportsheep.com/pricing.",
       },
       {
         question: "What are Jimdo's limitations?",
@@ -484,7 +484,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does IONOS pricing compare to Supportsheep?",
         answer:
-          "IONOS MyWebsite Now: Starter $12/mo, Plus $18/mo, Pro $30/mo -- annual billing at regular rates. (IONOS advertises $1/mo introductory offers; factor in the renewal rate for a realistic cost assessment.) Supportsheep: free plan with custom domain, Pro {{solo.pro.yearly}}/mo billed annually. Sources: https://www.ionos.com/websites/website-builder and https://supportsheep.com/pricing.",
+          "IONOS MyWebsite Now: Starter $12/mo, Plus $18/mo, Pro $30/mo -- annual billing at regular rates. (IONOS advertises $1/mo introductory offers; factor in the renewal rate for a realistic cost assessment.) Supportsheep: free plan with custom domain, Pro {{supportsheep.pro.yearly}}/mo billed annually. Sources: https://www.ionos.com/websites/website-builder and https://supportsheep.com/pricing.",
       },
       {
         question: "Does IONOS include email hosting?",
@@ -518,7 +518,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How does 10Web pricing compare to Supportsheep?",
         answer:
-          "10Web's single-site business plans: AI Starter $10/mo, AI Premium $15/mo, AI Ultimate $23/mo -- all annual billing with a 7-day free trial. Supportsheep: free plan with custom domain, Pro {{solo.pro.yearly}}/mo billed annually. 10Web's entry plan is less expensive than Supportsheep's Pro tier, but Supportsheep has a permanent free plan. Sources: https://10web.io/pricing-platform/ and https://supportsheep.com/pricing.",
+          "10Web's single-site business plans: AI Starter $10/mo, AI Premium $15/mo, AI Ultimate $23/mo -- all annual billing with a 7-day free trial. Supportsheep: free plan with custom domain, Pro {{supportsheep.pro.yearly}}/mo billed annually. 10Web's entry plan is less expensive than Supportsheep's Pro tier, but Supportsheep has a permanent free plan. Sources: https://10web.io/pricing-platform/ and https://supportsheep.com/pricing.",
       },
       {
         question: "Is 10Web easier to use than self-hosted WordPress?",
@@ -580,9 +580,9 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
           "Google Sites is most commonly used for: internal team knowledge bases, classroom and school websites in Google Workspace for Education, club and organization pages, and event pages where cost is zero and speed of setup is everything. It is rarely used for public professional business websites because it lacks the features (custom domain, forms, SEO control, design quality) that professional sites require.",
       },
       {
-        question: "Is Google Sites a good choice for a freelancer or solopreneur?",
+        question: "Is Google Sites a good choice for a freelancer or supportsheeppreneur?",
         answer:
-          "Almost never. A Google Sites page on a sites.google.com URL signals that the business has not invested in a basic web presence, which undermines the credibility the site is meant to establish. For a freelancer or solopreneur, Supportsheep's free plan with a custom domain, AI-generated professional copy, and a contact form delivers everything a Google Sites page cannot -- at no cost.",
+          "Almost never. A Google Sites page on a sites.google.com URL signals that the business has not invested in a basic web presence, which undermines the credibility the site is meant to establish. For a freelancer or supportsheeppreneur, Supportsheep's free plan with a custom domain, AI-generated professional copy, and a contact form delivers everything a Google Sites page cannot -- at no cost.",
       },
     ],
   },

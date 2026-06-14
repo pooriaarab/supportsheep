@@ -26,7 +26,7 @@ async function fetchXml(
   try {
     const response = await fetch(url, {
       cache: "no-store",
-      headers: { "User-Agent": "SoloBlog/1.0 Sitemap Parser" },
+      headers: { "User-Agent": "SupportsheepBlog/1.0 Sitemap Parser" },
       redirect: "follow",
     });
 

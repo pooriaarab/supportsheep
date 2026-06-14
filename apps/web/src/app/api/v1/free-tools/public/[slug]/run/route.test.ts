@@ -85,7 +85,7 @@ function freeTool(overrides: Partial<FreeTool> = {}): FreeTool {
       secondaryLabel: "",
       secondaryUrl: "",
       utm: {
-        source: "solo_blog",
+        source: "supportsheep_blog",
         medium: "free_tool",
         campaign: "{{toolSlug}}",
         content: "bottom_callout",

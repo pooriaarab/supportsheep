@@ -8,7 +8,7 @@ describe("free tool callouts", () => {
         baseUrl: "https://supportsheep.com/",
         toolSlug: "blog-outline-generator",
         utm: {
-          source: "solo_blog",
+          source: "supportsheep_blog",
           medium: "free_tool",
           campaign: "{{toolSlug}}",
           content: "bottom_callout",
@@ -16,7 +16,7 @@ describe("free tool callouts", () => {
         },
       }),
     ).toBe(
-      "https://supportsheep.com/?utm_source=solo_blog&utm_medium=free_tool&utm_campaign=blog-outline-generator&utm_content=bottom_callout",
+      "https://supportsheep.com/?utm_source=supportsheep_blog&utm_medium=free_tool&utm_campaign=blog-outline-generator&utm_content=bottom_callout",
     );
   });
 
@@ -27,7 +27,7 @@ describe("free tool callouts", () => {
           "https://supportsheep.com/start?ref=blog&utm_source=old&utm_campaign=old",
         toolSlug: "word-counter",
         utm: {
-          source: "solo_blog",
+          source: "supportsheep_blog",
           medium: "free_tool",
           campaign: "{{toolSlug}}",
           content: "",
@@ -35,7 +35,7 @@ describe("free tool callouts", () => {
         },
       }),
     ).toBe(
-      "https://supportsheep.com/start?ref=blog&utm_source=solo_blog&utm_campaign=word-counter&utm_medium=free_tool&utm_term=word+counter",
+      "https://supportsheep.com/start?ref=blog&utm_source=supportsheep_blog&utm_campaign=word-counter&utm_medium=free_tool&utm_term=word+counter",
     );
   });
 
@@ -45,7 +45,7 @@ describe("free tool callouts", () => {
         baseUrl: "http://supportsheep.com/",
         toolSlug: "word-counter",
         utm: {
-          source: "solo_blog",
+          source: "supportsheep_blog",
           medium: "free_tool",
           campaign: "{{toolSlug}}",
           content: "bottom_callout",

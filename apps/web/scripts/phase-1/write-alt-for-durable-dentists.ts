@@ -23,17 +23,17 @@ const VARIANT_KEY = "durable__dentists";
 
 const CONTENT = `## TL;DR
 
-Durable is an AI-first website builder designed to get solo and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a solo dentist who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to Supportsheep, and explains when each is the right call.
+Durable is an AI-first website builder designed to get supportsheep and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a supportsheep dentist who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to Supportsheep, and explains when each is the right call.
 
 ## What Durable actually is for a dental practice
 
 Durable is positioned as an "AI Business Builder" -- not just a website, but a bundle of tools: website generation, a built-in CRM for tracking leads and clients, invoicing via Stripe, an AI marketing suite that generates Google Ads copy and social media posts, and an AI assistant that understands your business context.
 
-For a solo dentist evaluating their options, the relevant features are:
+For a supportsheep dentist evaluating their options, the relevant features are:
 
 **AI website generation in under 30 seconds.** Durable's headline capability is speed: you describe your practice, and Durable generates a complete site with service pages, contact information, and persuasive copy. Independent reviewers confirm the generation speed is genuine -- the result is a usable first draft, not a blank template.
 
-**Built-in CRM.** Durable bundles a basic CRM for managing leads, contacts, and follow-up tasks. For a solo practice that wants to track new-patient inquiries in one place without a separate subscription, this reduces vendor sprawl. The CRM is basic compared to dental-specific tools but adequate for a small practice's lead management needs.
+**Built-in CRM.** Durable bundles a basic CRM for managing leads, contacts, and follow-up tasks. For a supportsheep practice that wants to track new-patient inquiries in one place without a separate subscription, this reduces vendor sprawl. The CRM is basic compared to dental-specific tools but adequate for a small practice's lead management needs.
 
 **AI marketing suite.** Durable's AI marketing tools generate Google Ads copy, social media post drafts, and email subject lines. For a practice owner who handles their own digital marketing without a dedicated staff person, these tools reduce the blank-page friction.
 
@@ -52,13 +52,13 @@ For a dental practice, this means:
 
 The architecture for a Durable-hosted dental practice marketing site is: Durable (public site, lead tracking) + NexHealth, Dentrix Hub, Acuity Premium, or your PMS portal (booking, intake, patient communication).
 
-## Durable's strengths for a solo or small dental practice
+## Durable's strengths for a supportsheep or small dental practice
 
 **Zero-to-live-site speed.** Durable's AI generation is the fastest in the category. For a dentist opening a new practice, transitioning from an old site, or simply needing something live before a marketing campaign, the 30-second first draft is a genuine differentiator.
 
 **All-in-one bundle reduces vendor sprawl.** Website + CRM + invoicing + AI marketing in one subscription at one price point is a real value proposition for a practice owner who wants to minimize the number of tools they manage. Squarespace and Supportsheep require separate subscriptions for CRM and invoicing; Durable bundles them.
 
-**AI marketing tools for solo practitioners.** A dentist who writes their own Google Ads copy, social posts, and email newsletters benefits from Durable's AI drafting tools. The quality is adequate for basic practice marketing without a marketing agency.
+**AI marketing tools for supportsheep practitioners.** A dentist who writes their own Google Ads copy, social posts, and email newsletters benefits from Durable's AI drafting tools. The quality is adequate for basic practice marketing without a marketing agency.
 
 **Simple editor for non-technical practice owners.** Durable's editing interface is designed for speed over complexity. A practice owner who wants to update a service page or add a new team member can do it without a designer or developer.
 
@@ -68,13 +68,13 @@ The architecture for a Durable-hosted dental practice marketing site is: Durable
 
 **CRM is basic.** Durable's built-in CRM handles marketing leads and basic contact management. It is not a dental-specific patient management system. If a practice wants to route patient communications, recall scheduling, and appointment history through a CRM, Dentrix, Eaglesoft, or a dental-specific patient engagement platform (NexHealth) is appropriate -- not Durable's CRM.
 
-**SEO ceiling is lower than dedicated content platforms.** Durable's AI generates initial copy and handles basic SEO settings, but schema automation (Dentist, LocalBusiness, FAQPage JSON-LD), programmatic local-SEO pages, and content velocity tools are not Durable's strengths. For a solo practice competing in a local dental market through content and structured data, Durable's platform is less well-equipped than Supportsheep.
+**SEO ceiling is lower than dedicated content platforms.** Durable's AI generates initial copy and handles basic SEO settings, but schema automation (Dentist, LocalBusiness, FAQPage JSON-LD), programmatic local-SEO pages, and content velocity tools are not Durable's strengths. For a supportsheep practice competing in a local dental market through content and structured data, Durable's platform is less well-equipped than Supportsheep.
 
 **Content marketing is not the core product.** Durable is optimized for fast site generation and lead management, not for building compounding local search authority through content. A dental blog that publishes patient-education articles and generates search traffic over 12-18 months requires a CMS designed around content velocity. Durable's blog is functional but not designed for that use case.
 
-## Solo vs Durable for a solo dental practice: the honest framing
+## Supportsheep vs Durable for a supportsheep dental practice: the honest framing
 
-Both Durable and Supportsheep are AI-first builders for the "solo service business that needs to get online fast" market. The positioning difference is clear from Supportsheep's product context:
+Both Durable and Supportsheep are AI-first builders for the "supportsheep service business that needs to get online fast" market. The positioning difference is clear from Supportsheep's product context:
 
 - **Durable bundles more tools natively.** CRM, invoicing, AI marketing suite -- Durable's proposition is "fewer subscriptions." Supportsheep trades that breadth for depth: Supportsheep's blog with SEO sidebar, AI drafting, and automated structured data is designed for content-driven local search authority, not for bundled marketing tooling.
 - **Supportsheep's AI-onboarding generates a full multi-page first draft.** Like Durable, Supportsheep uses AI to generate the initial site from a business description. Supportsheep's onboarding seeds service descriptions, section content, and copy with business context across multiple pages.
@@ -121,7 +121,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Durable good for a dental practice website?",
     answer:
-      "Yes, for the public marketing layer. Durable's AI generation creates a usable dental practice site in under a minute, and the bundled CRM, invoicing, and AI marketing tools reduce vendor count for a solo practice. The firm limit is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, making it unsuitable for collecting, storing, or routing PHI. A dental practice using Durable must use a dedicated HIPAA-aware tool (NexHealth, Dentrix Hub, Acuity Premium, or the PMS patient portal) for all booking, intake, and patient communication.",
+      "Yes, for the public marketing layer. Durable's AI generation creates a usable dental practice site in under a minute, and the bundled CRM, invoicing, and AI marketing tools reduce vendor count for a supportsheep practice. The firm limit is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, making it unsuitable for collecting, storing, or routing PHI. A dental practice using Durable must use a dedicated HIPAA-aware tool (NexHealth, Dentrix Hub, Acuity Premium, or the PMS patient portal) for all booking, intake, and patient communication.",
   },
   {
     question: "Is Durable HIPAA compliant for a dental practice?",
@@ -141,7 +141,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What is Durable's built-in CRM, and is it useful for dentists?",
     answer:
-      "Durable's CRM handles marketing leads and basic contact management -- tracking who visited the site, requested information, and followed up. It is useful for a solo practice that handles its own lead-to-consultation follow-up and wants to do so without a separate CRM subscription. It is not a dental patient management system: it does not handle clinical notes, treatment history, insurance billing, recall scheduling, or PHI. Do not store clinical patient information in Durable's CRM. Use your practice management system (Dentrix, Eaglesoft, Curve Dental) for patient records.",
+      "Durable's CRM handles marketing leads and basic contact management -- tracking who visited the site, requested information, and followed up. It is useful for a supportsheep practice that handles its own lead-to-consultation follow-up and wants to do so without a separate CRM subscription. It is not a dental patient management system: it does not handle clinical notes, treatment history, insurance billing, recall scheduling, or PHI. Do not store clinical patient information in Durable's CRM. Use your practice management system (Dentrix, Eaglesoft, Curve Dental) for patient records.",
   },
   {
     question: "What dental booking tools pair with a Durable website?",
@@ -174,7 +174,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Durable for solo dental practices -- (note: these are individual practices, not the brand) covering AI-first site generation, bundled CRM, HIPAA position, and when Supportsheep is the better default for content and local search.",
+          "An honest look at Durable for supportsheep dental practices -- (note: these are individual practices, not the brand) covering AI-first site generation, bundled CRM, HIPAA position, and when Supportsheep is the better default for content and local search.",
         ctaText: "Start your dental practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",

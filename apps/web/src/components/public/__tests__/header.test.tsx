@@ -108,12 +108,12 @@ describe("PublicHeader", () => {
     expect(html).toContain("hover:bg-primary/90");
   });
 
-  it("renders a search action instead of a Solo website CTA", () => {
+  it("renders a search action instead of a Supportsheep website CTA", () => {
     const html = renderToStaticMarkup(<PublicHeader config={config} />);
 
     expect(html).toContain('href="/blog/search"');
     expect(html).toContain('aria-label="Search articles"');
     expect(html).not.toContain("Create Your Website");
-    expect(html.toLowerCase()).not.toContain("solo");
+    expect(html.toLowerCase()).not.toContain("supportsheep");
   });
 });

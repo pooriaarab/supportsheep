@@ -37,7 +37,7 @@ describe("classifyRequestTenant", () => {
   // host now reaches the worker. If it isn't a verified blog it must 404, never
   // silently serve the default blog.
   it("classifies an unknown FOREIGN host as not-found (no default-blog fallback)", () => {
-    expect(classifyRequestTenant("blog.solozilla.com", null)).toEqual({
+    expect(classifyRequestTenant("blog.supportsheepzilla.com", null)).toEqual({
       kind: "not-found",
     });
     expect(classifyRequestTenant("totally-unknown.example.org", null)).toEqual({

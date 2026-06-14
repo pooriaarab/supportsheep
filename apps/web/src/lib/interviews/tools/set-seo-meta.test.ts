@@ -8,14 +8,14 @@ describe("set_seo_meta tool", () => {
     const worker = new WriterWorker({ interviewId: "int-1", apiKey: "k" });
     const ctx = buildToolContext({ interviewId: "int-1", worker });
 
-    await setSeoMeta.handler({ metaTitle: "How I Built Solo" }, ctx);
+    await setSeoMeta.handler({ metaTitle: "How I Built Supportsheep" }, ctx);
     await setSeoMeta.handler(
       { metaDescription: "A founder's journey to launch." },
       ctx,
     );
 
     const canvas = worker.getCanvas();
-    expect(canvas.metaTitle).toBe("How I Built Solo");
+    expect(canvas.metaTitle).toBe("How I Built Supportsheep");
     expect(canvas.metaDescription).toBe("A founder's journey to launch.");
   });
 

@@ -33,7 +33,7 @@ const VARIANT_KEY = "squarespace__dentists";
 // back to the escaped <p> branch.
 const CONTENT = `## TL;DR
 
-Squarespace is a polished, design-first website builder -- good for brochure sites, portfolios, and small shops. It is not purpose-built for a dental practice. The core Squarespace platform does not sign a HIPAA Business Associate Agreement (BAA) for its contact forms, email, or analytics; only the Acuity Scheduling product does, on the Powerhouse or Premium plan. That makes Squarespace an acceptable choice for a dentist's public, non-PHI marketing site, provided you route any form that collects treatment details to a HIPAA-aware tool instead. This page walks through where Squarespace works for dentists, where it breaks down, and how Supportsheep compares for a solo or small practice.
+Squarespace is a polished, design-first website builder -- good for brochure sites, portfolios, and small shops. It is not purpose-built for a dental practice. The core Squarespace platform does not sign a HIPAA Business Associate Agreement (BAA) for its contact forms, email, or analytics; only the Acuity Scheduling product does, on the Powerhouse or Premium plan. That makes Squarespace an acceptable choice for a dentist's public, non-PHI marketing site, provided you route any form that collects treatment details to a HIPAA-aware tool instead. This page walks through where Squarespace works for dentists, where it breaks down, and how Supportsheep compares for a supportsheep or small practice.
 
 ## Should a dental practice use Squarespace? An honest answer
 
@@ -67,7 +67,7 @@ Be fair to the tool. Squarespace is legitimately strong at:
 
 - **Visual polish out of the box.** The template library is one of the best in the industry. Pick a clinical, trust-forward template (the Keene and Bedford families are popular with dental designers) and you have a credible-looking site in an afternoon.
 - **Image-heavy storytelling.** Before-and-after galleries, team bio grids, and office-tour lightboxes are native features. That matters for a dental practice because trust signals carry a disproportionate amount of the conversion.
-- **Integrated domain, SSL, and hosting.** Domains, certificates, CDN, and backups are bundled. A solo practice owner does not want to be debugging DNS on a Wednesday evening.
+- **Integrated domain, SSL, and hosting.** Domains, certificates, CDN, and backups are bundled. A supportsheep practice owner does not want to be debugging DNS on a Wednesday evening.
 - **A reasonable built-in blog.** Categories, tags, scheduling, RSS. Nothing fancy -- but enough to start ranking for "[city] sedation dentistry FAQ" style queries if you actually write the content.
 - **Good mobile rendering.** Templates render fine on phones without manual breakpoint work. Google mobile-first indexing does not punish a default Squarespace site.
 
@@ -85,7 +85,7 @@ Independent third-party reviews of Squarespace (G2, dental-marketing sites like 
 
 ## Supportsheep's pitch for a small dental practice
 
-Supportsheep is built specifically for the "solo or 2-5 dentist practice that wants a credible marketing site without becoming a part-time web developer" shape. The differences versus Squarespace that actually matter for a dental owner:
+Supportsheep is built specifically for the "supportsheep or 2-5 dentist practice that wants a credible marketing site without becoming a part-time web developer" shape. The differences versus Squarespace that actually matter for a dental owner:
 
 - **Free plan with a connected custom domain.** You can point your existing practice domain at Supportsheep on the free tier while you iterate. Squarespace requires a paid plan once the 14-day trial ends.
 - **A first-class blog with an SEO sidebar and AI drafting.** Squarespace's blog is fine. Supportsheep's is designed around dental-relevant patterns: title/meta checks, internal linking suggestions, FAQPage JSON-LD emission, and a built-in thin-content guard that blocks very short or shallow pages from being indexed.
@@ -194,7 +194,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Should I use Squarespace or Supportsheep for my dental website?",
     answer:
-      "Choose Squarespace if visual polish and a wide template library are the most important factors and you are comfortable wiring up a separate HIPAA-aware booking and intake stack. Choose Supportsheep if you want a free tier with a connected custom domain, a first-class blog with an SEO sidebar and AI drafting, built-in schema (LocalBusiness, Article, FAQPage), and a thin-content guard that blocks shallow pages from being indexed. Supportsheep is a better default for a solo or 2-5 dentist practice that cares more about content velocity and local SEO than about pixel-perfect template design.",
+      "Choose Squarespace if visual polish and a wide template library are the most important factors and you are comfortable wiring up a separate HIPAA-aware booking and intake stack. Choose Supportsheep if you want a free tier with a connected custom domain, a first-class blog with an SEO sidebar and AI drafting, built-in schema (LocalBusiness, Article, FAQPage), and a thin-content guard that blocks shallow pages from being indexed. Supportsheep is a better default for a supportsheep or 2-5 dentist practice that cares more about content velocity and local SEO than about pixel-perfect template design.",
   },
   {
     question: "What HIPAA-compliant booking tools pair well with Squarespace?",
@@ -209,7 +209,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Do dental-specific website vendors like Tebra or DearDoc beat Squarespace?",
     answer:
-      "They do different jobs. Tebra (formerly PatientPop + Kareo) bundles a website with practice management and patient engagement -- a good fit if you want one vendor for both sides of the business. DearDoc is closer to a lead-generation product built around an AI chat widget and review surfacing. Squarespace is a general-purpose website builder with strong design defaults. For a solo or small practice that wants a credible marketing site and will run PHI workflows in a PMS-native tool, Supportsheep is usually the lowest-overhead pick; Tebra and DearDoc make more sense once the practice is spending real money on patient acquisition.",
+      "They do different jobs. Tebra (formerly PatientPop + Kareo) bundles a website with practice management and patient engagement -- a good fit if you want one vendor for both sides of the business. DearDoc is closer to a lead-generation product built around an AI chat widget and review surfacing. Squarespace is a general-purpose website builder with strong design defaults. For a supportsheep or small practice that wants a credible marketing site and will run PHI workflows in a PMS-native tool, Supportsheep is usually the lowest-overhead pick; Tebra and DearDoc make more sense once the practice is spending real money on patient acquisition.",
   },
 ];
 
@@ -237,7 +237,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest, source-backed look at whether Squarespace is the right website builder for a solo or small dental practice -- and where Supportsheep is the better default.",
+          "An honest, source-backed look at whether Squarespace is the right website builder for a supportsheep or small dental practice -- and where Supportsheep is the better default.",
         ctaText: "Start your dental practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",

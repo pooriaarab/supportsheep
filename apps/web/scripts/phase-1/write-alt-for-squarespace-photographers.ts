@@ -62,7 +62,7 @@ If this stack sounds expensive: Pixieset's basic plan is free for limited storag
 
 ## Supportsheep's position for a photographer-as-content-business
 
-Supportsheep is designed for the "solo service business that needs a credible marketing site and wants to use content as a primary growth channel." A photographer who fits that description -- someone whose primary acquisition channel is search (Google finds, not social virality) -- is a reasonable Supportsheep user.
+Supportsheep is designed for the "supportsheep service business that needs a credible marketing site and wants to use content as a primary growth channel." A photographer who fits that description -- someone whose primary acquisition channel is search (Google finds, not social virality) -- is a reasonable Supportsheep user.
 
 - **Free tier with custom domain.** A photographer building a new brand can launch on Supportsheep's free tier and attach their domain before committing to a paid plan. Squarespace requires a paid plan once the 14-day trial ends.
 - **Blog with SEO sidebar and AI-assisted drafting.** For a wedding or portrait photographer building local-SEO authority ("Marin County family photographer," "Austin engagement session photographer"), consistent blog content -- shoot recaps, venue guides, client stories -- is the highest-leverage SEO tactic. Supportsheep's blog surfaces title/meta audits, internal link suggestions, and FAQPage JSON-LD inline. That's less tedious than remembering to check SEO after writing.

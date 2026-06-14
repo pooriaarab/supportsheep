@@ -1,8 +1,8 @@
 /**
  * Phase 1 retrofit: replace hardcoded Supportsheep prices in the two pilot
- * programmatic-page Firestore docs with `{{solo.*}}` placeholders so the
+ * programmatic-page Firestore docs with `{{supportsheep.*}}` placeholders so the
  * interpolation pipeline in the landing components resolves them from
- * `SOLO_PRICING` (the pricing constants) at render time.
+ * `SUPPORTSHEEP_PRICING` (the pricing constants) at render time.
  *
  * Targets:
  *   - programmatic_pages/dentists                  (/for/dentists)
@@ -27,8 +27,8 @@
  *
  * Usage:
  *   cd apps/web
- *   bun --conditions react-server scripts/phase-1/retrofit-solo-price-vars.ts --dry-run
- *   bun --conditions react-server scripts/phase-1/retrofit-solo-price-vars.ts
+ *   bun --conditions react-server scripts/phase-1/retrofit-supportsheep-price-vars.ts --dry-run
+ *   bun --conditions react-server scripts/phase-1/retrofit-supportsheep-price-vars.ts
  *
  * Requires Firebase admin credentials in env (same as the other phase-1
  * scripts). If creds are missing, Firestore init throws and nothing is
@@ -66,43 +66,43 @@ interface Rule {
 const RULES: Rule[] = [
   // Supportsheep Pro annual-billed rate: $20/mo
   {
-    name: "solo.pro.yearly (billed annually)",
+    name: "supportsheep.pro.yearly (billed annually)",
     pattern:
-      /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$20\b/gi,
-    replacement: "$1{{solo.pro.yearly.monthly}}",
+      /(Supportsheep(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$20\b/gi,
+    replacement: "$1{{supportsheep.pro.yearly.monthly}}",
   },
   // Supportsheep Pro month-to-month rate: $25/mo
   {
-    name: "solo.pro.monthly (month to month)",
+    name: "supportsheep.pro.monthly (month to month)",
     pattern:
-      /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$25\b/gi,
-    replacement: "$1{{solo.pro.monthly.monthly}}",
+      /(Supportsheep(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$25\b/gi,
+    replacement: "$1{{supportsheep.pro.monthly.monthly}}",
   },
   // Supportsheep Pro total annual spend: $240/yr
   {
-    name: "solo.pro.yearlyAnnual",
-    pattern: /(Solo(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$240\b/gi,
-    replacement: "$1{{solo.pro.yearlyAnnual}}",
+    name: "supportsheep.pro.yearlyAnnual",
+    pattern: /(Supportsheep(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$240\b/gi,
+    replacement: "$1{{supportsheep.pro.yearlyAnnual}}",
   },
   // Supportsheep Grow annual-billed rate: $90/mo
   {
-    name: "solo.grow.yearly (billed annually)",
+    name: "supportsheep.grow.yearly (billed annually)",
     pattern:
-      /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$90\b/gi,
-    replacement: "$1{{solo.grow.yearly.monthly}}",
+      /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$90\b/gi,
+    replacement: "$1{{supportsheep.grow.yearly.monthly}}",
   },
   // Supportsheep Grow month-to-month rate: $120/mo
   {
-    name: "solo.grow.monthly (month to month)",
+    name: "supportsheep.grow.monthly (month to month)",
     pattern:
-      /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$120\b/gi,
-    replacement: "$1{{solo.grow.monthly.monthly}}",
+      /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$120\b/gi,
+    replacement: "$1{{supportsheep.grow.monthly.monthly}}",
   },
   // Supportsheep Grow total annual spend: $1080/yr
   {
-    name: "solo.grow.yearlyAnnual",
-    pattern: /(Solo(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$1080\b/gi,
-    replacement: "$1{{solo.grow.yearlyAnnual}}",
+    name: "supportsheep.grow.yearlyAnnual",
+    pattern: /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$1080\b/gi,
+    replacement: "$1{{supportsheep.grow.yearlyAnnual}}",
   },
 ];
 

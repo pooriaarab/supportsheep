@@ -25,8 +25,8 @@ describe("CanvasCursor", () => {
   });
 
   it("renders the caller-provided label in the name chip", () => {
-    const html = renderToStaticMarkup(<CanvasCursor isActive label="Solo" />);
-    expect(html).toContain(">Solo<");
+    const html = renderToStaticMarkup(<CanvasCursor isActive label="Supportsheep" />);
+    expect(html).toContain(">Supportsheep<");
   });
 
   it("applies caller-provided className", () => {

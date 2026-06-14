@@ -387,7 +387,7 @@ describe("buildOpeningGreeting", () => {
     // The topic still feeds the `set_title` placeholder via the
     // system-prompt opener directive — see `buildSystemPrompt`.
     const expected = "I'm capturing your story as you talk. Let's go.";
-    expect(buildOpeningGreeting("Launching Solo v2")).toBe(expected);
+    expect(buildOpeningGreeting("Launching Supportsheep v2")).toBe(expected);
     expect(buildOpeningGreeting()).toBe(expected);
     expect(buildOpeningGreeting("")).toBe(expected);
     expect(buildOpeningGreeting("   ")).toBe(expected);

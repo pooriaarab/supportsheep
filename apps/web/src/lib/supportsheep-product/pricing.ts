@@ -4,15 +4,15 @@
  * Any page, script, or template that mentions a Supportsheep plan price must read
  * from here rather than hardcoding numbers, so the whole blog stays in sync
  * when pricing changes. Surface-level copy in Firestore (`uniqueContent`,
- * FAQ answers) references these values via `{{solo.*}}` placeholders that
+ * FAQ answers) references these values via `{{supportsheep.*}}` placeholders that
  * `interpolateProductVars` resolves at render time.
  *
  * Values verified 2026-04-21 against the upstream pricing source.
  * When pricing changes, update BOTH the numbers AND `verifiedAt` in the same commit.
  */
-export type SoloTierKey = "free" | "pro" | "grow";
+export type SupportsheepTierKey = "free" | "pro" | "grow";
 
-export interface SoloPricingTier {
+export interface SupportsheepPricingTier {
   /** USD per month when billed month-to-month. */
   monthly: number;
   /** USD per month when billed annually (the advertised "/mo" rate). */
@@ -21,12 +21,12 @@ export interface SoloPricingTier {
   yearlyAnnual: number;
 }
 
-export interface SoloPricing extends Record<SoloTierKey, SoloPricingTier> {
+export interface SupportsheepPricing extends Record<SupportsheepTierKey, SupportsheepPricingTier> {
   verifiedAt: string;
   source: string;
 }
 
-export const SOLO_PRICING: SoloPricing = {
+export const SUPPORTSHEEP_PRICING: SupportsheepPricing = {
   free: { monthly: 0, yearly: 0, yearlyAnnual: 0 },
   pro: { monthly: 25, yearly: 20, yearlyAnnual: 240 },
   grow: { monthly: 120, yearly: 90, yearlyAnnual: 1080 },
@@ -35,16 +35,16 @@ export const SOLO_PRICING: SoloPricing = {
 };
 
 /** Format a tier's monthly rate (billed monthly) as "$25/mo". */
-export function formatTierMonthly(tier: SoloTierKey): string {
-  return `$${SOLO_PRICING[tier].monthly}/mo`;
+export function formatTierMonthly(tier: SupportsheepTierKey): string {
+  return `$${SUPPORTSHEEP_PRICING[tier].monthly}/mo`;
 }
 
 /** Format a tier's annual-billed effective monthly rate as "$20/mo". */
-export function formatTierYearly(tier: SoloTierKey): string {
-  return `$${SOLO_PRICING[tier].yearly}/mo`;
+export function formatTierYearly(tier: SupportsheepTierKey): string {
+  return `$${SUPPORTSHEEP_PRICING[tier].yearly}/mo`;
 }
 
 /** Format a tier's total annual cost as "$240/yr". */
-export function formatTierYearlyAnnual(tier: SoloTierKey): string {
-  return `$${SOLO_PRICING[tier].yearlyAnnual}/yr`;
+export function formatTierYearlyAnnual(tier: SupportsheepTierKey): string {
+  return `$${SUPPORTSHEEP_PRICING[tier].yearlyAnnual}/yr`;
 }

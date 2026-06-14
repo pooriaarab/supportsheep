@@ -82,7 +82,7 @@ function freeTool(overrides: Partial<FreeTool> = {}): FreeTool {
       secondaryLabel: "Learn more",
       secondaryUrl: "https://supportsheep.com/",
       utm: {
-        source: "solo_blog",
+        source: "supportsheep_blog",
         medium: "free_tool",
         campaign: "{{toolSlug}}",
         content: "bottom_callout",
@@ -409,7 +409,7 @@ describe("free tool repository", () => {
     const result = await getFreeToolById("word-counter", "default", db);
     expect(result!.callout.heading).toBe("New Heading");
     expect(result!.callout.primaryUrl).toBe("https://supportsheep.com/");
-    expect(result!.callout.utm.source).toBe("solo_blog");
+    expect(result!.callout.utm.source).toBe("supportsheep_blog");
   });
 
   // -------------------------------------------------------------------------

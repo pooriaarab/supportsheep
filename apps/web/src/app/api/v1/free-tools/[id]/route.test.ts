@@ -93,7 +93,7 @@ function fakeTool(overrides: Partial<FreeTool> = {}): FreeTool {
       secondaryLabel: "Learn more",
       secondaryUrl: "https://supportsheep.com/",
       utm: {
-        source: "solo_blog",
+        source: "supportsheep_blog",
         medium: "free_tool",
         campaign: "{{toolSlug}}",
         content: "bottom_callout",

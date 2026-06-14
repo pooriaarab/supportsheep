@@ -15,7 +15,7 @@ test("public tools pages render enabled tools and bottom callouts", async ({
   ).toBeVisible();
   await expect(page.getByRole("link", { name: "Try Supportsheep" })).toHaveAttribute(
     "href",
-    /utm_source=solo_blog/,
+    /utm_source=supportsheep_blog/,
   );
 });
 

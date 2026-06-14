@@ -23,7 +23,7 @@ const VARIANT_KEY = "godaddy__dentists";
 
 const CONTENT = `## TL;DR
 
-GoDaddy is one of the world's largest domain registrars and offers an AI-assisted website builder marketed as a fast way for small businesses -- including dental practices -- to get online. For a dental practice, the critical limitation is clear and well-documented: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder, hosting, or standard web services. Only GoDaddy's Microsoft 365 email integration has any HIPAA posture, and even that is limited to email only. A dental practice can use GoDaddy to build a public marketing site, but every patient-data touchpoint must go to a dedicated HIPAA-aware tool. This page covers that honestly and compares GoDaddy to Supportsheep for a solo or small practice.
+GoDaddy is one of the world's largest domain registrars and offers an AI-assisted website builder marketed as a fast way for small businesses -- including dental practices -- to get online. For a dental practice, the critical limitation is clear and well-documented: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder, hosting, or standard web services. Only GoDaddy's Microsoft 365 email integration has any HIPAA posture, and even that is limited to email only. A dental practice can use GoDaddy to build a public marketing site, but every patient-data touchpoint must go to a dedicated HIPAA-aware tool. This page covers that honestly and compares GoDaddy to Supportsheep for a supportsheep or small practice.
 
 ## GoDaddy and HIPAA: the honest summary
 
@@ -37,7 +37,7 @@ For a dental practice, the practical implication is the same as for Squarespace 
 
 GoDaddy's website builder uses AI to accelerate setup. You enter your business type and a short description, and the AI generates a starter site with relevant sections, suggested copy, and service descriptions. The resulting site is editable in a point-and-click interface with no code required.
 
-For a solo dentist or small practice, this is genuinely useful: the AI-generated starter reduces the blank-canvas problem and gets you to a usable first draft quickly. The trade-offs are:
+For a supportsheep dentist or small practice, this is genuinely useful: the AI-generated starter reduces the blank-canvas problem and gets you to a usable first draft quickly. The trade-offs are:
 
 - **Limited design customization.** GoDaddy's builder is simpler than Squarespace or Wix. You can change content, colors, and basic layouts, but deep visual customization is not the product's strength.
 - **Shallow SEO controls.** GoDaddy's builder handles basic SEO (title tags, meta descriptions, XML sitemaps), but schema injection, programmatic local-SEO pages, and advanced redirect management are not native. Dental SEO agencies note that GoDaddy's SEO ceiling is lower than WordPress and comparable to -- or slightly below -- Squarespace and Wix.
@@ -45,7 +45,7 @@ For a solo dentist or small practice, this is genuinely useful: the AI-generated
 
 ## Where GoDaddy works for a dental practice
 
-**Speed to a first draft.** GoDaddy's AI builder is fast. A solo dentist who needs a basic website before opening a new practice can generate a usable starter in under an hour, then refine it over a week. That matters when the alternative is an empty placeholder page or an expensive agency retainer.
+**Speed to a first draft.** GoDaddy's AI builder is fast. A supportsheep dentist who needs a basic website before opening a new practice can generate a usable starter in under an hour, then refine it over a week. That matters when the alternative is an empty placeholder page or an expensive agency retainer.
 
 **Domain + hosting + email in one place.** GoDaddy's core business is domain registration and hosting. A practice that buys its domain from GoDaddy can keep the domain, hosting, and professional email on one account -- one login, one support number, one bill. That simplicity has value for a practice owner who does not have an IT person.
 
@@ -57,13 +57,13 @@ For a solo dentist or small practice, this is genuinely useful: the AI-generated
 
 **SEO ceiling is real for local dental search.** Competitive dental keywords ("invisalign dentist [city]," "sedation dentistry [metro area]," "pediatric dentist near me") have real PPC and organic competition. GoDaddy's builder lacks the schema automation and programmatic-page tooling that a serious local SEO strategy needs. Most dental practices that grow beyond 3-5 operatories and start competing seriously for location-based keywords eventually migrate off GoDaddy.
 
-**Limited content platform.** A dental blog for patient education and local SEO ("how often should you get a dental cleaning," "what is a crown vs a veneer," "[city] emergency dentist") is one of the highest-ROI marketing investments for a solo or small practice. GoDaddy's blog is basic -- adequate for a few posts, not designed for a serious content velocity strategy.
+**Limited content platform.** A dental blog for patient education and local SEO ("how often should you get a dental cleaning," "what is a crown vs a veneer," "[city] emergency dentist") is one of the highest-ROI marketing investments for a supportsheep or small practice. GoDaddy's blog is basic -- adequate for a few posts, not designed for a serious content velocity strategy.
 
 **Design quality floor is lower.** GoDaddy's templates are functional but not design-forward. In a competitive local market where a practice's website is a trust signal, GoDaddy's design ceiling is below Squarespace's and Wix's.
 
-## Supportsheep's position for a solo or small dental practice
+## Supportsheep's position for a supportsheep or small dental practice
 
-Supportsheep is designed for the "solo or 2-5 practitioner service business that needs a credible marketing site and a content-driven approach to local SEO." For a solo dentist evaluating GoDaddy:
+Supportsheep is designed for the "supportsheep or 2-5 practitioner service business that needs a credible marketing site and a content-driven approach to local SEO." For a supportsheep dentist evaluating GoDaddy:
 
 - **Free tier with custom domain.** A dentist building a new practice site can attach their existing domain to Supportsheep without paying until they're ready. GoDaddy's domain is paid; its website builder is additional.
 - **AI-generated first draft from a business description.** Supportsheep's onboarding generates a usable first draft from a business prompt -- service descriptions, homepage sections, copy -- without a blank canvas. This is comparable to GoDaddy's AI builder, but the resulting site is built on a content-and-SEO-first architecture.
@@ -172,7 +172,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at GoDaddy's website builder for solo and small dental practices -- including its firm no-BAA position, SEO ceiling, and when Supportsheep is the better default for content and local search.",
+          "An honest look at GoDaddy's website builder for supportsheep and small dental practices -- including its firm no-BAA position, SEO ceiling, and when Supportsheep is the better default for content and local search.",
         ctaText: "Start your dental practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",

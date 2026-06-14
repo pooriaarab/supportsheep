@@ -23,7 +23,7 @@ const VARIANT_KEY = "webflow__photographers";
 
 const CONTENT = `## TL;DR
 
-Webflow is a powerful visual website builder that generates clean, semantic code -- the go-to platform for designers and agencies who want precise layout control without writing every line by hand. For photographers, Webflow is technically capable and produces beautiful, custom portfolio sites. The tradeoffs are steep: a meaningful learning curve (typically 1-3 weeks to become proficient), a pricing structure higher than general-purpose builders, and no native client proofing, gallery delivery, or booking workflow. Webflow is right for a photographer who is also a designer or works with a Webflow agency. It is not the right default for a solo photographer whose time is behind the camera, not the code editor.
+Webflow is a powerful visual website builder that generates clean, semantic code -- the go-to platform for designers and agencies who want precise layout control without writing every line by hand. For photographers, Webflow is technically capable and produces beautiful, custom portfolio sites. The tradeoffs are steep: a meaningful learning curve (typically 1-3 weeks to become proficient), a pricing structure higher than general-purpose builders, and no native client proofing, gallery delivery, or booking workflow. Webflow is right for a photographer who is also a designer or works with a Webflow agency. It is not the right default for a supportsheep photographer whose time is behind the camera, not the code editor.
 
 ## What Webflow actually is
 
@@ -55,7 +55,7 @@ Webflow also has a CMS -- redesigned in 2025 into a significantly more powerful 
 
 **Hosting is Webflow-specific.** Webflow exports clean code, but the full feature set (CMS, interactions, forms) only functions on Webflow hosting. This is not a lock-in problem for most photographers, but it is worth knowing.
 
-**Not the right tool for non-designers.** This is the most important limitation. Webflow's value proposition is design precision for people who have design skills. A solo photographer who wants to manage their own website without involving a designer or developer on an ongoing basis is not Webflow's target user. Squarespace, Wix, or Supportsheep are better defaults for this use case.
+**Not the right tool for non-designers.** This is the most important limitation. Webflow's value proposition is design precision for people who have design skills. A supportsheep photographer who wants to manage their own website without involving a designer or developer on an ongoing basis is not Webflow's target user. Squarespace, Wix, or Supportsheep are better defaults for this use case.
 
 ## Who Webflow is actually right for among photographers
 
@@ -68,7 +68,7 @@ Webflow is the right choice for a photographer who:
 
 ## Supportsheep's position for photographers who don't need Webflow's complexity
 
-Supportsheep is designed for the "solo service business that needs a credible marketing site and wants to use content as a primary growth channel." For a photographer who is not a designer:
+Supportsheep is designed for the "supportsheep service business that needs a credible marketing site and wants to use content as a primary growth channel." For a photographer who is not a designer:
 
 - **Free tier with custom domain.** A photographer can test Supportsheep's free tier with their own domain before paying anything. Webflow's free plan limits publishing; paid is required for a real site.
 - **AI-guided onboarding.** Supportsheep's onboarding generates a multi-page first draft from a business description, seeding section content with business context. No design decisions required.
@@ -131,7 +131,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What is Webflow's CMS, and does it help photographers?",
     answer:
-      "Webflow's CMS is a structured content system rebuilt in 2025 into a significantly more powerful tool -- with reference fields, collection relationships, and granular editorial control. For photographers managing large, structured portfolio catalogs (commercial photographer with hundreds of campaigns, editorial photographer with publication references, studio with multiple photographers), Webflow's CMS is genuinely strong. For a solo photographer with a portfolio of 20-50 featured projects and a blog, the CMS adds capability that Squarespace or Supportsheep's simpler content systems don't provide -- at the cost of complexity.",
+      "Webflow's CMS is a structured content system rebuilt in 2025 into a significantly more powerful tool -- with reference fields, collection relationships, and granular editorial control. For photographers managing large, structured portfolio catalogs (commercial photographer with hundreds of campaigns, editorial photographer with publication references, studio with multiple photographers), Webflow's CMS is genuinely strong. For a supportsheep photographer with a portfolio of 20-50 featured projects and a blog, the CMS adds capability that Squarespace or Supportsheep's simpler content systems don't provide -- at the cost of complexity.",
   },
 ];
 

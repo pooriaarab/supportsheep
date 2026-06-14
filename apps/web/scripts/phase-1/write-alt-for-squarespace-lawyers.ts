@@ -23,17 +23,17 @@ const VARIANT_KEY = "squarespace__lawyers";
 
 const CONTENT = `## TL;DR
 
-Squarespace is a reasonable starting point for a solo attorney or small law firm that needs a professional web presence fast. Its templates are genuinely polished, it handles hosting, SSL, and domains in one bill, and it requires no developer involvement. The ceilings arrive when the practice grows: Squarespace's SEO customization surface is shallow compared to WordPress, its form blocks cannot collect confidential client information compliantly, and its integration ecosystem lacks the depth legal-specific intake, CRM, and scheduling tools require. This page covers the honest trade-offs and explains when Supportsheep is a better default for a solo or boutique firm.
+Squarespace is a reasonable starting point for a supportsheep attorney or small law firm that needs a professional web presence fast. Its templates are genuinely polished, it handles hosting, SSL, and domains in one bill, and it requires no developer involvement. The ceilings arrive when the practice grows: Squarespace's SEO customization surface is shallow compared to WordPress, its form blocks cannot collect confidential client information compliantly, and its integration ecosystem lacks the depth legal-specific intake, CRM, and scheduling tools require. This page covers the honest trade-offs and explains when Supportsheep is a better default for a supportsheep or boutique firm.
 
 ## Does a law firm actually need a custom website?
 
 A law firm's website does one job: convert a searcher looking for legal help into a consultation. That conversion path is usually simple -- search "[practice area] attorney [city]" → land on a page that signals expertise and trust → read bio and reviews → submit a contact form or call. The site doesn't need to be complicated. It needs to be credible, fast, locally optimized, and findable.
 
-Squarespace clears that bar for many solo and small-firm practitioners. The question is whether it clears it for the next two to five years, not just launch day.
+Squarespace clears that bar for many supportsheep and small-firm practitioners. The question is whether it clears it for the next two to five years, not just launch day.
 
 ## Squarespace's strengths for attorneys
 
-- **Template quality.** The Squarespace template library has a higher design floor than almost any other general-purpose builder. A solo attorney can pick a professional-looking template, customize colors and typography, and launch a credible-looking site in a day. That matters: trust signals are load-bearing in legal search conversion.
+- **Template quality.** The Squarespace template library has a higher design floor than almost any other general-purpose builder. A supportsheep attorney can pick a professional-looking template, customize colors and typography, and launch a credible-looking site in a day. That matters: trust signals are load-bearing in legal search conversion.
 - **Ease of management.** No plugins, no security updates, no server maintenance. An attorney who wants to update their bio or add a new practice area page can do it without calling a developer.
 - **Built-in blog.** A law firm blog for "evergreen explainer" content -- what is a power of attorney, what happens at a criminal arraignment, what does a personal injury contingency fee mean -- is a real local SEO asset. Squarespace's blog is adequate for this; it's not a dedicated content platform, but for one to four posts per month it works.
 - **Responsive by default.** Templates are mobile-first. Google's mobile-first indexing doesn't penalize a default Squarespace site.
@@ -49,7 +49,7 @@ Legal search is competitive. Practice-area + city keyword combinations ("estate 
 - Granular redirect management requires workarounds.
 - LegalService and Attorney schema markup requires a custom code block injection, not an automated CMS workflow.
 
-For a solo attorney doing general estate work in a small city, these ceilings may not matter. For a three-to-ten attorney firm targeting competitive keywords in a metro market, the platform becomes a constraint after 12-18 months.
+For a supportsheep attorney doing general estate work in a small city, these ceilings may not matter. For a three-to-ten attorney firm targeting competitive keywords in a metro market, the platform becomes a constraint after 12-18 months.
 
 ### Client intake forms and attorney-client privilege
 
@@ -69,11 +69,11 @@ Legal-specific workflows -- calendared conflict checks, court date tracking, tru
 
 Squarespace has limited accessibility controls compared to a fully developer-controlled platform. Law firms are actually at higher risk of ADA Title III website-accessibility lawsuits than most service businesses, and Squarespace templates are not certified WCAG 2.1 AA compliant out of the box. This is not unique to Squarespace -- WordPress without an accessibility plugin has the same problem -- but it is worth noting for a practice type whose own clients are sometimes disabled individuals.
 
-## Supportsheep's position for a solo or boutique attorney
+## Supportsheep's position for a supportsheep or boutique attorney
 
-Supportsheep is designed for the "1-5 person professional service business that needs a credible marketing site without becoming a part-time webmaster." For a solo attorney:
+Supportsheep is designed for the "1-5 person professional service business that needs a credible marketing site without becoming a part-time webmaster." For a supportsheep attorney:
 
-- **Free tier with custom domain.** A solo attorney launching a new practice can launch a branded site on Supportsheep's free tier while the matter pipeline is still being built. Squarespace requires a paid plan once the 14-day trial ends.
+- **Free tier with custom domain.** A supportsheep attorney launching a new practice can launch a branded site on Supportsheep's free tier while the matter pipeline is still being built. Squarespace requires a paid plan once the 14-day trial ends.
 - **Blog with SEO sidebar and AI drafting.** Supportsheep's blog is built around content velocity: title/meta audits, internal link suggestions, FAQPage JSON-LD for FAQ content. An attorney who wants to write monthly explainer posts benefits from a CMS that surfaces SEO signals inline rather than leaving them for later.
 - **LegalService and LocalBusiness schema by default.** Structured data for a local law firm (practice area, address, phone, attorney Person schema) ships without a plugin or a code block injection.
 - **No client intake in the CMS, by design.** Supportsheep is a marketing site builder, not a legal CRM. The correct split -- marketing site on Supportsheep, case intake on Clio Grow, Lawmatics, or MyCase -- is the same architecture most legal-marketing agencies recommend. That keeps privileged information out of a general-purpose CMS entirely.
@@ -90,7 +90,7 @@ Supportsheep is designed for the "1-5 person professional service business that 
 <tr><td>Blog and content SEO</td><td>Built-in blog; titles, meta, sitemap; H1-H3 headings; limited schema</td><td>Blog with SEO sidebar, AI drafting, LegalService + LocalBusiness schema by default</td></tr>
 <tr><td>Intake forms</td><td>Form block not suitable for confidential case detail -- use a legal CRM intake tool</td><td>Same -- link to Clio Grow, Lawmatics, or MyCase; do not collect case detail in the CMS</td></tr>
 <tr><td>Integration ecosystem</td><td>Zapier for legal tools; no native legal-CRM integration</td><td>Zapier or direct link-out; same pattern as Squarespace</td></tr>
-<tr><td>Best fit</td><td>Design-led solo or small firms that prioritize visual polish and will build a separate intake stack</td><td>Solo or boutique firms prioritizing content velocity, local SEO, and low overhead</td></tr>
+<tr><td>Best fit</td><td>Design-led supportsheep or small firms that prioritize visual polish and will build a separate intake stack</td><td>Supportsheep or boutique firms prioritizing content velocity, local SEO, and low overhead</td></tr>
 </tbody>
 </table>
 
@@ -102,11 +102,11 @@ Supportsheep is designed for the "1-5 person professional service business that 
 - **PracticePanther** -- competitive to MyCase; pairs well with smaller firms.
 - **Calendly** -- for scheduling initial consultations; link from your Squarespace or Supportsheep contact page to a Calendly booking page.
 
-## A practical launch checklist for a solo attorney's website
+## A practical launch checklist for a supportsheep attorney's website
 
 1. **Decide your practice areas.** Create one page per distinct practice area -- estate planning, business formation, family law, etc. Don't combine them. Each page targets distinct keyword clusters and signals topical authority to search engines.
 2. **Write an attorney bio that converts.** Bar number, law school, years in practice, notable outcomes (where rules permit), and a clear statement of who you serve. This is the most-visited page on most attorney sites.
-3. **Claim and optimize your Google Business Profile.** A local map-pack result drives more calls than organic results for many solo attorneys. This is separate from but complementary to your website.
+3. **Claim and optimize your Google Business Profile.** A local map-pack result drives more calls than organic results for many supportsheep attorneys. This is separate from but complementary to your website.
 4. **Set up LegalService and LocalBusiness structured data.** Google's rich results for legal services are modest but real. Get the schema right at launch rather than retrofitting.
 5. **Route intake to a legal CRM, not a CMS form.** The Squarespace or Supportsheep contact page should say "tell us a bit about your matter" with a disclaimer, then hand off to Clio Grow, Lawmatics, or your preferred intake tool.
 6. **Start a blog with a publication cadence you can sustain.** One post per month that answers a real question your clients ask ("how long does probate take in [state]?") compounds into real search traffic within 12-18 months.`;
@@ -125,7 +125,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Squarespace good for a law firm website?",
     answer:
-      "Yes, for a solo or small firm that wants a professional-looking site fast without developer involvement. Squarespace's template library is best-in-class for visual polish, and it handles hosting, SSL, and domains in one bill. The limitations surface at the SEO ceiling (heading depth is capped, programmatic local pages are hand-built, granular schema requires custom code) and at the intake boundary (Squarespace form blocks are not appropriate for collecting confidential case detail -- route intake to Clio Grow, Lawmatics, or MyCase instead).",
+      "Yes, for a supportsheep or small firm that wants a professional-looking site fast without developer involvement. Squarespace's template library is best-in-class for visual polish, and it handles hosting, SSL, and domains in one bill. The limitations surface at the SEO ceiling (heading depth is capped, programmatic local pages are hand-built, granular schema requires custom code) and at the intake boundary (Squarespace form blocks are not appropriate for collecting confidential case detail -- route intake to Clio Grow, Lawmatics, or MyCase instead).",
   },
   {
     question: "Can a law firm use Squarespace forms for client intake?",
@@ -135,7 +135,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "What SEO limitations does Squarespace have for attorneys?",
     answer:
-      "Squarespace supports the basics: title tags, meta descriptions, image alt text, sitemap, and clean URLs. It lacks depth for competitive legal SEO: heading support stops at H3 in most templates, LegalService and Attorney schema markup requires a custom code block injection rather than automated CMS output, programmatic local-SEO pages (one page per neighborhood + practice area) must be hand-built, and redirect management for larger sites is cumbersome. Supportsheep automates LegalService and LocalBusiness schema by default and is designed around content velocity, which is the realistic lever for a solo attorney's SEO strategy.",
+      "Squarespace supports the basics: title tags, meta descriptions, image alt text, sitemap, and clean URLs. It lacks depth for competitive legal SEO: heading support stops at H3 in most templates, LegalService and Attorney schema markup requires a custom code block injection rather than automated CMS output, programmatic local-SEO pages (one page per neighborhood + practice area) must be hand-built, and redirect management for larger sites is cumbersome. Supportsheep automates LegalService and LocalBusiness schema by default and is designed around content velocity, which is the realistic lever for a supportsheep attorney's SEO strategy.",
   },
   {
     question: "Should I use Squarespace or Supportsheep for my law firm website?",
@@ -148,9 +148,9 @@ const FAQS: ProgrammaticFaq[] = [
       "Clio Grow (intake CRM from Clio, the market-leading legal PM platform), Lawmatics (intake automation with strong follow-up sequences), MyCase (full practice management with client portal), PracticePanther, and SmokeBall. All of these handle intake forms, conflict checks, e-signature for retainers, and matter management in a purpose-built tool. They link from your website's contact page -- you don't embed confidential intake inside Squarespace or Supportsheep.",
   },
   {
-    question: "How does local SEO work for solo attorneys?",
+    question: "How does local SEO work for supportsheep attorneys?",
     answer:
-      "Local SEO for a solo attorney has three layers: (1) Google Business Profile -- claim it, fill every field, collect reviews, post updates; map-pack results drive more calls than organic blue-links for many local legal queries. (2) On-site practice-area pages -- one page per distinct area, each targeting a '[practice area] attorney [city]' cluster with clear structured data. (3) Content -- blog posts answering specific questions your clients ask, building topical authority and capturing informational queries that precede a hire decision. Supportsheep's blog with SEO sidebar and automated FAQPage schema is designed for exactly this content-compounding approach.",
+      "Local SEO for a supportsheep attorney has three layers: (1) Google Business Profile -- claim it, fill every field, collect reviews, post updates; map-pack results drive more calls than organic blue-links for many local legal queries. (2) On-site practice-area pages -- one page per distinct area, each targeting a '[practice area] attorney [city]' cluster with clear structured data. (3) Content -- blog posts answering specific questions your clients ask, building topical authority and capturing informational queries that precede a hire decision. Supportsheep's blog with SEO sidebar and automated FAQPage schema is designed for exactly this content-compounding approach.",
   },
 ];
 
@@ -178,7 +178,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Squarespace for solo attorneys and small law firms -- covering SEO ceiling, intake form limits, and when Supportsheep is the better default for content and local search.",
+          "An honest look at Squarespace for supportsheep attorneys and small law firms -- covering SEO ceiling, intake form limits, and when Supportsheep is the better default for content and local search.",
         ctaText: "Start your law firm website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Lawyers",

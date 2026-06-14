@@ -2,7 +2,7 @@
 /**
  * Batch content generator for /for/[vertical] programmatic pages.
  * Uses Tabstack /v1/research for verified citations + Anthropic Claude for content.
- * All Supportsheep claims grounded in .claude/context/solo-product.md.
+ * All Supportsheep claims grounded in .claude/context/supportsheep-product.md.
  *
  * Run: bun --conditions react-server scripts/content-pipeline/generate-for-pages.ts
  * Options:
@@ -34,13 +34,13 @@ function countWords(text: string): number {
 }
 
 // ---------------------------------------------------------------------------
-// Locate solo-product.md — runs upward from cwd until the .claude/context dir
+// Locate supportsheep-product.md — runs upward from cwd until the .claude/context dir
 // is found, so the script works whether cwd is apps/web or the repo root.
 // ---------------------------------------------------------------------------
-function findSoloProductMd(): string {
+function findSupportsheepProductMd(): string {
   let dir = process.cwd();
   for (let i = 0; i < 6; i++) {
-    const candidate = join(dir, ".claude", "context", "solo-product.md");
+    const candidate = join(dir, ".claude", "context", "supportsheep-product.md");
     try {
       readFileSync(candidate); // throws if not found
       return candidate;
@@ -50,7 +50,7 @@ function findSoloProductMd(): string {
       dir = parent;
     }
   }
-  throw new Error("Cannot locate .claude/context/solo-product.md — run from within the repo");
+  throw new Error("Cannot locate .claude/context/supportsheep-product.md — run from within the repo");
 }
 
 // ---------------------------------------------------------------------------
@@ -115,7 +115,7 @@ async function tabstackResearch(
 async function generatePageContent(
   vertical: { slug: string; label: string; industry: string },
   research: { report: string; citedPages: Array<{ url: string; title: string }> },
-  soloContext: string,
+  supportsheepContext: string,
   anthropicClient: Anthropic,
 ): Promise<{
   uniqueContent: string;
@@ -128,23 +128,23 @@ async function generatePageContent(
     .map((p, i) => `[${i + 1}] ${p.title} — ${p.url}`)
     .join("\n");
 
-  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the blog of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
+  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the blog of Supportsheep (an AI-powered platform for supportsheeppreneurs and SMBs).
 
 BLOGBAT PRODUCT CONTEXT — ground all Supportsheep claims here:
-${soloContext}
+${supportsheepContext}
 
 CORE RULES:
 - NEVER claim Supportsheep has a free-form AI writing assistant across the editor
 - NEVER claim Supportsheep has native booking (it links to external calendar tools)
 - NEVER claim Supportsheep generates AI images (Unsplash default, Pexels for Pro+)
 - NEVER claim Supportsheep has a BAA (unsuitable for PHI-collecting forms)
-- Use {{solo.pro.yearly}} for $20/mo, {{solo.pro.monthly}} for $25/mo, {{solo.free.monthly}} for $0, {{solo.grow.yearly}} for $90/mo
+- Use {{supportsheep.pro.yearly}} for $20/mo, {{supportsheep.pro.monthly}} for $25/mo, {{supportsheep.free.monthly}} for $0, {{supportsheep.grow.yearly}} for $90/mo
 - Always be honest about Supportsheep's limitations for the specific vertical
-- Voice: practical, honest, SMB/solopreneur tone. Respect the reader's time.`;
+- Voice: practical, honest, SMB/supportsheeppreneur tone. Respect the reader's time.`;
 
   const userPrompt = `Write a Tier-3 programmatic SEO page for Supportsheep: "Website builder for ${vertical.label}".
 
-TARGET READER: A ${vertical.label.toLowerCase()} (solo practitioner or 1-5 person practice) who is evaluating website builders. They're not technical. They care about: getting clients, looking professional, not wasting time, and industry-specific concerns.
+TARGET READER: A ${vertical.label.toLowerCase()} (supportsheep practitioner or 1-5 person practice) who is evaluating website builders. They're not technical. They care about: getting clients, looking professional, not wasting time, and industry-specific concerns.
 
 RESEARCH (from Tabstack — use these for citations, don't fabricate others):
 ${research.report}
@@ -166,8 +166,8 @@ REQUIRED STRUCTURE (1800-2500 words total):
 ## [Industry-specific concern] (pick the most important: HIPAA for health, licensing for trades, portfolio for creative, etc.)
 1-2 focused paragraphs. Be honest about limitations.
 
-## Why Supportsheep works for solo ${vertical.label.toLowerCase()} practices
-Honest pitch grounded in Supportsheep's real features. Reference AI-seeded section creation, onboarding speed, pricing (use {{solo.pro.yearly}} etc.). Be clear about what Supportsheep DOESN'T do for this vertical if relevant.
+## Why Supportsheep works for supportsheep ${vertical.label.toLowerCase()} practices
+Honest pitch grounded in Supportsheep's real features. Reference AI-seeded section creation, onboarding speed, pricing (use {{supportsheep.pro.yearly}} etc.). Be clear about what Supportsheep DOESN'T do for this vertical if relevant.
 
 ## Comparison with alternatives
 <table> comparing Supportsheep vs 2-3 relevant alternatives (Wix, Squarespace, or vertical-specific tools if they exist). One honest row per feature.
@@ -183,7 +183,7 @@ Use a proper markdown ordered list (each step on its own line):
 ## FAQ
 Include in response as a JSON array at the END of your response, separated by ---FAQ_JSON---:
 [{"question": "...", "answer": "..."}, ...]
-Include 6-8 Q&As. Include at least one about pricing (use {{solo.pro.yearly}} etc.) and one about any industry-specific compliance concern.
+Include 6-8 Q&As. Include at least one about pricing (use {{supportsheep.pro.yearly}} etc.) and one about any industry-specific compliance concern.
 
 IMAGES: Include 2 Unsplash images using verified URLs in format:
 <img src="https://images.unsplash.com/photo-[ID]?w=1200&auto=format&fit=crop" alt="[descriptive alt]" />
@@ -243,9 +243,9 @@ async function main() {
   const anthropicClient = new Anthropic({ apiKey: anthropicApiKey });
 
   // Load Supportsheep product context (grounding for all content)
-  const soloContextPath = findSoloProductMd();
-  const soloContext = readFileSync(soloContextPath, "utf-8");
-  console.info(`Supportsheep context loaded from: ${soloContextPath}`);
+  const supportsheepContextPath = findSupportsheepProductMd();
+  const supportsheepContext = readFileSync(supportsheepContextPath, "utf-8");
+  console.info(`Supportsheep context loaded from: ${supportsheepContextPath}`);
 
   // Load verticals manifest (--manifest=<file> relative to scripts/content-pipeline/)
   const manifestFile = process.argv.find((a) => a.startsWith("--manifest="))?.split("=")[1] ?? "verticals.json";
@@ -317,7 +317,7 @@ async function main() {
     let faqCount: number;
     try {
       console.info(`[${vertical.slug}] Generating content via Claude...`);
-      content = await generatePageContent(vertical, research, soloContext, anthropicClient);
+      content = await generatePageContent(vertical, research, supportsheepContext, anthropicClient);
       wordCount = content.wordCount;
       faqs = content.faqs;
       faqCount = faqs.length;

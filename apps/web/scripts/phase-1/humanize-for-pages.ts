@@ -54,12 +54,12 @@ HUMANIZER (make it sound like a knowledgeable person wrote it):
 - Replace promotional language about Supportsheep with honest, specific statements. Include real limitations where relevant.
 - Rewrite "This guide will help you..." intros — start with the reader's specific problem or situation.
 - Remove sentences starting with "Ultimately..." or "In conclusion..." — just end the section, or integrate the point.
-- Leave any {{solo.*}} template variables unchanged — they are placeholder tokens.
+- Leave any {{supportsheep.*}} template variables unchanged — they are placeholder tokens.
 
 PRESERVE:
 - All HTML tags exactly as-is: <table>, <thead>, <tbody>, <tr>, <th>, <td>, <iframe>, <img>, <ul>, <ol>, <li>, <p>, <h1>, <h2>, <h3>, <strong>, <em>, <a href>, <div>, <figure>, <blockquote>, etc.
 - All YouTube iframe src URLs — do not change embed URLs.
-- All factual claims, product features, prices ({{solo.*}} tokens), and citations.
+- All factual claims, product features, prices ({{supportsheep.*}} tokens), and citations.
 - The overall structure and length — do not add new sections or make the content longer.
 - Markdown headings (## H2, ### H3) — preserve exactly.
 

@@ -1,21 +1,21 @@
 /**
- * Resolve `{{solo.*}}` template variables in content strings to formatted
+ * Resolve `{{supportsheep.*}}` template variables in content strings to formatted
  * pricing values at render time.
  *
  * Grammar (all case-sensitive, whitespace not allowed inside braces):
- *   {{solo.<tier>.monthly}}         -> "$25"
- *   {{solo.<tier>.monthly.monthly}} -> "$25/mo"
- *   {{solo.<tier>.yearly}}          -> "$20"
- *   {{solo.<tier>.yearly.monthly}}  -> "$20/mo"
- *   {{solo.<tier>.yearlyAnnual}}    -> "$240/yr"
+ *   {{supportsheep.<tier>.monthly}}         -> "$25"
+ *   {{supportsheep.<tier>.monthly.monthly}} -> "$25/mo"
+ *   {{supportsheep.<tier>.yearly}}          -> "$20"
+ *   {{supportsheep.<tier>.yearly.monthly}}  -> "$20/mo"
+ *   {{supportsheep.<tier>.yearlyAnnual}}    -> "$240/yr"
  *
  * Rules:
  *   - `<tier>` is one of `free`, `pro`, `grow`. Anything else is left
- *     unchanged so a stray `{{solo.foo.monthly}}` does not silently vanish.
+ *     unchanged so a stray `{{supportsheep.foo.monthly}}` does not silently vanish.
  *   - `yearlyAnnual` always carries an implicit `/yr` suffix -- the value only
  *     makes sense as an annual total.
  *   - `monthly` and `yearly` emit bare-dollar strings by default so copy
- *     editors can write prose like "for {{solo.pro.yearly}}/mo billed
+ *     editors can write prose like "for {{supportsheep.pro.yearly}}/mo billed
  *     annually" without doubling up units. Append the `.monthly` modifier
  *     when the surrounding sentence expects the `/mo` suffix.
  *   - Unknown placeholders (unknown tier, unknown field, unknown modifier)
@@ -26,27 +26,27 @@
  * server component or a build script.
  */
 import type {
-  SoloPricing,
-  SoloTierKey,
-} from "@/lib/solo-product/pricing";
+  SupportsheepPricing,
+  SupportsheepTierKey,
+} from "@/lib/supportsheep-product/pricing";
 
-const TIER_KEYS: readonly SoloTierKey[] = ["free", "pro", "grow"];
+const TIER_KEYS: readonly SupportsheepTierKey[] = ["free", "pro", "grow"];
 
-const PLACEHOLDER = /\{\{solo\.([^}]+)\}\}/g;
+const PLACEHOLDER = /\{\{supportsheep\.([^}]+)\}\}/g;
 
-function isTierKey(value: string): value is SoloTierKey {
+function isTierKey(value: string): value is SupportsheepTierKey {
   return (TIER_KEYS as readonly string[]).includes(value);
 }
 
 /**
- * Replace every `{{solo.*}}` placeholder in `input` with a formatted price
+ * Replace every `{{supportsheep.*}}` placeholder in `input` with a formatted price
  * drawn from `pricing`. Unknown placeholders are preserved verbatim.
  */
 export function interpolateProductVars(
   input: string,
-  pricing: SoloPricing,
+  pricing: SupportsheepPricing,
 ): string {
-  if (!input.includes("{{solo.")) return input;
+  if (!input.includes("{{supportsheep.")) return input;
 
   return input.replace(PLACEHOLDER, (match, rawPath: string) => {
     const parts = rawPath.split(".");

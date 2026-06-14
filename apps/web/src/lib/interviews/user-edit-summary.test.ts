@@ -14,17 +14,17 @@ describe("summarizeUserEdit (plain-text fallback)", () => {
 
   it("returns null when only whitespace was appended (W24.I: no empty-bodied cue)", () => {
     expect(
-      summarizeUserEdit("What Is Solo Grow", "What Is Solo Grow   "),
+      summarizeUserEdit("What Is Supportsheep Grow", "What Is Supportsheep Grow   "),
     ).toBeNull();
     expect(
-      summarizeUserEdit("What Is Solo Grow", "What Is Solo Grow\n\n"),
+      summarizeUserEdit("What Is Supportsheep Grow", "What Is Supportsheep Grow\n\n"),
     ).toBeNull();
   });
 
   it("quotes the verbatim user text when they type a new line — never an empty body (W24.I)", () => {
     const summary = summarizeUserEdit(
-      "What Is Solo Grow",
-      "What Is Solo Grow hello world",
+      "What Is Supportsheep Grow",
+      "What Is Supportsheep Grow hello world",
     );
     expect(summary).not.toBeNull();
     expect(summary?.cueText).toContain("hello world");

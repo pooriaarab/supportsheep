@@ -10,11 +10,11 @@ describe("set_title tool", () => {
     const diffs: unknown[] = [];
     worker.on("diff", (d) => diffs.push(d));
 
-    const result = await setTitle.handler({ title: "How I Built Solo" }, ctx);
+    const result = await setTitle.handler({ title: "How I Built Supportsheep" }, ctx);
     expect(result.ok).toBe(true);
-    expect(worker.getCanvas().title).toBe("How I Built Solo");
+    expect(worker.getCanvas().title).toBe("How I Built Supportsheep");
     expect(diffs).toEqual([
-      { type: "title_updated", payload: { title: "How I Built Solo" } },
+      { type: "title_updated", payload: { title: "How I Built Supportsheep" } },
     ]);
   });
 

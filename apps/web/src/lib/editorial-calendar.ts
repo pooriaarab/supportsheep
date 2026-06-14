@@ -23,7 +23,7 @@ export const EDITORIAL_CATEGORY_SEEDS: readonly EditorialCategorySeed[] = [
     slug: "seo",
     displayName: "SEO",
     description:
-      "SEO playbooks for solopreneurs and local service businesses: technical fixes, local rankings, Google Business Profile, and content strategy.",
+      "SEO playbooks for supportsheeppreneurs and local service businesses: technical fixes, local rankings, Google Business Profile, and content strategy.",
   },
   {
     slug: "guides",
@@ -41,19 +41,19 @@ export const EDITORIAL_CATEGORY_SEEDS: readonly EditorialCategorySeed[] = [
     slug: "niches",
     displayName: "Niches",
     description:
-      "Industry-specific website and SEO advice for local service businesses, freelancers, consultants, and solo operators.",
+      "Industry-specific website and SEO advice for local service businesses, freelancers, consultants, and supportsheep operators.",
   },
   {
     slug: "marketing-tips",
     displayName: "Marketing Tips",
     description:
-      "Low-budget growth tactics for solopreneurs, including local marketing, review generation, landing pages, and organic acquisition.",
+      "Low-budget growth tactics for supportsheeppreneurs, including local marketing, review generation, landing pages, and organic acquisition.",
   },
   {
     slug: "business-tips",
     displayName: "Business Tips",
     description:
-      "Practical operating advice for solo businesses: positioning, pricing, switching tools, and building a website that supports sales.",
+      "Practical operating advice for supportsheep businesses: positioning, pricing, switching tools, and building a website that supports sales.",
   },
 ];
 

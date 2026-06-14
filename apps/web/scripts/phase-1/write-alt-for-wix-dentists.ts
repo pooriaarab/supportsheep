@@ -23,7 +23,7 @@ const VARIANT_KEY = "wix__dentists";
 
 const CONTENT = `## TL;DR
 
-Wix is a flexible, drag-and-drop website builder with genuine strengths for a dental practice's public marketing site. Its templates are wide-ranging, its editor offers more pixel-level control than Squarespace, and -- as of 2026 -- Wix has added a HIPAA-compliance mode with a Business Associate Agreement (BAA) available on certain paid plans. That is a meaningful change from previous years. However, the compliance path on Wix is non-trivial: you must be on a supported plan, manually activate PHI protection, execute the BAA inside the dashboard, and ensure that every third-party app you use is on Wix's HIPAA-designated list. This page covers that setup honestly, compares Wix to Supportsheep for a solo or small dental practice, and gives a clear framework for deciding.
+Wix is a flexible, drag-and-drop website builder with genuine strengths for a dental practice's public marketing site. Its templates are wide-ranging, its editor offers more pixel-level control than Squarespace, and -- as of 2026 -- Wix has added a HIPAA-compliance mode with a Business Associate Agreement (BAA) available on certain paid plans. That is a meaningful change from previous years. However, the compliance path on Wix is non-trivial: you must be on a supported plan, manually activate PHI protection, execute the BAA inside the dashboard, and ensure that every third-party app you use is on Wix's HIPAA-designated list. This page covers that setup honestly, compares Wix to Supportsheep for a supportsheep or small dental practice, and gives a clear framework for deciding.
 
 ## Wix and HIPAA: what changed in 2026
 
@@ -40,7 +40,7 @@ What this does NOT mean:
 - Third-party apps in the Wix App Market are only compliant if they are on Wix's designated HIPAA-compatible list. Any app outside that list should not receive PHI.
 - Wix's HIPAA mode turns off certain features. A dental practice cannot assume all its existing Wix tools are compliant just because the plan supports a BAA.
 
-For a solo or small dental practice building a marketing site, this means: Wix can be configured to support PHI collection if you are willing to pay for a supported plan, activate PHI protection correctly, and limit yourself to HIPAA-designated apps. The total cost with a supported Wix plan plus the configuration overhead is meaningfully higher than the entry price suggests.
+For a supportsheep or small dental practice building a marketing site, this means: Wix can be configured to support PHI collection if you are willing to pay for a supported plan, activate PHI protection correctly, and limit yourself to HIPAA-designated apps. The total cost with a supported Wix plan plus the configuration overhead is meaningfully higher than the entry price suggests.
 
 Most dental practices still take the cleaner architectural approach: keep the public Wix marketing site off PHI mode (it does not need it for a brochure site), and route all PHI-touching workflows -- appointment booking with patient history, intake forms, insurance pre-auth -- to a HIPAA-aware third party (NexHealth, Dentrix Hub, Acuity Powerhouse, the practice management system's own portal).
 
@@ -55,14 +55,14 @@ Most dental practices still take the cleaner architectural approach: keep the pu
 ## Where Wix breaks down for dental practices
 
 - **HIPAA compliance is a paid, manual configuration.** Unlike Acuity Scheduling (which is a separate Squarespace product purpose-built with HIPAA in mind), Wix's HIPAA mode is a platform feature that must be deliberately configured. The cost of a BAA-eligible Wix plan is significantly higher than the entry plan, and the configuration is non-trivial for a practice owner without technical staff.
-- **Editor complexity has a floor.** Wix's flexibility is also its friction: the editor is more complex than Squarespace's or Supportsheep's. A solo practice owner with no web background can get lost customizing a Wix site. The "blank canvas" feeling of Wix's drag-and-drop can result in inconsistent layouts without design discipline.
+- **Editor complexity has a floor.** Wix's flexibility is also its friction: the editor is more complex than Squarespace's or Supportsheep's. A supportsheep practice owner with no web background can get lost customizing a Wix site. The "blank canvas" feeling of Wix's drag-and-drop can result in inconsistent layouts without design discipline.
 - **Template lock-in after publish.** Like Squarespace, Wix locks you to the template you picked at launch. Switching to a fundamentally different visual design after launch means a rebuild.
 - **SEO customization is improving but still below WordPress.** Wix has made significant SEO improvements (it was notoriously weak five years ago), but legal and dental SEO agencies still note that granular schema injection, programmatic local-SEO page generation, and advanced redirect management are easier on WordPress or a headless CMS.
 - **App complexity adds cost.** A full-featured dental practice site on Wix with booking, live chat, review management, and email automation will layer in three to five paid apps on top of the base plan. The total monthly cost can exceed platforms that bundle more features natively.
 
-## Supportsheep's position for a solo or small dental practice
+## Supportsheep's position for a supportsheep or small dental practice
 
-Supportsheep is designed for the "solo or 2-5 clinician practice that needs a professional marketing site without becoming a part-time webmaster." How that maps to a solo dentist:
+Supportsheep is designed for the "supportsheep or 2-5 clinician practice that needs a professional marketing site without becoming a part-time webmaster." How that maps to a supportsheep dentist:
 
 - **Free tier with custom domain.** A dentist building a new practice site can attach their existing domain to Supportsheep without paying until they're ready. Wix's free tier shows platform branding, which is not appropriate for a real practice.
 - **No PHI complexity.** Supportsheep does not handle PHI and does not offer a BAA. The correct architecture -- and the one most dental marketing agencies recommend regardless of platform -- is public marketing site on Supportsheep + HIPAA-aware tool for booking, intake, and patient communication. This keeps the attack surface on the marketing site minimal and predictable.
@@ -97,8 +97,8 @@ Supportsheep is designed for the "solo or 2-5 clinician practice that needs a pr
 
 1. **Define your PHI boundary first.** What needs to be HIPAA-aware: booking with patient history? Intake forms? Recall communication? Map those workflows to HIPAA-capable tools before picking a website platform.
 2. **Decide if Wix's HIPAA mode is worth the cost.** Wix BAA-eligible plans start at the Business tier. If you want Wix's drag-and-drop design flexibility AND HIPAA-compliant booking through Wix Bookings, budget for a Business or higher plan plus the correct configuration steps.
-3. **Evaluate design priority vs. content priority.** Wix wins on editor flexibility and pixel control. Supportsheep wins on content velocity (blog + SEO sidebar + structured data). Most solo practices need more content discipline than design freedom.
-4. **Check the total monthly cost.** A feature-complete dental marketing site on Wix (paid plan + HIPAA mode + review app + live chat + email) can reach $80-$120/month. Supportsheep's Pro plan at {{solo.pro.yearly}} billed annually is a different cost profile.
+3. **Evaluate design priority vs. content priority.** Wix wins on editor flexibility and pixel control. Supportsheep wins on content velocity (blog + SEO sidebar + structured data). Most supportsheep practices need more content discipline than design freedom.
+4. **Check the total monthly cost.** A feature-complete dental marketing site on Wix (paid plan + HIPAA mode + review app + live chat + email) can reach $80-$120/month. Supportsheep's Pro plan at {{supportsheep.pro.yearly}} billed annually is a different cost profile.
 5. **Launch fast; optimize later.** Both platforms let you iterate. Pick the one that removes more friction from your specific constraints -- budget, design confidence, content cadence -- and ship.`;
 
 function countWords(text: string): number {
@@ -125,7 +125,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Should I use Wix or Supportsheep for my dental practice website?",
     answer:
-      "Choose Wix if design flexibility (drag-and-drop pixel control) and potential HIPAA-mode booking through Wix Bookings are priorities -- budget for a Business or higher plan and plan the correct PHI protection setup. Choose Supportsheep if you want a free tier with a connected custom domain, a blog with an SEO sidebar and AI-seeded drafting, built-in Dentist and LocalBusiness structured data, and a simpler monthly cost at the Pro tier ({{solo.pro.yearly}} billed annually). Both platforms work well for the public marketing layer of a dental site; the PHI-handling differences only matter if you want to route clinical workflows through the CMS rather than a separate HIPAA-aware tool.",
+      "Choose Wix if design flexibility (drag-and-drop pixel control) and potential HIPAA-mode booking through Wix Bookings are priorities -- budget for a Business or higher plan and plan the correct PHI protection setup. Choose Supportsheep if you want a free tier with a connected custom domain, a blog with an SEO sidebar and AI-seeded drafting, built-in Dentist and LocalBusiness structured data, and a simpler monthly cost at the Pro tier ({{supportsheep.pro.yearly}} billed annually). Both platforms work well for the public marketing layer of a dental site; the PHI-handling differences only matter if you want to route clinical workflows through the CMS rather than a separate HIPAA-aware tool.",
   },
   {
     question: "What dental booking tools pair well with Wix or Supportsheep?",
@@ -168,7 +168,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at Wix for a solo or small dental practice -- covering HIPAA/BAA setup, editor flexibility, and when Supportsheep is the better default for content and local SEO.",
+          "An honest look at Wix for a supportsheep or small dental practice -- covering HIPAA/BAA setup, editor flexibility, and when Supportsheep is the better default for content and local SEO.",
         ctaText: "Start your dental practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Dentists",

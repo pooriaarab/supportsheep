@@ -81,7 +81,7 @@ export const PATCH = createApiHandler<{ action: string }, RouteParams>({
 
     const response = await fetch(sitemapUrl, {
       cache: "no-store",
-      headers: { "User-Agent": "SoloBlog/1.0 Sitemap Parser" },
+      headers: { "User-Agent": "SupportsheepBlog/1.0 Sitemap Parser" },
     });
 
     if (!response.ok) {

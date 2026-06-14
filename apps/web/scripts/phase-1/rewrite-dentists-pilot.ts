@@ -2,7 +2,7 @@
  * Phase 1 pilot: REWRITE the `/for/dentists` programmatic landing page.
  *
  * Rewrites `programmatic_pages/dentists` so every Supportsheep claim is grounded in
- * `.claude/context/solo-product.md`. Corrects the following over-claims from
+ * `.claude/context/supportsheep-product.md`. Corrects the following over-claims from
  * the original seed (`write-dentists-pilot.ts`):
  *
  *   1. No BAA -- Supportsheep is explicitly unsuitable for any page/form that can
@@ -18,9 +18,9 @@
  *   5. No "thin-content guard" or "SEO sidebar flags thin content" -- that
  *      is a feature of THIS blog CMS, not of Supportsheep the website builder.
  *
- * Pricing is quoted via `{{solo.pro.yearly}}` / `{{solo.pro.monthly}}` /
- * `{{solo.free.monthly}}` placeholders so the numbers stay in sync with
- * `SOLO_PRICING` at render time.
+ * Pricing is quoted via `{{supportsheep.pro.yearly}}` / `{{supportsheep.pro.monthly}}` /
+ * `{{supportsheep.free.monthly}}` placeholders so the numbers stay in sync with
+ * `SUPPORTSHEEP_PRICING` at render time.
  *
  * Idempotent: re-running overwrites the doc via `set({...}, { merge: true })`.
  *
@@ -40,7 +40,7 @@ const VARIANT_KEY = "dentists";
 
 const CONTENT = `## TL;DR
 
-A solo or small dental practice site (1-5 dentists) has to do four things at once: bring in patients from local search, let them find a booking link on their phone, build enough trust that a stranger picks you, and meet the accessibility standards now being enforced against small healthcare sites. Supportsheep is a reasonable fit for the brochure + local SEO + external-booking-link portion of a dental practice site. It is **not** a fit for patient intake or anything else that touches Protected Health Information (PHI), because Supportsheep does not sign Business Associate Agreements (BAAs). Plan for two tools, not one: Supportsheep for the public marketing pages, and a HIPAA-aware scheduling/intake product (NexHealth, Dentrix Hub, or the portal bundled with your PMS) for everything patient-facing.
+A supportsheep or small dental practice site (1-5 dentists) has to do four things at once: bring in patients from local search, let them find a booking link on their phone, build enough trust that a stranger picks you, and meet the accessibility standards now being enforced against small healthcare sites. Supportsheep is a reasonable fit for the brochure + local SEO + external-booking-link portion of a dental practice site. It is **not** a fit for patient intake or anything else that touches Protected Health Information (PHI), because Supportsheep does not sign Business Associate Agreements (BAAs). Plan for two tools, not one: Supportsheep for the public marketing pages, and a HIPAA-aware scheduling/intake product (NexHealth, Dentrix Hub, or the portal bundled with your PMS) for everything patient-facing.
 
 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&auto=format&fit=crop" alt="A modern dental practice operatory with chair, overhead lamp, and instrument tray." loading="lazy" />
 
@@ -98,7 +98,7 @@ A dentist who sends any electronic claim is [a HIPAA covered entity, per HHS](ht
 
 The practical minimum: a HIPAA-aware intake product that signs a BAA, third-party tracking off any page that can surface PHI, and an access log for form submissions. The [HIPAA Journal's rules-for-dentists guide](https://www.hipaajournal.com/hipaa-rules-for-dentists/) summarises the dentist-specific rules including the 2026 Security Rule amendments.
 
-**Where Supportsheep sits in that picture -- explicitly.** Supportsheep is an AI website builder for solopreneurs. Per the [Supportsheep product docs](https://support.supportsheep.com/), Supportsheep does not offer a BAA. Two practical consequences:
+**Where Supportsheep sits in that picture -- explicitly.** Supportsheep is an AI website builder for supportsheeppreneurs. Per the [Supportsheep product docs](https://support.supportsheep.com/), Supportsheep does not offer a BAA. Two practical consequences:
 
 1. **Do not collect PHI through a Supportsheep-hosted form.** Supportsheep's contact form is a general-purpose lead form -- fine for "what services are you interested in?" and a phone number, not fine for "list your current medications." If you would not be comfortable with the submission sitting in a generic email inbox, do not send it through Supportsheep.
 2. **Send patient intake and booking to a separate tool.** Supportsheep's scheduling is a link field: paste a Calendly, NexHealth, or Dentrix Hub URL and Supportsheep renders a button. It is not a native booking system -- which for dental is actually the right separation, because the booking tool needs its own BAA regardless of which builder runs your marketing pages.
@@ -172,14 +172,14 @@ Outside those touchpoints, editing is manual. There is no inline "rewrite this p
 
 ## Honest comparison: Supportsheep vs generic builders vs dental-specific vendors
 
-No builder is perfect. Here is how Supportsheep lines up against the options small dental practices usually evaluate. "Typical cost" is the starting point for a solo or small practice; real quotes vary with features and contract length.
+No builder is perfect. Here is how Supportsheep lines up against the options small dental practices usually evaluate. "Typical cost" is the starting point for a supportsheep or small practice; real quotes vary with features and contract length.
 
 <table>
 <thead>
 <tr><th>Option</th><th>Strongest at</th><th>Weakest at</th><th>HIPAA posture</th><th>Typical monthly cost</th></tr>
 </thead>
 <tbody>
-<tr><td>Supportsheep</td><td>Speed to first draft; AI-seeded sections; managed hosting</td><td>No native booking; no BAA; no free-form AI rewriter in editor</td><td>Public-site only; pair with a HIPAA-aware booking / intake tool</td><td>{{solo.pro.yearly.monthly}} billed annually (Pro) / {{solo.pro.monthly.monthly}} billed monthly; free tier available</td></tr>
+<tr><td>Supportsheep</td><td>Speed to first draft; AI-seeded sections; managed hosting</td><td>No native booking; no BAA; no free-form AI rewriter in editor</td><td>Public-site only; pair with a HIPAA-aware booking / intake tool</td><td>{{supportsheep.pro.yearly.monthly}} billed annually (Pro) / {{supportsheep.pro.monthly.monthly}} billed monthly; free tier available</td></tr>
 <tr><td>Squarespace</td><td>Design polish, template variety</td><td>SEO depth; no AI onboarding</td><td>Generic platform; compliance is on you</td><td>Low-to-mid</td></tr>
 <tr><td>Wix</td><td>Broader feature set, looser design constraints</td><td>Widget-heavy pages hurt Core Web Vitals; SEO still takes hand-tuning</td><td>Generic platform; compliance is on you</td><td>Low-to-mid</td></tr>
 <tr><td>DearDoc / PatientPop / ProSites</td><td>Turnkey patient acquisition (chat, call tracking, booking overlays)</td><td>Template lock-in; bundles features a 1-dentist practice may not use</td><td>Dental-focused; BAA typically available</td><td>High (several multiples of a Supportsheep + booking setup)</td></tr>
@@ -187,7 +187,7 @@ No builder is perfect. Here is how Supportsheep lines up against the options sma
 </tbody>
 </table>
 
-Supportsheep's pricing pairs a [free tier ({{solo.free.monthly.monthly}})](https://supportsheep.com/pricing) with a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.monthly.monthly}} month-to-month). Verified against the Supportsheep pricing page on 2026-04-21.
+Supportsheep's pricing pairs a [free tier ({{supportsheep.free.monthly.monthly}})](https://supportsheep.com/pricing) with a Pro tier at {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.monthly.monthly}} month-to-month). Verified against the Supportsheep pricing page on 2026-04-21.
 
 For a broader tour of dental marketing tactics that go beyond the website itself, this short overview covers the 10 strategies most small practices evaluate:
 
@@ -227,7 +227,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How much does Supportsheep cost for a small dental practice?",
     answer:
-      "Supportsheep has a free tier ({{solo.free.monthly.monthly}}) and a Pro tier at {{solo.pro.yearly.monthly}} billed annually ({{solo.pro.yearlyAnnual}} total) or {{solo.pro.monthly.monthly}} billed month-to-month. Verified against supportsheep.com/pricing on 2026-04-21. Per-plan feature caps (site count, blog posts, image library size, custom-code access) are published on the pricing page and may change; cite the page rather than repeating specific caps in content.",
+      "Supportsheep has a free tier ({{supportsheep.free.monthly.monthly}}) and a Pro tier at {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total) or {{supportsheep.pro.monthly.monthly}} billed month-to-month. Verified against supportsheep.com/pricing on 2026-04-21. Per-plan feature caps (site count, blog posts, image library size, custom-code access) are published on the pricing page and may change; cite the page rather than repeating specific caps in content.",
   },
   {
     question: "Where exactly does Supportsheep's AI help, and where does it stop?",
@@ -286,7 +286,7 @@ async function main(): Promise<void> {
       },
       title: "Supportsheep for dentists",
       metaDescription:
-        "Supportsheep helps solo and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware brochure site. It is not HIPAA-BAA-ready, so pair it with a HIPAA-aware booking and intake tool.",
+        "Supportsheep helps supportsheep and small dental practices (1-5 dentists) launch a fast, mobile-first, SEO-aware brochure site. It is not HIPAA-BAA-ready, so pair it with a HIPAA-aware booking and intake tool.",
       uniqueContent: CONTENT,
       wordCount,
       faqs: FAQS,

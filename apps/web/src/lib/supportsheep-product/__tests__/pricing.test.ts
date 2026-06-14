@@ -1,19 +1,19 @@
 import { describe, expect, it } from "vitest";
 import {
-  SOLO_PRICING,
+  SUPPORTSHEEP_PRICING,
   formatTierMonthly,
   formatTierYearly,
   formatTierYearlyAnnual,
-} from "@/lib/solo-product/pricing";
+} from "@/lib/supportsheep-product/pricing";
 
-describe("SOLO_PRICING", () => {
+describe("SUPPORTSHEEP_PRICING", () => {
   it("exposes the current Pro and Grow tier rates", () => {
-    expect(SOLO_PRICING.pro).toEqual({
+    expect(SUPPORTSHEEP_PRICING.pro).toEqual({
       monthly: 25,
       yearly: 20,
       yearlyAnnual: 240,
     });
-    expect(SOLO_PRICING.grow).toEqual({
+    expect(SUPPORTSHEEP_PRICING.grow).toEqual({
       monthly: 120,
       yearly: 90,
       yearlyAnnual: 1080,
@@ -21,7 +21,7 @@ describe("SOLO_PRICING", () => {
   });
 
   it("zeros the free tier so formatters stay safe", () => {
-    expect(SOLO_PRICING.free).toEqual({
+    expect(SUPPORTSHEEP_PRICING.free).toEqual({
       monthly: 0,
       yearly: 0,
       yearlyAnnual: 0,
@@ -29,8 +29,8 @@ describe("SOLO_PRICING", () => {
   });
 
   it("records a verifiedAt date and source", () => {
-    expect(SOLO_PRICING.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    expect(SOLO_PRICING.source).toContain("Pricing.ts");
+    expect(SUPPORTSHEEP_PRICING.verifiedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(SUPPORTSHEEP_PRICING.source).toContain("Pricing.ts");
   });
 });
 

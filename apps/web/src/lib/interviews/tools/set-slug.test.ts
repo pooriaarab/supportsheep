@@ -10,11 +10,11 @@ describe("set_slug tool", () => {
     const diffs: unknown[] = [];
     worker.on("diff", (d) => diffs.push(d));
 
-    const result = await setSlug.handler({ slug: "how-i-built-solo" }, ctx);
+    const result = await setSlug.handler({ slug: "how-i-built-supportsheep" }, ctx);
     expect(result.ok).toBe(true);
-    expect(worker.getCanvas().slug).toBe("how-i-built-solo");
+    expect(worker.getCanvas().slug).toBe("how-i-built-supportsheep");
     expect(diffs).toEqual([
-      { type: "slug_updated", payload: { slug: "how-i-built-solo" } },
+      { type: "slug_updated", payload: { slug: "how-i-built-supportsheep" } },
     ]);
   });
 

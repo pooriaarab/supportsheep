@@ -72,7 +72,7 @@ Both are strong defaults for photographers. The choice depends on priorities:
 
 ## Supportsheep's position for a photographer building a search-driven brand
 
-Supportsheep is designed for "the solo service business that wants a credible content-led marketing site." For a photographer, that maps to:
+Supportsheep is designed for "the supportsheep service business that wants a credible content-led marketing site." For a photographer, that maps to:
 
 - **A photographer whose primary acquisition channel is search, not social.** Wedding and portrait photographers who rank for "[city] wedding photographer" or "[venue] engagement session photos" are building a compounding SEO asset. Supportsheep's blog with an SEO sidebar and AI drafting reduces the per-post friction of that content strategy.
 - **Free tier with custom domain.** A photographer building a new brand can attach their domain to Supportsheep before paying. Wix's free tier shows platform branding.

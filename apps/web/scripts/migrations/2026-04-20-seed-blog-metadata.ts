@@ -32,7 +32,7 @@ const BLOG_ID = "default";
 
 const SITE_NAME = "Supportsheep";
 const DEFAULT_META_TITLE =
-  "Supportsheep — website & SEO guides for solopreneurs";
+  "Supportsheep — website & SEO guides for supportsheeppreneurs";
 const DEFAULT_META_DESCRIPTION =
   "Practical guides on building and ranking a small business website with Supportsheep's AI-powered tools.";
 const SITE_DESCRIPTION = DEFAULT_META_DESCRIPTION;
@@ -66,13 +66,13 @@ const CATEGORY_UPDATES: CategoryUpdate[] = [
     slug: "guides",
     displayName: "Guides",
     description:
-      "Step-by-step playbooks for launching your small business online: domains, design, copy, SEO, and everything in between, written for solopreneurs.",
+      "Step-by-step playbooks for launching your small business online: domains, design, copy, SEO, and everything in between, written for supportsheeppreneurs.",
   },
   {
     slug: "ai",
     displayName: "AI",
     description:
-      "How solopreneurs use AI to design websites, write content, and run marketing. Practical tutorials and honest reviews of tools that actually help.",
+      "How supportsheeppreneurs use AI to design websites, write content, and run marketing. Practical tutorials and honest reviews of tools that actually help.",
   },
   {
     slug: "website-tips",
@@ -90,13 +90,13 @@ const CATEGORY_UPDATES: CategoryUpdate[] = [
     slug: "marketing-tips",
     displayName: "Marketing Tips",
     description:
-      "Low-budget marketing tactics for solopreneurs: SEO, email, local listings, and social posts that drive real traffic to a small business website.",
+      "Low-budget marketing tactics for supportsheeppreneurs: SEO, email, local listings, and social posts that drive real traffic to a small business website.",
   },
   {
     slug: "business-tips",
     displayName: "Business Tips",
     description:
-      "Running a one-person business: pricing, operations, invoicing, and online presence advice for solopreneurs building their first brand with Supportsheep.",
+      "Running a one-person business: pricing, operations, invoicing, and online presence advice for supportsheeppreneurs building their first brand with Supportsheep.",
   },
 ];
 

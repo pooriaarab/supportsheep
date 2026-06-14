@@ -100,7 +100,7 @@ describe("free tool templates", () => {
   it("returns a controlled UTM result for invalid URLs", async () => {
     const result = await runDeterministicTool("utm-generator", {
       url: "not a url",
-      source: "solo_blog",
+      source: "supportsheep_blog",
       medium: "free_tool",
       campaign: "word-counter",
     });
