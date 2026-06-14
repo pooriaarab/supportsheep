@@ -126,6 +126,10 @@ export const DEFAULT_BLOG_CONFIG: BlogConfig = {
     defaultStatus: "draft",
     autoSchedule: false,
   },
+  support: {
+    enableVoice: false,
+    enableChatbot: false,
+  },
 };
 
 export function mergeBlogConfig(
@@ -355,6 +359,11 @@ export function mergeBlogConfig(
             : undefined,
         }
       : DEFAULT_BLOG_CONFIG.images,
+    support: {
+      enableVoice: config?.support?.enableVoice ?? DEFAULT_BLOG_CONFIG.support!.enableVoice,
+      enableChatbot: config?.support?.enableChatbot ?? DEFAULT_BLOG_CONFIG.support!.enableChatbot,
+      openAIApiKey: config?.support?.openAIApiKey ?? DEFAULT_BLOG_CONFIG.support?.openAIApiKey,
+    },
   };
 
   return normalizePublicBlogConfig(merged);

@@ -719,6 +719,11 @@ export interface BlogConfig {
     unsplash?: { apiKey: string };
     pexels?: { apiKey: string };
   };
+  support?: {
+    enableVoice: boolean;
+    enableChatbot: boolean;
+    openAIApiKey?: string;
+  };
 }
 
 /* -------------------------------------------------------------------------- */
