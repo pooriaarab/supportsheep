@@ -10,6 +10,8 @@ import {
 import { hasEnabledPublicFreeTools } from "@/lib/free-tools/repository";
 import { getConnectedGoogleAnalyticsMeasurementId } from "@/lib/integrations/google-sync-config";
 import { resolvePublicMeasurementId } from "@/lib/analytics/measurement-tags";
+import { SupportVoiceWidget } from "@/components/public/support-voice-widget";
+import { SupportChatWidget } from "@/components/public/support-chat-widget";
 import { getBlogConfig } from "@/lib/blog-config";
 import { getRequestBlogId } from "@/lib/tenancy/request-blog";
 import type { BlogConfig } from "@repo/types";
@@ -114,6 +116,8 @@ export async function PublicShell({
         <PublicHeader config={config} />
         <main className="flex-1">{children}</main>
         <PublicFooter config={config} showToolsLink={showToolsLink} />
+        {config.support?.enableVoice && <SupportVoiceWidget />}
+        {config.support?.enableChatbot && <SupportChatWidget />}
       </div>
     </div>
   );
