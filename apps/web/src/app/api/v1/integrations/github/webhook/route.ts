@@ -99,7 +99,7 @@ PR Body: ${String(pr.body ?? "No description provided.")}
 
     return NextResponse.json({ success: true, message: "Draft generated via AI" }, { status: 201 });
   } catch (err) {
-    log.error("GitHub webhook error", err);
+    console.error("GitHub webhook error:", err);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
