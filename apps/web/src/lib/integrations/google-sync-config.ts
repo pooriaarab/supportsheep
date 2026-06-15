@@ -13,7 +13,7 @@ import {
   type StoredGoogleIntegrationConfig,
 } from "@/lib/integrations/google-integration";
 import { listIntegrationsByTypeAndStatus } from "@/lib/integrations/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 export interface GoogleAnalyticsSyncConfig {
   propertyId: string;
@@ -32,7 +32,7 @@ async function getConnectedGoogleConfig(
   let rows;
   try {
     rows = await listIntegrationsByTypeAndStatus(
-      DEFAULT_BLOG_ID,
+      DEFAULT_blog_id,
       "oauth",
       "connected",
     );

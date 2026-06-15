@@ -27,7 +27,7 @@ import {
   deleteInterview,
   getInterview,
 } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import {
   buildToolContext,
   dispatchTool,
@@ -69,7 +69,7 @@ export const POST = createApiHandler({
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    const existing = await getInterview(DEFAULT_BLOG_ID, body.interviewId);
+    const existing = await getInterview(DEFAULT_blog_id, body.interviewId);
     let interviewData: {
       topic?: string | null;
       goal?: string | null;
@@ -86,7 +86,7 @@ export const POST = createApiHandler({
         topic: "e2e per-category tool dispatch",
         language: "en" as InterviewLanguage,
       };
-      await createInterview(DEFAULT_BLOG_ID, {
+      await createInterview(DEFAULT_blog_id, {
         id: body.interviewId,
         status: "live",
         startedByUid: "test-seed-uid",
@@ -147,7 +147,7 @@ export const DELETE = createApiHandler({
     }
 
     disposeWorker(body.interviewId);
-    await deleteInterview(DEFAULT_BLOG_ID, body.interviewId);
+    await deleteInterview(DEFAULT_blog_id, body.interviewId);
 
     return NextResponse.json({ success: true });
   },

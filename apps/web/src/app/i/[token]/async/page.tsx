@@ -3,7 +3,7 @@ import {
   type ShareLinkRow,
 } from "@/lib/interviews/share-links-repository";
 import { getInterview } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { hashShareLinkToken } from "@/lib/interviews/share-link-token";
 import { buildRecordingFileUrl } from "@/lib/interviews/recording-access";
 import { ExpiredCard } from "../components/expired-card";
@@ -42,7 +42,7 @@ export default async function AsyncGuestPage({ params, searchParams }: PageProps
   }
 
   // 2. Resolve interview
-  const interviewData = await getInterview(DEFAULT_BLOG_ID, interviewId);
+  const interviewData = await getInterview(DEFAULT_blog_id, interviewId);
   if (!interviewData) {
     return <ExpiredCard />;
   }

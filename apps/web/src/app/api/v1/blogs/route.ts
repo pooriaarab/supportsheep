@@ -1,7 +1,7 @@
 /**
  * Blogs API (D1-backed, multitenant)
  *
- * GET  /api/v1/blogs -- List the blogs the authenticated user belongs to.
+ * GET  /api/v1/blogs -- List the knowledge bases the authenticated user belongs to.
  * POST /api/v1/blogs -- Create a new blog owned by the authenticated user.
  */
 
@@ -20,7 +20,7 @@ const createBlogSchema = z.object({
 /**
  * GET /api/v1/blogs
  * Return every blog the caller is a member of, with their per-blog role, plus
- * `activeBlogId` — the blog the caller is currently acting on. The active id is
+ * `activeBlogId` — the knowledge base the caller is currently acting on. The active id is
  * the `bb_active_blog` cookie hint when it points at a blog the user is still a
  * member of, else the earliest membership (the server's resolution fallback).
  * The cookie is only a hint; it is re-verified against the membership list here.

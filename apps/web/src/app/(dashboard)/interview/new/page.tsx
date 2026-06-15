@@ -37,7 +37,7 @@ export default function NewInterviewPage() {
     setLoading(true);
     try {
       const res = await fetch("/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           self: true,

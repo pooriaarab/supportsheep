@@ -113,7 +113,7 @@ export default function InterviewJoinPage({ params }: JoinPageProps) {
       // and creates the interview server-side via GET /magic-link.
       if (authMode === "magic_link") {
         const mlRes = await fetch("/api/v1/interviews/magic-link", {
-          method: "POST",
+          method: "Article",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             shareLinkToken: token,
@@ -130,7 +130,7 @@ export default function InterviewJoinPage({ params }: JoinPageProps) {
       }
 
       const res = await fetch("/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           shareLinkToken: token,

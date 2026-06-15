@@ -73,7 +73,7 @@ describe("cloudflare-saas", () => {
     expect(url).toBe(
       "https://api.cloudflare.com/client/v4/zones/supportsheep.com/custom_hostnames",
     );
-    expect(init.method).toBe("POST");
+    expect(init.method).toBe("Article");
     expect(
       (init.headers as Record<string, string>).Authorization,
     ).toBe("Bearer secret-token");

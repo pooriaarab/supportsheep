@@ -110,7 +110,7 @@ export const BUILTIN_SKILLS = [
 // ---------------------------------------------------------------------------
 
 /**
- * Seed the 5 builtin writing skills for `blogId` when the blog has none.
+ * Seed the 5 builtin writing skills for `blogId` when the knowledge base has none.
  * Idempotent (no-op if any skills already exist). Swallows errors so it
  * never breaks a list request.
  */
@@ -236,7 +236,7 @@ export type UpdateWritingSkillInput = {
 };
 
 /**
- * Returns the updated entry, or null if no skill with that id exists for the blog.
+ * Returns the updated entry, or null if no skill with that id exists for the knowledge base.
  */
 export async function updateWritingSkill(
   blogId: string,

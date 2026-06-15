@@ -162,7 +162,7 @@ async function mintRealtimeSessionInner(
   };
 
   const res = await fetch(ENDPOINT, {
-    method: "POST",
+    method: "Article",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",

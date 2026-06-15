@@ -35,9 +35,9 @@ vi.mock("@/lib/articles/repository", () => ({
   getArticleBySlug: mockGetArticleBySlug,
 }));
 
-// Mock DEFAULT_BLOG_ID (save-draft doesn't use create-api-handler, so no resolveTenantForUser needed)
+// Mock DEFAULT_blog_id (save-draft doesn't use create-api-handler, so no resolveTenantForUser needed)
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(),
 }));
 

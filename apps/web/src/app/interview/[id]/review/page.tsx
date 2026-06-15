@@ -1,6 +1,6 @@
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import { getArticleById } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID, getMembershipByUser } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id, getMembershipByUser } from "@/lib/tenancy/repository";
 import { verifySessionCached } from "@/lib/auth/session";
 import { cookies } from "next/headers";
 import { ReviewAdmin } from "@/components/interview/review/review-admin";
@@ -46,7 +46,7 @@ async function resolveReviewView(id: string): Promise<ReviewView> {
     const sessionCookie = cookieStore.get("session");
     const session = sessionCookie ? await verifySessionCached(sessionCookie.value) : null;
 
-    const rawInterview = await getInterview(DEFAULT_BLOG_ID, id);
+    const rawInterview = await getInterview(DEFAULT_blog_id, id);
     if (!rawInterview) {
       logReason = "not_found";
       resolution = { kind: "error", reason: "not_found" };
@@ -73,7 +73,7 @@ async function resolveReviewView(id: string): Promise<ReviewView> {
         resolution = { kind: "error", reason: "pending" };
       } else {
         const articleRow = await getArticleById(
-          DEFAULT_BLOG_ID,
+          DEFAULT_blog_id,
           interview.articleId,
         );
         if (!articleRow) {

@@ -85,8 +85,8 @@ function searchUsers(users: AppUser[], query: string): SearchResult[] {
 const STATIC_PAGES: SearchResult[] = [
   { id: "dashboard", title: "Dashboard", href: "/dashboard" },
   {
-    id: "posts",
-    title: "Posts",
+    id: "Articles",
+    title: "Articles",
     subtitle: "View all blog posts",
     href: "/posts",
   },
@@ -163,7 +163,7 @@ export default function SearchPage() {
     if (articleResults.length > 0) {
       result.push({
         type: "articles",
-        label: "Posts",
+        label: "Articles",
         icon: FileText,
         results: articleResults,
       });

@@ -85,7 +85,7 @@ export default function BlogGeneralSettingsPage() {
       queryClient.invalidateQueries({
         queryKey: queryKeys.blogConfig.all,
       });
-      toast.success("Blog settings updated");
+      toast.success("Settings updated");
     },
     onError: () => {
       toast.error("Failed to update settings");
@@ -134,7 +134,7 @@ export default function BlogGeneralSettingsPage() {
           <Card className="p-6">
             <div className="pb-4 border-b border-border mb-6">
               <h2 className="text-fluid-lg font-medium text-foreground tracking-tight leading-tight">
-                Blog Settings
+                Support Portal Settings
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mt-1">
                 Configure your public blog name, description, and publishing
@@ -159,7 +159,7 @@ export default function BlogGeneralSettingsPage() {
                     id="siteName"
                     value={currentSiteName}
                     onChange={(e) => setSiteName(e.target.value)}
-                    placeholder="My Blog"
+                    placeholder="My Support Hub"
                     maxLength={100}
                   />
                 </div>
@@ -170,7 +170,7 @@ export default function BlogGeneralSettingsPage() {
                     id="siteDescription"
                     value={currentDescription}
                     onChange={(e) => setSiteDescription(e.target.value)}
-                    placeholder="A short description of your blog"
+                    placeholder="A short description of your knowledge base"
                     rows={3}
                     maxLength={500}
                   />

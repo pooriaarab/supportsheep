@@ -15,7 +15,7 @@ async function createSitemap(
   url: string,
 ): Promise<{ id: string; urlCount: number }> {
   const res = await fetch("/api/v1/seo/sitemaps", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ url }),
   });

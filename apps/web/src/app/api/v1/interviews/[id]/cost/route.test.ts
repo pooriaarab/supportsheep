@@ -33,7 +33,7 @@ vi.mock("@/lib/interviews/interviews-repository", () => ({
 // `tenantState.role` to drive the 403 vs success branches.
 const tenantState = vi.hoisted(() => ({ role: "owner" as string }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,

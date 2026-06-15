@@ -105,7 +105,7 @@ describe("tenancy repository", () => {
     });
   });
 
-  describe("active-blog cookie hint (only a hint — membership always re-verified)", () => {
+  describe("active-knowledge-base cookie hint (only a hint — membership always re-verified)", () => {
     beforeEach(async () => {
       await db.insert(schema.blogs).values({
         id: "b2",
@@ -180,7 +180,7 @@ describe("tenancy repository", () => {
       ]);
     });
 
-    it("returns user IDs for the given roles, scoped to the blog", async () => {
+    it("returns user IDs for the given roles, scoped to the knowledge base", async () => {
       const ids = await listMemberUserIdsByRoles(
         "default",
         ["owner", "admin", "editor"],

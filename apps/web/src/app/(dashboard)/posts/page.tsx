@@ -112,7 +112,7 @@ function PostsPageContent() {
 
   return (
     <div className="h-full flex flex-col">
-      <PageHeader breadcrumbs={[{ label: "Posts" }]} />
+      <PageHeader breadcrumbs={[{ label: "Articles" }]} />
 
       <PostsToolbar
         displaySettings={displaySettings}
@@ -141,8 +141,8 @@ function PostsPageContent() {
         count={selectedPosts.length}
         onClear={() => setSelectedPosts([])}
         onActionsClick={() => setDeleteConfirmOpen(true)}
-        itemNameSingular="post"
-        itemNamePlural="posts"
+        itemNameSingular="Article"
+        itemNamePlural="Articles"
       />
 
       {/* Bulk Delete Confirmation */}

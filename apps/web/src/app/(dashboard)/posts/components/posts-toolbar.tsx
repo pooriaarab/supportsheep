@@ -50,7 +50,7 @@ export function PostsToolbar({
           />
           <Button size="sm" className="h-8 gap-1.5 text-xs" onClick={onNewPost}>
             <Plus className="size-3.5" />
-            New Post
+            New Article
           </Button>
         </>
       }

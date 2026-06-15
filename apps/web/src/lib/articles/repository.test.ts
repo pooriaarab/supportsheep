@@ -116,7 +116,7 @@ describe("articles repository", () => {
     expect(result.hasMore).toBe(false);
   });
 
-  it("returns all articles for the blog", async () => {
+  it("returns all articles for the knowledge base", async () => {
     await createArticle(BLOG, makeArticle({ slug: "article-a", title: "Article A" }), db);
     await createArticle(BLOG, makeArticle({ slug: "article-b", title: "Article B" }), db);
 

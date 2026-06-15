@@ -23,7 +23,7 @@ vi.mock("@/lib/audit-log", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: "owner",
@@ -52,7 +52,7 @@ function buildUploadRequest(file: File, alt = "") {
   form.append("file", file);
   if (alt) form.append("alt", alt);
   return new NextRequest("http://localhost/api/v1/media", {
-    method: "POST",
+    method: "Article",
     body: form,
   });
 }

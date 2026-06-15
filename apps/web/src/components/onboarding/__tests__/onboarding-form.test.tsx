@@ -92,7 +92,7 @@ describe("OnboardingForm", () => {
     const postCall = fetchMock.mock.calls.find(
       ([url, init]) =>
         url === "/api/v1/blogs" &&
-        (init as RequestInit | undefined)?.method === "POST",
+        (init as RequestInit | undefined)?.method === "Article",
     );
     expect(postCall).toBeTruthy();
     expect(

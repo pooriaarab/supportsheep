@@ -4,7 +4,7 @@ import { getInterview } from "@/lib/interviews/interviews-repository";
 import { verifyInterviewToken } from "@/lib/interviews/interview-token";
 import { resolveInterviewTokenFromRequest } from "@/lib/interviews/interview-token-request";
 import { getWorker } from "@/lib/interviews/writer-worker-registry";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 /**
  * GET — return the most recent canvas snapshot for an in-progress interview.
@@ -52,7 +52,7 @@ export const GET = createApiHandler({
       }
     }
 
-    const interview = await getInterview(DEFAULT_BLOG_ID, id);
+    const interview = await getInterview(DEFAULT_blog_id, id);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });
     }

@@ -18,7 +18,7 @@ import {
   getShareLink,
   appendAsyncQuestion,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:share-link-questions");
 
@@ -52,7 +52,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
     }
 
     // 2. Fetch Share Link
-    const shareLink = await getShareLink(DEFAULT_BLOG_ID, shareLinkId);
+    const shareLink = await getShareLink(DEFAULT_blog_id, shareLinkId);
     if (!shareLink) {
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
@@ -109,7 +109,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
       }
 
       const whisperRes = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-        method: "POST",
+        method: "Article",
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },
@@ -165,7 +165,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
     };
 
     try {
-      await appendAsyncQuestion(DEFAULT_BLOG_ID, shareLinkId, questionObj);
+      await appendAsyncQuestion(DEFAULT_blog_id, shareLinkId, questionObj);
     } catch (err) {
       log.error("share-link-questions: share-link update failed", {
         shareLinkId,

@@ -35,7 +35,7 @@ export function ReviewGuest({ _interview, article }: ReviewGuestProps) {
             <h1 className="text-2xl font-bold text-foreground">Thank You for Your Session!</h1>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your expertise has been successfully captured and compiled into an article draft by our AI writer.
-              The host of the blog has been notified and will review the draft before publishing.
+              The host of the knowledge base has been notified and will review the draft before publishing.
             </p>
           </div>
 

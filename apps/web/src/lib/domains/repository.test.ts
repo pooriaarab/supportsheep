@@ -144,7 +144,7 @@ describe("domain repository", () => {
     });
   });
 
-  it("customDomainAvailable ignores the blog's own domain but blocks others", async () => {
+  it("customDomainAvailable ignores the knowledge base's own domain but blocks others", async () => {
     await setBlogDomain("b1", { domain: "taken.example.com", hostnameId: "ch" }, db);
     expect(await customDomainAvailable("taken.example.com", "b2", db)).toBe(false);
     expect(await customDomainAvailable("taken.example.com", "b1", db)).toBe(true);

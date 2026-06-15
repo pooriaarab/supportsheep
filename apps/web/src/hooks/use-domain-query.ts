@@ -77,7 +77,7 @@ async function setDomain(
   domain: string,
 ): Promise<SetDomainResult> {
   const res = await fetch(`/api/v1/blogs/${blogId}/domain`, {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ domain }),
   });
@@ -96,7 +96,7 @@ async function removeDomain(blogId: string): Promise<void> {
 const PENDING_POLL_INTERVAL_MS = 10_000;
 
 /**
- * The blog's custom domain + verification status. While the domain is
+ * the knowledge base's custom domain + verification status. While the domain is
  * `pending`, the query auto-refetches every 10s (the server refreshes status
  * from Cloudflare on each GET) so the page advances to active/failed on its own
  * — no manual "Check status" needed. Polling stops once the status is terminal.
@@ -113,7 +113,7 @@ export function useDomainQuery(blogId: string | null) {
   });
 }
 
-/** Provision a custom domain for the blog. */
+/** Provision a custom domain for the knowledge base. */
 export function useSetDomainMutation(blogId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({
@@ -126,7 +126,7 @@ export function useSetDomainMutation(blogId: string | null) {
   });
 }
 
-/** Remove the blog's custom domain. */
+/** Remove the knowledge base's custom domain. */
 export function useRemoveDomainMutation(blogId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({

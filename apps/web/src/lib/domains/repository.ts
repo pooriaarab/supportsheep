@@ -86,7 +86,7 @@ export function wwwCounterpart(domain: string): string | null {
   return isApexDomain(domain) ? `www.${domain}` : null;
 }
 
-/** Read the custom-domain fields for a blog, or null when the blog is unknown. */
+/** Read the custom-domain fields for a blog, or null when the knowledge base is unknown. */
 export async function getBlogDomain(
   blogId: string,
   db: DB = getDb(),

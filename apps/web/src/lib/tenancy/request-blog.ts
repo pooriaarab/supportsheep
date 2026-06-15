@@ -8,7 +8,7 @@ import {
   isTenantSubdomainHost,
   resolveBlogIdByHost,
 } from "@/lib/tenancy/host-resolution";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 /**
  * Resolve the tenant `blogId` for the current public request from its host.
@@ -18,7 +18,7 @@ import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
  * {@link resolveBlogIdByHost}. When the host is not a tenant blog (apex/`www`/
  * `staging`/`app`, an unknown slug, an unmapped custom domain) — or when the
  * resolver/DB is unavailable (e.g. during a static build, where `getDb()` has
- * no Cloudflare context) — this falls back to `DEFAULT_BLOG_ID`, preserving the
+ * no Cloudflare context) — this falls back to `DEFAULT_blog_id`, preserving the
  * current single-tenant/default behavior. It never throws, so a resolver hiccup
  * can never 500 a public page.
  */
@@ -27,11 +27,11 @@ export async function getRequestBlogId(): Promise<string> {
     const headerList = await headers();
     const host =
       headerList.get("x-bb-host") ?? headerList.get("host") ?? "";
-    if (!host) return DEFAULT_BLOG_ID;
+    if (!host) return DEFAULT_blog_id;
     const resolved = await resolveBlogIdByHost(host);
-    return resolved ?? DEFAULT_BLOG_ID;
+    return resolved ?? DEFAULT_blog_id;
   } catch {
-    return DEFAULT_BLOG_ID;
+    return DEFAULT_blog_id;
   }
 }
 
@@ -63,7 +63,7 @@ export type RequestTenant =
  * the routing decision is unit-testable without mocking request headers.
  *
  * @param host the request host (may include a port; case-insensitive)
- * @param resolvedBlogId the blog id `resolveBlogIdByHost` returned for `host`,
+ * @param resolvedBlogId the knowledge base id `resolveBlogIdByHost` returned for `host`,
  *   or `null` when no verified tenant owns it.
  */
 export function classifyRequestTenant(

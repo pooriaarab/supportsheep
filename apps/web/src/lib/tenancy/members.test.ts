@@ -12,7 +12,7 @@ import {
   updateMemberRole,
 } from "./members";
 
-// Real in-memory SQLite so the blog_members ⋈ user join actually executes.
+// Real in-memory SQLite so the knowledge base_members ⋈ user join actually executes.
 type TestDb = NonNullable<Parameters<typeof listBlogMembers>[2]>;
 
 async function makeDb(): Promise<TestDb> {
@@ -376,7 +376,7 @@ describe("members repository", () => {
     expect(result).toEqual({ ok: false, reason: "user_not_found" });
   });
 
-  it("addMemberByEmail returns already_member when the user is already on the blog", async () => {
+  it("addMemberByEmail returns already_member when the user is already on the knowledge base", async () => {
     await seedUser(db, { id: "u1", name: "Ada", email: "ada@example.com" });
     await db.insert(schema.blogMembers).values({
       id: "m1",

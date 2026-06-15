@@ -21,7 +21,7 @@ describe("use-invites-query", () => {
     global.fetch = vi.fn();
   });
 
-  it("posts the invite to the blog-scoped endpoint with email and role", async () => {
+  it("posts the invite to the knowledge base-scoped endpoint with email and role", async () => {
     vi.mocked(useMutation).mockReturnValue({ mutate: vi.fn() } as any);
 
     useCreateInviteMutation();
@@ -41,7 +41,7 @@ describe("use-invites-query", () => {
     });
 
     expect(global.fetch).toHaveBeenCalledWith("/api/v1/blogs/blog-1/invites", {
-      method: "POST",
+      method: "Article",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "person@example.com", role: "editor" }),
     });
@@ -55,7 +55,7 @@ describe("use-invites-query", () => {
     });
   });
 
-  it("url-encodes the blogId path segment", async () => {
+  it("url-encodes the knowledge baseId path segment", async () => {
     vi.mocked(useMutation).mockReturnValue({ mutate: vi.fn() } as any);
     useCreateInviteMutation();
     const mutationCall = vi.mocked(useMutation).mock.calls[0][0];

@@ -76,7 +76,7 @@ describe("machine-readable article routes", () => {
     expect(response.status).toBe(200);
     expect(response.headers.get("content-type")).toContain("text/markdown");
     expect(response.headers.get("cache-control")).toContain("max-age=300");
-    // Host resolution falls back to DEFAULT_BLOG_ID when no request host is
+    // Host resolution falls back to DEFAULT_blog_id when no request host is
     // available (these tests don't mock `next/headers`).
     expect(mocks.getPublicArticleBySlug).toHaveBeenCalledWith(
       article.slug,

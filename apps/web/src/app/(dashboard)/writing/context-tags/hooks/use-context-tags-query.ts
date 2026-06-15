@@ -13,7 +13,7 @@ async function createContextTag(
   data: Omit<ContextTag, "id" | "blogId" | "createdAt">,
 ): Promise<{ id: string }> {
   const res = await fetch("/api/v1/context-tags", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });

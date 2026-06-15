@@ -1,5 +1,5 @@
 /**
- * Unit tests for the blog-config D1 repository functions.
+ * Unit tests for the knowledge base-config D1 repository functions.
  *
  * Uses real in-memory SQLite (libsql) so drizzle queries actually run,
  * matching the pattern used by categories/repository.test.ts.
@@ -42,7 +42,7 @@ describe("blog-config D1 repository", () => {
 
   it("stores and retrieves overrides (round-trip)", async () => {
     const overrides = {
-      siteName: "My Blog",
+      siteName: "My Support Hub",
       seo: { defaultMetaTitle: "Custom Title", defaultMetaDescription: "Desc", googleAnalyticsId: "", clarityId: "", submissionProtocols: { indexNow: { enabled: false, apiKey: "" } } },
     };
 
@@ -86,7 +86,7 @@ describe("blog-config D1 repository", () => {
 
   it("DEFAULT_BLOG_CONFIG has expected baseline values", () => {
     expect(DEFAULT_BLOG_CONFIG.blogId).toBe("default");
-    expect(DEFAULT_BLOG_CONFIG.siteName).toBe("Blog");
+    expect(DEFAULT_BLOG_CONFIG.siteName).toBe("Support Portal");
     expect(DEFAULT_BLOG_CONFIG.seo.submissionProtocols?.indexNow).toEqual({
       enabled: false,
       apiKey: "",

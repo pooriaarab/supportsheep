@@ -34,7 +34,7 @@ export async function submitIndexNowUrl({
 }: SubmitIndexNowInput): Promise<IndexNowSubmissionStatus> {
   try {
     const response = await fetch("https://api.indexnow.org/indexnow", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
       },

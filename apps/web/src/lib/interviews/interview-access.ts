@@ -5,7 +5,7 @@ import type {
   ShareLinkVisibility,
 } from "@/lib/interviews/share-link-schema";
 import type { UserRole } from "@repo/types";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 /**
  * RBAC resource query for interview documents.
@@ -95,7 +95,7 @@ export async function getInterviewAccess(
 
   // 3. Share-link guests: validate against the active share link.
   if (interview.shareLinkId) {
-    const blogId = interview.blogId ?? DEFAULT_BLOG_ID;
+    const blogId = interview.blogId ?? DEFAULT_blog_id;
     const shareLink = await fetchShareLink(interview.shareLinkId, blogId);
     if (shareLink && shareLink.status === "active") {
       // The share-link creator is treated as owner even if they themselves

@@ -1,8 +1,8 @@
 /**
  * Signup Codes API (admin)
  *
- * POST /api/v1/signup-codes -- Issue an invite/verification code for the blog.
- * GET  /api/v1/signup-codes -- List the blog's codes.
+ * POST /api/v1/signup-codes -- Issue an invite/verification code for the knowledge base.
+ * GET  /api/v1/signup-codes -- List the knowledge base's codes.
  *
  * A code authorizes an agent to provision an account + API key via
  * POST /api/v1/agent/signup without an interactive flow. Codes can grant at most

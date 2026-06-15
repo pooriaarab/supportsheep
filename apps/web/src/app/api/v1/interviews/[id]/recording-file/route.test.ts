@@ -44,7 +44,7 @@ vi.mock("@/lib/interviews/async-responses-repository", () => ({
 
 const mockGetMembershipByUser = vi.hoisted(() => vi.fn(async () => null));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({ blogId: "default", role: "owner" })),
   getMembershipByUser: mockGetMembershipByUser,
 }));

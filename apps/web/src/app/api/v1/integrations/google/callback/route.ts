@@ -8,7 +8,7 @@ import {
   verifyGoogleOAuthState,
 } from "@/lib/integrations/google-integration";
 import { getIntegration, updateIntegration } from "@/lib/integrations/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 function redirectToSettings(origin: string, status: "connected" | "error") {
   return NextResponse.redirect(
@@ -20,7 +20,7 @@ function redirectToSettings(origin: string, status: "connected" | "error") {
  * GET /api/v1/integrations/google/callback
  *
  * External OAuth callback — no session available. The integration is looked up
- * by id extracted from the OAuth state parameter, scoped to DEFAULT_BLOG_ID.
+ * by id extracted from the OAuth state parameter, scoped to DEFAULT_blog_id.
  * Public hostname→blog routing is deferred to a later slice; for now all OAuth
  * integrations belong to the default blog.
  */
@@ -40,7 +40,7 @@ export const GET = createApiHandler({
       return redirectToSettings(origin, "error");
     }
 
-    const row = await getIntegration(DEFAULT_BLOG_ID, parsedState.integrationId);
+    const row = await getIntegration(DEFAULT_blog_id, parsedState.integrationId);
     if (!row || !isGoogleIntegrationConfig(row.config)) {
       return redirectToSettings(origin, "error");
     }
@@ -70,7 +70,7 @@ export const GET = createApiHandler({
     delete nextConfig.oauthState;
 
     if (!tokens.refresh_token) {
-      await updateIntegration(DEFAULT_BLOG_ID, row.id, {
+      await updateIntegration(DEFAULT_blog_id, row.id, {
         config: nextConfig,
         status: "error",
       });
@@ -85,7 +85,7 @@ export const GET = createApiHandler({
       expiryDate: tokens.expiry_date ?? undefined,
     };
 
-    await updateIntegration(DEFAULT_BLOG_ID, row.id, {
+    await updateIntegration(DEFAULT_blog_id, row.id, {
       config: nextConfig,
       status: "connected",
       connectedAt: Date.now(),

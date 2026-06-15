@@ -31,7 +31,7 @@ import {
 import { sanitizeArticleHtml } from "../../src/lib/sanitize/article-html";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const STATUSES = ["published", "scheduled"];
 
 const REPORT_DIR = resolve(__dirname, "reports");
@@ -289,7 +289,7 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .where("status", "in", STATUSES)
     .get();
   console.info(`fetched ${snap.size} articles`);

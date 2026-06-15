@@ -16,7 +16,7 @@
  *   4. No AI image generation -- images are Unsplash (default) / Pexels
  *      (Pro+) / user upload.
  *   5. No "thin-content guard" or "SEO sidebar flags thin content" -- that
- *      is a feature of THIS blog CMS, not of Supportsheep the website builder.
+ *      is a feature of this knowledge base CMS, not of Supportsheep the website builder.
  *
  * Pricing is quoted via `{{supportsheep.pro.yearly}}` / `{{supportsheep.pro.monthly}}` /
  * `{{supportsheep.free.monthly}}` placeholders so the numbers stay in sync with
@@ -134,7 +134,7 @@ A single "locations" page with three addresses on it will not rank for three cit
 
 ### 5. Informational content
 
-"Why does my tooth hurt when I drink cold water," "how much does a crown cost without insurance in [city]," "is it normal to bleed during flossing." A 600-800 word honest answer is enough to start ranking and to earn patient trust before a visit. If the Supportsheep deployment you are on has the blog feature enabled, posts can be drafted by Supportsheep's AI; otherwise author them in any editor and paste into a Supportsheep page.
+"Why does my tooth hurt when I drink cold water," "how much does a crown cost without insurance in [city]," "is it normal to bleed during flossing." A 600-800 word honest answer is enough to start ranking and to earn patient trust before a visit. If the Supportsheep deployment you are on has the knowledge base feature enabled, posts can be drafted by Supportsheep's AI; otherwise author them in any editor and paste into a Supportsheep page.
 
 ## Where Supportsheep is a good fit for a dental practice -- and where it is not
 
@@ -166,7 +166,7 @@ Supportsheep's AI fires in three specific places:
 
 1. **At onboarding.** A short business description generates an initial site: homepage, sections, copy, service descriptions, default imagery from Unsplash.
 2. **When you add a section in the editor.** Each section type (Services, FAQ, Introduction, others) has a generator that seeds the new section with AI-drafted content based on your business context.
-3. **On blog-post creation**, if the Supportsheep deployment you are on has the blog feature enabled.
+3. **On blog-post creation**, if the Supportsheep deployment you are on has the knowledge base feature enabled.
 
 Outside those touchpoints, editing is manual. There is no inline "rewrite this paragraph," no "make this friendlier," no in-editor AI writing assistant. If a service description needs tightening, you tighten it by hand. Verify that in a Supportsheep trial before committing.
 
@@ -232,7 +232,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Where exactly does Supportsheep's AI help, and where does it stop?",
     answer:
-      "Supportsheep's AI fires in three places: (1) onboarding, where a short business description generates an initial site with pages, sections, and copy; (2) section creation in the editor, where adding a new section (Services, FAQ, Introduction, and others) seeds the section with AI-drafted content based on your business context; and (3) blog post creation, where blog posts can be drafted by AI when the blog feature is enabled in your Supportsheep deployment. Outside those three moments, editing is manual -- Supportsheep does not include a free-form AI rewriter, a 'make this friendlier' button, or inline prompt-driven editing of selected text.",
+      "Supportsheep's AI fires in three places: (1) onboarding, where a short business description generates an initial site with pages, sections, and copy; (2) section creation in the editor, where adding a new section (Services, FAQ, Introduction, and others) seeds the section with AI-drafted content based on your business context; and (3) blog post creation, where blog posts can be drafted by AI when the knowledge base feature is enabled in your Supportsheep deployment. Outside those three moments, editing is manual -- Supportsheep does not include a free-form AI rewriter, a 'make this friendlier' button, or inline prompt-driven editing of selected text.",
   },
   {
     question: "Can Supportsheep generate dental photography or custom images with AI?",

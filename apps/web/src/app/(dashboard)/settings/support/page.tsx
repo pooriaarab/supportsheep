@@ -13,7 +13,6 @@ import { PageHeader } from "@/components/ui/layout/page-header";
 import { Card } from "@repo/ui/primitives/card";
 import { Label } from "@repo/ui/primitives/label";
 import { Switch } from "@repo/ui/primitives/switch";
-import { Input } from "@repo/ui/primitives/input";
 import { Button } from "@repo/ui/primitives/button";
 import { Skeleton } from "@repo/ui/primitives/skeleton";
 import { Loader2, Save } from "lucide-react";
@@ -26,12 +25,10 @@ export default function SupportSettingsPage() {
   const [localState, setLocalState] = useState<{
     enableVoice: boolean;
     enableChatbot: boolean;
-    openAIApiKey: string;
     initialized: boolean;
   }>({
     enableVoice: false,
     enableChatbot: false,
-    openAIApiKey: "",
     initialized: false,
   });
 
@@ -45,7 +42,6 @@ export default function SupportSettingsPage() {
         setLocalState({
           enableVoice: data.support?.enableVoice ?? false,
           enableChatbot: data.support?.enableChatbot ?? false,
-          openAIApiKey: data.support?.openAIApiKey ?? "",
           initialized: true,
         });
       }
@@ -130,22 +126,6 @@ export default function SupportSettingsPage() {
                 checked={localState.enableChatbot}
                 onCheckedChange={(c) => setLocalState(s => ({ ...s, enableChatbot: c }))}
               />
-            </div>
-          </div>
-        </Card>
-
-        <Card className="p-6">
-          <h3 className="text-lg font-medium mb-4">AI Providers</h3>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label>OpenAI API Key (Required for Voice)</Label>
-              <Input
-                type="password"
-                placeholder="sk-..."
-                value={localState.openAIApiKey}
-                onChange={(e) => setLocalState(s => ({ ...s, openAIApiKey: e.target.value }))}
-              />
-              <p className="text-xs text-muted-foreground">Your OpenAI API key to power the real-time voice agent.</p>
             </div>
           </div>
         </Card>

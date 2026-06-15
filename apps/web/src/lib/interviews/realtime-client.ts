@@ -238,7 +238,7 @@ export class RealtimeClient {
       // so it doesn't need to repeat in the URL.
       const sdpUrl = `${baseUrl}/realtime/calls`;
       const sdpRes = await fetch(sdpUrl, {
-        method: "POST",
+        method: "Article",
         headers: {
           Authorization: `Bearer ${input.ephemeralToken}`,
           "Content-Type": "application/sdp",

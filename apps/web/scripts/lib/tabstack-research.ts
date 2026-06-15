@@ -36,7 +36,7 @@ export async function tabstackResearch(
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch("https://api.tabstack.ai/v1/research", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",

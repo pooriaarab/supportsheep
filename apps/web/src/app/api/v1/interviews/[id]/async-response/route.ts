@@ -10,7 +10,7 @@ import {
 import { getInterview, incrementResponsesCount } from "@/lib/interviews/interviews-repository";
 import { upsertAsyncResponse } from "@/lib/interviews/async-responses-repository";
 import { getMediaBucket } from "@/lib/media/bucket";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 import { RATE_LIMITS } from "@/lib/rate-limit";
 
@@ -59,7 +59,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
     }
 
     // 3. Fetch Interview from D1
-    const blogId = DEFAULT_BLOG_ID;
+    const blogId = DEFAULT_blog_id;
     const interview = await getInterview(blogId, interviewId);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });
@@ -118,7 +118,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
       }
 
       const whisperRes = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-        method: "POST",
+        method: "Article",
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },

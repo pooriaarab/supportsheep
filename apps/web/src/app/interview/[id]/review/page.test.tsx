@@ -18,7 +18,7 @@ vi.mock("@/lib/articles/repository", () => ({
 
 vi.mock("@/lib/tenancy/repository", () => ({
   getMembershipByUser: mockGetMembershipByUser,
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 vi.mock("@/lib/auth/session", () => ({

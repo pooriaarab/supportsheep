@@ -19,7 +19,7 @@ vi.mock("@/lib/interviews/follow-up-suggester", () => ({
 // `tenantState.role` to drive the 403 vs success branches.
 const tenantState = vi.hoisted(() => ({ role: "owner" as string }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,
@@ -81,7 +81,7 @@ describe("POST /api/v1/interviews/[id]/follow-ups", () => {
     tenantState.role = "viewer";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-id/follow-ups", {
-      method: "POST",
+      method: "Article",
     });
     const res = await POST(req, { params: Promise.resolve({ id: "test-id" }) });
     expect(res.status).toBe(403);
@@ -93,7 +93,7 @@ describe("POST /api/v1/interviews/[id]/follow-ups", () => {
     tenantState.role = "editor";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-id/follow-ups", {
-      method: "POST",
+      method: "Article",
     });
     const res = await POST(req, { params: Promise.resolve({ id: "test-id" }) });
     expect(res.status).toBe(200);
@@ -115,7 +115,7 @@ describe("POST /api/v1/interviews/[id]/follow-ups", () => {
     mockGetInterview.mockResolvedValue(null);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/missing-id/follow-ups", {
-      method: "POST",
+      method: "Article",
     });
     const res = await POST(req, { params: Promise.resolve({ id: "missing-id" }) });
     expect(res.status).toBe(404);
@@ -125,13 +125,13 @@ describe("POST /api/v1/interviews/[id]/follow-ups", () => {
 
   it("should rate limit requests to once per 30s per interview", async () => {
     const req1 = new NextRequest("http://localhost/api/v1/interviews/rate-limit-id/follow-ups", {
-      method: "POST",
+      method: "Article",
     });
     const res1 = await POST(req1, { params: Promise.resolve({ id: "rate-limit-id" }) });
     expect(res1.status).toBe(200);
 
     const req2 = new NextRequest("http://localhost/api/v1/interviews/rate-limit-id/follow-ups", {
-      method: "POST",
+      method: "Article",
     });
     const res2 = await POST(req2, { params: Promise.resolve({ id: "rate-limit-id" }) });
     expect(res2.status).toBe(429);

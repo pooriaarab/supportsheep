@@ -53,7 +53,7 @@ export default function BulkGeneratePage() {
 
     try {
       const res = await fetch("/api/v1/generate/bulk", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: keywords.map((kw) => ({

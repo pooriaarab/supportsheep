@@ -14,7 +14,7 @@ import {
   getArticleBySlug,
   updateArticleBySlug,
 } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 export const POST = createApiHandler({
   auth: "user",
@@ -27,7 +27,7 @@ export const POST = createApiHandler({
     let updateFeaturedImageForSlug: string | undefined;
 
     if (body.slug) {
-      const article = await getArticleBySlug(DEFAULT_BLOG_ID, body.slug);
+      const article = await getArticleBySlug(DEFAULT_blog_id, body.slug);
 
       if (!article) {
         return NextResponse.json(
@@ -65,7 +65,7 @@ export const POST = createApiHandler({
     });
 
     if (updateFeaturedImageForSlug) {
-      await updateArticleBySlug(DEFAULT_BLOG_ID, updateFeaturedImageForSlug, {
+      await updateArticleBySlug(DEFAULT_blog_id, updateFeaturedImageForSlug, {
         featuredImage: { url: result.url, alt: result.alt },
         ogImage: result.url,
       });

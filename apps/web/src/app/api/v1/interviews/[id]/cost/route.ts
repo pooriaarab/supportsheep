@@ -8,7 +8,7 @@ import {
   roundCostUsd,
 } from "@/lib/interviews/cost";
 import { getInterview } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { toIsoString } from "@/lib/interviews/timestamp-utils";
 
 /**
@@ -31,7 +31,7 @@ export const GET = createApiHandler({
     }
 
     // 2. Fetch the interview from D1
-    const blogId = DEFAULT_BLOG_ID;
+    const blogId = DEFAULT_blog_id;
     const interview = await getInterview(blogId, id);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });

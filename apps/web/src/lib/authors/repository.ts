@@ -171,7 +171,7 @@ const PLACEHOLDER_AUTHOR = {
 };
 
 /**
- * Ensure the `authors` table has at least the placeholder entry for this blog.
+ * Ensure the `authors` table has at least the placeholder entry for this knowledge base.
  * Seeds on empty; idempotent. Swallows errors so it can never break a list request.
  */
 export async function ensurePlaceholderAuthor(

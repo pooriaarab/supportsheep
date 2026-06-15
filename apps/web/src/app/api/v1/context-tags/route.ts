@@ -15,7 +15,7 @@ import { createContextTagSchema } from "@/lib/schemas";
 
 /**
  * GET /api/v1/context-tags
- * Return every context tag for the blog, ordered alphabetically by name.
+ * Return every context tag for the knowledge base, ordered alphabetically by name.
  */
 export const GET = createApiHandler({
   auth: "user",

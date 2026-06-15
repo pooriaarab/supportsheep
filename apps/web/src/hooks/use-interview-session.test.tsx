@@ -121,13 +121,13 @@ function TestWrapper({ input, onRef }: WrapperProps) {
 function setupDefaultFetchMock(): ReturnType<typeof vi.fn> {
   return vi.fn((url: string | URL | Request, init?: RequestInit) => {
     const u = String(url);
-    if (u.includes("/session-lock") && init?.method !== "POST" && init?.method !== "DELETE") {
+    if (u.includes("/session-lock") && init?.method !== "Article" && init?.method !== "DELETE") {
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ holder: null, lastBeatAt: null, stale: false }),
       });
     }
-    if (u.includes("/session-lock") && init?.method === "POST") {
+    if (u.includes("/session-lock") && init?.method === "Article") {
       return Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ status: "acquired" }),
@@ -233,11 +233,11 @@ describe("useInterviewSession", () => {
     await vi.advanceTimersByTimeAsync(1000);
 
     const eventsCall = mockFetch.mock.calls.find(
-      (c) => String(c[0]).includes("/events") && c[1]?.method === "POST",
+      (c) => String(c[0]).includes("/events") && c[1]?.method === "Article",
     );
     expect(eventsCall).toBeDefined();
     expect(eventsCall![1]).toMatchObject({
-      method: "POST",
+      method: "Article",
       credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
@@ -265,7 +265,7 @@ describe("useInterviewSession", () => {
     session.sendMessage?.("User message input");
 
     const eventsCall = mockFetch.mock.calls.find(
-      (c) => String(c[0]).includes("/events") && c[1]?.method === "POST",
+      (c) => String(c[0]).includes("/events") && c[1]?.method === "Article",
     );
     expect(eventsCall).toBeDefined();
     expect(String(eventsCall![1].body)).toContain("chat_input");
@@ -294,7 +294,7 @@ describe("useInterviewSession", () => {
     const finalFlushCall = mockFetch.mock.calls.find(
       (c) =>
         String(c[0]).includes("/events") &&
-        c[1]?.method === "POST" &&
+        c[1]?.method === "Article" &&
         String(c[1].body).includes("Leaving soon"),
     );
     expect(finalFlushCall).toBeDefined();
@@ -1284,7 +1284,7 @@ describe("useInterviewSession", () => {
 
     mockFetch.mockImplementation((url: string | URL | Request, init?: RequestInit) => {
       const u = String(url);
-      if (u.includes("/session-lock") && init?.method !== "POST" && init?.method !== "DELETE") {
+      if (u.includes("/session-lock") && init?.method !== "Article" && init?.method !== "DELETE") {
         return Promise.resolve({
           ok: true,
           json: () =>
@@ -1308,7 +1308,7 @@ describe("useInterviewSession", () => {
     expect(mockConnect).not.toHaveBeenCalled();
     const heartbeatPost = mockFetch.mock.calls.find(
       (c) =>
-        String(c[0]).includes("/session-lock") && c[1]?.method === "POST",
+        String(c[0]).includes("/session-lock") && c[1]?.method === "Article",
     );
     expect(heartbeatPost).toBeUndefined();
     // The "Session lock contested" info log was emitted with the holder id.
@@ -1328,7 +1328,7 @@ describe("useInterviewSession", () => {
 
     mockFetch.mockImplementation((url: string | URL | Request, init?: RequestInit) => {
       const u = String(url);
-      if (u.includes("/session-lock") && init?.method !== "POST" && init?.method !== "DELETE") {
+      if (u.includes("/session-lock") && init?.method !== "Article" && init?.method !== "DELETE") {
         return Promise.resolve({
           ok: true,
           json: () =>
@@ -1339,7 +1339,7 @@ describe("useInterviewSession", () => {
             }),
         });
       }
-      if (u.includes("/session-lock") && init?.method === "POST") {
+      if (u.includes("/session-lock") && init?.method === "Article") {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve({ status: "acquired" }),
@@ -1372,13 +1372,13 @@ describe("useInterviewSession", () => {
 
     mockFetch.mockImplementation((url: string | URL | Request, init?: RequestInit) => {
       const u = String(url);
-      if (u.includes("/session-lock") && init?.method !== "POST" && init?.method !== "DELETE") {
+      if (u.includes("/session-lock") && init?.method !== "Article" && init?.method !== "DELETE") {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve({ holder: null, lastBeatAt: null, stale: false }),
         });
       }
-      if (u.includes("/session-lock") && init?.method === "POST") {
+      if (u.includes("/session-lock") && init?.method === "Article") {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve({ status: "acquired" }),

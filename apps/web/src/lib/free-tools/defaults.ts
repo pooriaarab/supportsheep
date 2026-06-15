@@ -7,7 +7,7 @@ import {
 import type { DefaultFreeToolOptions, SeededFreeTool } from "./types";
 import { FREE_TOOL_TEMPLATES } from "./templates";
 
-const DEFAULT_BLOG_ID = "default" as const;
+const DEFAULT_blog_id = "default" as const;
 
 function defaultAppearance(category: string): FreeToolAppearanceConfig {
   if (
@@ -41,7 +41,7 @@ export function buildDefaultFreeTools(
   options: DefaultFreeToolOptions,
 ): SeededFreeTool[] {
   const now = options.now ?? new Date().toISOString();
-  const blogId = options.blogId ?? DEFAULT_BLOG_ID;
+  const blogId = options.blogId ?? DEFAULT_blog_id;
   const defaultCallout = buildDefaultFreeToolCallout();
 
   return Object.values(FREE_TOOL_TEMPLATES).map((template) => ({

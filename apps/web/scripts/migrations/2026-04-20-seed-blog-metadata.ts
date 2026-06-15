@@ -28,7 +28,7 @@ import {
 import { FieldValue, getFirestore } from "firebase-admin/firestore";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 
 const SITE_NAME = "Supportsheep";
 const DEFAULT_META_TITLE =
@@ -38,7 +38,7 @@ const DEFAULT_META_DESCRIPTION =
 const SITE_DESCRIPTION = DEFAULT_META_DESCRIPTION;
 
 const BLOG_CONFIG_FIELDS: Record<string, unknown> = {
-  blogId: BLOG_ID,
+  blogId: blog_id,
   siteName: SITE_NAME,
   siteDescription: SITE_DESCRIPTION,
   seo: {
@@ -233,7 +233,7 @@ async function main(): Promise<void> {
   } = {
     order: {},
     updatedAt: FieldValue.serverTimestamp(),
-    blogId: BLOG_ID,
+    blogId: blog_id,
   };
   for (const update of CATEGORY_UPDATES) {
     if (!currentOrder[update.slug]) continue;

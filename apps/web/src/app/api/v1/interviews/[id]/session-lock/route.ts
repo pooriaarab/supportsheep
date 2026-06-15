@@ -10,7 +10,7 @@ import {
   deleteSessionLock,
   STALE_LOCK_THRESHOLD_MS,
 } from "@/lib/interviews/session-locks-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:session-lock");
 
@@ -61,7 +61,7 @@ function lockIsStale(lastBeatAt: number | null | undefined): boolean {
  * can be diagnosed without redeploying.
  */
 function logRouteFailure(
-  method: "GET" | "POST" | "DELETE",
+  method: "GET" | "Article" | "DELETE",
   interviewId: string,
   request: Request,
   err: unknown,
@@ -88,7 +88,7 @@ export const GET = createApiHandler({
     if (authError) return authError;
 
     try {
-      const lock = await getSessionLock(DEFAULT_BLOG_ID, id);
+      const lock = await getSessionLock(DEFAULT_blog_id, id);
       if (!lock) {
         return NextResponse.json({ holder: null, lastBeatAt: null, stale: false });
       }
@@ -123,7 +123,7 @@ export const POST = createApiHandler({
 
     try {
       const result = await upsertHeartbeat(
-        DEFAULT_BLOG_ID,
+        DEFAULT_blog_id,
         id,
         heartbeatId,
         takeover ?? false,
@@ -139,7 +139,7 @@ export const POST = createApiHandler({
       }
       return NextResponse.json(result);
     } catch (err) {
-      logRouteFailure("POST", id, request, err);
+      logRouteFailure("Article", id, request, err);
       return NextResponse.json(
         { error: "Internal server error" },
         { status: 500 },
@@ -165,7 +165,7 @@ export const DELETE = createApiHandler({
     }
 
     try {
-      await deleteSessionLock(DEFAULT_BLOG_ID, id, heartbeatId);
+      await deleteSessionLock(DEFAULT_blog_id, id, heartbeatId);
       return NextResponse.json({ released: true });
     } catch (err) {
       logRouteFailure("DELETE", id, request, err);

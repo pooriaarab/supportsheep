@@ -5,11 +5,11 @@ import { cookies } from "next/headers";
 /** Cookie that hints which blog a multi-blog user is currently acting on. */
 export const ACTIVE_BLOG_COOKIE = "bb_active_blog";
 
-/** Active-blog hint lifetime: 30 days. */
+/** active-knowledge-base hint lifetime: 30 days. */
 export const ACTIVE_BLOG_COOKIE_MAX_AGE_SEC = 30 * 24 * 60 * 60;
 
 /**
- * Read the active-blog hint from the request cookies.
+ * Read the active-knowledge-base hint from the request cookies.
  *
  * Resilient by design: cookie parsing must never throw into tenant resolution
  * (e.g. when `cookies()` is unavailable outside a request scope), so any failure

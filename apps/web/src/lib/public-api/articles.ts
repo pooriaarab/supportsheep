@@ -4,7 +4,7 @@ import {
   listPublishedArticles,
   getPublishedArticleBySlug as d1GetPublishedArticleBySlug,
 } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 export const PUBLIC_API_MAX_PAGE = 100;
 export const PUBLIC_API_DEFAULT_LIMIT = 20;
@@ -97,7 +97,7 @@ export async function getPublishedPublicArticles({
   limit,
   category,
   tag,
-  blogId = DEFAULT_BLOG_ID,
+  blogId = DEFAULT_blog_id,
 }: GetPublicArticlesInput) {
   const offset = (page - 1) * limit;
   return listPublishedArticles(blogId, {
@@ -110,7 +110,7 @@ export async function getPublishedPublicArticles({
 
 export async function getPublishedPublicArticleBySlug(
   slug: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ) {
   return d1GetPublishedArticleBySlug(blogId, slug);
 }

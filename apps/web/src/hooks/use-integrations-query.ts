@@ -43,7 +43,7 @@ async function connectIntegration(
   },
 ): Promise<Integration> {
   const res = await fetch("/api/v1/integrations", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
@@ -64,7 +64,7 @@ async function startGoogleOAuth(integrationId: string): Promise<{
   authorizationUrl: string;
 }> {
   const res = await fetch("/api/v1/integrations/google/start", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ integrationId }),
   });

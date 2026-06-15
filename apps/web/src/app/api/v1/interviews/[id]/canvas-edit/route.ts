@@ -5,7 +5,7 @@ import { getInterview } from "@/lib/interviews/interviews-repository";
 import { appendEvents } from "@/lib/interviews/events-repository";
 import { getWorker } from "@/lib/interviews/writer-worker-registry";
 import { createLogger } from "@/lib/logger";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:canvas-edit");
 
@@ -68,7 +68,7 @@ export const POST = createApiHandler({
     rateLimitMap.set(id, validTimestamps);
 
     // 3. Fetch the interview and validate live status
-    const interview = await getInterview(DEFAULT_BLOG_ID, id);
+    const interview = await getInterview(DEFAULT_blog_id, id);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });
     }
@@ -82,7 +82,7 @@ export const POST = createApiHandler({
 
     // 4. Save canvas_edit event to D1.
     const { sectionId, field, index, value } = body;
-    await appendEvents(DEFAULT_BLOG_ID, id, [
+    await appendEvents(DEFAULT_blog_id, id, [
       {
         kind: "canvas_edit",
         ts: new Date().toISOString(),

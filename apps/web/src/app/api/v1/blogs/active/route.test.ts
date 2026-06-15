@@ -28,7 +28,7 @@ vi.mock("@/lib/tenancy/blogs", () => ({
 
 function postRequest(body: unknown): Request {
   return new Request("http://test.local/api/v1/blogs/active", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });

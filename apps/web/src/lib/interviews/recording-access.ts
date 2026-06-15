@@ -6,7 +6,7 @@ import { resolveInterviewTokenFromRequest } from "@/lib/interviews/interview-tok
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
 import { getAsyncResponse } from "@/lib/interviews/async-responses-repository";
-import { DEFAULT_BLOG_ID, getMembershipByUser } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id, getMembershipByUser } from "@/lib/tenancy/repository";
 import type { UserRole } from "@repo/types";
 
 /**
@@ -99,7 +99,7 @@ export async function resolveRecordingAccess(
 
   // 3. Resolve the interview to find its share-link id (required for question
   //    paths, used as an ownership/scoping check).
-  const interview = await getInterview(DEFAULT_BLOG_ID, interviewId);
+  const interview = await getInterview(DEFAULT_blog_id, interviewId);
   if (!interview) {
     return { ok: false, status: 404, error: "Interview not found" };
   }
@@ -109,7 +109,7 @@ export async function resolveRecordingAccess(
     if (!shareLinkId) {
       return { ok: false, status: 404, error: "not_found" };
     }
-    const shareLink = await getShareLink(DEFAULT_BLOG_ID, shareLinkId);
+    const shareLink = await getShareLink(DEFAULT_blog_id, shareLinkId);
     if (!shareLink) {
       return { ok: false, status: 404, error: "not_found" };
     }
@@ -124,7 +124,7 @@ export async function resolveRecordingAccess(
 
   // kind === "response"
   const response = await getAsyncResponse(
-    DEFAULT_BLOG_ID,
+    DEFAULT_blog_id,
     interviewId,
     questionId,
   );

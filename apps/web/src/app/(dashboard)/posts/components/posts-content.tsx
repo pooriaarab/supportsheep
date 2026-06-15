@@ -35,9 +35,9 @@ export function PostsContent({
     return (
       <EmptyState
         icon={FileText}
-        title="No Posts Yet"
-        description="Create your first post to start publishing."
-        action={{ label: "New Post", onClick: onNewPost }}
+        title="No Articles Yet"
+        description="Create your first article to start publishing."
+        action={{ label: "New Article", onClick: onNewPost }}
       />
     );
   }

@@ -504,7 +504,7 @@ export function useInterviewSession(input: UseInterviewSessionInput) {
     const batch = eventBuffer.current.splice(0, 100);
     try {
       const res = await fetch(`/api/v1/interviews/${input.interviewId}/events`, {
-        method: "POST",
+        method: "Article",
         credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",
@@ -536,7 +536,7 @@ export function useInterviewSession(input: UseInterviewSessionInput) {
       payload: { text },
     };
     const res = await fetch(`/api/v1/interviews/${input.interviewId}/events`, {
-      method: "POST",
+      method: "Article",
       credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",

@@ -106,7 +106,7 @@ export type CreateBlogResult =
 /**
  * Create a blog and its owner membership atomically.
  *
- * The slug is validated, then the blogs row and the creator's owner
+ * The slug is validated, then the knowledge bases row and the creator's owner
  * blog_members row are written in a single `db.batch` so a partial failure can
  * never leave a blog without an owner. The UNIQUE(slug) index is the real guard
  * against a concurrent claim (TOCTOU): we pre-check `slugAvailable` for a

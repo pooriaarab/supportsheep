@@ -4,7 +4,7 @@ import { z } from "zod";
 import { getBlogConfig } from "@/lib/blog-config";
 import { appendEvents } from "@/lib/interviews/events-repository";
 import { sumMonthlyInterviewCostUsd } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 import {
   emitToolInFlightEvent,
@@ -674,7 +674,7 @@ async function maybeEmitToolFailedEvent(
   if (result.ok) return;
   if (result.category !== "upstream_error") return;
   try {
-    await appendEvents(DEFAULT_BLOG_ID, interviewId, [
+    await appendEvents(DEFAULT_blog_id, interviewId, [
       {
         ts: new Date().toISOString(),
         kind: "tool_failed",
@@ -725,7 +725,7 @@ async function checkWorkspaceCostCap(
       return { exceeded: false, capUsd, totalUsd: 0 };
     }
 
-    const totalUsd = await sumMonthlyInterviewCostUsd(DEFAULT_BLOG_ID);
+    const totalUsd = await sumMonthlyInterviewCostUsd(DEFAULT_blog_id);
 
     const exceeded = totalUsd >= capUsd;
     return { exceeded, capUsd, totalUsd };

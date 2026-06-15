@@ -11,7 +11,7 @@ async function suggestLinks(
   sitemapId?: string,
 ): Promise<LinkSuggestion[]> {
   const res = await fetch("/api/v1/seo/suggest-links", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ content, sitemapId }),
   });

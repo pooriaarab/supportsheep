@@ -4,7 +4,7 @@
  * Applied on both write (API) and render (public article page) paths to
  * defend against stored XSS in article body content. Uses sanitize-html
  * (pure htmlparser2 — no jsdom) with a strict tag and attribute allowlist
- * scoped to the blog's supported markup (TipTap output, WordPress imports,
+ * scoped to the knowledge base's supported markup (TipTap output, WordPress imports,
  * callouts, figures, YouTube/Vimeo embeds).
  *
  * The allowlist intentionally mirrors what our renderer is known to emit so

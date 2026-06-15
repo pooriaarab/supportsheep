@@ -17,7 +17,7 @@ import {
 } from "@/lib/articles/repository";
 import { listCategories } from "@/lib/categories/repository";
 import { getAuthor, listAuthors } from "@/lib/authors/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const routeResolutionLogger = createLogger("lib:public-route-resolution");
 
@@ -45,7 +45,7 @@ export function resolveLegacyBlogPath(input: {
 
 export async function getPublicArticleBySlug(
   slug: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<(Article & { id: string }) | null> {
   return d1GetPublishedArticleBySlug(blogId, slug);
 }
@@ -55,7 +55,7 @@ export async function getRelatedPublicArticles(
       primaryCategory?: string;
       categories?: string[];
     },
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<(Article & { id: string })[]> {
   const primary = getPrimaryCategory(article);
   const all = getArticleCategories(article);
@@ -86,7 +86,7 @@ export async function getRelatedPublicArticles(
 }
 
 export async function getPublicCategories(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<Array<CategoryEntry & { slug: string }>> {
   try {
     return await listCategories(blogId);
@@ -97,7 +97,7 @@ export async function getPublicCategories(
 
 export async function getPublicCategoryInfo(
   slug: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<{
   slug: string;
   displayName: string;
@@ -121,7 +121,7 @@ export async function getPublicCategoryArticles(
   },
   page: number,
   perPage: number,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ) {
   return listPublishedArticlesByCategory(blogId, {
     categorySlug: category.slug,
@@ -141,7 +141,7 @@ export function resolveCategorySlug(category: string): string {
  */
 export async function getPublicAuthorBySlug(
   slug: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<Author | null> {
   const entry = await getAuthor(blogId, slug);
   if (!entry) return null;
@@ -164,7 +164,7 @@ export async function getPublicAuthorBySlug(
  * Returns an empty list when D1 is unavailable (e.g. during CI build).
  */
 export async function getAllPublicAuthors(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<Author[]> {
   try {
     const entries = await listAuthors(blogId);
@@ -190,7 +190,7 @@ export async function getAllPublicAuthors(
 export async function getPublicAuthorArticles(
   authorId: string,
   limit = 50,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<(Article & { id: string })[]> {
   try {
     return await listPublishedArticlesByAuthor(blogId, authorId, limit);

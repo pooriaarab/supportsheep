@@ -216,7 +216,7 @@ export async function seedShareLink(
   options: CliOptions,
 ): Promise<SeedResponse> {
   const res = await fetch(`${baseUrl}${SEED_ENDPOINT}`, {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       visibility: "link",

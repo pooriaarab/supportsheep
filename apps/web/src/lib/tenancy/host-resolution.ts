@@ -203,7 +203,7 @@ export function isTenantSubdomainHost(host: string): boolean {
  *   {@link getBlogByCustomDomain}.
  * - An unknown slug / unmapped custom domain → `null`.
  *
- * Callers fall back to `DEFAULT_BLOG_ID` when this returns `null`, preserving
+ * Callers fall back to `DEFAULT_blog_id` when this returns `null`, preserving
  * single-tenant/default behavior until real subdomains exist (see
  * `getRequestBlogId`).
  */

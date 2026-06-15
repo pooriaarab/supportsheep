@@ -93,7 +93,7 @@ async function postHeartbeat(input: {
 }): Promise<{ ok: true; body: HeartbeatResponse } | { ok: false; status: number; body: HeartbeatResponse }> {
   const f = input.fetchImpl ?? fetch;
   const res = await f(lockUrl(input.interviewId), {
-    method: "POST",
+    method: "Article",
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",

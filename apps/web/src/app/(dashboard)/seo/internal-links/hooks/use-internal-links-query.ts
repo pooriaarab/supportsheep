@@ -13,7 +13,7 @@ async function createInternalLinkRule(
   data: Omit<InternalLinkRule, "id" | "blogId">,
 ): Promise<{ id: string }> {
   const res = await fetch("/api/v1/seo/internal-links", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });

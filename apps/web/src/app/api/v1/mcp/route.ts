@@ -17,7 +17,7 @@ import { createLogger } from "@/lib/logger";
 const log = createLogger("api:mcp");
 
 async function handleMcpRequest(request: Request): Promise<Response> {
-  // Authenticate. The resolved auth context carries the blog the key is bound
+  // Authenticate. The resolved auth context carries the knowledge base the key is bound
   // to — every tool operates against THAT blog, never a hardcoded default.
   const authHeader = request.headers.get("authorization");
   const auth = await validateMcpToken(authHeader);

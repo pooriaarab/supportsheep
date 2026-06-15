@@ -26,8 +26,8 @@ describe("isEmailAllowed", () => {
   });
 
   it("is case-insensitive and tolerates spaces / multiple domains", () => {
-    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", " @Blogbat.com , @acme.io ");
-    expect(isEmailAllowed("USER@BLOGBAT.COM")).toBe(true);
+    vi.stubEnv("ALLOWED_EMAIL_DOMAINS", " @Supportsheep.com , @acme.io ");
+    expect(isEmailAllowed("USER@Supportsheep.COM")).toBe(true);
     expect(isEmailAllowed("x@acme.io")).toBe(true);
     expect(isEmailAllowed("x@other.com")).toBe(false);
   });

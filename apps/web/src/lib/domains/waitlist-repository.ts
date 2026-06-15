@@ -34,7 +34,7 @@ export async function joinDomainWaitlist(
     .onConflictDoNothing({ target: domainWaitlist.blogId });
 }
 
-/** True when this blog has already joined the custom-domain waitlist. */
+/** True when this knowledge base has already joined the custom-domain waitlist. */
 export async function isBlogOnWaitlist(
   blogId: string,
   db: DB = getDb(),

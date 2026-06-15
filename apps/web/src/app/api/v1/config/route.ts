@@ -423,7 +423,7 @@ export const updateBlogConfigSchema = z
 
 /**
  * GET /api/v1/config
- * Read the blog config settings
+ * Read the knowledge base config settings
  */
 export const GET = createApiHandler({
   auth: "user",

@@ -44,7 +44,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const MODEL = "claude-haiku-4-5-20251001";
 const CONCURRENCY = 5;
 const REQUEST_TIMEOUT_MS = 20_000;
@@ -209,7 +209,7 @@ async function classify(
   const choiceList = CATEGORY_CHOICES.map(
     (c) => `- "${c.slug}": ${c.description}`,
   ).join("\n");
-  const prompt = `Classify this blog article into up to 3 of the categories below. Return ONLY JSON matching the schema {"categories": string[]} where the first entry is the primary category. Use only slugs from this list. Prefer fewer, more precise categories over more.
+  const prompt = `Classify this knowledge base article into up to 3 of the categories below. Return ONLY JSON matching the schema {"categories": string[]} where the first entry is the primary category. Use only slugs from this list. Prefer fewer, more precise categories over more.
 
 Categories:
 ${choiceList}
@@ -285,9 +285,9 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
-  console.info(`fetched ${snap.size} articles for blogId=${BLOG_ID}`);
+  console.info(`fetched ${snap.size} articles for blogId=${blog_id}`);
 
   const pending: ArticleDoc[] = [];
   let alreadyDone = 0;

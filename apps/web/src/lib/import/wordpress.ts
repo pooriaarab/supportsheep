@@ -28,7 +28,7 @@ import {
   listCategories,
   createCategory,
 } from "@/lib/categories/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("lib:import:wordpress");
 
@@ -86,7 +86,7 @@ export function parseWordPressXml(xmlContent: string): WordPressPost[] {
 
     // Only process posts (not pages, attachments, etc.)
     const postType = extractTag(item, "wp:post_type");
-    if (postType !== "post") continue;
+    if (postType !== "Article") continue;
 
     const wpStatus = extractTag(item, "wp:status");
 
@@ -200,7 +200,7 @@ export function findMissingPublishedSlugs(input: {
 export async function importWordPressPosts(
   posts: WordPressPost[],
   importId: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<void> {
   const failedPosts: Array<{ slug: string; error: string }> = [];
   let importedCount = 0;

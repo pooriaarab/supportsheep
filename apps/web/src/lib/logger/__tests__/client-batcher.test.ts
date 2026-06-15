@@ -63,7 +63,7 @@ describe("client-log batcher", () => {
     await Promise.resolve();
     expect(fetchMock).toHaveBeenCalledTimes(1);
     const [, init] = fetchMock.mock.calls[0]!;
-    expect((init as RequestInit).method).toBe("POST");
+    expect((init as RequestInit).method).toBe("Article");
     const body = JSON.parse((init as { body: string }).body) as {
       entries: ClientLogEntry[];
     };

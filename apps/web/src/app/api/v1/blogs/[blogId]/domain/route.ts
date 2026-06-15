@@ -2,12 +2,12 @@
  * Custom domain API (Cloudflare for SaaS, blog-scoped)
  *
  * POST   /api/v1/blogs/{blogId}/domain -- Provision a Cloudflare for SaaS custom
- *   hostname for the blog. Stores it as "pending" and returns the CNAME the owner
+ *   hostname for the knowledge base. Stores it as "pending" and returns the CNAME the owner
  *   must add at their DNS provider.
  * GET    /api/v1/blogs/{blogId}/domain -- Return the current domain + status.
  *   Refreshes a "pending" domain's status from Cloudflare and persists changes.
  * DELETE /api/v1/blogs/{blogId}/domain -- Delete the custom hostname and clear
- *   the blog's domain fields.
+ *   the knowledge base's domain fields.
  *
  * `{blogId}` must equal the caller's resolved tenant — owners manage only the
  * blog they are acting on. All operations are admin-gated.
@@ -111,7 +111,7 @@ export const POST = createApiHandler<z.infer<typeof setDomainSchema>, RouteParam
           // When the owner added an apex, surface that `www.` is a separate
           // hostname they'd need to add too (we don't auto-create it).
           apexNote: wwwNote
-            ? `You added the apex ${domain}. ${wwwNote} is a separate hostname — add it too if you want visitors on www to reach your blog.`
+            ? `You added the apex ${domain}. ${wwwNote} is a separate hostname — add it too if you want visitors on www to reach your knowledge base.`
             : null,
         },
         { status: 201 },
@@ -126,7 +126,7 @@ export const POST = createApiHandler<z.infer<typeof setDomainSchema>, RouteParam
 
 /**
  * GET /api/v1/blogs/{blogId}/domain
- * Return the blog's current domain + status. Refreshes pending domains from
+ * Return the knowledge base's current domain + status. Refreshes pending domains from
  * Cloudflare and persists status transitions.
  */
 export const GET = createApiHandler<unknown, RouteParams>({
@@ -192,7 +192,7 @@ export const GET = createApiHandler<unknown, RouteParams>({
       apexNote: (() => {
         const www = wwwCounterpart(current.domain);
         return www
-          ? `${www} is a separate hostname — add it too if you want visitors on www to reach your blog.`
+          ? `${www} is a separate hostname — add it too if you want visitors on www to reach your knowledge base.`
           : null;
       })(),
       instructions:
@@ -205,7 +205,7 @@ export const GET = createApiHandler<unknown, RouteParams>({
 
 /**
  * DELETE /api/v1/blogs/{blogId}/domain
- * Remove the Cloudflare custom hostname and clear the blog's domain fields.
+ * Remove the Cloudflare custom hostname and clear the knowledge base's domain fields.
  */
 export const DELETE = createApiHandler<unknown, RouteParams>({
   auth: "admin",

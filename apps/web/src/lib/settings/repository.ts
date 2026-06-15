@@ -6,7 +6,7 @@ import type { DrizzleD1Database } from "drizzle-orm/d1";
 import { getDb } from "@/db";
 import type * as schema from "@/db/schema";
 import { blogSettings } from "@/db/schema/config";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 type DB = DrizzleD1Database<typeof schema>;
 
@@ -36,7 +36,7 @@ const DEFAULT_BLOG_SETTINGS: BlogSettingsData = {
  * Return the stored settings for a blog, merged with defaults.
  */
 export async function getBlogSettings(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<BlogSettingsData> {
   const rows = await db

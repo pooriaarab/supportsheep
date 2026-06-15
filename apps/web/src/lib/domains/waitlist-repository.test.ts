@@ -33,7 +33,7 @@ describe("domain waitlist repository", () => {
     db = await makeDb();
   });
 
-  it("isBlogOnWaitlist is false until the blog joins", async () => {
+  it("isBlogOnWaitlist is false until the knowledge base joins", async () => {
     expect(await isBlogOnWaitlist("b1", db)).toBe(false);
     await joinDomainWaitlist({ blogId: "b1", userId: "u1", email: "a@x.test" }, db);
     expect(await isBlogOnWaitlist("b1", db)).toBe(true);

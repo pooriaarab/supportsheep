@@ -286,7 +286,7 @@ describe("resolveBlogConfig", () => {
     const resolved = resolveBlogConfig({
       seo: {
         defaultMetaTitle: "Supportsheep",
-        defaultMetaDescription: "A modern blog",
+        defaultMetaDescription: "A modern support portal",
         googleAnalyticsId: "",
         clarityId: "",
         submissionProtocols: {

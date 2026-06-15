@@ -50,7 +50,7 @@ vi.mock("@/lib/interviews/async-responses-repository", () => ({
 
 // Mock tenancy repository (create-api-handler calls resolveTenantForUser)
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn().mockResolvedValue({ blogId: "default" }),
 }));
 
@@ -83,7 +83,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       body: formData,
     });
 
@@ -102,7 +102,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer invalid-token",
       },
@@ -128,7 +128,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -155,7 +155,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -186,7 +186,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -218,7 +218,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -257,7 +257,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -317,7 +317,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
       body: formData,
     });
@@ -338,7 +338,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
         "content-length": String(50 * 1024 * 1024), // 50 MB
@@ -370,7 +370,7 @@ describe("POST /api/v1/interviews/[id]/async-response", () => {
     formData.append("questionId", "q-123");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/int-123/async-response", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
       body: formData,
     });

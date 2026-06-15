@@ -27,7 +27,7 @@ vi.mock("@/lib/audit-log", () => ({
 
 vi.mock("@/lib/tenancy/repository", () => ({
   resolveTenantForUser: vi.fn().mockResolvedValue({ blogId: "default", role: "admin" }),
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 describe("POST /api/v1/integrations", () => {
@@ -52,7 +52,7 @@ describe("POST /api/v1/integrations", () => {
     const request = new NextRequest(
       "https://supportsheep.com/api/v1/integrations",
       {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           name: "Google Analytics 4",
           type: "oauth",
@@ -98,7 +98,7 @@ describe("POST /api/v1/integrations", () => {
     const request = new NextRequest(
       "https://supportsheep.com/api/v1/integrations",
       {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           name: "Google Search Console",
           type: "oauth",

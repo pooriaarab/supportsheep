@@ -153,7 +153,7 @@ export function buildAgentCard(siteUrl: string) {
   } as const;
 }
 
-const BLOGBAT_DISCOVERY_SKILL_PATH =
+const Supportsheep_DISCOVERY_SKILL_PATH =
   "/.well-known/agent-skills/supportsheep-discovery/SKILL.md";
 
 export function getSupportsheepDiscoverySkillMarkdown(siteUrl: string) {
@@ -205,7 +205,7 @@ export function buildAgentSkillsIndex(siteUrl: string) {
       type: "skill-md",
       description:
         "Find and consume Supportsheep public content, docs, and discovery metadata.",
-      url: BLOGBAT_DISCOVERY_SKILL_PATH,
+      url: Supportsheep_DISCOVERY_SKILL_PATH,
       digest: `sha256:${digest}`,
     },
   ];

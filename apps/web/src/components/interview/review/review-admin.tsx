@@ -210,7 +210,7 @@ export function ReviewAdmin({ _interview, article, interviewId }: ReviewAdminPro
             with identical typography, heading-id anchors, and sanitize
             pipeline. Pixel parity between this preview and the
             published article means the user is never surprised by what
-            lands on the blog. */}
+            lands on the knowledge base. */}
         <Card className="p-8 border border-border bg-card shadow-lg space-y-6">
           <div className="space-y-1">
             <span className="text-[10px] uppercase font-bold tracking-wider text-primary">Compiled Draft Preview</span>

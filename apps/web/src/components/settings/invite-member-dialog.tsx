@@ -27,7 +27,7 @@ const ROLE_OPTIONS: { value: InvitableRole; label: string }[] = [
 interface InviteMemberDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /** the support portal to invite into (the caller's active tenant). */
+  /** the support portal to invite into (the caller's active knowledge base). */
   blogId: string | null;
 }
 

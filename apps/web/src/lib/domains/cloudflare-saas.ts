@@ -213,7 +213,7 @@ export async function createCustomHostname(
   const body = await cfFetch<CloudflareCustomHostname>(
     `/zones/${zoneId}/custom_hostnames`,
     {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         hostname,
         ssl: {

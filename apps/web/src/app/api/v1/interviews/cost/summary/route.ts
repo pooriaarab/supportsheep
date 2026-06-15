@@ -6,7 +6,7 @@ import { aggregateUsage } from "@/lib/interviews/aggregate-usage";
 import { computeTotalCost, roundCostUsd } from "@/lib/interviews/cost";
 import { getDb } from "@/db";
 import { interviews } from "@/db/schema/interviews";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { UserRole } from "@repo/types";
 
 export const GET = createApiHandler({
@@ -62,7 +62,7 @@ export const GET = createApiHandler({
       .from(interviews)
       .where(
         and(
-          eq(interviews.blogId, DEFAULT_BLOG_ID),
+          eq(interviews.blogId, DEFAULT_blog_id),
           isNotNull(interviews.endedAt),
           gte(interviews.endedAt, twelveMonthsAgoMs),
         ),
@@ -74,7 +74,7 @@ export const GET = createApiHandler({
       .from(interviews)
       .where(
         and(
-          eq(interviews.blogId, DEFAULT_BLOG_ID),
+          eq(interviews.blogId, DEFAULT_blog_id),
           eq(interviews.status, "live"),
           gte(interviews.createdAt, startOfThisMonthMs),
         ),

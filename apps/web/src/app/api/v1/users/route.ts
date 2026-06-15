@@ -2,8 +2,8 @@
  * Members API (blog-scoped)
  *
  * GET /api/v1/users -- List the current blog's members (paginated)
- * POST /api/v1/users -- Add an existing user to the blog by email
- * DELETE /api/v1/users -- Remove members from the blog by user ID
+ * POST /api/v1/users -- Add an existing user to the knowledge base by email
+ * DELETE /api/v1/users -- Remove members from the knowledge base by user ID
  *
  * The client `AppUser` shape is preserved (see MemberEntry): id, name, email,
  * role, avatarUrl, joinedAt, status.

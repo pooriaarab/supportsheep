@@ -63,7 +63,7 @@ export const POST = createApiHandler<z.infer<typeof acceptSchema>>({
       return NextResponse.json({ error: "already_accepted" }, { status: 409 });
     }
 
-    // Add the now-existing user (looked up by the invited email) to the blog.
+    // Add the now-existing user (looked up by the invited email) to the knowledge base.
     // already_member is fine — the invite is consumed and the user is a member.
     await addMemberByEmail(invite.blogId, invite.email, invite.role);
 

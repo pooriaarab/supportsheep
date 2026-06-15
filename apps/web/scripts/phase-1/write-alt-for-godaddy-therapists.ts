@@ -46,7 +46,7 @@ GoDaddy positions its AI builder as a way to launch a professional site in minut
 - It does not produce HIPAA-aware forms or scheduling.
 - It does not generate structured data (LocalBusiness, Person, FAQPage JSON-LD) automatically.
 - The resulting site's SEO ceiling is lower than dedicated content platforms for the local search competition therapy practices face.
-- The blog is basic -- adequate for one or two posts, not designed for the content velocity that compounds into meaningful local search authority over 12-18 months.
+- the knowledge base is basic -- adequate for one or two posts, not designed for the content velocity that compounds into meaningful local search authority over 12-18 months.
 
 ## Where GoDaddy works for a solo therapist
 
@@ -140,7 +140,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How does GoDaddy's AI website builder compare to Supportsheep for therapists?",
     answer:
-      "Both use AI to accelerate the initial site creation from a business description. GoDaddy's AI builder is faster to first draft and keeps domain, hosting, and email on one account. Supportsheep's AI onboarding generates a multi-page first draft on a content-and-SEO-first architecture, with structured data (LocalBusiness, FAQPage, Article) emitted automatically and an SEO sidebar in the blog for ongoing content optimization. GoDaddy's builder is simpler to start; Supportsheep's architecture compounds more effectively into local search authority over 12-18 months of content production.",
+      "Both use AI to accelerate the initial site creation from a business description. GoDaddy's AI builder is faster to first draft and keeps domain, hosting, and email on one account. Supportsheep's AI onboarding generates a multi-page first draft on a content-and-SEO-first architecture, with structured data (LocalBusiness, FAQPage, Article) emitted automatically and an SEO sidebar in the knowledge base for ongoing content optimization. GoDaddy's builder is simpler to start; Supportsheep's architecture compounds more effectively into local search authority over 12-18 months of content production.",
   },
 ];
 

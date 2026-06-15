@@ -3,7 +3,7 @@ import { createApiHandler } from "@/lib/create-api-handler";
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import { listAllEvents } from "@/lib/interviews/events-repository";
 import { suggestFollowUps } from "@/lib/interviews/follow-up-suggester";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 // In-memory rate limiting map: interviewId -> lastCalledTimestamp
 const rateLimitMap = new Map<string, number>();
@@ -29,7 +29,7 @@ export const POST = createApiHandler({
     }
 
     // 3. Fetch the interview
-    const interview = await getInterview(DEFAULT_BLOG_ID, id);
+    const interview = await getInterview(DEFAULT_blog_id, id);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });
     }
@@ -40,7 +40,7 @@ export const POST = createApiHandler({
     const style = interview.style || "smart";
 
     // 4. Reads recent transcript events
-    const events = await listAllEvents(DEFAULT_BLOG_ID, id, {
+    const events = await listAllEvents(DEFAULT_blog_id, id, {
       kinds: ["transcript_user", "transcript_ai"],
     });
 

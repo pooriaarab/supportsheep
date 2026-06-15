@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { createLogger } from "@/lib/logger";
 import { listPublishedArticles } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { emitFireAndForgetCompletion } from "./_narration-events";
 import type { Tool } from "./_types";
 import type {
@@ -48,11 +48,11 @@ export default {
       try {
         const canvas = ctx.getCurrentCanvas();
         const body = canvasBodyText(canvas).toLowerCase();
-        // Use DEFAULT_BLOG_ID: the interview tool context does not thread blogId
+        // Use DEFAULT_blog_id: the interview tool context does not thread blogId
         // through the tool handler signature. Once multi-blog interview support
         // lands, blogId should be added to the tool context and threaded here.
         const { articles: publishedArticles } = await listPublishedArticles(
-          DEFAULT_BLOG_ID,
+          DEFAULT_blog_id,
           { limit: 50 },
         );
         const suggestions: CanvasInternalLinkSuggestion[] = publishedArticles

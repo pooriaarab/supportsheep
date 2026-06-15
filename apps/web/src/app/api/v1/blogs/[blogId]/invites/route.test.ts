@@ -29,7 +29,7 @@ vi.mock("@/lib/audit-log", () => ({
 // resolveTenantForUser resolves the caller's tenant; admin role on "blog-1".
 vi.mock("@/lib/tenancy/repository", () => ({
   resolveTenantForUser: vi.fn(async () => ({ blogId: "blog-1", role: "admin" })),
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   NeedsOnboardingError: class NeedsOnboardingError extends Error {},
 }));
 
@@ -55,7 +55,7 @@ vi.mock("@/lib/invites/send-invite-email", () => ({
 
 function postRequest(body: unknown): Request {
   return new Request("http://test.local/api/v1/blogs/blog-1/invites", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
@@ -72,7 +72,7 @@ describe("POST /api/v1/blogs/{blogId}/invites", () => {
       authTime: 0,
     });
     mockLogAuditEvent.mockResolvedValue(undefined);
-    mockGetBlogDisplayName.mockResolvedValue("My Blog");
+    mockGetBlogDisplayName.mockResolvedValue("My Support Hub");
     mockSendInviteEmail.mockResolvedValue(undefined);
   });
 

@@ -6,7 +6,7 @@ import { createArticle, slugExists } from "@/lib/articles/repository";
 import { isWebhookIntegrationConfig } from "@/lib/integrations/webhook-integration";
 import { normalizeArticleWebhookPayload } from "@/lib/webhooks/article-webhook";
 import { getIntegration } from "@/lib/integrations/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 type RouteParams = { id: string };
 
@@ -14,13 +14,13 @@ type RouteParams = { id: string };
  * POST /api/v1/integrations/webhooks/:id
  *
  * External webhook receiver — no session available. The integration is looked up
- * by id from D1, scoped to DEFAULT_BLOG_ID (public hostname routing deferred).
+ * by id from D1, scoped to DEFAULT_blog_id (public hostname routing deferred).
  * Articles are written to the D1 `articles` table.
  */
 export const POST = createApiHandler<unknown, RouteParams>({
   auth: "none",
   handler: async ({ request, params }) => {
-    const row = await getIntegration(DEFAULT_BLOG_ID, params.id);
+    const row = await getIntegration(DEFAULT_blog_id, params.id);
     if (!row) {
       return NextResponse.json({ error: "Integration not found" }, { status: 404 });
     }
@@ -69,10 +69,10 @@ export const POST = createApiHandler<unknown, RouteParams>({
           ...articleInput,
           status: "published",
         },
-        (slug) => slugExists(DEFAULT_BLOG_ID, slug),
+        (slug) => slugExists(DEFAULT_blog_id, slug),
       );
 
-      await createArticle(DEFAULT_BLOG_ID, article);
+      await createArticle(DEFAULT_blog_id, article);
       slugs.push(article.slug);
     }
 

@@ -20,7 +20,7 @@ import {
   parseWordPressXml,
   importWordPressPosts,
 } from "@/lib/import/wordpress";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 
 const log = createLogger("api:import:wordpress");
@@ -40,11 +40,11 @@ export async function GET(request: NextRequest) {
 
     if (!id) {
       // List recent imports
-      const imports = await listImports(DEFAULT_BLOG_ID);
+      const imports = await listImports(DEFAULT_blog_id);
       return NextResponse.json({ data: imports });
     }
 
-    const entry = await getImport(DEFAULT_BLOG_ID, id);
+    const entry = await getImport(DEFAULT_blog_id, id);
     if (!entry) {
       return NextResponse.json(
         { error: "Import job not found" },
@@ -76,7 +76,7 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const entry = await getImport(DEFAULT_BLOG_ID, id);
+    const entry = await getImport(DEFAULT_blog_id, id);
     if (!entry) {
       return NextResponse.json(
         { error: "Import job not found" },
@@ -91,7 +91,7 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const updated = await updateImport(DEFAULT_BLOG_ID, id, {
+    const updated = await updateImport(DEFAULT_blog_id, id, {
       status: "failed",
       completedAt: Date.now(),
     });
@@ -169,7 +169,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create the import job in D1
-    const job = await createImport(DEFAULT_BLOG_ID, {
+    const job = await createImport(DEFAULT_blog_id, {
       totalPosts: posts.length,
       createdBy: session.uid,
     });
@@ -180,12 +180,12 @@ export async function POST(request: NextRequest) {
     });
 
     // Start import in the background (non-blocking)
-    importWordPressPosts(posts, job.id, DEFAULT_BLOG_ID).catch((err) => {
+    importWordPressPosts(posts, job.id, DEFAULT_blog_id).catch((err) => {
       log.error("WordPress import failed", {
         importId: job.id,
         error: err instanceof Error ? err.message : String(err),
       });
-      updateImport(DEFAULT_BLOG_ID, job.id, {
+      updateImport(DEFAULT_blog_id, job.id, {
         status: "failed",
         completedAt: Date.now(),
       }).catch(() => {});

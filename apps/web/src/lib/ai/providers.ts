@@ -1,7 +1,7 @@
 /**
  * Multi-Provider AI Client
  *
- * Fetches API keys from the blog's D1 configuration. Keys MUST be configured
+ * Fetches API keys from the knowledge base's D1 configuration. Keys MUST be configured
  * via Settings > AI Providers in the dashboard — there is no environment-variable
  * fallback so the UI is the single source of truth.
  */
@@ -54,7 +54,7 @@ async function readProviderConfig(
 
 /**
  * Resolve a provider's API key and (optionally) configured model from
- * the blog's D1 configuration. Throws if no API key is configured.
+ * the knowledge base's D1 configuration. Throws if no API key is configured.
  */
 export async function getProviderSettings(
   provider: AIProvider,

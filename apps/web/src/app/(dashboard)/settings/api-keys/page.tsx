@@ -59,7 +59,7 @@ async function createApiKey(data: {
   scopes: string[];
 }): Promise<{ key: string; id: string; name: string }> {
   const res = await fetch("/api/v1/api-keys", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });

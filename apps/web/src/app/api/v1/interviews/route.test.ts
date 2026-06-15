@@ -49,7 +49,7 @@ vi.mock("@/lib/interviews/share-links-repository", () => ({
 const tenantState = vi.hoisted(() => ({ role: "owner" }));
 const mockGetMembershipByUser = vi.hoisted(() => vi.fn(async () => null));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,
@@ -95,7 +95,7 @@ describe("POST /api/v1/interviews", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           self: true,
         }),
@@ -156,7 +156,7 @@ describe("POST /api/v1/interviews", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           self: true,
           style: "testimonial",
@@ -194,7 +194,7 @@ describe("POST /api/v1/interviews", () => {
       mockVerifyRequest.mockRejectedValue(new Error("Unauthorized"));
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           self: true,
         }),
@@ -257,7 +257,7 @@ describe("POST /api/v1/interviews", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         }),
@@ -337,7 +337,7 @@ describe("POST /api/v1/interviews", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         }),
@@ -359,7 +359,7 @@ describe("POST /api/v1/interviews", () => {
       mockGetShareLinkByTokenHash.mockResolvedValue(null);
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         }),
@@ -399,7 +399,7 @@ describe("POST /api/v1/interviews", () => {
       mockGetShareLinkByTokenHash.mockResolvedValue(mockShareLinkData);
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         }),
@@ -441,7 +441,7 @@ describe("POST /api/v1/interviews", () => {
       mockGetShareLinkByTokenHash.mockResolvedValue(mockShareLinkData);
 
       const req = new NextRequest("http://localhost/api/v1/interviews", {
-        method: "POST",
+        method: "Article",
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         }),

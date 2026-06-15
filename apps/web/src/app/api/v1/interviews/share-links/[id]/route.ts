@@ -9,7 +9,7 @@ import {
   getShareLink,
   updateShareLink,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 /**
  * PATCH /api/v1/interviews/share-links/[id]
@@ -25,7 +25,7 @@ export const PATCH = createApiHandler<ShareLinkUpdateInput, { id: string }>({
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
 
-    const link = await getShareLink(DEFAULT_BLOG_ID, id);
+    const link = await getShareLink(DEFAULT_blog_id, id);
     if (!link) {
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
@@ -48,7 +48,7 @@ export const PATCH = createApiHandler<ShareLinkUpdateInput, { id: string }>({
       );
     }
 
-    await updateShareLink(DEFAULT_BLOG_ID, id, {
+    await updateShareLink(DEFAULT_blog_id, id, {
       topic: body.topic,
       goal: body.goal,
       style: body.style,
@@ -75,7 +75,7 @@ export const DELETE = createApiHandler<unknown, { id: string }>({
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
 
-    const link = await getShareLink(DEFAULT_BLOG_ID, id);
+    const link = await getShareLink(DEFAULT_blog_id, id);
     if (!link) {
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
@@ -99,7 +99,7 @@ export const DELETE = createApiHandler<unknown, { id: string }>({
     }
 
     // Soft-revoke: mark status as revoked instead of hard deleting
-    await updateShareLink(DEFAULT_BLOG_ID, id, { status: "revoked" });
+    await updateShareLink(DEFAULT_blog_id, id, { status: "revoked" });
 
     return NextResponse.json({ success: true });
   },

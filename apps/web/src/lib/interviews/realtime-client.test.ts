@@ -109,7 +109,7 @@ describe("RealtimeClient", () => {
       // returns 400 on the production realtime API.
       "https://custom.api.com/realtime/calls",
       expect.objectContaining({
-        method: "POST",
+        method: "Article",
         headers: {
           Authorization: "Bearer token-123",
           "Content-Type": "application/sdp",

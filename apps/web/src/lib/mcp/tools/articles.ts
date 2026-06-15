@@ -254,7 +254,7 @@ export function registerArticleTools(
         .enum(["draft", "published", "scheduled", "archived"])
         .optional()
         .describe("New status"),
-      postType: postTypeSchema.optional().describe("New post type"),
+      postType: postTypeSchema.optional().describe("New Article type"),
     },
     async ({ slug, ...updates }) => {
       const article = await getArticleBySlug(blogId, slug);

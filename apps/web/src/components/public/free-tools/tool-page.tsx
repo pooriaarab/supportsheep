@@ -109,7 +109,7 @@ export function ToolPage({ tool, inputs, executionMode }: ToolPageProps) {
       const response = await fetch(
         `/api/v1/free-tools/public/${tool.slug}/run`,
         {
-          method: "POST",
+          method: "Article",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ input }),
         },

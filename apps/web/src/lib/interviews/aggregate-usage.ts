@@ -14,8 +14,8 @@ export interface AggregateUsageResult {
  * counters only and are NOT trusted for billing (see server-side-usage.ts /
  * F-003 for the server-authoritative path).
  *
- * The blogId parameter is required for D1 tenant isolation. Callers that
- * previously called `aggregateUsage(interviewId)` should pass the blogId
+ * the knowledge baseId parameter is required for D1 tenant isolation. Callers that
+ * previously called `aggregateUsage(interviewId)` should pass the knowledge baseId
  * from the interview row; callers inside tests can pass `"default"`.
  */
 export async function aggregateUsage(

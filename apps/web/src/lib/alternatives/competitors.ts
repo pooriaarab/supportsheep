@@ -140,7 +140,7 @@ export const COMPETITORS: Competitor[] = [
       },
       {
         feature: "Blog / content platform",
-        supportsheep: "Blog with AI-drafted posts (feature-flagged); SEO sidebar in the blog CMS",
+        supportsheep: "Blog with AI-drafted posts (feature-flagged); SEO sidebar in the knowledge base CMS",
         competitor: "Built-in blog with categories and scheduling",
       },
       {

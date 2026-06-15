@@ -82,7 +82,7 @@ export interface ServerAuthoritativeUsageResult {
  * scoped to the realtime path, which is where the browser-reported numbers
  * were trusted.
  *
- * The blogId parameter is required for D1 tenant isolation. Previously this
+ * the knowledge baseId parameter is required for D1 tenant isolation. Previously this
  * function only took `interviewId`; callers must now supply both.
  */
 export async function computeServerAuthoritativeUsage(

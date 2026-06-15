@@ -34,7 +34,7 @@ export const GET = createApiHandler<unknown, RouteParams>({
           ? "expired"
           : "pending";
 
-    const blogName = (await getBlogDisplayName(invite.blogId)) ?? "the blog";
+    const blogName = (await getBlogDisplayName(invite.blogId)) ?? "the knowledge base";
 
     return NextResponse.json({
       email: invite.email,

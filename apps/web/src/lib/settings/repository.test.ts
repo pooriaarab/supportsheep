@@ -1,5 +1,5 @@
 /**
- * Unit tests for the blog-settings D1 repository functions.
+ * Unit tests for the knowledge base-settings D1 repository functions.
  *
  * Uses real in-memory SQLite (libsql) matching the categories test pattern.
  */
