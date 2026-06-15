@@ -461,7 +461,7 @@ export function DomainSettings() {
         open={confirmRemove}
         onOpenChange={setConfirmRemove}
         title="Remove custom domain"
-        description="your support portal will stop serving from this domain. You can add it again later."
+        description="Your support portal will stop serving from this domain. You can add it again later."
         confirmLabel="Remove"
         variant="destructive"
         loading={removeMutation.isPending}
