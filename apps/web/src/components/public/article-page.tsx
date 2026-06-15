@@ -17,6 +17,7 @@ import {
   type ResolvedPublicArticleTheme,
 } from "@/lib/public-article-theme";
 import { cn } from "@/lib/utils";
+import { FeedbackWidget } from "@/components/public/feedback-widget";
 import {
   AI_DISCLOSURE_TEXT,
   stripLeadingAiDisclosure,
@@ -916,6 +917,8 @@ export function ArticlePage({
                 </div>
               </div>
             ) : null}
+
+            <FeedbackWidget articleId={article.id} />
           </article>
 
           <aside className="space-y-6 lg:sticky lg:top-28">
