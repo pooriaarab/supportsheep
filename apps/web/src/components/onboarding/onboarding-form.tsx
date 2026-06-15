@@ -106,12 +106,22 @@ export function OnboardingForm() {
     }, SLUG_CHECK_DEBOUNCE_MS);
   };
 
+  const handleDisplayNameChange = (rawName: string) => {
+    setDisplayName(rawName);
+    // Auto-fill the slug if the user hasn't typed a custom one yet
+    // (i.e. if the slug is empty or it perfectly matches the old display name's slugification)
+    const oldExpectedSlug = normalizeSlug(displayName);
+    if (!slug || slug === oldExpectedSlug) {
+      handleSlugChange(rawName);
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormError("");
 
     if (!displayName.trim()) {
-      setFormError("Please enter a name for your blog.");
+      setFormError("Please enter a name for your knowledge base.");
       return;
     }
     if (slug.length < 3) {
@@ -172,7 +182,7 @@ export function OnboardingForm() {
               <Input
                 id="displayName"
                 value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
+                onChange={(e) => handleDisplayNameChange(e.target.value)}
                 placeholder="My Support Hub"
                 maxLength={100}
                 autoFocus
