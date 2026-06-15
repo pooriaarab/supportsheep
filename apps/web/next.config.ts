@@ -2,6 +2,9 @@ import path from "node:path";
 import type { NextConfig } from "next";
 import { buildAgentDiscoveryLinkHeader } from "./src/lib/agent-discovery";
 import { getDefaultSecurityHeaders } from "./src/lib/security-headers";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 const isDev = process.env.NODE_ENV === "development";
 const skipNextBuildTypecheck = process.env.SKIP_NEXT_BUILD_TYPECHECK === "true";
