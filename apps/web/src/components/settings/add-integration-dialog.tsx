@@ -88,7 +88,7 @@ const AVAILABLE_PROVIDERS: AvailableProvider[] = [
     type: "oauth",
     provider: "google_analytics",
     category: "analytics",
-    description: "Track public blog traffic and sync GA4 reporting metrics.",
+    description: "Track public support portal traffic and sync GA4 reporting metrics.",
     icon: "A",
   },
   {

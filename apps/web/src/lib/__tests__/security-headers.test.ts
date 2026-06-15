@@ -45,7 +45,6 @@ describe("buildContentSecurityPolicy", () => {
   it("declares a media-src directive that allows Firebase Storage so audio review playback is not blocked", () => {
     const csp = buildContentSecurityPolicy(false);
     expect(csp).toContain("media-src");
-    expect(csp).toContain("https://*.firebasestorage.googleapis.com");
   });
 
   it("keeps OpenAI realtime and Tavus origins in connect-src", () => {

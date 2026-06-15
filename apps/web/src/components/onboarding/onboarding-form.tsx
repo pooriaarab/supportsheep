@@ -159,7 +159,7 @@ export function OnboardingForm() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">
-            Create your blog
+            Create your knowledge base
           </CardTitle>
           <CardDescription className="text-center">
             Pick a name and a URL to get started.
@@ -168,12 +168,12 @@ export function OnboardingForm() {
         <CardContent>
           <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             <div className="space-y-2">
-              <Label htmlFor="displayName">Blog name</Label>
+              <Label htmlFor="displayName">Knowledge base name</Label>
               <Input
                 id="displayName"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                placeholder="My Blog"
+                placeholder="My Support Hub"
                 maxLength={100}
                 autoFocus
               />
@@ -185,7 +185,7 @@ export function OnboardingForm() {
                 id="slug"
                 value={slug}
                 onChange={(e) => handleSlugChange(e.target.value)}
-                placeholder="my-blog"
+                placeholder="my-support-hub"
                 maxLength={32}
                 aria-invalid={statusMessage?.tone === "error"}
                 aria-describedby="slug-status"
@@ -219,7 +219,7 @@ export function OnboardingForm() {
               className="w-full"
               disabled={submitting || slugStatus.kind === "checking"}
             >
-              {submitting ? "Creating…" : "Create blog"}
+              {submitting ? "Creating…" : "Create knowledge base"}
             </Button>
           </form>
         </CardContent>

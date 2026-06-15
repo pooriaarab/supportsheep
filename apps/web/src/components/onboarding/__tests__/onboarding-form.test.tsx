@@ -1,5 +1,5 @@
 /**
- * Light coverage for the onboarding "Create your blog" form: it renders, a
+ * Light coverage for the onboarding "Create your knowledge base" form: it renders, a
  * successful POST /api/v1/blogs redirects to the dashboard, and a 409
  * slug_taken surfaces an inline message instead of redirecting.
  */
@@ -74,7 +74,7 @@ describe("OnboardingForm", () => {
 
   it("renders the create-your-blog form", async () => {
     await mount();
-    expect(container.textContent).toContain("Create your blog");
+    expect(container.textContent).toContain("Create your knowledge base");
     expect(container.querySelector("#displayName")).not.toBeNull();
     expect(container.querySelector("#slug")).not.toBeNull();
   });
@@ -82,11 +82,11 @@ describe("OnboardingForm", () => {
   it("POSTs to /api/v1/blogs and redirects to /dashboard on 201", async () => {
     const fetchMock = vi
       .spyOn(globalThis, "fetch")
-      .mockResolvedValue(jsonResponse(201, { id: "b1", slug: "my-blog" }));
+      .mockResolvedValue(jsonResponse(201, { id: "b1", slug: "my-support-hub" }));
 
     await mount();
-    setInput("displayName", "My Blog");
-    setInput("slug", "my-blog");
+    setInput("displayName", "My Support Hub");
+    setInput("slug", "my-support-hub");
     await submitForm();
 
     const postCall = fetchMock.mock.calls.find(
@@ -97,7 +97,7 @@ describe("OnboardingForm", () => {
     expect(postCall).toBeTruthy();
     expect(
       JSON.parse((postCall![1] as RequestInit).body as string),
-    ).toEqual({ slug: "my-blog", displayName: "My Blog" });
+    ).toEqual({ slug: "my-support-hub", displayName: "My Support Hub" });
     expect(push).toHaveBeenCalledWith("/dashboard");
   });
 
@@ -107,7 +107,7 @@ describe("OnboardingForm", () => {
     );
 
     await mount();
-    setInput("displayName", "My Blog");
+    setInput("displayName", "My Support Hub");
     setInput("slug", "taken-slug");
     await submitForm();
 

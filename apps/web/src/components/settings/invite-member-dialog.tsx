@@ -81,7 +81,7 @@ export function InviteMemberDialog({
       open={open}
       onOpenChange={handleOpenChange}
       title="Invite member"
-      description="Invite someone to this blog by email. Existing accounts are added immediately; everyone else receives an email with an accept link."
+      description="Invite someone to this support portal by email. Existing accounts are added immediately; everyone else receives an email with an accept link."
       submitLabel={createInvite.isPending ? "Inviting..." : "Send invite"}
       loading={createInvite.isPending}
       disabled={!email.trim() || !blogId}

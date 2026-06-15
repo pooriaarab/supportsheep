@@ -6,8 +6,8 @@ import { getMembershipByUser } from "@/lib/tenancy/repository";
 import { OnboardingForm } from "@/components/onboarding/onboarding-form";
 
 export const metadata: Metadata = {
-  title: "Create your blog",
-  description: "Set up your blog to get started.",
+  title: "Create your knowledge base",
+  description: "Set up your knowledge base to get started.",
   robots: { index: false, follow: false },
 };
 

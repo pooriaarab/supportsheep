@@ -949,7 +949,7 @@ export function ArticlePage({
                 )}
                 style={resolvedArticleTheme.readingLayout.bodyTextStyle}
               >
-                Supportsheep is the open-source platform that publishes this blog.
+                Supportsheep is the open-source platform that publishes this support portal.
                 Spin up your own in minutes.
               </p>
               <Link
