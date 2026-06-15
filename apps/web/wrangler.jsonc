@@ -16,30 +16,30 @@
 
   "env": {
     "staging": {
-      "name": "blogbat-staging",
-      // staging.blogbat.com is served by this worker (blogbat.com zone is on the account).
+      "name": "supportsheep-staging",
+      // staging.supportsheep.com is served by this worker (supportsheep.com zone is on the account).
       //
       // M5 subdomain routing (manual infra step — NOT wired here): for tenant
-      // blogs at `{slug}.blogbat.com` (or `{slug}.staging.blogbat.com`) to reach
+      // blogs at `{slug}.supportsheep.com` (or `{slug}.staging.supportsheep.com`) to reach
       // this worker, add a wildcard worker route plus a wildcard DNS record, e.g.
-      //   { "pattern": "*.staging.blogbat.com", "custom_domain": false }
+      //   { "pattern": "*.staging.supportsheep.com", "custom_domain": false }
       // (a wildcard route needs a zone route, not a `custom_domain: true` entry,
       // and a matching `*.staging` CNAME/AAAA on the zone). Until that exists,
       // `resolveBlogIdByHost`/`getRequestBlogId` simply falls back to
       // DEFAULT_BLOG_ID, so current single-tenant behavior is preserved.
       // NOTE: staging intentionally has NO `*/*` catch-all route. Staging shares
-      // the blogbat.com zone with production, and a zone can have only one `*/*`
+      // the supportsheep.com zone with production, and a zone can have only one `*/*`
       // route — a second one here would conflict with production's. As a result,
       // serving Cloudflare for SaaS external custom domains is unsupported on
       // staging.
       // The `custom_domain` binding alone is NOT enough: production's `*/*`
-      // SaaS catch-all (on this same blogbat.com zone, → blogbat-production)
+      // SaaS catch-all (on this same supportsheep.com zone, → supportsheep-production)
       // outranks a `custom_domain` binding and silently hijacks
-      // staging.blogbat.com to the PROD worker. This MORE-SPECIFIC zone route
-      // reclaims staging.blogbat.com for blogbat-staging.
+      // staging.supportsheep.com to the PROD worker. This MORE-SPECIFIC zone route
+      // reclaims staging.supportsheep.com for supportsheep-staging.
       "routes": [
-        { "pattern": "staging.blogbat.com", "custom_domain": true },
-        { "pattern": "staging.blogbat.com/*", "zone_name": "blogbat.com" }
+        { "pattern": "staging.supportsheep.com", "custom_domain": true },
+        { "pattern": "staging.supportsheep.com/*", "zone_name": "supportsheep.com" }
       ],
       // Cron Trigger for the custom-domain status poller. NOTE: the OpenNext
       // (@opennextjs/cloudflare) worker entry only exports a `fetch` handler —
@@ -53,15 +53,15 @@
       "triggers": { "crons": ["*/5 * * * *"] },
       // BETTER_AUTH_SECRET is a worker secret (wrangler secret put), not here.
       "vars": {
-        "BETTER_AUTH_URL": "https://staging.blogbat.com",
-        "ALLOWED_EMAIL_DOMAINS": "@blogbat.com",
+        "BETTER_AUTH_URL": "https://staging.supportsheep.com",
+        "ALLOWED_EMAIL_DOMAINS": "@supportsheep.com",
         "CUSTOM_DOMAINS_ENABLED": "true"
       },
       "send_email": [{ "name": "EMAIL", "remote": true }],
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "blogbat-staging",
+          "database_name": "supportsheep-staging",
           "database_id": "0bcf87dc-b9d9-4a98-b237-9bb86a54f01c",
           "migrations_dir": "./src/db/migrations"
         }
@@ -77,40 +77,40 @@
       "r2_buckets": [
         {
           "binding": "MEDIA",
-          "bucket_name": "blogbat-media-staging"
+          "bucket_name": "supportsheep-media-staging"
         }
       ]
     },
     "production": {
-      "name": "blogbat-production",
-      // blogbat.com = marketing homepage (apex); app.blogbat.com = dashboard/app
-      // (auth happens here); *.blogbat.com = tenant blog subdomains; custom domains
-      // resolve via blogs.custom_domain. www is covered by the *.blogbat.com wildcard.
+      "name": "supportsheep-production",
+      // supportsheep.com = marketing homepage (apex); app.supportsheep.com = dashboard/app
+      // (auth happens here); *.supportsheep.com = tenant blog subdomains; custom domains
+      // resolve via blogs.custom_domain. www is covered by the *.supportsheep.com wildcard.
       // Custom domains for EXTERNAL customers are served via Cloudflare for SaaS
-      // custom hostnames + the customers.blogbat.com fallback origin (covered by
-      // the *.blogbat.com route) and need no per-domain config here. The
+      // custom hostnames + the customers.supportsheep.com fallback origin (covered by
+      // the *.supportsheep.com route) and need no per-domain config here. The
       // contentrabbitai.com route below is the one exception: it lives in our own
       // account, so it's pinned here (wrangler reconciles worker routes on every
       // deploy and would otherwise wipe a route added out-of-band).
       "routes": [
-        { "pattern": "blogbat.com", "custom_domain": true },
-        { "pattern": "app.blogbat.com", "custom_domain": true },
-        { "pattern": "*.blogbat.com/*", "zone_name": "blogbat.com" },
+        { "pattern": "supportsheep.com", "custom_domain": true },
+        { "pattern": "app.supportsheep.com", "custom_domain": true },
+        { "pattern": "*.supportsheep.com/*", "zone_name": "supportsheep.com" },
         { "pattern": "blog.contentrabbitai.com/*", "zone_name": "contentrabbitai.com" },
         // REQUIRED for Cloudflare for SaaS custom hostnames — DO NOT REMOVE.
         // Cloudflare for SaaS matches Worker routes against the CUSTOMER's custom
         // hostname (e.g. blog.theirdomain.com), NOT against the fallback origin.
-        // So `*.blogbat.com/*` above can never match an external custom domain:
+        // So `*.supportsheep.com/*` above can never match an external custom domain:
         // without this catch-all the worker never runs for those hosts, Cloudflare
-        // falls through to the dummy fallback origin (customers.blogbat.com →
+        // falls through to the dummy fallback origin (customers.supportsheep.com →
         // AAAA 100::), and the custom domain returns HTTP 522. This `*/*` route
-        // matches ALL traffic entering the blogbat.com zone, including SaaS custom
+        // matches ALL traffic entering the supportsheep.com zone, including SaaS custom
         // hostnames, so the worker runs and serves the isolated tenant. The
-        // `custom_domain: true` routes (blogbat.com apex, app.blogbat.com) take
+        // `custom_domain: true` routes (supportsheep.com apex, app.supportsheep.com) take
         // precedence, so marketing + dashboard are unaffected. An unrecognized
         // host that reaches the worker via this route resolves to not-found (404),
         // never the default blog — see resolveRequestTenant.
-        { "pattern": "*/*", "zone_name": "blogbat.com" }
+        { "pattern": "*/*", "zone_name": "supportsheep.com" }
       ],
       // Cron Trigger for the custom-domain status poller. See the staging env
       // note above: OpenNext's worker exports only `fetch` (no `scheduled()`),
@@ -119,14 +119,14 @@
       // a scheduled handler is available.
       "triggers": { "crons": ["*/5 * * * *"] },
       "vars": {
-        "BETTER_AUTH_URL": "https://app.blogbat.com",
+        "BETTER_AUTH_URL": "https://app.supportsheep.com",
         "CUSTOM_DOMAINS_ENABLED": "true"
       },
       "send_email": [{ "name": "EMAIL", "remote": true }],
       "d1_databases": [
         {
           "binding": "DB",
-          "database_name": "blogbat-production",
+          "database_name": "supportsheep-production",
           "database_id": "0c9be9ee-69ce-4160-a5ae-2c04093d939f",
           "migrations_dir": "./src/db/migrations"
         }
@@ -140,7 +140,7 @@
       "r2_buckets": [
         {
           "binding": "MEDIA",
-          "bucket_name": "blogbat-media-production"
+          "bucket_name": "supportsheep-media-production"
         }
       ]
     }
