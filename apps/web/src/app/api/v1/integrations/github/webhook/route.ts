@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/db";
 import { articles } from "@/db/schema/articles";
 import { nanoid } from "nanoid";
+import { createAnthropic } from "@ai-sdk/anthropic";
+import { generateText } from "ai";
 
 /**
  * POST /api/v1/integrations/github/webhook
@@ -26,28 +28,29 @@ export async function POST(req: Request) {
 
     const pr = payload.pull_request;
     
-    // In a real implementation, we would:
-    // 1. Fetch the full PR diff from GitHub API using the installation token.
-    // 2. Call Anthropic API to generate a user-facing support article.
-    // 3. Look up the correct blogId based on the repository installation mapping.
+    // Fallback environment variable for the agent. In a real system, look this up per-tenant
+    const apiKey = process.env.ANTHROPIC_API_KEY;
     
-    // For now, we simulate this by inserting a placeholder draft directly.
+    if (!apiKey) {
+      console.warn("ANTHROPIC_API_KEY not set. Auto-Docs generation skipped.");
+      return NextResponse.json({ error: "Missing API Key" }, { status: 500 });
+    }
+
+    const anthropic = createAnthropic({ apiKey });
+
+    // Call Anthropic API to generate a user-facing support article.
+    const { text: draftContent } = await generateText({
+      model: anthropic("claude-3-5-sonnet-20241022"),
+      system: "You are a senior technical writer for a SaaS company. Your job is to take raw GitHub Pull Request descriptions and turn them into user-facing support articles or changelog updates. The output should be strictly Markdown, professional but approachable, focusing on the value to the end user.",
+      prompt: `Please write a support article for the following merged Pull Request.
+      
+PR Title: ${pr.title}
+PR Body: ${pr.body || "No description provided."}
+`,
+    });
+
     const blogId = "default"; // Mocked tenant
     
-    const draftContent = `
-# New Feature: ${pr.title}
-
-*Auto-generated from PR #${pr.number}*
-
-Our team just merged a new update!
-
-**Developer notes:**
-${pr.body || "No description provided."}
-
----
-*Supportsheep AI drafted this article based on code changes.*
-    `.trim();
-
     const db = getDb();
     const articleId = nanoid();
     await db.insert(articles).values({
@@ -57,17 +60,17 @@ ${pr.body || "No description provided."}
       status: "draft",
       data: JSON.stringify({
         id: articleId,
-        title: pr.title,
+        title: `Update: ${pr.title}`,
         description: `Auto-drafted support article for PR #${pr.number}`,
         content: draftContent,
-        htmlContent: `<p>Auto-drafted support article for PR #${pr.number}</p>`,
+        htmlContent: `<div class="auto-doc-generated">${draftContent.replace(/\\n/g, '<br/>')}</div>`, // simplistic markdown->html fallback
         markdownContent: draftContent,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       }),
     });
 
-    return NextResponse.json({ success: true, message: "Draft generated" }, { status: 201 });
+    return NextResponse.json({ success: true, message: "Draft generated via AI" }, { status: 201 });
   } catch (err) {
     console.error("GitHub webhook error:", err);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
