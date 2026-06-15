@@ -96,7 +96,6 @@
         { "pattern": "supportsheep.com", "custom_domain": true },
         { "pattern": "app.supportsheep.com", "custom_domain": true },
         { "pattern": "*.supportsheep.com/*", "zone_name": "supportsheep.com" },
-        { "pattern": "blog.contentrabbitai.com/*", "zone_name": "contentrabbitai.com" },
         // REQUIRED for Cloudflare for SaaS custom hostnames — DO NOT REMOVE.
         // Cloudflare for SaaS matches Worker routes against the CUSTOMER's custom
         // hostname (e.g. blog.theirdomain.com), NOT against the fallback origin.
