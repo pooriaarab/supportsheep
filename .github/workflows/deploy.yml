@@ -41,6 +41,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          NEXT_PUBLIC_APP_URL: "https://app.staging.supportsheep.com"
           # NEXT_PUBLIC_FIREBASE_* are the browser client SDK config; dummies are
           # fine for the build (server-side Firebase has been removed for D1/R2).
           NEXT_PUBLIC_FIREBASE_API_KEY: dummy
