@@ -27,7 +27,7 @@ const ROLE_OPTIONS: { value: InvitableRole; label: string }[] = [
 interface InviteMemberDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  /** The blog to invite into (the caller's active tenant). */
+  /** the support portal to invite into (the caller's active tenant). */
   blogId: string | null;
 }
 
@@ -62,7 +62,7 @@ export function InviteMemberDialog({
       });
       toast.success(
         result.added
-          ? `${trimmedEmail} added to the blog`
+          ? `${trimmedEmail} added to the support portal`
           : `Invite sent to ${trimmedEmail}`,
       );
       handleOpenChange(false);

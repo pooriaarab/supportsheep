@@ -143,7 +143,7 @@ function AcceptInviteContent() {
           "This invite was sent to a different email. Sign in with the invited address.",
         );
       } else if (reason === "expired") {
-        setError("This invite has expired. Ask the blog owner to send a new one.");
+        setError("This invite has expired. Ask the support portal owner to send a new one.");
       } else if (reason === "already_accepted") {
         setError("This invite has already been used.");
       } else {
@@ -179,7 +179,7 @@ function AcceptInviteContent() {
     return (
       <Shell
         title="Invite expired"
-        description={`Your invite to ${invite.blogName} has expired. Ask the blog owner to send a new one.`}
+        description={`Your invite to ${invite.blogName} has expired. Ask the support portal owner to send a new one.`}
       />
     );
   }

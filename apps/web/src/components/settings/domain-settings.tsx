@@ -266,7 +266,7 @@ export function DomainSettings() {
                 Custom domain
               </CardTitle>
               <CardDescription>
-                Serve your blog from your own domain instead of a supportsheep.com
+                Serve your support portal from your own domain instead of a supportsheep.com
                 subdomain.
               </CardDescription>
             </div>
@@ -282,7 +282,7 @@ export function DomainSettings() {
                 <Label htmlFor="domain-input">Domain</Label>
                 <Input
                   id="domain-input"
-                  placeholder="blog.example.com"
+                  placeholder="support.example.com"
                   value={input}
                   autoCapitalize="none"
                   autoCorrect="off"
@@ -321,7 +321,7 @@ export function DomainSettings() {
                   <span className="font-medium text-foreground">Verified</span>
                   <span className="text-muted-foreground">
                     {" "}
-                    — your blog is live at{" "}
+                    — your support portal is live at{" "}
                   </span>
                   <a
                     href={`https://${domain?.domain}`}
@@ -461,7 +461,7 @@ export function DomainSettings() {
         open={confirmRemove}
         onOpenChange={setConfirmRemove}
         title="Remove custom domain"
-        description="Your blog will stop serving from this domain. You can add it again later."
+        description="your support portal will stop serving from this domain. You can add it again later."
         confirmLabel="Remove"
         variant="destructive"
         loading={removeMutation.isPending}

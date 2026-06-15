@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="156" height="36" viewBox="0 0 156 36" fill="none" role="img" aria-label="BlogBat">
-  <path
-    fill="#ffffff"
-    transform="translate(0 4.5) scale(0.5)"
-    d="M32 22C30.5 19 29 17 27 16C27.5 18 27.5 19.5 27 21C24.5 19.5 21 19 18 20.5C15 22 13 25 12.5 28.5C11 27 9 26.5 7 26.5C8 28.5 8.5 30.5 8 32.5C11 31.5 14 32 16.5 34C18 35.2 19.5 34.5 20 33C21 35.5 23 37 25.5 37.5C26 36 27 35 28.5 35C30 35 31.2 36 32 37.5C32.8 36 34 35 35.5 35C37 35 38 36 38.5 37.5C41 37 43 35.5 44 33C44.5 34.5 46 35.2 47.5 34C50 32 53 31.5 56 32.5C55.5 30.5 56 28.5 57 26.5C55 26.5 53 27 51.5 28.5C51 25 49 22 46 20.5C43 19 39.5 19.5 37 21C36.5 19.5 36.5 18 37 16C35 17 33.5 19 32 22Z"
-  />
-  <text x="38" y="25" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5" fill="#ffffff">BlogBat</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Supportsheep">
+  <!-- Minimalist abstract sheep logo -->
+  <path d="M42 20 C42 12, 34 8, 28 14 C24 10, 16 12, 16 20 C10 22, 10 32, 16 34 C18 42, 28 44, 32 38 C36 44, 46 42, 46 34 C52 32, 52 22, 46 20 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Sheep face/head -->
+  <rect x="40" y="24" width="12" height="10" rx="4" fill="#6c4cef"/>
+  <!-- Legs -->
+  <rect x="22" y="42" width="4" height="10" rx="2" fill="#ffffff"/>
+  <rect x="38" y="42" width="4" height="10" rx="2" fill="#ffffff"/>
 </svg>
