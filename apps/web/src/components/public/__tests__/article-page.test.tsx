@@ -54,7 +54,7 @@ describe("ArticlePage", () => {
       />,
     );
 
-    expect(html).toContain("Start your own blog");
+    expect(html).toContain("Powered by Supportsheep");
     expect(html).toContain("Powered by Supportsheep");
     expect(html).not.toContain(">Categories<");
   });

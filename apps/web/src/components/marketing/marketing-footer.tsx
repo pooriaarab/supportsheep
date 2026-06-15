@@ -40,7 +40,7 @@ export function MarketingFooter() {
                 href={APP_SIGNUP_URL}
                 className="text-sm opacity-80 transition-opacity hover:opacity-100 no-underline"
               >
-                Start your blog
+                Get Started
               </Link>
               <Link
                 href={APP_LOGIN_URL}

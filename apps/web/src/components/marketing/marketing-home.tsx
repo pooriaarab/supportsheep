@@ -14,7 +14,8 @@
 import Link from "next/link";
 import { MarketingHeader } from "./marketing-header";
 import { MarketingFooter } from "./marketing-footer";
-import { ArrowRight, Github, Mic, MessageCircle, FileText } from "lucide-react";
+import { ArrowRight, Github, Mic, MessageCircle, FileText, CheckCircle2 } from "lucide-react";
+import { FeedbackWidget } from "@/components/public/feedback-widget";
 
 export function MarketingHome() {
   return (
@@ -89,24 +90,60 @@ export function MarketingHome() {
           </div>
         </section>
 
+        {/* Interactive Preview Section */}
+        <section className="py-24 px-4 bg-muted/30 border-y border-border">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Built-in feedback loops.</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Supportsheep automatically embeds feedback widgets on every article. Track what&apos;s helpful, identify stale content, and let AI rewrite it based on customer signals.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Semantic search resolution</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> Automatic stale content flagging</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-primary" /> AI-suggested article updates</li>
+              </ul>
+              <Link href="/onboarding" className="text-primary font-medium hover:underline flex items-center gap-1">
+                Explore analytics <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            
+            {/* Real Component Mockup */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 blur-3xl -z-10 rounded-full" />
+              <div className="bg-card border border-border shadow-xl rounded-2xl p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                <div className="w-16 h-4 bg-muted rounded-full mb-6" />
+                <div className="w-3/4 h-4 bg-muted rounded-full mb-3" />
+                <div className="w-full h-4 bg-muted rounded-full mb-3" />
+                <div className="w-5/6 h-4 bg-muted rounded-full mb-8" />
+                
+                {/* Embedded Real Component! */}
+                <div className="pointer-events-none">
+                  <FeedbackWidget articleId="mock-123" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Feature Grid */}
-        <section id="features" className="py-20">
+        <section id="features" className="py-24">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold">Everything you need to scale support</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm">
+              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
                 <Mic className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Real-time Voice AI</h3>
                 <p className="text-muted-foreground">Embed a voice widget on your site so customers can literally talk to your docs.</p>
               </div>
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm">
+              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
                 <MessageCircle className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">Chatbot Widget</h3>
                 <p className="text-muted-foreground">A sleek, embeddable chat interface that grounds answers strictly in your knowledge base.</p>
               </div>
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm">
+              <div className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
                 <Github className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-2">GitHub Auto-Docs</h3>
                 <p className="text-muted-foreground">Connect your repo and let Anthropic Claude turn your technical PRs into human-readable guides.</p>

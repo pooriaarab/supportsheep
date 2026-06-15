@@ -9,7 +9,7 @@
 export const APP_URL = "https://app.supportsheep.com";
 
 /**
- * "Start your blog" — signup / onboarding entry point.
+ * "Get Started" — signup / onboarding entry point.
  *
  * Routes through the magic-link login with a `returnTo` of `/onboarding`. New
  * visitors enter their email, follow the magic link, and land on the

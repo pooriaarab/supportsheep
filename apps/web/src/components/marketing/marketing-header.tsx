@@ -9,7 +9,7 @@ import Link from "next/link";
 
 import { Button } from "@repo/ui/primitives/button";
 
-import { BatMark } from "./bat-mark";
+import { SheepMark } from "./sheep-mark";
 import { APP_LOGIN_URL, APP_SIGNUP_URL } from "./marketing-links";
 
 export function MarketingHeader() {
@@ -21,7 +21,7 @@ export function MarketingHeader() {
           className="group flex items-center gap-2 text-foreground no-underline"
           aria-label="Supportsheep home"
         >
-          <BatMark className="size-7 text-primary transition-transform duration-200 group-hover:-translate-y-0.5" />
+          <SheepMark className="size-7 text-primary transition-transform duration-200 group-hover:-translate-y-0.5" />
           <span className="text-lg font-semibold tracking-tight">Supportsheep</span>
         </Link>
         <div className="flex items-center gap-2">
@@ -29,7 +29,7 @@ export function MarketingHeader() {
             <Link href={APP_LOGIN_URL}>Sign In</Link>
           </Button>
           <Button asChild size="sm">
-            <Link href={APP_SIGNUP_URL}>Start Your Blog</Link>
+            <Link href={APP_SIGNUP_URL}>Get Started</Link>
           </Button>
         </div>
       </div>

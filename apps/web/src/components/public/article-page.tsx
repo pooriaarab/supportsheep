@@ -940,7 +940,7 @@ export function ArticlePage({
                   resolvedArticleTheme.typography.sectionTitleClassName,
                 )}
               >
-                Start your own blog
+                Powered by Supportsheep
               </h2>
               <p
                 className={cn(
