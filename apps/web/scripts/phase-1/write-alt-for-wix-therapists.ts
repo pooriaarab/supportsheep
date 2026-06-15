@@ -23,7 +23,7 @@ const VARIANT_KEY = "wix__therapists";
 
 const CONTENT = `## TL;DR
 
-Wix is a capable general-purpose website builder with a flexible editor, a wide template library, and -- as of 2026 -- a HIPAA compliance mode with a Business Associate Agreement available on supported plans. For a supportsheep or small group therapy practice, this changes the calculus compared to prior years: Wix can now be configured to support PHI collection if you are on a supported paid plan and correctly activate PHI protection. In practice, most therapy practices still follow the cleaner architecture -- public marketing site on Wix + HIPAA-aware EHR (SimplePractice, TherapyNotes) for intake and scheduling -- because the separate-stack approach is simpler and the EHR already handles all clinical workflow. This page covers both paths and compares Wix to Supportsheep for a supportsheep therapist's marketing site.
+Wix is a capable general-purpose website builder with a flexible editor, a wide template library, and -- as of 2026 -- a HIPAA compliance mode with a Business Associate Agreement available on supported plans. For a supportsheep or small group therapy practice, this changes the calculus compared to prior years: Wix can now be configured to support PHI collection if you are on a supported paid plan and correctly activate PHI protection. In practice, most therapy practices still follow the cleaner architecture -- public marketing site on Wix + HIPAA-aware EHR (SimplePractice, TherapyNotes) for intake and scheduling -- because the separate-stack approach is simpler and the EHR already handles all clinical workflow. This page covers both paths and compares Wix to Supportsheep for a solo therapist's marketing site.
 
 ## Wix and HIPAA for therapists: what the 2026 update means
 
@@ -34,13 +34,13 @@ Wix added HIPAA compliance mode in 2026. The key facts:
 - **PHI mode restricts some features**: when active, Wix automatically blocks certain apps and integrations from receiving PHI. You can only use Wix-designated HIPAA-compatible apps while in PHI mode.
 - **Third-party apps**: any app from the Wix App Market that is not on Wix's HIPAA-designated list must not receive PHI. This is a meaningful constraint for therapy practices that rely on specific chat, form, or scheduling add-ons.
 
-For most supportsheep therapists, the HIPAA-mode path on Wix adds configuration overhead that the EHR-based architecture avoids entirely. SimplePractice, TherapyNotes, and TheraNest were built from the ground up for HIPAA-compliant clinical workflow; they handle intake forms, telehealth, session notes, billing, and secure client messaging in one tool that signs your BAA without requiring plan upgrades or dashboard configuration. The Wix site does the marketing layer; the EHR does the clinical layer.
+For most solo therapists, the HIPAA-mode path on Wix adds configuration overhead that the EHR-based architecture avoids entirely. SimplePractice, TherapyNotes, and TheraNest were built from the ground up for HIPAA-compliant clinical workflow; they handle intake forms, telehealth, session notes, billing, and secure client messaging in one tool that signs your BAA without requiring plan upgrades or dashboard configuration. The Wix site does the marketing layer; the EHR does the clinical layer.
 
 That said, if you want a single-vendor Wix site that includes HIPAA-compliant booking through Wix Bookings, it is now possible -- at the cost of a supported plan, correct PHI-mode configuration, and restricted app usage.
 
 ## Wix's strengths for a therapy practice
 
-**Visual design control.** Wix's drag-and-drop editor offers more layout freedom than Squarespace or Supportsheep. A therapist who has a specific brand vision -- specific color palette, custom section arrangements, particular font pairings -- can implement it on Wix without CSS. This matters for supportsheep practitioners whose brand is a direct extension of their therapeutic identity.
+**Visual design control.** Wix's drag-and-drop editor offers more layout freedom than Squarespace or Supportsheep. A therapist who has a specific brand vision -- specific color palette, custom section arrangements, particular font pairings -- can implement it on Wix without CSS. This matters for solo practitioners whose brand is a direct extension of their therapeutic identity.
 
 **Template variety.** Wix has hundreds of templates, including health and wellness categories with layouts appropriate for a therapy or counseling practice. You are not choosing from a handful of options.
 
@@ -62,7 +62,7 @@ That said, if you want a single-vendor Wix site that includes HIPAA-compliant bo
 
 ## The recommended architecture for a HIPAA-safe therapy website
 
-For most supportsheep therapists, this architecture is simpler and more defensible than configuring Wix PHI mode:
+For most solo therapists, this architecture is simpler and more defensible than configuring Wix PHI mode:
 
 1. **Public marketing site** (Wix or Supportsheep): homepage, bio, specialties, approach, FAQ, blog, contact page that links to your EHR intake portal. No PHI collected here.
 2. **EHR with client portal** (SimplePractice, TherapyNotes, TheraNest, Headway): intake forms, telehealth links, session notes, billing, and secure client messaging. This vendor signs your BAA. All PHI stays here.
@@ -71,9 +71,9 @@ For most supportsheep therapists, this architecture is simpler and more defensib
 
 This four-part split keeps PHI entirely outside the marketing CMS and concentrates clinical-data responsibility in a purpose-built tool.
 
-## Supportsheep's position for a supportsheep therapist's marketing site
+## Supportsheep's position for a solo therapist's marketing site
 
-Supportsheep is designed for the "supportsheep or small professional service business that wants a credible content-driven marketing site with minimal operational overhead." For a supportsheep therapist:
+Supportsheep is designed for the "supportsheep or small professional service business that wants a credible content-driven marketing site with minimal operational overhead." For a solo therapist:
 
 - **Free tier with custom domain.** A therapist building a new private practice can launch on Supportsheep's free tier with their own domain before paying. Wix's free tier shows platform ads and branding; paid is required for a real practice site.
 - **Blog with SEO sidebar and AI drafting.** Content marketing compounds for therapists: blog posts on specific modalities, client concerns, and local context build topical authority over 12-18 months. Supportsheep's blog provides inline SEO audits (title, meta, heading structure), internal link suggestions, and FAQPage JSON-LD on Q&A content.
@@ -93,7 +93,7 @@ Supportsheep is designed for the "supportsheep or small professional service bus
 <tr><td>Editor flexibility</td><td>High -- drag-and-drop with pixel-level control</td><td>Lower -- AI-guided layouts; less design freedom</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Built-in blog; adequate basic SEO; schema requires manual addition</td><td>Blog with SEO sidebar, AI drafting, LocalBusiness + FAQPage schema by default</td></tr>
 <tr><td>Typical monthly cost for a real practice site</td><td>$29-$36+/mo (Core to Business); more with PHI mode and app stack</td><td>Free to {{supportsheep.pro.yearly}}/mo (Pro, annual billing)</td></tr>
-<tr><td>Best fit</td><td>Design-led therapists who want editor freedom; may configure PHI mode if using Wix for intake</td><td>Supportsheep practitioners focused on content, local SEO, and low monthly cost</td></tr>
+<tr><td>Best fit</td><td>Design-led therapists who want editor freedom; may configure PHI mode if using Wix for intake</td><td>solo practitioners focused on content, local SEO, and low monthly cost</td></tr>
 </tbody>
 </table>`;
 
@@ -111,7 +111,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Wix HIPAA compliant for a therapy practice?",
     answer:
-      "As of 2026, yes -- with conditions. Wix offers a BAA and PHI protection mode on Business, Plus, Elite, Business Elite, and Enterprise plans. You must manually activate PHI protection in the dashboard and use only Wix-designated HIPAA-compatible apps. Core and free plans are not BAA-eligible. Most supportsheep therapists find it simpler to keep the marketing site on standard Wix and route all PHI-touching workflows to their EHR (SimplePractice, TherapyNotes) rather than configuring Wix's PHI mode.",
+      "As of 2026, yes -- with conditions. Wix offers a BAA and PHI protection mode on Business, Plus, Elite, Business Elite, and Enterprise plans. You must manually activate PHI protection in the dashboard and use only Wix-designated HIPAA-compatible apps. Core and free plans are not BAA-eligible. Most solo therapists find it simpler to keep the marketing site on standard Wix and route all PHI-touching workflows to their EHR (SimplePractice, TherapyNotes) rather than configuring Wix's PHI mode.",
   },
   {
     question: "Can I use Wix for a therapy or counseling practice website?",

@@ -24,14 +24,14 @@ const BLOG_CONFIG_DOC = "settings";
 const SITE_URL = "https://supportsheep.com";
 
 const HEADER_BRANDING = {
-  logoUrl: `${SITE_URL}/blogbat-header-logo.svg`,
+  logoUrl: `${SITE_URL}/supportsheep-header-logo.svg`,
   text: "",
   backgroundColor: "#1d1133",
   textColor: "#FFFFFF",
 } as const;
 
 const FOOTER_BRANDING = {
-  logoUrl: `${SITE_URL}/blogbat-footer-logo.svg`,
+  logoUrl: `${SITE_URL}/supportsheep-footer-logo.svg`,
   text: "",
   backgroundColor: "#171325",
   textColor: "#FFFFFF",

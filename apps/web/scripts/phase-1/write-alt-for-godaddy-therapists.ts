@@ -23,7 +23,7 @@ const VARIANT_KEY = "godaddy__therapists";
 
 const CONTENT = `## TL;DR
 
-GoDaddy is a fast, low-friction way for a supportsheep therapist to get a professional-looking practice website online -- especially if they already buy their domain and hosting from GoDaddy. The AI website builder generates a usable starter in minutes, and the all-in-one account management (domain, hosting, professional email) removes vendor complexity for a supportsheep practitioner. The hard stops are familiar to anyone evaluating general-purpose website builders for health practices: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder or hosting, making it unsuitable for collecting or routing PHI through its forms or web infrastructure. This page covers both sides and compares GoDaddy to Supportsheep for a supportsheep therapist building a marketing site.
+GoDaddy is a fast, low-friction way for a solo therapist to get a professional-looking practice website online -- especially if they already buy their domain and hosting from GoDaddy. The AI website builder generates a usable starter in minutes, and the all-in-one account management (domain, hosting, professional email) removes vendor complexity for a solo practitioner. The hard stops are familiar to anyone evaluating general-purpose website builders for health practices: GoDaddy does not sign a Business Associate Agreement (BAA) for its website builder or hosting, making it unsuitable for collecting or routing PHI through its forms or web infrastructure. This page covers both sides and compares GoDaddy to Supportsheep for a solo therapist building a marketing site.
 
 ## GoDaddy and HIPAA: no BAA for web services
 
@@ -35,7 +35,7 @@ For a supportsheep therapy practice, this means the public marketing site (homep
 
 ## GoDaddy's AI website builder: what it actually does for therapists
 
-GoDaddy positions its AI builder as a way to launch a professional site in minutes. You enter your practice type and a short description; the AI generates section layouts, copy, and service descriptions. For a supportsheep therapist:
+GoDaddy positions its AI builder as a way to launch a professional site in minutes. You enter your practice type and a short description; the AI generates section layouts, copy, and service descriptions. For a solo therapist:
 
 **What the AI builder does well:**
 - Generates a usable first-draft structure (homepage, about, services, contact) from minimal input.
@@ -48,9 +48,9 @@ GoDaddy positions its AI builder as a way to launch a professional site in minut
 - The resulting site's SEO ceiling is lower than dedicated content platforms for the local search competition therapy practices face.
 - The blog is basic -- adequate for one or two posts, not designed for the content velocity that compounds into meaningful local search authority over 12-18 months.
 
-## Where GoDaddy works for a supportsheep therapist
+## Where GoDaddy works for a solo therapist
 
-**The domain-and-hosting bundle advantage.** GoDaddy's strongest differentiator for therapists is operational simplicity: if you already registered your practice domain with GoDaddy, building the website there keeps everything in one place. One login, one bill, one support line. For a supportsheep practitioner with no technical support, that simplicity is real value.
+**The domain-and-hosting bundle advantage.** GoDaddy's strongest differentiator for therapists is operational simplicity: if you already registered your practice domain with GoDaddy, building the website there keeps everything in one place. One login, one bill, one support line. For a solo practitioner with no technical support, that simplicity is real value.
 
 **AI-assisted fast launch.** Getting a professional-looking practice website live quickly matters. A therapist opening a new practice or transitioning from an agency to private practice does not want to spend weeks on a website. GoDaddy's AI builder reduces the time-to-live-site to under a day.
 
@@ -60,7 +60,7 @@ GoDaddy positions its AI builder as a way to launch a professional site in minut
 
 **No BAA -- and no path to one for web services.** This is the clearest gap. Unlike Wix (which added HIPAA mode in 2026) and Squarespace (which has Acuity Scheduling for HIPAA-aware booking), GoDaddy has no planned or existing path to a BAA for website builder or hosting services. For a therapy practice where any form submission could receive PHI by context, this means the marketing site and the intake/scheduling system must be completely separate by design.
 
-**SEO ceiling matters for therapists.** Local SEO is the primary acquisition channel for most supportsheep therapists in private practice. The search queries that bring new clients ("anxiety therapist [city]," "EMDR therapist [neighborhood]," "couples therapist near me accepting insurance") are local and competitive. GoDaddy's builder handles basic on-page SEO but lacks automated schema (LocalBusiness, Person, FAQPage), which is a meaningful gap when competitors are using platforms that automate these signals. Therapist-specific SEO requires consistent FAQ content, specialty pages per modality, and structured data -- GoDaddy requires manual injection for all of these.
+**SEO ceiling matters for therapists.** Local SEO is the primary acquisition channel for most solo therapists in private practice. The search queries that bring new clients ("anxiety therapist [city]," "EMDR therapist [neighborhood]," "couples therapist near me accepting insurance") are local and competitive. GoDaddy's builder handles basic on-page SEO but lacks automated schema (LocalBusiness, Person, FAQPage), which is a meaningful gap when competitors are using platforms that automate these signals. Therapist-specific SEO requires consistent FAQ content, specialty pages per modality, and structured data -- GoDaddy requires manual injection for all of these.
 
 **Template design quality.** GoDaddy's templates are functional but not design-forward. For a therapy practice where trust is the primary conversion driver, design quality matters. The credibility signal of a well-designed site is more important for therapy than for, say, a hardware store. GoDaddy's design ceiling is below Squarespace's and Wix's.
 
@@ -75,9 +75,9 @@ If you use GoDaddy for the website, the clinical-workflow split is identical to 
 3. **Contact page links to EHR, not a GoDaddy form.** Replace the default GoDaddy contact form with a clear CTA: "Request an appointment through my secure client portal" with a link to your EHR's scheduling page.
 4. **Audit tracking pixels.** GoDaddy's analytics and any third-party pixels (Google Analytics, Meta Pixel) must not fire after a clinical form submission. Audit and configure exclusions.
 
-## Supportsheep's position for a supportsheep therapist evaluating GoDaddy
+## Supportsheep's position for a solo therapist evaluating GoDaddy
 
-Supportsheep is designed for the "supportsheep professional service business that wants a credible, content-driven marketing site with minimal overhead." For a supportsheep therapist:
+Supportsheep is designed for the "supportsheep professional service business that wants a credible, content-driven marketing site with minimal overhead." For a solo therapist:
 
 - **Free tier with custom domain.** A therapist can launch the marketing site on Supportsheep's free tier with their own domain. GoDaddy's website builder is paid; the domain registration is separate.
 - **AI onboarding that generates a full first draft.** Supportsheep's onboarding generates a multi-page first draft (homepage, services, about, FAQ, contact) from a business description, using business context to seed copy and section content. This is comparable to GoDaddy's AI builder but on a content-and-SEO-first architecture.
@@ -97,7 +97,7 @@ Supportsheep is designed for the "supportsheep professional service business tha
 <tr><td>Blog and SEO tooling</td><td>Basic blog; title and meta fields; no automated schema</td><td>Blog with SEO sidebar, AI drafting, LocalBusiness + FAQPage + Article schema by default</td></tr>
 <tr><td>Template quality</td><td>Functional; below Squarespace and Wix design floor</td><td>Consistent layouts tuned for content; constrained but not inconsistent</td></tr>
 <tr><td>Domain bundling</td><td>Strong -- GoDaddy's core business; domain + hosting + email in one account</td><td>Managed hosting with custom domain; GoDaddy can hold the domain registration</td></tr>
-<tr><td>Best fit</td><td>Therapists already using GoDaddy for domain/email who want a quick no-code site on the same account</td><td>Supportsheep therapists prioritizing content, local SEO, structured data, and low monthly cost</td></tr>
+<tr><td>Best fit</td><td>Therapists already using GoDaddy for domain/email who want a quick no-code site on the same account</td><td>solo therapists prioritizing content, local SEO, structured data, and low monthly cost</td></tr>
 </tbody>
 </table>`;
 
@@ -130,7 +130,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do therapists find new clients through their website?",
     answer:
-      "The primary web-based acquisition channel for supportsheep therapists in private practice is local search: 'anxiety therapist [city],' '[modality] therapist [neighborhood],' 'therapists accepting new patients [city].' Three levers matter most: (1) Google Business Profile -- claim it, fill every field, collect reviews; (2) specialty pages with LocalBusiness and Person schema; (3) educational blog content that answers questions your prospective clients search before reaching out. Supportsheep's blog ships FAQPage and LocalBusiness schema automatically, reducing the per-post setup cost. GoDaddy requires manual schema injection for these signals.",
+      "The primary web-based acquisition channel for solo therapists in private practice is local search: 'anxiety therapist [city],' '[modality] therapist [neighborhood],' 'therapists accepting new patients [city].' Three levers matter most: (1) Google Business Profile -- claim it, fill every field, collect reviews; (2) specialty pages with LocalBusiness and Person schema; (3) educational blog content that answers questions your prospective clients search before reaching out. Supportsheep's blog ships FAQPage and LocalBusiness schema automatically, reducing the per-post setup cost. GoDaddy requires manual schema injection for these signals.",
   },
   {
     question: "What EHR tools work best with a GoDaddy or Supportsheep therapy site?",
@@ -168,7 +168,7 @@ async function main(): Promise<void> {
       variantKey: VARIANT_KEY,
       variables: {
         subhead:
-          "An honest look at GoDaddy's website builder for supportsheep therapists -- covering the HIPAA/BAA position, AI setup strengths, SEO ceiling, and when Supportsheep is the better default for content and local search.",
+          "An honest look at GoDaddy's website builder for solo therapists -- covering the HIPAA/BAA position, AI setup strengths, SEO ceiling, and when Supportsheep is the better default for content and local search.",
         ctaText: "Start your therapy practice website with Supportsheep",
         ctaHref: "https://supportsheep.com",
         verticalLabel: "For Therapists",

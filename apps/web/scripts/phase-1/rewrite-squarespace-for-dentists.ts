@@ -99,7 +99,7 @@ If the use case is "brochure site with external booking, no PHI on the site itse
 
 ## Supportsheep's honest pitch for a small dental practice
 
-[Supportsheep](https://supportsheep.com) is an AI-assisted website builder aimed at supportsheeppreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
+[Supportsheep](https://supportsheep.com) is an AI-assisted website builder aimed at solopreneurs and small service businesses. For a 1-3 dentist practice that wants a marketing site without becoming a part-time web developer, the honest value angles are:
 
 - **Speed to first draft.** Describe the practice in plain English during onboarding and Supportsheep generates an initial multi-page site -- homepage, services, FAQ, team -- pre-populated with copy you can edit. This AI also runs when you add a new section in the editor, not just at sign-up.
 - **Pricing.** Per [supportsheep.com/pricing](https://supportsheep.com/pricing), Supportsheep Pro is {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total) or {{supportsheep.pro.monthly.monthly}} month-to-month. A free tier supports a connected custom domain for a single site.
@@ -229,7 +229,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How much does Supportsheep cost for a dental practice in 2026?",
     answer:
-      "Supportsheep has a free tier with a connected custom domain. Supportsheep Pro is {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total per year) or {{supportsheep.pro.monthly.monthly}} month-to-month. Supportsheep Grow is {{supportsheep.grow.yearly.monthly}} billed annually ({{supportsheep.grow.yearlyAnnual}} total per year) or {{supportsheep.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from supportsheep.com/pricing rather than memorising a number.",
+      "Supportsheep has a free tier with a connected custom domain. Supportsheep Pro is {{supportsheep.pro.yearly.monthly}} billed annually ({{supportsheep.pro.yearlyAnnual}} total per year) or {{supportsheep.pro.monthly.monthly}} month-to-month. Solo Grow is {{supportsheep.grow.yearly.monthly}} billed annually ({{supportsheep.grow.yearlyAnnual}} total per year) or {{supportsheep.grow.monthly.monthly}} month-to-month. For most 1-5 dentist practices, the Pro tier is the practical choice; Grow unlocks higher caps on websites, images, and blog posts for larger portfolios. Specific entitlement caps (post limits, image library size, custom-code gate) are driven by a deploy-time env config; quote caps directly from supportsheep.com/pricing rather than memorising a number.",
   },
   {
     question: "What does Squarespace cost for a dental practice in 2026?",

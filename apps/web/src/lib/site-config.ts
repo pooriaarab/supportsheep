@@ -11,7 +11,7 @@ export const siteConfig = {
   publisher: "Supportsheep",
   keywords: [
     "small business website",
-    "seo for supportsheeppreneurs",
+    "seo for solopreneurs",
     "website builder",
     "blogbat",
     "ai website",

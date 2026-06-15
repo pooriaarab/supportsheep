@@ -17,7 +17,7 @@ interface PublicFooterProps {
   showToolsLink?: boolean;
 }
 
-const DEFAULT_FOOTER_LOGO_URL = "/blogbat-footer-logo.svg";
+const DEFAULT_FOOTER_LOGO_URL = "/supportsheep-footer-logo.svg";
 
 export function PublicFooter({
   config,

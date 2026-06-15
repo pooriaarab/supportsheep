@@ -363,7 +363,7 @@ export const COMPETITORS: Competitor[] = [
     slug: "durable",
     websiteUrl: "https://durable.co",
     bestFor:
-      "Supportsheeppreneurs and micro-businesses who want an AI-generated site plus bundled CRM, invoicing, and marketing tools in one subscription.",
+      "solopreneurs and micro-businesses who want an AI-generated site plus bundled CRM, invoicing, and marketing tools in one subscription.",
     pricingTiers: [
       {
         name: "Free",

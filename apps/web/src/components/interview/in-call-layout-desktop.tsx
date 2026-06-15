@@ -157,13 +157,13 @@ export function InCallLayoutDesktop({
     session.sendTimeRemainingCue(
       "[SYSTEM] One minute remaining. Wrap up the current topic naturally, then end the conversation cleanly.",
     );
-  }, [session]);
+  }, [session.sendTimeRemainingCue]);
 
   const handleFinalWarning = useCallback(() => {
     session.sendTimeRemainingCue(
       "[SYSTEM] 15 seconds left. Finish your current sentence, thank the user, and call end_interview now.",
     );
-  }, [session]);
+  }, [session.sendTimeRemainingCue]);
 
   // Single-line orb caption. Surfaces the most relevant state, with
   // strict priority:
@@ -301,7 +301,7 @@ export function InCallLayoutDesktop({
           {/* Left group: logo + topic title + guest name */}
           <div className="flex min-w-0 flex-1 items-center gap-2">
             <Image
-              src="/blogbat-header-logo.svg"
+              src="/supportsheep-header-logo.svg"
               alt="Supportsheep"
               width={72}
               height={20}

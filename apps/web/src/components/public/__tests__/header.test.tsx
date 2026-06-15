@@ -40,7 +40,7 @@ describe("PublicHeader", () => {
     const html = renderToStaticMarkup(<PublicHeader config={config} />);
 
     expect(html).toContain('href="/"');
-    expect(html).toContain('src="/blogbat-header-logo.svg"');
+    expect(html).toContain('src="/supportsheep-header-logo.svg"');
     expect(html).toContain('alt="Supportsheep logo"');
     expect(html).toContain('href="/tools"');
   });
@@ -94,7 +94,7 @@ describe("PublicHeader", () => {
       />,
     );
 
-    expect(html).toContain('src="/blogbat-header-logo.svg"');
+    expect(html).toContain('src="/supportsheep-header-logo.svg"');
     expect(html).toContain('alt="Acme Header"');
     expect(html).not.toContain(">Acme Header<");
     expect(html).toContain("background-color:#221144");

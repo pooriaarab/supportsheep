@@ -50,7 +50,7 @@ describe("PublicFooter", () => {
   it("falls back to the Supportsheep footer logo when no custom footer brand is configured", () => {
     const html = renderToStaticMarkup(<PublicFooter config={config} />);
 
-    expect(html).toContain('src="/blogbat-footer-logo.svg"');
+    expect(html).toContain('src="/supportsheep-footer-logo.svg"');
     expect(html).toContain('alt="Supportsheep logo"');
   });
 
@@ -112,7 +112,7 @@ describe("PublicFooter", () => {
       />,
     );
 
-    expect(html).toContain('src="/blogbat-footer-logo.svg"');
+    expect(html).toContain('src="/supportsheep-footer-logo.svg"');
     expect(html).toContain('alt="Acme Footer"');
     expect(html).not.toContain(">Acme Footer<");
     expect(html).toContain("background-color:#101820");

@@ -7,7 +7,7 @@ interface PublicHeaderProps {
   config: BlogConfig;
 }
 
-const DEFAULT_HEADER_LOGO_URL = "/blogbat-header-logo.svg";
+const DEFAULT_HEADER_LOGO_URL = "/supportsheep-header-logo.svg";
 
 export function PublicHeader({ config }: PublicHeaderProps) {
   const headerAppearance = {

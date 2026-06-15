@@ -85,7 +85,7 @@ Independent third-party reviews of Squarespace (G2, dental-marketing sites like 
 
 ## Supportsheep's pitch for a small dental practice
 
-Supportsheep is built specifically for the "supportsheep or 2-5 dentist practice that wants a credible marketing site without becoming a part-time web developer" shape. The differences versus Squarespace that actually matter for a dental owner:
+Supportsheep is built specifically for the "solo or 2-5 dentist practice that wants a credible marketing site without becoming a part-time web developer" shape. The differences versus Squarespace that actually matter for a dental owner:
 
 - **Free plan with a connected custom domain.** You can point your existing practice domain at Supportsheep on the free tier while you iterate. Squarespace requires a paid plan once the 14-day trial ends.
 - **A first-class blog with an SEO sidebar and AI drafting.** Squarespace's blog is fine. Supportsheep's is designed around dental-relevant patterns: title/meta checks, internal linking suggestions, FAQPage JSON-LD emission, and a built-in thin-content guard that blocks very short or shallow pages from being indexed.
@@ -194,7 +194,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Should I use Squarespace or Supportsheep for my dental website?",
     answer:
-      "Choose Squarespace if visual polish and a wide template library are the most important factors and you are comfortable wiring up a separate HIPAA-aware booking and intake stack. Choose Supportsheep if you want a free tier with a connected custom domain, a first-class blog with an SEO sidebar and AI drafting, built-in schema (LocalBusiness, Article, FAQPage), and a thin-content guard that blocks shallow pages from being indexed. Supportsheep is a better default for a supportsheep or 2-5 dentist practice that cares more about content velocity and local SEO than about pixel-perfect template design.",
+      "Choose Squarespace if visual polish and a wide template library are the most important factors and you are comfortable wiring up a separate HIPAA-aware booking and intake stack. Choose Supportsheep if you want a free tier with a connected custom domain, a first-class blog with an SEO sidebar and AI drafting, built-in schema (LocalBusiness, Article, FAQPage), and a thin-content guard that blocks shallow pages from being indexed. Supportsheep is a better default for a solo or 2-5 dentist practice that cares more about content velocity and local SEO than about pixel-perfect template design.",
   },
   {
     question: "What HIPAA-compliant booking tools pair well with Squarespace?",

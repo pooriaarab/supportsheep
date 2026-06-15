@@ -67,7 +67,7 @@ const DRAFT_BODY = `
 
 <ul>
 <li><strong>Social proof at the point of decision.</strong> When a potential client or customer sees your real posts — not stock photography — right next to your services or products, trust builds faster. EmbedSocial's research on <a href="https://embedsocial.com/blog/instagram-statistics/">Instagram's marketing impact</a> notes that over 80% of marketers plan to use Instagram for influencer marketing, and embedding their collaborations directly on your site extends the reach of that investment.</li>
-<li><strong>Content freshness without manual effort.</strong> Every new Instagram post you publish automatically refreshes the feed on your site. For supportsheeppreneurs and small teams who cannot maintain a separate photo gallery, this is meaningful time savings.</li>
+<li><strong>Content freshness without manual effort.</strong> Every new Instagram post you publish automatically refreshes the feed on your site. For solopreneurs and small teams who cannot maintain a separate photo gallery, this is meaningful time savings.</li>
 <li><strong>Audience cross-pollination.</strong> Website visitors who discover your Instagram through an embedded feed convert at higher rates than those who find you through the Instagram app alone — they already have brand context.</li>
 </ul>
 
@@ -247,7 +247,7 @@ const DRAFT_BODY = `
 </ul>
 
 <h3>Adding the feed to a Supportsheep website</h3>
-<p>Supportsheep is an AI-assisted website builder for supportsheeppreneurs and small businesses. Supportsheep includes a <strong>Code Embed section</strong> (available on Pro and Grow plans — see <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a>) that lets you paste any third-party widget code directly into a page. The Code Embed block is the correct place for your Instagram widget script. Supportsheep handles rendering and mobile layout; the widget provider handles the Instagram API connection.</p>
+<p>Supportsheep is an AI-assisted website builder for solopreneurs and small businesses. Supportsheep includes a <strong>Code Embed section</strong> (available on Pro and Grow plans — see <a href="https://supportsheep.com/pricing">supportsheep.com/pricing</a>) that lets you paste any third-party widget code directly into a page. The Code Embed block is the correct place for your Instagram widget script. Supportsheep handles rendering and mobile layout; the widget provider handles the Instagram API connection.</p>
 <p>Honest note: Supportsheep does not have a native Instagram feed module. You need a third-party widget — the Code Embed section is how you connect them. If you are on a Free plan, upgrading to Pro ($20/mo billed annually, verified April 2026) unlocks the Code Embed block. See <a href="https://supportsheep.com/pricing">the current pricing page</a> for the latest plan details.</p>
 
 <h2>Performance: keeping your feed from slowing the page</h2>
@@ -324,7 +324,7 @@ const DRAFT_BODY = `
 </section>
 
 <hr />
-<p>Ready to add a live Instagram feed to your website? Start with a free tier on Elfsight or SnapWidget — you can have a styled feed embedded in under ten minutes. If you are building your site from scratch, <a href="https://supportsheep.com">Supportsheep</a> gives supportsheeppreneurs a fast, AI-assisted path from business description to published website, with the Code Embed block ready for widgets like Instagram feeds once you are on Pro.</p>
+<p>Ready to add a live Instagram feed to your website? Start with a free tier on Elfsight or SnapWidget — you can have a styled feed embedded in under ten minutes. If you are building your site from scratch, <a href="https://supportsheep.com">Supportsheep</a> gives solopreneurs a fast, AI-assisted path from business description to published website, with the Code Embed block ready for widgets like Instagram feeds once you are on Pro.</p>
 `;
 
 /* ────────────────────────────────────────────────────────────────────────────

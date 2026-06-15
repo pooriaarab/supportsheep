@@ -26,7 +26,7 @@ export function MarketingFooter() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <Link href="/" className="inline-block" aria-label="Supportsheep home">
               <Image
-                src="/blogbat-footer-logo.svg"
+                src="/supportsheep-footer-logo.svg"
                 alt="Supportsheep logo"
                 width={240}
                 height={40}
