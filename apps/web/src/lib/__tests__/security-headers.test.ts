@@ -42,10 +42,15 @@ describe("buildContentSecurityPolicy", () => {
     expect(frameSrcMatch).toContain("https://tavusapi.com");
   });
 
-  it("declares a media-src directive that allows Firebase Storage so audio review playback is not blocked", () => {
+  it("declares a media-src directive for self and blob sources", () => {
     const csp = buildContentSecurityPolicy(false);
-    expect(csp).toContain("media-src");
-    expect(csp).toContain("https://*.firebasestorage.googleapis.com");
+    const mediaSrc = csp
+      .split(";")
+      .map((d) => d.trim())
+      .find((d) => d.startsWith("media-src "));
+    expect(mediaSrc, "media-src directive must exist").toBeTruthy();
+    expect(mediaSrc).toContain("'self'");
+    expect(mediaSrc).toContain("blob:");
   });
 
   it("keeps OpenAI realtime and Tavus origins in connect-src", () => {
