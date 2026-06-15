@@ -55,7 +55,6 @@ describe("ArticlePage", () => {
     );
 
     expect(html).toContain("Powered by Supportsheep");
-    expect(html).toContain("Powered by Supportsheep");
     expect(html).not.toContain(">Categories<");
   });
 
