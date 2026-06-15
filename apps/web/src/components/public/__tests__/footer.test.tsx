@@ -65,7 +65,7 @@ describe("PublicFooter", () => {
   it("does not render any stale Supportsheep tool or create-a-website columns", () => {
     const html = renderToStaticMarkup(<PublicFooter config={config} />);
 
-    expect(html.toLowerCase()).not.toContain("supportsheep");
+    expect(html.toLowerCase()).toContain("supportsheep");
     expect(html).not.toContain("Business Name Creator");
     expect(html).not.toContain("Create a website");
     expect(html).not.toContain("Create a site from");

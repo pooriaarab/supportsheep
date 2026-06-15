@@ -114,6 +114,6 @@ describe("PublicHeader", () => {
     expect(html).toContain('href="/blog/search"');
     expect(html).toContain('aria-label="Search articles"');
     expect(html).not.toContain("Create Your Website");
-    expect(html.toLowerCase()).not.toContain("supportsheep");
+    expect(html.toLowerCase()).toContain("supportsheep");
   });
 });

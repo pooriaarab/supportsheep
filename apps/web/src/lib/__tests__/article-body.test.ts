@@ -4,7 +4,7 @@ import { slugifyHeading, transformArticleBody } from "@/lib/article-body";
 describe("slugifyHeading", () => {
   it("produces stable kebab-case slugs", () => {
     expect(slugifyHeading("Getting Started with Supportsheep")).toBe(
-      "getting-started-with-blogbat",
+      "getting-started-with-supportsheep",
     );
   });
 

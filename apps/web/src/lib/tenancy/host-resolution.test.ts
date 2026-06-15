@@ -201,7 +201,7 @@ describe("isMarketingHost", () => {
 
   it("strips the port and lowercases before matching", () => {
     expect(isMarketingHost("Supportsheep.com:443")).toBe(true);
-    expect(isMarketingHost("WWW.BLOGBAT.COM:8080")).toBe(true);
+    expect(isMarketingHost("WWW.supportsheep.COM:8080")).toBe(true);
   });
 
   it("marks local-dev apex hosts as marketing", () => {
@@ -223,7 +223,7 @@ describe("isMarketingHost", () => {
 
   it("marks the staging apex as marketing (staging mirror of the apex)", () => {
     expect(isMarketingHost("staging.supportsheep.com")).toBe(true);
-    expect(isMarketingHost("STAGING.BLOGBAT.COM:443")).toBe(true);
+    expect(isMarketingHost("STAGING.supportsheep.COM:443")).toBe(true);
   });
 
   it("does NOT mark staging tenant subdomains as marketing", () => {
@@ -248,7 +248,7 @@ describe("isPlatformHost", () => {
     expect(isPlatformHost("acme.supportsheep.com")).toBe(true);
     expect(isPlatformHost("customers.supportsheep.com")).toBe(true);
     expect(isPlatformHost("acme.staging.supportsheep.com")).toBe(true);
-    expect(isPlatformHost("ACME.BLOGBAT.COM:443")).toBe(true);
+    expect(isPlatformHost("ACME.supportsheep.COM:443")).toBe(true);
   });
 
   it("marks local-dev apex hosts as first-party", () => {
@@ -271,7 +271,7 @@ describe("isPlatformHost", () => {
 describe("isTenantSubdomainHost", () => {
   it("marks a non-reserved *.supportsheep.com host as a tenant subdomain", () => {
     expect(isTenantSubdomainHost("acme.supportsheep.com")).toBe(true);
-    expect(isTenantSubdomainHost("ACME.BLOGBAT.COM:443")).toBe(true);
+    expect(isTenantSubdomainHost("ACME.supportsheep.COM:443")).toBe(true);
     expect(isTenantSubdomainHost("acme.staging.supportsheep.com")).toBe(true);
   });
 
@@ -288,7 +288,7 @@ describe("isTenantSubdomainHost", () => {
     expect(isTenantSubdomainHost("customers.supportsheep.com")).toBe(false);
   });
 
-  it("does NOT mark non-blogbat custom domains as tenant subdomains", () => {
+  it("does NOT mark non-supportsheep custom domains as tenant subdomains", () => {
     expect(isTenantSubdomainHost("blog.acme.com")).toBe(false);
     expect(isTenantSubdomainHost("example.com")).toBe(false);
   });
