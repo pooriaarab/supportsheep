@@ -1906,7 +1906,7 @@ const expandedDeterministicTemplates: FreeToolTemplate[] = [
     description: "Extract campaign UTM parameters from a tracked URL.",
     category: "seo",
     family: "seo_technical",
-    inputs: [textInput("url", "URL", "https://example.com/?utm_source=blogbat")],
+    inputs: [textInput("url", "URL", "https://example.com/?utm_source=supportsheep")],
     deterministicExecutor: utmUrlParser,
   }),
   deterministicTool({

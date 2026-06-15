@@ -80,7 +80,7 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-latest
     # TODO(M2): restore e2e gating once Cloudflare/test-Firebase env is wired.
-    # Quarantined for M1 — no BlogBat Firebase project yet, so the required
+    # Quarantined for M1 — no supportsheep Firebase project yet, so the required
     # FIREBASE_* / NEXT_PUBLIC_FIREBASE_* secrets are unavailable in CI.
     continue-on-error: true
     steps:

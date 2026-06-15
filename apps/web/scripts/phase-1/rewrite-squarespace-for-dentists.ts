@@ -4,7 +4,7 @@
  * `.claude/context/supportsheep-product.md`.
  *
  * The previous seed (see `write-squarespace-for-dentists.ts`) conflated
- * blogbat (this repo) features with Supportsheep product features. In
+ * supportsheep (this repo) features with Supportsheep product features. In
  * particular it claimed Supportsheep shipped an "SEO sidebar", "AI drafting inside
  * the editor", a "thin-content guard", "internal linking suggestions", and
  * "LocalBusiness/FAQPage/Article/BreadcrumbList schema by default" -- none of

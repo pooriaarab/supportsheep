@@ -72,7 +72,7 @@ describe("legacy-to-article", () => {
   it("builds flat comparison slugs without route prefixes", () => {
     expect(buildComparisonSlugs("wix")).toEqual({
       alternativeSlug: "wix-alternative",
-      vsSlug: "blogbat-vs-wix",
+      vsSlug: "supportsheep-vs-wix",
     });
   });
 

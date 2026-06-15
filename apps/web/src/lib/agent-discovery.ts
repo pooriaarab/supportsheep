@@ -59,7 +59,7 @@ export function buildMcpServerCard(siteUrl: string) {
     version: "1.0",
     protocolVersion: "2025-06-18",
     serverInfo: {
-      name: "blogbat",
+      name: "supportsheep",
       version: "1.0.0",
     },
     documentationUrl: `${siteUrl}/docs`,
@@ -154,11 +154,11 @@ export function buildAgentCard(siteUrl: string) {
 }
 
 const BLOGBAT_DISCOVERY_SKILL_PATH =
-  "/.well-known/agent-skills/blogbat-discovery/SKILL.md";
+  "/.well-known/agent-skills/supportsheep-discovery/SKILL.md";
 
 export function getSupportsheepDiscoverySkillMarkdown(siteUrl: string) {
   return `---
-name: blogbat-discovery
+name: supportsheep-discovery
 description: Find and consume Supportsheep public content, docs, and discovery metadata.
 ---
 
@@ -201,7 +201,7 @@ export function buildAgentSkillsIndex(siteUrl: string) {
     .digest("hex");
   const skills: AgentSkill[] = [
     {
-      name: "blogbat-discovery",
+      name: "supportsheep-discovery",
       type: "skill-md",
       description:
         "Find and consume Supportsheep public content, docs, and discovery metadata.",

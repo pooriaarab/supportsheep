@@ -54,7 +54,7 @@ export function stringifyJsonLdForScript(jsonLd: unknown): string {
 
 const BLOGBAT_ORGANIZATION_SAME_AS = [
   "https://supportsheep.com",
-  "https://github.com/pooriaarab/blogbat",
+  "https://github.com/pooriaarab/supportsheep",
 ];
 
 const BLOGBAT_SITE_FAQS = [

@@ -45,7 +45,7 @@ interface ArticlePageProps {
 }
 
 function getDisplayAuthor(author?: string | null) {
-  if (!author || author.toLowerCase() === "blogblogbatai") {
+  if (!author || author.toLowerCase() === "blogsupportsheepai") {
     return "Supportsheep";
   }
 

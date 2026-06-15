@@ -212,7 +212,7 @@ async function ensureNamedAuthors() {
   const db = getFirestore();
   const now = FieldValue.serverTimestamp();
 
-  await db.collection("authors").doc("blogbat-editorial-team").set(
+  await db.collection("authors").doc("supportsheep-editorial-team").set(
     {
       name: "Supportsheep Editorial Team",
       jobTitle: "Editorial Team",

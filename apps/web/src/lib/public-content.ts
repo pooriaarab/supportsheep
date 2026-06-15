@@ -18,7 +18,7 @@ function isPlaceholderSiteDescription(
 
 export function normalizePublicAuthor(author?: string | null): string {
   const value = typeof author === "string" ? author.trim() : "";
-  return !value || value.toLowerCase() === "blogblogbatai"
+  return !value || value.toLowerCase() === "blogsupportsheepai"
     ? "Supportsheep"
     : value;
 }

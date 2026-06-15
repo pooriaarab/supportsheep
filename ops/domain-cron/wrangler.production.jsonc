@@ -4,7 +4,7 @@
   // This worker has NO routes — it is invoked only by its Cron Trigger — so a
   // `wrangler deploy` here cannot wipe any app worker's routes. INTERNAL_CRON_SECRET
   // is a worker secret set out-of-band (see README), not declared here.
-  "name": "blogbat-domain-cron",
+  "name": "supportsheep-domain-cron",
   "account_id": "4fd11561cd1f5c452d97912140c0af9e",
   "main": "./worker.production.js",
   "compatibility_date": "2025-06-01",

@@ -751,7 +751,7 @@ export interface Pillar {
 /* -------------------------------------------------------------------------- */
 
 /**
- * Pricing tier for a competitor or for BlogBat itself. Costs are monthly USD
+ * Pricing tier for a competitor or for Supportsheep itself. Costs are monthly USD
  * expressed as a human-readable string so unusual tiers (free, custom,
  * contact-sales) do not have to be shoehorned into a number.
  */
@@ -768,7 +768,7 @@ export interface CompetitorPricingTier {
  */
 export interface CompetitorFeatureMatrixRow {
   feature: string;
-  blogbat: string;
+  supportsheep: string;
   competitor: string;
   notes?: string;
 }

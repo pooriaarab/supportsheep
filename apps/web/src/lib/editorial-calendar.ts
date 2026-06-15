@@ -140,7 +140,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
   },
   {
     title: "How to Switch From Wix to Supportsheep Without Losing SEO",
-    slug: "switch-from-wix-to-blogbat-without-losing-seo",
+    slug: "switch-from-wix-to-supportsheep-without-losing-seo",
     category: "guides",
     postType: "how_to",
     cluster: "migration",
@@ -148,7 +148,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
   },
   {
     title: "How to Move From Squarespace to Supportsheep Without Losing Rankings",
-    slug: "move-from-squarespace-to-blogbat-without-losing-rankings",
+    slug: "move-from-squarespace-to-supportsheep-without-losing-rankings",
     category: "guides",
     postType: "how_to",
     cluster: "migration",
@@ -156,7 +156,7 @@ export const BLOG_EDITORIAL_BATCH: readonly EditorialPostSpec[] = [
   },
   {
     title: "WordPress to Supportsheep Migration Checklist",
-    slug: "wordpress-to-blogbat-migration-checklist",
+    slug: "wordpress-to-supportsheep-migration-checklist",
     category: "guides",
     postType: "how_to",
     cluster: "migration",

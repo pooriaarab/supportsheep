@@ -18,7 +18,7 @@ const competitor: Competitor = {
     { name: "Light", monthlyPrice: "$17/mo", summary: "Entry plan" },
   ],
   featureMatrixRow: [
-    { feature: "Custom domain", blogbat: "Yes", competitor: "Paid plans only" },
+    { feature: "Custom domain", supportsheep: "Yes", competitor: "Paid plans only" },
   ],
   prosCons: { pros: ["Pro"], cons: ["Con"] },
   verifiedAt: "2026-04-20",

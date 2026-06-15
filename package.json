@@ -1,7 +1,7 @@
 {
   "name": "supportsheep",
   "version": "0.1.0",
-  "description": "Blog platform for blogbat.com — Next.js/Firebase/Netlify",
+  "description": "Blog platform for supportsheep.com — Next.js/Firebase/Netlify",
   "private": true,
   "workspaces": [
     "apps/*",

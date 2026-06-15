@@ -275,7 +275,7 @@ export function convertPillarToArticleInput(
 export function buildComparisonSlugs(competitorSlug: string) {
   return {
     alternativeSlug: `${competitorSlug}-alternative`,
-    vsSlug: `blogbat-vs-${competitorSlug}`,
+    vsSlug: `supportsheep-vs-${competitorSlug}`,
   } as const;
 }
 
@@ -328,7 +328,7 @@ function renderFeatureMatrix(competitor: Competitor): string {
       (row) => `
         <tr>
           <td>${escapeHtml(row.feature)}</td>
-          <td>${escapeHtml(row.blogbat)}</td>
+          <td>${escapeHtml(row.supportsheep)}</td>
           <td>${escapeHtml(row.competitor)}</td>
           <td>${escapeHtml(row.notes ?? "")}</td>
         </tr>
@@ -353,7 +353,7 @@ function renderFeatureMatrix(competitor: Competitor): string {
 export function buildAlternativeArticleInput(
   competitor: Competitor,
   narrative: CompetitorNarrativeInput,
-  blogbatProsCons: CompetitorProsCons,
+  supportsheepProsCons: CompetitorProsCons,
 ): LegacyArticleDraft {
   const slug = buildComparisonSlugs(competitor.slug).alternativeSlug;
   const body = sanitizeArticleHtml(`
@@ -368,7 +368,7 @@ export function buildAlternativeArticleInput(
     </section>
     ${renderFeatureMatrix(competitor)}
     ${renderPricingTable(competitor)}
-    ${renderProsCons("Supportsheep strengths and tradeoffs", blogbatProsCons)}
+    ${renderProsCons("Supportsheep strengths and tradeoffs", supportsheepProsCons)}
     ${renderProsCons(`${competitor.name} strengths and tradeoffs`, competitor.prosCons)}
     ${buildFaqBlockHtml(narrative.faqs)}
   `);
@@ -388,7 +388,7 @@ export function buildAlternativeArticleInput(
     keywords: [
       `${competitor.name} alternative`,
       `alternative to ${competitor.name}`,
-      `blogbat vs ${competitor.name}`,
+      `supportsheep vs ${competitor.name}`,
     ],
     metaTitle: `Supportsheep vs ${competitor.name}: which website builder should you pick?`,
     metaDescription: truncate(
@@ -432,7 +432,7 @@ export function buildVsArticleInput(
     primaryCategory: "web-builders",
     categories: ["web-builders"],
     tags: ["comparison", competitor.slug, "vs"],
-    keywords: [`blogbat vs ${competitor.name}`, `${competitor.name} vs blogbat`],
+    keywords: [`supportsheep vs ${competitor.name}`, `${competitor.name} vs supportsheep`],
     metaTitle: `Supportsheep vs ${competitor.name} -- head-to-head`,
     metaDescription: truncate(
       `Quick head-to-head comparison of Supportsheep and ${competitor.name}: pricing, features, and the short answer on which tool fits which kind of small business.`,
@@ -472,7 +472,7 @@ export function buildAlternativesHubArticleInput(
 
   return {
     title: "Supportsheep Alternatives and Comparisons",
-    slug: "blogbat-alternatives",
+    slug: "supportsheep-alternatives",
     body,
     draftBody: body,
     excerpt:
@@ -484,11 +484,11 @@ export function buildAlternativesHubArticleInput(
     primaryCategory: "web-builders",
     categories: ["web-builders"],
     tags: ["comparison", "alternatives", "website-builders"],
-    keywords: ["blogbat alternatives", "website builder comparisons"],
+    keywords: ["supportsheep alternatives", "website builder comparisons"],
     metaTitle: "Supportsheep alternatives and comparisons",
     metaDescription:
       "Honest comparisons between Supportsheep and other small business website builders, including pricing, features, and who each tool fits best.",
-    canonicalPath: "/blogbat-alternatives",
+    canonicalPath: "/supportsheep-alternatives",
     sourcePath: "/alternatives",
     legacyPaths: ["/alternatives"],
   };

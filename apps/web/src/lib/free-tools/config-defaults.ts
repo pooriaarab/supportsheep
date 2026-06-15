@@ -20,7 +20,7 @@ export const DEFAULT_BLOG_FREE_TOOLS_CONFIG: BlogFreeToolsConfig = {
     primaryBaseUrl: "https://supportsheep.com/",
     secondaryLabel: "Learn more",
     secondaryBaseUrl: "https://supportsheep.com/",
-    utmSource: "blogbat_blog",
+    utmSource: "supportsheep_blog",
     utmMedium: "free_tool",
     utmCampaign: "{{toolSlug}}",
     utmContent: "bottom_callout",

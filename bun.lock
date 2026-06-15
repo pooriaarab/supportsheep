@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "blogbat",
+      "name": "supportsheep",
       "devDependencies": {
         "eslint": "^9.39.4",
         "husky": "^9.1.7",

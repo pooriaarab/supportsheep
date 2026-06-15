@@ -19,7 +19,7 @@ import type { McpToolContext } from "./tools/context";
 
 export function createMcpServer(ctx: McpToolContext): McpServer {
   const server = new McpServer({
-    name: "blogbat",
+    name: "supportsheep",
     version: "1.0.0",
   });
 

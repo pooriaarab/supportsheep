@@ -14,7 +14,7 @@
  *   4. Application Default Credentials (workload identity, well-known file).
  *
  * The principal must have `roles/logging.logWriter` on the target project
- * (`pooriaarab-blogbat`).
+ * (`pooriaarab-supportsheep`).
  *
  * Cold-start cost: `@google-cloud/logging` is lazy-imported only when the
  * transport is constructed (i.e. only when LOG_TRANSPORT=gcp). Default
@@ -91,9 +91,9 @@ export interface GcpLoggingModule {
 }
 
 export interface CreateGcpTransportOptions {
-  /** GCP project ID. Defaults to `pooriaarab-blogbat`. */
+  /** GCP project ID. Defaults to `pooriaarab-supportsheep`. */
   projectId?: string;
-  /** Cloud Logging log name. Defaults to `blogbat`. */
+  /** Cloud Logging log name. Defaults to `supportsheep`. */
   logName?: string;
   /** Resource type label. Defaults to `global`. */
   resourceType?: string;
@@ -113,7 +113,7 @@ export interface CreateGcpTransportOptions {
    * On Netlify, ADC is not configured, so we read from the
    * `FIREBASE_ADMIN_CLIENT_EMAIL` / `FIREBASE_ADMIN_PRIVATE_KEY` env vars by
    * default (same service account already used by firebase-admin). The
-   * principal must have `roles/logging.logWriter` on `pooriaarab-blogbat`.
+   * principal must have `roles/logging.logWriter` on `pooriaarab-supportsheep`.
    */
   credentials?: GcpServiceAccountCredentials;
 }
@@ -151,8 +151,8 @@ function readCredentialsFromEnv(): GcpServiceAccountCredentials | undefined {
   return undefined;
 }
 
-const DEFAULT_PROJECT_ID = "pooriaarab-blogbat";
-const DEFAULT_LOG_NAME = "blogbat";
+const DEFAULT_PROJECT_ID = "pooriaarab-supportsheep";
+const DEFAULT_LOG_NAME = "supportsheep";
 const DEFAULT_RESOURCE_TYPE = "global";
 
 interface NodeModuleBuiltin {

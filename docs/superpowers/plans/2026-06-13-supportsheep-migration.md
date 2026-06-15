@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Migrate the `blogbat` multitenant infrastructure to `supportsheep`, rebrand the platform, overhaul the marketing landing page to match Ferndesk's value prop, and add Support-specific AI Voice and Chatbot widget placeholders.
+**Goal:** Migrate the `supportsheep` multitenant infrastructure to `supportsheep`, rebrand the platform, overhaul the marketing landing page to match Ferndesk's value prop, and add Support-specific AI Voice and Chatbot widget placeholders.
 
-**Architecture:** Clone `pooriaarab/blogbat` as the foundation. We will store tenant support configurations (like enabling Voice/Chat and API keys) inside the existing `BlogConfig` JSON schema in Drizzle. The tenant's public view will inject Voice and Chat widgets if enabled. The marketing root will be overhauled.
+**Architecture:** Clone `pooriaarab/supportsheep` as the foundation. We will store tenant support configurations (like enabling Voice/Chat and API keys) inside the existing `BlogConfig` JSON schema in Drizzle. The tenant's public view will inject Voice and Chat widgets if enabled. The marketing root will be overhauled.
 
 **Tech Stack:** Next.js (App Router), React, TailwindCSS, Drizzle ORM, Cloudflare Pages.
 
@@ -18,13 +18,13 @@
 - [ ] **Step 1: Clone the foundation repository**
 ```bash
 # Assuming you are in /Users/parab/code/supportsheep
-git clone https://github.com/pooriaarab/blogbat.git .blogbat-tmp
-mv .blogbat-tmp/* .blogbat-tmp/.* . 2>/dev/null || true
-rm -rf .blogbat-tmp
+git clone https://github.com/pooriaarab/supportsheep.git .supportsheep-tmp
+mv .supportsheep-tmp/* .supportsheep-tmp/.* . 2>/dev/null || true
+rm -rf .supportsheep-tmp
 rm -rf .git
 git init
 git add .
-git commit -m "chore: Initialize supportsheep from blogbat foundation"
+git commit -m "chore: Initialize supportsheep from supportsheep foundation"
 ```
 
 ### Task 2: Global Rebranding
@@ -35,16 +35,16 @@ git commit -m "chore: Initialize supportsheep from blogbat foundation"
 - Modify: `apps/web/wrangler.jsonc`
 
 - [ ] **Step 1: Update root package.json**
-Run a script to update the root `package.json` name from `blogbat-monorepo` or `blogbat` to `supportsheep-monorepo`.
+Run a script to update the root `package.json` name from `supportsheep-monorepo` or `supportsheep` to `supportsheep-monorepo`.
 ```bash
-sed -i '' 's/"name": "blogbat-monorepo"/"name": "supportsheep-monorepo"/g' package.json
-sed -i '' 's/"name": "blogbat"/"name": "supportsheep"/g' package.json
+sed -i '' 's/"name": "supportsheep-monorepo"/"name": "supportsheep-monorepo"/g' package.json
+sed -i '' 's/"name": "supportsheep"/"name": "supportsheep"/g' package.json
 ```
 
 - [ ] **Step 2: Update web app package.json and wrangler.jsonc**
 ```bash
 sed -i '' 's/"name": "web"/"name": "supportsheep-web"/g' apps/web/package.json
-sed -i '' 's/"name": "blogbat"/"name": "supportsheep"/g' apps/web/wrangler.jsonc
+sed -i '' 's/"name": "supportsheep"/"name": "supportsheep"/g' apps/web/wrangler.jsonc
 ```
 
 - [ ] **Step 3: Commit**

@@ -285,7 +285,7 @@ async function main() {
     {
       source: "code-backed:alternatives-hub",
       sourcePath: "/alternatives",
-      slug: "blogbat-alternatives",
+      slug: "supportsheep-alternatives",
       title: "Supportsheep Alternatives and Comparisons",
       postType: "comparison",
       status: "published",

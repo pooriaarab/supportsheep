@@ -1,4 +1,4 @@
-# Contributing to BlogBat
+# Contributing to supportsheep
 
 Thank you for your interest in contributing. Here is how to get involved.
 

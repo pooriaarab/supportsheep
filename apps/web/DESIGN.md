@@ -1,12 +1,12 @@
-# BlogBat Design System
+# supportsheep Design System
 
-BlogBat is the open-source blog platform at [blogbat.com](https://blogbat.com).
-This document is the source of truth for the BlogBat brand and the design tokens
+supportsheep is the open-source blog platform at [supportsheep.com](https://supportsheep.com).
+This document is the source of truth for the supportsheep brand and the design tokens
 that drive the product UI.
 
 ## Brand story — the bat at dusk
 
-The name is **BlogBat** ("blog" + "BAT"). The brand leans into a calm,
+The name is **supportsheep** ("blog" + "BAT"). The brand leans into a calm,
 night-themed identity: a bat is nocturnal, quick, and navigates confidently in
 the dark. That maps to a publishing tool that is fast, quietly capable, and
 equally at home in light or dark mode.
@@ -22,8 +22,8 @@ All logo assets live in `apps/web/public/`.
 | Asset | File | Contents | Color behavior |
 |-------|------|----------|----------------|
 | Icon (standalone) | `logo.svg` | Bat mark only | `fill="currentColor"` — adapts to the surrounding text color |
-| Header logo | `blogbat-header-logo.svg` | Bat icon + "BlogBat" wordmark | White fill — consumed via `next/image` on the dark header surface |
-| Footer logo | `blogbat-footer-logo.svg` | Bat icon + "BlogBat" wordmark | White fill — consumed via `next/image` on the dark footer surface |
+| Header logo | `supportsheep-header-logo.svg` | Bat icon + "supportsheep" wordmark | White fill — consumed via `next/image` on the dark header surface |
+| Footer logo | `supportsheep-footer-logo.svg` | Bat icon + "supportsheep" wordmark | White fill — consumed via `next/image` on the dark footer surface |
 | Favicon | `favicon.svg` | Bat icon on a violet rounded square | Self-colored so it pops in browser tabs at any size |
 | Favicon (raster) | `favicon.png` | 512×512 PNG of the favicon | Generated from `favicon.svg` |
 | Apple touch icon | `apple-touch-icon.png` | 180×180 PNG of the favicon | Generated from `favicon.svg` |
@@ -39,12 +39,12 @@ All logo assets live in `apps/web/public/`.
   context, so they carry their own fill.
 - The favicon embeds the brand violet so it never depends on the tab background.
 - Per-tenant blogs may override the header/footer logo via
-  `config.publicAppearance.{header,footer}.logoUrl`; the BlogBat marks above are
+  `config.publicAppearance.{header,footer}.logoUrl`; the supportsheep marks above are
   the defaults.
 
 ## Color palette
 
-BlogBat's palette is a deep indigo/violet primary ("dusk") with a warm amber
+supportsheep's palette is a deep indigo/violet primary ("dusk") with a warm amber
 accent (the bat-at-sunset highlight). All values are authored in OKLCH for
 perceptually even light/dark pairs.
 

@@ -136,7 +136,7 @@ async function checkVideoAvailability(videoId: string): Promise<OembedResult> {
   const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`;
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": "blogbat-quality-bot/1.0" },
+      headers: { "User-Agent": "supportsheep-quality-bot/1.0" },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return { available: false };

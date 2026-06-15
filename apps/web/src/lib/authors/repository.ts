@@ -159,7 +159,7 @@ export async function deleteAuthor(
   return rows.length > 0;
 }
 
-const PLACEHOLDER_AUTHOR_ID = "blogbat-editorial-team";
+const PLACEHOLDER_AUTHOR_ID = "supportsheep-editorial-team";
 
 const PLACEHOLDER_AUTHOR = {
   name: "Supportsheep Editorial Team",

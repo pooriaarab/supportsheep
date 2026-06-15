@@ -40,7 +40,7 @@ describe("createGcpCloudLoggingTransport", () => {
 
     const transport = createGcpCloudLoggingTransport({
       projectId: "test-project",
-      logName: "blogbat",
+      logName: "supportsheep",
       resourceType: "global",
       loadModule: () => fakeModule,
     });
@@ -57,7 +57,7 @@ describe("createGcpCloudLoggingTransport", () => {
     // Allow the fire-and-forget write microtask to flush.
     await Promise.resolve();
 
-    expect(logMock).toHaveBeenCalledWith("blogbat");
+    expect(logMock).toHaveBeenCalledWith("supportsheep");
     expect(entryMock).toHaveBeenCalledTimes(1);
     const [meta, payload] = entryMock.mock.calls[0] ?? [];
     expect(meta).toMatchObject({
@@ -178,7 +178,7 @@ describe("createGcpCloudLoggingTransport", () => {
       } as unknown as GcpLoggingModule["Logging"],
     };
     createGcpCloudLoggingTransport({
-      projectId: "pooriaarab-blogbat",
+      projectId: "pooriaarab-supportsheep",
       loadModule: () => fakeModule,
       credentials: {
         client_email: "svc@example.iam.gserviceaccount.com",
@@ -187,7 +187,7 @@ describe("createGcpCloudLoggingTransport", () => {
       },
     });
     expect(ctorSpy).toHaveBeenCalledWith({
-      projectId: "pooriaarab-blogbat",
+      projectId: "pooriaarab-supportsheep",
       credentials: {
         client_email: "svc@example.iam.gserviceaccount.com",
         private_key:
@@ -221,7 +221,7 @@ describe("createGcpCloudLoggingTransport", () => {
       };
       createGcpCloudLoggingTransport({ loadModule: () => fakeModule });
       expect(ctorSpy).toHaveBeenCalledWith({
-        projectId: "pooriaarab-blogbat",
+        projectId: "pooriaarab-supportsheep",
         credentials: {
           client_email: "fb-admin@example.iam.gserviceaccount.com",
           private_key:

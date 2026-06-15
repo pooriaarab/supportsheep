@@ -6,7 +6,7 @@ const MOCK_ARTICLE = {
   slug: "ideas-for-personal-websites",
   canonicalPath: "/ideas-for-personal-websites",
   body: "<p>Launch your site.</p>",
-  author: "blogblogbatai",
+  author: "blogsupportsheepai",
   category: "Uncategorized",
   publishedAt: "2026-03-29T00:52:12.000Z",
   metaDescription: "A practical guide.",

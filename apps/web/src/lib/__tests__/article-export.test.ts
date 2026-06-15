@@ -83,7 +83,7 @@ describe("buildArticleLlmsTextExport", () => {
   it("normalizes sparse author and malformed tags", () => {
     const malformedArticle = {
       ...article,
-      author: "blogblogbatai",
+      author: "blogsupportsheepai",
       tags: "seo" as unknown as string[],
     };
 

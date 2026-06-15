@@ -137,12 +137,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "storage.googleapis.com",
-        pathname: "/pooriaarab-blogbat.firebasestorage.app/**",
+        pathname: "/pooriaarab-supportsheep.firebasestorage.app/**",
       },
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
-        pathname: "/v0/b/pooriaarab-blogbat.firebasestorage.app/**",
+        pathname: "/v0/b/pooriaarab-supportsheep.firebasestorage.app/**",
       },
     ],
   },

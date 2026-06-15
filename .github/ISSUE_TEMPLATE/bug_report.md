@@ -32,7 +32,7 @@ If applicable, add screenshots to help explain your problem.
 - OS: [e.g. macOS 15.0]
 - Browser: [e.g. Chrome 130]
 - Node/Bun version: [e.g. Bun 1.1.0]
-- BlogBat version / commit: [e.g. v0.1.0 or commit SHA]
+- supportsheep version / commit: [e.g. v0.1.0 or commit SHA]
 
 ## Additional context
 

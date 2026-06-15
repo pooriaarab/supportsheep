@@ -266,7 +266,7 @@ describe("free tools public components", () => {
     const html = renderToStaticMarkup(<ToolCallout tool={wordCounter} />);
 
     expect(html).toContain(wordCounter.callout.primaryLabel);
-    expect(html).toContain("utm_source=blogbat_blog");
+    expect(html).toContain("utm_source=supportsheep_blog");
     expect(html).toContain("utm_campaign=word-counter");
   });
 });

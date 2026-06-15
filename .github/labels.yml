@@ -1,4 +1,4 @@
-# Repository labels for BlogBat.
+# Repository labels for supportsheep.
 # Create with: gh label create "<name>" --color <color> --description "<desc>"
 - name: bug
   color: d73a4a

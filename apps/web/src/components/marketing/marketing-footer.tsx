@@ -49,7 +49,7 @@ export function MarketingFooter() {
                 Sign in
               </Link>
               <Link
-                href="https://github.com/pooriaarab/blogbat"
+                href="https://github.com/pooriaarab/supportsheep"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm opacity-80 transition-opacity hover:opacity-100 no-underline"

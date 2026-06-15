@@ -8,7 +8,7 @@ set -euo pipefail
 #   ops/domain-cron/deploy.sh production
 #
 # What it does:
-#   1. Deploys the standalone cron worker (blogbat-domain-cron[-staging]) from
+#   1. Deploys the standalone cron worker (supportsheep-domain-cron[-staging]) from
 #      ops/domain-cron/wrangler.<env>.jsonc. This worker has NO routes, so the
 #      deploy cannot wipe the OpenNext app worker's routes.
 #   2. Ensures INTERNAL_CRON_SECRET is set on BOTH the cron worker and the
@@ -20,7 +20,7 @@ set -euo pipefail
 # The secret is read from the env var INTERNAL_CRON_SECRET if set, otherwise you
 # are prompted. NEVER commit the secret value.
 #
-# NOTE on the app worker (blogbat-staging / blogbat-production): its refresh
+# NOTE on the app worker (supportsheep-staging / supportsheep-production): its refresh
 # route reads env.INTERNAL_CRON_SECRET via OpenNext's getCloudflareContext().
 # A secret set via the API/CLI on the app worker only becomes live in the
 # OpenNext runtime context after the NEXT full app deploy (wrangler deploy of
@@ -28,8 +28,8 @@ set -euo pipefail
 
 ENV="${1:-}"
 case "$ENV" in
-  staging)    CRON_WORKER="blogbat-domain-cron-staging"; APP_WORKER="blogbat-staging" ;;
-  production) CRON_WORKER="blogbat-domain-cron";          APP_WORKER="blogbat-production" ;;
+  staging)    CRON_WORKER="supportsheep-domain-cron-staging"; APP_WORKER="supportsheep-staging" ;;
+  production) CRON_WORKER="supportsheep-domain-cron";          APP_WORKER="supportsheep-production" ;;
   *) echo "usage: $0 <staging|production>" >&2; exit 2 ;;
 esac
 
@@ -56,5 +56,5 @@ echo "==> Setting INTERNAL_CRON_SECRET on app worker $APP_WORKER (takes effect o
 printf '%s' "$SECRET" | wrangler secret put INTERNAL_CRON_SECRET --name "$APP_WORKER"
 
 echo "==> Done. Verify with:"
-echo "    curl -s -o /dev/null -w '%{http_code}\\n' -X POST https://${ENV/production/app}.blogbat.com/api/v1/internal/domains/refresh -H \"x-internal-cron-secret: \$INTERNAL_CRON_SECRET\""
+echo "    curl -s -o /dev/null -w '%{http_code}\\n' -X POST https://${ENV/production/app}.supportsheep.com/api/v1/internal/domains/refresh -H \"x-internal-cron-secret: \$INTERNAL_CRON_SECRET\""
 echo "    (expect 200 with the secret, 403 without — after the app worker has been redeployed)"

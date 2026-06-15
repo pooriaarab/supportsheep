@@ -1,6 +1,6 @@
 name: Deploy
 
-# main → staging.blogbat.com ; release → production (blogbat.com).
+# main → staging.supportsheep.com ; release → production (supportsheep.com).
 on:
   push:
     branches: [main, release]
@@ -36,7 +36,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
 
-      - name: Build and deploy to staging.blogbat.com
+      - name: Build and deploy to staging.supportsheep.com
         run: cd apps/web && bun run cf:deploy:staging
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -52,7 +52,7 @@ jobs:
       # Set the custom-domain poller's shared secret on the freshly-deployed
       # worker. `wrangler deploy` does not carry an out-of-band (API-set) secret
       # into the served version, so CI sets it here (write-capable wrangler) to
-      # match the standalone `blogbat-domain-cron-staging` worker. Uses printf
+      # match the standalone `supportsheep-domain-cron-staging` worker. Uses printf
       # (not echo) to avoid a trailing newline in the secret value.
       - name: Set custom-domain cron secret (staging)
         run: cd apps/web && printf '%s' "$INTERNAL_CRON_SECRET" | bunx wrangler secret put INTERNAL_CRON_SECRET --env staging
@@ -86,7 +86,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
 
-      - name: Build and deploy to blogbat.com (production)
+      - name: Build and deploy to supportsheep.com (production)
         run: cd apps/web && bun run cf:deploy:production
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -100,7 +100,7 @@ jobs:
       # Set the custom-domain poller's shared secret on the freshly-deployed
       # worker (write-capable wrangler). Mirrors the staging step so the prod
       # app worker's INTERNAL_CRON_SECRET matches the standalone
-      # blogbat-domain-cron worker. printf (not echo) avoids a trailing newline.
+      # supportsheep-domain-cron worker. printf (not echo) avoids a trailing newline.
       - name: Set custom-domain cron secret (production)
         run: cd apps/web && printf '%s' "$INTERNAL_CRON_SECRET" | bunx wrangler secret put INTERNAL_CRON_SECRET --env production
         env:

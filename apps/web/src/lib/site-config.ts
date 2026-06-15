@@ -13,7 +13,7 @@ export const siteConfig = {
     "small business website",
     "seo for solopreneurs",
     "website builder",
-    "blogbat",
+    "supportsheep",
     "ai website",
   ],
 } as const;

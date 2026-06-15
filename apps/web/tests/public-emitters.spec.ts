@@ -75,7 +75,7 @@ test.describe("Public canonical emitters", () => {
     expect(body).toContain("Site:");
     // Full dump uses the fixed date + author helpers, never raw Firestore objects.
     expect(body).not.toContain("Published: [object Object]");
-    expect(body).not.toContain("Author: blogblogbatai");
+    expect(body).not.toContain("Author: blogsupportsheepai");
   });
 
   test("serves the complete article URL index at /llms-articles.txt", async ({

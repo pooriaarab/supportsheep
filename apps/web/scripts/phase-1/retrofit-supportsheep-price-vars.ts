@@ -241,7 +241,7 @@ function printDiff(diff: DocDiff): number {
 async function main(): Promise<void> {
   const dryRun = process.argv.includes("--dry-run");
   console.info(
-    `[retrofit:blogbat-price-vars] ${dryRun ? "DRY RUN" : "WRITING"} ` +
+    `[retrofit:supportsheep-price-vars] ${dryRun ? "DRY RUN" : "WRITING"} ` +
       `${DOC_IDS.length} programmatic_pages doc(s)`,
   );
 
@@ -278,7 +278,7 @@ async function main(): Promise<void> {
     totals.push({ docId, hits, wrote: true });
   }
 
-  console.info(`\n[retrofit:blogbat-price-vars] summary:`);
+  console.info(`\n[retrofit:supportsheep-price-vars] summary:`);
   for (const t of totals) {
     console.info(
       `  - ${t.docId}: ${t.hits} match(es)${t.wrote ? " (written)" : dryRun && t.hits > 0 ? " (dry-run; not written)" : ""}`,
@@ -289,6 +289,6 @@ async function main(): Promise<void> {
 main()
   .then(() => process.exit(0))
   .catch((err) => {
-    console.error("[retrofit:blogbat-price-vars] failed:", err);
+    console.error("[retrofit:supportsheep-price-vars] failed:", err);
     process.exit(1);
   });

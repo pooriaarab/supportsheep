@@ -14,7 +14,7 @@ describe("agent discovery builders", () => {
     const siteUrl = resolvePublicSiteUrl();
     const card = buildMcpServerCard(siteUrl);
 
-    expect(card.serverInfo?.name).toBe("blogbat");
+    expect(card.serverInfo?.name).toBe("supportsheep");
     expect(card.transport?.endpoint).toBe("/api/v1/mcp");
     expect(card.authentication).toEqual({
       required: true,
@@ -35,7 +35,7 @@ describe("agent discovery builders", () => {
     );
     expect(index.skills[0].type).toBe("skill-md");
     expect(index.skills[0].url).toBe(
-      "/.well-known/agent-skills/blogbat-discovery/SKILL.md",
+      "/.well-known/agent-skills/supportsheep-discovery/SKILL.md",
     );
     expect(index.skills[0].digest).toMatch(/^sha256:[a-f0-9]{64}$/);
     expect(index.skills[0].digest).toBe(`sha256:${expectedDigest}`);

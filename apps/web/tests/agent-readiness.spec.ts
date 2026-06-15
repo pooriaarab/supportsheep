@@ -12,7 +12,7 @@ test.describe("Agent readiness discovery baseline", () => {
         request.get("/.well-known/mcp/server-card.json"),
         request.get("/.well-known/agent-card.json"),
         request.get("/.well-known/agent-skills/index.json"),
-        request.get("/.well-known/agent-skills/blogbat-discovery/SKILL.md"),
+        request.get("/.well-known/agent-skills/supportsheep-discovery/SKILL.md"),
         request.get("/robots.txt"),
       ]);
 
@@ -52,7 +52,7 @@ test.describe("Agent readiness discovery baseline", () => {
     );
     expect(skills.skills[0].type).toBe("skill-md");
     expect(skills.skills[0].url).toBe(
-      "/.well-known/agent-skills/blogbat-discovery/SKILL.md",
+      "/.well-known/agent-skills/supportsheep-discovery/SKILL.md",
     );
     expect(skills.skills[0].digest).toMatch(/^sha256:[a-f0-9]{64}$/);
 

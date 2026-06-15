@@ -114,7 +114,7 @@ describe("buildPublicSiteSchema", () => {
     expect(org?.sameAs).toEqual(
       expect.arrayContaining([
         "https://supportsheep.com",
-        "https://github.com/pooriaarab/blogbat",
+        "https://github.com/pooriaarab/supportsheep",
       ]),
     );
     expect(org).toMatchObject({

@@ -5,8 +5,8 @@ status poller by POSTing the secret-gated refresh endpoint on a schedule.
 
 | Env | Cron worker | App worker | Target endpoint | Cron |
 |-----|-------------|------------|-----------------|------|
-| staging | `blogbat-domain-cron-staging` | `blogbat-staging` | `https://staging.blogbat.com/api/v1/internal/domains/refresh` | `*/5 * * * *` |
-| production | `blogbat-domain-cron` | `blogbat-production` | `https://app.blogbat.com/api/v1/internal/domains/refresh` | `*/5 * * * *` |
+| staging | `supportsheep-domain-cron-staging` | `supportsheep-staging` | `https://staging.supportsheep.com/api/v1/internal/domains/refresh` | `*/5 * * * *` |
+| production | `supportsheep-domain-cron` | `supportsheep-production` | `https://app.supportsheep.com/api/v1/internal/domains/refresh` | `*/5 * * * *` |
 
 ## Why a separate worker?
 
@@ -60,10 +60,10 @@ the OpenNext app worker's config, not here).
 ```bash
 # With the secret -> 200 (after the app worker has been (re)deployed)
 curl -s -o /dev/null -w "%{http_code}\n" \
-  -X POST https://staging.blogbat.com/api/v1/internal/domains/refresh \
+  -X POST https://staging.supportsheep.com/api/v1/internal/domains/refresh \
   -H "x-internal-cron-secret: $INTERNAL_CRON_SECRET"
 
 # Without / wrong header -> 403
 curl -s -o /dev/null -w "%{http_code}\n" \
-  -X POST https://staging.blogbat.com/api/v1/internal/domains/refresh
+  -X POST https://staging.supportsheep.com/api/v1/internal/domains/refresh
 ```

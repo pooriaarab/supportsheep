@@ -8,7 +8,7 @@ const article: Article & { id: string } = {
   id: "article-1",
   blogId: "default",
   title: "Supportsheep vs 10Web",
-  slug: "blogbat-vs-10web",
+  slug: "supportsheep-vs-10web",
   body: "<p>Body copy</p>",
   draftBody: "",
   excerpt: "Excerpt",

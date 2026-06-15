@@ -393,7 +393,7 @@ async function main(): Promise<void> {
       "solopreneur website",
       "website builder",
       "do I need a website",
-      "blogbat website",
+      "supportsheep website",
       "2026",
     ],
     author: "Supportsheep",

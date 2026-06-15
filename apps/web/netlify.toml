@@ -1,4 +1,4 @@
-# Netlify build config for blogbat.com
+# Netlify build config for supportsheep.com
 #
 # Per-context env-var invariant (W7.6 Bug 6.3):
 #   - deploy-preview & branch-deploy contexts enable INTERVIEW_E2E_TEST_SEED

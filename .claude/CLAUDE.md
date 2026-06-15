@@ -1,6 +1,6 @@
-# BlogBat Development Guide
+# supportsheep Development Guide
 
-**BlogBat** (`blogbat`) is the open-source blog platform at [blogbat.com](https://blogbat.com).
+**supportsheep** (`supportsheep`) is the open-source blog platform at [supportsheep.com](https://supportsheep.com).
 
 ## Modular Rules
 These detailed rules are loaded based on context. Read the relevant rule file when working in that area:
@@ -40,7 +40,7 @@ Search, AI-search, and structured-data skills live under `.claude/skills/` (vend
 - **State**: TanStack Query (server state), useState (local state)
 - **Tables**: TanStack Table + TanStack Virtual (virtualized DataTable)
 - **Charts**: Recharts (dashboard analytics)
-- **Hosting**: Netlify (blogbat.com)
+- **Hosting**: Netlify (supportsheep.com)
 - **CI/CD**: GitHub Actions
 
 > **Note**: This project is fully committed to **Firebase + Netlify**. All auth, database,

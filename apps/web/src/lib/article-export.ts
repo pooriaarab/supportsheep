@@ -129,7 +129,7 @@ function getPreferredSummary(article: ExportArticle): string {
 
 function getDisplayAuthor(article: ExportArticle): string {
   const author = typeof article.author === "string" ? article.author.trim() : "";
-  return !author || author.toLowerCase() === "blogblogbatai" ? "Supportsheep" : author;
+  return !author || author.toLowerCase() === "blogsupportsheepai" ? "Supportsheep" : author;
 }
 
 function getTagList(article: ExportArticle): string[] {

@@ -42,33 +42,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Drag-and-drop editor with templates",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Included on paid plans only",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "First-class blog with SEO sidebar and AI drafting",
+        supportsheep: "First-class blog with SEO sidebar and AI drafting",
         competitor: "Built-in blog module",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Full ecommerce suite",
         notes: "Wix is the stronger pick for sellers with large catalogs.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "Built-in across the editor and blog",
+        supportsheep: "Built-in across the editor and blog",
         competitor: "Available via Wix AI add-ons",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No",
       },
     ],
@@ -130,34 +130,34 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Template-first editor with polished design defaults",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Free for the first year on annual plans only",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog with AI-drafted posts (feature-flagged); SEO sidebar in the blog CMS",
+        supportsheep: "Blog with AI-drafted posts (feature-flagged); SEO sidebar in the blog CMS",
         competitor: "Built-in blog with categories and scheduling",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Full ecommerce suite with Squarespace Payments",
         notes:
           "Squarespace is the stronger pick for design-led stores and high-volume sellers.",
       },
       {
         feature: "AI content generation",
-        blogbat: "AI at onboarding + section creation; no in-editor rewriter",
+        supportsheep: "AI at onboarding + section creation; no in-editor rewriter",
         competitor: "Blueprint AI for site generation; writing assist is limited",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No",
       },
     ],
@@ -219,33 +219,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Guided wizard with templates and section blocks",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Included on paid plans only",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Basic blog module available on paid plans",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Full ecommerce suite on the Ecommerce plan",
         notes: "GoDaddy is the stronger pick for sellers wanting one-stop domain + store.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "GoDaddy Airo AI for site generation and content suggestions",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No",
       },
     ],
@@ -306,33 +306,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Canvas-based visual editor with full layout control",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Included on paid site plans only",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Built-in CMS with collections, dynamic pages, and editorial workflows",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Separate ecommerce plans starting at $29/mo with 2% transaction fee",
         notes: "Webflow ecommerce is powerful but priced separately from site plans.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "No built-in AI writing assistant; third-party integrations available",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; free plan shows webflow.io subdomain only",
       },
     ],
@@ -386,32 +386,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "AI generates site in ~30 seconds from a business description",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Paid plans only",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Basic blog included; AI can assist with post drafts",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Basic product listings; not a full ecommerce suite",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "AI throughout -- site generation, content, invoices, and social posts",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; custom domain requires paid plan",
       },
     ],
@@ -470,32 +470,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Canvas-based designer with components, grids, and breakpoints",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Paid plans only; free plan uses .framer.app subdomain",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "CMS collections for structured content; no dedicated blog AI",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Not natively supported; requires third-party integration",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "AI site generation available; no inline AI writing assistant",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; custom domain requires paid plan",
       },
     ],
@@ -545,32 +545,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "AI website builder generates a site from a business description",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Free for the first year on annual paid plans; no free plan",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Basic blog functionality included on paid plans",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Online store available on Business plan",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "Hostinger AI Builder generates sites; AI content writer for copy",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; no free plan offered",
       },
     ],
@@ -630,33 +630,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Drag-and-drop editor with templates; no AI generation",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Free for the first year on Personal and above; free plan uses subdomain",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Built-in blog with basic SEO tools",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Square-integrated ecommerce with POS support on paid plans",
         notes: "Weebly's Square integration is its main differentiator for in-person sellers.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "No AI generation or writing assistant",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; free plan uses Weebly subdomain only",
       },
     ],
@@ -724,33 +724,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Theme-based setup with a block editor; no AI site generation",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Free for the first year on Personal and above; free plan uses .wordpress.com subdomain",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "World-class blogging platform -- WordPress powers 43% of the web",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "WooCommerce on Commerce plan; full store with plugins on Business+",
         notes: "WordPress.com's ecosystem advantage is unmatched for plugin-based extensibility.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "Jetpack AI available on paid plans for content assistance",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; free plan uses .wordpress.com subdomain",
       },
     ],
@@ -810,32 +810,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Template-based single-page builder; choose a layout and fill in content",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Pro Standard ($19/yr) or above required for custom domains",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "No blog functionality; Carrd is single-page only",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Stripe payment embeds on Pro Plus; not a full ecommerce platform",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "No AI generation or writing assistant",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; free plan uses carrd.co subdomain",
       },
     ],
@@ -894,33 +894,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Jimdo Dolphin uses AI to generate a site from a few guided questions",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Free for the first year on Start plan and above; free plan uses subdomain",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Basic blog included on paid plans",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Separate online store plans starting at $18/mo",
         notes: "Jimdo's store plans are separate from website plans.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "AI site generation at onboarding (Dolphin builder); no ongoing AI writing",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; free Play plan uses Jimdo subdomain",
       },
     ],
@@ -976,32 +976,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "AI-assisted website generator plus manual drag-and-drop editor",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Included on all paid plans; no meaningful free plan",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Basic blog module available on paid plans",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "Online store add-on available; separate store plans offered",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "AI website generator at setup; limited AI writing tools",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; introductory $1/mo offer is promotional, not a free plan",
       },
     ],
@@ -1055,33 +1055,33 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "AI generates a WordPress site from a business description",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Included on all paid plans; 7-day free trial, no permanent free plan",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "Full WordPress blog with all plugins and themes available",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "WooCommerce via WordPress plugin; separate ecommerce plans available",
         notes: "10Web's WordPress output means full WooCommerce capability.",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "AI website builder plus AI content assistant within WordPress",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; 7-day free trial only",
       },
     ],
@@ -1132,32 +1132,32 @@ export const COMPETITORS: Competitor[] = [
     featureMatrixRow: [
       {
         feature: "Setup style",
-        blogbat: "AI-guided onboarding from a single prompt",
+        supportsheep: "AI-guided onboarding from a single prompt",
         competitor: "Drag-and-drop grid builder; embed Google Docs, Sheets, Calendar natively",
       },
       {
         feature: "Custom domain",
-        blogbat: "Included on the free plan",
+        supportsheep: "Included on the free plan",
         competitor: "Not natively supported; custom domains require DNS workarounds or Workspace admin",
       },
       {
         feature: "Blog / content platform",
-        blogbat: "Blog available when enabled in deployment, with AI drafting",
+        supportsheep: "Blog available when enabled in deployment, with AI drafting",
         competitor: "No blog functionality; static informational pages only",
       },
       {
         feature: "Ecommerce",
-        blogbat: "Simple storefront for small catalogs",
+        supportsheep: "Simple storefront for small catalogs",
         competitor: "No ecommerce support",
       },
       {
         feature: "AI writing assistant",
-        blogbat: "AI at onboarding, section creation, and blog drafting",
+        supportsheep: "AI at onboarding, section creation, and blog drafting",
         competitor: "No AI generation for sites; Google Workspace AI (Gemini) available separately",
       },
       {
         feature: "Free tier with custom domain",
-        blogbat: "Yes",
+        supportsheep: "Yes",
         competitor: "No; custom domains require non-trivial DNS setup or Workspace subscription",
       },
     ],
