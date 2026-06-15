@@ -49,23 +49,22 @@ ${pr.body || "No description provided."}
     `.trim();
 
     const db = getDb();
+    const articleId = nanoid();
     await db.insert(articles).values({
-      id: nanoid(),
+      id: articleId,
       blogId,
       slug: `pr-${pr.number}-${Date.now()}`,
-      title: pr.title,
-      description: `Auto-drafted support article for PR #${pr.number}`,
-      content: draftContent,
-      htmlContent: `<p>Auto-drafted support article for PR #${pr.number}</p>`,
-      markdownContent: draftContent,
       status: "draft",
-      createdAt: Date.now(),
-      updatedAt: Date.now(),
-      publishedAt: null,
-      authorId: null,
-      categoryId: null,
-      featuredImage: null,
-      pillarClusterId: null,
+      data: JSON.stringify({
+        id: articleId,
+        title: pr.title,
+        description: `Auto-drafted support article for PR #${pr.number}`,
+        content: draftContent,
+        htmlContent: `<p>Auto-drafted support article for PR #${pr.number}</p>`,
+        markdownContent: draftContent,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }),
     });
 
     return NextResponse.json({ success: true, message: "Draft generated" }, { status: 201 });
