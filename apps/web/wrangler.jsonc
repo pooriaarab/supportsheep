@@ -54,7 +54,6 @@
       // BETTER_AUTH_SECRET is a worker secret (wrangler secret put), not here.
       "vars": {
         "BETTER_AUTH_URL": "https://staging.supportsheep.com",
-        "ALLOWED_EMAIL_DOMAINS": "@supportsheep.com",
         "CUSTOM_DOMAINS_ENABLED": "true"
       },
       "send_email": [{ "name": "EMAIL", "remote": true }],

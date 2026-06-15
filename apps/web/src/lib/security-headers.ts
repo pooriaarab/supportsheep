@@ -16,10 +16,6 @@ export interface SecurityHeader {
 export function buildContentSecurityPolicy(isDev: boolean): string {
   const connectSrc = [
     "'self'",
-    "https://*.firebaseio.com",
-    "https://*.googleapis.com",
-    "https://*.firebase.google.com",
-    "https://*.cloudfunctions.net",
     "https://*.sentry.io",
     "https://*.clarity.ms",
     // GA4 (gtag.js) sends pageview/event collection beacons to these origins.
@@ -30,7 +26,6 @@ export function buildContentSecurityPolicy(isDev: boolean): string {
     "https://*.google-analytics.com",
     "https://*.analytics.google.com",
     "https://www.googletagmanager.com",
-    "wss://*.firebaseio.com",
     // OpenAI realtime WebRTC handshake (browser → OpenAI direct, with the
     // ephemeral client_secret as bearer). Without these the browser CSP
     // blocks the SDP exchange:
@@ -53,18 +48,16 @@ export function buildContentSecurityPolicy(isDev: boolean): string {
 
   return [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://*.firebaseio.com https://*.googleapis.com https://apis.google.com https://www.clarity.ms https://www.googletagmanager.com`,
+    `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.clarity.ms https://www.googletagmanager.com`,
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "img-src 'self' data: blob: https://*.googleapis.com https://*.googleusercontent.com https://*.gstatic.com https://images.unsplash.com https://source.unsplash.com https://images.pexels.com",
+    "img-src 'self' data: blob: https://*.googleusercontent.com https://images.unsplash.com https://source.unsplash.com https://images.pexels.com",
     "font-src 'self' https://fonts.gstatic.com",
     `connect-src ${connectSrc.join(" ")}`,
-    // `media-src` covers <audio>/<video> sources. Interview audio playback in
-    // the review UI streams from Firebase Storage; without this directive
-    // browsers fall back to default-src and block the playback request.
-    "media-src 'self' blob: https://*.firebasestorage.googleapis.com https://storage.googleapis.com",
+    // `media-src` covers <audio>/<video> sources.
+    "media-src 'self' blob:",
     // Tavus renders the conversation inside an iframe that loads a Daily.co
     // room; both origins must be in frame-src for the video flow to work.
-    "frame-src 'self' https://*.firebaseapp.com https://accounts.google.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://tally.so https://*.tally.so https://*.tavus.io https://tavusapi.com https://*.daily.co",
+    "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://tally.so https://*.tally.so https://*.tavus.io https://tavusapi.com https://*.daily.co",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
