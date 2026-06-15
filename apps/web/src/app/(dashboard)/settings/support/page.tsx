@@ -6,7 +6,7 @@
  * Manage AI Voice and Chatbot settings.
  */
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { queryKeys } from "@/lib/query-keys";
 import { PageHeader } from "@/components/ui/layout/page-header";
@@ -23,58 +23,38 @@ import type { BlogConfig } from "@repo/types";
 export default function SupportSettingsPage() {
   const queryClient = useQueryClient();
 
+  const [localState, setLocalState] = useState<{
+    enableVoice: boolean;
+    enableChatbot: boolean;
+    openAIApiKey: string;
+    initialized: boolean;
+  }>({
+    enableVoice: false,
+    enableChatbot: false,
+    openAIApiKey: "",
+    initialized: false,
+  });
+
   const { data: config, isLoading } = useQuery<BlogConfig>({
     queryKey: queryKeys.blogConfig.settings(),
     queryFn: async () => {
       const res = await fetch("/api/blog/config");
       if (!res.ok) throw new Error("Failed to load config");
-      return res.json();
-    },
-  });
-
-  const [saving, setSaving] = useState(false);
-
-  // Local state mirrored from config to allow editing
-  const [localState, setLocalState] = useState<{
-    enableVoice: boolean;
-    enableChatbot: boolean;
-    openAIApiKey: string;
-  }>({
-    enableVoice: false,
-    enableChatbot: false,
-    openAIApiKey: "",
-  });
-
-  // Sync local state when config loads
-  // Using a separate effect or just memoizing helps, but for simplicity
-  // we'll just update it in the mutation or use a derived state approach.
-  // Actually, we'll initialize on mount/data fetch.
-  // Wait, the standard way in this app is probably updating state on load.
-  // Let's use a simpler approach: controlled inputs based on local state synced from query.
-  
-  const handleLoad = useCallback((loadedConfig: BlogConfig) => {
-      setLocalState({
-          enableVoice: loadedConfig.support?.enableVoice ?? false,
-          enableChatbot: loadedConfig.support?.enableChatbot ?? false,
-          openAIApiKey: loadedConfig.support?.openAIApiKey ?? "",
-      })
-  }, []);
-
-  useQuery<BlogConfig>({
-    queryKey: queryKeys.blogConfig.settings(),
-    queryFn: async () => {
-      const res = await fetch("/api/blog/config");
-      if (!res.ok) throw new Error("Failed to load config");
       const data = await res.json();
-      handleLoad(data);
+      if (!localState.initialized) {
+        setLocalState({
+          enableVoice: data.support?.enableVoice ?? false,
+          enableChatbot: data.support?.enableChatbot ?? false,
+          openAIApiKey: data.support?.openAIApiKey ?? "",
+          initialized: true,
+        });
+      }
       return data;
     },
-    enabled: !config,
   });
 
-
   const updateMutation = useMutation({
-    mutationFn: async (payload: { support: typeof localState }) => {
+    mutationFn: async (payload: { support: Omit<typeof localState, "initialized"> }) => {
       const res = await fetch("/api/blog/config", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -86,18 +66,15 @@ export default function SupportSettingsPage() {
     onSuccess: (updated) => {
       queryClient.setQueryData(queryKeys.blogConfig.settings(), updated);
       toast.success("Support settings saved");
-      setSaving(false);
     },
-    onError: (err) => {
-      console.error(err);
+    onError: () => {
       toast.error("Failed to save support settings");
-      setSaving(false);
     },
   });
 
   const handleSave = () => {
-    setSaving(true);
-    updateMutation.mutate({ support: localState });
+    const { initialized: _, ...support } = localState;
+    updateMutation.mutate({ support });
   };
 
   if (isLoading || !config) {
@@ -119,8 +96,8 @@ export default function SupportSettingsPage() {
         <PageHeader
           breadcrumbs={[{ label: "Settings", href: "/settings/general" }, { label: "Support Features" }]}
         />
-        <Button onClick={handleSave} disabled={saving}>
-          {saving ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Save className="w-4 h-4 mr-2" />}
+        <Button onClick={handleSave} disabled={updateMutation.isPending}>
+          {updateMutation.isPending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Save className="w-4 h-4 mr-2" />}
           Save Changes
         </Button>
       </div>
@@ -141,7 +118,7 @@ export default function SupportSettingsPage() {
                 onCheckedChange={(c) => setLocalState(s => ({ ...s, enableVoice: c }))}
               />
             </div>
-            
+
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label>Enable Chatbot</Label>
