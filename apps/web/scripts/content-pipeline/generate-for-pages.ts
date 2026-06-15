@@ -130,7 +130,7 @@ async function generatePageContent(
 
   const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the blog of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
 
-BLOGBAT PRODUCT CONTEXT — ground all Supportsheep claims here:
+SUPPORTSHEEP PRODUCT CONTEXT — ground all Supportsheep claims here:
 ${supportsheepContext}
 
 CORE RULES:
@@ -166,7 +166,7 @@ REQUIRED STRUCTURE (1800-2500 words total):
 ## [Industry-specific concern] (pick the most important: HIPAA for health, licensing for trades, portfolio for creative, etc.)
 1-2 focused paragraphs. Be honest about limitations.
 
-## Why Supportsheep works for supportsheep ${vertical.label.toLowerCase()} practices
+## Why Supportsheep works for solo ${vertical.label.toLowerCase()} practices
 Honest pitch grounded in Supportsheep's real features. Reference AI-seeded section creation, onboarding speed, pricing (use {{supportsheep.pro.yearly}} etc.). Be clear about what Supportsheep DOESN'T do for this vertical if relevant.
 
 ## Comparison with alternatives

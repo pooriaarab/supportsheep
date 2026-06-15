@@ -171,7 +171,7 @@ describe("free tools public components", () => {
             "Here are short TikTok caption options for **Solo Grow**:",
             "",
             "1. **Grow smarter with Solo Grow**",
-            "2. **Your growth, supportsheep made simple.**",
+            "2. **Your growth, solo made simple.**",
           ].join("\n"),
         }}
       />,
