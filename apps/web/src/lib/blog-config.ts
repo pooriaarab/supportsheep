@@ -129,6 +129,8 @@ export const DEFAULT_BLOG_CONFIG: BlogConfig = {
   support: {
     enableVoice: false,
     enableChatbot: false,
+    systemPrompt: "You are a helpful support assistant. Use the provided knowledge base to answer questions.",
+    greeting: "Hi there! How can I help you today?",
   },
 };
 
@@ -362,6 +364,8 @@ export function mergeBlogConfig(
     support: {
       enableVoice: config?.support?.enableVoice ?? DEFAULT_BLOG_CONFIG.support!.enableVoice,
       enableChatbot: config?.support?.enableChatbot ?? DEFAULT_BLOG_CONFIG.support!.enableChatbot,
+      systemPrompt: config?.support?.systemPrompt ?? DEFAULT_BLOG_CONFIG.support!.systemPrompt,
+      greeting: config?.support?.greeting ?? DEFAULT_BLOG_CONFIG.support!.greeting,
     },
   };
 

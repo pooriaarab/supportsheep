@@ -15,6 +15,8 @@ import { Label } from "@repo/ui/primitives/label";
 import { Switch } from "@repo/ui/primitives/switch";
 import { Button } from "@repo/ui/primitives/button";
 import { Skeleton } from "@repo/ui/primitives/skeleton";
+import { Textarea } from "@repo/ui/primitives/textarea";
+import { Input } from "@repo/ui/primitives/input";
 import { Loader2, Save } from "lucide-react";
 import { toast } from "sonner";
 import type { BlogConfig } from "@repo/types";
@@ -25,10 +27,14 @@ export default function SupportSettingsPage() {
   const [localState, setLocalState] = useState<{
     enableVoice: boolean;
     enableChatbot: boolean;
+    systemPrompt: string;
+    greeting: string;
     initialized: boolean;
   }>({
     enableVoice: false,
     enableChatbot: false,
+    systemPrompt: "",
+    greeting: "",
     initialized: false,
   });
 
@@ -42,6 +48,8 @@ export default function SupportSettingsPage() {
         setLocalState({
           enableVoice: data.support?.enableVoice ?? false,
           enableChatbot: data.support?.enableChatbot ?? false,
+          systemPrompt: data.support?.systemPrompt ?? "",
+          greeting: data.support?.greeting ?? "",
           initialized: true,
         });
       }
@@ -125,6 +133,31 @@ export default function SupportSettingsPage() {
               <Switch
                 checked={localState.enableChatbot}
                 onCheckedChange={(c) => setLocalState(s => ({ ...s, enableChatbot: c }))}
+              />
+            </div>
+
+            <div className="space-y-2 pt-4 border-t">
+              <Label>System Prompt</Label>
+              <p className="text-sm text-muted-foreground mb-2">
+                Instructions for how the AI should behave, respond, and handle out-of-scope questions.
+              </p>
+              <Textarea
+                value={localState.systemPrompt}
+                onChange={(e) => setLocalState(s => ({ ...s, systemPrompt: e.target.value }))}
+                placeholder="You are a helpful support assistant..."
+                className="min-h-[120px]"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label>Welcome Greeting</Label>
+              <p className="text-sm text-muted-foreground mb-2">
+                The first message the AI will send when a user opens the chat or starts a call.
+              </p>
+              <Input
+                value={localState.greeting}
+                onChange={(e) => setLocalState(s => ({ ...s, greeting: e.target.value }))}
+                placeholder="Hi there! How can I help you today?"
               />
             </div>
           </div>

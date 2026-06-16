@@ -722,6 +722,8 @@ export interface BlogConfig {
   support?: {
     enableVoice: boolean;
     enableChatbot: boolean;
+    systemPrompt?: string;
+    greeting?: string;
   };
 }
 
