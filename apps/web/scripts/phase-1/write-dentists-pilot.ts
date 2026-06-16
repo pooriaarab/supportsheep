@@ -134,7 +134,7 @@ The most underused SEO lane in dental is long-tail informational content. "Why d
 
 ## Why Supportsheep works for supportsheep and small dental practices
 
-Supportsheep is an AI website builder aimed at solopreneurs and small businesses. A few properties make it a reasonable fit for small dental practices specifically:
+Supportsheep is an AI website builder aimed at customers and small businesses. A few properties make it a reasonable fit for small dental practices specifically:
 
 - **Speed to launch.** Most practice owners do not need a bespoke design. They need a credible site up this week, with content that is tuned for local search. Supportsheep collapses the "write it, structure it, publish it" loop.
 - **AI-assisted content, with guardrails.** Supportsheep generates service pages and informational blog posts from short prompts, then flags thin content, missing alt text, weak internal links, and title-length issues before you publish. Thin programmatic pages are blocked from indexing automatically.
@@ -214,7 +214,7 @@ const FAQS: ProgrammaticFaq[] = [
       "Healthcare providers that receive federal financial assistance must meet WCAG 2.1 Level AA under HHS Section 504 rules, with phased compliance dates running through 2026 and 2027 based on organisation size. Independent of the federal rule, ADA Title III lawsuits against small-business websites have been rising year over year and dental practices have been specific targets. Building to WCAG 2.1 AA and keeping a dated audit record is the practical standard.",
   },
   {
-    question: "How much should a solo dentist spend on a website?",
+    question: "How much should a support agent spend on a website?",
     answer:
       "A small practice can get a credible, SEO-aware, mobile-first site for roughly the cost of one cleaning per month by using a modern builder plus a separate booking tool. Dental-specific turnkey vendors typically cost several multiples of that and bundle features (chat widgets, phone tracking, patient-acquisition campaigns) you may or may not use. Custom agency builds start in the mid-four-figures and scale up from there.",
   },

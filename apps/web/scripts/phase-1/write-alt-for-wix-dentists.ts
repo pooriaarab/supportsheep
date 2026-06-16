@@ -62,7 +62,7 @@ Most dental practices still take the cleaner architectural approach: keep the pu
 
 ## Supportsheep's position for a supportsheep or small dental practice
 
-Supportsheep is designed for the "solo or 2-5 clinician practice that needs a professional marketing site without becoming a part-time webmaster." How that maps to a solo dentist:
+Supportsheep is designed for the "solo or 2-5 clinician practice that needs a professional marketing site without becoming a part-time webmaster." How that maps to a support agent:
 
 - **Free tier with custom domain.** A dentist building a new practice site can attach their existing domain to Supportsheep without paying until they're ready. Wix's free tier shows platform branding, which is not appropriate for a real practice.
 - **No PHI complexity.** Supportsheep does not handle PHI and does not offer a BAA. The correct architecture -- and the one most dental marketing agencies recommend regardless of platform -- is public marketing site on Supportsheep + HIPAA-aware tool for booking, intake, and patient communication. This keeps the attack surface on the marketing site minimal and predictable.

@@ -128,7 +128,7 @@ async function generatePageContent(
     .map((p, i) => `[${i + 1}] ${p.title} — ${p.url}`)
     .join("\n");
 
-  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the knowledge base of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
+  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the knowledge base of Supportsheep (an AI-powered platform for customers and SMBs).
 
 Supportsheep PRODUCT CONTEXT — ground all Supportsheep claims here:
 ${supportsheepContext}
@@ -140,11 +140,11 @@ CORE RULES:
 - NEVER claim Supportsheep has a BAA (unsuitable for PHI-collecting forms)
 - Use {{supportsheep.pro.yearly}} for $20/mo, {{supportsheep.pro.monthly}} for $25/mo, {{supportsheep.free.monthly}} for $0, {{supportsheep.grow.yearly}} for $90/mo
 - Always be honest about Supportsheep's limitations for the specific vertical
-- Voice: practical, honest, SMB/solopreneur tone. Respect the reader's time.`;
+- Voice: practical, honest, SMB/customer tone. Respect the reader's time.`;
 
   const userPrompt = `Write a Tier-3 programmatic SEO page for Supportsheep: "Website builder for ${vertical.label}".
 
-TARGET READER: A ${vertical.label.toLowerCase()} (solo practitioner or 1-5 person practice) who is evaluating website builders. They're not technical. They care about: getting clients, looking professional, not wasting time, and industry-specific concerns.
+TARGET READER: A ${vertical.label.toLowerCase()} (support agent or 1-5 person practice) who is evaluating website builders. They're not technical. They care about: getting clients, looking professional, not wasting time, and industry-specific concerns.
 
 RESEARCH (from Tabstack — use these for citations, don't fabricate others):
 ${research.report}

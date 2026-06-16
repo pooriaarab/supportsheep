@@ -7,7 +7,7 @@ const AI_DISCOVERY_TOPICS = [
   "website launch planning",
   "portfolio websites",
   "service business websites",
-  "solo founder marketing",
+  "solo support engineer marketing",
   "website examples and case studies",
 ];
 
@@ -60,7 +60,7 @@ export function buildAiSummary(siteUrl: string) {
     primaryTopics: AI_DISCOVERY_TOPICS,
     audience: [
       "small business owners",
-      "solo founders",
+      "solo support engineers",
       "freelancers",
       "local service providers",
       "creators building personal websites",

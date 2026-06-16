@@ -84,21 +84,21 @@ const RULES: Rule[] = [
     pattern: /(Supportsheep(?:'s)?\s+Pro\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$240\b/gi,
     replacement: "$1{{supportsheep.pro.yearlyAnnual}}",
   },
-  // Solo Grow annual-billed rate: $90/mo
+  // Supportsheep Pro annual-billed rate: $90/mo
   {
     name: "supportsheep.grow.yearly (billed annually)",
     pattern:
       /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+annually\s+(?:at\s+)?|annually\s+at\s+|,\s*billed\s+annually,?\s*)?)\$90\b/gi,
     replacement: "$1{{supportsheep.grow.yearly.monthly}}",
   },
-  // Solo Grow month-to-month rate: $120/mo
+  // Supportsheep Pro month-to-month rate: $120/mo
   {
     name: "supportsheep.grow.monthly (month to month)",
     pattern:
       /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|starts\s+at\s+|costs\s+|billed\s+monthly\s+(?:at\s+)?|month[- ]to[- ]month\s+(?:at\s+)?)?)\$120\b/gi,
     replacement: "$1{{supportsheep.grow.monthly.monthly}}",
   },
-  // Solo Grow total annual spend: $1080/yr
+  // Supportsheep Pro total annual spend: $1080/yr
   {
     name: "supportsheep.grow.yearlyAnnual",
     pattern: /(Supportsheep(?:'s)?\s+Grow\s+(?:plan\s+)?(?:is\s+|costs\s+|at\s+)?)\$1080\b/gi,

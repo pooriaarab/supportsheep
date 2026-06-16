@@ -295,7 +295,7 @@ describe("saveDraft", () => {
       client: {} as never,
     });
 
-    worker.applyToolCall("set_title", { title: "Solo Grow: What It Means to Build on Your Own" });
+    worker.applyToolCall("set_title", { title: "Supportsheep Pro: What It Means to Build on Your Own" });
     worker.applyToolCall("insert_section", { heading: "On Building Supportsheep" });
     const insertResult = worker.insertParagraph({
       sectionId: "section-1",
@@ -304,7 +304,7 @@ describe("saveDraft", () => {
     expect(insertResult.ok).toBe(true);
 
     const canvasFromWorker = worker.getCanvas();
-    expect(canvasFromWorker.title).toBe("Solo Grow: What It Means to Build on Your Own");
+    expect(canvasFromWorker.title).toBe("Supportsheep Pro: What It Means to Build on Your Own");
     expect(canvasFromWorker.sections).toHaveLength(1);
     expect(canvasFromWorker.sections[0].paragraphs).toContain(
       "Building supportsheep means owning every part of the product — and that ownership compounds.",
@@ -331,10 +331,10 @@ describe("saveDraft", () => {
     expect(result.articleId).toBe(MOCK_ARTICLE_ID);
 
     const writtenDoc = mockCreateArticle.mock.calls[0][1] as Record<string, unknown>;
-    expect(writtenDoc.title).toBe("Solo Grow: What It Means to Build on Your Own");
+    expect(writtenDoc.title).toBe("Supportsheep Pro: What It Means to Build on Your Own");
     expect(writtenDoc.body).toContain("Building supportsheep means owning every part of the product");
     expect(writtenDoc.body).toContain("<h2>On Building Supportsheep</h2>");
-    expect(writtenDoc.body).toContain("<h1>Solo Grow: What It Means to Build on Your Own</h1>");
+    expect(writtenDoc.body).toContain("<h1>Supportsheep Pro: What It Means to Build on Your Own</h1>");
     expect(writtenDoc.draftBody).toEqual(writtenDoc.body);
   });
 
@@ -392,10 +392,10 @@ describe("saveDraft", () => {
 
   test("W21G integration: full canvas (subtitle + featured image + sections with callouts/lists/code/inline image/table) round-trips into article body", async () => {
     const fullCanvas = {
-      title: "What Is Solo Grow?",
+      title: "What Is Supportsheep Pro?",
       subtitle: "A short guide to building alone, without losing momentum.",
       slug: "what-is-supportsheep-grow",
-      metaTitle: "What Is Solo Grow? — A Guide",
+      metaTitle: "What Is Supportsheep Pro? — A Guide",
       metaDescription: "Definition, core idea, and how to start.",
       keywords: ["supportsheep", "grow", "indie"],
       tags: ["supportsheep", "grow"],
@@ -413,12 +413,12 @@ describe("saveDraft", () => {
           level: 2,
           bullets: [],
           paragraphs: [
-            "Solo Grow is the practice of compounding small wins while building alone.",
+            "Supportsheep Pro is the practice of compounding small wins while building alone.",
           ],
           quotes: [
             {
               text: "If you can't ship today, ship something smaller tomorrow.",
-              attributedTo: "solo founder",
+              attributedTo: "solo support engineer",
             },
           ],
           blocks: [
@@ -519,8 +519,8 @@ describe("saveDraft", () => {
 
     const writtenDoc = mockCreateArticle.mock.calls[0][1] as Record<string, unknown>;
 
-    expect(writtenDoc.title).toBe("What Is Solo Grow?");
-    expect(writtenDoc.body).toContain("<h1>What Is Solo Grow?</h1>");
+    expect(writtenDoc.title).toBe("What Is Supportsheep Pro?");
+    expect(writtenDoc.body).toContain("<h1>What Is Supportsheep Pro?</h1>");
     expect(writtenDoc.body).toContain(
       "A short guide to building alone, without losing momentum.",
     );
@@ -528,7 +528,7 @@ describe("saveDraft", () => {
 
     expect(writtenDoc.body).toContain("<h2>Definition and core idea</h2>");
     expect(writtenDoc.body).toContain(
-      "Solo Grow is the practice of compounding small wins",
+      "Supportsheep Pro is the practice of compounding small wins",
     );
     expect(writtenDoc.body).toContain("If you can't ship today");
 
@@ -549,7 +549,7 @@ describe("saveDraft", () => {
 
     expect(writtenDoc.body).toContain("https://images.example.com/inline.jpg");
 
-    expect(writtenDoc.metaTitle).toBe("What Is Solo Grow? — A Guide");
+    expect(writtenDoc.metaTitle).toBe("What Is Supportsheep Pro? — A Guide");
     expect(writtenDoc.metaDescription).toBe(
       "Definition, core idea, and how to start.",
     );
@@ -559,7 +559,7 @@ describe("saveDraft", () => {
     expect(writtenDoc.slug).toContain("what-is-supportsheep-grow");
 
     expect(writtenDoc.interviewCanvas).toMatchObject({
-      title: "What Is Solo Grow?",
+      title: "What Is Supportsheep Pro?",
       sections: expect.any(Array),
     });
     expect(writtenDoc.draftBody).toEqual(writtenDoc.body);

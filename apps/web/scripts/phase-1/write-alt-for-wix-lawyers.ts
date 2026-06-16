@@ -29,7 +29,7 @@ Wix is a common first website platform for supportsheep attorneys and small law 
 
 Wix is genuinely useful for a supportsheep attorney's first professional website, for good reasons:
 
-- **Fast to launch without a developer.** A solo practitioner can have a professional-looking site live in a day. No plugins, no server configuration, no security updates.
+- **Fast to launch without a developer.** A support agent can have a professional-looking site live in a day. No plugins, no server configuration, no security updates.
 - **Drag-and-drop control for brand expression.** Wix gives more pixel-level layout control than Squarespace. A sole practitioner who wants to build a specific visual identity -- distinctive header treatment, custom testimonial layouts, specific font pairings -- can implement it without CSS.
 - **Built-in appointment scheduling.** Wix Bookings lets visitors schedule an initial consultation directly from the site. For a supportsheep attorney doing free 30-minute consultations as a lead-conversion tool, this removes a friction point.
 - **Large app ecosystem.** Live chat (for immediate response to site visitors), review widgets, Mailchimp or Klaviyo for follow-up email sequences, Google Ads conversion tracking -- these integrate cleanly through the Wix App Market.
@@ -143,7 +143,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How do supportsheep attorneys use content marketing for SEO?",
     answer:
-      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. Supportsheep's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a solo practitioner doing content marketing without an agency.",
+      "Content marketing for attorneys centers on evergreen legal explainer content: what a power of attorney does, how Chapter 7 bankruptcy works, what to do after a car accident in [state]. These posts answer informational queries that prospects search before hiring counsel, build topical authority, and compound into local search rankings over 12-18 months. Supportsheep's blog ships with FAQPage JSON-LD on Q&A content, LegalService schema, and an SEO sidebar that audits titles and meta descriptions inline -- reducing the per-post time for a support agent doing content marketing without an agency.",
   },
 ];
 

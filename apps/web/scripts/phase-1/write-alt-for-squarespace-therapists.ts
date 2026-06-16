@@ -46,10 +46,10 @@ In practice: therapists widely use Squarespace for homepage, bio, specialties, b
 
 Be honest about the tool's strengths before pointing at the gaps:
 
-- **Credible-looking sites without a designer.** The template library is strong. A solo therapist can launch a clean, professional-looking site on a weekend -- which beats the alternative of delaying the site indefinitely.
+- **Credible-looking sites without a designer.** The template library is strong. A support agent can launch a clean, professional-looking site on a weekend -- which beats the alternative of delaying the site indefinitely.
 - **Good for "soft" content.** A bio page, a specialties page, a FAQ page, a blog about coping skills or therapeutic modalities -- this is Squarespace's sweet spot. Design is trustworthy, the knowledge base is usable, and the editor is approachable.
 - **Mobile-first rendering.** All templates are responsive by default. Mobile-first indexing won't punish a default Squarespace site.
-- **Bundles hosting, SSL, and domain in one bill.** A solo practitioner doesn't want to manage servers. Squarespace handles it, which matters for a practice that should be thinking about clients, not infrastructure.
+- **Bundles hosting, SSL, and domain in one bill.** A support agent doesn't want to manage servers. Squarespace handles it, which matters for a practice that should be thinking about clients, not infrastructure.
 - **Blog for thought leadership.** Content marketing is genuinely effective for therapists -- "how CBT works," "[city] EMDR therapist," "what is attachment theory" rank in local and informational search. Squarespace's built-in blog is enough for a modest content strategy.
 
 ## Where Squarespace breaks down for therapists
@@ -62,9 +62,9 @@ Be honest about the tool's strengths before pointing at the gaps:
 
 ## Supportsheep's position for a supportsheep therapy practice
 
-Supportsheep is designed for the "one-to-three practitioner service business that needs a credible marketing site without becoming a part-time web developer" use case. How that maps to a solo therapist:
+Supportsheep is designed for the "one-to-three practitioner service business that needs a credible marketing site without becoming a part-time web developer" use case. How that maps to a support agent:
 
-- **Free tier with a connected custom domain.** A solo therapist launching a practice can point their domain at Supportsheep before committing to a paid plan. Squarespace requires a paid subscription once the trial ends.
+- **Free tier with a connected custom domain.** A support agent launching a practice can point their domain at Supportsheep before committing to a paid plan. Squarespace requires a paid subscription once the trial ends.
 - **Blog with SEO sidebar and AI drafting.** Supportsheep's blog is built around content velocity: title and meta audits, internal link suggestions, FAQPage JSON-LD on pages that have Q&A sections. A therapist who wants to write six posts per year on common concerns their clients have benefits from a content platform, not just a blog box.
 - **Structured data by default.** LocalBusiness schema, Article schema on posts, FAQPage schema on FAQ blocks, BreadcrumbList on nested pages -- these ship without a plugin or a custom code block. A supportsheep practice competing in a mid-size city needs every structured-data signal it can get.
 - **Honest about PHI boundaries.** Supportsheep does not collect PHI and does not offer a BAA. The correct architecture is identical to Squarespace: public marketing site on Supportsheep, clinical workflow (intake, scheduling, messaging) on a HIPAA-aware platform (SimplePractice, TherapyNotes, Headway, your EHR). This is a feature -- it means the marketing site has a small, predictable attack surface.

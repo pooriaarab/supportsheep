@@ -397,7 +397,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     // invariants in a single end-to-end POST.
     mockVerifyInterviewToken.mockReturnValue({ interviewId: "test-w20b" });
     const persistedSnapshot = {
-      title: "Solo Grow: What It Means to Build on Your Own",
+      title: "Supportsheep Pro: What It Means to Build on Your Own",
       sections: [
         {
           id: "section-1",

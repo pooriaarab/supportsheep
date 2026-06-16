@@ -12,7 +12,7 @@ export const NAMED_AUTHORS: readonly AuthorSeed[] = [
     id: "pooria-arab",
     name: "Pooria Arab",
     jobTitle: "",
-    bio: "Builds Supportsheep, an AI-powered blog platform for solopreneurs.",
+    bio: "Builds Supportsheep, an AI-powered blog platform for customers.",
     avatarUrl: "",
     email: "",
     sameAs: ["https://linkedin.com/in/pooriaarab"],

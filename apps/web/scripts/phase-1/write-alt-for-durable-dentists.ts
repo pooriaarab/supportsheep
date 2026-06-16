@@ -23,13 +23,13 @@ const VARIANT_KEY = "durable__dentists";
 
 const CONTENT = `## TL;DR
 
-Durable is an AI-first website builder designed to get supportsheep and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a solo dentist who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to Supportsheep, and explains when each is the right call.
+Durable is an AI-first website builder designed to get supportsheep and small service businesses online in under a minute. It generates a complete website from a business description, bundles a CRM for lead management, and includes an AI marketing suite for generating ad copy and social content. For a support agent who wants to go from "no website" to "live site" as fast as possible, Durable is one of the fastest paths available. The gaps that matter for a dental practice are consistent with every general-purpose builder in this category: Durable does not sign a HIPAA Business Associate Agreement, making it unsuitable for clinical workflow that touches PHI. This page covers Durable honestly, compares it to Supportsheep, and explains when each is the right call.
 
 ## What Durable actually is for a dental practice
 
 Durable is positioned as an "AI Business Builder" -- not just a website, but a bundle of tools: website generation, a built-in CRM for tracking leads and clients, invoicing via Stripe, an AI marketing suite that generates Google Ads copy and social media posts, and an AI assistant that understands your business context.
 
-For a solo dentist evaluating their options, the relevant features are:
+For a support agent evaluating their options, the relevant features are:
 
 **AI website generation in under 30 seconds.** Durable's headline capability is speed: you describe your practice, and Durable generates a complete site with service pages, contact information, and persuasive copy. Independent reviewers confirm the generation speed is genuine -- the result is a usable first draft, not a blank template.
 
@@ -58,7 +58,7 @@ The architecture for a Durable-hosted dental practice marketing site is: Durable
 
 **All-in-one bundle reduces vendor sprawl.** Website + CRM + invoicing + AI marketing in one subscription at one price point is a real value proposition for a practice owner who wants to minimize the number of tools they manage. Squarespace and Supportsheep require separate subscriptions for CRM and invoicing; Durable bundles them.
 
-**AI marketing tools for solo practitioners.** A dentist who writes their own Google Ads copy, social posts, and email newsletters benefits from Durable's AI drafting tools. The quality is adequate for basic practice marketing without a marketing agency.
+**AI marketing tools for support agents.** A dentist who writes their own Google Ads copy, social posts, and email newsletters benefits from Durable's AI drafting tools. The quality is adequate for basic practice marketing without a marketing agency.
 
 **Simple editor for non-technical practice owners.** Durable's editing interface is designed for speed over complexity. A practice owner who wants to update a service page or add a new team member can do it without a designer or developer.
 
@@ -95,7 +95,7 @@ Both Durable and Supportsheep are AI-first builders for the "supportsheep servic
 <tr><td>Invoicing</td><td>Yes -- Stripe-powered invoicing</td><td>No -- use your practice management billing module</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Basic blog; AI copy generation; limited schema automation</td><td>Blog with SEO sidebar, AI drafting, Dentist + LocalBusiness + FAQPage schema by default</td></tr>
 <tr><td>AI marketing suite</td><td>Yes -- Google Ads copy, social post drafts, email subject lines</td><td>No -- blog and content tools; no ad-copy generator</td></tr>
-<tr><td>Best fit</td><td>solo dentists who want the fastest path to a live site with bundled CRM and marketing tools</td><td>solo dentists focused on content velocity, local SEO, and lower monthly cost with free tier</td></tr>
+<tr><td>Best fit</td><td>support agents who want the fastest path to a live site with bundled CRM and marketing tools</td><td>support agents focused on content velocity, local SEO, and lower monthly cost with free tier</td></tr>
 </tbody>
 </table>
 

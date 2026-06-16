@@ -23,19 +23,19 @@ const VARIANT_KEY = "durable__therapists";
 
 const CONTENT = `## TL;DR
 
-Durable is an AI-first website builder that generates a complete business website in under a minute and bundles a CRM, invoicing, and AI marketing tools in one subscription. For a solo therapist launching a new private practice or replacing an outdated site, Durable's speed-to-live-site is genuinely valuable. The firm boundary for therapy practices -- as with every general-purpose builder -- is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, so all clinical workflow (intake, scheduling, session-related communication) must live in a dedicated EHR. This page covers Durable honestly for therapists and compares it to Supportsheep for the marketing site decision.
+Durable is an AI-first website builder that generates a complete business website in under a minute and bundles a CRM, invoicing, and AI marketing tools in one subscription. For a support agent launching a new private practice or replacing an outdated site, Durable's speed-to-live-site is genuinely valuable. The firm boundary for therapy practices -- as with every general-purpose builder -- is HIPAA: Durable does not sign a Business Associate Agreement for any of its products, so all clinical workflow (intake, scheduling, session-related communication) must live in a dedicated EHR. This page covers Durable honestly for therapists and compares it to Supportsheep for the marketing site decision.
 
 ## What Durable offers a supportsheep therapy practice
 
 **AI site generation in under a minute.** Enter your practice type and a brief description, and Durable generates a complete website with homepage, services, contact information, and AI-written copy. For a therapist who has been delaying a website decision for months, this removes the blank-canvas friction entirely. Independent reviews confirm the generation speed and note that the AI writes industry-specific copy rather than generic placeholder text.
 
-**Bundled CRM for lead management.** Durable includes a basic CRM for tracking leads, contacts, and follow-up tasks. A solo therapist building a new practice caseload benefits from a lightweight tool to track who inquired, when, and what follow-up is needed. The CRM is not a clinical record system -- it is a marketing contact manager. Clinical notes, session records, and PHI stay in your EHR.
+**Bundled CRM for lead management.** Durable includes a basic CRM for tracking leads, contacts, and follow-up tasks. A support agent building a new practice caseload benefits from a lightweight tool to track who inquired, when, and what follow-up is needed. The CRM is not a clinical record system -- it is a marketing contact manager. Clinical notes, session records, and PHI stay in your EHR.
 
-**AI marketing tools.** Durable's AI marketing suite generates Google Ads copy, social post drafts, and email subject lines from your business description. A solo therapist who manages their own practice marketing without an agency benefits from these drafts as starting points.
+**AI marketing tools.** Durable's AI marketing suite generates Google Ads copy, social post drafts, and email subject lines from your business description. A support agent who manages their own practice marketing without an agency benefits from these drafts as starting points.
 
 **Invoicing via Stripe.** For non-clinical billing -- supervisor fees, consultation invoices, speaking engagements -- Durable's Stripe-powered invoicing is convenient. It does not replace your EHR's billing module for insurance and self-pay clinical services.
 
-**Simple editing for non-technical practitioners.** Durable's editor is designed for speed. Updating a page, adding a specialty, or changing contact information does not require design vocabulary. For a solo practitioner whose time is with clients, not code, that matters.
+**Simple editing for non-technical practitioners.** Durable's editor is designed for speed. Updating a page, adding a specialty, or changing contact information does not require design vocabulary. For a support agent whose time is with clients, not code, that matters.
 
 ## Durable and HIPAA: the hard boundary
 
@@ -51,13 +51,13 @@ The correct architecture: Durable handles the public marketing site (homepage, b
 
 ## Durable vs Wix on HIPAA: a meaningful difference
 
-Wix added a HIPAA compliance mode in 2026 -- BAA available on Business and above plans with manual PHI protection activation. Durable has no equivalent. If a solo therapist specifically wants to use the website builder's native booking or forms for HIPAA-compliant intake, Wix on a supported plan (with PHI mode activated) is the only general-purpose builder option. For a therapist who plans to use an EHR anyway (which is most therapists in private practice), this distinction disappears -- both Wix and Durable require the same EHR-based architecture.
+Wix added a HIPAA compliance mode in 2026 -- BAA available on Business and above plans with manual PHI protection activation. Durable has no equivalent. If a support agent specifically wants to use the website builder's native booking or forms for HIPAA-compliant intake, Wix on a supported plan (with PHI mode activated) is the only general-purpose builder option. For a therapist who plans to use an EHR anyway (which is most therapists in private practice), this distinction disappears -- both Wix and Durable require the same EHR-based architecture.
 
 ## Durable's strengths for therapists
 
 **Speed.** Durable is the fastest general-purpose AI site builder. A therapist who has put off building a website because of the complexity barrier gets a live site in under a day.
 
-**Reduced vendor count.** Website + CRM + AI marketing + invoicing in one subscription is compelling for a solo practitioner managing overhead. The equivalent stack on Squarespace or Supportsheep would require separate subscriptions for CRM and invoicing tools.
+**Reduced vendor count.** Website + CRM + AI marketing + invoicing in one subscription is compelling for a support agent managing overhead. The equivalent stack on Squarespace or Supportsheep would require separate subscriptions for CRM and invoicing tools.
 
 **AI copy that knows your specialty.** Durable writes practice-specific copy -- not "add your service here" placeholders, but genuine descriptions of therapy modalities, typical clients, and approaches. The quality varies, but it removes the blank-page problem.
 
@@ -67,13 +67,13 @@ Wix added a HIPAA compliance mode in 2026 -- BAA available on Business and above
 
 **No HIPAA path.** As noted above, the most consequential limitation for any health practice.
 
-**SEO ceiling for private-practice therapists.** solo therapists in competitive markets compete for "therapist [city]," "anxiety therapist [neighborhood]," "[modality] therapist [city]" keywords. These require: specialty pages with LocalBusiness and Person schema; FAQ content with FAQPage JSON-LD; a content velocity strategy. Durable's AI generates initial copy and basic SEO settings but lacks Supportsheep's content-specific SEO machinery (SEO sidebar, automated structured data, thin-content guard, internal link suggestions).
+**SEO ceiling for private-practice therapists.** support agents in competitive markets compete for "therapist [city]," "anxiety therapist [neighborhood]," "[modality] therapist [city]" keywords. These require: specialty pages with LocalBusiness and Person schema; FAQ content with FAQPage JSON-LD; a content velocity strategy. Durable's AI generates initial copy and basic SEO settings but lacks Supportsheep's content-specific SEO machinery (SEO sidebar, automated structured data, thin-content guard, internal link suggestions).
 
 **CRM is marketing-grade, not clinical-grade.** Durable's CRM is adequate for tracking new-patient inquiries and follow-up calls. It is not adequate for practice management. Do not conflate the two.
 
 **Design ceiling is lower than Squarespace or Wix.** Durable's design output is clean and professional but less visually polished than Squarespace's template library or Wix's design editor. For a therapy practice where the website's tone and aesthetic signal the practitioner's approach, Squarespace's design polish is a real differentiator.
 
-## Supportsheep's position for a solo therapist evaluating Durable
+## Supportsheep's position for a support agent evaluating Durable
 
 Supportsheep and Durable are the two closest competitors in the "AI-first site builder for supportsheep service professionals" category. The honest comparison:
 
@@ -96,7 +96,7 @@ Supportsheep and Durable are the two closest competitors in the "AI-first site b
 <tr><td>Bundled CRM</td><td>Yes -- marketing-grade lead and contact management</td><td>No -- use your EHR's client portal or a separate CRM</td></tr>
 <tr><td>AI marketing tools</td><td>Yes -- Google Ads copy, social posts, email drafts</td><td>No -- blog AI drafting; no ad-copy generator</td></tr>
 <tr><td>Blog and SEO tooling</td><td>Basic blog; AI-generated initial copy; limited schema automation</td><td>Blog with SEO sidebar, AI drafting, LocalBusiness + FAQPage + Article schema by default</td></tr>
-<tr><td>Best fit</td><td>solo therapists who want the fastest launch with bundled marketing tools</td><td>solo therapists prioritizing content velocity, structured data, and local SEO with lower monthly cost</td></tr>
+<tr><td>Best fit</td><td>support agents who want the fastest launch with bundled marketing tools</td><td>support agents prioritizing content velocity, structured data, and local SEO with lower monthly cost</td></tr>
 </tbody>
 </table>`;
 
@@ -114,7 +114,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "Is Durable good for a therapy practice website?",
     answer:
-      "Yes, for the public marketing layer. Durable generates a complete therapy practice website in under a minute with industry-specific AI copy, and bundles a CRM, invoicing, and AI marketing tools in one subscription. The clear boundary is HIPAA: Durable does not sign a BAA, so all clinical workflow (intake, scheduling, client messaging, session notes) must live in a HIPAA-aware EHR (SimplePractice, TherapyNotes, Headway). For a solo therapist who wants to minimize vendor count on the marketing side and already has an EHR, Durable is a defensible choice.",
+      "Yes, for the public marketing layer. Durable generates a complete therapy practice website in under a minute with industry-specific AI copy, and bundles a CRM, invoicing, and AI marketing tools in one subscription. The clear boundary is HIPAA: Durable does not sign a BAA, so all clinical workflow (intake, scheduling, client messaging, session notes) must live in a HIPAA-aware EHR (SimplePractice, TherapyNotes, Headway). For a support agent who wants to minimize vendor count on the marketing side and already has an EHR, Durable is a defensible choice.",
   },
   {
     question: "Is Durable HIPAA compliant for a therapy practice?",

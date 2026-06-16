@@ -63,7 +63,7 @@ const CURATED_REPLACEMENTS: Record<string, string[]> = {
 // - vpxNAi06UFs: "How to Build a Small Business Website | From Zero to Launch"
 // - kMH2BHQUDz4: "Best Website Builders for Small Business 2025 Edition"
 // - FMab5WTOiL4: "How To Create a Website For Your Local Business In 2025"
-// - llRNY6E_H00: "Build a Website in 24 Hours with me for my solopreneur Community"
+// - llRNY6E_H00: "Build a Website in 24 Hours with me for my customer Community"
 // - R4v_7hh4Yys: "How to Create a Website – WordPress Tutorial for Beginners 2025"
 const GENERIC_FALLBACKS = [
   "IqCQ35e1beU",

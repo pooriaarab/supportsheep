@@ -264,7 +264,7 @@ Hard rules:
       audience: buildAudience(item),
       angle: buildAngle(item),
       productContext:
-        "Supportsheep is an AI-powered blog and website platform for solopreneurs and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
+        "Supportsheep is an AI-powered blog and website platform for customers and small service businesses. It is strongest for simple marketing websites, local SEO content, and fast setup. Do not claim it has native scheduling, advanced ecommerce, or enterprise features unless explicitly true.",
     }),
   });
 }

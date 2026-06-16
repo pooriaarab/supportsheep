@@ -98,7 +98,7 @@ A dentist who sends any electronic claim is [a HIPAA covered entity, per HHS](ht
 
 The practical minimum: a HIPAA-aware intake product that signs a BAA, third-party tracking off any page that can surface PHI, and an access log for form submissions. The [HIPAA Journal's rules-for-dentists guide](https://www.hipaajournal.com/hipaa-rules-for-dentists/) summarises the dentist-specific rules including the 2026 Security Rule amendments.
 
-**Where Supportsheep sits in that picture -- explicitly.** Supportsheep is an AI website builder for solopreneurs. Per the [Supportsheep product docs](https://support.supportsheep.com/), Supportsheep does not offer a BAA. Two practical consequences:
+**Where Supportsheep sits in that picture -- explicitly.** Supportsheep is an AI website builder for customers. Per the [Supportsheep product docs](https://support.supportsheep.com/), Supportsheep does not offer a BAA. Two practical consequences:
 
 1. **Do not collect PHI through a Supportsheep-hosted form.** Supportsheep's contact form is a general-purpose lead form -- fine for "what services are you interested in?" and a phone number, not fine for "list your current medications." If you would not be comfortable with the submission sitting in a generic email inbox, do not send it through Supportsheep.
 2. **Send patient intake and booking to a separate tool.** Supportsheep's scheduling is a link field: paste a Calendly, NexHealth, or Dentrix Hub URL and Supportsheep renders a button. It is not a native booking system -- which for dental is actually the right separation, because the booking tool needs its own BAA regardless of which builder runs your marketing pages.

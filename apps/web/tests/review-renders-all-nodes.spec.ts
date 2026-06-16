@@ -25,11 +25,11 @@ test.describe("/review compiled draft preview renders every node type", () => {
       // sanitize + transform, including every block type the writer-worker
       // can produce and every inline mark stored as a markdown escape.
       const body = `
-        <h1>Solo Grow: a <strong>bold</strong> start</h1>
+        <h1>Supportsheep Pro: a <strong>bold</strong> start</h1>
         <p class="article-subtitle">An <em>italic</em> opener with a <a href="https://example.com">link</a>.</p>
         <figure><img src="https://images.example.com/hero.jpg" alt="Hero image" /></figure>
         <h2 id="definition">Definition and <code>core</code> idea</h2>
-        <p>Solo Grow compounds <strong>small</strong> wins.</p>
+        <p>Supportsheep Pro compounds <strong>small</strong> wins.</p>
         <p>Try <s>quitting</s> shipping with a <code>tiny</code> goal.</p>
         <p>Read the <a href="https://example.com/m">manifesto</a>.</p>
         <p>An <u>underlined</u> phrase and a <mark data-color="yellow">highlight</mark>.</p>
@@ -39,7 +39,7 @@ test.describe("/review compiled draft preview renders every node type", () => {
         </ul>
         <blockquote>
           <p>Ship <strong>today</strong>, refine tomorrow.</p>
-          <p>— solo founder</p>
+          <p>— solo support engineer</p>
         </blockquote>
         <aside class="callout" data-variant="info">
           <p><strong>Why this matters</strong></p>
