@@ -16,7 +16,7 @@ import { registerContextTagTools } from "./tools/context-tags";
 import { registerWritingSkillTools } from "./tools/writing-skills";
 import { registerInterviewTools } from "./tools/interviews";
 import { registerSupportTools } from "./tools/support";
-import type { McpToolContext } from "./context";
+import type { McpToolContext } from "./tools/context";
 
 export function createMcpServer(ctx: McpToolContext): McpServer {
   const server = new McpServer({
