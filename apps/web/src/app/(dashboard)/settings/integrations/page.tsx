@@ -20,6 +20,7 @@ import {
 } from "@/components/settings/integrations-toolbar";
 import { IntegrationsContent } from "@/components/settings/integrations-content";
 import { AddIntegrationDialog } from "@/components/settings/add-integration-dialog";
+import { GithubPanel } from "./github-panel";
 import {
   INTEGRATION_DEFAULT_SETTINGS,
   INTEGRATION_DISPLAY_PROPERTIES,
@@ -152,6 +153,9 @@ export default function IntegrationsPage() {
           onConnect={() => setAddDialogOpen(true)}
           onDisconnect={setDisconnectingId}
         />
+        <div className="px-4 sm:px-6 pb-6">
+          <GithubPanel />
+        </div>
       </div>
 
       {/* Bulk Actions */}
