@@ -7,17 +7,17 @@ import { generateText } from "ai";
 import { getRequestBlogId } from "@/lib/tenancy/request-blog";
 
 /**
- * POST /api/v1/articles/[id]/feedback
+ * POST /api/v1/articles/[slug]/feedback
  * 
  * Ingests user feedback. If the feedback is "unhelpful", it triggers an agentic
  * background loop using Claude to rewrite the article and append it to the `draftBody`.
  */
 export async function POST(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { slug } = await params;
     const body = await request.json();
     const blogId = await getRequestBlogId();
 
@@ -32,7 +32,7 @@ export async function POST(
       const rows = await db
         .select()
         .from(articles)
-        .where(and(eq(articles.id, id), eq(articles.blogId, blogId)))
+        .where(and(eq(articles.slug, slug), eq(articles.blogId, blogId)))
         .limit(1);
 
       const articleRow = rows[0];
@@ -43,7 +43,7 @@ export async function POST(
         if (apiKey) {
           const anthropic = createAnthropic({ apiKey });
           
-          console.info(`[Agentic] Processing unhelpful feedback for article ${id}`);
+          console.info(`[Agentic] Processing unhelpful feedback for article ${slug}`);
           
           // 2. Prompt Claude to rewrite it
           const { text: improvedContent } = await generateText({
@@ -62,9 +62,9 @@ export async function POST(
               data: JSON.stringify(articleData),
               updatedAt: new Date().toISOString()
             })
-            .where(eq(articles.id, id));
+            .where(eq(articles.slug, slug));
             
-          console.info(`[Agentic] Saved improved draft for ${id}`);
+          console.info(`[Agentic] Saved improved draft for ${slug}`);
         }
       }
     }
