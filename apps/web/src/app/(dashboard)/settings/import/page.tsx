@@ -15,6 +15,7 @@ import {
   Download,
   Ban,
 } from "lucide-react";
+import Link from "next/link";
 import {
   useImportJobQuery,
   useWordPressImportMutation,
@@ -272,6 +273,28 @@ export default function ImportPage() {
               Import existing content from WordPress or other platforms.
             </p>
           </div>
+
+          {/* OpenAPI Import Card */}
+          <Card className="p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="size-10 rounded-lg bg-muted flex items-center justify-center">
+                  <FileText className="size-6" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    OpenAPI Specification
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    Import API endpoints as drafted documentation articles from a JSON or YAML spec.
+                  </p>
+                </div>
+              </div>
+              <Button variant="outline" asChild>
+                <Link href="/settings/import/openapi">Import Spec</Link>
+              </Button>
+            </div>
+          </Card>
 
           {/* WordPress Import Card */}
           <Card className="p-6 space-y-4">
