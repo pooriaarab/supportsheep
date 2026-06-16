@@ -3,21 +3,24 @@
 import { useState } from "react";
 import { ThumbsUp, ThumbsDown, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { createLogger } from "@/lib/logger";
 
-export function FeedbackWidget({ articleId: _articleId }: { articleId: string }) {
+const log = createLogger("public:feedback-widget");
+
+export function FeedbackWidget({ articleId }: { articleId: string }) {
   const [feedback, setFeedback] = useState<"helpful" | "unhelpful" | null>(null);
 
   const handleFeedback = async (type: "helpful" | "unhelpful") => {
     setFeedback(type);
-    
+
     try {
-      await fetch(`/api/v1/articles/${_articleId}/feedback`, {
+      await fetch(`/api/v1/articles/${articleId}/feedback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ type }),
       });
     } catch (e) {
-      console.error("Failed to submit feedback", e);
+      log.error("Failed to submit feedback", { articleId, error: String(e) });
     }
   };
 
