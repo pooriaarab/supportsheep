@@ -53,7 +53,7 @@ vi.mock("@/lib/logger", () => ({
 
 function buildRequest(body: unknown): NextRequest {
   return new NextRequest("http://localhost/api/v1/client-logs", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });

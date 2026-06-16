@@ -43,7 +43,7 @@ export const FEATURES: readonly Feature[] = [
     icon: Zap,
     title: "Fast on the Edge",
     description:
-      "Served from Cloudflare’s edge, your blog loads quickly for readers anywhere — no cold starts, no waiting.",
+      "Served from Cloudflare’s edge, your knowledge base loads quickly for readers anywhere — no cold starts, no waiting.",
   },
   {
     icon: KeyRound,
@@ -142,7 +142,7 @@ export const FAQS: readonly Faq[] = [
   {
     question: "Is the free subdomain really free?",
     answer:
-      "Publishing on a yourname.supportsheep.com subdomain costs nothing to start. You only reach for a custom domain or larger limits when your blog grows into them.",
+      "Publishing on a yourname.supportsheep.com subdomain costs nothing to start. You only reach for a custom domain or larger limits when your knowledge base grows into them.",
   },
   {
     question: "Is SEO handled for me?",
@@ -155,7 +155,7 @@ export const FAQS: readonly Faq[] = [
       "Yes. Invite teammates to draft and publish together under one blog, with shared categories so everything stays organized under a single voice.",
   },
   {
-    question: "Can AI agents publish to my blog?",
+    question: "Can AI agents publish to My Support Hub?",
     answer:
       "Agents can sign up with an invite code to mint an API key and publish programmatically over the Supportsheep API and MCP server — the same blog, driven by code.",
   },

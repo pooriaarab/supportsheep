@@ -20,7 +20,7 @@ import { getInternalLinkRulesForBlog } from "@/lib/seo/internal-link-rules-repos
 import { listSitemapsForBlog } from "@/lib/seo/sitemaps-repository";
 import { getBlogConfig } from "@/lib/blog-config";
 import { createArticle } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 import { sanitizeArticleHtml } from "@/lib/sanitize/article-html";
 import { POST_TYPE_TEMPLATES, VOICE_GUARDRAIL } from "./templates";
@@ -67,7 +67,7 @@ interface GenerateFromKeywordOpts {
   provider: AIProvider;
   scheduledAt?: string;
   generatedBy?: "keyword" | "bulk" | "content_plan";
-  /** Tenant blog to generate into. Defaults to DEFAULT_BLOG_ID. */
+  /** Tenant blog to generate into. Defaults to DEFAULT_blog_id. */
   blogId?: string;
 }
 
@@ -90,7 +90,7 @@ export async function generateFromKeyword(
     provider,
     scheduledAt,
     generatedBy = "keyword",
-    blogId = DEFAULT_BLOG_ID,
+    blogId = DEFAULT_blog_id,
   } = opts;
 
   log.info("Starting generation", {
@@ -194,7 +194,7 @@ export async function generateFromKeyword(
   try {
     const seoRaw = await generateContent({
       provider,
-      systemPrompt: `Generate SEO metadata for this blog post. Return ONLY valid JSON (no markdown fences) with these fields: metaTitle (50-60 chars, compelling for search), metaDescription (150-160 chars, includes primary keyword), tags (array of 3-5 relevant keyword phrases), category (single broad topic category).\n${VOICE_GUARDRAIL}`,
+      systemPrompt: `Generate SEO metadata for this knowledge base post. Return ONLY valid JSON (no markdown fences) with these fields: metaTitle (50-60 chars, compelling for search), metaDescription (150-160 chars, includes primary keyword), tags (array of 3-5 relevant keyword phrases), category (single broad topic category).\n${VOICE_GUARDRAIL}`,
       userPrompt: `Title: ${title}\nKeyword: ${keyword}\nExcerpt: ${body.substring(0, 500)}`,
       temperature: 0.3,
       maxTokens: 300,

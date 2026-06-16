@@ -28,7 +28,7 @@ vi.mock("@/lib/tenancy/repository", () => ({
   resolveTenantForUser: vi
     .fn()
     .mockResolvedValue({ blogId: "default", role: "owner" }),
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 const member = {

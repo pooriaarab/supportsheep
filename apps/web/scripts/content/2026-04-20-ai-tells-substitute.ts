@@ -41,7 +41,7 @@ import { FieldValue, getFirestore } from "firebase-admin/firestore";
 import { deAiTellHtml, type AiTellChange } from "@/lib/content/ai-tells";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const BATCH_SIZE = 500;
 const PROGRESS_EVERY = 20;
 const SAMPLE_DIFFS = 20;
@@ -146,9 +146,9 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
-  console.info(`fetched ${snap.size} articles for blogId=${BLOG_ID}`);
+  console.info(`fetched ${snap.size} articles for blogId=${blog_id}`);
 
   const pending: ArticleDoc[] = [];
   let alreadyStamped = 0;

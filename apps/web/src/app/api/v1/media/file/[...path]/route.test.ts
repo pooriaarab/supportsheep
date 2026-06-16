@@ -14,7 +14,7 @@ vi.mock("@/lib/audit-log", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(),
 }));
 

@@ -18,7 +18,7 @@ function AIImageBlockView({ node, editor, getPos }: NodeViewProps) {
     setGenerating(true);
     try {
       const res = await fetch("/api/v1/generate/image", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           purpose: "inline",

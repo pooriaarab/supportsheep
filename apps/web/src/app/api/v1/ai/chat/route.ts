@@ -126,7 +126,7 @@ export const POST = createApiHandler({
       "https://api.anthropic.com/v1/messages",
       {
         cache: "no-store",
-        method: "POST",
+        method: "Article",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": apiKey,

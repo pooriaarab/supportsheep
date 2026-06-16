@@ -1,7 +1,7 @@
 /**
  * Server-side blog config loader
  *
- * Reads / writes the blog_config D1 table (per-blog singleton).
+ * Reads / writes the knowledge base_config D1 table (per-blog singleton).
  * Used by public pages (homepage, article pages, RSS, sitemap).
  */
 
@@ -16,7 +16,7 @@ import { blogConfig as blogConfigTable } from "@/db/schema/config";
 import { DEFAULT_BLOG_FREE_TOOLS_CONFIG } from "@/lib/free-tools/config-defaults";
 import { DEFAULT_PUBLIC_ARTICLE_APPEARANCE } from "@/lib/public-article-appearance";
 import { normalizePublicBlogConfig } from "@/lib/public-content";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type {
   BlogConfig,
   BlogFreeToolsConfig,
@@ -87,8 +87,8 @@ const DEFAULT_INTERVIEW_CONFIG = {
 
 export const DEFAULT_BLOG_CONFIG: BlogConfig = {
   blogId: "default",
-  siteName: "Blog",
-  siteDescription: "A modern blog",
+  siteName: "Support Portal",
+  siteDescription: "A modern knowledge base",
   logo: "",
   permalinks: DEFAULT_PERMALINKS,
   publicAppearance: DEFAULT_PUBLIC_APPEARANCE,
@@ -98,8 +98,8 @@ export const DEFAULT_BLOG_CONFIG: BlogConfig = {
     featuredCategory: null,
   },
   seo: {
-    defaultMetaTitle: "Blog",
-    defaultMetaDescription: "A modern blog",
+    defaultMetaTitle: "Support Portal",
+    defaultMetaDescription: "A modern knowledge base",
     googleAnalyticsId: "",
     clarityId: "",
     submissionProtocols: {
@@ -362,7 +362,6 @@ export function mergeBlogConfig(
     support: {
       enableVoice: config?.support?.enableVoice ?? DEFAULT_BLOG_CONFIG.support!.enableVoice,
       enableChatbot: config?.support?.enableChatbot ?? DEFAULT_BLOG_CONFIG.support!.enableChatbot,
-      openAIApiKey: config?.support?.openAIApiKey ?? DEFAULT_BLOG_CONFIG.support?.openAIApiKey,
     },
   };
 
@@ -370,10 +369,10 @@ export function mergeBlogConfig(
 }
 
 /**
- * Fetch the blog config from D1 with a default fallback.
+ * Fetch the knowledge base config from D1 with a default fallback.
  * Safe to call from server components and API routes.
  */
-export async function getBlogConfig(blogId: string = DEFAULT_BLOG_ID): Promise<BlogConfig> {
+export async function getBlogConfig(blogId: string = DEFAULT_blog_id): Promise<BlogConfig> {
   try {
     const db = getDb();
     const rows = await db
@@ -395,7 +394,7 @@ export async function getBlogConfig(blogId: string = DEFAULT_BLOG_ID): Promise<B
  * defaults are applied). Returns {} if no row exists yet.
  */
 export async function getStoredBlogConfig(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<Partial<BlogConfig>> {
   const rows = await db

@@ -26,7 +26,7 @@ function postRequest(secretHeader?: string): Request {
     headers["x-internal-cron-secret"] = secretHeader;
   }
   return new Request("http://test.local/api/v1/internal/domains/refresh", {
-    method: "POST",
+    method: "Article",
     headers,
   });
 }

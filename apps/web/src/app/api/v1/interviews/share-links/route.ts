@@ -14,7 +14,7 @@ import {
   createShareLink,
   listShareLinks,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("api:interviews:share-links");
 
@@ -37,7 +37,7 @@ export const POST = createApiHandler({
 
     const { token, hash } = generateShareLinkToken();
 
-    const link = await createShareLink(DEFAULT_BLOG_ID, {
+    const link = await createShareLink(DEFAULT_blog_id, {
       type: body.type,
       createdBy: session.uid,
       workspaceId: "default",
@@ -92,7 +92,7 @@ export const GET = createApiHandler({
   handler: async ({ session, role: ctxRole }) => {
     const role = (ctxRole ?? "guest") as UserRole;
 
-    const blogId = DEFAULT_BLOG_ID;
+    const blogId = DEFAULT_blog_id;
 
     // Owners and Admins can see all links in the workspace.
     // Other roles are scoped to only view links they personally created.

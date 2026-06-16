@@ -13,7 +13,7 @@ vi.mock("@/lib/interviews/share-links-repository", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 vi.mock("@/lib/interviews/share-link-token", () => ({
@@ -53,7 +53,7 @@ function makeRequest(body: unknown): NextRequest {
   return new NextRequest(
     "http://localhost/api/v1/interviews/test-only/seed-share-link",
     {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
     },

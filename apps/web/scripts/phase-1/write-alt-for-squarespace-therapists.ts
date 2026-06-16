@@ -47,7 +47,7 @@ In practice: therapists widely use Squarespace for homepage, bio, specialties, b
 Be honest about the tool's strengths before pointing at the gaps:
 
 - **Credible-looking sites without a designer.** The template library is strong. A solo therapist can launch a clean, professional-looking site on a weekend -- which beats the alternative of delaying the site indefinitely.
-- **Good for "soft" content.** A bio page, a specialties page, a FAQ page, a blog about coping skills or therapeutic modalities -- this is Squarespace's sweet spot. Design is trustworthy, the blog is usable, and the editor is approachable.
+- **Good for "soft" content.** A bio page, a specialties page, a FAQ page, a blog about coping skills or therapeutic modalities -- this is Squarespace's sweet spot. Design is trustworthy, the knowledge base is usable, and the editor is approachable.
 - **Mobile-first rendering.** All templates are responsive by default. Mobile-first indexing won't punish a default Squarespace site.
 - **Bundles hosting, SSL, and domain in one bill.** A solo practitioner doesn't want to manage servers. Squarespace handles it, which matters for a practice that should be thinking about clients, not infrastructure.
 - **Blog for thought leadership.** Content marketing is genuinely effective for therapists -- "how CBT works," "[city] EMDR therapist," "what is attachment theory" rank in local and informational search. Squarespace's built-in blog is enough for a modest content strategy.

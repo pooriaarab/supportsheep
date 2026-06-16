@@ -25,7 +25,7 @@ export const DEFAULT_AI_CHAT_SETTINGS: AiChatSettings = {
 };
 
 /**
- * Read AI chat settings for the blog.
+ * Read AI chat settings for the knowledge base.
  * Returns DEFAULT_AI_CHAT_SETTINGS when the row is absent.
  */
 export async function getAiChatSettings(
@@ -42,7 +42,7 @@ export async function getAiChatSettings(
 }
 
 /**
- * Upsert AI chat settings for the blog.
+ * Upsert AI chat settings for the knowledge base.
  * Merges over existing stored values (patch semantics).
  */
 export async function updateAiChatSettings(

@@ -12,7 +12,7 @@ function isPlaceholderSiteDescription(
   value: string | null | undefined,
 ): boolean {
   return (
-    !value || value.trim() === "" || value.trim() === "A modern blog"
+    !value || value.trim() === "" || value.trim() === "A modern support portal"
   );
 }
 

@@ -134,7 +134,7 @@ describe("POST /api/v1/interviews/magic-link (Send)", () => {
     mockSendMagicLinkEmail.mockResolvedValue(undefined);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         email: "guest@example.com",
@@ -174,7 +174,7 @@ describe("POST /api/v1/interviews/magic-link (Send)", () => {
     mockGetShareLinkByTokenHash.mockResolvedValue(null);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         email: "guest@example.com",
@@ -189,7 +189,7 @@ describe("POST /api/v1/interviews/magic-link (Send)", () => {
     mockGetShareLinkByTokenHash.mockResolvedValue(makeShareLink({ status: "revoked" }));
 
     const req = new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         email: "guest@example.com",
@@ -204,7 +204,7 @@ describe("POST /api/v1/interviews/magic-link (Send)", () => {
     mockGetShareLinkByTokenHash.mockResolvedValue(makeShareLink({ authMode: "email" }));
 
     const req = new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
         email: "guest@example.com",
@@ -477,7 +477,7 @@ describe("Rate limiting on /api/v1/interviews/magic-link", () => {
 
     const buildReq = () =>
       new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-        method: "POST",
+        method: "Article",
         headers: { "x-forwarded-for": "9.9.9.9" },
         body: JSON.stringify({
           shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
@@ -514,7 +514,7 @@ describe("Rate limiting on /api/v1/interviews/magic-link", () => {
     mockSendMagicLinkEmail.mockResolvedValue(undefined);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/magic-link", {
-      method: "POST",
+      method: "Article",
       headers: { "x-forwarded-for": "8.8.8.8" },
       body: JSON.stringify({
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",

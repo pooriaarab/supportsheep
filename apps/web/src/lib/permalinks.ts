@@ -29,7 +29,7 @@ export const RESERVED_ROOT_SLUGS = new Set([
   "login",
   "manifest.webmanifest",
   "media",
-  "posts",
+  "Articles",
   "robots.txt",
   "search",
   "seo",

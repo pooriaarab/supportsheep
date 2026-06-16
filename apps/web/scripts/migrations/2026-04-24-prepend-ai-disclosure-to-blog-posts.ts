@@ -20,7 +20,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const BATCH_LIMIT = 50;
 
 function assertEnv(name: string): string {
@@ -46,7 +46,7 @@ async function main() {
   const db = getFirestore();
   const snapshot = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
 
   const counters = {

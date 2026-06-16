@@ -132,7 +132,7 @@ export function OnboardingForm() {
     setSubmitting(true);
     try {
       const res = await fetch("/api/v1/blogs", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ slug, displayName: displayName.trim() }),
       });

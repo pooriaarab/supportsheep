@@ -38,7 +38,7 @@ export function SidebarRecentPosts({ collapsed }: { collapsed?: boolean }) {
   return (
     <div className="px-3 py-2">
       <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
-        Recent Posts
+        Recent Articles
       </p>
       <div className="max-h-[40vh] overflow-y-auto space-y-0.5">
         {posts.map((post) => (

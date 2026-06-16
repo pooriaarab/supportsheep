@@ -3,7 +3,7 @@ import { createApiHandler } from "@/lib/create-api-handler";
 import { hashShareLinkToken } from "@/lib/interviews/share-link-token";
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 // Binds the caller to the interview via the share-link token they presented.
 // Guest flows must present the same plaintext token used to create the interview.
@@ -20,7 +20,7 @@ export const GET = createApiHandler({
       return NextResponse.json({ error: "not_found" }, { status: 404 });
     }
 
-    const interview = await getInterview(DEFAULT_BLOG_ID, id);
+    const interview = await getInterview(DEFAULT_blog_id, id);
     if (!interview) {
       return NextResponse.json({ error: "not_found" }, { status: 404 });
     }
@@ -30,7 +30,7 @@ export const GET = createApiHandler({
     }
 
     const tokenHash = hashShareLinkToken(shareLinkToken);
-    const shareLink = await getShareLink(DEFAULT_BLOG_ID, interview.shareLinkId);
+    const shareLink = await getShareLink(DEFAULT_blog_id, interview.shareLinkId);
     if (!shareLink) {
       return NextResponse.json({ error: "not_found" }, { status: 404 });
     }

@@ -1,14 +1,14 @@
 /**
  * Blog invites API (blog-scoped)
  *
- * POST /api/v1/blogs/{blogId}/invites -- Invite someone to the blog by email.
+ * POST /api/v1/blogs/{blogId}/invites -- Invite someone to the knowledge base by email.
  *   If a Better Auth user with that email already exists, they are added to
  *   blog_members immediately ({ added: true }); otherwise a pending invite row
  *   is created and an accept-link email is sent ({ invited: true }).
- * GET  /api/v1/blogs/{blogId}/invites -- List the blog's pending invites.
+ * GET  /api/v1/blogs/{blogId}/invites -- List the knowledge base's pending invites.
  *
  * `{blogId}` must equal the caller's resolved tenant — invites are issued only
- * for the blog the admin is acting on. Cross-blog attempts are rejected.
+ * for the knowledge base the admin is acting on. Cross-blog attempts are rejected.
  */
 
 import { NextResponse } from "next/server";
@@ -48,7 +48,7 @@ export const POST = createApiHandler<
   input: createInviteSchema,
   audit: "create_invite",
   handler: async ({ body, params, blogId, session }) => {
-    // The blogId in the path must be the caller's resolved tenant. Never trust a
+    // the knowledge baseId in the path must be the caller's resolved tenant. Never trust a
     // path segment to widen scope beyond the admin's own blog.
     if (params.blogId !== blogId) {
       return NextResponse.json({ error: "forbidden" }, { status: 403 });
@@ -56,7 +56,7 @@ export const POST = createApiHandler<
 
     const role = clampInviteRole(body.role);
 
-    // Existing account → add to the blog directly; no email needed.
+    // Existing account → add to the knowledge base directly; no email needed.
     const added = await addMemberByEmail(blogId, body.email, role);
     if (added.ok) {
       return NextResponse.json(
@@ -76,7 +76,7 @@ export const POST = createApiHandler<
       invitedBy: session.uid,
     });
 
-    const blogName = (await getBlogDisplayName(blogId)) ?? "the blog";
+    const blogName = (await getBlogDisplayName(blogId)) ?? "the knowledge base";
     await sendInviteEmail({
       inviteId: invite.id,
       blogId,
@@ -104,7 +104,7 @@ export const POST = createApiHandler<
 
 /**
  * GET /api/v1/blogs/{blogId}/invites
- * List the blog's pending (unaccepted, unexpired) invites.
+ * List the knowledge base's pending (unaccepted, unexpired) invites.
  */
 export const GET = createApiHandler<unknown, RouteParams>({
   auth: "admin",

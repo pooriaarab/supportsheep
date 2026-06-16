@@ -1,6 +1,6 @@
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { hashShareLinkToken } from "@/lib/interviews/share-link-token";
 import { ExpiredCard } from "../components/expired-card";
 import { InCallLayoutDesktop } from "@/components/interview/in-call-layout-desktop";
@@ -36,7 +36,7 @@ export default async function LiveInCallPage({ params, searchParams }: PageProps
     return <ExpiredCard />;
   }
 
-  const interviewData = await getInterview(DEFAULT_BLOG_ID, interviewId);
+  const interviewData = await getInterview(DEFAULT_blog_id, interviewId);
   if (!interviewData) {
     return <ExpiredCard />;
   }
@@ -48,7 +48,7 @@ export default async function LiveInCallPage({ params, searchParams }: PageProps
     return <ExpiredCard />;
   }
   const tokenHash = hashShareLinkToken(token);
-  const slData = await getShareLink(DEFAULT_BLOG_ID, interviewData.shareLinkId);
+  const slData = await getShareLink(DEFAULT_blog_id, interviewData.shareLinkId);
   if (!slData) {
     return <ExpiredCard />;
   }

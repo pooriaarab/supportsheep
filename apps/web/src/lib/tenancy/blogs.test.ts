@@ -74,7 +74,7 @@ describe("validateSlug", () => {
       ok: false,
       reason: "invalid_format",
     });
-    expect(validateSlug("my blog")).toEqual({
+    expect(validateSlug("My Support Hub")).toEqual({
       ok: false,
       reason: "invalid_format",
     });
@@ -123,7 +123,7 @@ describe("blogs repository", () => {
   it("slugAvailable is true for an unclaimed slug, false once taken", async () => {
     expect(await slugAvailable("my-blog", db)).toBe(true);
     await createBlog(
-      { slug: "my-blog", displayName: "My Blog", ownerUserId: "u1" },
+      { slug: "my-blog", displayName: "My Support Hub", ownerUserId: "u1" },
       db,
     );
     expect(await slugAvailable("my-blog", db)).toBe(false);
@@ -135,7 +135,7 @@ describe("blogs repository", () => {
 
   it("creates a blog and an owner membership atomically (both rows)", async () => {
     const result = await createBlog(
-      { slug: "my-blog", displayName: "My Blog", ownerUserId: "u1" },
+      { slug: "my-blog", displayName: "My Support Hub", ownerUserId: "u1" },
       db,
     );
     expect(result.ok).toBe(true);
@@ -143,7 +143,7 @@ describe("blogs repository", () => {
     expect(result.blog).toEqual({
       id: expect.any(String),
       slug: "my-blog",
-      displayName: "My Blog",
+      displayName: "My Support Hub",
       role: "owner",
     });
 
@@ -154,7 +154,7 @@ describe("blogs repository", () => {
       .where(eq(schema.blogs.id, result.blog.id));
     expect(blogRows).toHaveLength(1);
     expect(blogRows[0].slug).toBe("my-blog");
-    expect(blogRows[0].displayName).toBe("My Blog");
+    expect(blogRows[0].displayName).toBe("My Support Hub");
 
     const memberRows = await db
       .select()
@@ -167,7 +167,7 @@ describe("blogs repository", () => {
 
   it("lowercases the slug on create", async () => {
     const result = await createBlog(
-      { slug: "My-Blog", displayName: "My Blog", ownerUserId: "u1" },
+      { slug: "My-Blog", displayName: "My Support Hub", ownerUserId: "u1" },
       db,
     );
     expect(result.ok).toBe(true);

@@ -16,7 +16,7 @@ export const signupCodes = sqliteTable(
       .$defaultFn(() => nanoid()),
     // Random, unguessable invite token (nanoid(24)); shared with the redeemer.
     code: text("code").notNull(),
-    // The blog the redeemer joins on redemption.
+    // the knowledge base the redeemer joins on redemption.
     blogId: text("blog_id").notNull(),
     // Membership role granted on redemption (capped at editor — see repository).
     role: text("role").notNull().default("author"),

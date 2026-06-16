@@ -190,7 +190,7 @@ describe("api-keys repository", () => {
     expect(found?.scopes).toEqual(["read", "admin"]);
   });
 
-  it("returns the blog the key is bound to (tenant scope), distinct per key", async () => {
+  it("returns the knowledge base the key is bound to (tenant scope), distinct per key", async () => {
     const keyB = await createApiKey(
       "user-1",
       "blog-B",

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { listCategories } from "@/lib/categories/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { Tool } from "./_types";
 
 const CATEGORIES_MAX = 3;
@@ -42,7 +42,7 @@ export default {
     // Validate every id exists. Categories are addressed by slug in D1; one
     // list read covers the whole blog (category counts are small).
     const known = new Set(
-      (await listCategories(DEFAULT_BLOG_ID)).map((c) => c.slug),
+      (await listCategories(DEFAULT_blog_id)).map((c) => c.slug),
     );
     const missing = unique.filter((id) => !known.has(id));
     if (missing.length > 0) {

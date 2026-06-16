@@ -7,7 +7,7 @@ import {
   normalizePublicDateValue,
 } from "@/lib/public-content";
 import { resolvePublicSiteUrl } from "@/lib/public-site";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { Article } from "@repo/types";
 
 function stripHtml(html: string): string {
@@ -64,7 +64,7 @@ function articleSummary(article: LlmsArticle): string {
  * full article body dump. Target size: well under 100 KB.
  */
 export async function buildLlmsTxtIndex(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<string> {
   const config = normalizePublicBlogConfig(await getBlogConfig(blogId));
   const siteUrl = resolvePublicSiteUrl();
@@ -116,7 +116,7 @@ export async function buildLlmsTxtIndex(
  * usernames.
  */
 export async function buildLlmsFullTxtContent(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<string> {
   const config = normalizePublicBlogConfig(await getBlogConfig(blogId));
   const siteUrl = resolvePublicSiteUrl();
@@ -156,7 +156,7 @@ export async function buildLlmsFullTxtContent(
  * crawlers complete discovery coverage without making `/llms.txt` too large.
  */
 export async function buildLlmsArticleIndexContent(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<string> {
   const config = normalizePublicBlogConfig(await getBlogConfig(blogId));
   const siteUrl = resolvePublicSiteUrl();

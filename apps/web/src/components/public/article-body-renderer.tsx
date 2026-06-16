@@ -9,7 +9,7 @@
  * Centralising the markup here guarantees pixel parity between the in-call
  * canvas and the published article: both go through the same sanitize +
  * heading-id transform pipeline and emit the same prose/typography
- * container so the reader sees the same visual once it lands on the blog.
+ * container so the reader sees the same visual once it lands on the knowledge base.
  *
  * The component intentionally accepts pre-rendered HTML rather than a
  * TipTap JSON doc so that it remains usable from React Server Components
@@ -45,7 +45,7 @@ export interface ArticleBodyRendererProps {
 
 /**
  * Renders the sanitized + heading-anchored article body using the standard
- * prose/typography styles applied to published posts.
+ * prose/typography styles applied to Published Articles.
  */
 export function ArticleBodyRenderer({
   articleId,

@@ -34,7 +34,7 @@ vi.mock("@/lib/articles/repository", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 import {
@@ -55,7 +55,7 @@ describe("buildLlmsTxtContent (full dump)", () => {
   it("normalizes placeholder public metadata and sparse article authors", async () => {
     mocks.getBlogConfig.mockResolvedValue({
       siteName: "Blog",
-      siteDescription: "A modern blog",
+      siteDescription: "A modern support portal",
     });
 
     const content = await buildLlmsTxtContent();

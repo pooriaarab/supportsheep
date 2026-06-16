@@ -30,7 +30,7 @@ import {
 import { getFirestore } from "firebase-admin/firestore";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const MODEL = "claude-haiku-4-5-20251001";
 const CONCURRENCY = 5;
 const ALT_MAX_LEN = 125;
@@ -123,7 +123,7 @@ async function generateAlt(
   excerpt: string,
   fallback: string,
 ): Promise<string> {
-  const prompt = `Generate concise, SEO-friendly alt text for this blog post hero image. The article is titled: '${title}'. Article excerpt: '${excerpt.slice(0, 400)}'. The alt text should describe the visual content (not repeat the title), be accessible, under 125 chars. Respond with ONLY the alt text, no preamble, no quotes.`;
+  const prompt = `Generate concise, SEO-friendly alt text for this knowledge base post hero image. The article is titled: '${title}'. Article excerpt: '${excerpt.slice(0, 400)}'. The alt text should describe the visual content (not repeat the title), be accessible, under 125 chars. Respond with ONLY the alt text, no preamble, no quotes.`;
 
   try {
     const response = (await Promise.race([
@@ -200,9 +200,9 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
-  console.info(`fetched ${snap.size} articles for blogId=${BLOG_ID}`);
+  console.info(`fetched ${snap.size} articles for blogId=${blog_id}`);
 
   const stringShape: ArticleDoc[] = [];
   let alreadyObject = 0;

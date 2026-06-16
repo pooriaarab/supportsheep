@@ -13,7 +13,7 @@ import { readActiveBlogHint } from "./active-blog";
 type DB = DrizzleD1Database<typeof schema>;
 
 /** The bootstrap blog seeded by the tenancy migration. */
-export const DEFAULT_BLOG_ID = "default";
+export const DEFAULT_blog_id = "default";
 
 /**
  * Thrown by resolveTenantForUser when an authenticated user has no blog
@@ -83,7 +83,7 @@ export async function listMemberUserIdsByRoles(
 /**
  * Resolve the tenant for an authenticated request via blog_members.
  *
- * Active-blog selection: if a `bb_active_blog` cookie hint is present AND the
+ * active-blog selection: if a `bb_active_blog` cookie hint is present AND the
  * user is actually a member of that blog, that membership is returned. The
  * cookie is ONLY a hint — membership is always re-verified here, so a forged or
  * stale cookie can never grant access to a blog the user isn't in. When the hint

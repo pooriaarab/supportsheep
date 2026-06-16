@@ -13,7 +13,7 @@ const mockGetInterview = vi.hoisted(() => vi.fn());
 const mockGetMembership = vi.hoisted(() => vi.fn());
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   getMembershipByUser: mockGetMembership,
 }));
 

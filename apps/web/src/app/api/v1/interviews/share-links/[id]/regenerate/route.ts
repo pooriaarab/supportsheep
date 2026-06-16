@@ -7,7 +7,7 @@ import {
   getShareLink,
   rotateShareLinkToken,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 /**
  * POST /api/v1/interviews/share-links/[id]/regenerate
@@ -27,7 +27,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
 
-    const link = await getShareLink(DEFAULT_BLOG_ID, id);
+    const link = await getShareLink(DEFAULT_blog_id, id);
     if (!link) {
       return NextResponse.json({ error: "share link not found" }, { status: 404 });
     }
@@ -48,7 +48,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
     }
 
     const { token, hash } = generateShareLinkToken();
-    await rotateShareLinkToken(DEFAULT_BLOG_ID, id, hash);
+    await rotateShareLinkToken(DEFAULT_blog_id, id, hash);
 
     return NextResponse.json({ id, token });
   },

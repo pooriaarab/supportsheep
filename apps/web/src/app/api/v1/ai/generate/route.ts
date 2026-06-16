@@ -23,7 +23,7 @@ import { handleApiError } from "@/lib/api-utils";
 import { createLogger } from "@/lib/logger";
 import { getProviderApiKey } from "@/lib/ai/providers";
 import { getAiChatSettings } from "@/lib/ai/chat-settings-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("api:ai:generate");
 
@@ -54,7 +54,7 @@ export async function POST(request: Request): Promise<Response> {
       maxTokens: requestMaxTokens,
     } = result.data;
 
-    const settings = await getAiChatSettings(DEFAULT_BLOG_ID);
+    const settings = await getAiChatSettings(DEFAULT_blog_id);
     const model = settings.model;
     const temperature = settings.temperature;
     const maxTokens = requestMaxTokens ?? settings.maxTokens;
@@ -95,7 +95,7 @@ export async function POST(request: Request): Promise<Response> {
       "https://api.anthropic.com/v1/messages",
       {
         cache: "no-store",
-        method: "POST",
+        method: "Article",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": apiKey,

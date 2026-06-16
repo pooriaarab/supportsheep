@@ -26,7 +26,7 @@ async function createInvite({
   const res = await fetch(
     `/api/v1/blogs/${encodeURIComponent(blogId)}/invites`,
     {
-      method: "POST",
+      method: "Article",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, role }),
     },

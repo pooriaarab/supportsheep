@@ -108,7 +108,7 @@ describe("free tools admin routes", () => {
     const route = await import("./seed/route");
     const response = await route.POST(
       new Request("http://test.local/api/v1/free-tools/seed", {
-        method: "POST",
+        method: "Article",
       }) as never,
     );
 

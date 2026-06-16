@@ -26,7 +26,7 @@ import {
   createShareLink,
   deleteShareLink,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { generateShareLinkToken } from "@/lib/interviews/share-link-token";
 import {
   AUTH_MODE,
@@ -82,7 +82,7 @@ export const POST = createApiHandler({
     // tavusPersonaId/tavusReplicaId are accepted for backward-compat with the
     // e2e spec request shape but not persisted — the D1 share_links table has
     // no such columns and nothing reads them off the share link.
-    const row = await createShareLink(DEFAULT_BLOG_ID, {
+    const row = await createShareLink(DEFAULT_blog_id, {
       type: body.visibility,
       createdBy: body.createdByUid ?? "test-seed-uid",
       workspaceId: body.workspaceId ?? "default",
@@ -129,7 +129,7 @@ export const DELETE = createApiHandler({
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    await deleteShareLink(DEFAULT_BLOG_ID, body.shareLinkId);
+    await deleteShareLink(DEFAULT_blog_id, body.shareLinkId);
     return NextResponse.json({ success: true });
   },
 });

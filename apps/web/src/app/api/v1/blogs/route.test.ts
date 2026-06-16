@@ -35,7 +35,7 @@ vi.mock("@/lib/tenancy/active-blog", () => ({
 
 function postRequest(body: unknown): Request {
   return new Request("http://test.local/api/v1/blogs", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
@@ -67,26 +67,26 @@ describe("blogs routes", () => {
       blog: {
         id: "blog-1",
         slug: "my-blog",
-        displayName: "My Blog",
+        displayName: "My Support Hub",
         role: "owner",
       },
     });
 
     const route = await import("./route");
     const response = await route.POST(
-      postRequest({ slug: "my-blog", displayName: "My Blog" }) as never,
+      postRequest({ slug: "my-blog", displayName: "My Support Hub" }) as never,
     );
 
     expect(response.status).toBe(201);
     await expect(response.json()).resolves.toEqual({
       id: "blog-1",
       slug: "my-blog",
-      displayName: "My Blog",
+      displayName: "My Support Hub",
       role: "owner",
     });
     expect(mockCreateBlog).toHaveBeenCalledWith({
       slug: "my-blog",
-      displayName: "My Blog",
+      displayName: "My Support Hub",
       ownerUserId: "user-1",
     });
   });
@@ -133,7 +133,7 @@ describe("blogs routes", () => {
 
   it("lists the caller's blogs with the earliest as active when no cookie hint", async () => {
     mockListBlogsForUser.mockResolvedValue([
-      { id: "blog-1", slug: "my-blog", displayName: "My Blog", role: "owner" },
+      { id: "blog-1", slug: "my-blog", displayName: "My Support Hub", role: "owner" },
       { id: "blog-2", slug: "other", displayName: "Other", role: "editor" },
     ]);
     mockReadActiveBlogHint.mockResolvedValue(null);
@@ -146,7 +146,7 @@ describe("blogs routes", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toEqual({
       data: [
-        { id: "blog-1", slug: "my-blog", displayName: "My Blog", role: "owner" },
+        { id: "blog-1", slug: "my-blog", displayName: "My Support Hub", role: "owner" },
         { id: "blog-2", slug: "other", displayName: "Other", role: "editor" },
       ],
       activeBlogId: "blog-1",
@@ -156,7 +156,7 @@ describe("blogs routes", () => {
 
   it("uses the cookie hint as active when the user is a member of that blog", async () => {
     mockListBlogsForUser.mockResolvedValue([
-      { id: "blog-1", slug: "my-blog", displayName: "My Blog", role: "owner" },
+      { id: "blog-1", slug: "my-blog", displayName: "My Support Hub", role: "owner" },
       { id: "blog-2", slug: "other", displayName: "Other", role: "editor" },
     ]);
     mockReadActiveBlogHint.mockResolvedValue("blog-2");
@@ -173,7 +173,7 @@ describe("blogs routes", () => {
 
   it("ignores a cookie hint pointing at a blog the user is not a member of", async () => {
     mockListBlogsForUser.mockResolvedValue([
-      { id: "blog-1", slug: "my-blog", displayName: "My Blog", role: "owner" },
+      { id: "blog-1", slug: "my-blog", displayName: "My Support Hub", role: "owner" },
     ]);
     mockReadActiveBlogHint.mockResolvedValue("blog-999");
 

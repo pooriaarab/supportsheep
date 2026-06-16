@@ -66,7 +66,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
       new Request(
         "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
-          method: "POST",
+          method: "Article",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({}),
         },
@@ -85,7 +85,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
       new Request(
         "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
-          method: "POST",
+          method: "Article",
           headers: {
             "content-type": "application/json",
             authorization: "Bearer secret-token",
@@ -143,7 +143,7 @@ describe("POST /api/v1/integrations/webhooks/[id]", () => {
       new Request(
         "https://supportsheep.com/api/v1/integrations/webhooks/integration-1",
         {
-          method: "POST",
+          method: "Article",
           headers: {
             "content-type": "application/json",
             authorization: "Bearer secret-token",

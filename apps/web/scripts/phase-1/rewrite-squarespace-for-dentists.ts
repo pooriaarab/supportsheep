@@ -72,7 +72,7 @@ And:
 
 In plain language:
 
-- **The core Squarespace website** -- pages, the blog, the form block, email campaigns, Squarespace Analytics, member areas -- is **not** covered by a BAA.
+- **The core Squarespace website** -- pages, the knowledge base, the form block, email campaigns, Squarespace Analytics, member areas -- is **not** covered by a BAA.
 - **Acuity Scheduling** (Squarespace-owned) is the one component that can be made HIPAA-enabled, and only on the Powerhouse or Premium plan, after the account owner turns on HIPAA-related features.
 - **Supportsheep** does **not** sign a BAA at all -- not for contact forms, not for its blog, not for any surface.
 

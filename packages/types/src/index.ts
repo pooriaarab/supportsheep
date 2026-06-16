@@ -690,7 +690,7 @@ export interface BlogConfig {
   };
   analytics?: {
     /**
-     * The blog owner's own GA4 Measurement ID (format `G-XXXXXXXXXX`). When set
+     * the knowledge base owner's own GA4 Measurement ID (format `G-XXXXXXXXXX`). When set
      * to a valid value, the standard gtag.js client tag is injected on this
      * blog's public tenant pages so the owner's Google Analytics tracks their
      * blog's pageviews. Empty/undefined disables the tag. This is a purely
@@ -722,7 +722,6 @@ export interface BlogConfig {
   support?: {
     enableVoice: boolean;
     enableChatbot: boolean;
-    openAIApiKey?: string;
   };
 }
 

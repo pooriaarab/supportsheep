@@ -26,14 +26,14 @@ async function fetchBlogs(): Promise<BlogsResult> {
 
 async function setActiveBlog(blogId: string): Promise<void> {
   const res = await fetch("/api/v1/blogs/active", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ blogId }),
   });
   if (!res.ok) throw new Error("Failed to switch blog");
 }
 
-/** The blogs the signed-in user is a member of, with their per-blog role. */
+/** the knowledge bases the signed-in user is a member of, with their per-blog role. */
 export function useBlogsQuery() {
   return useQuery({
     queryKey: queryKeys.blogs.lists(),
@@ -42,7 +42,7 @@ export function useBlogsQuery() {
 }
 
 /**
- * Switch the active blog. Sets the `bb_active_blog` cookie server-side (after
+ * Switch the active knowledge base. Sets the `bb_active_blog` cookie server-side (after
  * re-verifying membership), then the caller refreshes so server components
  * re-resolve the tenant.
  */

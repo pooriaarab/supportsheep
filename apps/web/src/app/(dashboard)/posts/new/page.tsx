@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * New Post Page
+ * New Article Page
  *
  * Quick form to create a new draft article, then redirects to the editor.
  */
@@ -54,8 +54,8 @@ export default function NewPostPage() {
     <div className="h-full flex flex-col">
       <PageHeader
         breadcrumbs={[
-          { label: "Posts", href: "/posts" },
-          { label: "New Post" },
+          { label: "Articles", href: "/posts" },
+          { label: "New Article" },
         ]}
       />
 
@@ -65,7 +65,7 @@ export default function NewPostPage() {
           className="w-full max-w-md space-y-6 bg-card border border-border rounded-lg p-6"
         >
           <div className="space-y-1">
-            <h2 className="text-lg font-semibold">Create New Post</h2>
+            <h2 className="text-lg font-semibold">Create New Article</h2>
             <p className="text-xs text-muted-foreground">
               Give your post a title and type. You can edit everything else in
               the editor.

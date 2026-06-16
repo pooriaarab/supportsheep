@@ -63,9 +63,9 @@ export function CommandPalette() {
     () => [
       {
         id: "new-post",
-        label: "New Post",
+        label: "New Article",
         icon: Plus,
-        keywords: ["new", "post", "article", "create"],
+        keywords: ["new", "Article", "article", "create"],
         action: () => push("/posts?new=true"),
         shortcut: "C",
       },
@@ -87,7 +87,7 @@ export function CommandPalette() {
         id: "view-posts",
         label: "View Posts",
         icon: FileText,
-        keywords: ["posts", "articles", "blog"],
+        keywords: ["Articles", "articles", "blog"],
         action: () => push("/posts"),
       },
       {

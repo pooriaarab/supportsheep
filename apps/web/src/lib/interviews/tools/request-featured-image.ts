@@ -5,7 +5,7 @@ import {
   ImageProviderNotConfiguredError,
 } from "@/lib/ai/generate-image";
 import { appendEvents } from "@/lib/interviews/events-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import {
   recordImageSpend,
   wouldExceedImageBudget,
@@ -30,7 +30,7 @@ async function emitBackgroundFailure(
   errorMessage: string,
 ): Promise<void> {
   try {
-    await appendEvents(DEFAULT_BLOG_ID, interviewId, [
+    await appendEvents(DEFAULT_blog_id, interviewId, [
       {
         ts: new Date().toISOString(),
         kind: "tool_failed",

@@ -1,7 +1,7 @@
 import "server-only";
 
 import { appendEvents } from "@/lib/interviews/events-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 import type { ToolResult } from "./_types";
 
@@ -45,7 +45,7 @@ export async function emitToolResultEvent(
         ? { summary: result.summary ?? "ok" }
         : { errorKind: result.category }),
     });
-    await appendEvents(DEFAULT_BLOG_ID, interviewId, [
+    await appendEvents(DEFAULT_blog_id, interviewId, [
       {
         ts: new Date().toISOString(),
         kind: "tool_result",
@@ -87,7 +87,7 @@ export async function emitToolInFlightEvent(
 ): Promise<void> {
   try {
     log.info("emit-tool-in-flight", { interviewId, toolName, callId });
-    await appendEvents(DEFAULT_BLOG_ID, interviewId, [
+    await appendEvents(DEFAULT_blog_id, interviewId, [
       {
         ts: new Date().toISOString(),
         kind: "tool_in_flight",
@@ -132,7 +132,7 @@ export async function emitFireAndForgetCompletion(
         ? { summary: outcome.summary }
         : { message: outcome.message }),
     });
-    await appendEvents(DEFAULT_BLOG_ID, interviewId, [
+    await appendEvents(DEFAULT_blog_id, interviewId, [
       {
         ts: new Date().toISOString(),
         kind: "tool_completed",

@@ -11,7 +11,7 @@ import { createApiHandler } from "@/lib/create-api-handler";
 import { generateImagePromptSchema } from "@/lib/schemas";
 import { generateImagePrompt } from "@/lib/ai/generate-image";
 import { getArticleBySlug } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 export const POST = createApiHandler({
   auth: "user",
@@ -23,7 +23,7 @@ export const POST = createApiHandler({
     let category = body.category ?? "";
 
     if (body.slug) {
-      const article = await getArticleBySlug(DEFAULT_BLOG_ID, body.slug);
+      const article = await getArticleBySlug(DEFAULT_blog_id, body.slug);
 
       if (!article) {
         return NextResponse.json(

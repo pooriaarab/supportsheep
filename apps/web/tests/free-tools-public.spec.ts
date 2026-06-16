@@ -40,7 +40,7 @@ test("barcode generator renders a visual result with result actions", async ({
   );
 
   await page.goto("/tools/barcode-generator");
-  await page.getByLabel("Barcode value").fill("BLOGBAT-12345");
+  await page.getByLabel("Barcode value").fill("Supportsheep-12345");
   const runButton = page.getByRole("button", { name: "Run tool" });
   await expect(runButton).toBeEnabled();
   await runButton.click();

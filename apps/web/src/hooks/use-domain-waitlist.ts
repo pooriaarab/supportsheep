@@ -24,13 +24,13 @@ async function fetchWaitlist(blogId: string): Promise<DomainWaitlistState> {
 
 async function joinWaitlist(blogId: string): Promise<DomainWaitlistState> {
   const res = await fetch(`/api/v1/blogs/${blogId}/domain/waitlist`, {
-    method: "POST",
+    method: "Article",
   });
   if (!res.ok) throw new Error(await readError(res));
   return res.json();
 }
 
-/** Whether the blog has joined the custom-domain waitlist + interest count. */
+/** Whether the knowledge base has joined the custom-domain waitlist + interest count. */
 export function useDomainWaitlistQuery(blogId: string | null) {
   return useQuery({
     queryKey: queryKeys.domainWaitlist.detail(blogId ?? ""),
@@ -39,7 +39,7 @@ export function useDomainWaitlistQuery(blogId: string | null) {
   });
 }
 
-/** Join the custom-domain waitlist for the blog. */
+/** Join the custom-domain waitlist for the knowledge base. */
 export function useJoinDomainWaitlistMutation(blogId: string | null) {
   const queryClient = useQueryClient();
   return useMutation({

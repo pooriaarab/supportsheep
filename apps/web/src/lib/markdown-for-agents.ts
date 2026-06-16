@@ -12,7 +12,7 @@ import {
   getPublicCategoryInfo,
   resolveCategorySlug,
 } from "@/lib/public-route-resolution";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("lib:markdown-for-agents");
 const MAX_MARKDOWN_PAGE = 100;
@@ -83,7 +83,7 @@ export function renderHomepageMarkdown(input: {
 export async function renderMarkdownForPath(
   pathname: string,
   searchParams: URLSearchParams,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<MarkdownRenderResult> {
   const route = resolveMarkdownRoute(pathname);
 

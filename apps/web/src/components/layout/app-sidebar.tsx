@@ -64,7 +64,7 @@ export function AppSidebar() {
   const handleCreateNew = useCallback(
     (label: string) => {
       switch (label) {
-        case "Posts":
+        case "Articles":
           push("/posts?new=true");
           break;
       }

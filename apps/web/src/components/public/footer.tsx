@@ -1,7 +1,7 @@
 /**
  * Public site footer — a clean, minimal blog footer for Supportsheep.
  *
- * Renders the blog brand mark, lightweight blog navigation, an RSS link, and a
+ * Renders the knowledge base brand mark, lightweight blog navigation, an RSS link, and a
  * "Powered by Supportsheep" credit. Uses semantic color tokens and the Next.js Link
  * component. Brand colors are config-driven via inline style so each tenant blog
  * can theme its own header/footer surfaces.

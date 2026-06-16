@@ -7,7 +7,7 @@ import {
 } from "@/lib/articles/repository";
 import { stripUndefined } from "@/lib/strip-undefined";
 import { updateInterview, getInterview } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { ArticleStatus, UserRole } from "@repo/types";
 import type {
   CanvasBlock,
@@ -29,7 +29,7 @@ export interface SaveDraftResult {
 export async function saveDraft(
   interviewId: string,
   customCanvas?: CanvasState,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
 ): Promise<SaveDraftResult> {
   // Load the interview row from D1
   const interview = await getInterview(blogId, interviewId);

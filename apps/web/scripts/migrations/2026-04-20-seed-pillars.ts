@@ -33,7 +33,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const MAX_PER_CLUSTER = 6;
 
 function assertEnv(name: string): string {
@@ -349,7 +349,7 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .where("status", "==", "published")
     .get();
 

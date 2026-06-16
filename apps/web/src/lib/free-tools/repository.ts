@@ -8,7 +8,7 @@ import { getDb } from "@/db";
 import type * as schema from "@/db/schema";
 import { freeTools as freeToolsTable } from "@/db/schema/free-tools";
 import { createLogger } from "@/lib/logger";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 import { buildDefaultFreeTools } from "./defaults";
 import { getFreeToolTemplate } from "./templates";
@@ -117,7 +117,7 @@ export function isSafeFreeToolSlug(slug: string): boolean {
 // ---------------------------------------------------------------------------
 
 export async function listFreeTools(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<FreeTool[]> {
   const rows = await db
@@ -138,7 +138,7 @@ export async function listFreeTools(
  */
 export async function listEnabledPublicFreeTools(
   options: { surface?: "index" | "sitemap" } = {},
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db?: DB,
 ): Promise<FreeTool[]> {
   const includeSeoField =
@@ -173,7 +173,7 @@ export async function listEnabledPublicFreeTools(
 }
 
 export async function hasEnabledPublicFreeTools(
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db?: DB,
 ): Promise<boolean> {
   const tools = await listEnabledPublicFreeTools({}, blogId, db);
@@ -182,7 +182,7 @@ export async function hasEnabledPublicFreeTools(
 
 export async function resolvePublicFreeToolBySlug(
   slug: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db?: DB,
 ): Promise<FreeTool | null> {
   if (!isSafeFreeToolSlug(slug)) {
@@ -220,7 +220,7 @@ export async function resolvePublicFreeToolBySlug(
 
 export async function getFreeToolById(
   id: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<FreeTool | null> {
   const rows = await db
@@ -237,7 +237,7 @@ export async function getFreeToolById(
 export async function hasDuplicateFreeToolSlug(
   slug: string,
   currentId?: string,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<boolean> {
   if (!isSafeFreeToolSlug(slug)) {
@@ -261,7 +261,7 @@ export async function hasDuplicateFreeToolSlug(
 export async function patchFreeTool(
   id: string,
   patch: FreeToolAdminUpdateInput,
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<void> {
   if (patch.slug !== undefined && !isSafeFreeToolSlug(patch.slug)) {
@@ -310,7 +310,7 @@ export async function patchFreeTool(
 
 export async function seedDefaultFreeTools(
   options: { enabled: boolean; aiEnabled: boolean },
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<{ created: number; skipped: number }> {
   const defaults = buildDefaultFreeTools({ ...options, blogId: blogId as "default" });

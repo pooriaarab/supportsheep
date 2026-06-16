@@ -34,7 +34,7 @@ vi.mock("@/lib/interviews/interview-token", async () => {
 // `tenantState.role` to drive the 403 vs success branches.
 const tenantState = vi.hoisted(() => ({ role: "owner" as string }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,
@@ -57,7 +57,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-1/stream/auth",
-      { method: "POST" },
+      { method: "Article" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-1" }) });
@@ -73,7 +73,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-1/stream/auth",
-      { method: "POST" },
+      { method: "Article" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-1" }) });
@@ -89,7 +89,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-42/stream/auth",
-      { method: "POST" },
+      { method: "Article" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-42" }) });

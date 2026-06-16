@@ -44,7 +44,7 @@ vi.mock("@/lib/interviews/writer-worker-registry", () => ({
 
 // Mock tenancy repository (create-api-handler calls resolveTenantForUser)
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn().mockResolvedValue({ blogId: "default" }),
 }));
 
@@ -268,7 +268,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-mock-token" },
     });
 
@@ -314,7 +314,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     );
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-mock-token" },
     });
 
@@ -342,7 +342,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     );
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-mock-token" },
     });
 
@@ -358,7 +358,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     mockVerifyInterviewToken.mockReturnValue(null);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer invalid-token" },
     });
 
@@ -370,7 +370,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     mockVerifyInterviewToken.mockReturnValue({ interviewId: "other-interview" });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
     });
 
@@ -402,7 +402,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
     });
 
@@ -436,7 +436,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     _selectChain = failChain as unknown as typeof _selectChain;
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-mock-token" },
     });
 
@@ -463,7 +463,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-mock-token" },
     });
 
@@ -490,7 +490,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews/test-id/end", {
-        method: "POST",
+        method: "Article",
         headers: { Authorization: "Bearer valid" },
       });
 
@@ -526,7 +526,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
       });
 
       const req = new NextRequest("http://localhost/api/v1/interviews/evil-id/end", {
-        method: "POST",
+        method: "Article",
         headers: { Authorization: "Bearer valid" },
       });
 
@@ -562,7 +562,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-123/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
 
       const res = await POST(req, { params: Promise.resolve({ id: "test-interview-123" }) });
@@ -586,7 +586,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-double-click/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
 
       const res = await POST(req, {
@@ -612,7 +612,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-cookie-auth/end",
         {
-          method: "POST",
+          method: "Article",
           headers: {
             cookie: "interview_token_test-interview-cookie-auth=valid-cookie-token",
           },
@@ -636,7 +636,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-lock-release/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
 
       const res = await POST(req, {
@@ -659,7 +659,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-lock-throw/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
 
       const res = await POST(req, {
@@ -681,7 +681,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const firstReq = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-recovery/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
       const firstRes = await POST(firstReq, {
         params: Promise.resolve({ id: "test-interview-recovery" }),
@@ -704,7 +704,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const secondReq = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-recovery/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
       const secondRes = await POST(secondReq, {
         params: Promise.resolve({ id: "test-interview-recovery" }),
@@ -773,7 +773,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
     mockStitchAsyncInterview.mockResolvedValue(mockCanvasState);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-async/end", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
     });
 
@@ -841,7 +841,7 @@ describe("POST /api/v1/interviews/[id]/end", () => {
 
       const endReq = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-w19f/end",
-        { method: "POST", headers: { Authorization: "Bearer valid-mock-token" } },
+        { method: "Article", headers: { Authorization: "Bearer valid-mock-token" } },
       );
       const endRes = await POST(endReq, {
         params: Promise.resolve({ id: "test-interview-w19f" }),

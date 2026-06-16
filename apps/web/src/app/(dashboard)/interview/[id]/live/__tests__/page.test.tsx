@@ -29,7 +29,7 @@ vi.mock("@/lib/blog-config", () => ({
 const mockGetMembershipByUser = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/tenancy/repository", () => ({
   getMembershipByUser: mockGetMembershipByUser,
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 const mockGetBlogMember = vi.hoisted(() => vi.fn());

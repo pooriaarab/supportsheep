@@ -32,7 +32,7 @@ vi.mock("@/lib/audit-log", () => ({
 // Tenancy mock — ctx.role is resolved from blog_members via resolveTenantForUser.
 const tenantState = vi.hoisted(() => ({ role: "owner" }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,
@@ -71,7 +71,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     tenantState.role = "guest";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -92,7 +92,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     ] as never);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -112,7 +112,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     tenantState.role = "viewer";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -154,7 +154,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         type: "link",
         topic: "Test TDD",
@@ -215,7 +215,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     mockSendCalendarInviteEmail.mockResolvedValue(undefined);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         type: "link",
         topic: "Test Scheduled TDD",

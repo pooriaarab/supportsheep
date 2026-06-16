@@ -43,7 +43,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
 
   it("should return 401 when signature is missing", async () => {
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ event_type: "system.replica_joined" }),
     });
@@ -57,7 +57,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
   it("should return 401 when signature is invalid", async () => {
     const body = JSON.stringify({ event_type: "system.replica_joined" });
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json",
         "x-tavus-signature": "invalid-signature",
@@ -76,7 +76,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
     const signature = generateSignature(body, "test-tavus-key");
 
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json",
         "x-tavus-signature": signature,
@@ -115,7 +115,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
     } as Response);
 
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json",
         "x-tavus-signature": signature,
@@ -166,7 +166,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
     const signature = generateSignature(body, "test-tavus-key");
 
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json",
         "x-tavus-signature": signature,
@@ -190,7 +190,7 @@ describe("POST /api/v1/integrations/webhooks/tavus", () => {
     const signature = generateSignature(body, "test-tavus-key");
 
     const req = new NextRequest("http://localhost/api/v1/integrations/webhooks/tavus", {
-      method: "POST",
+      method: "Article",
       headers: {
         "Content-Type": "application/json",
         "x-tavus-signature": signature,

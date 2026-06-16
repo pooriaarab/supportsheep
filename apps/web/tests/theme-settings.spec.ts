@@ -251,7 +251,7 @@ async function stubThemeSettingsApis(page: Page) {
   });
 
   await context.route("**/api/v1/media", async (route, request) => {
-    if (request.method() === "POST") {
+    if (request.method() === "Article") {
       await route.fulfill({
         status: 201,
         contentType: "application/json",
@@ -389,7 +389,7 @@ async function stubThemeSettingsApisWithServerOverrides(
   });
 
   await context.route("**/api/v1/media", async (route, request) => {
-    if (request.method() === "POST") {
+    if (request.method() === "Article") {
       await route.fulfill({
         status: 201,
         contentType: "application/json",

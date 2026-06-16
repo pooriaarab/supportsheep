@@ -35,14 +35,14 @@ vi.mock("@/lib/tenancy/repository", () => ({
   resolveTenantForUser: vi
     .fn()
     .mockResolvedValue({ blogId: "default", role: "owner" }),
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 import { GET, POST } from "./route";
 
 function postRequest(body: unknown): NextRequest {
   return new NextRequest("https://supportsheep.com/api/v1/signup-codes", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
@@ -111,7 +111,7 @@ describe("signup-codes routes (admin)", () => {
     expect(createSignupCode).not.toHaveBeenCalled();
   });
 
-  it("lists the blog's codes", async () => {
+  it("lists the knowledge base's codes", async () => {
     listSignupCodes.mockResolvedValue([
       { id: "sc-1", code: "tok-123", blogId: "default", role: "author" },
     ]);

@@ -5,10 +5,10 @@
  * Settings → Domain page shows a "coming soon" card with a waitlist instead of
  * the live domain-management UI. These endpoints capture and report interest.
  *
- * GET  /api/v1/blogs/{blogId}/domain/waitlist -- whether this blog has joined,
+ * GET  /api/v1/blogs/{blogId}/domain/waitlist -- whether this knowledge base has joined,
  *   plus the total number of interested blogs. Any member may read.
  * POST /api/v1/blogs/{blogId}/domain/waitlist -- join the waitlist (idempotent).
- *   Owner/admin only, matching who manages the blog's domain.
+ *   Owner/admin only, matching who manages the knowledge base's domain.
  *
  * `{blogId}` must equal the caller's resolved tenant.
  */
@@ -42,7 +42,7 @@ async function resolveEmail(uid: string, sessionEmail: string): Promise<string> 
 
 /**
  * GET /api/v1/blogs/{blogId}/domain/waitlist
- * Any member may read whether the blog has joined + the total interested count.
+ * Any member may read whether the knowledge base has joined + the total interested count.
  */
 export const GET = createApiHandler<unknown, RouteParams>({
   auth: "user",

@@ -17,7 +17,7 @@ import { releaseSessionLock } from "@/lib/interviews/session-locks-repository";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
 import { listAsyncResponses } from "@/lib/interviews/async-responses-repository";
 import { appendEvents } from "@/lib/interviews/events-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { getDb } from "@/db";
 import { interviews } from "@/db/schema/interviews";
 import { and, eq, gte, sql } from "drizzle-orm";
@@ -116,7 +116,7 @@ export const POST = createApiHandler({
     let exitStatus: "success" | "already_ended" | "failed" = "failed";
     let exitFailingStep: string | undefined;
     let sessionLockReleased = false;
-    const blogId = DEFAULT_BLOG_ID;
+    const blogId = DEFAULT_blog_id;
 
     const logExit = () => {
       log.info("/end completed", {

@@ -23,7 +23,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 const CONCURRENCY = 4;
 const LIMIT = Number(process.env.LIMIT ?? "0");
 
@@ -119,7 +119,7 @@ async function main() {
   const db = getFirestore();
   const snapshot = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
   const docs = snapshot.docs;
   const articles = docs.map(

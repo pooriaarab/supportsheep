@@ -31,7 +31,7 @@ async function fetchFunctions(): Promise<CloudFunction[]> {
 
 async function triggerFunction(functionName: string): Promise<void> {
   const res = await fetch("/api/v1/functions", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ functionName }),
   });

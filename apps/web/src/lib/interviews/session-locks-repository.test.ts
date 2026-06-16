@@ -187,7 +187,7 @@ describe("session-locks repository", () => {
 
     // Acquiring on BLOG_B/int-1 should work independently (no PK conflict since
     // session-locks are keyed by interview_id only, not blog_id+interview_id)
-    // This tests that the blogId check is enforced in conflict/refresh logic.
+    // This tests that the knowledge baseId check is enforced in conflict/refresh logic.
     const result = await upsertHeartbeat(BLOG_B, "int-2", "hb_b", false, db);
     expect(result.status).toBe("acquired");
 

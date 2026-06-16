@@ -27,7 +27,7 @@ import {
 } from "@/lib/api-utils";
 import {
   resolveTenantForUser,
-  DEFAULT_BLOG_ID,
+  DEFAULT_blog_id,
   NeedsOnboardingError,
 } from "@/lib/tenancy/repository";
 import {
@@ -155,7 +155,7 @@ export function createApiHandler<TBody = unknown, TParams = unknown>(
           // No auth required — placeholder session. Public routes operate on
           // the default blog until hostname→blog routing lands (later slice).
           session = { uid: "anonymous", email: "", authTime: 0 };
-          blogId = DEFAULT_BLOG_ID;
+          blogId = DEFAULT_blog_id;
           role = null;
         } else if (config.auth === "session") {
           // Authenticated but membership-optional — onboarding / cross-tenant

@@ -6,7 +6,7 @@ import {
   getInterviewByTavusConversationId,
   updateInterview,
 } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { createLogger } from "@/lib/logger";
 import { getMediaBucket } from "@/lib/media/bucket";
 
@@ -82,7 +82,7 @@ export const POST = createApiHandler({
 
     // 3. Locate the corresponding interview record
     const interview = await getInterviewByTavusConversationId(
-      DEFAULT_BLOG_ID,
+      DEFAULT_blog_id,
       conversationId,
     );
 
@@ -119,7 +119,7 @@ export const POST = createApiHandler({
     }
 
     // 6. Update the interview record in D1 with the R2 recording key.
-    await updateInterview(DEFAULT_BLOG_ID, interviewId, {
+    await updateInterview(DEFAULT_blog_id, interviewId, {
       videoStoragePath: storagePath,
     });
 

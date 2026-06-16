@@ -37,7 +37,7 @@ import { tabstackResearch } from "../lib/tabstack-research";
 
 const DRY_RUN = process.env.DRY_RUN === "1";
 const USE_TABSTACK = process.env.TABSTACK !== "0";
-const BLOG_ID = "default";
+const blog_id = "default";
 const STATUSES = ["published", "scheduled"];
 const CONCURRENCY = 3;
 const COST_ABORT_USD = 60;
@@ -297,7 +297,7 @@ async function main(): Promise<void> {
 
   const snap = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .where("status", "in", STATUSES)
     .get();
   console.info(`fetched ${snap.size} articles (status in ${JSON.stringify(STATUSES)})`);

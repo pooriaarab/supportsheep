@@ -20,7 +20,7 @@ vi.mock("@/lib/articles/repository", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 vi.mock("@/lib/public-route-resolution", () => ({
@@ -50,7 +50,7 @@ describe("markdown for agents", () => {
     mocks.listPublishedArticles.mockResolvedValue({ articles: [], hasMore: false });
     mocks.mockGetBlogConfig.mockResolvedValue({
       siteName: "Blog",
-      siteDescription: "A modern blog",
+      siteDescription: "A modern support portal",
       homepage: { postsPerPage: 12 },
     });
     mocks.mockResolvePublicSiteUrl.mockReturnValue("https://supportsheep.com");
@@ -59,7 +59,7 @@ describe("markdown for agents", () => {
   it("renders homepage content as markdown", () => {
     const markdown = renderHomepageMarkdown({
       siteName: "Blog",
-      siteDescription: "A modern blog",
+      siteDescription: "A modern support portal",
       articles: [
         {
           title: "Low Cost SEO Packages",

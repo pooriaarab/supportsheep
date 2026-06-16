@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { getArticleBySlug } from "@/lib/articles/repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { Tool } from "./_types";
 
 const argsSchema = z.object({
@@ -44,7 +44,7 @@ export default {
 
     // Validate the slug points at a published article (D1). Keeps a dead
     // link from ever landing on the canvas from a model typo.
-    const article = await getArticleBySlug(DEFAULT_BLOG_ID, args.targetSlug);
+    const article = await getArticleBySlug(DEFAULT_blog_id, args.targetSlug);
     if (!article || article.status !== "published") {
       return {
         ok: false,

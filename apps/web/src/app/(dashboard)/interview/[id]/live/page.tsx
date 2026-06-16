@@ -6,7 +6,7 @@ import {
   getInterview,
 } from "@/lib/interviews/interviews-repository";
 import { getBlogConfig } from "@/lib/blog-config";
-import { DEFAULT_BLOG_ID, getMembershipByUser } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id, getMembershipByUser } from "@/lib/tenancy/repository";
 import { getBlogMember } from "@/lib/tenancy/members";
 import { verifyRequest } from "@/lib/auth/session";
 import { buildSystemPrompt } from "@/lib/interviews/system-prompts";
@@ -53,7 +53,7 @@ export default async function AuthorLivePage({ params }: PageProps) {
   }
 
   // 2. Fetch the interview record (D1)
-  const interviewData = await getInterview(DEFAULT_BLOG_ID, interviewId);
+  const interviewData = await getInterview(DEFAULT_blog_id, interviewId);
   if (!interviewData) {
     return <ExpiredCard />;
   }
@@ -89,7 +89,7 @@ export default async function AuthorLivePage({ params }: PageProps) {
     const config = await getBlogConfig();
     const monthlyCostCapUsd = config?.interview?.monthlyCostCapUsd ?? null;
     const transition = await consentToLive(
-      DEFAULT_BLOG_ID,
+      DEFAULT_blog_id,
       interviewId,
       monthlyCostCapUsd,
     );

@@ -34,8 +34,8 @@ async function makeDb(): Promise<TestDb> {
   return db as unknown as TestDb;
 }
 
-const BLOG_ID = "blog-test";
-const BLOG_ID_2 = "blog-other";
+const blog_id = "blog-test";
+const blog_id_2 = "blog-other";
 
 describe("magic-links-repository", () => {
   let db: TestDb;
@@ -50,7 +50,7 @@ describe("magic-links-repository", () => {
 
   it("creates a magic link and retrieves it by token hash", async () => {
     const link = await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-abc",
@@ -61,7 +61,7 @@ describe("magic-links-repository", () => {
     );
 
     expect(link.id).toBeDefined();
-    expect(link.blogId).toBe(BLOG_ID);
+    expect(link.blogId).toBe(blog_id);
     expect(link.shareLinkId).toBe("sl-1");
     expect(link.tokenHash).toBe("hash-abc");
     expect(link.email).toBe("guest@example.com");
@@ -86,7 +86,7 @@ describe("magic-links-repository", () => {
   it("claim-once: first claim succeeds and sets consumedAt", async () => {
     const beforeCreate = Date.now();
     await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-claim",
@@ -96,7 +96,7 @@ describe("magic-links-repository", () => {
       db,
     );
 
-    const result = await claimMagicLink(BLOG_ID, "hash-claim", db);
+    const result = await claimMagicLink(blog_id, "hash-claim", db);
 
     expect(result.ok).toBe(true);
     if (!result.ok) throw new Error("Expected ok");
@@ -114,7 +114,7 @@ describe("magic-links-repository", () => {
 
   it("second claim returns already-consumed", async () => {
     await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-double",
@@ -124,10 +124,10 @@ describe("magic-links-repository", () => {
       db,
     );
 
-    const first = await claimMagicLink(BLOG_ID, "hash-double", db);
+    const first = await claimMagicLink(blog_id, "hash-double", db);
     expect(first.ok).toBe(true);
 
-    const second = await claimMagicLink(BLOG_ID, "hash-double", db);
+    const second = await claimMagicLink(blog_id, "hash-double", db);
     expect(second.ok).toBe(false);
     if (second.ok) throw new Error("Expected failure");
     expect(second.reason).toBe("consumed");
@@ -139,7 +139,7 @@ describe("magic-links-repository", () => {
 
   it("concurrent double-redeem: exactly one claim succeeds", async () => {
     await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-concurrent",
@@ -153,8 +153,8 @@ describe("magic-links-repository", () => {
     // UPDATE … WHERE consumed_at IS NULL ensures exactly one UPDATE succeeds.
     // In-memory libsql serializes writes, so one wins and one sees 0 rows.
     const [result1, result2] = await Promise.all([
-      claimMagicLink(BLOG_ID, "hash-concurrent", db),
-      claimMagicLink(BLOG_ID, "hash-concurrent", db),
+      claimMagicLink(blog_id, "hash-concurrent", db),
+      claimMagicLink(blog_id, "hash-concurrent", db),
     ]);
 
     const successes = [result1, result2].filter((r) => r.ok);
@@ -173,7 +173,7 @@ describe("magic-links-repository", () => {
 
   it("claim returns expired when expiresAt is in the past", async () => {
     await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-expired",
@@ -183,7 +183,7 @@ describe("magic-links-repository", () => {
       db,
     );
 
-    const result = await claimMagicLink(BLOG_ID, "hash-expired", db);
+    const result = await claimMagicLink(blog_id, "hash-expired", db);
     expect(result.ok).toBe(false);
     if (result.ok) throw new Error("Expected failure");
     expect(result.reason).toBe("expired");
@@ -194,7 +194,7 @@ describe("magic-links-repository", () => {
   // ---------------------------------------------------------------------------
 
   it("claim returns not_found for unknown hash", async () => {
-    const result = await claimMagicLink(BLOG_ID, "no-such-hash", db);
+    const result = await claimMagicLink(blog_id, "no-such-hash", db);
     expect(result.ok).toBe(false);
     if (result.ok) throw new Error("Expected failure");
     expect(result.reason).toBe("not_found");
@@ -205,9 +205,9 @@ describe("magic-links-repository", () => {
   // ---------------------------------------------------------------------------
 
   it("claim returns not_found when blogId does not match", async () => {
-    // Create under BLOG_ID but try to claim under BLOG_ID_2
+    // Create under blog_id but try to claim under blog_id_2
     await createMagicLink(
-      BLOG_ID,
+      blog_id,
       {
         shareLinkId: "sl-1",
         tokenHash: "hash-tenant",
@@ -217,7 +217,7 @@ describe("magic-links-repository", () => {
       db,
     );
 
-    const result = await claimMagicLink(BLOG_ID_2, "hash-tenant", db);
+    const result = await claimMagicLink(blog_id_2, "hash-tenant", db);
     expect(result.ok).toBe(false);
     if (result.ok) throw new Error("Expected failure");
     expect(result.reason).toBe("not_found");

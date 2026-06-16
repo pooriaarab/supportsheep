@@ -2,7 +2,7 @@ import "server-only";
 
 import { canMintShareLink } from "@/lib/interviews/share-link-permissions";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import type { UserRole } from "@repo/types";
 
 /**
@@ -45,7 +45,7 @@ export async function resolveShareLinkRecordingAccess(
     return { ok: false, status: 403, error: "forbidden" };
   }
 
-  const shareLink = await getShareLink(DEFAULT_BLOG_ID, shareLinkId);
+  const shareLink = await getShareLink(DEFAULT_blog_id, shareLinkId);
   if (!shareLink) {
     return { ok: false, status: 404, error: "share_link_not_found" };
   }

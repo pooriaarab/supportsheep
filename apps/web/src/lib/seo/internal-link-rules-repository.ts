@@ -55,7 +55,7 @@ export async function listInternalLinkRules(
   return rows.map(toEntry);
 }
 
-/** Pipeline helper — returns up to `limit` rules for the blog. */
+/** Pipeline helper — returns up to `limit` rules for the knowledge base. */
 export async function getInternalLinkRulesForBlog(
   blogId: string,
   limit = 50,
@@ -106,7 +106,7 @@ export type UpdateInternalLinkRuleInput = {
 };
 
 /**
- * Returns the updated entry, or null if not found for this blog (tenant-scoped).
+ * Returns the updated entry, or null if not found for this knowledge base (tenant-scoped).
  */
 export async function updateInternalLinkRule(
   blogId: string,

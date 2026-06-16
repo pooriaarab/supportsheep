@@ -608,7 +608,7 @@ export async function listPublishedArticlesByCategory(
 
 /**
  * Find an article by its WordPress post ID (stored in the JSON data blob).
- * Scans all articles for the blog in-memory since wordpressPostId is not a
+ * Scans all articles for the knowledge base in-memory since wordpressPostId is not a
  * denormalized column. Bounded to the single-blog scale of the importer.
  */
 const WP_SCAN_CAP = 10_000;

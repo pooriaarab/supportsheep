@@ -108,7 +108,7 @@ export type UpdateMemberRoleResult =
   | { ok: false; reason: "not_found" | "last_owner" };
 
 /**
- * Change a member's role on a blog. Blocks demoting the blog's last owner: if
+ * Change a member's role on a blog. Blocks demoting the knowledge base's last owner: if
  * the target is currently the only owner and the new role is not "owner", the
  * update is refused with `last_owner` so a blog can never be left ownerless.
  */

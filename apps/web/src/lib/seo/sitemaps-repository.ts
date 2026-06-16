@@ -55,7 +55,7 @@ export async function listSitemaps(
   return rows.map(toEntry);
 }
 
-/** Pipeline helper — returns up to `limit` sitemaps for the blog. */
+/** Pipeline helper — returns up to `limit` sitemaps for the knowledge base. */
 export async function listSitemapsForBlog(
   blogId: string,
   limit = 5,
@@ -118,7 +118,7 @@ export type UpdateSitemapInput = {
 };
 
 /**
- * Returns the updated entry, or null if not found for this blog (tenant-scoped).
+ * Returns the updated entry, or null if not found for this knowledge base (tenant-scoped).
  */
 export async function updateSitemap(
   blogId: string,

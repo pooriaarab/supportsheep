@@ -135,7 +135,7 @@ const FAQS: ProgrammaticFaq[] = [
   {
     question: "How does Wix's editor compare to Squarespace and Supportsheep for dentists?",
     answer:
-      "Wix offers the most editor flexibility of the three -- drag-and-drop with pixel-level control, useful for a practice with a specific branded layout. Squarespace offers less flexibility but a higher design floor -- polished out of the box with less risk of an inconsistent layout. Supportsheep is the least flexible on design but the most opinionated on content and SEO -- AI-guided layouts, built-in structured data, and an SEO sidebar in the blog. The right choice depends on whether the practice prioritizes design freedom, visual polish, or content velocity.",
+      "Wix offers the most editor flexibility of the three -- drag-and-drop with pixel-level control, useful for a practice with a specific branded layout. Squarespace offers less flexibility but a higher design floor -- polished out of the box with less risk of an inconsistent layout. Supportsheep is the least flexible on design but the most opinionated on content and SEO -- AI-guided layouts, built-in structured data, and an SEO sidebar in the knowledge base. The right choice depends on whether the practice prioritizes design freedom, visual polish, or content velocity.",
   },
   {
     question: "What does a professional dental practice website need to include?",

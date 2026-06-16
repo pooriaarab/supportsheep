@@ -11,7 +11,7 @@ import {
   appendFunctionLog,
   listRecentFunctionLogs,
 } from "@/lib/functions/function-logs-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { z } from "zod";
 
 /** Known Cloud Functions with their metadata */
@@ -48,7 +48,7 @@ export const GET = createApiHandler({
     const functions = await Promise.all(
       FUNCTIONS_REGISTRY.map(async (fn) => {
         // Get last 10 logs for this function
-        const logs = await listRecentFunctionLogs(DEFAULT_BLOG_ID, fn.name, 10);
+        const logs = await listRecentFunctionLogs(DEFAULT_blog_id, fn.name, 10);
 
         const lastLog = logs[0] ?? null;
 
@@ -87,7 +87,7 @@ export const POST = createApiHandler({
     }
 
     // Log the manual trigger request
-    await appendFunctionLog(DEFAULT_BLOG_ID, {
+    await appendFunctionLog(DEFAULT_blog_id, {
       functionName: body.functionName,
       status: "manual_trigger_requested",
     });

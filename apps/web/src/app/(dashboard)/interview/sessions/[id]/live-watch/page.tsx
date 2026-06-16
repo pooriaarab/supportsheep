@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { getInterview } from "@/lib/interviews/interviews-repository";
 import {
-  DEFAULT_BLOG_ID,
+  DEFAULT_blog_id,
   getMembershipByUser,
 } from "@/lib/tenancy/repository";
 import { verifyRequest } from "@/lib/auth/session";
@@ -48,7 +48,7 @@ export default async function LiveWatchPage({ params }: PageProps) {
   }
 
   // 3. Fetch interview
-  const interviewData = await getInterview(DEFAULT_BLOG_ID, id);
+  const interviewData = await getInterview(DEFAULT_blog_id, id);
   if (!interviewData) {
     return (
       <div className="max-w-lg mx-auto mt-12">

@@ -1,5 +1,5 @@
 /**
- * Active-blog selection (multi-blog users).
+ * active-blog selection (multi-blog users).
  *
  * POST /api/v1/blogs/active { blogId } -- Remember which blog the caller is
  *   acting on by setting the `bb_active_blog` cookie. Membership is verified
@@ -32,7 +32,7 @@ export const POST = createApiHandler<z.infer<typeof activeBlogSchema>>({
     const isMember = blogs.some((b) => b.id === body.blogId);
     if (!isMember) {
       // Avoid leaking blog existence: a non-member sees the same response
-      // whether or not the blog exists.
+      // whether or not the knowledge base exists.
       return NextResponse.json({ error: "not_a_member" }, { status: 403 });
     }
 

@@ -396,7 +396,7 @@ export default function AiSettingsPage() {
 
       try {
         const res = await fetch("/api/v1/ai/test", {
-          method: "POST",
+          method: "Article",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             provider: providerKey,

@@ -152,7 +152,7 @@ export type UpdateContextTagInput = {
 };
 
 /**
- * Updates only the provided fields on a context tag scoped to the blog.
+ * Updates only the provided fields on a context tag scoped to the knowledge base.
  * Returns the updated entry, or null if no tag with that id/blogId exists.
  */
 export async function updateContextTag(

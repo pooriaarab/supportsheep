@@ -39,7 +39,7 @@ const ALL_MODE = process.argv.includes("--all");
 const SLUG_IDX = process.argv.indexOf("--slug");
 const SINGLE_SLUG = SLUG_IDX !== -1 ? process.argv[SLUG_IDX + 1] : null;
 
-const BLOG_ID = "default";
+const blog_id = "default";
 const PROMPT_MODEL = "gpt-5.5";
 const IMAGE_MODEL = "gpt-image-1";
 const IMAGE_SIZE = "1536x1024" as const;
@@ -230,7 +230,7 @@ async function main(): Promise<void> {
   // Build query
   let query = db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID) as FirebaseFirestore.Query;
+    .where("blogId", "==", blog_id) as FirebaseFirestore.Query;
 
   if (SINGLE_SLUG) {
     query = query.where("slug", "==", SINGLE_SLUG).limit(1);

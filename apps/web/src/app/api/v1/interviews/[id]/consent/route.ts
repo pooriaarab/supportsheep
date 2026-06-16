@@ -27,7 +27,7 @@ import {
   updateInterview,
 } from "@/lib/interviews/interviews-repository";
 import { getShareLink } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:lifecycle");
 
@@ -61,7 +61,7 @@ export const POST = createApiHandler({
     const { id } = params as { id: string };
 
     // 1. Load interview for authorization (auth fields are immutable after creation)
-    const interview = await getInterview(DEFAULT_BLOG_ID, id);
+    const interview = await getInterview(DEFAULT_blog_id, id);
     if (!interview) {
       return NextResponse.json({ error: "Interview not found" }, { status: 404 });
     }
@@ -85,7 +85,7 @@ export const POST = createApiHandler({
         return NextResponse.json({ error: "forbidden" }, { status: 403 });
       }
 
-      const shareLinkRow = await getShareLink(DEFAULT_BLOG_ID, interviewData.shareLinkId);
+      const shareLinkRow = await getShareLink(DEFAULT_blog_id, interviewData.shareLinkId);
       if (!shareLinkRow) {
         return NextResponse.json({ error: "Share-link not found" }, { status: 404 });
       }
@@ -109,7 +109,7 @@ export const POST = createApiHandler({
     const config = await getBlogConfig();
     const monthlyCostCapUsd = config?.interview?.monthlyCostCapUsd ?? null;
 
-    const result = await consentToLive(DEFAULT_BLOG_ID, id, monthlyCostCapUsd);
+    const result = await consentToLive(DEFAULT_blog_id, id, monthlyCostCapUsd);
 
     if (!result.ok) {
       if (result.reason === "not_found") {
@@ -201,7 +201,7 @@ export const POST = createApiHandler({
       }
 
       try {
-        await updateInterview(DEFAULT_BLOG_ID, id, {
+        await updateInterview(DEFAULT_blog_id, id, {
           videoProvider: "tavus",
           tavusConversationId: tavusSession.conversationId,
         });

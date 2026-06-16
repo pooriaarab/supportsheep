@@ -9,7 +9,7 @@
 
 import type { CompetitorProsCons } from "@repo/types";
 
-export const BLOGBAT_PROS_CONS: CompetitorProsCons = {
+export const Supportsheep_PROS_CONS: CompetitorProsCons = {
   pros: [
     "AI-guided onboarding builds a first draft of your site from a single prompt.",
     "Custom domain is free on every plan.",
@@ -74,12 +74,12 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "How much of my site does Supportsheep actually write for me?",
         answer:
-          "Supportsheep uses AI at three well-scoped touchpoints. First, onboarding: a short business description plus a handful of answers generates a multi-page initial site with copy, service descriptions, and default imagery from Unsplash (Pexels unlocks on Pro and above). Second, section creation: adding a new section in the editor (introduction, services, FAQ, etc.) calls out to a per-section generator that seeds initial content from your business context. Third, the blog: when the blog is enabled in your deployment, creating a new post drafts it via AI inside a Blog Feed section. Outside those three touchpoints, editing is manual -- Supportsheep does not ship a free-form in-editor AI rewriter, a rewrite/improve/shorten/expand/translate menu, or AI image generation. If you want AI rewriting a highlighted paragraph on demand, Supportsheep is not that tool. Verified against the upstream repo, 2026-04-21.",
+          "Supportsheep uses AI at three well-scoped touchpoints. First, onboarding: a short business description plus a handful of answers generates a multi-page initial site with copy, service descriptions, and default imagery from Unsplash (Pexels unlocks on Pro and above). Second, section creation: adding a new section in the editor (introduction, services, FAQ, etc.) calls out to a per-section generator that seeds initial content from your business context. Third, the knowledge base: when the knowledge base is enabled in your deployment, creating a New Article drafts it via AI inside a Blog Feed section. Outside those three touchpoints, editing is manual -- Supportsheep does not ship a free-form in-editor AI rewriter, a rewrite/improve/shorten/expand/translate menu, or AI image generation. If you want AI rewriting a highlighted paragraph on demand, Supportsheep is not that tool. Verified against the upstream repo, 2026-04-21.",
       },
       {
         question: "Is Squarespace better for blogging and SEO than Supportsheep?",
         answer:
-          "Both ship the fundamentals of technical SEO -- clean URLs, titles, meta descriptions, sitemaps, responsive markup, basic structured data. Squarespace adds a functional blog with categories, scheduling, and AMP support; reviewers consistently note SEO settings are scattered across panels and deep optimization often requires custom CSS or code injection (https://www.g2.com/products/squarespace/reviews). Supportsheep's blog is feature-flagged -- available when enabled in the deployment -- and when enabled it can draft posts via AI inside a Blog Feed section. Neither platform ships a keyword research tool, rank tracker, or content briefs; do not expect a full SEO suite from either. If you need a content-first workflow with deep editorial tooling, a dedicated CMS is a better fit than either.",
+          "Both ship the fundamentals of technical SEO -- clean URLs, titles, meta descriptions, sitemaps, responsive markup, basic structured data. Squarespace adds a functional blog with categories, scheduling, and AMP support; reviewers consistently note SEO settings are scattered across panels and deep optimization often requires custom CSS or code injection (https://www.g2.com/products/squarespace/reviews). Supportsheep's blog is feature-flagged -- available when enabled in the deployment -- and when enabled it can Draft Articles via AI inside a Blog Feed section. Neither platform ships a keyword research tool, rank tracker, or content briefs; do not expect a full SEO suite from either. If you need a content-first workflow with deep editorial tooling, a dedicated CMS is a better fit than either.",
       },
       {
         question: "How hard is Squarespace's Fluid Engine to learn?",
@@ -133,7 +133,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Is GoDaddy's website builder good for SEO?",
         answer:
-          "GoDaddy's Standard plan and above include SEO tools (meta title and description editing, basic keyword suggestions). Supportsheep generates clean on-page SEO primitives -- titles, meta descriptions, responsive markup, sitemap, and basic structured data -- at onboarding, and the blog (when enabled) can draft posts via AI. Neither platform ships a full SEO suite with keyword research, rank tracking, or redirect management. For content-first SEO workflows, a dedicated CMS is a stronger choice.",
+          "GoDaddy's Standard plan and above include SEO tools (meta title and description editing, basic keyword suggestions). Supportsheep generates clean on-page SEO primitives -- titles, meta descriptions, responsive markup, sitemap, and basic structured data -- at onboarding, and the knowledge base (when enabled) can Draft Articles via AI. Neither platform ships a full SEO suite with keyword research, rank tracking, or redirect management. For content-first SEO workflows, a dedicated CMS is a stronger choice.",
       },
       {
         question: "Can I migrate from GoDaddy Website Builder to Supportsheep?",
@@ -289,7 +289,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Is Hostinger's website builder good for SEO?",
         answer:
-          "Hostinger includes basic SEO features -- meta title and description editing, clean URLs, sitemap generation, and mobile-responsive output. The Business plan adds an SEO toolkit with keyword suggestions. Supportsheep generates on-page SEO primitives at generation time and the blog (when enabled) can draft posts via AI. Neither is a full SEO platform; for serious SEO work, a dedicated CMS or tool is recommended.",
+          "Hostinger includes basic SEO features -- meta title and description editing, clean URLs, sitemap generation, and mobile-responsive output. The Business plan adds an SEO toolkit with keyword suggestions. Supportsheep generates on-page SEO primitives at generation time and the knowledge base (when enabled) can Draft Articles via AI. Neither is a full SEO platform; for serious SEO work, a dedicated CMS or tool is recommended.",
       },
       {
         question: "Does Hostinger have a trial or free plan?",
@@ -362,7 +362,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Does WordPress.com have AI writing tools?",
         answer:
-          "WordPress.com includes Jetpack AI on paid plans, which provides writing assistance within the block editor -- helping draft, summarize, and rewrite content. Supportsheep's AI operates at three touchpoints: onboarding (full site generation), section creation (AI-seeded content per section type), and blog post drafting when the blog is enabled. Supportsheep does not ship a free-form AI rewriter for selected text; if you want to highlight a paragraph and ask AI to improve it on demand, Jetpack AI on WordPress.com provides that.",
+          "WordPress.com includes Jetpack AI on paid plans, which provides writing assistance within the block editor -- helping draft, summarize, and rewrite content. Supportsheep's AI operates at three touchpoints: onboarding (full site generation), section creation (AI-seeded content per section type), and blog post drafting when the knowledge base is enabled. Supportsheep does not ship a free-form AI rewriter for selected text; if you want to highlight a paragraph and ask AI to improve it on demand, Jetpack AI on WordPress.com provides that.",
       },
       {
         question: "Is WordPress.com good for a small service business?",
@@ -450,7 +450,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Does Jimdo have a blog?",
         answer:
-          "Yes, basic blog functionality is available on Jimdo's paid plans. It is simpler than WordPress's editorial tools and does not include AI post drafting. Supportsheep's blog (when enabled in a deployment) can draft posts via AI within a Blog Feed section.",
+          "Yes, basic blog functionality is available on Jimdo's paid plans. It is simpler than WordPress's editorial tools and does not include AI post drafting. Supportsheep's blog (when enabled in a deployment) can Draft Articles via AI within a Blog Feed section.",
       },
       {
         question: "Can I sell online with Jimdo?",
@@ -567,7 +567,7 @@ const NARRATIVES: Record<string, CompetitorNarrative> = {
       {
         question: "Does Google Sites support a blog?",
         answer:
-          "No. Google Sites has no blog functionality, no post editor, and no CMS. It renders static pages. If content publishing -- articles, posts, a blog feed -- is part of your site plan, Google Sites is not the right tool. Supportsheep's blog (when enabled) can draft posts via AI within a Blog Feed section.",
+          "No. Google Sites has no blog functionality, no post editor, and no CMS. It renders static pages. If content publishing -- articles, posts, a blog feed -- is part of your site plan, Google Sites is not the right tool. Supportsheep's blog (when enabled) can Draft Articles via AI within a Blog Feed section.",
       },
       {
         question: "How does Google Sites compare to Supportsheep on SEO?",

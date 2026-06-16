@@ -158,7 +158,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     } as unknown as Response);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         confirmed: true,
       }),
@@ -203,7 +203,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     );
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         confirmed: true,
       }),
@@ -249,7 +249,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-mock-id/consent",
         {
-          method: "POST",
+          method: "Article",
           body: JSON.stringify({ confirmed: true }),
         },
       );
@@ -310,7 +310,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     } as unknown as Response);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         confirmed: true,
       }),
@@ -392,7 +392,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     } as unknown as Response);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({
         confirmed: true,
         shareLinkToken: "this-is-a-valid-token-at-least-32-chars-long",
@@ -420,7 +420,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     mockConsentToLive.mockResolvedValue({ ok: false, reason: "conflict" });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({ confirmed: true }),
     });
 
@@ -439,7 +439,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     );
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({ confirmed: true }),
     });
 
@@ -468,7 +468,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     } as unknown as Response);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({ confirmed: true }),
     });
 
@@ -497,7 +497,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
     mockConsentToLive.mockResolvedValue({ ok: false, reason: "cost_cap_exceeded" });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify({ confirmed: true }),
     });
 
@@ -544,7 +544,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const makeReq = () =>
         new NextRequest("http://localhost/api/v1/interviews/test-interview-id/consent", {
-          method: "POST",
+          method: "Article",
           body: JSON.stringify({ confirmed: true }),
         });
 
@@ -594,7 +594,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-id/consent",
-        { method: "POST", body: JSON.stringify({ confirmed: true }) },
+        { method: "Article", body: JSON.stringify({ confirmed: true }) },
       );
 
       const res = await POST(req, {
@@ -620,7 +620,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-id/consent",
-        { method: "POST", body: JSON.stringify({ confirmed: true }) },
+        { method: "Article", body: JSON.stringify({ confirmed: true }) },
       );
 
       const res = await POST(req, {
@@ -645,7 +645,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-id/consent",
-        { method: "POST", body: JSON.stringify({ confirmed: true }) },
+        { method: "Article", body: JSON.stringify({ confirmed: true }) },
       );
 
       const res = await POST(req, {
@@ -669,7 +669,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-id/consent",
-        { method: "POST", body: JSON.stringify({ confirmed: true }) },
+        { method: "Article", body: JSON.stringify({ confirmed: true }) },
       );
 
       const res = await POST(req, {
@@ -688,7 +688,7 @@ describe("POST /api/v1/interviews/[id]/consent", () => {
 
       const req = new NextRequest(
         "http://localhost/api/v1/interviews/test-interview-id/consent",
-        { method: "POST", body: JSON.stringify({ confirmed: true }) },
+        { method: "Article", body: JSON.stringify({ confirmed: true }) },
       );
 
       const res = await POST(req, {

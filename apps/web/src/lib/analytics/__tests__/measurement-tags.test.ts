@@ -14,7 +14,7 @@ describe("resolvePublicMeasurementId", () => {
     expect(blogA).not.toBe(blogB);
   });
 
-  it("returns null (no script) when the blog has no id and no integration", () => {
+  it("returns null (no script) when the knowledge base has no id and no integration", () => {
     expect(resolvePublicMeasurementId("", null)).toBeNull();
     expect(resolvePublicMeasurementId(undefined, undefined)).toBeNull();
     expect(resolvePublicMeasurementId(null, "")).toBeNull();
@@ -26,7 +26,7 @@ describe("resolvePublicMeasurementId", () => {
     expect(resolvePublicMeasurementId("G-", null)).toBeNull();
   });
 
-  it("normalizes the blog id (trims + upper-cases) before injection", () => {
+  it("normalizes the knowledge base id (trims + upper-cases) before injection", () => {
     expect(resolvePublicMeasurementId("  g-abc123  ", null)).toBe("G-ABC123");
   });
 

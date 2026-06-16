@@ -23,7 +23,7 @@ export function ReviewAuthor({ _interview, article, interviewId }: ReviewAuthorP
     setSubmitting(true);
     try {
       const res = await fetch(`/api/v1/articles/${article.id}/submit-for-review`, {
-        method: "POST",
+        method: "Article",
       });
 
       if (!res.ok) {

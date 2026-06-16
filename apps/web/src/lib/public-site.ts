@@ -52,12 +52,12 @@ export function stringifyJsonLdForScript(jsonLd: unknown): string {
   return JSON.stringify(jsonLd).replace(/</g, "\\u003c");
 }
 
-const BLOGBAT_ORGANIZATION_SAME_AS = [
+const Supportsheep_ORGANIZATION_SAME_AS = [
   "https://supportsheep.com",
   "https://github.com/pooriaarab/supportsheep",
 ];
 
-const BLOGBAT_SITE_FAQS = [
+const Supportsheep_SITE_FAQS = [
   {
     question: "What is Supportsheep?",
     answer:
@@ -71,7 +71,7 @@ const BLOGBAT_SITE_FAQS = [
   {
     question: "What topics does the Supportsheep cover?",
     answer:
-      "The blog covers small business websites, search visibility, local SEO, portfolio sites, service pages, online tools, and examples from Supportsheep users.",
+      "the knowledge base covers small business websites, search visibility, local SEO, portfolio sites, service pages, online tools, and examples from Supportsheep users.",
   },
   {
     question: "Can AI crawlers use Supportsheep content?",
@@ -91,7 +91,7 @@ export function buildSiteFaqSchema(siteUrl: string) {
     "@type": "FAQPage",
     "@id": `${siteUrl}/#faq`,
     url: siteUrl,
-    mainEntity: BLOGBAT_SITE_FAQS.map((item) => ({
+    mainEntity: Supportsheep_SITE_FAQS.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -128,7 +128,7 @@ export function buildPublicSiteSchema(config: BlogConfig, siteUrl: string) {
           width: 112,
           height: 112,
         },
-        sameAs: BLOGBAT_ORGANIZATION_SAME_AS,
+        sameAs: Supportsheep_ORGANIZATION_SAME_AS,
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "customer support",
@@ -237,7 +237,7 @@ export function buildArticleItemListSchema(
 }
 
 /**
- * Build a `Blog` JSON-LD node for the blog listing page. Used alongside
+ * Build a `Blog` JSON-LD node for the knowledge base listing page. Used alongside
  * `ItemList` so crawlers understand the page is a blog index.
  */
 export function buildBlogListingSchema(

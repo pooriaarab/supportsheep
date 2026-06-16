@@ -95,7 +95,7 @@ vi.mock("@/lib/sanitize/article-html", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 // ---------------------------------------------------------------------------
@@ -331,7 +331,7 @@ describe("importWordPressPosts", () => {
       expect(articleArg.updatedAt).toBe("2025-03-11T08:30:00.000Z");
     });
 
-    it("sets publishedAt to ISO string for published posts", async () => {
+    it("sets publishedAt to ISO string for Published Articles", async () => {
       const posts = [makePost({ status: "published", publishDate: "2025-06-01 09:00:00" })];
       await importWordPressPosts(posts, "import-1", "default");
 
@@ -340,7 +340,7 @@ describe("importWordPressPosts", () => {
       expect(typeof articleArg.publishedAt).toBe("string");
     });
 
-    it("sets publishedAt to null for draft posts", async () => {
+    it("sets publishedAt to null for Draft Articles", async () => {
       const posts = [makePost({ status: "draft" })];
       await importWordPressPosts(posts, "import-1", "default");
 

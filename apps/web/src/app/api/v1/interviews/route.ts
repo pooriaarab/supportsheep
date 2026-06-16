@@ -16,7 +16,7 @@ import {
   validateShareLinkForUse,
   isShareLinkScheduledFuture,
 } from "@/lib/interviews/share-links-repository";
-import { DEFAULT_BLOG_ID, getMembershipByUser } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id, getMembershipByUser } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:lifecycle");
 
@@ -46,7 +46,7 @@ export const POST = createApiHandler({
 
       const role = (await getMembershipByUser(session.uid))?.role ?? "guest";
 
-      const interview = await createInterview(DEFAULT_BLOG_ID, {
+      const interview = await createInterview(DEFAULT_blog_id, {
         status: "consent",
         startedByUid: session.uid,
         startedByRole: role as string,
@@ -130,7 +130,7 @@ export const POST = createApiHandler({
       }
 
       // Create the interview after incrementing uses
-      const interview = await createInterview(DEFAULT_BLOG_ID, {
+      const interview = await createInterview(DEFAULT_blog_id, {
         status: "consent",
         shareLinkId: shareLinkData.id,
         guestName: body.guestName || null,
@@ -166,12 +166,12 @@ export const GET = createApiHandler({
     try {
       const [sessionsList, linksList] = await Promise.all([
         listInterviews(
-          DEFAULT_BLOG_ID,
+          DEFAULT_blog_id,
           isAdmin ? {} : { startedByUid: session.uid },
         ),
         import("@/lib/interviews/share-links-repository").then((m) =>
           m.listShareLinks(
-            DEFAULT_BLOG_ID,
+            DEFAULT_blog_id,
             isAdmin
               ? { status: "active" }
               : { status: "active", createdBy: session.uid },

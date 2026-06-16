@@ -61,7 +61,7 @@ async function tabstackResearch(
   apiKey: string,
 ): Promise<{ report: string; citedPages: Array<{ url: string; title: string }> }> {
   const response = await fetch("https://api.tabstack.ai/v1/research", {
-    method: "POST",
+    method: "Article",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
@@ -128,9 +128,9 @@ async function generatePageContent(
     .map((p, i) => `[${i + 1}] ${p.title} — ${p.url}`)
     .join("\n");
 
-  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the blog of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
+  const systemPrompt = `You write high-quality programmatic SEO content for supportsheep.com, the knowledge base of Supportsheep (an AI-powered platform for solopreneurs and SMBs).
 
-BLOGBAT PRODUCT CONTEXT — ground all Supportsheep claims here:
+Supportsheep PRODUCT CONTEXT — ground all Supportsheep claims here:
 ${supportsheepContext}
 
 CORE RULES:

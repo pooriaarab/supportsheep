@@ -11,7 +11,7 @@ import {
   type LegacyArticleDraft,
 } from "../../src/lib/content-migration/legacy-to-article";
 import {
-  BLOGBAT_PROS_CONS,
+  Supportsheep_PROS_CONS,
   getCompetitorNarrative,
 } from "../../src/lib/alternatives/content";
 import { COMPETITORS } from "../../src/lib/alternatives/competitors";
@@ -31,7 +31,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 
 function assertEnv(name: string): string {
   const value = process.env[name];
@@ -64,7 +64,7 @@ function buildArticleDoc(
   const words = stripHtml(draft.body).split(" ").filter(Boolean).length;
   const now = new Date().toISOString();
   return {
-    blogId: BLOG_ID,
+    blogId: blog_id,
     title: draft.title,
     slug: draft.slug,
     canonicalPath: draft.canonicalPath,
@@ -108,7 +108,7 @@ async function main() {
   const db = getFirestore();
   const snapshot = await db
     .collection("articles")
-    .where("blogId", "==", BLOG_ID)
+    .where("blogId", "==", blog_id)
     .get();
   const existing = snapshot.docs.map(
     (doc) =>
@@ -123,7 +123,7 @@ async function main() {
     const narrative = getCompetitorNarrative(competitor.slug);
     if (!narrative) continue;
     candidates.push(
-      buildAlternativeArticleInput(competitor, narrative, BLOGBAT_PROS_CONS),
+      buildAlternativeArticleInput(competitor, narrative, Supportsheep_PROS_CONS),
     );
     candidates.push(buildVsArticleInput(competitor, narrative));
   }

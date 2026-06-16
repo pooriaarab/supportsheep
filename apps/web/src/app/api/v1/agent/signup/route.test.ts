@@ -31,7 +31,7 @@ import { POST } from "./route";
 
 function postRequest(body: unknown): NextRequest {
   return new NextRequest("https://supportsheep.com/api/v1/agent/signup", {
-    method: "POST",
+    method: "Article",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });

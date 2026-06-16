@@ -477,7 +477,7 @@ describe("ArticlePage", () => {
     );
   });
 
-  it("emits Speakable schema on the BlogPosting JSON-LD", () => {
+  it("emits Speakable schema on the knowledge basePosting JSON-LD", () => {
     const html = renderToStaticMarkup(
       <ArticlePage
         article={article}

@@ -52,7 +52,7 @@ async function fetchFreeTools(): Promise<FreeTool[]> {
 
 async function seedFreeTools(): Promise<{ created: number; skipped: number }> {
   const response = await fetch("/api/v1/free-tools/seed", {
-    method: "POST",
+    method: "Article",
   });
   if (!response.ok) {
     throw new Error("Failed to seed free tools");

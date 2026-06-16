@@ -47,14 +47,14 @@ vi.mock("@/lib/interviews/interviews-repository", () => ({
 }));
 
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
 }));
 
 function makeRequest(body: unknown): NextRequest {
   return new NextRequest(
     "http://localhost/api/v1/interviews/test-only/dispatch-tool",
     {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify(body),
       headers: { "content-type": "application/json" },
     },

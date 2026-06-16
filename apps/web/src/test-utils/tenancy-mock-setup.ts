@@ -5,7 +5,7 @@ import { vi } from "vitest";
 // tenancy repo to a default owner tenant. The real implementation is unit-tested
 // directly in src/lib/tenancy/repository.test.ts (which unmocks this).
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   // Real class so `error instanceof NeedsOnboardingError` checks (and any
   // import of the symbol) work under the mock.
   NeedsOnboardingError: class NeedsOnboardingError extends Error {

@@ -13,7 +13,7 @@ import {
   type LegacyArticleDraft,
 } from "../../src/lib/content-migration/legacy-to-article";
 import {
-  BLOGBAT_PROS_CONS,
+  Supportsheep_PROS_CONS,
   getCompetitorNarrative,
 } from "../../src/lib/alternatives/content";
 import { COMPETITORS } from "../../src/lib/alternatives/competitors";
@@ -34,7 +34,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
 }
 
 const DRY_RUN = process.env.DRY_RUN === "1";
-const BLOG_ID = "default";
+const blog_id = "default";
 
 function assertEnv(name: string): string {
   const value = process.env[name];
@@ -108,7 +108,7 @@ function buildArticleDoc(
   const words = wordCount(draft.body);
 
   return {
-    blogId: BLOG_ID,
+    blogId: blog_id,
     title: draft.title,
     slug: draft.slug,
     canonicalPath: draft.canonicalPath,
@@ -161,7 +161,7 @@ async function main() {
   const db = getFirestore();
 
   const [articlesSnap, programmaticSnap, pillarsSnap] = await Promise.all([
-    db.collection("articles").where("blogId", "==", BLOG_ID).get(),
+    db.collection("articles").where("blogId", "==", blog_id).get(),
     db.collection("programmatic_pages").get(),
     db.collection("pillars").get(),
   ]);
@@ -300,7 +300,7 @@ async function main() {
     const alternative = buildAlternativeArticleInput(
       competitor,
       narrative,
-      BLOGBAT_PROS_CONS,
+      Supportsheep_PROS_CONS,
     );
     stage(
       {

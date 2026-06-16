@@ -67,7 +67,7 @@ export async function sendDomainActivatedEmail(
   const text = [
     `Your custom domain ${domain} is verified and live.`,
     ``,
-    `Visit your blog: ${url}`,
+    `Visit your knowledge base: ${url}`,
   ].join("\n");
   const html = `
     <div style="font-family:system-ui,sans-serif;line-height:1.5">

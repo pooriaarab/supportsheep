@@ -15,7 +15,7 @@ import {
   claimMagicLink,
 } from "@/lib/interviews/magic-links-repository";
 import { createInterview } from "@/lib/interviews/interviews-repository";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 const log = createLogger("interviews:magic-link");
 
@@ -162,7 +162,7 @@ export const GET = createApiHandler({
     // Create the interview in D1
     let interview;
     try {
-      interview = await createInterview(DEFAULT_BLOG_ID, {
+      interview = await createInterview(DEFAULT_blog_id, {
         status: "consent",
         shareLinkId: shareLinkData.id,
         guestEmail: mlEmail ?? undefined,

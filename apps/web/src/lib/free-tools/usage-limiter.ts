@@ -8,7 +8,7 @@ import { nanoid } from "nanoid";
 import { getDb } from "@/db";
 import type * as schema from "@/db/schema";
 import { freeToolUsage } from "@/db/schema/free-tools";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 
 type DB = DrizzleD1Database<typeof schema>;
 
@@ -66,7 +66,7 @@ export async function incrementFreeToolUsage(
     salt?: string;
     now?: Date;
   },
-  blogId: string = DEFAULT_BLOG_ID,
+  blogId: string = DEFAULT_blog_id,
   db: DB = getDb(),
 ): Promise<{ allowed: boolean; count: number; remaining: number; day: string }> {
   const now = input.now ?? new Date();

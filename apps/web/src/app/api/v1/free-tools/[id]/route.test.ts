@@ -270,7 +270,7 @@ describe("single free tool admin route", () => {
     const response = await route.POST(
       new Request(
         "http://test.local/api/v1/free-tools/word-counter/generate-callout",
-        { method: "POST" },
+        { method: "Article" },
       ) as never,
       { params: Promise.resolve({ id: "word-counter" }) } as never,
     );
@@ -314,7 +314,7 @@ describe("single free tool admin route", () => {
     const response = await route.POST(
       new Request(
         "http://test.local/api/v1/free-tools/word-counter/generate-callout",
-        { method: "POST" },
+        { method: "Article" },
       ) as never,
       { params: Promise.resolve({ id: "word-counter" }) } as never,
     );
@@ -349,7 +349,7 @@ describe("single free tool admin route", () => {
     const response = await route.POST(
       new Request(
         "http://test.local/api/v1/free-tools/word-counter/generate-callout",
-        { method: "POST" },
+        { method: "Article" },
       ) as never,
       { params: Promise.resolve({ id: "word-counter" }) } as never,
     );
@@ -382,7 +382,7 @@ describe("single free tool admin route", () => {
     const response = await route.POST(
       new Request(
         "http://test.local/api/v1/free-tools/word-counter/generate-callout",
-        { method: "POST" },
+        { method: "Article" },
       ) as never,
       { params: Promise.resolve({ id: "word-counter" }) } as never,
     );
@@ -413,7 +413,7 @@ describe("single free tool admin route", () => {
     const response = await route.POST(
       new Request(
         "http://test.local/api/v1/free-tools/word-counter/generate-callout",
-        { method: "POST" },
+        { method: "Article" },
       ) as never,
       { params: Promise.resolve({ id: "word-counter" }) } as never,
     );

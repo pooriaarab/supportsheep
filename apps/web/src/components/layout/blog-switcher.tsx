@@ -21,15 +21,15 @@ import {
 } from "@/hooks/use-blogs-query";
 
 interface BlogSwitcherProps {
-  /** Header menu items (Settings, Log out) rendered below the blog list. */
+  /** Header menu items (Settings, Log out) rendered below the knowledge base list. */
   footer?: ReactNode;
 }
 
 /**
- * Active-blog switcher + header menu for the sidebar. Shows the current blog's
+ * active-blog switcher + header menu for the sidebar. Shows the current blog's
  * display name; for multi-blog users the dropdown lists the caller's blogs and,
  * on select, persists the choice (POST /api/v1/blogs/active) then refreshes so
- * server components re-resolve the tenant. The blog list (and its separator) is
+ * server components re-resolve the tenant. the knowledge base list (and its separator) is
  * only rendered when the user belongs to more than one blog — otherwise the menu
  * shows just the `footer` items.
  */

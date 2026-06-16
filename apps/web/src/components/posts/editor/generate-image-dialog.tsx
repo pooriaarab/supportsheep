@@ -58,7 +58,7 @@ function DialogBody({
     void (async () => {
       try {
         const res = await fetch("/api/v1/generate/image-prompt", {
-          method: "POST",
+          method: "Article",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ slug, title, excerpt, category }),
         });
@@ -76,7 +76,7 @@ function DialogBody({
     setGenerating(true);
     try {
       const res = await fetch("/api/v1/generate/image", {
-        method: "POST",
+        method: "Article",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           purpose,

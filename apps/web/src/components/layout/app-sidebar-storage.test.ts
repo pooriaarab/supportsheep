@@ -16,11 +16,11 @@ function createStorage(values: Record<string, string | null> = {}) {
 describe("app sidebar storage", () => {
   it("reads expanded groups from the versioned key first", () => {
     const storage = createStorage({
-      [SIDEBAR_EXPANDED_GROUPS_STORAGE_KEY]: JSON.stringify(["Posts"]),
+      [SIDEBAR_EXPANDED_GROUPS_STORAGE_KEY]: JSON.stringify(["Articles"]),
       [SIDEBAR_EXPANDED_GROUPS_LEGACY_STORAGE_KEY]: JSON.stringify(["Legacy"]),
     });
 
-    expect(readExpandedSidebarGroups(storage)).toEqual(["Posts"]);
+    expect(readExpandedSidebarGroups(storage)).toEqual(["Articles"]);
   });
 
   it("falls back to the legacy key for existing users", () => {
@@ -43,11 +43,11 @@ describe("app sidebar storage", () => {
   it("writes expanded groups to the versioned key", () => {
     const storage = createStorage();
 
-    writeExpandedSidebarGroups(storage, ["Posts", "Settings"]);
+    writeExpandedSidebarGroups(storage, ["Articles", "Settings"]);
 
     expect(storage.setItem).toHaveBeenCalledWith(
       SIDEBAR_EXPANDED_GROUPS_STORAGE_KEY,
-      JSON.stringify(["Posts", "Settings"]),
+      JSON.stringify(["Articles", "Settings"]),
     );
   });
 });

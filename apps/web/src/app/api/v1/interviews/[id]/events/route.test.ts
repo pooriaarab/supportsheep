@@ -76,7 +76,7 @@ vi.mock("@/db", () => ({
 // Each test sets `tenantState.role` to drive the 403 vs success branches.
 const tenantState = vi.hoisted(() => ({ role: "owner" as string }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,
@@ -120,7 +120,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-mock-token",
       },
@@ -156,7 +156,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       body: JSON.stringify(events),
     });
 
@@ -176,7 +176,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer invalid-token",
       },
@@ -201,7 +201,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer wrong-token",
       },
@@ -232,7 +232,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -256,7 +256,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     }));
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -281,7 +281,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
       body: JSON.stringify(events),
     });
@@ -306,7 +306,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     }));
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: { Authorization: "Bearer valid-token" },
       body: JSON.stringify(events),
     });
@@ -355,7 +355,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     ];
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/events", {
-      method: "POST",
+      method: "Article",
       headers: {
         Authorization: "Bearer valid-token",
       },
@@ -453,7 +453,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/test-w20b/events",
       {
-        method: "POST",
+        method: "Article",
         headers: { Authorization: "Bearer valid-token" },
         body: JSON.stringify(events),
       },
@@ -515,7 +515,7 @@ describe("POST /api/v1/interviews/[id]/events", () => {
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/test-interview-123/events",
       {
-        method: "POST",
+        method: "Article",
         headers: { Authorization: "Bearer valid-token" },
         body: JSON.stringify(events),
       },

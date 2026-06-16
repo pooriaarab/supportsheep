@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
       revalidated.push(`/blog/${category}`);
     }
 
-    // Always revalidate the blog homepage
+    // Always revalidate the knowledge base homepage
     revalidatePath("/blog");
     revalidated.push("/blog");
 

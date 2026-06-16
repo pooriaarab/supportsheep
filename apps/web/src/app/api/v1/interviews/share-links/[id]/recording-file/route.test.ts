@@ -25,7 +25,7 @@ vi.mock("@/lib/audit-log", () => ({
 
 const tenantState = vi.hoisted(() => ({ role: "owner" }));
 vi.mock("@/lib/tenancy/repository", () => ({
-  DEFAULT_BLOG_ID: "default",
+  DEFAULT_blog_id: "default",
   resolveTenantForUser: vi.fn(async () => ({
     blogId: "default",
     role: tenantState.role,

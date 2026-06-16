@@ -137,7 +137,7 @@ describe("middleware", () => {
     // redaction, and a per-batch entry cap (see route.ts).
     const response = middleware(
       new NextRequest("http://localhost:3000/api/v1/client-logs", {
-        method: "POST",
+        method: "Article",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           entries: [{ level: "info", context: "ui:test", message: "hi" }],

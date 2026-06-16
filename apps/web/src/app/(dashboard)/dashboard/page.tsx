@@ -193,7 +193,7 @@ export default function DashboardPage() {
   }, [articles]);
 
   const quickActions = [
-    { label: "New Post", href: "/posts?new=true", icon: Plus },
+    { label: "New Article", href: "/posts?new=true", icon: Plus },
     {
       label: "Generate from Keyword",
       href: "/generate/keyword",
@@ -210,13 +210,13 @@ export default function DashboardPage() {
         {/* Stats */}
         <StatGrid columns={4}>
           <StatCard
-            label="Published Posts"
+            label="Published Articles"
             value={stats.published}
             icon={FileText}
             loading={isLoading}
           />
           <StatCard
-            label="Draft Posts"
+            label="Draft Articles"
             value={stats.drafts}
             icon={Pencil}
             loading={isLoading}
@@ -243,11 +243,11 @@ export default function DashboardPage() {
         </StatGrid>
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {/* Recent Posts */}
+          {/* Recent Articles */}
           <Card className="lg:col-span-2 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-sm font-semibold text-foreground">
-                Recent Posts
+                Recent Articles
               </h2>
               <Button asChild variant="ghost" size="sm" className="text-xs">
                 <Link href="/posts">
@@ -266,9 +266,9 @@ export default function DashboardPage() {
               <EmptyState
                 size="sm"
                 icon={FileText}
-                title="No Posts Yet"
-                description="Create your first post to start publishing."
-                action={{ label: "New Post", href: "/posts?new=true" }}
+                title="No Articles Yet"
+                description="Create your first article to start publishing."
+                action={{ label: "New Article", href: "/posts?new=true" }}
               />
             ) : (
               <ul className="space-y-0">
@@ -347,10 +347,10 @@ export default function DashboardPage() {
             )}
           </Card>
 
-          {/* Posts by Category */}
+          {/* Articles by Category */}
           <Card className="p-6">
             <h2 className="text-sm font-semibold text-foreground mb-4">
-              Posts by Category
+              Articles by Category
             </h2>
             {isLoading ? (
               <Skeleton className="h-48 w-full" aria-hidden="true" />
@@ -359,7 +359,7 @@ export default function DashboardPage() {
                 size="sm"
                 icon={FolderOpen}
                 title="No Category Data"
-                description="Assign categories to posts to see the breakdown."
+                description="Assign categories to articles to see the breakdown."
               />
             ) : (
               <PostsByCategoryChart data={categoryData} />

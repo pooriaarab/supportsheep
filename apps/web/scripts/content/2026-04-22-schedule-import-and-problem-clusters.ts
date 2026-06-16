@@ -22,7 +22,7 @@ for (const candidate of CANDIDATE_ENV_PATHS) {
   }
 }
 
-const BLOG_ID = "default";
+const blog_id = "default";
 const CONCURRENCY = 2;
 const DRY_RUN = process.env.DRY_RUN === "1";
 const LIMIT = Number(process.env.LIMIT ?? "0");
@@ -290,7 +290,7 @@ async function main() {
   for (const item of manifest) {
     const existing = await db
       .collection("articles")
-      .where("blogId", "==", BLOG_ID)
+      .where("blogId", "==", blog_id)
       .where("slug", "==", item.slug)
       .limit(1)
       .get();
@@ -312,7 +312,7 @@ async function main() {
         item,
         scheduledAt,
         payload: {
-          blogId: BLOG_ID,
+          blogId: blog_id,
           title: item.title,
           slug: item.slug,
           canonicalPath: `/${item.slug}`,

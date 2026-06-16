@@ -15,7 +15,7 @@ async function fetchAuthors(): Promise<Author[]> {
 
 async function createAuthor(data: AuthorInput): Promise<Author> {
   const res = await fetch("/api/v1/authors", {
-    method: "POST",
+    method: "Article",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });

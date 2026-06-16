@@ -1,7 +1,7 @@
 import "server-only";
 
 import { createLogger } from "@/lib/logger";
-import { DEFAULT_BLOG_ID } from "@/lib/tenancy/repository";
+import { DEFAULT_blog_id } from "@/lib/tenancy/repository";
 import { insertToolExecution } from "./tool-executions-repository";
 import type { ToolResult } from "./tools/_types";
 
@@ -67,7 +67,7 @@ export async function recordToolExecution(
     if (!input.result.ok) {
       record.errorKind = input.result.category;
     }
-    await insertToolExecution(DEFAULT_BLOG_ID, record);
+    await insertToolExecution(DEFAULT_blog_id, record);
   } catch (err: unknown) {
     log.warn("tool-audit:write-failed", {
       interviewId: input.interviewId,

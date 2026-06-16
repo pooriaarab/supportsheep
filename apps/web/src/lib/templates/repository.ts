@@ -119,7 +119,7 @@ export type UpdateTemplateInput = {
 
 /**
  * Returns the updated TemplateEntry, or null if no template with that id
- * exists for the blog (404 semantics).
+ * exists for the knowledge base (404 semantics).
  */
 export async function updateTemplate(
   blogId: string,
