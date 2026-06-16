@@ -10,8 +10,15 @@ export function FeedbackWidget({ articleId: _articleId }: { articleId: string })
   const handleFeedback = async (type: "helpful" | "unhelpful") => {
     setFeedback(type);
     
-    // In a real application, we would ping an API route here:
-    // await fetch('/api/v1/articles/' + articleId + '/feedback', { method: 'POST', body: JSON.stringify({ type }) })
+    try {
+      await fetch(`/api/v1/articles/${_articleId}/feedback`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type }),
+      });
+    } catch (e) {
+      console.error("Failed to submit feedback", e);
+    }
   };
 
   if (feedback) {
