@@ -32,7 +32,7 @@ export function MarketingHome() {
 
       <main id="main" className="flex-1 min-h-screen bg-background pb-20">
         {/* Ferndesk-style Minimalist Hero */}
-        <section className="pt-32 pb-16 text-center px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 text-left">
+        <section className="pt-32 pb-16 text-center md:text-left px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />

@@ -52,7 +52,7 @@ const BODY = `
 <p>Yes — but only if it works. Nearly 31% of U.S. shoppers have skipped a business because it lacked a website, and 84% of consumers say a business is more credible when it has one. In 2026 the real question is not "do I need a website" but "can I get one up that actually pulls its weight?" Social profiles and freelance platforms are useful supplements but poor substitutes: you do not own them, they limit what you can present, and they do not help you rank in search. A single-page site with clear services, a contact path, and basic SEO is the minimum. This article walks through when a website pays off, what it needs to contain, which platform decisions matter, and what you can realistically ignore.</p>
 </section>
 
-<p>There are 29.8 million customers in the United States, and they collectively generate <a href="https://founderreports.com/customer-statistics/">$1.7 trillion in annual revenue</a>. A growing share of them launch without a website — relying instead on LinkedIn, Instagram, TikTok, freelance marketplaces, or referral networks. That works, for a while. Then it stops working, or works less well than it should, and the search for an explanation usually ends at the same place: no owned web presence.</p>
+<p>There are 29.8 million customers in the United States, and they collectively generate <a href="https://founderreports.com/solopreneur-statistics/">$1.7 trillion in annual revenue</a>. A growing share of them launch without a website — relying instead on LinkedIn, Instagram, TikTok, freelance marketplaces, or referral networks. That works, for a while. Then it stops working, or works less well than it should, and the search for an explanation usually ends at the same place: no owned web presence.</p>
 
 <p>This article does not make a generic case for having a website. It makes a specific case for customers in 2026 — accounting for what has changed (AI search, AI Overviews, social proof expectations, website-builder costs) and what has not (search still matters, credibility still matters, owning your audience still matters).</p>
 
@@ -290,7 +290,7 @@ const BODY = `
 <li><strong>Month 3+:</strong> Iterate. Add service pages for adjacent offerings. Add more social proof as you accumulate it. Add a second blog post. Watch which pages Google is indexing and which queries are sending traffic.</li>
 </ol>
 
-<p>According to a Simply Business customer report, <a href="https://www.simplybusiness.com/resource/customer-trend-report/">61% of customers were surprised by how difficult managing all business functions alone would be</a>. Website maintenance sits in the "business function" bucket. The goal is a site that does not require constant attention — launch it right, and a few hours per quarter for updates is sufficient.</p>
+<p>According to a Simply Business customer report, <a href="https://www.simplybusiness.com/resource/solopreneur-trend-report/">61% of customers were surprised by how difficult managing all business functions alone would be</a>. Website maintenance sits in the "business function" bucket. The goal is a site that does not require constant attention — launch it right, and a few hours per quarter for updates is sufficient.</p>
 
 <section class="faq" data-block="faq">
 <div class="faq-item">
