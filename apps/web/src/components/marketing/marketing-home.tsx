@@ -14,8 +14,9 @@
 import Link from "next/link";
 import { MarketingHeader } from "./marketing-header";
 import { MarketingFooter } from "./marketing-footer";
-import { ArrowRight, Github, Mic, MessageCircle, FileText, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Github, Mic, MessageCircle, FileText, CheckCircle2, Zap, LayoutDashboard, Settings } from "lucide-react";
 import { FeedbackWidget } from "@/components/public/feedback-widget";
+import { AnimeSheepHero } from "./anime-sheep-hero";
 
 export function MarketingHome() {
   return (
@@ -31,25 +32,30 @@ export function MarketingHome() {
 
       <main id="main" className="flex-1 min-h-screen bg-background pb-20">
         {/* Ferndesk-style Minimalist Hero */}
-        <section className="pt-32 pb-16 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Introducing GitHub Auto-Docs
+        <section className="pt-32 pb-16 text-center px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 text-left">
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Introducing GitHub Auto-Docs
+            </div>
+            
+            <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">
+              The AI-native help center that <span className="text-primary">updates itself.</span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-10">
+              Never write another support article. Supportsheep connects to your GitHub, drafts docs from merged PRs, and serves your customers instantly via Voice and Chat.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/onboarding" className="bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition shadow-sm flex items-center gap-2">
+                Start Free Trial <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="#features" className="bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-medium hover:bg-secondary/80 transition">
+                See how it works
+              </Link>
+            </div>
           </div>
-          
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">
-            The AI-native help center that <span className="text-primary">updates itself.</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Never write another support article. Supportsheep connects to your GitHub, drafts docs from merged PRs, and serves your customers instantly via Voice and Chat.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link href="/onboarding" className="bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition shadow-sm flex items-center gap-2">
-              Start Free Trial <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link href="#features" className="bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-medium hover:bg-secondary/80 transition">
-              See how it works
-            </Link>
+          <div className="flex-1 w-full">
+             <AnimeSheepHero />
           </div>
         </section>
 
@@ -126,12 +132,69 @@ export function MarketingHome() {
           </div>
         </section>
 
-        {/* Feature Grid */}
-        <section id="features" className="py-24">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold">Everything you need to scale support</h2>
+        {/* Inside the App - Admin Interface Mockup */}
+        <section className="py-24 px-4 overflow-hidden">
+          <div className="max-w-5xl mx-auto">
+             <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold mb-4">Manage everything in one place</h2>
+              <p className="text-lg text-muted-foreground">A clean, powerful dashboard to view articles, integrations, and AI analytics.</p>
             </div>
+            
+            <div className="bg-card border border-border shadow-2xl rounded-xl overflow-hidden flex flex-col md:flex-row h-[400px]">
+              {/* Fake Sidebar */}
+              <div className="w-full md:w-64 bg-muted/50 border-r border-border p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2 font-bold mb-8 px-2">
+                  <div className="w-6 h-6 rounded bg-primary"></div> Supportsheep
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-secondary text-secondary-foreground font-medium text-sm">
+                  <LayoutDashboard className="w-4 h-4" /> Dashboard
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2 text-muted-foreground hover:text-foreground text-sm">
+                  <FileText className="w-4 h-4" /> Articles
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2 text-muted-foreground hover:text-foreground text-sm">
+                  <Zap className="w-4 h-4" /> Auto-Docs
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2 text-muted-foreground hover:text-foreground text-sm mt-auto">
+                  <Settings className="w-4 h-4" /> Settings
+                </div>
+              </div>
+              
+              {/* Fake Content Area */}
+              <div className="flex-1 p-8 bg-background relative">
+                <h3 className="text-xl font-bold mb-6">Recent Articles</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-card">
+                    <div>
+                      <div className="font-medium">How to configure custom domains</div>
+                      <div className="text-xs text-muted-foreground">Published • Auto-synced from GitHub</div>
+                    </div>
+                    <div className="text-sm px-2 py-1 bg-success-subtle text-success-foreground rounded">Healthy</div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-card">
+                    <div>
+                      <div className="font-medium">Resetting your password</div>
+                      <div className="text-xs text-muted-foreground">Draft • Generated from Feedback</div>
+                    </div>
+                    <div className="text-sm px-2 py-1 bg-warning-subtle text-warning-foreground rounded">Needs Review</div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 border border-border rounded-lg bg-card opacity-50">
+                    <div>
+                      <div className="font-medium">Legacy billing API</div>
+                      <div className="text-xs text-muted-foreground">Published • 2 years ago</div>
+                    </div>
+                    <div className="text-sm px-2 py-1 bg-error-subtle text-error-foreground rounded">Stale</div>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Grid */}
+        <section id="features" className="py-24 bg-muted/30 border-t border-border">
+          <div className="max-w-5xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
                 <Mic className="w-8 h-8 text-primary mb-4" />
