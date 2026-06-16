@@ -113,7 +113,7 @@ export function LiveWatchClient({ interview }: LiveWatchClientProps) {
     try {
       // 2. Submit to canvas-edit API
       const res = await fetch(`/api/v1/interviews/${interview.id}/canvas-edit`, {
-        method: "Article",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -190,7 +190,7 @@ export function LiveWatchClient({ interview }: LiveWatchClientProps) {
 
     try {
       const res = await fetch(`/api/v1/interviews/${interview.id}/follow-ups`, {
-        method: "Article",
+        method: "POST",
       });
 
       if (res.status === 429) {

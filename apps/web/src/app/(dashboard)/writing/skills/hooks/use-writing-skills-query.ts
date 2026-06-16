@@ -13,7 +13,7 @@ async function createWritingSkill(
   data: Omit<WritingSkill, "id" | "blogId" | "type" | "order">,
 ): Promise<{ id: string }> {
   const res = await fetch("/api/v1/writing-skills", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
@@ -49,7 +49,7 @@ async function reorderWritingSkills(
   order: Record<string, number>,
 ): Promise<void> {
   const res = await fetch("/api/v1/writing-skills/reorder", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ order }),
   });
@@ -61,7 +61,7 @@ async function runSkillsPipeline(
   skillIds: string[],
 ): Promise<string> {
   const res = await fetch("/api/v1/writing-skills/run", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ content, skillIds }),
   });

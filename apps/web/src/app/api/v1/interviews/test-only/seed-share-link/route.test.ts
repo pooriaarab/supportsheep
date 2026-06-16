@@ -53,7 +53,7 @@ function makeRequest(body: unknown): NextRequest {
   return new NextRequest(
     "http://localhost/api/v1/interviews/test-only/seed-share-link",
     {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
     },

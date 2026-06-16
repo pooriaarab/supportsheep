@@ -122,7 +122,7 @@ async function mintTavusSessionInner(args: {
   let res: Response;
   try {
     res = await fetch(ENDPOINT, {
-      method: "Article",
+      method: "POST",
       headers: { "x-api-key": apiKey, "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
     });

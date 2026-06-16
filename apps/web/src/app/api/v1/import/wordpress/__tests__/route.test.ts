@@ -237,7 +237,7 @@ describe("POST /api/v1/import/wordpress", () => {
 
   it("returns 400 when no file is uploaded", async () => {
     const formData = new FormData();
-    const req = makeRequest("Article", "http://localhost/api/v1/import/wordpress", formData);
+    const req = makeRequest("POST", "http://localhost/api/v1/import/wordpress", formData);
     const res = await POST(req);
     expect(res.status).toBe(400);
   });
@@ -248,7 +248,7 @@ describe("POST /api/v1/import/wordpress", () => {
     const xmlFile = new File(["<rss></rss>"], "export.xml", { type: "text/xml" });
     const formData = new FormData();
     formData.append("file", xmlFile);
-    const req = makeRequest("Article", "http://localhost/api/v1/import/wordpress", formData);
+    const req = makeRequest("POST", "http://localhost/api/v1/import/wordpress", formData);
     const res = await POST(req);
     expect(res.status).toBe(400);
     expect((await res.json()).error).toMatch(/No posts found/);
@@ -268,7 +268,7 @@ describe("POST /api/v1/import/wordpress", () => {
     });
     const formData = new FormData();
     formData.append("file", xmlFile);
-    const req = makeRequest("Article", "http://localhost/api/v1/import/wordpress", formData);
+    const req = makeRequest("POST", "http://localhost/api/v1/import/wordpress", formData);
     const res = await POST(req);
     const body = await res.json();
 
@@ -290,7 +290,7 @@ describe("POST /api/v1/import/wordpress", () => {
     const xmlFile = new File(["<rss></rss>"], "export.xml", { type: "text/xml" });
     const formData = new FormData();
     formData.append("file", xmlFile);
-    const req = makeRequest("Article", "http://localhost/api/v1/import/wordpress", formData);
+    const req = makeRequest("POST", "http://localhost/api/v1/import/wordpress", formData);
     await POST(req);
 
     // Worker is started (non-blocking); may have been called synchronously
@@ -313,7 +313,7 @@ describe("POST /api/v1/import/wordpress", () => {
     const xmlFile = new File(["<rss></rss>"], "export.xml", { type: "text/xml" });
     const formData = new FormData();
     formData.append("file", xmlFile);
-    const req = makeRequest("Article", "http://localhost/api/v1/import/wordpress", formData);
+    const req = makeRequest("POST", "http://localhost/api/v1/import/wordpress", formData);
     await POST(req);
 
     // Allow the microtask to settle

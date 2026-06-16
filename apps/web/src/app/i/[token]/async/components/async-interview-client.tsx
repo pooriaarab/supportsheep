@@ -119,7 +119,7 @@ export function AsyncInterviewClient({ questions, interviewId, token }: Props) {
       formData.append("questionId", questionId);
 
       const res = await fetch(`/api/v1/interviews/${interviewId}/async-response`, {
-        method: "Article",
+        method: "POST",
         credentials: "same-origin",
         body: formData,
       });
@@ -169,7 +169,7 @@ export function AsyncInterviewClient({ questions, interviewId, token }: Props) {
     setCompleteError(null);
     try {
       const res = await fetch(`/api/v1/interviews/${interviewId}/end`, {
-        method: "Article",
+        method: "POST",
         credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",

@@ -65,7 +65,7 @@ const VALID_TOKEN_PAYLOAD = {
 };
 
 function makeReq(
-  method: "GET" | "Article" | "DELETE",
+  method: "GET" | "POST" | "DELETE",
   url = "http://localhost/api/v1/interviews/int-1/session-lock",
   init: { headers?: Record<string, string>; body?: unknown } = {},
 ): NextRequest {
@@ -198,7 +198,7 @@ describe("POST /api/v1/interviews/[id]/session-lock", () => {
   it("acquires the lock when no document exists", async () => {
     mockUpsertHeartbeat.mockResolvedValue({ status: "acquired" });
     const res = await POST(
-      makeReq("Article", undefined, {
+      makeReq("POST", undefined, {
         headers: { Authorization: "Bearer x" },
         body: { heartbeatId: "hb_new" },
       }),
@@ -217,7 +217,7 @@ describe("POST /api/v1/interviews/[id]/session-lock", () => {
   it("refreshes the lock when the same holder beats again", async () => {
     mockUpsertHeartbeat.mockResolvedValue({ status: "refreshed" });
     const res = await POST(
-      makeReq("Article", undefined, {
+      makeReq("POST", undefined, {
         headers: { Authorization: "Bearer x" },
         body: { heartbeatId: "hb_same" },
       }),
@@ -235,7 +235,7 @@ describe("POST /api/v1/interviews/[id]/session-lock", () => {
     };
     mockUpsertHeartbeat.mockResolvedValue(conflictResult);
     const res = await POST(
-      makeReq("Article", undefined, {
+      makeReq("POST", undefined, {
         headers: { Authorization: "Bearer x" },
         body: { heartbeatId: "hb_new" },
       }),
@@ -250,7 +250,7 @@ describe("POST /api/v1/interviews/[id]/session-lock", () => {
   it("returns 500 with a structured log when upsertHeartbeat throws", async () => {
     mockUpsertHeartbeat.mockRejectedValue(new Error("boom"));
     const res = await POST(
-      makeReq("Article", undefined, {
+      makeReq("POST", undefined, {
         headers: { Authorization: "Bearer x" },
         body: { heartbeatId: "hb_new" },
       }),
@@ -262,7 +262,7 @@ describe("POST /api/v1/interviews/[id]/session-lock", () => {
       (entry) => entry.message === "session-lock route failed",
     );
     expect(failureLog).toBeDefined();
-    expect(failureLog?.context.method).toBe("Article");
+    expect(failureLog?.context.method).toBe("POST");
     expect(failureLog?.context.interviewId).toBe("int-1");
   });
 });

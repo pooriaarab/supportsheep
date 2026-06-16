@@ -24,7 +24,7 @@ async function fetchWaitlist(blogId: string): Promise<DomainWaitlistState> {
 
 async function joinWaitlist(blogId: string): Promise<DomainWaitlistState> {
   const res = await fetch(`/api/v1/blogs/${blogId}/domain/waitlist`, {
-    method: "Article",
+    method: "POST",
   });
   if (!res.ok) throw new Error(await readError(res));
   return res.json();

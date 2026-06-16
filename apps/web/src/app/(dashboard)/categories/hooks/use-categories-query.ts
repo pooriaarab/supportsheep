@@ -23,7 +23,7 @@ async function createCategory(
   data: Pick<CategoryItem, "slug" | "displayName" | "icon" | "description">,
 ): Promise<CategoryItem> {
   const res = await fetch("/api/v1/categories", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
@@ -60,7 +60,7 @@ async function deleteCategory(slug: string): Promise<void> {
 
 async function reorderCategories(order: Record<string, number>): Promise<void> {
   const res = await fetch("/api/v1/categories/reorder", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ order }),
   });

@@ -65,7 +65,7 @@ export function CommandPalette() {
         id: "new-post",
         label: "New Article",
         icon: Plus,
-        keywords: ["new", "Article", "article", "create"],
+        keywords: ["new", "POST", "article", "create"],
         action: () => push("/posts?new=true"),
         shortcut: "C",
       },

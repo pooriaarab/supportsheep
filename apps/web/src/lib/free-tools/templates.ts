@@ -385,7 +385,7 @@ const htmlLineCounter: FreeToolExecutor = async (input) => {
 
 const htmlFormTagGenerator: FreeToolExecutor = async (input) => {
   const action = textValue(input, "action").trim() || "/";
-  const method = textValue(input, "method").trim().toLowerCase() || "Article";
+  const method = textValue(input, "method").trim().toLowerCase() || "POST";
   const fields = nonEmptyLines(textValue(input, "fields"));
   const fieldMarkup = fields
     .map((field) => {
@@ -396,7 +396,7 @@ const htmlFormTagGenerator: FreeToolExecutor = async (input) => {
   return {
     kind: "text",
     summary: `Generated form with ${fields.length} fields`,
-    text: `<form action="${escapeHtmlAttribute(action)}" method="${method === "get" ? "get" : "Article"}">\n${fieldMarkup}\n  <button type="submit">Submit</button>\n</form>`,
+    text: `<form action="${escapeHtmlAttribute(action)}" method="${method === "get" ? "get" : "POST"}">\n${fieldMarkup}\n  <button type="submit">Submit</button>\n</form>`,
   };
 };
 
@@ -1773,7 +1773,7 @@ const expandedDeterministicTemplates: FreeToolTemplate[] = [
     family: "developer_utility",
     inputs: [
       textInput("action", "Form action", "/contact", false),
-      textInput("method", "Method", "Article", false),
+      textInput("method", "Method", "POST", false),
       textAreaInput("fields", "Field labels, one per line", 4000),
     ],
     deterministicExecutor: htmlFormTagGenerator,

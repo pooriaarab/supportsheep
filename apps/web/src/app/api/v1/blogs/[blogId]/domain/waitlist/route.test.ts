@@ -41,7 +41,7 @@ vi.mock("@/lib/domains/waitlist-repository", () => ({
 // in these tests — stub it so the import resolves.
 vi.mock("@/db", () => ({ getDb: vi.fn() }));
 
-function request(method: "GET" | "Article"): Request {
+function request(method: "GET" | "POST"): Request {
   return new Request("http://test.local/api/v1/blogs/blog-1/domain/waitlist", {
     method,
   });
@@ -101,10 +101,10 @@ describe("domain waitlist route", () => {
     });
   });
 
-  describe("Article", () => {
+  describe("POST", () => {
     it("joins the waitlist and returns the count", async () => {
       const route = await import("./route");
-      const res = await route.POST(request("Article") as never, params("blog-1") as never);
+      const res = await route.POST(request("POST") as never, params("blog-1") as never);
       expect(res.status).toBe(200);
       await expect(res.json()).resolves.toEqual({
         joined: true,
@@ -119,8 +119,8 @@ describe("domain waitlist route", () => {
 
     it("is idempotent — a second join still returns joined:true", async () => {
       const route = await import("./route");
-      await route.POST(request("Article") as never, params("blog-1") as never);
-      const res = await route.POST(request("Article") as never, params("blog-1") as never);
+      await route.POST(request("POST") as never, params("blog-1") as never);
+      const res = await route.POST(request("POST") as never, params("blog-1") as never);
       expect(res.status).toBe(200);
       await expect(res.json()).resolves.toMatchObject({ joined: true });
       expect(mockJoinDomainWaitlist).toHaveBeenCalledTimes(2);
@@ -129,7 +129,7 @@ describe("domain waitlist route", () => {
     it("returns 403 for a non-owner/admin member", async () => {
       mockResolveTenant.mockResolvedValue({ blogId: "blog-1", role: "editor" });
       const route = await import("./route");
-      const res = await route.POST(request("Article") as never, params("blog-1") as never);
+      const res = await route.POST(request("POST") as never, params("blog-1") as never);
       expect(res.status).toBe(403);
       expect(mockJoinDomainWaitlist).not.toHaveBeenCalled();
     });
@@ -137,7 +137,7 @@ describe("domain waitlist route", () => {
     it("returns 403 for a path blogId that is not the caller's tenant", async () => {
       const route = await import("./route");
       const res = await route.POST(
-        request("Article") as never,
+        request("POST") as never,
         params("other-blog") as never,
       );
       expect(res.status).toBe(403);
@@ -148,7 +148,7 @@ describe("domain waitlist route", () => {
       const { AuthError } = await import("@/lib/auth/session");
       mockVerifyRequest.mockRejectedValue(new AuthError("unauthorized", 401));
       const route = await import("./route");
-      const res = await route.POST(request("Article") as never, params("blog-1") as never);
+      const res = await route.POST(request("POST") as never, params("blog-1") as never);
       expect(res.status).toBe(401);
     });
   });

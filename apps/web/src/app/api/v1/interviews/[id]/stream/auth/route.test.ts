@@ -57,7 +57,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-1/stream/auth",
-      { method: "Article" },
+      { method: "POST" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-1" }) });
@@ -73,7 +73,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-1/stream/auth",
-      { method: "Article" },
+      { method: "POST" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-1" }) });
@@ -89,7 +89,7 @@ describe("POST /api/v1/interviews/[id]/stream/auth", () => {
 
     const req = new NextRequest(
       "http://localhost/api/v1/interviews/iv-42/stream/auth",
-      { method: "Article" },
+      { method: "POST" },
     );
 
     const res = await POST(req, { params: Promise.resolve({ id: "iv-42" }) });

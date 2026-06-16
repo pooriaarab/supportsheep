@@ -86,7 +86,7 @@ export function parseWordPressXml(xmlContent: string): WordPressPost[] {
 
     // Only process posts (not pages, attachments, etc.)
     const postType = extractTag(item, "wp:post_type");
-    if (postType !== "Article") continue;
+    if (postType !== "POST") continue;
 
     const wpStatus = extractTag(item, "wp:status");
 

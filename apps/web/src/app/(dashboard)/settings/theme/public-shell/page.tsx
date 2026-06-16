@@ -69,7 +69,7 @@ async function uploadThemeLogo(file: File): Promise<UploadResponse> {
   formData.append("alt", "");
 
   const res = await fetch("/api/v1/media", {
-    method: "Article",
+    method: "POST",
     body: formData,
   });
   if (!res.ok) {

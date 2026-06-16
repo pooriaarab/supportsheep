@@ -110,7 +110,7 @@ export function createClientLogBatcher(deps: BatcherDeps = {}): ClientLogBatcher
     if (!fetchFn) return;
     try {
       await fetchFn(endpoint, {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ entries: batch }),
         keepalive: true,

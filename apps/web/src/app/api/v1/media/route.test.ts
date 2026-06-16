@@ -52,7 +52,7 @@ function buildUploadRequest(file: File, alt = "") {
   form.append("file", file);
   if (alt) form.append("alt", alt);
   return new NextRequest("http://localhost/api/v1/media", {
-    method: "Article",
+    method: "POST",
     body: form,
   });
 }

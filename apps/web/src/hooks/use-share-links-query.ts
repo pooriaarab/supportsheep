@@ -37,7 +37,7 @@ export function useCreateShareLink() {
   return useMutation({
     mutationFn: async (input: ShareLinkCreateInput) => {
       const res = await fetch("/api/v1/interviews/share-links", {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
       });
@@ -61,7 +61,7 @@ export function useRegenerateShareLink() {
     mutationFn: async (id: string) => {
       const res = await fetch(
         `/api/v1/interviews/share-links/${id}/regenerate`,
-        { method: "Article" },
+        { method: "POST" },
       );
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));

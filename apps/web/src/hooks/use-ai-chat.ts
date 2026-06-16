@@ -135,7 +135,7 @@ export function useAiChat(): UseAiChatResult {
       (async () => {
         try {
           const response = await fetch("/api/v1/ai/chat", {
-            method: "Article",
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               threadId,

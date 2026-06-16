@@ -141,7 +141,7 @@ function PostsPageContent() {
         count={selectedPosts.length}
         onClear={() => setSelectedPosts([])}
         onActionsClick={() => setDeleteConfirmOpen(true)}
-        itemNameSingular="Article"
+        itemNameSingular="POST"
         itemNamePlural="Articles"
       />
 

@@ -42,7 +42,7 @@ import { GET, POST } from "./route";
 
 function postRequest(body: unknown): NextRequest {
   return new NextRequest("https://supportsheep.com/api/v1/signup-codes", {
-    method: "Article",
+    method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });

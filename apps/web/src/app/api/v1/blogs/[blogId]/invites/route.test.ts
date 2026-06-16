@@ -55,7 +55,7 @@ vi.mock("@/lib/invites/send-invite-email", () => ({
 
 function postRequest(body: unknown): Request {
   return new Request("http://test.local/api/v1/blogs/blog-1/invites", {
-    method: "Article",
+    method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });

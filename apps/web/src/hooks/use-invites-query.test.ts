@@ -41,7 +41,7 @@ describe("use-invites-query", () => {
     });
 
     expect(global.fetch).toHaveBeenCalledWith("/api/v1/blogs/blog-1/invites", {
-      method: "Article",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "person@example.com", role: "editor" }),
     });

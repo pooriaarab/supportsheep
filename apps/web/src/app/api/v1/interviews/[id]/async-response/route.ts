@@ -118,7 +118,7 @@ export const POST = createApiHandler<unknown, { id: string }>({
       }
 
       const whisperRes = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-        method: "Article",
+        method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
         },

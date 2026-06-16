@@ -84,7 +84,7 @@ function AnonymousJoin({ token }: { token: string }) {
     setError(null);
     try {
       const res = await fetch("/api/v1/interviews", {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ shareLinkToken: token }),
       });

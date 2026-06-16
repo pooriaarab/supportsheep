@@ -71,7 +71,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     tenantState.role = "guest";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -92,7 +92,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     ] as never);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -112,7 +112,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     tenantState.role = "viewer";
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         type: "link",
         style: "smart",
@@ -154,7 +154,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         type: "link",
         topic: "Test TDD",
@@ -215,7 +215,7 @@ describe("POST /api/v1/interviews/share-links", () => {
     mockSendCalendarInviteEmail.mockResolvedValue(undefined);
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         type: "link",
         topic: "Test Scheduled TDD",

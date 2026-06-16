@@ -195,7 +195,7 @@ function ImagePicker({
         void (async () => {
           try {
             const res = await fetch("/api/v1/generate/image", {
-              method: "Article",
+              method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ purpose, slug }),
             });
@@ -225,7 +225,7 @@ function ImagePicker({
         const formData = new FormData();
         formData.append("file", file);
         const res = await fetch("/api/v1/media", {
-          method: "Article",
+          method: "POST",
           body: formData,
         });
         if (!res.ok) {

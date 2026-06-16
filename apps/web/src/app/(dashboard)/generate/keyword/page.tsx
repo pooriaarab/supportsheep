@@ -171,7 +171,7 @@ export default function KeywordGeneratePage() {
 
     try {
       const res = await fetch("/api/v1/generate/keyword", {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           keyword: keyword.trim(),

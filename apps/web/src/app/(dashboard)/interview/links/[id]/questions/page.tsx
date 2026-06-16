@@ -155,7 +155,7 @@ export default function AdminQuestionsPage({ params }: PageProps) {
       formData.append("file", recordedBlob, "question.webm");
 
       const res = await fetch(`/api/v1/interviews/share-links/${id}/questions`, {
-        method: "Article",
+        method: "POST",
         body: formData,
       });
 

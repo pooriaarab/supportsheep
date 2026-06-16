@@ -37,7 +37,7 @@ export function MagicLinkForm({ token }: Props) {
 
     try {
       const res = await fetch("/api/v1/interviews/magic-link", {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           shareLinkToken: token,

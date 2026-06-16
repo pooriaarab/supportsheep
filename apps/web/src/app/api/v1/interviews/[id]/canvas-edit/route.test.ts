@@ -88,7 +88,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -137,7 +137,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
   it("truncates contentPreview to 200 chars in the structured user_edit log", async () => {
     const longValue = "x".repeat(500);
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({
         sectionId: "section-1",
         field: "heading",
@@ -166,7 +166,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -186,7 +186,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -206,7 +206,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -224,7 +224,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -242,7 +242,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     // Make 30 requests - should all succeed
     for (let i = 0; i < 30; i++) {
       const req = new NextRequest(`http://localhost/api/v1/interviews/rate-limit-test/canvas-edit`, {
-        method: "Article",
+        method: "POST",
         body: JSON.stringify(editPayload),
       });
       const res = await POST(req, { params: Promise.resolve({ id: "rate-limit-test" }) });
@@ -251,7 +251,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
 
     // 31st request should be rate limited (429)
     const req = new NextRequest(`http://localhost/api/v1/interviews/rate-limit-test/canvas-edit`, {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
     const res = await POST(req, { params: Promise.resolve({ id: "rate-limit-test" }) });
@@ -267,7 +267,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 
@@ -286,7 +286,7 @@ describe("POST /api/v1/interviews/[id]/canvas-edit", () => {
     };
 
     const req = new NextRequest("http://localhost/api/v1/interviews/test-interview-123/canvas-edit", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(editPayload),
     });
 

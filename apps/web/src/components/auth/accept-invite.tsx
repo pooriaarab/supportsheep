@@ -36,7 +36,7 @@ async function fetchInvite(token: string): Promise<InvitePreview | null> {
 
 async function acceptInvite(token: string): Promise<{ blogId: string }> {
   const res = await fetch("/api/v1/invites/accept", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ token }),
   });

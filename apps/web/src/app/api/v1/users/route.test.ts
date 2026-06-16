@@ -71,7 +71,7 @@ describe("POST /api/v1/users", () => {
   it("maps role 'user' to 'viewer' and returns 201 with the member", async () => {
     addMemberByEmail.mockResolvedValue({ ok: true, member });
     const request = new NextRequest("https://supportsheep.com/api/v1/users", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({ email: "ada@example.com", role: "user" }),
     });
 
@@ -90,7 +90,7 @@ describe("POST /api/v1/users", () => {
   it("maps role 'admin' to 'admin'", async () => {
     addMemberByEmail.mockResolvedValue({ ok: true, member });
     const request = new NextRequest("https://supportsheep.com/api/v1/users", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({ email: "ada@example.com", role: "admin" }),
     });
 
@@ -105,7 +105,7 @@ describe("POST /api/v1/users", () => {
   it("returns 404 user_not_found when the email has no account", async () => {
     addMemberByEmail.mockResolvedValue({ ok: false, reason: "user_not_found" });
     const request = new NextRequest("https://supportsheep.com/api/v1/users", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({ email: "ghost@example.com" }),
     });
 
@@ -117,7 +117,7 @@ describe("POST /api/v1/users", () => {
   it("returns 409 when the user is already a member", async () => {
     addMemberByEmail.mockResolvedValue({ ok: false, reason: "already_member" });
     const request = new NextRequest("https://supportsheep.com/api/v1/users", {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify({ email: "ada@example.com" }),
     });
 

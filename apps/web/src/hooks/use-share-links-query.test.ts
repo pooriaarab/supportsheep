@@ -84,7 +84,7 @@ describe("use-share-links-query", () => {
 
     const result = await (mutationCall as any).mutationFn(mockInput);
     expect(global.fetch).toHaveBeenCalledWith("/api/v1/interviews/share-links", {
-      method: "Article",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(mockInput),
     });

@@ -77,7 +77,7 @@ async function setDomain(
   domain: string,
 ): Promise<SetDomainResult> {
   const res = await fetch(`/api/v1/blogs/${blogId}/domain`, {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ domain }),
   });

@@ -100,7 +100,7 @@ export function InCallLayoutDesktop({
 
       try {
         const res = await fetch(`/api/v1/interviews/${interviewId}/end`, {
-          method: "Article",
+          method: "POST",
           credentials: "same-origin",
           headers: {
             "Content-Type": "application/json",

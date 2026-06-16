@@ -104,7 +104,7 @@ describe("createApiHandler", () => {
     });
 
     const request = new NextRequest("http://localhost/api/test", {
-      method: "Article",
+      method: "POST",
       body: "",
     });
     const response = await handler(request);

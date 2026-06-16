@@ -61,7 +61,7 @@ async function tabstackResearch(
   apiKey: string,
 ): Promise<{ report: string; citedPages: Array<{ url: string; title: string }> }> {
   const response = await fetch("https://api.tabstack.ai/v1/research", {
-    method: "Article",
+    method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",

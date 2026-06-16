@@ -22,8 +22,8 @@ describe("public api article helpers", () => {
 
   it("serializes only public-safe summary fields", () => {
     const article = {
-      slug: "Article",
-      title: "Article",
+      slug: "POST",
+      title: "POST",
       canonicalPath: "/post",
       excerpt: "Summary",
       category: "Guides",
@@ -36,8 +36,8 @@ describe("public api article helpers", () => {
     expect(
       serializePublicArticleSummary(article, "https://supportsheep.com"),
     ).toEqual({
-      title: "Article",
-      slug: "Article",
+      title: "POST",
+      slug: "POST",
       url: "https://supportsheep.com/post",
       excerpt: "Summary",
       category: "Guides",
@@ -50,8 +50,8 @@ describe("public api article helpers", () => {
 
   it("serializes public detail fields without leaking internals", () => {
     const article = {
-      slug: "Article",
-      title: "Article",
+      slug: "POST",
+      title: "POST",
       canonicalPath: "/post",
       excerpt: "Summary",
       body: "<p>Published body</p>",
@@ -70,8 +70,8 @@ describe("public api article helpers", () => {
       "https://supportsheep.com",
     );
     expect(detail).toMatchObject({
-      title: "Article",
-      slug: "Article",
+      title: "POST",
+      slug: "POST",
       url: "https://supportsheep.com/post",
       body: "<p>Published body</p>",
     });
@@ -96,8 +96,8 @@ describe("public articles routes", () => {
   describe("GET /api/v1/public/articles", () => {
     it("returns serialized summaries with pagination", async () => {
       const articleResponse = {
-        title: "Article",
-        slug: "Article",
+        title: "POST",
+        slug: "POST",
         canonicalPath: "/post",
         excerpt: "Summary",
         category: "Guides",
@@ -148,8 +148,8 @@ describe("public articles routes", () => {
   describe("GET /api/v1/public/articles/:slug", () => {
     it("returns the detail payload for published articles", async () => {
       const article = {
-        title: "Article",
-        slug: "Article",
+        title: "POST",
+        slug: "POST",
         canonicalPath: "/post",
         excerpt: "Summary",
         body: "<p>Published body</p>",
@@ -181,7 +181,7 @@ describe("public articles routes", () => {
       const response = await getArticleBySlug(
         request as never,
         {
-          params: Promise.resolve({ slug: "Article" }),
+          params: Promise.resolve({ slug: "POST" }),
         } as never,
       );
       const json = await response.json();

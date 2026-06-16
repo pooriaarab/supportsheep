@@ -11,7 +11,7 @@ export function NewThreadDialogWrapper() {
     async (content: string, _createMore: boolean) => {
       const { toast } = await import("sonner");
       await fetch("/api/v1/articles", {
-        method: "Article",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title: content.slice(0, 100),

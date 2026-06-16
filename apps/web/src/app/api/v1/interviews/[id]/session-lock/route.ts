@@ -61,7 +61,7 @@ function lockIsStale(lastBeatAt: number | null | undefined): boolean {
  * can be diagnosed without redeploying.
  */
 function logRouteFailure(
-  method: "GET" | "Article" | "DELETE",
+  method: "GET" | "POST" | "DELETE",
   interviewId: string,
   request: Request,
   err: unknown,
@@ -139,7 +139,7 @@ export const POST = createApiHandler({
       }
       return NextResponse.json(result);
     } catch (err) {
-      logRouteFailure("Article", id, request, err);
+      logRouteFailure("POST", id, request, err);
       return NextResponse.json(
         { error: "Internal server error" },
         { status: 500 },

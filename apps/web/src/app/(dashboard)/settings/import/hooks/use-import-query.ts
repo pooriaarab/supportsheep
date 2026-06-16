@@ -13,7 +13,7 @@ async function uploadWordPressFile(
   formData.append("file", file);
 
   const res = await fetch("/api/v1/import/wordpress", {
-    method: "Article",
+    method: "POST",
     body: formData,
   });
 

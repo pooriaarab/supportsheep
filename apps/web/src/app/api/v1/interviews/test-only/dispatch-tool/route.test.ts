@@ -54,7 +54,7 @@ function makeRequest(body: unknown): NextRequest {
   return new NextRequest(
     "http://localhost/api/v1/interviews/test-only/dispatch-tool",
     {
-      method: "Article",
+      method: "POST",
       body: JSON.stringify(body),
       headers: { "content-type": "application/json" },
     },

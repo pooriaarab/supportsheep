@@ -52,7 +52,7 @@ describe("POST /api/v1/integrations", () => {
     const request = new NextRequest(
       "https://supportsheep.com/api/v1/integrations",
       {
-        method: "Article",
+        method: "POST",
         body: JSON.stringify({
           name: "Google Analytics 4",
           type: "oauth",
@@ -98,7 +98,7 @@ describe("POST /api/v1/integrations", () => {
     const request = new NextRequest(
       "https://supportsheep.com/api/v1/integrations",
       {
-        method: "Article",
+        method: "POST",
         body: JSON.stringify({
           name: "Google Search Console",
           type: "oauth",

@@ -48,7 +48,7 @@ describe("POST /api/v1/articles/[id]/submit-for-review", () => {
     mockGetArticleBySlug.mockResolvedValue(null);
 
     const req = new NextRequest("http://localhost/api/v1/articles/missing-id/submit-for-review", {
-      method: "Article",
+      method: "POST",
     });
 
     const res = await POST(req, { params: Promise.resolve({ slug: "missing-id" }) });
@@ -67,7 +67,7 @@ describe("POST /api/v1/articles/[id]/submit-for-review", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/articles/article-123/submit-for-review", {
-      method: "Article",
+      method: "POST",
     });
 
     const res = await POST(req, { params: Promise.resolve({ slug: "article-123" }) });
@@ -86,7 +86,7 @@ describe("POST /api/v1/articles/[id]/submit-for-review", () => {
     });
 
     const req = new NextRequest("http://localhost/api/v1/articles/article-123/submit-for-review", {
-      method: "Article",
+      method: "POST",
     });
 
     const res = await POST(req, { params: Promise.resolve({ slug: "article-123" }) });
@@ -108,7 +108,7 @@ describe("POST /api/v1/articles/[id]/submit-for-review", () => {
     mockListMemberUserIdsByRoles.mockResolvedValue(["admin-1", "owner-2"]);
 
     const req = new NextRequest("http://localhost/api/v1/articles/article-123/submit-for-review", {
-      method: "Article",
+      method: "POST",
     });
 
     const res = await POST(req, { params: Promise.resolve({ slug: "article-123" }) });

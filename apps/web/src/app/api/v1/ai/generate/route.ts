@@ -95,7 +95,7 @@ export async function POST(request: Request): Promise<Response> {
       "https://api.anthropic.com/v1/messages",
       {
         cache: "no-store",
-        method: "Article",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": apiKey,

@@ -130,7 +130,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/word-counter/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
             input: { text: "Build useful free tools for search traffic." },
@@ -161,7 +161,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/word-counter/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
             input: { text: "Build useful free tools." },
@@ -191,7 +191,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/youtube-engagement-calculator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
             input: {
@@ -222,7 +222,7 @@ describe("public free tool run route", () => {
     const route = await import("./route");
     const response = await route.POST(
       new Request("http://test.local/api/v1/free-tools/public/missing/run", {
-        method: "Article",
+        method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ input: { text: "Hello" } }),
       }) as never,
@@ -261,7 +261,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: {
             "content-type": "application/json",
             "user-agent": "vitest",
@@ -301,7 +301,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ input: {} }),
         },
@@ -346,7 +346,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ input: { brief: "SEO strategy" } }),
         },
@@ -382,7 +382,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ input: { brief: "SEO strategy" } }),
         },
@@ -421,7 +421,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ input: { brief: "SEO strategy" } }),
         },
@@ -468,7 +468,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ input: { brief: "SEO strategy" } }),
         },
@@ -513,7 +513,7 @@ describe("public free tool run route", () => {
       new Request(
         "http://test.local/api/v1/free-tools/public/blog-outline-generator/run",
         {
-          method: "Article",
+          method: "POST",
           headers: {
             "content-type": "application/json",
             "user-agent": "vitest",

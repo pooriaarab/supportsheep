@@ -110,7 +110,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -133,7 +133,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -161,7 +161,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -180,7 +180,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", fakeImage, "image.jpg");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -199,7 +199,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/missing/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -216,7 +216,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     const formData = new FormData(); // Empty form data
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 
@@ -242,7 +242,7 @@ describe("POST /api/v1/interviews/share-links/[id]/questions", () => {
     formData.append("file", audioBlob, "audio.webm");
 
     const req = new NextRequest("http://localhost/api/v1/interviews/share-links/123/questions", {
-      method: "Article",
+      method: "POST",
       body: formData,
     });
 

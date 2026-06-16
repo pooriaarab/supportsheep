@@ -119,7 +119,7 @@ describe("startSessionLockHeartbeat", () => {
     fetchImpl.mockClear();
     await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL_MS * 3);
     const postBeats = fetchImpl.mock.calls.filter(
-      (c: unknown[]) => (c[1] as RequestInit)?.method === "Article",
+      (c: unknown[]) => (c[1] as RequestInit)?.method === "POST",
     );
     expect(postBeats).toHaveLength(0);
   });
@@ -183,7 +183,7 @@ describe("startSessionLockHeartbeat", () => {
     fetchImpl.mockClear();
     await controller.takeover();
     const post = fetchImpl.mock.calls.find(
-      (c: unknown[]) => (c[1] as RequestInit)?.method === "Article",
+      (c: unknown[]) => (c[1] as RequestInit)?.method === "POST",
     );
     expect(post).toBeDefined();
     const body = JSON.parse(String((post![1] as RequestInit).body));

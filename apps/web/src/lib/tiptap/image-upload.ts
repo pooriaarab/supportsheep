@@ -18,7 +18,7 @@ async function uploadImage(file: File): Promise<UploadResponse> {
   const formData = new FormData();
   formData.append("file", file);
   const res = await fetch("/api/v1/media", {
-    method: "Article",
+    method: "POST",
     body: formData,
   });
   if (!res.ok) {

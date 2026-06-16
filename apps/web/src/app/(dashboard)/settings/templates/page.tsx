@@ -60,7 +60,7 @@ async function createTemplate(data: {
   category?: string;
 }): Promise<Template> {
   const res = await fetch("/api/v1/templates", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
@@ -72,7 +72,7 @@ async function duplicateTemplate(
   template: Template,
 ): Promise<Template> {
   const res = await fetch("/api/v1/templates", {
-    method: "Article",
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name: `${template.name} (Copy)`,
